@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Cosmic Helix Renderer (ND-safe, Offline)</title>
+  <title>Cosmic Helix Renderer · Offline ND-safe Geometry</title>
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="color-scheme" content="light dark">
   <style>
@@ -22,6 +22,14 @@
   <style>
     /* ND-safe presentation: calm contrast, zero motion, generous breathing room */
     :root { --bg:#0b0b12; --ink:#e8e8f0; --muted:#9ea2c9; --accent:#ffd27f; }
+  <meta name="color-scheme" content="dark light">
+  <style>
+    /* ND-safe styling: calm contrast, wide spacing, zero motion cues */
+    :root {
+      --bg: #0b0b12;
+      --ink: #e8e8f0;
+      --muted: #9ea2c9;
+    }
     html, body {
       margin: 0;
       padding: 0;
@@ -49,6 +57,28 @@
       display: block;
       margin: 18px auto 12px;
       box-shadow: 0 0 0 1px #1d1d2a, 0 18px 32px rgba(0, 0, 0, 0.38);
+      font: 14px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    header {
+      padding: 16px 20px;
+      border-bottom: 1px solid #1d1d2a;
+    }
+    h1 {
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: 0.03em;
+    }
+    .status {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    #stage {
+      display: block;
+      margin: 20px auto;
+      width: 1440px;
+      height: 900px;
+      box-shadow: 0 0 0 1px #1d1d2a, 0 16px 40px rgba(0, 0, 0, 0.3);
       background: var(--bg);
     }
     .note {
@@ -56,6 +86,8 @@
       margin: 0 auto 24px;
       color: var(--muted);
       padding: 0 16px 24px;
+      padding: 0 16px 24px;
+      color: var(--muted);
       text-align: center;
     }
     code {
@@ -71,6 +103,10 @@
     .status { color:var(--muted); font-size:12px; margin-top:4px; }
     #stage { display:block; margin:18px auto; box-shadow:0 0 0 1px #1d1d2a,0 12px 32px rgba(0,0,0,0.28); background:var(--bg); }
     .note { max-width:900px; margin:0 auto 20px; color:var(--muted); padding:0 16px; text-align:center; }
+      color: var(--ink);
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
   </style>
 </head>
 <body>
@@ -87,6 +123,11 @@
 
   <canvas id="stage" width="1440" height="900" aria-label="Layered sacred geometry canvas"></canvas>
   <p class="note">Static Vesica field, Tree-of-Life scaffold, Fibonacci spiral, and double-helix lattice. Open this file directly; no animation or external dependencies.</p>
+    <p class="status" id="status">Loading palette…</p>
+  </header>
+
+  <canvas id="stage" width="1440" height="900" aria-label="Layered sacred geometry canvas"></canvas>
+  <p class="note">Static, offline rendering of the Vesica field, Tree-of-Life scaffold, Fibonacci curve, and double helix lattice. No animation, no external network, calm contrast by design.</p>
 
   <script type="module">
     import { renderHelix } from "./js/helix-renderer.mjs";
@@ -141,6 +182,10 @@
      * Fetches palette overrides from disk. Browsers may block file:// fetches;
      * returning null keeps the renderer offline-first and ND-safe.
      */
+    function setStatus(message) {
+      status.textContent = message;
+    }
+
     async function loadPalette(path) {
       try {
         const response = await fetch(path, { cache: 'no-store' });
@@ -160,6 +205,7 @@
     });
 
     const FALLBACK_PALETTE = {
+    const fallbackPalette = {
       bg: "#0b0b12",
       ink: "#e8e8f0",
       layers: ["#6f9bff", "#74f1ff", "#8ef7c3", "#ffd27f", "#f5a3ff", "#d4d7ff"]
@@ -270,6 +316,16 @@
 
       // Layered geometry rendered once; no loops keeps the canvas steady.
       status.textContent = `${paletteNotice} Static layers rendered without motion.`;
+    const paletteData = await loadPalette("./data/palette.json");
+    const palette = paletteData || fallbackPalette;
+    setStatus(paletteData ? "Palette loaded. Rendering static layers…" : "Palette missing or blocked; using safe fallback hues.");
+
+    if (!ctx) {
+      setStatus("Canvas context unavailable; rendering skipped.");
+    } else {
+      // Single render call keeps the experience motionless and ND-safe.
+      renderHelix(ctx, { width: canvas.width, height: canvas.height, palette, NUM });
+      setStatus("Render complete — layered geometry, no motion.");
     }
 
     initialise();
