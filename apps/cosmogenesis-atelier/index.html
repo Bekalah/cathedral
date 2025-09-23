@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Cosmogenesis — Atelier</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="color-scheme" content="dark light">
+  <style>
+    :root {
+      --bg:#0a0a12;
+      --panel:#111122;
+      --ink:#f5f5ff;
+      --muted:#a3a5c8;
+      --accent:#d6b4ff;
+    }
+    html,body { margin:0; padding:0; background:var(--bg); color:var(--ink); font:15px/1.6 "IBM Plex Sans",system-ui,sans-serif; }
+    header { padding:18px 22px; border-bottom:1px solid #1f1f33; background:#080812; }
+    header h1 { margin:0; font-size:1.5rem; letter-spacing:0.08em; text-transform:uppercase; }
+    header p { margin:6px 0 0; color:var(--muted); max-width:820px; }
+    main { display:grid; grid-template-columns: minmax(0,1fr) 340px; gap:24px; padding:24px; max-width:1400px; margin:0 auto 36px; }
+    .board {
+      position:relative;
+      background:var(--panel);
+      border:1px solid #1f1f33;
+      border-radius:18px;
+      padding:20px;
+      min-height:680px;
+      display:grid;
+      place-items:center;
+    }
+    canvas { width:100%; height:auto; max-width:720px; border-radius:16px; border:1px solid rgba(255,255,255,0.08); background:#05050a; }
+    .look-sheet {
+      position:absolute;
+      bottom:26px;
+      right:26px;
+      background:rgba(8,8,16,0.9);
+      border:1px solid rgba(214,180,255,0.4);
+      border-radius:14px;
+      padding:16px 20px;
+      max-width:280px;
+      backdrop-filter:blur(6px);
+    }
+    .look-sheet h2 { margin:0 0 6px; font-size:0.95rem; letter-spacing:0.06em; text-transform:uppercase; }
+    .look-sheet p { margin:4px 0; color:var(--muted); font-size:0.85rem; }
+    .panel { background:var(--panel); border:1px solid #1f1f33; border-radius:18px; padding:20px; display:grid; gap:18px; }
+    .panel section { border:1px solid rgba(255,255,255,0.04); border-radius:14px; padding:16px; }
+    .panel h2 { margin:0 0 12px; font-size:1rem; letter-spacing:0.05em; text-transform:uppercase; }
+    .choice-grid { display:grid; gap:10px; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); }
+    button.choice {
+      border-radius:12px;
+      border:1px solid rgba(214,180,255,0.4);
+      background:rgba(214,180,255,0.08);
+      color:var(--accent);
+      padding:10px 12px;
+      font:0.9rem/1.3 "IBM Plex Sans",system-ui,sans-serif;
+      letter-spacing:0.04em;
+      cursor:pointer;
+      text-align:left;
+    }
+    button.choice span { display:block; font-size:0.75rem; color:var(--muted); margin-top:4px; }
+    button.choice.active {
+      background:rgba(214,180,255,0.28);
+      color:#120712;
+      border-color:rgba(214,180,255,0.9);
+    }
+    button.choice:focus-visible { outline:2px solid rgba(214,180,255,0.6); outline-offset:2px; }
+    .swatch-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(80px,1fr)); gap:8px; }
+    .swatch {
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.08);
+      height:64px;
+      position:relative;
+      overflow:hidden;
+    }
+    .swatch span {
+      position:absolute;
+      bottom:8px;
+      left:10px;
+      font-size:0.7rem;
+      letter-spacing:0.05em;
+      text-transform:uppercase;
+      color:#0b0b12;
+      background:rgba(245,245,255,0.82);
+      padding:3px 6px;
+      border-radius:8px;
+    }
+    .notes { color:var(--muted); font-size:0.85rem; }
+    @media (max-width:1200px) { main { grid-template-columns:1fr; } .board { min-height:560px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Cosmogenesis — Atelier</h1>
+    <p>Haute-couture interface wrapping the helix engine. Each look keeps the sacred geometry static: no motion, offline-safe.</p>
+  </header>
+  <main>
+    <section class="board">
+      <canvas id="atelierCanvas" width="720" height="720" aria-label="Cosmogenesis atelier design canvas"></canvas>
+      <div class="look-sheet" id="lookSheet">
+        <h2 id="lookTitle">Vesica Gown</h2>
+        <p id="lookLine">Silhouette aligned with triple vesica arcs.</p>
+        <p id="lookFabric">Fabric: Aether Silk (iridescent).</p>
+        <p id="lookAdornment">Adorned with helios lattice filigree.</p>
+      </div>
+    </section>
+    <aside class="panel">
+      <section>
+        <h2>Silhouette Library</h2>
+        <div class="choice-grid" id="silhouetteChoices"></div>
+      </section>
+      <section>
+        <h2>Fabric Palette</h2>
+        <div class="swatch-grid" id="fabricSwatches"></div>
+      </section>
+      <section>
+        <h2>Adornment Thread</h2>
+        <div class="choice-grid" id="adornmentChoices"></div>
+      </section>
+      <p class="notes">Selections only change palette + metadata. Canvas renders once per change to avoid motion.</p>
+    </aside>
+  </main>
+
+  <script type="module">
+    import { renderHelix } from "../../js/helix-renderer.mjs";
+
+    const canvas = document.getElementById('atelierCanvas');
+    const ctx = canvas.getContext('2d');
+
+    const LOOKS = [
+      {
+        id: 'vesica-gown',
+        title: 'Vesica Gown',
+        detail: 'Silhouette aligned with triple vesica arcs.',
+        palette: {
+          bg: '#0b0a16',
+          ink: '#f7f7ff',
+          layers: ['#cbb4ff', '#9fe0ff', '#a8ffd4', '#ffd4a1', '#f6b7ff', '#d8dcff']
+        }
+      },
+      {
+        id: 'pillar-coat',
+        title: 'Pillar Coat',
+        detail: 'Sevenfold pillar lines form the drape.',
+        palette: {
+          bg: '#080810',
+          ink: '#f5f5ff',
+          layers: ['#b0c6ff', '#8ae2ff', '#98ffc0', '#ffe3a1', '#f7caff', '#e2e6ff']
+        }
+      },
+      {
+        id: 'crown-cloak',
+        title: 'Crown Cloak',
+        detail: 'Crown sephira mapped to collar geometry.',
+        palette: {
+          bg: '#0c0a16',
+          ink: '#f9f9ff',
+          layers: ['#d0b8ff', '#a7e3ff', '#b8ffd4', '#ffdfb0', '#fbd6ff', '#ecebff']
+        }
+      }
+    ];
+
+    const FABRICS = [
+      { id: 'aether-silk', name: 'Aether Silk', hue: '#cdb8ff', note: 'iridescent' },
+      { id: 'void-velvet', name: 'Void Velvet', hue: '#120718', note: 'deep matte' },
+      { id: 'aurora-organza', name: 'Aurora Organza', hue: '#6de7d5', note: 'sheer glow' },
+      { id: 'celestial-linen', name: 'Celestial Linen', hue: '#f4f1e6', note: 'breathable' }
+    ];
+
+    const ADORNMENTS = [
+      { id: 'helix-filigree', title: 'Helix Filigree', line: 'Adorned with helios lattice filigree.' },
+      { id: 'sigil-beading', title: 'Sigil Beading', line: 'Adorned with hand-scribed sigil beading.' },
+      { id: 'prism-fringe', title: 'Prism Fringe', line: 'Adorned with prism fringe along the hem.' }
+    ];
+
+    let activeLook = LOOKS[0];
+    let activeFabric = FABRICS[0];
+    let activeAdornment = ADORNMENTS[0];
+
+    function updateCanvas() {
+      renderHelix(ctx, {
+        width: canvas.width,
+        height: canvas.height,
+        palette: {
+          bg: activeLook.palette.bg,
+          ink: activeLook.palette.ink,
+          layers: activeLook.palette.layers
+        }
+      });
+    }
+
+    function updateSheet() {
+      document.getElementById('lookTitle').textContent = activeLook.title;
+      document.getElementById('lookLine').textContent = activeLook.detail;
+      document.getElementById('lookFabric').textContent = `Fabric: ${activeFabric.name} (${activeFabric.note}).`;
+      document.getElementById('lookAdornment').textContent = activeAdornment.line;
+      document.getElementById('lookSheet').style.borderColor = activeFabric.hue;
+    }
+
+    function renderChoices() {
+      const silhouetteRoot = document.getElementById('silhouetteChoices');
+      silhouetteRoot.innerHTML = '';
+      LOOKS.forEach(look => {
+        const button = document.createElement('button');
+        button.className = 'choice' + (look.id === activeLook.id ? ' active' : '');
+        button.dataset.id = look.id;
+        button.textContent = look.title;
+        const span = document.createElement('span');
+        span.textContent = look.detail;
+        button.append(span);
+        button.addEventListener('click', () => {
+          activeLook = look;
+          renderChoices();
+          updateCanvas();
+          updateSheet();
+        });
+        silhouetteRoot.append(button);
+      });
+
+      const adornRoot = document.getElementById('adornmentChoices');
+      adornRoot.innerHTML = '';
+      ADORNMENTS.forEach(adornment => {
+        const button = document.createElement('button');
+        button.className = 'choice' + (adornment.id === activeAdornment.id ? ' active' : '');
+        button.dataset.id = adornment.id;
+        button.textContent = adornment.title;
+        button.addEventListener('click', () => {
+          activeAdornment = adornment;
+          renderChoices();
+          updateSheet();
+        });
+        adornRoot.append(button);
+      });
+    }
+
+    function renderSwatches() {
+      const fabricRoot = document.getElementById('fabricSwatches');
+      fabricRoot.innerHTML = '';
+      FABRICS.forEach(fabric => {
+        const swatch = document.createElement('button');
+        swatch.className = 'swatch';
+        swatch.style.background = fabric.hue;
+        swatch.type = 'button';
+        swatch.title = `${fabric.name} — ${fabric.note}`;
+        swatch.setAttribute('aria-label', `${fabric.name} fabric ${fabric.note}`);
+        if (fabric.id === activeFabric.id) {
+          swatch.style.boxShadow = '0 0 0 3px rgba(255,255,255,0.3)';
+        }
+        const label = document.createElement('span');
+        label.textContent = fabric.name.split(' ')[0];
+        swatch.append(label);
+        swatch.addEventListener('click', () => {
+          activeFabric = fabric;
+          renderSwatches();
+          updateSheet();
+        });
+        fabricRoot.append(swatch);
+      });
+    }
+
+    renderChoices();
+    renderSwatches();
+    updateCanvas();
+    updateSheet();
+  </script>
+</body>
+</html>
