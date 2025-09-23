@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>Sigil of Gremory (Layered)</title>
+  <g id="layer-circle" fill="none" stroke="#f9844a" stroke-width="3">
+    <circle cx="100" cy="100" r="68" />
+  </g>
+  <g id="layer-path" fill="none" stroke="#90be6d" stroke-width="4" stroke-linecap="round">
+    <path d="M60 100 C80 40 120 40 140 100" />
+    <path d="M60 100 C80 160 120 160 140 100" />
+    <path d="M80 80 L120 120" />
+    <path d="M120 80 L80 120" />
+  </g>
+</svg>
