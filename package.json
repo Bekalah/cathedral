@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build:index": "node scripts/build-corpus-index.mjs",
+    "build:blessed": "node engines/blessed-build.js",
     "test": "echo \"No automated tests\""
   },
   "keywords": ["esoteric", "corpus", "offline"],
