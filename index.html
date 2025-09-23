@@ -18,6 +18,52 @@
     #stage { display:block; margin:18px auto 12px; box-shadow:0 0 0 1px #1d1d2a,0 18px 36px rgba(0,0,0,0.28); background:var(--bg); }
     .note { max-width:900px; margin:0 auto 22px; color:var(--muted); padding:0 16px; text-align:center; }
     code { background:#11111a; padding:2px 4px; border-radius:3px; }
+  <meta name="color-scheme" content="dark light">
+  <style>
+    /* ND-safe presentation: calm contrast, zero motion, generous breathing room */
+    :root { --bg:#0b0b12; --ink:#e8e8f0; --muted:#9ea2c9; --accent:#ffd27f; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 14px/1.5 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    }
+    header {
+      padding: 12px 16px;
+      border-bottom: 1px solid #1d1d2a;
+      background: rgba(9, 9, 14, 0.94);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: 0.02em;
+    }
+    .status {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 4px;
+    }
+    .status strong { color: var(--accent); }
+    #stage {
+      display: block;
+      margin: 18px auto 12px;
+      box-shadow: 0 0 0 1px #1d1d2a, 0 18px 32px rgba(0, 0, 0, 0.38);
+      background: var(--bg);
+    }
+    .note {
+      max-width: 900px;
+      margin: 0 auto 24px;
+      color: var(--muted);
+      padding: 0 16px 24px;
+      text-align: center;
+    }
+    code {
+      background: #11111a;
+      padding: 2px 4px;
+      border-radius: 3px;
+      color: var(--ink);
+    }
   </style>
 </head>
 <body>
@@ -45,9 +91,31 @@
      * ND-safe loading: fetch only touches local files and falls back silently when blocked.
      * This avoids network calls while keeping palette overrides optional.
      */
+    <div class="status" id="status">Loading palette...</div>
+    <div class="status">Clearspace Law v1.0 active - sacred geometry stays inside the safe frame.</div>
+  </header>
+
+  <canvas id="stage" width="1440" height="900" aria-label="Layered sacred geometry canvas"></canvas>
+  <p class="note">
+    Static study of Vesica, Tree-of-Life, Fibonacci spiral, and a double helix lattice. No motion, no network requests.
+    Append <code>?overlay=safe</code> to the URL to view the translucent safe-frame overlay for QA.
+  </p>
+
+  <script type="module">
+    import { renderHelix } from './js/helix-renderer.mjs';
+
+    const status = document.getElementById('status');
+    const canvas = document.getElementById('stage');
+    const ctx = canvas.getContext('2d');
+
+    if (!ctx) {
+      status.textContent = 'Canvas context unavailable; rendering skipped to stay ND-safe.';
+      throw new Error('Canvas 2D context missing');
+    }
+
     async function loadPalette(path) {
       try {
-        const response = await fetch(path, { cache: "no-store" });
+        const response = await fetch(path, { cache: 'no-store' });
         if (!response.ok) {
           throw new Error(String(response.status));
         }
@@ -119,6 +187,40 @@
       } else {
         updateStatus("Render skipped: canvas context unavailable.");
       }
+    const fallbackPalette = {
+      bg: '#0b0b12',
+      ink: '#e8e8f0',
+      layers: ['#6f9bff', '#74f1ff', '#8ef7c3', '#ffd27f', '#f5a3ff', '#d4d7ff']
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const debugOverlay = params.get('overlay') === 'safe';
+
+    const paletteData = await loadPalette('./data/palette.json');
+    const palette = paletteData || fallbackPalette;
+    status.textContent = paletteData
+      ? 'Palette loaded from data/palette.json.'
+      : 'Palette missing; ND-safe fallback palette applied.';
+
+    const provenance = renderHelix(ctx, {
+      width: canvas.width,
+      height: canvas.height,
+      palette,
+      NUM,
+      debugOverlay
+    });
+
+    if (provenance) {
+      const overlayNote = debugOverlay ? 'Safe frame overlay enabled.' : 'Safe frame overlay disabled.';
+      const record = {
+        ...provenance,
+        overlay: overlayNote,
+        palette_source: paletteData ? 'data/palette.json' : 'fallback'
+      };
+      canvas.dataset.provenance = JSON.stringify(record);
+      status.innerHTML = `${status.textContent} <strong>Clearspace ${provenance.render.clearspace_px.toFixed(1)}px</strong> applied.`;
+    } else {
+      status.textContent = 'Renderer returned no provenance; check options.';
     }
   </script>
 </body>
