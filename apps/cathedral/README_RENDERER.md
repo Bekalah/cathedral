@@ -54,19 +54,32 @@ Padding Law: All renders (artifacts, seals, realms, exports) must include a mini
 Static, offline renderer for the layered Cosmogenesis helix field. The bundle honours ND-safe practice: no motion, calm palette, and explanatory comments so future maintainers know why each choice exists.
 
 ## Files
+<<<<<<< HEAD:apps/cathedral/README_RENDERER.md
+- `index.html` - entry point that loads the renderer module and optional palette data.
+- `js/helix-renderer.mjs` - pure functions that paint each sacred geometry layer.
+- `data/palette.json` - tweakable palette. Remove or edit to taste; fallback hues keep AA+ contrast.
+=======
 - `index.html` — entry point that loads the renderer module, fetches the optional palette, and reports status.
 - `js/helix-renderer.mjs` — pure drawing helpers that paint each sacred geometry layer in order.
 - `data/palette.json` — tweakable palette. Remove or edit to taste; fallback hues keep AA+ contrast.
+>>>>>>> cff1b425f77b5ac66c52faaffce7f818ee2d31af:README_RENDERER.md
 
 ## Usage
 1. Double-click `index.html` in any modern browser. No server or build steps are required.
 2. If `data/palette.json` is present, the renderer uses those hues. When the file is missing (or blocked by browser security rules), the page reports the fallback and still renders with calm defaults.
 
 ## Geometry Layers
+<<<<<<< HEAD:apps/cathedral/README_RENDERER.md
+1. **Vesica Field** - overlapping circles arranged with constants (3, 9, 33) to ground the canvas.
+2. **Tree-of-Life Scaffold** - ten nodes and twenty-two connecting paths drawn with gentle strokes.
+3. **Fibonacci Curve** - a logarithmic spiral guided by phi ratios across twenty-two segments.
+4. **Double Helix Lattice** - twin strands and rungs sampled across one hundred forty-four points for static depth.
+=======
 1. **Vesica Field** — overlapping circles and a 3x3 grid arranged with constants (3, 7, 9, 11, 22, 33) to ground the canvas.
 2. **Tree-of-Life Scaffold** — ten nodes and twenty-two connecting paths drawn with gentle halos for clarity.
 3. **Fibonacci Curve** — a logarithmic spiral guided by phi ratios across twenty-two segments to represent growth without motion.
 4. **Double Helix Lattice** — twin strands and rungs sampled across one hundred forty-four points for static depth.
+>>>>>>> cff1b425f77b5ac66c52faaffce7f818ee2d31af:README_RENDERER.md
 
 ## ND-safe Choices
 - No animation, autoplay, strobing, or sudden contrast shifts.
