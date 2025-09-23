@@ -6,75 +6,111 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="color-scheme" content="light dark">
   <style>
-    /* ND-safe presentation: calm contrast, generous spacing, zero motion */
-    :root { --bg:#0b0b12; --ink:#e8e8f0; --muted:#9da0c5; }
-    html, body { margin:0; padding:0; background:var(--bg); color:var(--ink); font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
-    header { padding:16px 18px; border-bottom:1px solid #1d1d2a; }
-    header strong { letter-spacing:0.04em; }
-    .status { color:var(--muted); font-size:12px; margin-top:4px; }
-    #stage { display:block; margin:20px auto; box-shadow:0 0 0 1px #1d1d2a,0 12px 32px rgba(0,0,0,0.28); background:var(--bg); }
-    .note { max-width:900px; margin:0 auto 24px; color:var(--muted); padding:0 16px; text-align:center; }
-  <meta name="color-scheme" content="dark light">
-  <style>
-    /* ND-safe presentation: calm palette, high readability, no motion */
-    :root { --bg:#0b0b12; --ink:#e8e8f0; --muted:#9ea2c9; }
-    html, body { margin:0; padding:0; background:var(--bg); color:var(--ink); font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
-    header { padding:12px 16px; border-bottom:1px solid #1d1d2a; }
-    h1 { margin:0; font-size:20px; letter-spacing:0.02em; }
-    .status { color:var(--muted); font-size:12px; margin-top:4px; }
-    #stage { display:block; margin:18px auto; box-shadow:0 0 0 1px #1d1d2a,0 12px 32px rgba(0,0,0,0.28); background:var(--bg); }
-    .note { max-width:900px; margin:0 auto 20px; color:var(--muted); padding:0 16px; text-align:center; }
-    code { background:#11111a; padding:2px 4px; border-radius:3px; }
+    /* ND-safe: calm contrast, generous spacing, no motion */
+    :root {
+      --bg:#0b0b12;
+      --ink:#e8e8f0;
+      --muted:#a6a6c1;
+      --frame:#1d1d2a;
+    }
+
+    *, *::before, *::after {
+      box-sizing:border-box;
+    }
+
+    html, body {
+      margin:0;
+      padding:0;
+      background:var(--bg);
+      color:var(--ink);
+      font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    }
+
+    header {
+      padding:16px 20px 12px;
+      border-bottom:1px solid var(--frame);
+      letter-spacing:0.02em;
+    }
+
+    header strong {
+      font-size:20px;
+    }
+
+    .status {
+      color:var(--muted);
+      font-size:12px;
+      margin-top:4px;
+    }
+
+    main {
+      max-width:1600px;
+      margin:0 auto;
+      padding:20px 24px 32px;
+    }
+
+    .canvas-shell {
+      background:radial-gradient(circle at top,var(--bg) 0%,#12121d 60%,#0b0b12 100%);
+      border:1px solid var(--frame);
+      border-radius:18px;
+      box-shadow:0 0 0 1px rgba(13,13,32,0.5);
+    }
+
+    .canvas {
+      padding:5%;
+      box-sizing:border-box;
+    }
+
+    #stage {
+      display:block;
+      width:100%;
+      height:auto;
+      margin:0 auto;
+      background:var(--bg);
+      box-shadow:0 0 0 1px var(--frame),0 24px 48px rgba(0,0,0,0.35);
+    }
+
+    .note {
+      max-width:900px;
+      margin:16px auto 0;
+      padding:0 16px;
+      color:var(--muted);
+      text-align:center;
+    }
+
+    code {
+      background:#11111a;
+      padding:2px 4px;
+      border-radius:3px;
+    }
   </style>
 </head>
 <body>
   <header>
     <div><strong>Cosmic Helix Renderer</strong> — layered sacred geometry (offline, ND-safe)</div>
-    <div class="status" id="status">Preparing canvas…</div>
+    <div class="status" id="status">Loading palette…</div>
   </header>
 
-  <canvas id="stage" width="1440" height="900" aria-label="Layered sacred geometry canvas"></canvas>
-  <p class="note">Static study of Vesica, Tree-of-Life, Fibonacci spiral, and double helix lattice. Open this file directly; no animation or external dependencies.</p>
+  <main>
+    <div class="canvas-shell">
+      <div class="canvas">
+        <canvas id="stage" width="1440" height="900" aria-label="Layered sacred geometry canvas"></canvas>
+      </div>
+    </div>
+    <p class="note">Static render only. Vesica field, Tree-of-Life scaffold, Fibonacci curve, and double helix lattice share the same safe frame. No animation, autoplay, or external dependencies.</p>
+  </main>
 
   <script type="module">
     import { renderHelix } from "./js/helix-renderer.mjs";
 
-    const status = document.getElementById("status");
+    const statusEl = document.getElementById("status");
     const canvas = document.getElementById("stage");
     const ctx = canvas.getContext("2d");
 
-    if (!ctx) {
-      status.textContent = "Canvas unavailable; rendering skipped.";
-      throw new Error("Canvas context missing");
-    }
-
-    /**
-     * Attempt to load palette overrides from disk. The fetch call only touches
-     * the local file path; failures fall back to the baked-in palette so the
-     * render still completes offline.
-    <h1>Cosmic Helix Renderer</h1>
-    <div class="status" id="status">Preparing palette…</div>
-  </header>
-
-  <canvas id="stage" width="1440" height="900" aria-label="Layered sacred geometry canvas"></canvas>
-  <p class="note">Static study of Vesica, Tree-of-Life, Fibonacci spiral, and double helix lattice. Open offline; no animation, no external dependencies.</p>
-
-  <script type="module">
-    import { renderHelix } from './js/helix-renderer.mjs';
-
-    const status = document.getElementById('status');
-    const canvas = document.getElementById('stage');
-    const ctx = canvas.getContext('2d');
-
-    /**
-     * Attempt to read palette data from disk. The fetch call only touches the local file system,
-     * never the network; failures fall back to the baked-in palette so rendering stays ND-safe.
-     */
-    async function loadPalette(path) {
+    async function loadJSON(path) {
       try {
         const response = await fetch(path, { cache: "no-store" });
         if (!response.ok) {
-          throw new Error("Palette not accessible");
+          throw new Error(String(response.status));
         }
         return await response.json();
       } catch (error) {
@@ -82,7 +118,12 @@
       }
     }
 
-    /** Numerology constants shared across all layers. */
+    const fallbackPalette = {
+      bg: "#0b0b12",
+      ink: "#e8e8f0",
+      layers: ["#b1c7ff", "#89f7fe", "#a0ffa1", "#ffd27f", "#f5a3ff", "#d0d0e6"]
+    };
+
     const NUM = Object.freeze({
       THREE: 3,
       SEVEN: 7,
@@ -94,32 +135,22 @@
       ONEFORTYFOUR: 144
     });
 
-    const fallbackPalette = {
-      bg: "#0b0b12",
-      ink: "#e8e8f0",
-      layers: ["#6f9bff", "#74f1ff", "#8ef7c3", "#ffd27f", "#f5a3ff", "#d4d7ff"]
-    };
-
-    const paletteData = await loadPalette("./data/palette.json");
-    const palette = paletteData || fallbackPalette;
-    status.textContent = paletteData
-      ? "Palette loaded from data/palette.json."
-      : "Palette missing or blocked; using ND-safe fallback.";
-
-    renderHelix(ctx, {
-      width: canvas.width,
-      height: canvas.height,
-      palette,
-      NUM
-    });
-    status.textContent = paletteData ? 'Palette loaded. Rendering static layers…' : 'Palette missing or blocked; using safe fallback.';
-
     if (!ctx) {
-      status.textContent = 'Canvas context unavailable in this browser.';
+      statusEl.textContent = "Canvas context unavailable; rendering skipped.";
     } else {
-      // Single render call: no animation loop keeps the scene calm and sensory-safe.
-      renderHelix(ctx, { width: canvas.width, height: canvas.height, palette, NUM });
-      status.textContent = 'Rendered without motion.';
+      const palette = await loadJSON("./data/palette.json");
+      const activePalette = palette || fallbackPalette;
+      statusEl.textContent = palette
+        ? "Palette loaded. Rendering sacred layers without motion."
+        : "Palette missing or blocked; using ND-safe fallback hues.";
+
+      // ND-safe rationale: static draw, readable contrast, layered order.
+      renderHelix(ctx, {
+        width: canvas.width,
+        height: canvas.height,
+        palette: activePalette,
+        NUM
+      });
     }
   </script>
 </body>

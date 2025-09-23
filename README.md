@@ -1,5 +1,7 @@
 # cathedral
 Magnum opus monorepo — Brain (Cosmogenesis), Body (Stone Grimoire), Soul (Liber Arcanae).”
+
+Padding Law: All renders (artifacts, seals, realms, exports) must include a minimum 5–10% clearspace buffer. No sacred form is ever cut by canvas edges.
 <!DOCTYPE html>
 <html lang="en">
 <head>
