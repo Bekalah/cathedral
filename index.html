@@ -6,69 +6,41 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="color-scheme" content="light dark">
   <style>
-    /* ND-safe presentation: calm contrast, generous spacing, zero motion */
-    :root { --bg:#0b0b12; --ink:#e8e8f0; --muted:#9da0c5; }
+    /* ND-safe: calm contrast, zero motion, generous breathing room */
+    :root { --bg:#0b0b12; --ink:#e8e8f0; --muted:#a0a3c8; }
     html, body { margin:0; padding:0; background:var(--bg); color:var(--ink); font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
-    header { padding:16px 18px; border-bottom:1px solid #1d1d2a; }
-    header strong { letter-spacing:0.04em; }
-    .status { color:var(--muted); font-size:12px; margin-top:4px; }
-    #stage { display:block; margin:20px auto; box-shadow:0 0 0 1px #1d1d2a,0 12px 32px rgba(0,0,0,0.28); background:var(--bg); }
-    .note { max-width:900px; margin:0 auto 24px; color:var(--muted); padding:0 16px; text-align:center; }
-  <meta name="color-scheme" content="dark light">
-  <style>
-    /* ND-safe presentation: calm palette, high readability, no motion */
-    :root { --bg:#0b0b12; --ink:#e8e8f0; --muted:#9ea2c9; }
-    html, body { margin:0; padding:0; background:var(--bg); color:var(--ink); font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
-    header { padding:12px 16px; border-bottom:1px solid #1d1d2a; }
+    header { padding:16px 20px; border-bottom:1px solid #1d1d2a; }
     h1 { margin:0; font-size:20px; letter-spacing:0.02em; }
-    .status { color:var(--muted); font-size:12px; margin-top:4px; }
-    #stage { display:block; margin:18px auto; box-shadow:0 0 0 1px #1d1d2a,0 12px 32px rgba(0,0,0,0.28); background:var(--bg); }
-    .note { max-width:900px; margin:0 auto 20px; color:var(--muted); padding:0 16px; text-align:center; }
+    .status { color:var(--muted); font-size:12px; margin-top:6px; }
+    #stage { display:block; margin:24px auto; box-shadow:0 0 0 1px #1d1d2a,0 18px 42px rgba(0,0,0,0.28); background:var(--bg); }
+    .note { max-width:920px; margin:0 auto 28px; color:var(--muted); padding:0 20px; text-align:center; }
     code { background:#11111a; padding:2px 4px; border-radius:3px; }
   </style>
 </head>
 <body>
   <header>
-    <div><strong>Cosmic Helix Renderer</strong> — layered sacred geometry (offline, ND-safe)</div>
-    <div class="status" id="status">Preparing canvas…</div>
+    <h1>Cosmic Helix Renderer</h1>
+    <div class="status" id="status">Loading palette…</div>
   </header>
 
   <canvas id="stage" width="1440" height="900" aria-label="Layered sacred geometry canvas"></canvas>
-  <p class="note">Static study of Vesica, Tree-of-Life, Fibonacci spiral, and double helix lattice. Open this file directly; no animation or external dependencies.</p>
+  <p class="note">Static layering of Vesica field, Tree-of-Life scaffold, Fibonacci spiral, and double-helix lattice. Open this file directly; no animation, no external dependencies.</p>
 
   <script type="module">
     import { renderHelix } from "./js/helix-renderer.mjs";
 
-    const status = document.getElementById("status");
+    const statusEl = document.getElementById("status");
     const canvas = document.getElementById("stage");
     const ctx = canvas.getContext("2d");
 
     if (!ctx) {
-      status.textContent = "Canvas unavailable; rendering skipped.";
-      throw new Error("Canvas context missing");
+      statusEl.textContent = "Canvas unavailable in this browser.";
+      throw new Error("2D canvas context missing");
     }
 
     /**
-     * Attempt to load palette overrides from disk. The fetch call only touches
-     * the local file path; failures fall back to the baked-in palette so the
-     * render still completes offline.
-    <h1>Cosmic Helix Renderer</h1>
-    <div class="status" id="status">Preparing palette…</div>
-  </header>
-
-  <canvas id="stage" width="1440" height="900" aria-label="Layered sacred geometry canvas"></canvas>
-  <p class="note">Static study of Vesica, Tree-of-Life, Fibonacci spiral, and double helix lattice. Open offline; no animation, no external dependencies.</p>
-
-  <script type="module">
-    import { renderHelix } from './js/helix-renderer.mjs';
-
-    const status = document.getElementById('status');
-    const canvas = document.getElementById('stage');
-    const ctx = canvas.getContext('2d');
-
-    /**
-     * Attempt to read palette data from disk. The fetch call only touches the local file system,
-     * never the network; failures fall back to the baked-in palette so rendering stays ND-safe.
+     * Attempt to load palette overrides from disk. Browsers may block fetch for
+     * file:// URLs; failure is handled by falling back to the baked-in palette.
      */
     async function loadPalette(path) {
       try {
@@ -97,30 +69,20 @@
     const fallbackPalette = {
       bg: "#0b0b12",
       ink: "#e8e8f0",
-      layers: ["#6f9bff", "#74f1ff", "#8ef7c3", "#ffd27f", "#f5a3ff", "#d4d7ff"]
+      layers: ["#6f9bff", "#5bd6c9", "#8ef7c3", "#ffd27f", "#f5a3ff", "#d4d7ff"]
     };
 
     const paletteData = await loadPalette("./data/palette.json");
     const palette = paletteData || fallbackPalette;
-    status.textContent = paletteData
-      ? "Palette loaded from data/palette.json."
+    statusEl.textContent = paletteData
+      ? "Palette loaded. Rendering static layers…"
       : "Palette missing or blocked; using ND-safe fallback.";
 
-    renderHelix(ctx, {
-      width: canvas.width,
-      height: canvas.height,
-      palette,
-      NUM
-    });
-    status.textContent = paletteData ? 'Palette loaded. Rendering static layers…' : 'Palette missing or blocked; using safe fallback.';
-
-    if (!ctx) {
-      status.textContent = 'Canvas context unavailable in this browser.';
-    } else {
-      // Single render call: no animation loop keeps the scene calm and sensory-safe.
-      renderHelix(ctx, { width: canvas.width, height: canvas.height, palette, NUM });
-      status.textContent = 'Rendered without motion.';
-    }
+    // Single render: no animation loops keeps the scene calm and sensory-safe.
+    renderHelix(ctx, { width: canvas.width, height: canvas.height, palette, NUM });
+    statusEl.textContent = paletteData
+      ? "Rendered with custom palette."
+      : "Rendered with fallback palette.";
   </script>
 </body>
 </html>
