@@ -91,6 +91,18 @@
     code { background:#11111a; padding:2px 4px; border-radius:3px; }
     /* ND-safe: soft contrast, no motion, generous breathing room */
     :root { --bg:#0b0b12; --ink:#e8e8f0; --muted:#9fa3c8; }
+    /* ND-safe: calm contrast, generous spacing, no motion */
+    :root {
+      --bg:#0b0b12;
+      --ink:#e8e8f0;
+      --muted:#a6a6c1;
+      --frame:#1d1d2a;
+    }
+
+    *, *::before, *::after {
+      box-sizing:border-box;
+    }
+
     html, body {
       margin:0;
       padding:0;
@@ -107,6 +119,19 @@
       font-size:20px;
       letter-spacing:0.02em;
     }
+      font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    }
+
+    header {
+      padding:16px 20px 12px;
+      border-bottom:1px solid var(--frame);
+      letter-spacing:0.02em;
+    }
+
+    header strong {
+      font-size:20px;
+    }
+
     .status {
       color:var(--muted);
       font-size:12px;
@@ -121,10 +146,42 @@
     .note {
       max-width:900px;
       margin:0 auto 24px;
+
+    main {
+      max-width:1600px;
+      margin:0 auto;
+      padding:20px 24px 32px;
+    }
+
+    .canvas-shell {
+      background:radial-gradient(circle at top,var(--bg) 0%,#12121d 60%,#0b0b12 100%);
+      border:1px solid var(--frame);
+      border-radius:18px;
+      box-shadow:0 0 0 1px rgba(13,13,32,0.5);
+    }
+
+    .canvas {
+      padding:5%;
+      box-sizing:border-box;
+    }
+
+    #stage {
+      display:block;
+      width:100%;
+      height:auto;
+      margin:0 auto;
+      background:var(--bg);
+      box-shadow:0 0 0 1px var(--frame),0 24px 48px rgba(0,0,0,0.35);
+    }
+
+    .note {
+      max-width:900px;
+      margin:16px auto 0;
       padding:0 16px;
       color:var(--muted);
       text-align:center;
     }
+
     code {
       background:#11111a;
       padding:2px 4px;
@@ -152,6 +209,14 @@
   <canvas id="stage" width="1440" height="900" aria-label="Layered sacred geometry canvas"></canvas>
   <p class="note">Static layering of Vesica field, Tree-of-Life scaffold, Fibonacci spiral, and double-helix lattice. Open this file directly; no animation, no external dependencies.</p>
   <p class="note">Static Vesica field, Tree-of-Life nodes, Fibonacci curve, and a static double-helix lattice. Open this file directly; no animation or network calls.</p>
+  <main>
+    <div class="canvas-shell">
+      <div class="canvas">
+        <canvas id="stage" width="1440" height="900" aria-label="Layered sacred geometry canvas"></canvas>
+      </div>
+    </div>
+    <p class="note">Static render only. Vesica field, Tree-of-Life scaffold, Fibonacci curve, and double helix lattice share the same safe frame. No animation, autoplay, or external dependencies.</p>
+  </main>
 
   <canvas id="stage" width="1440" height="900" aria-label="Layered sacred geometry canvas"></canvas>
   <p class="note">Static Vesica field, Tree-of-Life scaffold, Fibonacci spiral, and double-helix lattice. Open this file directly; no animation or external dependencies.</p>
@@ -244,6 +309,7 @@
     }
 
     async function loadPalette(path) {
+    async function loadJSON(path) {
       try {
         const response = await fetch(path, { cache: 'no-store' });
         if (!response.ok) {
@@ -296,6 +362,12 @@
       bg: "#0b0b12",
       ink: "#e8e8f0",
       layers: ["#6f9bff", "#74f1ff", "#8ef7c3", "#ffd27f", "#f5a3ff", "#d4d7ff"]
+    };
+
+    const fallbackPalette = {
+      bg: "#0b0b12",
+      ink: "#e8e8f0",
+      layers: ["#b1c7ff", "#89f7fe", "#a0ffa1", "#ffd27f", "#f5a3ff", "#d0d0e6"]
     };
 
     const NUM = Object.freeze({
@@ -461,7 +533,6 @@
       } catch (error) {
         return null;
       }
-    }
 
     if (!ctx) {
       updateStatus("Canvas context unavailable in this browser.");
@@ -469,6 +540,10 @@
       const paletteData = await loadPalette("./data/palette.json");
       const palette = paletteData || FALLBACK_PALETTE;
       updateStatus(paletteData ? "Palette loaded from data/palette.json." : "Palette missing; using ND-safe fallback.");
+      const paletteSource = paletteData ? "data/palette.json" : "fallback";
+      const clearspace = renderResult.render.clearspace_px.toFixed(1);
+      const overlayNote = debugOverlay ? "Safe frame overlay on." : "Safe frame overlay off.";
+      setStatus(`Palette: ${paletteSource}. Clearspace ${clearspace}px. ${overlayNote}`);
 
       const outcome = renderHelix(ctx, { width: canvas.width, height: canvas.height, palette, NUM });
       if (outcome.ok) {
@@ -476,6 +551,33 @@
       } else {
         updateStatus("Render skipped: canvas context unavailable.");
       }
+    if (!ctx) {
+      statusEl.textContent = "Canvas context unavailable; rendering skipped.";
+    } else {
+      const palette = await loadJSON("./data/palette.json");
+      const activePalette = palette || fallbackPalette;
+      statusEl.textContent = palette
+        ? "Palette loaded. Rendering sacred layers without motion."
+        : "Palette missing or blocked; using ND-safe fallback hues.";
+
+      // ND-safe rationale: static draw, readable contrast, layered order.
+      renderHelix(ctx, {
+        width: canvas.width,
+        height: canvas.height,
+        palette: activePalette,
+        NUM
+      });
+    // Single render: no animation loops keeps the scene calm and sensory-safe.
+    renderHelix(ctx, { width: canvas.width, height: canvas.height, palette, NUM });
+    statusEl.textContent = paletteData
+      ? "Rendered with custom palette."
+      : "Rendered with fallback palette.";
+      const provenance = {
+        ...renderResult.render,
+        paletteSource,
+        overlay: debugOverlay ? "safe" : "none"
+      };
+      canvas.dataset.provenance = JSON.stringify(provenance);
     }
   </script>
 </body>
