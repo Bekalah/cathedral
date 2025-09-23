@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Cosmogenesis Cathedral — Lattice Console</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="color-scheme" content="dark light">
+  <style>
+    :root {
+      --bg:#05050b;
+      --panel:#0d0d19;
+      --ink:#f2f2ff;
+      --muted:#9ea0c8;
+      --accent:color(display-p3 0.55 0.68 0.98);
+      --accent-soft:rgba(120,150,255,0.12);
+    }
+    html,body {
+      margin:0;
+      padding:0;
+      background:var(--bg);
+      color:var(--ink);
+      font:15px/1.5 "IBM Plex Sans",system-ui,sans-serif;
+    }
+    header {
+      border-bottom:1px solid #18182a;
+      padding:16px 20px;
+      background:#070711;
+    }
+    header h1 {
+      margin:0;
+      font-size:1.4rem;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+    }
+    header p { margin:6px 0 0; color:var(--muted); max-width:820px; }
+    main { padding:20px; display:grid; gap:20px; max-width:1200px; margin:0 auto 40px; }
+    .console {
+      display:grid;
+      grid-template-columns:320px 1fr;
+      gap:20px;
+    }
+    .panel {
+      background:var(--panel);
+      border:1px solid #18182a;
+      border-radius:14px;
+      padding:18px;
+    }
+    .realm-buttons {
+      display:grid;
+      gap:10px;
+    }
+    button.realm {
+      border-radius:10px;
+      border:1px solid rgba(136,148,255,0.5);
+      background:var(--accent-soft);
+      color:var(--accent);
+      padding:10px 12px;
+      font:0.92rem/1.3 "IBM Plex Sans",system-ui,sans-serif;
+      letter-spacing:0.04em;
+      cursor:pointer;
+    }
+    button.realm.active {
+      background:color(display-p3 0.53 0.64 0.9);
+      color:#05050b;
+      border-color:transparent;
+    }
+    button.realm:focus-visible { outline:2px solid color(display-p3 0.6 0.8 1); outline-offset:2px; }
+    canvas {
+      width:100%;
+      height:auto;
+      border-radius:16px;
+      border:1px solid #18182a;
+      display:block;
+      background:#04040a;
+      box-shadow:0 0 0 1px rgba(120,150,255,0.2);
+    }
+    .legend { margin-top:18px; font-size:0.9rem; color:var(--muted); }
+    .legend strong { color:var(--ink); }
+    .spec-grid {
+      display:grid;
+      gap:12px;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    }
+    .spec-card {
+      background:var(--panel);
+      border:1px solid #18182a;
+      border-radius:12px;
+      padding:14px 16px;
+    }
+    .spec-card h3 {
+      margin:0 0 6px;
+      font-size:0.95rem;
+      letter-spacing:0.05em;
+      text-transform:uppercase;
+    }
+    .spec-card p {
+      margin:0;
+      color:var(--muted);
+      font-size:0.86rem;
+    }
+    @media (max-width:960px) {
+      .console { grid-template-columns:1fr; }
+      canvas { min-height:520px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Cosmogenesis Cathedral — Lattice Console</h1>
+    <p>144 node vesica lattice with realm switching. Calm, static canvas keeps depth without motion. Palette values use Display-P3 with hex fallbacks for ND-safe clarity.</p>
+  </header>
+  <main>
+    <div class="console">
+      <aside class="panel">
+        <h2 style="margin:0 0 12px;font-size:1rem;letter-spacing:0.04em;text-transform:uppercase;">Realms</h2>
+        <div class="realm-buttons">
+          <button class="realm active" data-realm="prime">Prime Harmonics</button>
+          <button class="realm" data-realm="nocturne">Nocturne Vault</button>
+          <button class="realm" data-realm="aurora">Aurora Threshold</button>
+        </div>
+        <div class="legend">
+          <p><strong>Node count:</strong> 144 (12 rings × 12 spokes)</p>
+          <p><strong>Constants:</strong> 3 · 7 · 9 · 11 · 22 · 33 · 99 · 144</p>
+          <p>The renderer uses only deterministic loops — no animation, no flicker. Switch realms to reweave palette + phase offsets.</p>
+        </div>
+      </aside>
+      <section class="panel">
+        <canvas id="lattice" width="960" height="960" aria-label="144 node cosmogenesis lattice"></canvas>
+      </section>
+    </div>
+
+    <section class="spec-grid">
+      <article class="spec-card">
+        <h3>Vesica Axes</h3>
+        <p>Four intersecting vesica rings anchor the grid before node plotting. Mild alpha keeps the backdrop calm.</p>
+      </article>
+      <article class="spec-card">
+        <h3>Node Families</h3>
+        <p>Each twelfth ring belongs to a family keyed by numerology (3-7-9). Families determine node halo + connector strength.</p>
+      </article>
+      <article class="spec-card">
+        <h3>Realm Switch</h3>
+        <p>Phase shift, palette, and vesica bloom radius adjust per realm. Everything stays static — no transitions, ND-safe.</p>
+      </article>
+      <article class="spec-card">
+        <h3>Offline</h3>
+        <p>Pure ES module, no network calls. Double-click this file to explore the lattice.</p>
+      </article>
+    </section>
+  </main>
+
+  <script type="module">
+    const canvas = document.getElementById('lattice');
+    const ctx = canvas.getContext('2d');
+
+    const REALMS = {
+      prime: {
+        name: 'Prime Harmonics',
+        background: '#05050b',
+        backgroundP3: 'color(display-p3 0.06 0.06 0.1)',
+        vesica: 'color(display-p3 0.35 0.44 0.88 / 0.24)',
+        halo: 'color(display-p3 0.75 0.85 1 / 0.6)',
+        connectors: 'color(display-p3 0.45 0.68 1 / 0.5)',
+        accent: '#8ae1ff',
+        phase: 0,
+        radiusFactor: 1
+      },
+      nocturne: {
+        name: 'Nocturne Vault',
+        background: '#040407',
+        backgroundP3: 'color(display-p3 0.05 0.05 0.09)',
+        vesica: 'color(display-p3 0.55 0.4 0.88 / 0.24)',
+        halo: 'color(display-p3 0.82 0.66 1 / 0.55)',
+        connectors: 'color(display-p3 0.56 0.44 0.88 / 0.52)',
+        accent: '#d4b5ff',
+        phase: Math.PI / 12,
+        radiusFactor: 1.08
+      },
+      aurora: {
+        name: 'Aurora Threshold',
+        background: '#061012',
+        backgroundP3: 'color(display-p3 0.08 0.14 0.16)',
+        vesica: 'color(display-p3 0.35 0.86 0.78 / 0.24)',
+        halo: 'color(display-p3 0.68 0.98 0.88 / 0.55)',
+        connectors: 'color(display-p3 0.38 0.74 0.66 / 0.52)',
+        accent: '#79f4d8',
+        phase: Math.PI / 6,
+        radiusFactor: 0.96
+      }
+    };
+
+    const CONSTANTS = Object.freeze({
+      rings: 12,
+      spokes: 12,
+      vesicaRadius: 280,
+      vesicaAlpha: 0.25,
+      haloRadius: 8,
+      haloAlpha: 0.9
+    });
+
+    /** Pure function: returns node coordinates + metadata for the requested realm. */
+    function computeNodes(config) {
+      const nodes = [];
+      const center = { x: canvas.width / 2, y: canvas.height / 2 };
+      const ringStep = (Math.min(canvas.width, canvas.height) / 2.6) / CONSTANTS.rings;
+
+      for (let ring = 1; ring <= CONSTANTS.rings; ring += 1) {
+        const radius = ring * ringStep * (1 + (config.radiusFactor - 1) * (ring / CONSTANTS.rings));
+        for (let spoke = 0; spoke < CONSTANTS.spokes; spoke += 1) {
+          const angle = config.phase + (Math.PI * 2 * spoke) / CONSTANTS.spokes;
+          const wobble = (ring % 3 === 0 ? 1 : -1) * (ringStep / 12) * (spoke % 2 ? 1 : -1);
+          const x = center.x + Math.cos(angle) * (radius + wobble);
+          const y = center.y + Math.sin(angle) * (radius - wobble);
+          nodes.push({ ring, spoke, x, y });
+        }
+      }
+      return nodes;
+    }
+
+    /** Draws vesica field anchors before the lattice nodes. */
+    function paintVesica(ctx, config) {
+      ctx.save();
+      ctx.globalAlpha = CONSTANTS.vesicaAlpha;
+      ctx.strokeStyle = config.vesica;
+      ctx.lineWidth = 2;
+      const center = { x: canvas.width / 2, y: canvas.height / 2 };
+      const base = CONSTANTS.vesicaRadius * config.radiusFactor;
+      const offsets = [
+        { x: -base / 3, y: 0 },
+        { x: base / 3, y: 0 },
+        { x: 0, y: -base / 3 },
+        { x: 0, y: base / 3 }
+      ];
+      for (const offset of offsets) {
+        drawCircle(ctx, center.x + offset.x, center.y + offset.y, base);
+      }
+      ctx.restore();
+    }
+
+    function drawCircle(ctx, cx, cy, radius) {
+      ctx.beginPath();
+      ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+
+    /** Draws connectors between neighbours to keep the lattice coherent. */
+    function paintConnectors(ctx, nodes, config) {
+      ctx.save();
+      ctx.strokeStyle = config.connectors;
+      ctx.lineWidth = 1.2;
+      ctx.globalAlpha = 0.55;
+      for (const node of nodes) {
+        const right = nodes.find(n => n.ring === node.ring && n.spoke === (node.spoke + 1) % CONSTANTS.spokes);
+        const inward = nodes.find(n => n.ring === node.ring - 1 && n.spoke === node.spoke);
+        if (right) {
+          ctx.beginPath();
+          ctx.moveTo(node.x, node.y);
+          ctx.lineTo(right.x, right.y);
+          ctx.stroke();
+        }
+        if (inward) {
+          ctx.beginPath();
+          ctx.moveTo(node.x, node.y);
+          ctx.lineTo(inward.x, inward.y);
+          ctx.stroke();
+        }
+      }
+      ctx.restore();
+    }
+
+    /** Places halos + cores for every node. */
+    function paintNodes(ctx, nodes, config) {
+      ctx.save();
+      for (const node of nodes) {
+        const haloRadius = CONSTANTS.haloRadius + node.ring * 0.35;
+        const haloAlpha = Math.max(0.25, CONSTANTS.haloAlpha - node.ring * 0.02);
+        ctx.globalAlpha = haloAlpha;
+        ctx.fillStyle = config.halo;
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, haloRadius, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = config.accent;
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, Math.max(2.2, 4 - node.ring * 0.1), 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.restore();
+    }
+
+    function clearCanvas(ctx, config) {
+      ctx.save();
+      ctx.fillStyle = config.background;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.restore();
+    }
+
+    function renderRealm(ctx, config) {
+      clearCanvas(ctx, config);
+      paintVesica(ctx, config);
+      const nodes = computeNodes(config);
+      paintConnectors(ctx, nodes, config);
+      paintNodes(ctx, nodes, config);
+    }
+
+    function setRealm(realmKey) {
+      const config = REALMS[realmKey];
+      if (!config) return;
+      document.documentElement.style.setProperty('--bg', config.background);
+      document.body.style.background = config.backgroundP3 || config.background;
+      document.querySelectorAll('button.realm').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.realm === realmKey);
+      });
+      renderRealm(ctx, config);
+    }
+
+    document.querySelectorAll('button.realm').forEach(btn => {
+      btn.addEventListener('click', () => setRealm(btn.dataset.realm));
+    });
+
+    setRealm('prime');
+  </script>
+</body>
+</html>
