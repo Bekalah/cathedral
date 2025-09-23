@@ -6,150 +6,21 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="color-scheme" content="dark light">
   <style>
-    :root {
-      --bg: #0b0b12;
-      --ink: #f0f0ff;
-      --muted: #aeb3d9;
-      --stroke: #1d1d2a;
-    }
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font: 16px/1.5 "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    }
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    header {
-      padding: 18px 24px 12px 24px;
-      border-bottom: 1px solid var(--stroke);
-    }
-    header h1 {
-      margin: 0 0 4px 0;
-      font-size: 1.2rem;
-      letter-spacing: 0.04em;
-    }
-    header p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.85rem;
-      max-width: 720px;
-    }
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 24px;
-      gap: 16px;
-    }
-    #stage {
-      display: block;
-      width: 100%;
-      max-width: 1440px;
-      height: auto;
-      box-shadow: 0 0 0 1px var(--stroke);
-      background: #05050a;
-    }
-    .status {
-      color: var(--muted);
-      font-size: 0.8rem;
-    }
-    .notice {
-      max-width: 880px;
-      color: var(--muted);
-      font-size: 0.9rem;
-      text-align: center;
-    }
-    a {
-      color: inherit;
-    }
-  <meta name="color-scheme" content="light dark">
-  <style>
-    /* ND-safe presentation: calm background, readable contrast, no motion */
-    :root { --bg:#0b0b12; --ink:#e8e8f0; --muted:#9da0c5; }
-    html, body { margin:0; padding:0; background:var(--bg); color:var(--ink); font:14px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
+    /* ND-safe presentation: calm palette, high readability, no motion */
+    :root { --bg:#0b0b12; --ink:#e8e8f0; --muted:#9ea2c9; }
+    html, body { margin:0; padding:0; background:var(--bg); color:var(--ink); font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
     header { padding:12px 16px; border-bottom:1px solid #1d1d2a; }
     h1 { margin:0; font-size:20px; letter-spacing:0.02em; }
     .status { color:var(--muted); font-size:12px; margin-top:4px; }
-    #stage { display:block; margin:18px auto; box-shadow:0 0 0 1px #1d1d2a,0 12px 32px rgba(0,0,0,0.32); background:var(--bg); }
-    .note { max-width:900px; margin:0 auto 20px; color:var(--muted); padding:0 16px; }
+    #stage { display:block; margin:18px auto; box-shadow:0 0 0 1px #1d1d2a,0 12px 32px rgba(0,0,0,0.28); background:var(--bg); }
+    .note { max-width:900px; margin:0 auto 20px; color:var(--muted); padding:0 16px; text-align:center; }
     code { background:#11111a; padding:2px 4px; border-radius:3px; }
   </style>
 </head>
 <body>
   <header>
     <h1>Cosmic Helix Renderer</h1>
-    <p>Layered sacred geometry rendered offline. ND-safe palette, no motion, and respectful contrast.</p>
-  </header>
-  <main>
-    <canvas id="stage" width="1440" height="900" role="img" aria-label="Layered Vesica, Tree-of-Life, Fibonacci spiral, and double helix lattice"></canvas>
-    <div class="status" id="status">Preparing palette...</div>
-    <p class="notice" id="notice">Open this file directly to explore the layered cosmology. If optional palette data is missing, a safe fallback palette is used.</p>
-  </main>
-  <script type="module">
-    import { renderHelix } from "./js/helix-renderer.mjs";
-
-    const statusEl = document.getElementById("status");
-    const noticeEl = document.getElementById("notice");
-    const canvas = document.getElementById("stage");
-    const ctx = canvas.getContext("2d");
-
-    if (!ctx) {
-      statusEl.textContent = "Canvas unavailable in this browser.";
-    } else {
-      const NUM = Object.freeze({
-        THREE: 3,
-        SEVEN: 7,
-        NINE: 9,
-        ELEVEN: 11,
-        TWENTYTWO: 22,
-        THIRTYTHREE: 33,
-        NINETYNINE: 99,
-        ONEFORTYFOUR: 144
-      });
-
-      const fallbackPalette = {
-        bg: "#0b0b12",
-        ink: "#f0f0ff",
-        layers: [
-          "#6d7bff",
-          "#4ed4c8",
-          "#f5c66f",
-          "#ff92d0",
-          "#d4a9ff",
-          "#f7f7ff"
-        ]
-      };
-
-      async function loadJSON(path) {
-        try {
-          const response = await fetch(path, { cache: "no-store" });
-          if (!response.ok) {
-            return null;
-          }
-          return await response.json();
-        } catch (error) {
-          return null;
-        }
-      }
-
-      const paletteData = await loadJSON("./data/palette.json");
-      const activePalette = paletteData ? paletteData : fallbackPalette;
-      statusEl.textContent = paletteData ? "Palette loaded from data/palette.json." : "Using internal ND-safe fallback palette.";
-      noticeEl.textContent = paletteData ? "Palette loaded. Geometry rendered with provided hues." : "Palette file missing or blocked; fallback hues keep contrast gentle.";
-
-      renderHelix(ctx, {
-        width: canvas.width,
-        height: canvas.height,
-        palette: activePalette,
-        NUM
-      });
-    <div class="status" id="status">Preparing canvas…</div>
+    <div class="status" id="status">Preparing palette…</div>
   </header>
 
   <canvas id="stage" width="1440" height="900" aria-label="Layered sacred geometry canvas"></canvas>
@@ -164,7 +35,7 @@
 
     /**
      * Attempt to read palette data from disk. The fetch call only touches the local file system,
-     * never the network; failures fall back to the baked-in palette so rendering is still ND-safe.
+     * never the network; failures fall back to the baked-in palette so rendering stays ND-safe.
      */
     async function loadPalette(path) {
       try {
@@ -204,6 +75,7 @@
     if (!ctx) {
       status.textContent = 'Canvas context unavailable in this browser.';
     } else {
+      // Single render call: no animation loop keeps the scene calm and sensory-safe.
       renderHelix(ctx, { width: canvas.width, height: canvas.height, palette, NUM });
       status.textContent = 'Rendered without motion.';
     }
