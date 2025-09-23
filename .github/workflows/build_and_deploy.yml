@@ -1,0 +1,55 @@
+name: Build & Deploy
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with: { python-version: '3.11' }
+
+      - name: Pull external sources
+        run: bash tools/pull_sources.sh
+
+      - name: Install schema deps
+        run: pip install jsonschema
+
+      - name: Compile Codex
+        run: python tools/compile_codex.py
+
+      - name: Prepare public/
+        run: |
+          mkdir -p public/data
+          # Your front-end (pick one): apps/cathedral OR apps/brain
+          cp -r apps/cathedral/* public/ || true
+          # Publish compiled artifacts
+          cp dist/codex.json public/data/ || true
+          cp dist/index.json public/data/ || true
+          [ -f dist/cards.json ] && cp dist/cards.json public/data/ || true
+          # Optional: publish tokens for all apps to consume at runtime
+          mkdir -p public/c99/tokens
+          [ -f dist/c99/tokens/perm-style.json ] && cp dist/c99/tokens/perm-style.json public/c99/tokens/ || true
+
+      - name: ND-safe check (non-blocking)
+        run: node ci/check-nd-safe.mjs || true
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with: { path: public }
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment: github-pages
+    steps:
+      - uses: actions/deploy-pages@v4
