@@ -1,0 +1,27 @@
+{
+  "planet_to_sephira": {
+    "Venus": "Netzach",
+    "Mercury": "Hod",
+    "Sun": "Tiphareth"
+  },
+  "sephira_to_tarot": {
+    "Netzach": ["7 of Wands", "7 of Cups", "7 of Swords", "7 of Disks"],
+    "Hod": ["8 of Wands", "8 of Cups", "8 of Swords", "8 of Disks"],
+    "Tiphareth": ["6 of Wands", "6 of Cups", "6 of Swords", "6 of Disks"]
+  },
+  "path_to_letter": {
+    "Daleth": "The Empress",
+    "Resh": "The Sun",
+    "Koph": "The Moon"
+  },
+  "angel_pairs": {
+    "Netzach": ["Haaiah", "Nithaiah"],
+    "Hod": ["Lecabel", "Vasariah"],
+    "Tiphareth": ["Melahel", "Hahuiah"]
+  },
+  "demon_pairs": {
+    "Netzach": ["Decarabia", "Gremory"],
+    "Hod": ["Buer", "Gusion"],
+    "Tiphareth": ["Amdusias", "Belial"]
+  }
+}
