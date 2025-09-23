@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Cosmic Helix Renderer (ND-safe, Offline)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <style>
+    /* ND-safe presentation: calm background, readable contrast, no motion */
+    :root { --bg:#0b0b12; --ink:#e8e8f0; --muted:#9da0c5; }
+    html, body { margin:0; padding:0; background:var(--bg); color:var(--ink); font:14px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
+    header { padding:12px 16px; border-bottom:1px solid #1d1d2a; }
+    h1 { margin:0; font-size:20px; letter-spacing:0.02em; }
+    .status { color:var(--muted); font-size:12px; margin-top:4px; }
+    #stage { display:block; margin:18px auto; box-shadow:0 0 0 1px #1d1d2a,0 12px 32px rgba(0,0,0,0.32); background:var(--bg); }
+    .note { max-width:900px; margin:0 auto 20px; color:var(--muted); padding:0 16px; }
+    code { background:#11111a; padding:2px 4px; border-radius:3px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Cosmic Helix Renderer</h1>
+    <div class="status" id="status">Preparing canvas…</div>
+  </header>
+
+  <canvas id="stage" width="1440" height="900" aria-label="Layered sacred geometry canvas"></canvas>
+  <p class="note">Static study of Vesica, Tree-of-Life, Fibonacci spiral, and double helix lattice. Open offline; no animation, no external dependencies.</p>
+
+  <script type="module">
+    import { renderHelix } from './js/helix-renderer.mjs';
+
+    const status = document.getElementById('status');
+    const canvas = document.getElementById('stage');
+    const ctx = canvas.getContext('2d');
+
+    /**
+     * Attempt to read palette data from disk. The fetch call only touches the local file system,
+     * never the network; failures fall back to the baked-in palette so rendering is still ND-safe.
+     */
+    async function loadPalette(path) {
+      try {
+        const response = await fetch(path, { cache: 'no-store' });
+        if (!response.ok) {
+          throw new Error('Palette not found');
+        }
+        return await response.json();
+      } catch (error) {
+        return null;
+      }
+    }
+
+    /** Numerology constants shared across all layers. */
+    const NUM = Object.freeze({
+      THREE: 3,
+      SEVEN: 7,
+      NINE: 9,
+      ELEVEN: 11,
+      TWENTYTWO: 22,
+      THIRTYTHREE: 33,
+      NINETYNINE: 99,
+      ONEFORTYFOUR: 144
+    });
+
+    const fallbackPalette = {
+      bg: '#0b0b12',
+      ink: '#e8e8f0',
+      layers: ['#6f9bff', '#74f1ff', '#8ef7c3', '#ffd27f', '#f5a3ff', '#d4d7ff']
+    };
+
+    const paletteData = await loadPalette('./data/palette.json');
+    const palette = paletteData || fallbackPalette;
+
+    status.textContent = paletteData ? 'Palette loaded. Rendering static layers…' : 'Palette missing or blocked; using safe fallback.';
+
+    if (!ctx) {
+      status.textContent = 'Canvas context unavailable in this browser.';
+    } else {
+      renderHelix(ctx, { width: canvas.width, height: canvas.height, palette, NUM });
+      status.textContent = 'Rendered without motion.';
+    }
+  </script>
+</body>
+</html>
