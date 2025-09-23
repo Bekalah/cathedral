@@ -22,3 +22,5 @@ How this gives you "billionaires-club / museum-grade" without busywork
 - Provenance baked in: The compiler stamps git_commit, timestamps, and merges sources append-only. Exports from your app should embed id/seed/git_commit/orcid (you already do that).
 - Color & print science ready: Keep your pigment tables in their own repo; the pipeline publishes them next to codex - no server cost. You can add another step later to render 300-DPI plates in CI with a headless renderer (optional).
 - One command, whole cathedral: pull_sources.sh pulls; compile_codex.py validates & merges; CI ships the site.
+- 2024-02-20 - Added Cosmic Helix offline renderer files (index, module, palette, README). ND-safe: static layers, no motion, AA+ contrast.
+- 2024-02-21 - Rebuilt renderer (index + module), archived legacy README HTML, and refreshed docs so cathedral.git stands as the offline master repo.

@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Elite — Biometric Consciousness Research System</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="color-scheme" content="dark light">
+  <style>
+    :root {
+      --bg:#04060a;
+      --panel:#0b1020;
+      --ink:#f1f4ff;
+      --muted:#8fa1c8;
+      --accent:#6dd8ff;
+      --accent-soft:rgba(109,216,255,0.16);
+    }
+    html,body { margin:0; padding:0; background:var(--bg); color:var(--ink); font:15px/1.5 "IBM Plex Sans",system-ui,sans-serif; }
+    header { padding:18px 24px; border-bottom:1px solid #142037; background:#03050c; }
+    header h1 { margin:0; font-size:1.45rem; letter-spacing:0.08em; text-transform:uppercase; }
+    header p { margin:6px 0 0; color:var(--muted); max-width:920px; }
+    main { max-width:1280px; margin:0 auto 40px; padding:24px; display:grid; gap:24px; grid-template-columns:minmax(0,1fr) 320px; }
+    .board { background:var(--panel); border:1px solid #142037; border-radius:18px; padding:20px; position:relative; }
+    canvas { width:100%; height:auto; border-radius:16px; border:1px solid rgba(109,216,255,0.3); background:#010308; }
+    .mode-bar { display:flex; gap:12px; flex-wrap:wrap; margin-top:16px; }
+    button.mode {
+      border-radius:999px;
+      border:1px solid rgba(109,216,255,0.4);
+      background:var(--accent-soft);
+      color:var(--accent);
+      padding:8px 16px;
+      letter-spacing:0.05em;
+      text-transform:uppercase;
+      font-size:0.8rem;
+      cursor:pointer;
+    }
+    button.mode.active { background:var(--accent); color:#031219; border-color:var(--accent); }
+    button.mode:focus-visible { outline:2px solid rgba(109,216,255,0.6); outline-offset:2px; }
+    aside.panel { background:var(--panel); border:1px solid #142037; border-radius:18px; padding:20px; display:grid; gap:18px; }
+    .metric-card { border:1px solid rgba(255,255,255,0.06); border-radius:14px; padding:16px; }
+    .metric-card h2 { margin:0 0 4px; font-size:1rem; letter-spacing:0.04em; text-transform:uppercase; }
+    .metric-card p { margin:0; color:var(--muted); font-size:0.85rem; }
+    .overlay { position:absolute; top:24px; left:24px; padding:10px 14px; border-radius:12px; background:rgba(3,8,16,0.82); border:1px solid rgba(109,216,255,0.35); }
+    .overlay strong { display:block; letter-spacing:0.06em; text-transform:uppercase; font-size:0.75rem; color:var(--accent); }
+    .overlay span { display:block; font-size:0.8rem; color:var(--ink); margin-top:2px; }
+    @media (max-width:1080px) { main { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Elite — Biometric Consciousness Research System</h1>
+    <p>Static overlay monitors heart rate, heart-rate variability, and galvanic response across ritual modes. No animation keeps the dashboard ND-safe.</p>
+  </header>
+  <main>
+    <section class="board">
+      <canvas id="bioCanvas" width="900" height="520" aria-label="Biometric overlay chart"></canvas>
+      <div class="overlay" id="overlay">
+        <strong id="overlayMode">Focus Protocol</strong>
+        <span id="overlaySummary">Steady breath cadence, harmonic entrainment stable.</span>
+      </div>
+      <div class="mode-bar" id="modeBar"></div>
+    </section>
+    <aside class="panel" id="metricPanel"></aside>
+  </main>
+
+  <script type="module">
+    const canvas = document.getElementById('bioCanvas');
+    const ctx = canvas.getContext('2d');
+
+    const MODES = [
+      {
+        id: 'focus',
+        title: 'Focus Protocol',
+        summary: 'Steady breath cadence, harmonic entrainment stable.',
+        heartRate: [68, 70, 72, 71, 69, 70, 69],
+        hrv: [62, 65, 64, 66, 68, 67, 66],
+        gsr: [5.2, 5.0, 4.9, 4.8, 4.9, 4.7, 4.6]
+      },
+      {
+        id: 'resonance',
+        title: 'Resonance Rite',
+        summary: 'Peak coherence; HR rises gently, HRV amplifies.',
+        heartRate: [72, 74, 76, 78, 79, 80, 79],
+        hrv: [58, 60, 63, 66, 68, 70, 72],
+        gsr: [5.8, 6.0, 6.3, 6.5, 6.4, 6.2, 6.0]
+      },
+      {
+        id: 'recovery',
+        title: 'Recovery Drift',
+        summary: 'Parasympathetic rebound with low conductivity.',
+        heartRate: [78, 75, 72, 70, 68, 66, 64],
+        hrv: [54, 57, 60, 63, 66, 68, 70],
+        gsr: [6.5, 6.2, 5.8, 5.4, 5.0, 4.8, 4.6]
+      }
+    ];
+
+    const CHANNELS = [
+      { key: 'heartRate', label: 'Heart Rate', unit: 'bpm', color: '#ff9aa2' },
+      { key: 'hrv', label: 'HRV (RMSSD)', unit: 'ms', color: '#a0f5ff' },
+      { key: 'gsr', label: 'GSR', unit: 'µS', color: '#c2ffa3' }
+    ];
+
+    let activeMode = MODES[0];
+
+    function renderChart(mode) {
+      ctx.save();
+      ctx.fillStyle = '#02040a';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      drawGrid();
+      CHANNELS.forEach(channel => {
+        drawChannel(mode[channel.key], channel.color);
+      });
+      paintLabels(mode);
+      ctx.restore();
+    }
+
+    function drawGrid() {
+      ctx.save();
+      ctx.strokeStyle = 'rgba(109,216,255,0.18)';
+      ctx.lineWidth = 1;
+      const rows = 6;
+      const cols = 6;
+      for (let i = 1; i < rows; i += 1) {
+        const y = (canvas.height / rows) * i;
+        ctx.beginPath();
+        ctx.moveTo(60, y);
+        ctx.lineTo(canvas.width - 30, y);
+        ctx.stroke();
+      }
+      for (let j = 1; j < cols; j += 1) {
+        const x = 60 + ((canvas.width - 90) / cols) * j;
+        ctx.beginPath();
+        ctx.moveTo(x, 40);
+        ctx.lineTo(x, canvas.height - 40);
+        ctx.stroke();
+      }
+      ctx.restore();
+    }
+
+    function drawChannel(samples, color) {
+      ctx.save();
+      ctx.lineWidth = 2.5;
+      ctx.strokeStyle = color;
+      ctx.beginPath();
+      samples.forEach((value, index) => {
+        const x = 60 + ((canvas.width - 90) / (samples.length - 1)) * index;
+        const y = mapValue(value, samples);
+        if (index === 0) {
+          ctx.moveTo(x, y);
+        } else {
+          ctx.lineTo(x, y);
+        }
+      });
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    function mapValue(value, samples) {
+      const min = Math.min(...samples);
+      const max = Math.max(...samples);
+      const range = max - min || 1;
+      const normalized = (value - min) / range;
+      const top = 60;
+      const bottom = canvas.height - 60;
+      return bottom - normalized * (bottom - top);
+    }
+
+    function paintLabels(mode) {
+      ctx.save();
+      ctx.font = '12px "IBM Plex Sans", sans-serif';
+      ctx.fillStyle = 'rgba(255,255,255,0.6)';
+      CHANNELS.forEach((channel, index) => {
+        ctx.fillStyle = channel.color;
+        ctx.fillText(channel.label, 70, 60 + index * 18);
+      });
+      ctx.fillStyle = 'rgba(255,255,255,0.6)';
+      mode.heartRate.forEach((_, index) => {
+        const x = 60 + ((canvas.width - 90) / (mode.heartRate.length - 1)) * index;
+        ctx.fillText(`T${index + 1}`, x - 6, canvas.height - 24);
+      });
+      ctx.restore();
+    }
+
+    function renderModeButtons() {
+      const modeBar = document.getElementById('modeBar');
+      modeBar.innerHTML = '';
+      MODES.forEach(mode => {
+        const button = document.createElement('button');
+        const isActive = mode.id === activeMode.id;
+        button.className = 'mode' + (isActive ? ' active' : '');
+        button.type = 'button';
+        button.textContent = mode.title;
+        button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        button.addEventListener('click', () => {
+          activeMode = mode;
+          renderModeButtons();
+          renderChart(activeMode);
+          updateOverlay();
+          renderMetrics();
+        });
+        modeBar.append(button);
+      });
+    }
+
+    function renderMetrics() {
+      const panel = document.getElementById('metricPanel');
+      panel.innerHTML = '';
+      CHANNELS.forEach(channel => {
+        const card = document.createElement('article');
+        card.className = 'metric-card';
+        const heading = document.createElement('h2');
+        heading.textContent = channel.label;
+        const body = document.createElement('p');
+        const samples = activeMode[channel.key];
+        const average = samples.reduce((total, value) => total + value, 0) / samples.length;
+        body.textContent = `Average ${average.toFixed(1)} ${channel.unit}. Peak ${Math.max(...samples).toFixed(1)}.`;
+        card.append(heading, body);
+        panel.append(card);
+      });
+    }
+
+    function updateOverlay() {
+      const overlay = document.getElementById('overlay');
+      document.getElementById('overlayMode').textContent = activeMode.title;
+      document.getElementById('overlaySummary').textContent = activeMode.summary;
+      overlay.style.borderColor = '#6dd8ff';
+    }
+
+    renderModeButtons();
+    renderMetrics();
+    renderChart(activeMode);
+    updateOverlay();
+  </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "mode": "github",
+  "org": "bekalah",
+  "repos": [
+    "cathedral",
+    "stone-grimoire",
+    "liber-arcanae",
+    "liber-arcanae-game",
+    "magical-mystery-house",
+    "tesseract-bridge",
+    "circuitum99",
+    "codex-14499"
+  ],
+  "globs": [
+    "data/nodes/*.json",
+    "cards/major/*.json",
+    "canon/*.json",
+    "public/data/codex*.json",
+    "lineages/*.json"
+  ]
+}
