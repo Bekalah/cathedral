@@ -128,9 +128,26 @@
 
   <canvas id="stage" width="1440" height="900" aria-label="Layered sacred geometry canvas"></canvas>
   <p class="note">Static, offline rendering of the Vesica field, Tree-of-Life scaffold, Fibonacci curve, and double helix lattice. No animation, no external network, calm contrast by design.</p>
+    /* ND-safe: calm palette, generous spacing, zero animation */
+    :root {
+      --bg: #0b0b12;
+      --ink: #e8e8f0;
+      --muted: #a0a5cd;
+    }
 
-  <script type="module">
-    import { renderHelix } from "./js/helix-renderer.mjs";
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 14px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+
+    header {
+      padding: 16px 20px;
+      border-bottom: 1px solid #1d1d2a;
+    }
 
     const statusEl = document.getElementById("status");
     const canvas = document.getElementById("stage");
@@ -153,6 +170,44 @@
     Static study of Vesica, Tree-of-Life, Fibonacci spiral, and a double helix lattice. No motion, no network requests.
     Append <code>?overlay=safe</code> to the URL to view the translucent safe-frame overlay for QA.
   </p>
+    h1 {
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: 0.03em;
+    }
+
+    .status {
+      margin: 4px 0 0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    #stage {
+      display: block;
+      margin: 24px auto;
+      width: 1440px;
+      height: 900px;
+      box-shadow: 0 0 0 1px #1d1d2a, 0 12px 32px rgba(0, 0, 0, 0.28);
+      background: var(--bg);
+    }
+
+    .note {
+      max-width: 900px;
+      margin: 0 auto 24px;
+      padding: 0 16px 24px;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Cosmic Helix Renderer</h1>
+    <p class="status" id="status">Preparing palette…</p>
+  </header>
+
+  <canvas id="stage" width="1440" height="900" aria-label="Layered sacred geometry canvas"></canvas>
+  <p class="note">Static Vesica field, Tree-of-Life scaffold, Fibonacci curve, and double-helix lattice. No motion, no network calls.</p>
 
   <script type="module">
     import { renderHelix } from './js/helix-renderer.mjs';
@@ -211,6 +266,16 @@
       layers: ["#6f9bff", "#74f1ff", "#8ef7c3", "#ffd27f", "#f5a3ff", "#d4d7ff"]
     };
 
+    const statusEl = document.getElementById('status');
+    const canvas = document.getElementById('stage');
+    const ctx = canvas.getContext('2d');
+
+    if (!ctx) {
+      statusEl.textContent = 'Canvas context unavailable in this browser.';
+      throw new Error('2d canvas unsupported');
+    }
+
+    /* Shared numerology constants keep sacred ratios deterministic. */
     const NUM = Object.freeze({
       THREE: 3,
       SEVEN: 7,
@@ -261,6 +326,34 @@
       } else {
         updateStatus("Render skipped: canvas context unavailable.");
       }
+    }
+
+    async function loadPalette(path) {
+      try {
+        const response = await fetch(path, { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error(String(response.status));
+        }
+        return await response.json();
+      } catch (error) {
+        return null;
+      }
+    }
+
+    if (!ctx) {
+      updateStatus("Canvas context unavailable in this browser.");
+    } else {
+      const paletteData = await loadPalette("./data/palette.json");
+      const palette = paletteData || FALLBACK_PALETTE;
+      updateStatus(paletteData ? "Palette loaded from data/palette.json." : "Palette missing; using ND-safe fallback.");
+
+      const outcome = renderHelix(ctx, { width: canvas.width, height: canvas.height, palette, NUM });
+      if (outcome.ok) {
+        updateStatus(paletteData ? "Rendered four static layers with custom palette." : "Rendered with fallback palette; all layers static.");
+      } else {
+        updateStatus("Render skipped: canvas context unavailable.");
+      }
+    /* Calm fallback palette preserves 4.5:1 contrast when JSON is missing. */
     const fallbackPalette = {
       bg: '#0b0b12',
       ink: '#e8e8f0',
@@ -329,6 +422,32 @@
     }
 
     initialise();
+    async function loadPalette(path) {
+      try {
+        const response = await fetch(path, { cache: 'no-store' });
+        if (!response.ok) {
+          throw new Error(String(response.status));
+        }
+        return await response.json();
+      } catch (error) {
+        return null;
+      }
+    }
+
+    const paletteData = await loadPalette('./data/palette.json');
+    const palette = paletteData || fallbackPalette;
+
+    statusEl.textContent = paletteData
+      ? 'Palette loaded from data/palette.json.'
+      : 'Palette missing or blocked; using ND-safe fallback palette.';
+
+    /* Single render call keeps the experience static and sensory-safe. */
+    renderHelix(ctx, {
+      width: canvas.width,
+      height: canvas.height,
+      palette,
+      numerology: NUM
+    });
   </script>
 </body>
 </html>
