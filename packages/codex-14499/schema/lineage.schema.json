@@ -1,0 +1,7 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Codex Lineage Record",
+  "type": "object",
+  "required": ["id"],
+  "additionalProperties": true
+}

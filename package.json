@@ -6,9 +6,16 @@
   "scripts": {
     "build:index": "node scripts/build-corpus-index.mjs",
     "build:blessed": "node engines/blessed-build.js",
+    "codex:local": "node packages/codex-14499/tools/gather-codex.mjs --config=packages/codex-14499/config/sources.local.json",
+    "codex:org": "node packages/codex-14499/tools/gather-codex.mjs --config=packages/codex-14499/config/sources.github.json",
+    "codex:report": "cat packages/codex-14499/dist/codex.report.md",
     "test": "echo \"No automated tests\""
   },
-  "keywords": ["esoteric", "corpus", "offline"],
+  "keywords": [
+    "esoteric",
+    "corpus",
+    "offline"
+  ],
   "author": "",
   "license": "MIT"
 }

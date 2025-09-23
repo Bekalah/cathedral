@@ -1,0 +1,5 @@
+{
+  "names": [
+    "^(?i)(Banksy|Hirst|Koons|(FIRST|LAST)NAME)$"
+  ]
+}
