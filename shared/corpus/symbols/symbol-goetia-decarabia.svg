@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>Sigil of Decarabia (Layered)</title>
+  <g id="layer-ring" fill="none" stroke="#ffd166" stroke-width="3">
+    <circle cx="100" cy="100" r="70" />
+    <circle cx="100" cy="100" r="52" />
+  </g>
+  <g id="layer-lines" fill="none" stroke="#ef476f" stroke-width="3" stroke-linecap="round">
+    <path d="M60 60 L140 60 L140 140 L60 140 Z" />
+    <path d="M60 60 L140 140" />
+    <path d="M140 60 L60 140" />
+    <path d="M60 100 L140 100" />
+    <path d="M100 60 L100 140" />
+  </g>
+</svg>
