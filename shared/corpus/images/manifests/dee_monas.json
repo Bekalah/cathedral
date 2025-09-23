@@ -1,0 +1,22 @@
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@type": "sc:Manifest",
+  "label": "Monas Hieroglyphica Plate",
+  "sequences": [
+    {
+      "canvases": [
+        {
+          "images": [
+            {
+              "resource": {
+                "service": {
+                  "@id": "https://example.org/iiif/monas"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

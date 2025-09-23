@@ -1,0 +1,13 @@
+{
+  "name": "cathedral",
+  "version": "1.0.0",
+  "description": "Offline-first corpus and ritual toolkit for the Cathedral project.",
+  "type": "module",
+  "scripts": {
+    "build:index": "node scripts/build-corpus-index.mjs",
+    "test": "echo \"No automated tests\""
+  },
+  "keywords": ["esoteric", "corpus", "offline"],
+  "author": "",
+  "license": "MIT"
+}
