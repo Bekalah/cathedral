@@ -1,5 +1,5 @@
 # cathedral
-The living monorepo for the Cosmogenesis Learning Engine -organizes all creative work in 3 fold structure
+Magnum opus monorepo — Brain (Cosmogenesis), Body (Stone Grimoire), Soul (Liber Arcanae).”
 <!DOCTYPE html>
 <html lang="en">
 <head>
