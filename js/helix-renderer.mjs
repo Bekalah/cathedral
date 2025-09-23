@@ -1,6 +1,6 @@
 /*
   helix-renderer.mjs
-  ND-safe static renderer for layered sacred geometry.
+  Static renderer that respects ND-safe guidance: no motion, layered geometry, and clear comments explaining why.
 
   Layer order sustains calm depth:
     1) Vesica field primes the space with intersecting circles.
@@ -15,6 +15,19 @@ const DEFAULT_PALETTE = Object.freeze({
   bg: "#0b0b12",
   ink: "#e8e8f0",
   layers: ["#6f9bff", "#74f1ff", "#8ef7c3", "#ffd27f", "#f5a3ff", "#d4d7ff"]
+  Layer order preserves calm depth:
+    1. Vesica field (foundation lattice)
+    2. Tree-of-Life scaffold (nodes and paths)
+    3. Fibonacci curve (log spiral polyline)
+    4. Double-helix lattice (mirrored strands with static rungs)
+
+  Each helper is a pure function fed only through arguments. No globals, no hidden state, no animation loops.
+*/
+
+const FALLBACK_PALETTE = Object.freeze({
+  bg: '#0b0b12',
+  ink: '#e8e8f0',
+  layers: ['#6f9bff', '#74f1ff', '#8ef7c3', '#ffd27f', '#f5a3ff', '#d4d7ff']
 });
 
 const DEFAULT_NUM = Object.freeze({
@@ -30,13 +43,17 @@ const DEFAULT_NUM = Object.freeze({
 
 export function renderHelix(ctx, options = {}) {
   if (!ctx) {
-    return;
+    return { ok: false, reason: 'no-context', palette: FALLBACK_PALETTE, NUM: FALLBACK_NUM };
   }
 
   const width = sanitiseDimension(options.width, ctx.canvas.width, 1440);
   const height = sanitiseDimension(options.height, ctx.canvas.height, 900);
   const palette = selectPalette(options.palette);
   const NUM = selectNumerology(options.NUM);
+  const width = sanitiseDimension(options.width, ctx.canvas.width || 1440);
+  const height = sanitiseDimension(options.height, ctx.canvas.height || 900);
+  const palette = normalisePalette(options.palette);
+  const NUM = normaliseNumerology(options.NUM);
 
   setCanvasSize(ctx.canvas, width, height);
   ctx.save();
@@ -47,8 +64,24 @@ export function renderHelix(ctx, options = {}) {
   paintTreeOfLife(ctx, width, height, palette, NUM);
   paintFibonacciCurve(ctx, width, height, palette, NUM);
   paintHelixLattice(ctx, width, height, palette, NUM);
+  prepareCanvas(ctx, width, height, palette.bg);
+
+  const shared = { width, height, palette, NUM };
+
+  paintVesicaField(ctx, shared);
+  paintTreeOfLife(ctx, shared);
+  paintFibonacciCurve(ctx, shared);
+  paintHelixLattice(ctx, shared);
 
   ctx.restore();
+  return { ok: true, palette, NUM };
+}
+
+function sanitiseDimension(value, fallback) {
+  if (Number.isFinite(value) && value > 0) {
+    return value;
+  }
+  return Number.isFinite(fallback) && fallback > 0 ? fallback : 1;
 }
 
 function sanitiseDimension(value, fallback, hardDefault) {
@@ -92,6 +125,9 @@ function selectPalette(palette) {
 function selectNumerology(source) {
   if (!source) {
     return DEFAULT_NUM;
+function normaliseNumerology(NUM) {
+  if (!NUM) {
+    return FALLBACK_NUM;
   }
   const merged = {};
   for (const key of Object.keys(DEFAULT_NUM)) {
@@ -143,6 +179,58 @@ function paintVesicaField(ctx, width, height, palette, NUM) {
     const offset = (i / steps) * gridExtent;
     drawLine(ctx, centerX + offset, centerY - gridExtent, centerX + offset, centerY + gridExtent);
     drawLine(ctx, centerX - gridExtent, centerY + offset, centerX + gridExtent, centerY + offset);
+function prepareCanvas(ctx, width, height, background) {
+  ctx.canvas.width = width;
+  ctx.canvas.height = height;
+  ctx.lineCap = 'round';
+  ctx.lineJoin = 'round';
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.fillStyle = background;
+  ctx.fillRect(0, 0, width, height);
+}
+
+function paintVesicaField(ctx, { width, height, palette, NUM }) {
+  const minDim = Math.min(width, height);
+  const centerX = width / 2;
+  const centerY = height / 2;
+  const baseRadius = minDim / (NUM.THIRTYTHREE / NUM.NINE);
+  const offset = baseRadius * (NUM.SEVEN / NUM.TWENTYTWO);
+
+  ctx.save();
+  ctx.globalAlpha = 0.34;
+  ctx.strokeStyle = palette.layers[0];
+  ctx.lineWidth = Math.max(1.2, baseRadius / NUM.NINETYNINE * NUM.SEVEN);
+
+  const anchors = [
+    { x: centerX - offset, y: centerY },
+    { x: centerX + offset, y: centerY },
+    { x: centerX, y: centerY - offset },
+    { x: centerX, y: centerY + offset }
+  ];
+  anchors.forEach((anchor) => {
+    drawCircle(ctx, anchor.x, anchor.y, baseRadius, { stroke: true });
+  });
+
+  // Harmonic rings maintain layered depth without motion or flashing.
+  ctx.strokeStyle = palette.layers[5];
+  ctx.globalAlpha = 0.18;
+  const ringSteps = NUM.SEVEN;
+  for (let i = 1; i <= ringSteps; i += 1) {
+    const scale = 1 + i / (ringSteps + NUM.THREE);
+    drawCircle(ctx, centerX, centerY, baseRadius * scale, { stroke: true });
+  }
+
+  // Vesica grid anchors 3x3 symmetry. Calm opacity prevents sensory overload.
+  ctx.globalAlpha = 0.22;
+  ctx.strokeStyle = palette.layers[0];
+  const gridRadius = baseRadius * (NUM.ELEVEN / NUM.NINE);
+  const segments = NUM.NINE;
+  for (let i = -segments; i <= segments; i += 1) {
+    const offsetRatio = i / segments;
+    const x = centerX + offsetRatio * gridRadius;
+    const y = centerY + offsetRatio * gridRadius;
+    drawLine(ctx, x, centerY - gridRadius, x, centerY + gridRadius);
+    drawLine(ctx, centerX - gridRadius, y, centerX + gridRadius, y);
   }
 
   ctx.restore();
@@ -161,6 +249,20 @@ function paintTreeOfLife(ctx, width, height, palette, NUM) {
   paths.forEach(([startId, endId]) => {
     const start = nodes[startId];
     const end = nodes[endId];
+function paintTreeOfLife(ctx, { width, height, palette, NUM }) {
+  const nodes = getTreeNodes(width, height, NUM);
+  const paths = getTreePaths();
+  const nodeRadius = Math.max(6, Math.min(width, height) / (NUM.NINETYNINE / NUM.THREE));
+  const haloRadius = nodeRadius * (NUM.THIRTYTHREE / NUM.TWENTYTWO);
+  const pathWidth = Math.max(1.4, Math.min(width, height) / (NUM.ONEFORTYFOUR / NUM.SEVEN));
+
+  ctx.save();
+  ctx.globalAlpha = 0.6;
+  ctx.strokeStyle = palette.layers[1];
+  ctx.lineWidth = pathWidth;
+  paths.forEach(([from, to]) => {
+    const start = nodes[from];
+    const end = nodes[to];
     if (!start || !end) {
       return;
     }
@@ -183,15 +285,88 @@ function paintTreeOfLife(ctx, width, height, palette, NUM) {
     ctx.strokeStyle = palette.layers[1];
     ctx.lineWidth = outlineWidth;
     drawCircle(ctx, node.x, node.y, nodeRadius, { stroke: true });
+  // Nodes rendered last for clarity with gentle halos.
+  ctx.globalAlpha = 0.88;
+  nodes.forEach((node) => {
+    ctx.fillStyle = palette.ink;
+    drawCircle(ctx, node.x, node.y, nodeRadius, { fill: true });
+    ctx.strokeStyle = palette.layers[1];
+    ctx.lineWidth = pathWidth / NUM.THREE;
+    drawCircle(ctx, node.x, node.y, nodeRadius, { stroke: true });
+    ctx.strokeStyle = palette.layers[5];
+    ctx.globalAlpha = 0.4;
+    drawCircle(ctx, node.x, node.y, haloRadius, { stroke: true });
+    ctx.globalAlpha = 0.88;
   });
 
   ctx.restore();
 }
 
 function paintFibonacciCurve(ctx, width, height, palette, NUM) {
+function getTreeNodes(width, height, NUM) {
+  const topMargin = height / NUM.TWENTYTWO * NUM.THREE;
+  const span = height - topMargin * 2;
+  const levelCount = NUM.SEVEN;
+  const levelStep = span / levelCount;
+  const centerX = width / 2;
+  const horizontalSpread = width / NUM.THREE;
+  const lateral = horizontalSpread / NUM.THREE;
+
+  const layout = [
+    { id: 'keter', level: 0, offset: 0 },
+    { id: 'chokmah', level: 1, offset: 1 },
+    { id: 'binah', level: 1, offset: -1 },
+    { id: 'chesed', level: 2, offset: 1 },
+    { id: 'gevurah', level: 2, offset: -1 },
+    { id: 'tiferet', level: 3, offset: 0 },
+    { id: 'netzach', level: 4, offset: 1 },
+    { id: 'hod', level: 4, offset: -1 },
+    { id: 'yesod', level: 5, offset: 0 },
+    { id: 'malkuth', level: 6, offset: 0 }
+  ];
+
+  const nodes = {};
+  layout.forEach((item) => {
+    nodes[item.id] = {
+      x: centerX + item.offset * lateral,
+      y: topMargin + item.level * levelStep
+    };
+  });
+  return nodes;
+}
+
+function getTreePaths() {
+  return [
+    ['keter', 'chokmah'],
+    ['keter', 'binah'],
+    ['keter', 'tiferet'],
+    ['chokmah', 'binah'],
+    ['chokmah', 'chesed'],
+    ['chokmah', 'tiferet'],
+    ['binah', 'gevurah'],
+    ['binah', 'tiferet'],
+    ['chesed', 'gevurah'],
+    ['chesed', 'tiferet'],
+    ['chesed', 'netzach'],
+    ['gevurah', 'tiferet'],
+    ['gevurah', 'hod'],
+    ['tiferet', 'netzach'],
+    ['tiferet', 'hod'],
+    ['tiferet', 'yesod'],
+    ['netzach', 'hod'],
+    ['netzach', 'yesod'],
+    ['hod', 'yesod'],
+    ['netzach', 'malkuth'],
+    ['hod', 'malkuth'],
+    ['yesod', 'malkuth']
+  ];
+}
+
+function paintFibonacciCurve(ctx, { width, height, palette, NUM }) {
   const centerX = width / 2;
   const centerY = height / 2;
-  const maxRadius = Math.min(width, height) / NUM.THREE;
+  const minDim = Math.min(width, height);
+  const maxRadius = minDim / (NUM.THREE / (NUM.NINE / NUM.SEVEN));
   const phi = (1 + Math.sqrt(5)) / 2;
   const steps = NUM.ONEFORTYFOUR;
   const rotations = NUM.ELEVEN / NUM.THREE;
@@ -202,6 +377,15 @@ function paintFibonacciCurve(ctx, width, height, palette, NUM) {
   ctx.strokeStyle = palette.layers[2];
   ctx.globalAlpha = 0.74;
   ctx.lineWidth = Math.max(1.4, maxRadius / NUM.NINETYNINE * NUM.SEVEN);
+  const steps = NUM.TWENTYTWO;
+  const growthSteps = NUM.SEVEN;
+  const rotations = NUM.ELEVEN / NUM.THREE;
+  const startRadius = maxRadius / Math.pow(phi, growthSteps);
+
+  ctx.save();
+  ctx.strokeStyle = palette.layers[2];
+  ctx.globalAlpha = 0.74;
+  ctx.lineWidth = Math.max(1.2, minDim / (NUM.ONEFORTYFOUR / NUM.THREE));
   ctx.beginPath();
 
   for (let i = 0; i < steps; i += 1) {
@@ -330,6 +514,66 @@ function drawCircle(ctx, x, y, radius, modes) {
     ctx.fill();
   }
   if (modes && modes.stroke) {
+function paintHelixLattice(ctx, { width, height, palette, NUM }) {
+  const minDim = Math.min(width, height);
+  const spanX = width * (NUM.NINE / NUM.ELEVEN);
+  const marginX = (width - spanX) / 2;
+  const centerY = height / 2;
+  const amplitude = minDim / (NUM.SEVEN + NUM.THREE / NUM.ELEVEN);
+  const samples = NUM.ONEFORTYFOUR;
+  const strandALines = [];
+  const strandBLines = [];
+
+  ctx.save();
+  ctx.lineWidth = Math.max(1.1, minDim / (NUM.ONEFORTYFOUR / NUM.SEVEN));
+  ctx.globalAlpha = 0.82;
+
+  for (let i = 0; i < samples; i += 1) {
+    const t = samples === 1 ? 0 : i / (samples - 1);
+    const x = marginX + spanX * t;
+    const phase = Math.PI * (NUM.NINE / NUM.THREE) * t;
+    const yA = centerY + Math.sin(phase) * amplitude;
+    const yB = centerY + Math.sin(phase + Math.PI) * amplitude;
+    strandALines.push({ x, y: yA });
+    strandBLines.push({ x, y: yB });
+  }
+
+  ctx.strokeStyle = palette.layers[3];
+  drawPolyline(ctx, strandALines);
+
+  ctx.strokeStyle = palette.layers[4];
+  drawPolyline(ctx, strandBLines);
+
+  // Static rungs bind the strands; spacing uses numerology counts to avoid visual noise.
+  ctx.strokeStyle = palette.layers[5];
+  ctx.globalAlpha = 0.46;
+  const rungStep = Math.max(1, Math.floor(samples / NUM.THIRTYTHREE));
+  for (let i = 0; i < samples; i += rungStep) {
+    const a = strandALines[i];
+    const b = strandBLines[i];
+    if (!a || !b) {
+      continue;
+    }
+    drawLine(ctx, a.x, a.y, b.x, b.y);
+  }
+
+  // Endcaps provide grounding without motion.
+  ctx.globalAlpha = 0.6;
+  ctx.strokeStyle = palette.layers[3];
+  drawCircle(ctx, strandALines[0].x, strandALines[0].y, minDim / NUM.ONEFORTYFOUR * NUM.THREE, { stroke: true });
+  ctx.strokeStyle = palette.layers[4];
+  drawCircle(ctx, strandBLines[strandBLines.length - 1].x, strandBLines[strandBLines.length - 1].y, minDim / NUM.ONEFORTYFOUR * NUM.THREE, { stroke: true });
+
+  ctx.restore();
+}
+
+function drawCircle(ctx, x, y, radius, { fill = false, stroke = false } = {}) {
+  ctx.beginPath();
+  ctx.arc(x, y, radius, 0, Math.PI * 2);
+  if (fill) {
+    ctx.fill();
+  }
+  if (stroke) {
     ctx.stroke();
   }
 }
@@ -343,6 +587,7 @@ function drawLine(ctx, x1, y1, x2, y2) {
 
 function drawPolyline(ctx, points) {
   if (!points || points.length === 0) {
+  if (!points.length) {
     return;
   }
   ctx.beginPath();

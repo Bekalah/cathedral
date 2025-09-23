@@ -7,13 +7,16 @@
   <meta name="color-scheme" content="light dark">
   <style>
     /* ND-safe presentation: calm contrast, generous spacing, zero motion */
+  <meta name="color-scheme" content="dark light">
+  <style>
+    /* ND-safe layout: calm contrast, no motion, generous breathing room */
     :root { --bg:#0b0b12; --ink:#e8e8f0; --muted:#9ea2c9; }
     html, body { margin:0; padding:0; background:var(--bg); color:var(--ink); font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
-    header { padding:12px 16px; border-bottom:1px solid #1d1d2a; }
+    header { padding:14px 18px; border-bottom:1px solid #1d1d2a; box-shadow:0 1px 0 #10101a inset; }
     h1 { margin:0; font-size:20px; letter-spacing:0.02em; }
     .status { color:var(--muted); font-size:12px; margin-top:4px; }
-    #stage { display:block; margin:18px auto; box-shadow:0 0 0 1px #1d1d2a,0 12px 32px rgba(0,0,0,0.28); background:var(--bg); }
-    .note { max-width:900px; margin:0 auto 20px; color:var(--muted); padding:0 16px; text-align:center; }
+    #stage { display:block; margin:18px auto 12px; box-shadow:0 0 0 1px #1d1d2a,0 18px 36px rgba(0,0,0,0.28); background:var(--bg); }
+    .note { max-width:900px; margin:0 auto 22px; color:var(--muted); padding:0 16px; text-align:center; }
     code { background:#11111a; padding:2px 4px; border-radius:3px; }
   </style>
 </head>
@@ -25,6 +28,7 @@
 
   <canvas id="stage" width="1440" height="900" aria-label="Layered sacred geometry canvas"></canvas>
   <p class="note">Static study of Vesica, Tree-of-Life, Fibonacci spiral, and double helix lattice. Open offline; no animation, no external dependencies.</p>
+  <p class="note">Static rendering of Vesica, Tree-of-Life, Fibonacci, and double-helix lattice layers. Open this file directly; no network or motion is used.</p>
 
   <script type="module">
     import { renderHelix } from "./js/helix-renderer.mjs";
@@ -59,6 +63,12 @@
       layers: ["#6f9bff", "#74f1ff", "#8ef7c3", "#ffd27f", "#f5a3ff", "#d4d7ff"]
     });
 
+    const FALLBACK_PALETTE = {
+      bg: "#0b0b12",
+      ink: "#e8e8f0",
+      layers: ["#6f9bff", "#74f1ff", "#8ef7c3", "#ffd27f", "#f5a3ff", "#d4d7ff"]
+    };
+
     const NUM = Object.freeze({
       THREE: 3,
       SEVEN: 7,
@@ -80,6 +90,35 @@
       // Single render call: preserves stillness and avoids accidental motion loops.
       renderHelix(ctx, { width: canvas.width, height: canvas.height, palette, NUM });
       updateStatus(paletteData ? "Rendered with custom palette. Motion disabled by design." : "Rendered with fallback palette. Motion disabled by design.");
+    function updateStatus(message) {
+      status.textContent = message;
+    }
+
+    async function loadPalette(path) {
+      try {
+        const response = await fetch(path, { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error(String(response.status));
+        }
+        return await response.json();
+      } catch (error) {
+        return null;
+      }
+    }
+
+    if (!ctx) {
+      updateStatus("Canvas context unavailable in this browser.");
+    } else {
+      const paletteData = await loadPalette("./data/palette.json");
+      const palette = paletteData || FALLBACK_PALETTE;
+      updateStatus(paletteData ? "Palette loaded from data/palette.json." : "Palette missing; using ND-safe fallback.");
+
+      const outcome = renderHelix(ctx, { width: canvas.width, height: canvas.height, palette, NUM });
+      if (outcome.ok) {
+        updateStatus(paletteData ? "Rendered four static layers with custom palette." : "Rendered with fallback palette; all layers static.");
+      } else {
+        updateStatus("Render skipped: canvas context unavailable.");
+      }
     }
   </script>
 </body>
