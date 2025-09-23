@@ -2,6 +2,8 @@
 
 Static, offline renderer for the layered Cosmogenesis helix field. The bundle honours ND-safe practice: no motion, calm palette, and explanatory comments for future maintainers.
 
+Padding Law: All renders (artifacts, seals, realms, exports) must include a minimum 5–10% clearspace buffer. No sacred form is ever cut by canvas edges.
+
 ## Files
 - `index.html` — entry point that loads the renderer module and optional palette data.
 - `js/helix-renderer.mjs` — pure functions that paint each sacred geometry layer.
