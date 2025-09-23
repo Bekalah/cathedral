@@ -4,6 +4,70 @@
   <meta charset="utf-8">
   <title>Cosmic Helix Renderer (ND-safe, Offline)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="color-scheme" content="dark light">
+  <style>
+    :root {
+      --bg: #0b0b12;
+      --ink: #f0f0ff;
+      --muted: #aeb3d9;
+      --stroke: #1d1d2a;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 16px/1.5 "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      padding: 18px 24px 12px 24px;
+      border-bottom: 1px solid var(--stroke);
+    }
+    header h1 {
+      margin: 0 0 4px 0;
+      font-size: 1.2rem;
+      letter-spacing: 0.04em;
+    }
+    header p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.85rem;
+      max-width: 720px;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px;
+      gap: 16px;
+    }
+    #stage {
+      display: block;
+      width: 100%;
+      max-width: 1440px;
+      height: auto;
+      box-shadow: 0 0 0 1px var(--stroke);
+      background: #05050a;
+    }
+    .status {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+    .notice {
+      max-width: 880px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+    a {
+      color: inherit;
+    }
   <meta name="color-scheme" content="light dark">
   <style>
     /* ND-safe presentation: calm background, readable contrast, no motion */
@@ -20,6 +84,71 @@
 <body>
   <header>
     <h1>Cosmic Helix Renderer</h1>
+    <p>Layered sacred geometry rendered offline. ND-safe palette, no motion, and respectful contrast.</p>
+  </header>
+  <main>
+    <canvas id="stage" width="1440" height="900" role="img" aria-label="Layered Vesica, Tree-of-Life, Fibonacci spiral, and double helix lattice"></canvas>
+    <div class="status" id="status">Preparing palette...</div>
+    <p class="notice" id="notice">Open this file directly to explore the layered cosmology. If optional palette data is missing, a safe fallback palette is used.</p>
+  </main>
+  <script type="module">
+    import { renderHelix } from "./js/helix-renderer.mjs";
+
+    const statusEl = document.getElementById("status");
+    const noticeEl = document.getElementById("notice");
+    const canvas = document.getElementById("stage");
+    const ctx = canvas.getContext("2d");
+
+    if (!ctx) {
+      statusEl.textContent = "Canvas unavailable in this browser.";
+    } else {
+      const NUM = Object.freeze({
+        THREE: 3,
+        SEVEN: 7,
+        NINE: 9,
+        ELEVEN: 11,
+        TWENTYTWO: 22,
+        THIRTYTHREE: 33,
+        NINETYNINE: 99,
+        ONEFORTYFOUR: 144
+      });
+
+      const fallbackPalette = {
+        bg: "#0b0b12",
+        ink: "#f0f0ff",
+        layers: [
+          "#6d7bff",
+          "#4ed4c8",
+          "#f5c66f",
+          "#ff92d0",
+          "#d4a9ff",
+          "#f7f7ff"
+        ]
+      };
+
+      async function loadJSON(path) {
+        try {
+          const response = await fetch(path, { cache: "no-store" });
+          if (!response.ok) {
+            return null;
+          }
+          return await response.json();
+        } catch (error) {
+          return null;
+        }
+      }
+
+      const paletteData = await loadJSON("./data/palette.json");
+      const activePalette = paletteData ? paletteData : fallbackPalette;
+      statusEl.textContent = paletteData ? "Palette loaded from data/palette.json." : "Using internal ND-safe fallback palette.";
+      noticeEl.textContent = paletteData ? "Palette loaded. Geometry rendered with provided hues." : "Palette file missing or blocked; fallback hues keep contrast gentle.";
+
+      renderHelix(ctx, {
+        width: canvas.width,
+        height: canvas.height,
+        palette: activePalette,
+        NUM
+      });
     <div class="status" id="status">Preparing canvas…</div>
   </header>
 
