@@ -1,4 +1,13 @@
 {
+  "bg": "#0c101a",
+  "ink": "#f2f2ff",
+  "layers": [
+    "#6f80ff",
+    "#5bd6c9",
+    "#f7c980",
+    "#ff94c8",
+    "#d6afff",
+    "#f4f4fa"
   "bg": "#0b0b12",
   "ink": "#e8e8f0",
   "layers": [
