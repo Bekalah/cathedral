@@ -1,0 +1,68 @@
+{
+  "works": [
+    {
+      "id": "work-agrippa-1533-de-occulta",
+      "title": "De Occulta Philosophia Libri Tres",
+      "author": "Heinrich Cornelius Agrippa",
+      "year": 1533,
+      "traditions": ["Hermetic", "Renaissance magic"],
+      "canonical_tags": ["Kabbalah", "Planetary magic", "Angels"],
+      "file": "shared/corpus/texts/agrippa_de_occulta.md",
+      "iiif_manifest": "https://iiif.wellcomecollection.org/presentation/b21505367",
+      "license": "Public Domain",
+      "wikidata": "Q12345",
+      "source": {
+        "collection": "Wellcome Collection (digitised)",
+        "provenance": "Scan of 1533 edition"
+      }
+    },
+    {
+      "id": "work-dee-1564-monas",
+      "title": "Monas Hieroglyphica",
+      "author": "John Dee",
+      "year": 1564,
+      "traditions": ["Hermetic", "Alchemical"],
+      "canonical_tags": ["Symbolism", "Planetary magic"],
+      "file": "shared/corpus/texts/dee_monas_hieroglyphica.md",
+      "iiif_manifest": "https://iiif.bl.uk/iiif/service/bll/ark:/81055/vdc_100063981157.0x000002",
+      "license": "Public Domain",
+      "wikidata": "Q1355598",
+      "source": {
+        "collection": "British Library",
+        "provenance": "Digitised copy of the 1564 Antwerp edition"
+      }
+    },
+    {
+      "id": "work-sefer-yetzirah-gra",
+      "title": "Sefer Yetzirah (Gra Recension)",
+      "author": "Anonymous",
+      "year": 1800,
+      "traditions": ["Kabbalah"],
+      "canonical_tags": ["Sephirot", "Hebrew letters"],
+      "file": "shared/corpus/texts/sefer_yetzirah_gra.md",
+      "iiif_manifest": null,
+      "license": "Public Domain",
+      "wikidata": "Q563896",
+      "source": {
+        "collection": "HebrewBooks.org",
+        "provenance": "Text derived from public domain transcription"
+      }
+    },
+    {
+      "id": "work-carrington-down-below",
+      "title": "Down Below",
+      "author": "Unknown survivor testimony",
+      "year": 1944,
+      "traditions": ["Mystical memoir"],
+      "canonical_tags": ["Initiation", "Underworld journey"],
+      "file": null,
+      "iiif_manifest": null,
+      "license": "Citation only",
+      "wikidata": null,
+      "source": {
+        "collection": "Private study notes",
+        "provenance": "Excerpts retained for commentary and educational use"
+      }
+    }
+  ]
+}
