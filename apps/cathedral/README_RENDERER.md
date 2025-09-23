@@ -3,19 +3,19 @@
 Static, offline renderer for the layered Cosmogenesis helix field. The bundle honours ND-safe practice: no motion, calm palette, and explanatory comments for future maintainers.
 
 ## Files
-- `index.html` — entry point that loads the renderer module and optional palette data.
-- `js/helix-renderer.mjs` — pure functions that paint each sacred geometry layer.
-- `data/palette.json` — tweakable palette. Remove or edit to taste; fallback hues keep AA+ contrast.
+- `index.html` - entry point that loads the renderer module and optional palette data.
+- `js/helix-renderer.mjs` - pure functions that paint each sacred geometry layer.
+- `data/palette.json` - tweakable palette. Remove or edit to taste; fallback hues keep AA+ contrast.
 
 ## Usage
 1. Double-click `index.html` in any modern browser. No server or build steps are required.
 2. If `data/palette.json` is present, the renderer uses those hues. When the file is missing (or blocked by browser security rules), a safe fallback palette is used and the page status message notes the substitution.
 
 ## Geometry Layers
-1. **Vesica Field** — overlapping circles arranged with constants (3, 9, 33) to ground the canvas.
-2. **Tree-of-Life Scaffold** — ten nodes and twenty-two connecting paths drawn with gentle strokes.
-3. **Fibonacci Curve** — a logarithmic spiral guided by phi ratios across twenty-two segments.
-4. **Double Helix Lattice** — twin strands and rungs sampled across one hundred forty-four points for static depth.
+1. **Vesica Field** - overlapping circles arranged with constants (3, 9, 33) to ground the canvas.
+2. **Tree-of-Life Scaffold** - ten nodes and twenty-two connecting paths drawn with gentle strokes.
+3. **Fibonacci Curve** - a logarithmic spiral guided by phi ratios across twenty-two segments.
+4. **Double Helix Lattice** - twin strands and rungs sampled across one hundred forty-four points for static depth.
 
 ## ND-safe Choices
 - No animation, autoplay, or strobing visuals.
