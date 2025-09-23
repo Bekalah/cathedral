@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>Seal of Mercury (Layered)</title>
+  <g id="layer-circles" fill="none" stroke="#50b5ff" stroke-width="4">
+    <circle cx="100" cy="64" r="28" />
+    <circle cx="100" cy="124" r="32" />
+    <path d="M68 36 Q100 20 132 36" />
+  </g>
+  <g id="layer-glyph" fill="none" stroke="#ffd166" stroke-width="4" stroke-linecap="round">
+    <path d="M84 124 Q100 140 116 124" />
+    <path d="M100 156 L100 176" />
+    <path d="M80 176 L120 176" />
+  </g>
+</svg>

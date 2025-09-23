@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>Hod Glyph (Layered)</title>
+  <g id="layer-structure" fill="none" stroke="#2a9d8f" stroke-width="3">
+    <rect x="40" y="40" width="120" height="120" rx="12" />
+    <line x1="40" y1="100" x2="160" y2="100" />
+    <line x1="100" y1="40" x2="100" y2="160" />
+  </g>
+  <g id="layer-script" fill="none" stroke="#f4a261" stroke-width="4" stroke-linecap="round">
+    <path d="M76 76 C96 48 124 48 124 76" />
+    <path d="M76 124 C96 152 124 152 124 124" />
+    <path d="M90 76 L90 124" />
+    <path d="M110 76 L110 124" />
+  </g>
+</svg>
