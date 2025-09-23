@@ -69,6 +69,47 @@
     #stage { display:block; margin:24px auto; box-shadow:0 0 0 1px #1d1d2a,0 18px 42px rgba(0,0,0,0.28); background:var(--bg); }
     .note { max-width:920px; margin:0 auto 28px; color:var(--muted); padding:0 20px; text-align:center; }
     code { background:#11111a; padding:2px 4px; border-radius:3px; }
+    /* ND-safe: soft contrast, no motion, generous breathing room */
+    :root { --bg:#0b0b12; --ink:#e8e8f0; --muted:#9fa3c8; }
+    html, body {
+      margin:0;
+      padding:0;
+      background:var(--bg);
+      color:var(--ink);
+      font:14px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    }
+    header {
+      padding:14px 18px;
+      border-bottom:1px solid #1c1c28;
+    }
+    h1 {
+      margin:0;
+      font-size:20px;
+      letter-spacing:0.02em;
+    }
+    .status {
+      color:var(--muted);
+      font-size:12px;
+      margin-top:4px;
+    }
+    #stage {
+      display:block;
+      margin:20px auto 16px;
+      background:var(--bg);
+      box-shadow:0 0 0 1px #1c1c28, 0 12px 30px rgba(0,0,0,0.28);
+    }
+    .note {
+      max-width:900px;
+      margin:0 auto 24px;
+      padding:0 16px;
+      color:var(--muted);
+      text-align:center;
+    }
+    code {
+      background:#11111a;
+      padding:2px 4px;
+      border-radius:3px;
+    }
   </style>
 </head>
 <body>
@@ -84,6 +125,7 @@
   </header>
     <div class="status" id="status">Loading palette…</div>
   </header>
+  <p class="note">Static Vesica field, Tree-of-Life scaffold, Fibonacci spiral, and double-helix lattice rendered once. Open this file directly; no animation or external dependencies.</p>
 
   <canvas id="stage" width="1440" height="900" aria-label="Layered sacred geometry canvas"></canvas>
   <p class="note">Static layering of Vesica field, Tree-of-Life scaffold, Fibonacci spiral, and double-helix lattice. Open this file directly; no animation, no external dependencies.</p>
@@ -175,6 +217,9 @@
       status.textContent = message;
     }
 
+      status.textContent = message;
+    }
+
     async function loadPalette(path) {
       try {
         const response = await fetch(path, { cache: 'no-store' });
@@ -191,6 +236,12 @@
     const ctx = canvas.getContext("2d");
 
     const FALLBACK_PALETTE = Object.freeze({
+      bg: "#0b0b12",
+      ink: "#e8e8f0",
+      layers: ["#6f9bff", "#74f1ff", "#8ef7c3", "#ffd27f", "#f5a3ff", "#d4d7ff"]
+    });
+
+    const fallbackPalette = Object.freeze({
       bg: "#0b0b12",
       ink: "#e8e8f0",
       layers: ["#6f9bff", "#74f1ff", "#8ef7c3", "#ffd27f", "#f5a3ff", "#d4d7ff"]
@@ -322,6 +373,20 @@
         overlay: debugOverlay ? "safe" : "none"
       };
       canvas.dataset.provenance = JSON.stringify(provenance);
+    const paletteData = await loadPalette("./data/palette.json");
+    const palette = paletteData || fallbackPalette;
+    updateStatus(paletteData ? "Palette loaded from data/palette.json." : "Palette missing; using ND-safe fallback.");
+
+    if (!ctx) {
+      updateStatus("Canvas context unavailable; rendering skipped.");
+    } else {
+      try {
+        renderHelix(ctx, { width: canvas.width, height: canvas.height, palette, NUM });
+        updateStatus("Rendered four calm layers without motion.");
+      } catch (error) {
+        updateStatus("Renderer failed; see console for details.");
+        throw error;
+      }
     }
   </script>
 </body>
