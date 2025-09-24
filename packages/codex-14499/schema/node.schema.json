@@ -1,21 +1,20 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Codex Node",
   "type": "object",
-  "required": ["id", "title"],
+  "required": ["id"],
   "properties": {
-    "id":        { "type": "string", "pattern": "^[A-Z0-9\-_:]+$" },
-    "title":     { "type": "string" },
-    "realm":     { "type": "string" },
-    "archetype": { "type": ["string", "array"] },
-    "function":  { "type": ["string", "array"] },
+    "id": { "type": "string", "pattern": "^(C144N-[0-9]{3}|C144N-ARCANA-[A-Z0-9_-]+)$" },
+    "title": { "type": "string" },
+    "realm": { "type": "string" },
+    "lineage": { "type": "array", "items": { "type": "string" } },
+    "formula": { "type": "object" },
+    "archetype": { "type": "string" },
     "tarot_overlays": { "type": "array", "items": { "type": "string" } },
-    "presets":   { "type": "object" },
-    "annex":     { "type": "object" },
-    "safety":    { "type": "object" },
-    "sealed":    { "type": "boolean" },
-    "version":   { "type": "string" },
-    "updated":   { "type": "string" }
+    "presets": { "type": "object" },
+    "annex": { "type": "object" },
+    "safety": { "type": "object" },
+    "provenance": { "type": "object" }
   },
   "additionalProperties": true
 }

@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# 0) Where your static site lives (change if needed)
-ROOT_DIR="apps/cathedral"
+# 0) Where your static site lives (defaults to repository root)
+ROOT_DIR="${ROOT_DIR:-.}"
+if [ "${1-}" != "" ]; then
+  ROOT_DIR="$1"
+fi
 export ROOT_DIR
 
 python <<'PY'
