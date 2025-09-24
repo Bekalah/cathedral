@@ -1,0 +1,155 @@
+{
+  "meta": {
+    "name": "Codex 144:99 — Cathedral Bundle",
+    "edition": "2025.09",
+    "generated_at": "2025-09-24T07:00:51.079Z",
+    "nd_safe": {
+      "strobe": false,
+      "autoplay": false,
+      "motion": "calm"
+    }
+  },
+  "palette": {
+    "bg": "#0b0b12",
+    "ink": "#e8e8f0",
+    "layers": [
+      "#b1c7ff",
+      "#89f7fe",
+      "#a0ffa1",
+      "#ffd27f",
+      "#f5a3ff",
+      "#d0d0e6"
+    ]
+  },
+  "nodes": [],
+  "spine": [],
+  "halls": [],
+  "flow": [],
+  "themes": {
+    "circuitum": {
+      "bg": "#0a0a0a",
+      "ink": "#d4af37"
+    },
+    "codex": {
+      "bg": "#f1e5cf",
+      "ink": "#222"
+    },
+    "cathedral": {
+      "bg": "#06050b",
+      "ink": "#e8ebff"
+    }
+  },
+  "tarot": {
+    "LA-00-FOOL": {
+      "id": "LA-00-FOOL",
+      "title": "THE FOOL",
+      "status": "missing"
+    },
+    "LA-01-MAGICIAN": {
+      "id": "LA-01-MAGICIAN",
+      "title": "THE MAGICIAN",
+      "status": "missing"
+    },
+    "LA-02-PRIESTESS": {
+      "id": "LA-02-PRIESTESS",
+      "title": "HIGH PRIESTESS",
+      "status": "missing"
+    },
+    "LA-03-EMPRESS": {
+      "id": "LA-03-EMPRESS",
+      "title": "THE EMPRESS",
+      "status": "missing"
+    },
+    "LA-04-EMPEROR": {
+      "id": "LA-04-EMPEROR",
+      "title": "THE EMPEROR",
+      "status": "missing"
+    },
+    "LA-05-HIEROPHANT": {
+      "id": "LA-05-HIEROPHANT",
+      "title": "THE HIEROPHANT",
+      "status": "missing"
+    },
+    "LA-06-LOVERS": {
+      "id": "LA-06-LOVERS",
+      "title": "THE LOVERS",
+      "status": "missing"
+    },
+    "LA-07-CHARIOT": {
+      "id": "LA-07-CHARIOT",
+      "title": "THE CHARIOT",
+      "status": "missing"
+    },
+    "LA-08-JUSTICE": {
+      "id": "LA-08-JUSTICE",
+      "title": "JUSTICE",
+      "status": "missing"
+    },
+    "LA-09-HERMIT": {
+      "id": "LA-09-HERMIT",
+      "title": "THE HERMIT",
+      "status": "missing"
+    },
+    "LA-10-WHEEL": {
+      "id": "LA-10-WHEEL",
+      "title": "WHEEL OF FORTUNE",
+      "status": "missing"
+    },
+    "LA-11-STRENGTH": {
+      "id": "LA-11-STRENGTH",
+      "title": "STRENGTH",
+      "status": "missing"
+    },
+    "LA-12-HANGED-MAN": {
+      "id": "LA-12-HANGED-MAN",
+      "title": "HANGED MAN",
+      "status": "missing"
+    },
+    "LA-13-DEATH": {
+      "id": "LA-13-DEATH",
+      "title": "DEATH",
+      "status": "missing"
+    },
+    "LA-14-TEMPERANCE": {
+      "id": "LA-14-TEMPERANCE",
+      "title": "TEMPERANCE",
+      "status": "missing"
+    },
+    "LA-15-DEVIL": {
+      "id": "LA-15-DEVIL",
+      "title": "THE DEVIL",
+      "status": "missing"
+    },
+    "LA-16-TOWER": {
+      "id": "LA-16-TOWER",
+      "title": "THE TOWER",
+      "status": "missing"
+    },
+    "LA-17-STAR": {
+      "id": "LA-17-STAR",
+      "title": "THE STAR",
+      "status": "missing"
+    },
+    "LA-18-MOON": {
+      "id": "LA-18-MOON",
+      "title": "THE MOON",
+      "status": "missing"
+    },
+    "LA-19-SUN": {
+      "id": "LA-19-SUN",
+      "title": "THE SUN",
+      "status": "missing"
+    },
+    "LA-20-JUDGEMENT": {
+      "id": "LA-20-JUDGEMENT",
+      "title": "JUDGEMENT",
+      "status": "missing"
+    },
+    "LA-21-WORLD": {
+      "id": "LA-21-WORLD",
+      "title": "THE WORLD",
+      "status": "missing"
+    }
+  },
+  "lineages": {}
+}
