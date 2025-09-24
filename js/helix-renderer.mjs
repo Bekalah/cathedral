@@ -9,7 +9,7 @@
     1) Vesica field - interlocking circles for grounding geometry.
     2) Tree-of-Life scaffold - ten sephirot with twenty-two connective paths.
     3) Fibonacci curve - phi-guided growth arc plotted as a static polyline.
-    4) Double-helix lattice - mirrored strands with gentle crossbars.
+    4) Double-helix lattice - two phase-shifted strands with gentle crossbars.
 
   All drawing helpers are pure functions that receive explicit state
   so the renderer stays predictable when edited offline.
@@ -87,6 +87,7 @@ export function renderHelix(ctx, options = {}) {
   configureContext(ctx);
   paintBackground(ctx, palette.bg, width, height);
 
+  // Draw order preserves depth: vesica forms the field, then structure, growth, and helix crown.
   drawVesicaField(ctx, settings);
   drawTreeOfLife(ctx, settings);
   drawFibonacciCurve(ctx, settings);
@@ -123,6 +124,7 @@ function drawVesicaField(ctx, settings) {
   const color = withAlpha(palette.layers[0], 0.22);
 
   ctx.save();
+  // ND-safe: thin translucent lines keep the vesica gentle while preserving contrast.
   ctx.lineWidth = strokeWidth;
   ctx.strokeStyle = color;
 
@@ -150,6 +152,7 @@ function drawTreeOfLife(ctx, settings) {
   const haloRadius = nodeRadius * (numerology.TWENTYTWO / numerology.ELEVEN);
 
   ctx.save();
+  // ND-safe: halos soften the sephirot without motion; ratios follow sacred numerology constants.
   ctx.lineWidth = pathWidth;
   ctx.strokeStyle = pathColor;
 
@@ -230,6 +233,7 @@ function drawFibonacciCurve(ctx, settings) {
   }
 
   ctx.save();
+  // ND-safe: polyline is static and clamped inside stage bounds to avoid overstimulation.
   ctx.lineWidth = strokeWidth;
   ctx.strokeStyle = strokeColor;
   strokePolyline(ctx, points);
@@ -261,6 +265,7 @@ function drawHelixLattice(ctx, settings) {
   }
 
   ctx.save();
+  // ND-safe: mirrored strands hint at motion without animating; translucent strokes keep depth soft.
   ctx.lineWidth = Math.max(1.5, stage.width / numerology.ONEFORTYFOUR);
   ctx.strokeStyle = withAlpha(palette.layers[4], 0.7);
   strokePolyline(ctx, strandA);
