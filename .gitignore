@@ -2,3 +2,12 @@ dist/
 public/
 shared/
 __pycache__/
+!cathedral/
+!cathedral/dist/
+!cathedral/dist/codex.json
+!cathedral/dist/palette.json
+!tesseract-bridge/
+!tesseract-bridge/registry/
+!tesseract-bridge/registry/ids.json
+!tesseract-bridge/events/
+!tesseract-bridge/events/queue.ndjson
