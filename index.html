@@ -32,25 +32,13 @@
     const canvas = document.getElementById("stage");
     const ctx = canvas.getContext("2d");
 
-    async function loadPalette(path) {
-      // Offline-first: prefer module import so file:// usage stays local-only.
+    async function loadPalette() {
+      // why: dynamic import keeps everything offline and avoids network primitives entirely.
       try {
-        const module = await import(path, { assert: { type: "json" } });
+        const module = await import("./data/palette.json", { assert: { type: "json" } });
         return module.default;
-      } catch (importError) {
-        // Browsers without JSON import assertions fall back to same-origin fetch.
-        if (window.location.protocol === "file:") {
-          return null;
-        }
-        try {
-          const response = await fetch(path, { cache: "no-store" });
-          if (!response.ok) {
-            return null;
-          }
-          return await response.json();
-        } catch (fetchError) {
-          return null;
-        }
+      } catch (error) {
+        return null;
       }
     }
 
@@ -72,8 +60,7 @@
       ONEFORTYFOUR: 144
     });
 
-    const palettePath = "./data/palette.json";
-    const palette = await loadPalette(palettePath);
+    const palette = await loadPalette();
     const activePalette = palette || FALLBACK_PALETTE;
     statusEl.textContent = palette ? "Palette loaded." : "Palette missing; using safe fallback.";
 
