@@ -2,105 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Cosmic Helix Renderer - Offline ND-safe Geometry</title>
+  <title>Cosmic Helix Renderer (ND-safe, Offline)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="color-scheme" content="dark light">
-  <style>
-    /* ND-safe styling: calm contrast, generous spacing, zero motion */
-    :root {
-      --bg: #0b0b12;
-      --ink: #e8e8f0;
-      --muted: #9ea2c9;
-      --accent: #ffd27f;
-    }
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font: 14px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    }
-    header {
-      padding: 16px 20px;
-      border-bottom: 1px solid #1d1d2a;
-      background: rgba(9, 9, 14, 0.94);
-      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04);
-    }
-    header h1 {
-      margin: 0;
-      font-size: 20px;
-      letter-spacing: 0.03em;
-    }
-    .status {
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-    .status strong {
-      color: var(--accent);
-    }
-    #stage {
-      display: block;
-      margin: 20px auto;
-      width: 1440px;
-      height: 900px;
-      box-shadow: 0 0 0 1px #1d1d2a, 0 16px 40px rgba(0, 0, 0, 0.32);
-      background: var(--bg);
-    }
-    .note {
-      max-width: 900px;
-      margin: 0 auto 24px;
-      padding: 0 16px 24px;
-      color: var(--muted);
-      text-align: center;
-    }
-    code {
-      background: #11111a;
-      color: var(--ink);
-      padding: 2px 4px;
-      border-radius: 3px;
-    }
-    /* ND-safe: calm contrast, zero motion, generous breathing room */
-    :root { --bg:#0b0b12; --ink:#e8e8f0; --muted:#a0a3c8; }
-    html, body { margin:0; padding:0; background:var(--bg); color:var(--ink); font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
-    header { padding:16px 20px; border-bottom:1px solid #1d1d2a; }
-    h1 { margin:0; font-size:20px; letter-spacing:0.02em; }
-    .status { color:var(--muted); font-size:12px; margin-top:6px; }
-    #stage { display:block; margin:24px auto; box-shadow:0 0 0 1px #1d1d2a,0 18px 42px rgba(0,0,0,0.28); background:var(--bg); }
-    .note { max-width:920px; margin:0 auto 28px; color:var(--muted); padding:0 20px; text-align:center; }
   <meta name="color-scheme" content="light dark">
   <style>
     /* ND-safe: calm contrast, no motion, generous spacing */
-    :root { --bg:#0b0b12; --ink:#e8e8f0; --muted:#a6a6c1; }
-    html,body { margin:0; padding:0; background:var(--bg); color:var(--ink); font:14px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
-    header { padding:12px 16px; border-bottom:1px solid #1d1d2a; }
-    .status { color:var(--muted); font-size:12px; }
-    #stage { display:block; margin:16px auto; box-shadow:0 0 0 1px #1d1d2a; background:var(--bg); }
-    .note { max-width:900px; margin:0 auto 16px; color:var(--muted); padding:0 16px; text-align:center; }
-    /* ND-safe presentation: calm contrast, generous spacing, zero motion */
-  <meta name="color-scheme" content="dark light">
-  <style>
-    /* ND-safe layout: calm contrast, no motion, generous breathing room */
-    :root { --bg:#0b0b12; --ink:#e8e8f0; --muted:#9ea2c9; }
-    html, body { margin:0; padding:0; background:var(--bg); color:var(--ink); font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
-    header { padding:14px 18px; border-bottom:1px solid #1d1d2a; box-shadow:0 1px 0 #10101a inset; }
-    h1 { margin:0; font-size:20px; letter-spacing:0.02em; }
-    .status { color:var(--muted); font-size:12px; margin-top:4px; }
-    #stage { display:block; margin:18px auto 12px; box-shadow:0 0 0 1px #1d1d2a,0 18px 36px rgba(0,0,0,0.28); background:var(--bg); }
-    .note { max-width:900px; margin:0 auto 22px; color:var(--muted); padding:0 16px; text-align:center; }
-    code { background:#11111a; padding:2px 4px; border-radius:3px; }
-    /* ND-safe: soft contrast, no motion, generous breathing room */
-    :root { --bg:#0b0b12; --ink:#e8e8f0; --muted:#9fa3c8; }
-    /* ND-safe: calm contrast, generous spacing, no motion */
     :root {
       --bg:#0b0b12;
       --ink:#e8e8f0;
       --muted:#a6a6c1;
-      --frame:#1d1d2a;
-    }
-
-    *, *::before, *::after {
-      box-sizing:border-box;
     }
 
     html, body {
@@ -108,28 +18,13 @@
       padding:0;
       background:var(--bg);
       color:var(--ink);
-      font:14px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-    }
-    header {
-      padding:14px 18px;
-      border-bottom:1px solid #1c1c28;
-    }
-    h1 {
-      margin:0;
-      font-size:20px;
-      letter-spacing:0.02em;
-    }
-      font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+      font:14px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
     }
 
     header {
-      padding:16px 20px 12px;
-      border-bottom:1px solid var(--frame);
+      padding:12px 16px;
+      border-bottom:1px solid #1d1d2a;
       letter-spacing:0.02em;
-    }
-
-    header strong {
-      font-size:20px;
     }
 
     .status {
@@ -137,46 +32,17 @@
       font-size:12px;
       margin-top:4px;
     }
-    #stage {
-      display:block;
-      margin:20px auto 16px;
-      background:var(--bg);
-      box-shadow:0 0 0 1px #1c1c28, 0 12px 30px rgba(0,0,0,0.28);
-    }
-    .note {
-      max-width:900px;
-      margin:0 auto 24px;
-
-    main {
-      max-width:1600px;
-      margin:0 auto;
-      padding:20px 24px 32px;
-    }
-
-    .canvas-shell {
-      background:radial-gradient(circle at top,var(--bg) 0%,#12121d 60%,#0b0b12 100%);
-      border:1px solid var(--frame);
-      border-radius:18px;
-      box-shadow:0 0 0 1px rgba(13,13,32,0.5);
-    }
-
-    .canvas {
-      padding:5%;
-      box-sizing:border-box;
-    }
 
     #stage {
       display:block;
-      width:100%;
-      height:auto;
-      margin:0 auto;
+      margin:16px auto;
+      box-shadow:0 0 0 1px #1d1d2a,0 14px 32px rgba(0,0,0,0.32);
       background:var(--bg);
-      box-shadow:0 0 0 1px var(--frame),0 24px 48px rgba(0,0,0,0.35);
     }
 
     .note {
       max-width:900px;
-      margin:16px auto 0;
+      margin:0 auto 16px;
       padding:0 16px;
       color:var(--muted);
       text-align:center;
@@ -191,132 +57,16 @@
 </head>
 <body>
   <header>
-    <h1>Cosmic Helix Renderer</h1>
-    <div class="status" id="status">Preparing palette…</div>
+    <div><strong>Cosmic Helix Renderer</strong> - layered sacred geometry (offline, ND-safe)</div>
+      <div class="status" id="status">Loading palette...</div>
   </header>
 
   <canvas id="stage" width="1440" height="900" aria-label="Layered sacred geometry canvas"></canvas>
-  <p class="note">Static study of Vesica, Tree-of-Life, Fibonacci spiral, and double helix lattice. Open offline; no animation, no external dependencies.</p>
-  <p class="note">Static rendering of Vesica, Tree-of-Life, Fibonacci, and double-helix lattice layers. Open this file directly; no network or motion is used.</p>
-    <p class="status" id="status">Preparing palette…</p>
-    <div><strong>Cosmic Helix Renderer</strong> — layered sacred geometry (offline, ND-safe)</div>
-    <div class="status" id="status">Loading palette…</div>
-  </header>
-    <div class="status" id="status">Loading palette…</div>
-  </header>
-  <p class="note">Static Vesica field, Tree-of-Life scaffold, Fibonacci spiral, and double-helix lattice rendered once. Open this file directly; no animation or external dependencies.</p>
-
-  <canvas id="stage" width="1440" height="900" aria-label="Layered sacred geometry canvas"></canvas>
-  <p class="note">Static layering of Vesica field, Tree-of-Life scaffold, Fibonacci spiral, and double-helix lattice. Open this file directly; no animation, no external dependencies.</p>
-  <p class="note">Static Vesica field, Tree-of-Life nodes, Fibonacci curve, and a static double-helix lattice. Open this file directly; no animation or network calls.</p>
-  <main>
-    <div class="canvas-shell">
-      <div class="canvas">
-        <canvas id="stage" width="1440" height="900" aria-label="Layered sacred geometry canvas"></canvas>
-      </div>
-    </div>
-    <p class="note">Static render only. Vesica field, Tree-of-Life scaffold, Fibonacci curve, and double helix lattice share the same safe frame. No animation, autoplay, or external dependencies.</p>
-  </main>
-
-  <canvas id="stage" width="1440" height="900" aria-label="Layered sacred geometry canvas"></canvas>
-  <p class="note">Static Vesica field, Tree-of-Life scaffold, Fibonacci spiral, and double-helix lattice. Open this file directly; no animation or external dependencies.</p>
-    <p class="status" id="status">Loading palette…</p>
-  </header>
-
-  <canvas id="stage" width="1440" height="900" aria-label="Layered sacred geometry canvas"></canvas>
-  <p class="note">Static, offline rendering of the Vesica field, Tree-of-Life scaffold, Fibonacci curve, and double helix lattice. No animation, no external network, calm contrast by design.</p>
-    /* ND-safe: calm palette, generous spacing, zero animation */
-    :root {
-      --bg: #0b0b12;
-      --ink: #e8e8f0;
-      --muted: #a0a5cd;
-    }
-
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font: 14px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    }
-
-    header {
-      padding: 16px 20px;
-      border-bottom: 1px solid #1d1d2a;
-    }
-
-    const statusEl = document.getElementById("status");
-    const canvas = document.getElementById("stage");
-    const ctx = canvas.getContext("2d");
-
-    function updateStatus(message) {
-      statusEl.textContent = message;
-    }
-
-    /**
-     * ND-safe loading: fetch only touches local files and falls back silently when blocked.
-     * This avoids network calls while keeping palette overrides optional.
-     */
-    <div class="status" id="status">Loading palette...</div>
-    <div class="status">Clearspace Law v1.0 active - sacred geometry stays inside the safe frame.</div>
-    <div class="status" id="status">Preparing palette...</div>
-  </header>
-
-  <canvas id="stage" width="1440" height="900" aria-label="Layered sacred geometry canvas"></canvas>
-  <p class="note">
-    Static Vesica field, Tree-of-Life scaffold, Fibonacci curve, and double-helix lattice.
-    Open this file directly; no animation, no network requests. Append <code>?overlay=safe</code>
-    to reveal the translucent QA frame used to enforce clearspace.
-  </p>
+  <p class="note">Static renderer with Vesica field, Tree-of-Life scaffold, Fibonacci curve, and a static double-helix lattice. No animation, no external libraries, double-click to open offline.</p>
 
   <script type="module">
     import { renderHelix } from "./js/helix-renderer.mjs";
 
-    const NUM = Object.freeze({
-      THREE: 3,
-      SEVEN: 7,
-      NINE: 9,
-      ELEVEN: 11,
-      TWENTYTWO: 22,
-      THIRTYTHREE: 33,
-      NINETYNINE: 99,
-      ONEFORTYFOUR: 144
-    });
-
-    if (!ctx) {
-      status.textContent = 'Canvas context unavailable; rendering skipped to stay ND-safe.';
-      throw new Error('Canvas 2D context missing');
-    }
-
-    /**
-     * Fetches palette overrides from disk. Browsers may block file:// fetches;
-     * returning null keeps the renderer offline-first and ND-safe.
-    if (!ctx) {
-      statusEl.textContent = "Canvas unavailable in this browser.";
-      throw new Error("2D canvas context missing");
-    }
-
-    /**
-     * Attempt to load palette overrides from disk. Browsers may block fetch for
-     * file:// URLs; failure is handled by falling back to the baked-in palette.
-     */
-    function setStatus(message) {
-      status.textContent = message;
-    }
-
-      status.textContent = message;
-    }
-
-    async function loadPalette(path) {
-    async function loadJSON(path) {
-      try {
-        const response = await fetch(path, { cache: 'no-store' });
-        if (!response.ok) {
-          throw new Error(String(response.status));
-        }
-        return await response.json();
-      } catch (error) {
     const elStatus = document.getElementById("status");
     const canvas = document.getElementById("stage");
     const ctx = canvas.getContext("2d");
@@ -330,255 +80,39 @@
         return null;
       }
     }
-    const statusEl = document.getElementById("status");
-    const canvas = document.getElementById("stage");
-    const ctx = canvas.getContext("2d");
-
-    const FALLBACK_PALETTE = Object.freeze({
-      bg: "#0b0b12",
-      ink: "#e8e8f0",
-      layers: ["#6f9bff", "#74f1ff", "#8ef7c3", "#ffd27f", "#f5a3ff", "#d4d7ff"]
-    });
-
-    const fallbackPalette = Object.freeze({
-      bg: "#0b0b12",
-      ink: "#e8e8f0",
-      layers: ["#6f9bff", "#74f1ff", "#8ef7c3", "#ffd27f", "#f5a3ff", "#d4d7ff"]
-    });
 
     const defaults = {
       palette: {
-        bg: "#0b0b12",
-        ink: "#e8e8f0",
-        layers: ["#b1c7ff","#89f7fe","#a0ffa1","#ffd27f","#f5a3ff","#d0d0e6"]
+        bg:"#0b0b12",
+        ink:"#e8e8f0",
+        layers:["#b1c7ff","#89f7fe","#a0ffa1","#ffd27f","#f5a3ff","#d0d0e6"]
       }
     };
 
     const palette = await loadJSON("./data/palette.json");
-    const active = palette || defaults.palette;
-    elStatus.textContent = palette ? "Palette loaded." : "Palette missing; using safe fallback.";
+    const activePalette = palette || defaults.palette;
+    const paletteMissing = !palette;
 
-    const FALLBACK_PALETTE = {
-      bg: "#0b0b12",
-      ink: "#e8e8f0",
-      layers: ["#6f9bff", "#74f1ff", "#8ef7c3", "#ffd27f", "#f5a3ff", "#d4d7ff"]
+    elStatus.textContent = paletteMissing ? "Palette missing; using safe fallback." : "Palette loaded.";
+
+    const NUM = {
+      THREE:3,
+      SEVEN:7,
+      NINE:9,
+      ELEVEN:11,
+      TWENTYTWO:22,
+      THIRTYTHREE:33,
+      NINETYNINE:99,
+      ONEFORTYFOUR:144
     };
 
-    const fallbackPalette = {
-      bg: "#0b0b12",
-      ink: "#e8e8f0",
-      layers: ["#b1c7ff", "#89f7fe", "#a0ffa1", "#ffd27f", "#f5a3ff", "#d0d0e6"]
-    };
-
-    const NUM = Object.freeze({
-      THREE: 3,
-      SEVEN: 7,
-      NINE: 9,
-      ELEVEN: 11,
-      TWENTYTWO: 22,
-      THIRTYTHREE: 33,
-      NINETYNINE: 99,
-      ONEFORTYFOUR: 144
-    });
-
-    function setStatus(message) {
-      statusEl.textContent = message;
-    }
-
-    async function loadPalette(path) {
-      try {
-        const response = await fetch(path, { cache: "no-store" });
-        if (!response.ok) {
-          throw new Error(String(response.status));
-        }
-        return await response.json();
-      } catch (error) {
-        return null;
-      }
-    }
-
-    if (!ctx) {
-      setStatus("Canvas context unavailable; rendering skipped to stay ND-safe.");
-    } else {
-      const paletteData = await loadPalette("./data/palette.json");
-      const palette = paletteData || FALLBACK_PALETTE;
-      updateStatus(paletteData ? "Palette loaded from data/palette.json." : "Palette missing; using ND-safe fallback.");
-
-      const outcome = renderHelix(ctx, { width: canvas.width, height: canvas.height, palette, NUM });
-      if (outcome.ok) {
-        updateStatus(paletteData ? "Rendered four static layers with custom palette." : "Rendered with fallback palette; all layers static.");
-      } else {
-        updateStatus("Render skipped: canvas context unavailable.");
-      }
-    /* Calm fallback palette preserves 4.5:1 contrast when JSON is missing. */
-    const fallbackPalette = {
-      bg: '#0b0b12',
-      ink: '#e8e8f0',
-      layers: ['#6f9bff', '#74f1ff', '#8ef7c3', '#ffd27f', '#f5a3ff', '#d4d7ff']
-      bg: "#0b0b12",
-      ink: "#e8e8f0",
-      layers: ["#6f9bff", "#5bd6c9", "#8ef7c3", "#ffd27f", "#f5a3ff", "#d4d7ff"]
-    };
-
-    const params = new URLSearchParams(window.location.search);
-    const debugOverlay = params.get('overlay') === 'safe';
-
-    const paletteData = await loadPalette('./data/palette.json');
-    const palette = paletteData || fallbackPalette;
-    status.textContent = paletteData
-      ? 'Palette loaded from data/palette.json.'
-      : 'Palette missing; ND-safe fallback palette applied.';
-
-    const provenance = renderHelix(ctx, {
-      width: canvas.width,
-      height: canvas.height,
-      palette,
-      NUM,
-      debugOverlay
-    });
-
-    if (provenance) {
-      const overlayNote = debugOverlay ? 'Safe frame overlay enabled.' : 'Safe frame overlay disabled.';
-      const record = {
-        ...provenance,
-        overlay: overlayNote,
-        palette_source: paletteData ? 'data/palette.json' : 'fallback'
-      };
-      canvas.dataset.provenance = JSON.stringify(record);
-      status.innerHTML = `${status.textContent} <strong>Clearspace ${provenance.render.clearspace_px.toFixed(1)}px</strong> applied.`;
-    } else {
-      status.textContent = 'Renderer returned no provenance; check options.';
-    async function initialise() {
-      if (!ctx) {
-        status.textContent = "Canvas context unavailable; rendering skipped.";
-        return;
-      }
-      const params = new URLSearchParams(window.location.search);
-      const debugOverlay = params.get("overlay") === "safe";
-
-      const renderResult = renderHelix(ctx, {
-        width: canvas.width,
-        height: canvas.height,
-        palette,
-        NUM,
-        debugOverlay
-      });
-
-      if (!renderResult.ok) {
-        setStatus("Renderer aborted; check canvas options.");
-        return;
-      }
-
-      const paletteSource = paletteData ? "data/palette.json" : "fallback";
-      const clearspace = renderResult.render.clearspace_px.toFixed(1);
-      const overlayNote = debugOverlay ? "Safe frame overlay on." : "Safe frame overlay off.";
-      setStatus(`Palette: ${paletteSource}. Clearspace ${clearspace}px. ${overlayNote}`);
-
-    /* Single render call keeps the experience static and sensory-safe. */
     renderHelix(ctx, {
-      width: canvas.width,
-      height: canvas.height,
-      palette,
-      numerology: NUM
+      width:canvas.width,
+      height:canvas.height,
+      palette:activePalette,
+      NUM,
+      missingPalette:paletteMissing
     });
-    statusEl.textContent = paletteData
-      ? "Palette loaded. Rendering static layers…"
-      : "Palette missing or blocked; using ND-safe fallback.";
-
-    // Single render: no animation loops keeps the scene calm and sensory-safe.
-    renderHelix(ctx, { width: canvas.width, height: canvas.height, palette, NUM });
-    statusEl.textContent = paletteData
-      ? "Rendered with custom palette."
-      : "Rendered with fallback palette.";
-      const provenance = {
-        ...renderResult.render,
-        paletteSource,
-        overlay: debugOverlay ? "safe" : "none"
-      };
-      canvas.dataset.provenance = JSON.stringify(provenance);
-    const paletteData = await loadPalette("./data/palette.json");
-    const palette = paletteData || fallbackPalette;
-    updateStatus(paletteData ? "Palette loaded from data/palette.json." : "Palette missing; using ND-safe fallback.");
-
-    if (!ctx) {
-      updateStatus("Canvas context unavailable; rendering skipped.");
-    } else {
-      try {
-        renderHelix(ctx, { width: canvas.width, height: canvas.height, palette, NUM });
-        updateStatus("Rendered four calm layers without motion.");
-      } catch (error) {
-        updateStatus("Renderer failed; see console for details.");
-        throw error;
-      }
-    if (!ctx) {
-      elStatus.textContent = "Canvas context unavailable.";
-    } else {
-      // ND-safe rationale: render once, no animation loops.
-      renderHelix(ctx, { width: canvas.width, height: canvas.height, palette: active, NUM });
-      elStatus.textContent = "Rendered without motion.";
-      // Single render call: preserves stillness and avoids accidental motion loops.
-      renderHelix(ctx, { width: canvas.width, height: canvas.height, palette, NUM });
-      updateStatus(paletteData ? "Rendered with custom palette. Motion disabled by design." : "Rendered with fallback palette. Motion disabled by design.");
-    function updateStatus(message) {
-      status.textContent = message;
-    }
-
-    async function loadPalette(path) {
-      try {
-        const response = await fetch(path, { cache: "no-store" });
-        if (!response.ok) {
-          throw new Error(String(response.status));
-        }
-        return await response.json();
-      } catch (error) {
-        return null;
-      }
-
-    if (!ctx) {
-      updateStatus("Canvas context unavailable in this browser.");
-    } else {
-      const paletteData = await loadPalette("./data/palette.json");
-      const palette = paletteData || FALLBACK_PALETTE;
-      updateStatus(paletteData ? "Palette loaded from data/palette.json." : "Palette missing; using ND-safe fallback.");
-      const paletteSource = paletteData ? "data/palette.json" : "fallback";
-      const clearspace = renderResult.render.clearspace_px.toFixed(1);
-      const overlayNote = debugOverlay ? "Safe frame overlay on." : "Safe frame overlay off.";
-      setStatus(`Palette: ${paletteSource}. Clearspace ${clearspace}px. ${overlayNote}`);
-
-      const outcome = renderHelix(ctx, { width: canvas.width, height: canvas.height, palette, NUM });
-      if (outcome.ok) {
-        updateStatus(paletteData ? "Rendered four static layers with custom palette." : "Rendered with fallback palette; all layers static.");
-      } else {
-        updateStatus("Render skipped: canvas context unavailable.");
-      }
-    if (!ctx) {
-      statusEl.textContent = "Canvas context unavailable; rendering skipped.";
-    } else {
-      const palette = await loadJSON("./data/palette.json");
-      const activePalette = palette || fallbackPalette;
-      statusEl.textContent = palette
-        ? "Palette loaded. Rendering sacred layers without motion."
-        : "Palette missing or blocked; using ND-safe fallback hues.";
-
-      // ND-safe rationale: static draw, readable contrast, layered order.
-      renderHelix(ctx, {
-        width: canvas.width,
-        height: canvas.height,
-        palette: activePalette,
-        NUM
-      });
-    // Single render: no animation loops keeps the scene calm and sensory-safe.
-    renderHelix(ctx, { width: canvas.width, height: canvas.height, palette, NUM });
-    statusEl.textContent = paletteData
-      ? "Rendered with custom palette."
-      : "Rendered with fallback palette.";
-      const provenance = {
-        ...renderResult.render,
-        paletteSource,
-        overlay: debugOverlay ? "safe" : "none"
-      };
-      canvas.dataset.provenance = JSON.stringify(provenance);
-    }
   </script>
 </body>
 </html>
