@@ -1,15 +1,22 @@
+
 name: Deploy Cathedral (static) to GitHub Pages
+
+name: Deploy cathedral to GitHub Pages
+
 
 on:
   push:
     branches: [ main ]
   workflow_dispatch:
 
+<
 # Required for Pages
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 
 concurrency:
   group: "pages"
@@ -51,4 +58,39 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: apps/cathedral
+      - name: Deploy
+
+concurrency: pages
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # If you're not building, just upload the static folder:
+      - name: Upload static site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: apps/cathedral
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+
+
+
         uses: actions/deploy-pages@v4
