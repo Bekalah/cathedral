@@ -39,7 +39,98 @@
         return await res.json();
       } catch (err) {
         return null;
+    // ND-safe fallback colors in case the JSON file is absent or blocked.
+    const FALLBACK_PALETTE = Object.freeze({
+      bg: "#0b0b12",
+      ink: "#e8e8f0",
+      layers: ["#b1c7ff", "#89f7fe", "#a0ffa1", "#ffd27f", "#f5a3ff", "#d0d0e6"]
+    });
+
+    const NUMEROLOGY = Object.freeze({
+      THREE: 3,
+      SEVEN: 7,
+      NINE: 9,
+      ELEVEN: 11,
+      TWENTYTWO: 22,
+      THIRTYTHREE: 33,
+      NINETYNINE: 99,
+      ONEFORTYFOUR: 144
+    });
+
+    function updateStatus(message) {
+      statusEl.textContent = message;
+    }
+
+    // Prefer live codex bundle via /v1/codex, then fall back to local dist bundle, then palette file.
+    async function loadCodexPreferred() {
+      const attempts = [];
+      if (window.location.protocol !== "file:") {
+        attempts.push(async () => {
+          const response = await fetch("/v1/codex", { cache: "no-store" });
+          if (!response.ok) {
+            return null;
+          }
+          return await response.json();
+        });
       }
+
+      const distPath = "./cathedral/dist/codex.json";
+      if (window.location.protocol === "file:") {
+        attempts.push(async () => {
+          try {
+            const module = await import(distPath, { assert: { type: "json" } });
+            return module.default;
+          } catch (error) {
+            return null;
+          }
+        });
+      } else {
+        attempts.push(async () => {
+          try {
+            const response = await fetch(distPath, { cache: "no-store" });
+            if (!response.ok) {
+              return null;
+            }
+            return await response.json();
+          } catch (error) {
+            return null;
+          }
+        });
+      }
+
+      attempts.push(async () => {
+        const palettePath = "./data/palette.json";
+        if (window.location.protocol === "file:") {
+          try {
+            const module = await import(palettePath, { assert: { type: "json" } });
+            return { palette: module.default };
+          } catch (error) {
+            return null;
+          }
+        }
+        try {
+          const response = await fetch(palettePath, { cache: "no-store" });
+          if (!response.ok) {
+            return null;
+          }
+          const data = await response.json();
+          return { palette: data };
+        } catch (error) {
+          return null;
+        }
+      });
+
+      for (const attempt of attempts) {
+        try {
+          const result = await attempt();
+          if (result) {
+            return result;
+          }
+        } catch (error) {
+          // Swallow errors to continue fallback chain.
+        }
+      }
+      return null;
     }
 
     const defaults = {
@@ -54,6 +145,15 @@
     const active = palette || defaults.palette;
     const missing = !palette;
     elStatus.textContent = missing ? "Palette missing; using safe fallback." : "Palette loaded.";
+      const codex = await loadCodexPreferred();
+      const palette = codex && codex.palette ? codex.palette : FALLBACK_PALETTE;
+      const missingPalette = !(codex && codex.palette);
+
+      updateStatus(
+        missingPalette
+          ? "Codex bundle unavailable; using safe fallback palette."
+          : "Palette loaded from codex bundle."
+      );
 
     // Numerology constants used by geometry routines
     const NUM = { THREE:3, SEVEN:7, NINE:9, ELEVEN:11, TWENTYTWO:22, THIRTYTHREE:33, NINETYNINE:99, ONEFORTYFOUR:144 };
