@@ -4,64 +4,40 @@
   <meta charset="utf-8">
   <title>Cosmic Helix Renderer (ND-safe, Offline)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-
-  <meta name="color-scheme" content="dark light">
-  <style>
-    /* ND-safe styling: calm contrast, no motion, spacious layout */
-
   <meta name="color-scheme" content="light dark">
   <style>
-    /* ND-safe styling: calm contrast, zero motion, generous whitespace */
-
+    /* ND-safe styling: calm contrast, no motion, clear typographic rhythm */
     :root {
       --bg: #0b0b12;
       --ink: #e8e8f0;
-      --muted: #9ea2c9;
+      --muted: #a6a6c1;
     }
-
-    html, body {
 
     html,
     body {
-
       margin: 0;
       padding: 0;
       background: var(--bg);
       color: var(--ink);
-
-      font: 14px/1.5 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-    }
-
-    header {
-      padding: 16px 20px;
-      border-bottom: 1px solid #1d1d2a;
-      box-shadow: 0 1px 0 rgba(12, 12, 20, 0.6);
-
       font: 14px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     }
 
     header {
       padding: 14px 18px;
       border-bottom: 1px solid #1d1d2a;
-
+      box-shadow: 0 1px 0 rgba(12, 12, 20, 0.65);
       letter-spacing: 0.02em;
     }
 
-    h1 {
-      margin: 0;
+    header strong {
       font-size: 20px;
+      font-weight: 600;
     }
 
     .status {
-
-      color: var(--muted);
-      font-size: 12px;
-      margin-top: 4px;
-
       margin-top: 4px;
       color: var(--muted);
       font-size: 12px;
-
     }
 
     #stage {
@@ -69,26 +45,16 @@
       width: 1440px;
       height: 900px;
       margin: 18px auto 12px;
-
       box-shadow: 0 0 0 1px #1d1d2a, 0 16px 34px rgba(0, 0, 0, 0.28);
-
-      box-shadow: 0 0 0 1px #1d1d2a, 0 14px 32px rgba(0, 0, 0, 0.32);
-
       background: var(--bg);
     }
 
     .note {
       max-width: 900px;
       margin: 0 auto 24px;
-
       padding: 0 18px;
       color: var(--muted);
       text-align: center;
-
-      padding: 0 16px;
-      text-align: center;
-      color: var(--muted);
-
     }
 
     code {
@@ -100,9 +66,8 @@
 </head>
 <body>
   <header>
-    <h1>Cosmic Helix Renderer</h1>
-
-    <p class="status" id="status">Preparing static layers…</p>
+    <div><strong>Cosmic Helix Renderer</strong> - layered sacred geometry (offline, ND-safe)</div>
+    <div class="status" id="status">Preparing static layers...</div>
   </header>
 
   <canvas
@@ -111,15 +76,10 @@
     height="900"
     aria-label="Layered sacred geometry canvas"
   ></canvas>
-  <p class="note">Offline renderer for the Vesica field, Tree-of-Life scaffold, Fibonacci curve, and static double-helix lattice. Open this file directly; no network or animation occurs.</p>
-
-    <div class="status" id="status">Loading palette…</div>
-  </header>
-
-  <canvas id="stage" width="1440" height="900" aria-label="Layered sacred geometry canvas"></canvas>
-  <p class="note">Static layered cosmology: Vesica field, Tree-of-Life scaffold, Fibonacci curve, and static double-helix lattice. No
-    animation, no external libraries, safe to open offline.</p>
-
+  <p class="note">
+    Offline renderer for the Vesica field, Tree-of-Life scaffold, Fibonacci curve, and static double-helix lattice.
+    Open this file directly; no network calls or animation occur.
+  </p>
 
   <script type="module">
     import { renderHelix } from "./js/helix-renderer.mjs";
@@ -128,31 +88,12 @@
     const canvas = document.getElementById("stage");
     const ctx = canvas.getContext("2d");
 
-
+    // ND-safe fallback colors in case the JSON file is absent or blocked.
     const FALLBACK_PALETTE = Object.freeze({
       bg: "#0b0b12",
       ink: "#e8e8f0",
-      layers: ["#88a6ff", "#7fe7f2", "#9cf5b4", "#ffd27f", "#f4a7ff", "#d6d6ed"]
-    });
-=======
-    async function loadJSON(path) {
-      try {
-        const response = await fetch(path, { cache: "no-store" });
-        if (!response.ok) {
-          return null;
-        }
-        return await response.json();
-      } catch (error) {
-        return null;
-      }
-    }
-
-    const FALLBACK_PALETTE = {
-      bg: "#0b0b12",
-      ink: "#e8e8f0",
       layers: ["#b1c7ff", "#89f7fe", "#a0ffa1", "#ffd27f", "#f5a3ff", "#d0d0e6"]
-    };
-
+    });
 
     const NUMEROLOGY = Object.freeze({
       THREE: 3,
@@ -165,17 +106,18 @@
       ONEFORTYFOUR: 144
     });
 
-
-    function report(message) {
+    function updateStatus(message) {
       statusEl.textContent = message;
     }
 
+    // Try to load the palette locally without touching the network.
     async function loadPalette() {
-      const path = "./data/palette.json";
+      const localPath = "./data/palette.json";
 
       if (window.location.protocol === "file:") {
         try {
-          const module = await import(path, { assert: { type: "json" } });
+          // JSON modules work for modern browsers when opened via file://.
+          const module = await import(localPath, { assert: { type: "json" } });
           return module.default;
         } catch (error) {
           return null;
@@ -183,9 +125,9 @@
       }
 
       try {
-        const response = await fetch(path, { cache: "no-store" });
+        const response = await fetch(localPath, { cache: "no-store" });
         if (!response.ok) {
-          throw new Error(String(response.status));
+          return null;
         }
         return await response.json();
       } catch (error) {
@@ -195,7 +137,7 @@
 
     async function init() {
       if (!ctx) {
-        report("Canvas context unavailable; rendering skipped to stay ND-safe.");
+        updateStatus("Canvas context unavailable; rendering skipped to stay ND-safe.");
         return;
       }
 
@@ -203,46 +145,27 @@
       const palette = paletteData || FALLBACK_PALETTE;
       const missingPalette = !paletteData;
 
-      report(missingPalette ? "Palette missing or blocked; using ND-safe fallback." : "Palette loaded; rendering calm layers.");
+      updateStatus(
+        missingPalette
+          ? "Palette missing or unreadable; using safe fallback."
+          : "Palette loaded from data/palette.json."
+      );
 
-      try {
-        const result = renderHelix(ctx, {
-          width: canvas.width,
-          height: canvas.height,
-          palette,
-          NUM,
-          missingPalette
-        });
+      // Render once with explicit numerology constants for determinism.
+      const result = renderHelix(ctx, {
+        width: canvas.width,
+        height: canvas.height,
+        palette,
+        numerology: NUMEROLOGY,
+        missingPalette
+      });
 
-        if (result && result.ok) {
-          report(missingPalette ? "Rendered with fallback palette. Layers remain static." : "Rendered with custom palette. Layers remain static.");
-        } else {
-          report("Render skipped; see console for diagnostics.");
-        }
-      } catch (error) {
-        console.error(error);
-        report("Renderer failed; see console for details.");
+      if (!result || !result.ok) {
+        updateStatus("Renderer declined to draw; see console for diagnostics.");
       }
     }
 
     init();
-
-    const paletteData = await loadJSON("./data/palette.json");
-    const paletteMissing = !paletteData;
-    const palette = paletteMissing ? FALLBACK_PALETTE : paletteData;
-
-    statusEl.textContent = paletteMissing
-      ? "Palette missing or unreadable; using safe fallback."
-      : "Palette loaded from data/palette.json.";
-
-    renderHelix(ctx, {
-      width: canvas.width,
-      height: canvas.height,
-      palette,
-      numerology: NUMEROLOGY,
-      missingPalette: paletteMissing
-    });
-
   </script>
 </body>
 </html>
