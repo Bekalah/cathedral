@@ -15,12 +15,13 @@ removed so the tree only carries offline-friendly assets.
 
 ```
 apps/
+  codex-14499/        # Cosmic helix renderer bundle (static, offline)
+    index.html
+    js/helix-renderer.mjs
+    data/palette.json
   hub/                # Offline corpus demonstrator
-index.html            # Cosmic helix renderer entry point (static)
-js/helix-renderer.mjs # Layered sacred geometry renderer
 shared/               # Canonical corpus, symbols, packs, and search index
 scripts/              # Build helpers (currently corpus index only)
-data/palette.json     # Optional palette override for the helix renderer
 ```
 
 `docs/legacy-cosmogenesis-ui.html` preserves the previous README's inline HTML
@@ -49,7 +50,7 @@ files, empty deployment folders, or dangling references to external services.
 2. **Liber Arcanae** already has tarot correspondences inside the
    `shared/graph/` files and the source pack for `C144N-000`; extend those JSON
    tables instead of duplicating them in a separate repository.
-3. **Cosmogenesis Engine** can reference the renderer module (`js/`) and the
+3. **Cosmogenesis Engine** can reference the renderer module (`apps/codex-14499/js/`) and the
    offline corpus search utilities from `apps/hub/js/` once the UI shell is
    rebuilt.
 
@@ -59,8 +60,8 @@ repositories.
 
 ## Housekeeping Notes
 
-* Cleaned duplicated HTML and conflicting inline scripts from `index.html`.
-* Rebuilt `js/helix-renderer.mjs` as a single deterministic module.
+* Cleaned duplicated HTML and conflicting inline scripts from `apps/codex-14499/index.html`.
+* Rebuilt `apps/codex-14499/js/helix-renderer.mjs` as a single deterministic module.
 * Archived the legacy README HTML into `docs/legacy-cosmogenesis-ui.html` with
   context for future reference.
 * Confirmed there are no references to Netlify, Fly.io, or other deploy-only

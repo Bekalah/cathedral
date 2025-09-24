@@ -29,7 +29,7 @@
   <p class="note" id="status">Loading palette…</p>
 
   <script type="module">
-    import { renderHelix } from "../../js/helix-renderer.mjs";
+    import { renderHelix } from "../codex-14499/js/helix-renderer.mjs";
 
     const canvas = document.getElementById('helixCanvas');
     const status = document.getElementById('status');
@@ -62,9 +62,9 @@
       layers: ['#6f9bff', '#74f1ff', '#8ef7c3', '#ffd27f', '#f5a3ff', '#d4d7ff']
     };
 
-    const paletteData = await loadPalette('../../data/palette.json');
+    const paletteData = await loadPalette('../codex-14499/data/palette.json');
     const palette = paletteData || fallbackPalette;
-    status.textContent = paletteData ? 'Palette loaded from data/palette.json. Rendering static layers…' : 'Palette missing or blocked; using safe fallback.';
+    status.textContent = paletteData ? 'Palette loaded from codex-14499/data/palette.json. Rendering static layers…' : 'Palette missing or blocked; using safe fallback.';
 
     if (!ctx) {
       status.textContent = 'Canvas unavailable in this browser.';
