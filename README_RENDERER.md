@@ -16,6 +16,7 @@ Static HTML + Canvas renderer that honors the Cosmic-Helix spec with ND-safe pra
 ## Palette Notes
 - Default palette favors serene blues, teals, gold, and violet on deep charcoal for high readability.
 - Edit `data/palette.json` to adjust tones; keep six layer colors so each geometry band remains distinct.
+- Additional curated palettes now live in `data/palettes/` (for example `muse.json`). Copy one of those files over `data/palette.json` when you want to swap schemes without editing hex values by hand.
 - Removing the JSON file triggers the fallback palette and an inline notice, confirming the renderer is still safe.
 
 ## Using the Renderer

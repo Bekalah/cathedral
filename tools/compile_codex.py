@@ -18,7 +18,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(ROOT)
 SHARED = os.path.join(REPO, 'shared')
 DIST = os.path.join(REPO, 'dist')
-SCHEMA_PATH = os.path.join(ROOT, 'schemas', 'node.schema.json')
+SCHEMA_PATH = os.path.join(REPO, 'packages', 'codex-14499', 'schema', 'node.schema.json')
 
 with open(SCHEMA_PATH, 'r', encoding='utf-8') as schema_file:
     SCHEMA = json.load(schema_file)
