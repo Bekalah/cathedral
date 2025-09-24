@@ -1,0 +1,189 @@
+{
+  "meta": {
+    "name": "Cosmic Cathedral Codex",
+    "edition": "living-scroll",
+    "nd_safe": {
+      "strobe": false,
+      "autoplay": false,
+      "motion": "calm"
+    },
+    "generated_at": "2025-09-24T07:02:11.517Z"
+  },
+  "palette": {
+    "bg": "#0b0b12",
+    "ink": "#e8e8f0",
+    "layers": [
+      "#88a6ff",
+      "#7fe7f2",
+      "#9cf5b4",
+      "#ffd27f",
+      "#f4a7ff",
+      "#d6d6ed"
+    ]
+  },
+  "nodes": [],
+  "spine": [],
+  "halls": [],
+  "flow": [],
+  "themes": {
+    "circuitum": {
+      "palette": "black-gold",
+      "tokens": {
+        "background": "#050505",
+        "foreground": "#f5f0d0",
+        "accent": "#d4af37"
+      }
+    },
+    "codex": {
+      "palette": "parchment",
+      "tokens": {
+        "background": "#f6f1e1",
+        "foreground": "#1c130b",
+        "accent": "#8b5e34"
+      }
+    },
+    "cathedral": {
+      "palette": "neon-glyphs",
+      "tokens": {
+        "background": "#0b0b12",
+        "foreground": "#e8e8f0",
+        "accent": "#9f7bff"
+      }
+    }
+  },
+  "tarot": {
+    "LA-00-FOOL": {
+      "id": "LA-00-FOOL",
+      "name": "The Fool",
+      "status": "missing",
+      "lore": ""
+    },
+    "LA-01-MAGICIAN": {
+      "id": "LA-01-MAGICIAN",
+      "name": "The Magician",
+      "status": "missing",
+      "lore": ""
+    },
+    "LA-02-PRIESTESS": {
+      "id": "LA-02-PRIESTESS",
+      "name": "The High Priestess",
+      "status": "missing",
+      "lore": ""
+    },
+    "LA-03-EMPRESS": {
+      "id": "LA-03-EMPRESS",
+      "name": "The Empress",
+      "status": "missing",
+      "lore": ""
+    },
+    "LA-04-EMPEROR": {
+      "id": "LA-04-EMPEROR",
+      "name": "The Emperor",
+      "status": "missing",
+      "lore": ""
+    },
+    "LA-05-HIEROPHANT": {
+      "id": "LA-05-HIEROPHANT",
+      "name": "The Hierophant",
+      "status": "missing",
+      "lore": ""
+    },
+    "LA-06-LOVERS": {
+      "id": "LA-06-LOVERS",
+      "name": "The Lovers",
+      "status": "missing",
+      "lore": ""
+    },
+    "LA-07-CHARIOT": {
+      "id": "LA-07-CHARIOT",
+      "name": "The Chariot",
+      "status": "missing",
+      "lore": ""
+    },
+    "LA-08-STRENGTH": {
+      "id": "LA-08-STRENGTH",
+      "name": "Strength",
+      "status": "missing",
+      "lore": ""
+    },
+    "LA-09-HERMIT": {
+      "id": "LA-09-HERMIT",
+      "name": "The Hermit",
+      "status": "missing",
+      "lore": ""
+    },
+    "LA-10-WHEEL": {
+      "id": "LA-10-WHEEL",
+      "name": "Wheel of Fortune",
+      "status": "missing",
+      "lore": ""
+    },
+    "LA-11-JUSTICE": {
+      "id": "LA-11-JUSTICE",
+      "name": "Justice",
+      "status": "missing",
+      "lore": ""
+    },
+    "LA-12-HANGED": {
+      "id": "LA-12-HANGED",
+      "name": "The Hanged One",
+      "status": "missing",
+      "lore": ""
+    },
+    "LA-13-DEATH": {
+      "id": "LA-13-DEATH",
+      "name": "Death",
+      "status": "missing",
+      "lore": ""
+    },
+    "LA-14-TEMPERANCE": {
+      "id": "LA-14-TEMPERANCE",
+      "name": "Temperance",
+      "status": "missing",
+      "lore": ""
+    },
+    "LA-15-DEVIL": {
+      "id": "LA-15-DEVIL",
+      "name": "The Devil",
+      "status": "missing",
+      "lore": ""
+    },
+    "LA-16-TOWER": {
+      "id": "LA-16-TOWER",
+      "name": "The Tower",
+      "status": "missing",
+      "lore": ""
+    },
+    "LA-17-STAR": {
+      "id": "LA-17-STAR",
+      "name": "The Star",
+      "status": "missing",
+      "lore": ""
+    },
+    "LA-18-MOON": {
+      "id": "LA-18-MOON",
+      "name": "The Moon",
+      "status": "missing",
+      "lore": ""
+    },
+    "LA-19-SUN": {
+      "id": "LA-19-SUN",
+      "name": "The Sun",
+      "status": "missing",
+      "lore": ""
+    },
+    "LA-20-JUDGEMENT": {
+      "id": "LA-20-JUDGEMENT",
+      "name": "Judgement",
+      "status": "missing",
+      "lore": ""
+    },
+    "LA-21-WORLD": {
+      "id": "LA-21-WORLD",
+      "name": "The World",
+      "status": "missing",
+      "lore": ""
+    }
+  },
+  "lineages": {}
+}
