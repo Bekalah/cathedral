@@ -110,29 +110,76 @@
       statusEl.textContent = message;
     }
 
-    // Try to load the palette locally without touching the network.
-    async function loadPalette() {
-      const localPath = "./data/palette.json";
+    // Prefer live codex bundle via /v1/codex, then fall back to local dist bundle, then palette file.
+    async function loadCodexPreferred() {
+      const attempts = [];
+      if (window.location.protocol !== "file:") {
+        attempts.push(async () => {
+          const response = await fetch("/v1/codex", { cache: "no-store" });
+          if (!response.ok) {
+            return null;
+          }
+          return await response.json();
+        });
+      }
 
+      const distPath = "./cathedral/dist/codex.json";
       if (window.location.protocol === "file:") {
+        attempts.push(async () => {
+          try {
+            const module = await import(distPath, { assert: { type: "json" } });
+            return module.default;
+          } catch (error) {
+            return null;
+          }
+        });
+      } else {
+        attempts.push(async () => {
+          try {
+            const response = await fetch(distPath, { cache: "no-store" });
+            if (!response.ok) {
+              return null;
+            }
+            return await response.json();
+          } catch (error) {
+            return null;
+          }
+        });
+      }
+
+      attempts.push(async () => {
+        const palettePath = "./data/palette.json";
+        if (window.location.protocol === "file:") {
+          try {
+            const module = await import(palettePath, { assert: { type: "json" } });
+            return { palette: module.default };
+          } catch (error) {
+            return null;
+          }
+        }
         try {
-          // JSON modules work for modern browsers when opened via file://.
-          const module = await import(localPath, { assert: { type: "json" } });
-          return module.default;
+          const response = await fetch(palettePath, { cache: "no-store" });
+          if (!response.ok) {
+            return null;
+          }
+          const data = await response.json();
+          return { palette: data };
         } catch (error) {
           return null;
         }
-      }
+      });
 
-      try {
-        const response = await fetch(localPath, { cache: "no-store" });
-        if (!response.ok) {
-          return null;
+      for (const attempt of attempts) {
+        try {
+          const result = await attempt();
+          if (result) {
+            return result;
+          }
+        } catch (error) {
+          // Swallow errors to continue fallback chain.
         }
-        return await response.json();
-      } catch (error) {
-        return null;
       }
+      return null;
     }
 
     async function init() {
@@ -141,14 +188,14 @@
         return;
       }
 
-      const paletteData = await loadPalette();
-      const palette = paletteData || FALLBACK_PALETTE;
-      const missingPalette = !paletteData;
+      const codex = await loadCodexPreferred();
+      const palette = codex && codex.palette ? codex.palette : FALLBACK_PALETTE;
+      const missingPalette = !(codex && codex.palette);
 
       updateStatus(
         missingPalette
-          ? "Palette missing or unreadable; using safe fallback."
-          : "Palette loaded from data/palette.json."
+          ? "Codex bundle unavailable; using safe fallback palette."
+          : "Palette loaded from codex bundle."
       );
 
       // Render once with explicit numerology constants for determinism.
