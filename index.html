@@ -28,25 +28,40 @@
   <script type="module">
     import { renderHelix } from "./js/helix-renderer.mjs";
 
-    const elStatus = document.getElementById("status");
+    const statusEl = document.getElementById("status");
     const canvas = document.getElementById("stage");
     const ctx = canvas.getContext("2d");
 
-    async function loadJSON(path) {
+    async function loadPalette(path) {
+      // Offline-first: prefer module import so file:// usage stays local-only.
       try {
-        const res = await fetch(path, { cache: "no-store" });
-        if (!res.ok) throw new Error(String(res.status));
-        return await res.json();
-      } catch (err) {
-        return null;
-    // ND-safe fallback colors in case the JSON file is absent or blocked.
+        const module = await import(path, { assert: { type: "json" } });
+        return module.default;
+      } catch (importError) {
+        // Browsers without JSON import assertions fall back to same-origin fetch.
+        if (window.location.protocol === "file:") {
+          return null;
+        }
+        try {
+          const response = await fetch(path, { cache: "no-store" });
+          if (!response.ok) {
+            return null;
+          }
+          return await response.json();
+        } catch (fetchError) {
+          return null;
+        }
+      }
+    }
+
     const FALLBACK_PALETTE = Object.freeze({
+      // ND-safe fallback colors in case the JSON file is absent or blocked.
       bg: "#0b0b12",
       ink: "#e8e8f0",
       layers: ["#b1c7ff", "#89f7fe", "#a0ffa1", "#ffd27f", "#f5a3ff", "#d0d0e6"]
     });
 
-    const NUMEROLOGY = Object.freeze({
+    const NUM = Object.freeze({
       THREE: 3,
       SEVEN: 7,
       NINE: 9,
@@ -57,109 +72,19 @@
       ONEFORTYFOUR: 144
     });
 
-    function updateStatus(message) {
-      statusEl.textContent = message;
-    }
-
-    // Prefer live codex bundle via /v1/codex, then fall back to local dist bundle, then palette file.
-    async function loadCodexPreferred() {
-      const attempts = [];
-      if (window.location.protocol !== "file:") {
-        attempts.push(async () => {
-          const response = await fetch("/v1/codex", { cache: "no-store" });
-          if (!response.ok) {
-            return null;
-          }
-          return await response.json();
-        });
-      }
-
-      const distPath = "./cathedral/dist/codex.json";
-      if (window.location.protocol === "file:") {
-        attempts.push(async () => {
-          try {
-            const module = await import(distPath, { assert: { type: "json" } });
-            return module.default;
-          } catch (error) {
-            return null;
-          }
-        });
-      } else {
-        attempts.push(async () => {
-          try {
-            const response = await fetch(distPath, { cache: "no-store" });
-            if (!response.ok) {
-              return null;
-            }
-            return await response.json();
-          } catch (error) {
-            return null;
-          }
-        });
-      }
-
-      attempts.push(async () => {
-        const palettePath = "./data/palette.json";
-        if (window.location.protocol === "file:") {
-          try {
-            const module = await import(palettePath, { assert: { type: "json" } });
-            return { palette: module.default };
-          } catch (error) {
-            return null;
-          }
-        }
-        try {
-          const response = await fetch(palettePath, { cache: "no-store" });
-          if (!response.ok) {
-            return null;
-          }
-          const data = await response.json();
-          return { palette: data };
-        } catch (error) {
-          return null;
-        }
-      });
-
-      for (const attempt of attempts) {
-        try {
-          const result = await attempt();
-          if (result) {
-            return result;
-          }
-        } catch (error) {
-          // Swallow errors to continue fallback chain.
-        }
-      }
-      return null;
-    }
-
-    const defaults = {
-      palette: {
-        bg:"#0b0b12",
-        ink:"#e8e8f0",
-        layers:["#b1c7ff","#89f7fe","#a0ffa1","#ffd27f","#f5a3ff","#d0d0e6"]
-      }
-    };
-
-    const palette = await loadJSON("./data/palette.json");
-    const active = palette || defaults.palette;
-    const missing = !palette;
-    elStatus.textContent = missing ? "Palette missing; using safe fallback." : "Palette loaded.";
-      const codex = await loadCodexPreferred();
-      const palette = codex && codex.palette ? codex.palette : FALLBACK_PALETTE;
-      const missingPalette = !(codex && codex.palette);
-
-      updateStatus(
-        missingPalette
-          ? "Codex bundle unavailable; using safe fallback palette."
-          : "Palette loaded from codex bundle."
-      );
-
-    // Numerology constants used by geometry routines
-    const NUM = { THREE:3, SEVEN:7, NINE:9, ELEVEN:11, TWENTYTWO:22, THIRTYTHREE:33, NINETYNINE:99, ONEFORTYFOUR:144 };
+    const palettePath = "./data/palette.json";
+    const palette = await loadPalette(palettePath);
+    const activePalette = palette || FALLBACK_PALETTE;
+    statusEl.textContent = palette ? "Palette loaded." : "Palette missing; using safe fallback.";
 
     // ND-safe rationale: no motion, high readability, soft colors, layered order
-    renderHelix(ctx, { width:canvas.width, height:canvas.height, palette:active, NUM, missingPalette:missing });
+    renderHelix(ctx, {
+      width: canvas.width,
+      height: canvas.height,
+      palette: activePalette,
+      NUM,
+      missingPalette: !palette
+    });
   </script>
 </body>
 </html>
