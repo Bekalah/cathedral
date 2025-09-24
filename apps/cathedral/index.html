@@ -5,6 +5,16 @@
   <title>Cosmic Helix Renderer (ND-safe, Offline)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="color-scheme" content="light dark">
+  <base id="deployment-base" href="/cathedral/">
+  <script>
+    // Keep offline-first promise: file:// loads need relative paths rather than /cathedral/.
+    if (window.location.protocol === "file:") {
+      const elBase = document.getElementById("deployment-base");
+      if (elBase) {
+        elBase.setAttribute("href", "./");
+      }
+    }
+  </script>
   <style>
     /* ND-safe: calm contrast, no motion, generous spacing */
     :root { --bg:#0b0b12; --ink:#e8e8f0; --muted:#a6a6c1; }
