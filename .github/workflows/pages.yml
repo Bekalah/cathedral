@@ -10,6 +10,18 @@ permissions:
   pages: write
   id-token: write
 
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: apps/cathedral
+      - name: Deploy
+
 concurrency: pages
 
 jobs:
@@ -30,4 +42,5 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
+
         uses: actions/deploy-pages@v4
