@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" aria-labelledby="title desc" role="img">
+  <title id="title">Void Bloom Mandala</title>
+  <desc id="desc">Layered petals emerging from Wuji without animation to remain ND-safe.</desc>
+  <!-- Layer 1: gentle void backdrop. -->
+  <rect x="0" y="0" width="600" height="600" fill="#0b0b12" />
+  <!-- Layer 2: radial vesica grid referencing the sacred lattice. -->
+  <g fill="none" stroke="#1d1f33" stroke-width="2" opacity="0.5">
+    <circle cx="300" cy="300" r="240" />
+    <circle cx="300" cy="300" r="180" />
+    <circle cx="300" cy="300" r="120" />
+    <circle cx="300" cy="300" r="60" />
+    <ellipse cx="300" cy="300" rx="220" ry="240" />
+    <ellipse cx="300" cy="300" rx="240" ry="220" />
+  </g>
+  <!-- Layer 3: petals arranged with 22 segments, no animation to avoid overstimulation. -->
+  <g fill="#b39cff" opacity="0.55">
+    <path d="M300 72l34 132-34 24-34-24z" />
+    <path d="M180 108l96 104-24 34-120-66z" />
+    <path d="M420 108l-96 104 24 34 120-66z" />
+    <path d="M96 220l132 34 0 40-132-34z" />
+    <path d="M504 220l-132 34 0 40 132-34z" />
+    <path d="M180 492l96-104-24-34-120 66z" />
+    <path d="M420 492l-96-104 24-34 120 66z" />
+    <path d="M300 528l-34-132 34-24 34 24z" />
+  </g>
+  <!-- Layer 4: inner bloom with Fibonacci-inspired ratios. -->
+  <g fill="#89f7fe" opacity="0.68">
+    <polygon points="300 160 360 240 324 360 276 360 240 240" />
+    <polygon points="300 440 340 360 300 280 260 360" opacity="0.85" />
+  </g>
+  <!-- Layer 5: central sanctuary seed. -->
+  <g fill="#d4af37" opacity="0.9">
+    <circle cx="300" cy="300" r="24" />
+    <circle cx="300" cy="300" r="10" fill="#0b0b12" />
+  </g>
+</svg>
