@@ -256,11 +256,11 @@ function drawHelixLattice(ctx, settings) {
     const offset = Math.sin(angle) * amplitude;
     strandA.push({
       x: clamp(spineX - offset - phaseOffset, stage.x, stage.x + stage.width),
-      y
+      y: y
     });
     strandB.push({
       x: clamp(spineX + offset + phaseOffset, stage.x, stage.x + stage.width),
-      y
+      y: y
     });
   }
 
