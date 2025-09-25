@@ -7,6 +7,10 @@ Static HTML + Canvas renderer that honors the Cosmic-Helix spec with layered geo
 - `js/helix-renderer.mjs` - pure ES module that draws the Vesica field, Tree-of-Life scaffold, Fibonacci curve, and static double-helix lattice in that order.
 - `data/palette.json` - editable palette file. Remove it to test the inline fallback notice; the renderer stays safe.
 
+- `index.html` - entry point with a 1440x900 canvas, calm status line, and local palette loading that first tries `fetch` then falls back to a built-in palette.
+- `js/helix-renderer.mjs` - pure ES module that draws the Vesica lattice, Tree-of-Life scaffold, Fibonacci curve, and static double-helix lattice.
+- `data/palette.json` - editable ND-safe palette. If missing or blocked, the renderer falls back to an embedded palette and paints a gentle inline notice.
+
 ## Rendered Layers
 1. **Vesica field** - Seven by nine circle lattice using constants 7 and 9 for grounding repetition.
 2. **Tree-of-Life scaffold** - Ten sephirot nodes with twenty-two connective paths. Layout ratios weave constants 3, 7, 9, 11, 22, 33, 99, and 144.
