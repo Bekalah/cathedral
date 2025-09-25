@@ -10,10 +10,19 @@ function ensureModal() {
   if (modalRenderer) {
     return modalRenderer;
   }
+  // Helper to repeatedly remove all HTML tags
+  function stripAllTags(str) {
+    let prev;
+    do {
+      prev = str;
+      str = str.replace(/<[^>]+>/g, "");
+    } while (str !== prev);
+    return str;
+  }
   return (html) => {
     const win = window.open("", "_blank");
     if (!win) {
-      alert("Source pack:\n" + html.replace(/<[^>]+>/g, ""));
+      alert("Source pack:\n" + stripAllTags(html));
       return;
     }
     win.document.write(`<title>Source Pack</title><body>${html}</body>`);
