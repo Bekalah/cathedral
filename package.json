@@ -6,13 +6,14 @@
   "scripts": {
     "build:index": "node scripts/build-corpus-index.mjs",
     "build:blessed": "node engines/blessed-build.js",
-    "cathedral:bundle": "node scripts/build-cathedral-codex.mjs",
+    "cathedral:bundle": "node tools/cathedral-bundle.mjs",
     "codex:local": "node packages/codex-14499/tools/gather-codex.mjs --config=packages/codex-14499/config/sources.local.json",
     "codex:org": "node packages/codex-14499/tools/gather-codex.mjs --config=packages/codex-14499/config/sources.github.json",
     "codex:report": "cat packages/codex-14499/dist/codex.report.md",
-    "cathedral:bundle": "node tools/cathedral-bundle.mjs",
     "cathedral:serve": "node tools/cathedral-bundle.mjs --serve",
-    "test": "echo \"No automated tests\""
+    "test": "echo \"No automated tests\"",
+    "build": "node scripts/build-renderer.mjs build",
+    "bundle:static": "node scripts/build-renderer.mjs bundle"
   },
   "keywords": [
     "esoteric",

@@ -2,6 +2,10 @@
 
 Static HTML + Canvas renderer that honors the Cosmic-Helix spec with ND-safe practices: no motion, soft yet legible contrast, and layered geometry that preserves depth. Everything works offline; double-clicking `index.html` is enough.
 
+`scripts/build-renderer.mjs` keeps container builds reproducible:
+- `npm run build` writes `build/renderer-manifest.json` so the source set stays auditable.
+- `npm run bundle:static` hydrates `dist/` with the renderer and calm placeholders for `/stone-grimoire/` and `/circuitum99/`.
+
 ## Files
 - `index.html` - entry point with a 1440x900 canvas, calm status line, and local palette loading that first tries `fetch` then falls back to JSON modules.
 - `js/helix-renderer.mjs` - pure ES module that draws the Vesica lattice, Tree-of-Life scaffold, Fibonacci curve, and static double-helix lattice.
@@ -23,6 +27,7 @@ Static HTML + Canvas renderer that honors the Cosmic-Helix spec with ND-safe pra
 1. Keep the four files together.
 2. Double-click `index.html` (or use your browser's "Open File..." command).
 3. The canvas renders immediately; no network, build step, or workflow is required.
+4. For Fly deployments, run `npm run build && npm run bundle:static` to refresh `dist/` before shipping.
 
 ## Accessibility + ND-safe Choices
 - No animation, autoplay, or audio; every draw happens once.
