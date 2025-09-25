@@ -8,7 +8,7 @@
   <style>
     /* ND-safe: calm contrast, no motion, generous spacing */
     :root { --bg:#0b0b12; --ink:#e8e8f0; --muted:#a6a6c1; }
-    html,body { margin:0; padding:0; background:var(--bg); color:var(--ink); font:14px/1.4 system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+    html,body { margin:0; padding:0; background:var(--bg); color:var(--ink); font:14px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
     header { padding:12px 16px; border-bottom:1px solid #1d1d2a; }
     .status { color:var(--muted); font-size:12px; }
     #stage { display:block; margin:16px auto; box-shadow:0 0 0 1px #1d1d2a; }
@@ -19,7 +19,7 @@
 <body>
   <header>
     <div><strong>Cosmic Helix Renderer</strong> - layered sacred geometry (offline, ND-safe)</div>
-    <div class="status" id="status">Loading palette...</div>
+    <div class="status" id="status">Preparing canvas...</div>
   </header>
 
   <canvas id="stage" width="1440" height="900" aria-label="Layered sacred geometry canvas"></canvas>
@@ -30,44 +30,29 @@
 
     const statusEl = document.getElementById("status");
     const canvas = document.getElementById("stage");
-    const context = canvas.getContext("2d");
+    const ctx = canvas.getContext("2d");
 
-
-    if (!context) {
+    if (!ctx) {
       statusEl.textContent = "Canvas unsupported in this browser.";
     } else {
-      const FALLBACK_PALETTE = Object.freeze({
-        // ND-safe fallback colors keep contrast gentle when palette.json is absent.
-        bg: "#0b0b12",
-        ink: "#e8e8f0",
-        layers: ["#b1c7ff", "#89f7fe", "#a0ffa1", "#ffd27f", "#f5a3ff", "#d0d0e6"]
+      const defaults = Object.freeze({
+        palette: {
+          // ND-safe: fallback palette mirrors layered calm when palette.json is absent or blocked.
+          bg: "#0b0b12",
+          ink: "#e8e8f0",
+          layers: ["#b1c7ff", "#89f7fe", "#a0ffa1", "#ffd27f", "#f5a3ff", "#d0d0e6"]
+        }
       });
 
       async function loadPalette(path) {
-        // ND-safe: local fetch only; when file:// blocks it, we quietly fall back to the embedded palette.
+        // ND-safe: browsers may refuse file:// fetches; returning null keeps rendering predictable.
         try {
           const response = await fetch(path, { cache: "no-store" });
           if (!response.ok) {
-            throw new Error(`status ${response.status}`);
+            throw new Error(String(response.status));
           }
           return await response.json();
         } catch (error) {
-
-    async function loadPalette(path) {
-      // ND-safe: browsers may block fetch on file://; try fetch first, then module import.
-
-      try {
-        const response = await fetch(path, { cache: "no-store" });
-        if (!response.ok) {
-          throw new Error(String(response.status));
-        }
-        return await response.json();
-      } catch (fetchError) {
-        try {
-          const module = await import(path + "", { assert: { type: "json" } });
-          return module.default;
-        } catch (importError) {
-
           return null;
         }
       }
@@ -83,34 +68,21 @@
         ONEFORTYFOUR: 144
       });
 
-      const palette = await loadPalette("./data/palette.json");
-      const activePalette = palette || FALLBACK_PALETTE;
-      statusEl.textContent = palette ? "Palette loaded." : "Palette missing; using safe fallback.";
+      (async () => {
+        const palette = await loadPalette("./data/palette.json");
+        const activePalette = palette || defaults.palette;
+        statusEl.textContent = palette ? "Palette loaded." : "Palette missing; using safe fallback.";
 
-
-      // ND-safe rationale: single render, layered depth, no motion.
-      renderHelix(context, {
-        width: canvas.width,
-        height: canvas.height,
-        palette: activePalette,
-        NUM,
-        missingPalette: !palette
-      });
+        // ND-safe rationale: single draw call, layered order preserves calm depth, no motion ever introduced.
+        renderHelix(ctx, {
+          width: canvas.width,
+          height: canvas.height,
+          palette: activePalette,
+          NUM,
+          missingPalette: !palette
+        });
+      })();
     }
-
-    const palette = await loadPalette("./data/palette.json");
-    const activePalette = palette || FALLBACK_PALETTE;
-    elStatus.textContent = palette ? "Palette loaded." : "Palette missing; using safe fallback.";
-
-    // ND-safe rationale: no motion, high readability, soft colors, layered order.
-    renderHelix(ctx, {
-      width: canvas.width,
-      height: canvas.height,
-      palette: activePalette,
-      NUM,
-      missingPalette: !palette
-    });
-
   </script>
 </body>
 </html>
