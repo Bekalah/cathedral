@@ -16,6 +16,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { createHash, randomUUID } from 'crypto';
 import http from 'http';
+import sanitizeHtml from 'sanitize-html';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, '..');
@@ -1558,7 +1559,7 @@ function sanitizeNodePayload(body) {
 }
 
 function stripHtml(text) {
-  return text.replace(/<[^>]+>/g, '');
+  return sanitizeHtml(text, { allowedTags: [], allowedAttributes: {} });
 }
 
 function broadcastUpdate(etag) {
