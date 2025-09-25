@@ -32,6 +32,7 @@
     const canvas = document.getElementById("stage");
     const ctx = canvas.getContext("2d");
 
+
     async function loadJSON(path) {
       // ND-safe: fetch stays local-only and fails gracefully when opened via file://.
       try {
@@ -42,6 +43,23 @@
         return await response.json();
       } catch (error) {
         return null;
+
+    async function loadPalette(path) {
+      // Why: browsers treat file:// differently; try fetch first, then JSON modules.
+      try {
+        const response = await fetch(path, { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error(`status ${response.status}`);
+        }
+        return await response.json();
+      } catch (fetchError) {
+        try {
+          const module = await import(path, { assert: { type: "json" } });
+          return module.default;
+        } catch (importError) {
+          return null;
+        }
+
       }
     }
 
@@ -63,8 +81,13 @@
       ONEFORTYFOUR: 144
     });
 
+
     const palette = await loadJSON("./data/palette.json");
     const active = palette || FALLBACK_PALETTE;
+=
+    const palette = await loadPalette("./data/palette.json");
+    const activePalette = palette || FALLBACK_PALETTE;
+
     elStatus.textContent = palette ? "Palette loaded." : "Palette missing; using safe fallback.";
 
     // ND-safe rationale: no motion, high readability, soft colors, layered order.

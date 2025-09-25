@@ -3,7 +3,7 @@
 Static HTML + Canvas renderer that honors the Cosmic-Helix spec with ND-safe practices: no motion, soft yet legible contrast, and layered geometry that preserves depth. Everything works offline; double-clicking `index.html` is enough.
 
 ## Files
-- `index.html` - entry point with a 1440x900 canvas, calm status line, and local palette loading through an ES module import (safe for `file://`).
+- `index.html` - entry point with a 1440x900 canvas, calm status line, and local palette loading that first tries `fetch` then falls back to JSON modules.
 - `js/helix-renderer.mjs` - pure ES module that draws the Vesica lattice, Tree-of-Life scaffold, Fibonacci curve, and static double-helix lattice.
 - `data/palette.json` - editable ND-safe palette. If missing or blocked, the renderer falls back to an embedded palette and paints a gentle inline notice.
 

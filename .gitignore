@@ -12,3 +12,5 @@ __pycache__/
 !tesseract-bridge/registry/ids.json
 !tesseract-bridge/events/
 !tesseract-bridge/events/queue.ndjson
+!apps/web/src/public/
+!apps/web/src/public/**
