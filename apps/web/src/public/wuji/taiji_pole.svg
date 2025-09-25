@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 720" aria-labelledby="title desc" role="img">
+  <title id="title">Taiji Pole with Three Dantian</title>
+  <desc id="desc">Layered vertical staff showing lower, middle, and upper dantian without motion.</desc>
+  <!-- Layer 1: dusk background for visual calm. -->
+  <rect x="0" y="0" width="360" height="720" fill="#0b0b12" />
+  <!-- Layer 2: vesica framing rings to maintain cosmological context. -->
+  <g fill="none" stroke="#1c1f33" stroke-width="2">
+    <ellipse cx="180" cy="360" rx="150" ry="340" />
+    <ellipse cx="120" cy="360" rx="150" ry="340" />
+    <ellipse cx="240" cy="360" rx="150" ry="340" />
+  </g>
+  <!-- Layer 3: Taiji pole core with subtle gradient layers built from stacked rectangles. -->
+  <g>
+    <rect x="164" y="72" width="32" height="576" fill="#b39cff" opacity="0.7" />
+    <rect x="170" y="72" width="20" height="576" fill="#d4af37" opacity="0.4" />
+    <rect x="176" y="72" width="8" height="576" fill="#e8e8f0" opacity="0.3" />
+  </g>
+  <!-- Layer 4: Dantian spheres with halos, explaining calm energy nodes. -->
+  <g fill="#89f7fe" opacity="0.9">
+    <circle cx="180" cy="520" r="34" />
+    <circle cx="180" cy="360" r="30" />
+    <circle cx="180" cy="200" r="26" />
+  </g>
+  <g fill="none" stroke="#89f7fe" stroke-width="12" opacity="0.25">
+    <circle cx="180" cy="520" r="60" />
+    <circle cx="180" cy="360" r="56" />
+    <circle cx="180" cy="200" r="52" />
+  </g>
+  <!-- Layer 5: Yin-yang balance hints using static crescents, no motion. -->
+  <g fill="#0b0b12" opacity="0.85">
+    <path d="M180 520a34 34 0 0 1-34-34 34 34 0 0 1 68 0 34 34 0 0 1-34 34z" />
+    <path d="M180 360a30 30 0 0 1-30-30 30 30 0 0 1 60 0 30 30 0 0 1-30 30z" />
+    <path d="M180 200a26 26 0 0 1-26-26 26 26 0 0 1 52 0 26 26 0 0 1-26 26z" />
+  </g>
+  <g fill="#e8e8f0" opacity="0.7">
+    <circle cx="180" cy="500" r="8" />
+    <circle cx="180" cy="340" r="7" />
+    <circle cx="180" cy="180" r="6" />
+  </g>
+</svg>

@@ -1,96 +1,87 @@
-
-name: Deploy Cathedral (static) to GitHub Pages
-
-name: Deploy cathedral to GitHub Pages
-
+name: Pages (owner-only, no external actions)
 
 on:
   push:
     branches: [ main ]
+    paths:
+      - "index.html"
+      - "js/**"
+      - "data/**"
+      - "README_RENDERER.md"
   workflow_dispatch:
 
-<
-# Required for Pages
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
+env:
+  NODE_VERSION: "20.12.2"
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      # Configure Pages (sets up OIDC + routing)
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-
-      # Sanity check the upload folder contains index.html
-      - name: Sanity check site folder
+      - name: Clone repository (manual)
         run: |
-          SITE_DIR="apps/cathedral"
-          test -d "$SITE_DIR" || (echo "::error ::$SITE_DIR does not exist" && exit 1)
-          test -f "$SITE_DIR/index.html" || (echo "::error ::No index.html in $SITE_DIR" && ls -la "$SITE_DIR" && exit 1)
-          echo "OK: found $SITE_DIR/index.html"
-          echo "Listing:"
-          find "$SITE_DIR" -maxdepth 2 -type f | sed 's/^/ - /'
+          set -e
+          git clone --depth=1 --branch "${GITHUB_REF_NAME}" \
+            "https://github.com/${GITHUB_REPOSITORY}.git" repo
+          cd repo
+          echo "REPO_ROOT=$PWD" >> "$GITHUB_ENV"
 
-      # Upload the static site as the artifact
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: apps/cathedral
+      - name: Install Node and pnpm (manual)
+        working-directory: repo
+        run: |
+          set -e
+          curl -fsSL "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.xz" -o node.tar.xz
+          tar -xJf node.tar.xz
+          echo "$PWD/node-v${NODE_VERSION}-linux-x64/bin" >> "$GITHUB_PATH"
+          corepack enable
+          corepack prepare pnpm@9 --activate
+          node -v
+          pnpm -v
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
+      - name: Install dependencies (best-effort)
+        working-directory: repo
+        run: |
+          set -e
+          if [ -f package.json ]; then
+            pnpm install || echo "pnpm install skipped (no lockfile)"
+          fi
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Upload site
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: apps/cathedral
-      - name: Deploy
+      - name: Stage site
+        working-directory: repo
+        run: |
+          set -e
+          mkdir -p .publish
+          cp index.html .publish/
+          cp -r js .publish/
+          cp -r data .publish/
+          cp README_RENDERER.md .publish/
+          if [ -d apps/cathedral-web ]; then
+            mkdir -p .publish/apps
+            cp -r apps/cathedral-web .publish/apps/
+          fi
+          touch .publish/.nojekyll
 
-concurrency: pages
+      - name: Publish (gh-pages branch)
+        working-directory: repo
+        run: |
+          set -e
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      # If you're not building, just upload the static folder:
-      - name: Upload static site
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: apps/cathedral
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
+          if git ls-remote --exit-code origin gh-pages; then
+            git fetch origin gh-pages:gh-pages
+            git switch gh-pages
+          else
+            git checkout --orphan gh-pages
+          fi
 
-
-
-        uses: actions/deploy-pages@v4
+          rm -rf ./*
+          cp -r ../.publish/* .
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to publish."
+          else
+            git commit -m "Deploy ${GITHUB_SHA}"
+            git push origin gh-pages --force
+          fi
