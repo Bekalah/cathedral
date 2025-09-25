@@ -7,7 +7,7 @@ Static HTML + Canvas renderer that honors the Cosmic-Helix spec with ND-safe pra
 - `npm run bundle:static` hydrates `dist/` with the renderer and calm placeholders for `/stone-grimoire/` and `/circuitum99/`.
 
 ## Files
-- `index.html` - entry point with a 1440x900 canvas, calm status line, and local palette loading that first tries `fetch` then falls back to JSON modules.
+- `index.html` - entry point with a 1440x900 canvas, calm status line, and local palette loading that first tries `fetch` then falls back to a built-in palette.
 - `js/helix-renderer.mjs` - pure ES module that draws the Vesica lattice, Tree-of-Life scaffold, Fibonacci curve, and static double-helix lattice.
 - `data/palette.json` - editable ND-safe palette. If missing or blocked, the renderer falls back to an embedded palette and paints a gentle inline notice.
 
