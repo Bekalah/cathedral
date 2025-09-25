@@ -28,17 +28,25 @@
   <script type="module">
     import { renderHelix } from "./js/helix-renderer.mjs";
 
-    const statusEl = document.getElementById("status");
+    const elStatus = document.getElementById("status");
     const canvas = document.getElementById("stage");
     const ctx = canvas.getContext("2d");
 
-    async function loadPalette() {
-      // why: dynamic import keeps everything offline and avoids network primitives entirely.
+    async function loadPalette(path) {
+      // Why: browsers treat file:// differently; try fetch first, then JSON modules.
       try {
-        const module = await import("./data/palette.json", { assert: { type: "json" } });
-        return module.default;
-      } catch (error) {
-        return null;
+        const response = await fetch(path, { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error(`status ${response.status}`);
+        }
+        return await response.json();
+      } catch (fetchError) {
+        try {
+          const module = await import(path, { assert: { type: "json" } });
+          return module.default;
+        } catch (importError) {
+          return null;
+        }
       }
     }
 
@@ -60,11 +68,11 @@
       ONEFORTYFOUR: 144
     });
 
-    const palette = await loadPalette();
+    const palette = await loadPalette("./data/palette.json");
     const activePalette = palette || FALLBACK_PALETTE;
-    statusEl.textContent = palette ? "Palette loaded." : "Palette missing; using safe fallback.";
+    elStatus.textContent = palette ? "Palette loaded." : "Palette missing; using safe fallback.";
 
-    // ND-safe rationale: no motion, high readability, soft colors, layered order
+    // ND-safe rationale: no motion, high readability, soft colors, layered order.
     renderHelix(ctx, {
       width: canvas.width,
       height: canvas.height,
