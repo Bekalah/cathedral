@@ -18,8 +18,8 @@
 </head>
 <body>
   <header>
-    <div><strong>Cosmic Helix Renderer</strong> — layered sacred geometry (offline, ND-safe)</div>
-    <div class="status" id="status">Loading palette…</div>
+    <div><strong>Cosmic Helix Renderer</strong> - layered sacred geometry (offline, ND-safe)</div>
+    <div class="status" id="status">Loading palette...</div>
   </header>
 
   <canvas id="stage" width="1440" height="900" aria-label="Layered sacred geometry canvas"></canvas>
@@ -33,16 +33,20 @@
     const ctx = canvas.getContext("2d");
 
     async function loadPalette(path) {
+
       // ND-safe: browsers may restrict fetch for file://; try fetch, then JSON modules.
+
+      // ND-safe: browsers may block fetch on file://; try fetch first, then module import.
+
       try {
         const response = await fetch(path, { cache: "no-store" });
         if (!response.ok) {
-          throw new Error(`status ${response.status}`);
+          throw new Error(String(response.status));
         }
         return await response.json();
       } catch (fetchError) {
         try {
-          const module = await import(path, { assert: { type: "json" } });
+          const module = await import(path + "", { assert: { type: "json" } });
           return module.default;
         } catch (importError) {
           return null;
