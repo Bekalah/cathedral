@@ -6,6 +6,17 @@
 
 import MiniSearch from "../../shared/lib/minisearch-lite.mjs";
 
+// Utility function to escape HTML special characters
+function escapeHTML(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+    .replace(/`/g, '&#96;');
+}
+
 let mini = null;
 
 function resolveElement(target) {
@@ -65,7 +76,7 @@ export function attachCorpusSearch({ input, results, minLength = 2, renderResult
     }
     const matches = corpusSearch(value);
     if (!matches.length) {
-      resultsEl.innerHTML = `<li>No matches for <code>${value}</code></li>`;
+      resultsEl.innerHTML = `<li>No matches for <code>${escapeHTML(value)}</code></li>`;
       return;
     }
     resultsEl.innerHTML = matches.map(renderer).join("");
