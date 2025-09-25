@@ -1,87 +1,77 @@
-name: Pages (owner-only, no external actions)
+name: Pages (build & deploy with URL echo)
 
 on:
   push:
     branches: [ main ]
     paths:
-      - "index.html"
-      - "js/**"
+      - "apps/web/**"
+      - "packages/**"
       - "data/**"
-      - "README_RENDERER.md"
+      - "docs/**"
   workflow_dispatch:
 
 env:
-  NODE_VERSION: "20.12.2"
+  APP_DIR: apps/web           # ← where your web app lives
+  BUILD_DIR: dist             # Vite: dist | Next export: out
+  NODE_VERSION: "20"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-      - name: Clone repository (manual)
-        run: |
-          set -e
-          git clone --depth=1 --branch "${GITHUB_REF_NAME}" \
-            "https://github.com/${GITHUB_REPOSITORY}.git" repo
-          cd repo
-          echo "REPO_ROOT=$PWD" >> "$GITHUB_ENV"
+      - name: Checkout (GitHub-owned)
+        uses: actions/checkout@v4
 
-      - name: Install Node and pnpm (manual)
-        working-directory: repo
+      - name: Setup Node (GitHub-owned)
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+
+      - name: Setup pnpm
         run: |
-          set -e
-          curl -fsSL "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.xz" -o node.tar.xz
-          tar -xJf node.tar.xz
-          echo "$PWD/node-v${NODE_VERSION}-linux-x64/bin" >> "$GITHUB_PATH"
           corepack enable
           corepack prepare pnpm@9 --activate
-          node -v
           pnpm -v
 
-      - name: Install dependencies (best-effort)
-        working-directory: repo
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
+
+      # If you have a bot step that produces dist/codex.json, run it here
+      # - name: Build cathedral-bot
+      #   run: pnpm -w --filter @cathedral/cathedral-bot build
+
+      - name: Build web
         run: |
-          set -e
-          if [ -f package.json ]; then
-            pnpm install || echo "pnpm install skipped (no lockfile)"
-          fi
+          pnpm -w --filter web build
+          # Vite should emit apps/web/dist; Next export → set BUILD_DIR=out
 
-      - name: Stage site
-        working-directory: repo
+      - name: Upload Pages artifact (GitHub-owned)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ env.APP_DIR }}/${{ env.BUILD_DIR }}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages (GitHub-owned)
+        id: deploy
+        uses: actions/deploy-pages@v4
+
+      - name: Echo live URL in logs
+        run: echo "Live site → ${{ steps.deploy.outputs.page_url }}"
+
+      - name: Add URL to Job Summary
         run: |
-          set -e
-          mkdir -p .publish
-          cp index.html .publish/
-          cp -r js .publish/
-          cp -r data .publish/
-          cp README_RENDERER.md .publish/
-          if [ -d apps/cathedral-web ]; then
-            mkdir -p .publish/apps
-            cp -r apps/cathedral-web .publish/apps/
-          fi
-          touch .publish/.nojekyll
-
-      - name: Publish (gh-pages branch)
-        working-directory: repo
-        run: |
-          set -e
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-
-          if git ls-remote --exit-code origin gh-pages; then
-            git fetch origin gh-pages:gh-pages
-            git switch gh-pages
-          else
-            git checkout --orphan gh-pages
-          fi
-
-          rm -rf ./*
-          cp -r ../.publish/* .
-          git add -A
-          if git diff --cached --quiet; then
-            echo "No changes to publish."
-          else
-            git commit -m "Deploy ${GITHUB_SHA}"
-            git push origin gh-pages --force
-          fi
+          echo "## ✅ Deployed to GitHub Pages" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "🔗 **${{ steps.deploy.outputs.page_url }}**" >> $GITHUB_STEP_SUMMARY
