@@ -18,13 +18,8 @@
 </head>
 <body>
   <header>
-
-    <div><strong>Cosmic Helix Renderer</strong> - layered sacred geometry (offline, ND-safe)</div>
-    <div class="status" id="status">Preparing canvas...</div>
-
     <div><strong>Cosmic Helix Renderer</strong> — layered sacred geometry (offline, ND-safe)</div>
     <div class="status" id="status">Preparing canvas…</div>
-
   </header>
 
   <canvas id="stage" width="1440" height="900" aria-label="Layered sacred geometry canvas"></canvas>
@@ -39,7 +34,6 @@
 
     if (!ctx) {
       statusEl.textContent = "Canvas unsupported in this browser.";
-
     } else {
       const DEFAULTS = Object.freeze({
         palette: {
@@ -93,59 +87,6 @@
         });
       })();
     }
-
-      throw new Error("Canvas context unavailable");
-    }
-
-    const DEFAULTS = Object.freeze({
-      palette: {
-        // ND-safe fallback colors keep contrast gentle when palette.json is absent.
-        bg: "#0b0b12",
-        ink: "#e8e8f0",
-        layers: ["#b1c7ff", "#89f7fe", "#a0ffa1", "#ffd27f", "#f5a3ff", "#d0d0e6"]
-      }
-    });
-
-    async function loadJSON(path) {
-      // ND-safe: local fetch only; when file:// blocks it, we quietly fall back to the embedded palette.
-      try {
-        const response = await fetch(path, { cache: "no-store" });
-        if (!response.ok) {
-          throw new Error(String(response.status));
-        }
-        return await response.json();
-      } catch (error) {
-        return null;
-      }
-    }
-
-    const palette = await loadJSON("./data/palette.json");
-    const activePalette = palette || DEFAULTS.palette;
-    statusEl.textContent = palette ? "Palette loaded." : "Palette missing; using safe fallback.";
-
-    // Harmonise document colors with the palette so the canvas sits in a matching field.
-    document.documentElement.style.setProperty("--bg", activePalette.bg || DEFAULTS.palette.bg);
-    document.documentElement.style.setProperty("--ink", activePalette.ink || DEFAULTS.palette.ink);
-
-    const NUM = Object.freeze({
-      THREE: 3,
-      SEVEN: 7,
-      NINE: 9,
-      ELEVEN: 11,
-      TWENTYTWO: 22,
-      THIRTYTHREE: 33,
-      NINETYNINE: 99,
-      ONEFORTYFOUR: 144
-    });
-
-    // ND-safe rationale: no motion, high readability, soft colors, layered order.
-    renderHelix(ctx, {
-      width: canvas.width,
-      height: canvas.height,
-      palette: activePalette,
-      NUM,
-      missingPalette: !palette
-    });
 
   </script>
 </body>
