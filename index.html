@@ -18,13 +18,8 @@
 </head>
 <body>
   <header>
-
-    <div><strong>Cosmic Helix Renderer</strong> - layered sacred geometry (offline, ND-safe)</div>
-    <div class="status" id="status">Preparing canvas...</div>
-
     <div><strong>Cosmic Helix Renderer</strong> — layered sacred geometry (offline, ND-safe)</div>
-    <div class="status" id="status">Loading palette…</div>
-
+    <div class="status" id="status">Preparing canvas…</div>
   </header>
 
   <canvas id="stage" width="1440" height="900" aria-label="Layered sacred geometry canvas"></canvas>
@@ -39,57 +34,6 @@
 
     if (!ctx) {
       statusEl.textContent = "Canvas unsupported in this browser.";
-
-    } else {
-      const defaults = Object.freeze({
-        palette: {
-          // ND-safe: fallback palette mirrors layered calm when palette.json is absent or blocked.
-          bg: "#0b0b12",
-          ink: "#e8e8f0",
-          layers: ["#b1c7ff", "#89f7fe", "#a0ffa1", "#ffd27f", "#f5a3ff", "#d0d0e6"]
-        }
-      });
-
-      async function loadPalette(path) {
-        // ND-safe: browsers may refuse file:// fetches; returning null keeps rendering predictable.
-        try {
-          const response = await fetch(path, { cache: "no-store" });
-          if (!response.ok) {
-            throw new Error(String(response.status));
-          }
-          return await response.json();
-        } catch (error) {
-          return null;
-        }
-      }
-
-      const NUM = Object.freeze({
-        THREE: 3,
-        SEVEN: 7,
-        NINE: 9,
-        ELEVEN: 11,
-        TWENTYTWO: 22,
-        THIRTYTHREE: 33,
-        NINETYNINE: 99,
-        ONEFORTYFOUR: 144
-      });
-
-      (async () => {
-        const palette = await loadPalette("./data/palette.json");
-        const activePalette = palette || defaults.palette;
-        statusEl.textContent = palette ? "Palette loaded." : "Palette missing; using safe fallback.";
-
-        // ND-safe rationale: single draw call, layered order preserves calm depth, no motion ever introduced.
-        renderHelix(ctx, {
-          width: canvas.width,
-          height: canvas.height,
-          palette: activePalette,
-          NUM,
-          missingPalette: !palette
-        });
-      })();
-    }
-
       throw new Error("Canvas context unavailable");
     }
 
@@ -142,7 +86,6 @@
       NUM,
       missingPalette: !palette
     });
-
   </script>
 </body>
 </html>
