@@ -1,0 +1,1442 @@
+[
+  {
+    "id": 1,
+    "name": "Node 001",
+    "hall": "Fool",
+    "traditions": [
+      "Alchemy"
+    ],
+    "angle_deg": 0.0,
+    "ring": 1
+  },
+  {
+    "id": 2,
+    "name": "Node 002",
+    "hall": "Magus",
+    "traditions": [
+      "Hermetic"
+    ],
+    "angle_deg": 2.5,
+    "ring": 2
+  },
+  {
+    "id": 3,
+    "name": "Node 003",
+    "hall": "Empress",
+    "traditions": [
+      "Noetic"
+    ],
+    "angle_deg": 5.0,
+    "ring": 3
+  },
+  {
+    "id": 4,
+    "name": "Node 004",
+    "hall": "Emperor",
+    "traditions": [
+      "Astrology"
+    ],
+    "angle_deg": 7.5,
+    "ring": 4
+  },
+  {
+    "id": 5,
+    "name": "Node 005",
+    "hall": "Hierophant",
+    "traditions": [
+      "Geomancy"
+    ],
+    "angle_deg": 10.0,
+    "ring": 5
+  },
+  {
+    "id": 6,
+    "name": "Node 006",
+    "hall": "Lovers",
+    "traditions": [
+      "Tarot"
+    ],
+    "angle_deg": 12.5,
+    "ring": 6
+  },
+  {
+    "id": 7,
+    "name": "Node 007",
+    "hall": "Chariot",
+    "traditions": [
+      "Runic"
+    ],
+    "angle_deg": 15.0,
+    "ring": 7
+  },
+  {
+    "id": 8,
+    "name": "Node 008",
+    "hall": "Strength",
+    "traditions": [
+      "Gnostic"
+    ],
+    "angle_deg": 17.5,
+    "ring": 8
+  },
+  {
+    "id": 9,
+    "name": "Node 009",
+    "hall": "Hermit",
+    "traditions": [
+      "Tantric"
+    ],
+    "angle_deg": 20.0,
+    "ring": 9
+  },
+  {
+    "id": 10,
+    "name": "Node 010",
+    "hall": "Wheel",
+    "traditions": [
+      "Dreamwork"
+    ],
+    "angle_deg": 22.5,
+    "ring": 1
+  },
+  {
+    "id": 11,
+    "name": "Node 011",
+    "hall": "Justice",
+    "traditions": [
+      "Mythic"
+    ],
+    "angle_deg": 25.0,
+    "ring": 2
+  },
+  {
+    "id": 12,
+    "name": "Node 012",
+    "hall": "Hanged Man",
+    "traditions": [
+      "Sound"
+    ],
+    "angle_deg": 27.5,
+    "ring": 3
+  },
+  {
+    "id": 13,
+    "name": "Node 013",
+    "hall": "Fool",
+    "traditions": [
+      "Alchemy"
+    ],
+    "angle_deg": 30.0,
+    "ring": 4
+  },
+  {
+    "id": 14,
+    "name": "Node 014",
+    "hall": "Magus",
+    "traditions": [
+      "Hermetic"
+    ],
+    "angle_deg": 32.5,
+    "ring": 5
+  },
+  {
+    "id": 15,
+    "name": "Node 015",
+    "hall": "Empress",
+    "traditions": [
+      "Noetic"
+    ],
+    "angle_deg": 35.0,
+    "ring": 6
+  },
+  {
+    "id": 16,
+    "name": "Node 016",
+    "hall": "Emperor",
+    "traditions": [
+      "Astrology"
+    ],
+    "angle_deg": 37.5,
+    "ring": 7
+  },
+  {
+    "id": 17,
+    "name": "Node 017",
+    "hall": "Hierophant",
+    "traditions": [
+      "Geomancy"
+    ],
+    "angle_deg": 40.0,
+    "ring": 8
+  },
+  {
+    "id": 18,
+    "name": "Node 018",
+    "hall": "Lovers",
+    "traditions": [
+      "Tarot"
+    ],
+    "angle_deg": 42.5,
+    "ring": 9
+  },
+  {
+    "id": 19,
+    "name": "Node 019",
+    "hall": "Chariot",
+    "traditions": [
+      "Runic"
+    ],
+    "angle_deg": 45.0,
+    "ring": 1
+  },
+  {
+    "id": 20,
+    "name": "Node 020",
+    "hall": "Strength",
+    "traditions": [
+      "Gnostic"
+    ],
+    "angle_deg": 47.5,
+    "ring": 2
+  },
+  {
+    "id": 21,
+    "name": "Node 021",
+    "hall": "Hermit",
+    "traditions": [
+      "Tantric"
+    ],
+    "angle_deg": 50.0,
+    "ring": 3
+  },
+  {
+    "id": 22,
+    "name": "Node 022",
+    "hall": "Wheel",
+    "traditions": [
+      "Dreamwork"
+    ],
+    "angle_deg": 52.5,
+    "ring": 4
+  },
+  {
+    "id": 23,
+    "name": "Node 023",
+    "hall": "Justice",
+    "traditions": [
+      "Mythic"
+    ],
+    "angle_deg": 55.0,
+    "ring": 5
+  },
+  {
+    "id": 24,
+    "name": "Node 024",
+    "hall": "Hanged Man",
+    "traditions": [
+      "Sound"
+    ],
+    "angle_deg": 57.5,
+    "ring": 6
+  },
+  {
+    "id": 25,
+    "name": "Node 025",
+    "hall": "Fool",
+    "traditions": [
+      "Alchemy"
+    ],
+    "angle_deg": 60.0,
+    "ring": 7
+  },
+  {
+    "id": 26,
+    "name": "Node 026",
+    "hall": "Magus",
+    "traditions": [
+      "Hermetic"
+    ],
+    "angle_deg": 62.5,
+    "ring": 8
+  },
+  {
+    "id": 27,
+    "name": "Node 027",
+    "hall": "Empress",
+    "traditions": [
+      "Noetic"
+    ],
+    "angle_deg": 65.0,
+    "ring": 9
+  },
+  {
+    "id": 28,
+    "name": "Node 028",
+    "hall": "Emperor",
+    "traditions": [
+      "Astrology"
+    ],
+    "angle_deg": 67.5,
+    "ring": 1
+  },
+  {
+    "id": 29,
+    "name": "Node 029",
+    "hall": "Hierophant",
+    "traditions": [
+      "Geomancy"
+    ],
+    "angle_deg": 70.0,
+    "ring": 2
+  },
+  {
+    "id": 30,
+    "name": "Node 030",
+    "hall": "Lovers",
+    "traditions": [
+      "Tarot"
+    ],
+    "angle_deg": 72.5,
+    "ring": 3
+  },
+  {
+    "id": 31,
+    "name": "Node 031",
+    "hall": "Chariot",
+    "traditions": [
+      "Runic"
+    ],
+    "angle_deg": 75.0,
+    "ring": 4
+  },
+  {
+    "id": 32,
+    "name": "Node 032",
+    "hall": "Strength",
+    "traditions": [
+      "Gnostic"
+    ],
+    "angle_deg": 77.5,
+    "ring": 5
+  },
+  {
+    "id": 33,
+    "name": "Node 033",
+    "hall": "Hermit",
+    "traditions": [
+      "Tantric"
+    ],
+    "angle_deg": 80.0,
+    "ring": 6
+  },
+  {
+    "id": 34,
+    "name": "Node 034",
+    "hall": "Wheel",
+    "traditions": [
+      "Dreamwork"
+    ],
+    "angle_deg": 82.5,
+    "ring": 7
+  },
+  {
+    "id": 35,
+    "name": "Node 035",
+    "hall": "Justice",
+    "traditions": [
+      "Mythic"
+    ],
+    "angle_deg": 85.0,
+    "ring": 8
+  },
+  {
+    "id": 36,
+    "name": "Node 036",
+    "hall": "Hanged Man",
+    "traditions": [
+      "Sound"
+    ],
+    "angle_deg": 87.5,
+    "ring": 9
+  },
+  {
+    "id": 37,
+    "name": "Node 037",
+    "hall": "Fool",
+    "traditions": [
+      "Alchemy"
+    ],
+    "angle_deg": 90.0,
+    "ring": 1
+  },
+  {
+    "id": 38,
+    "name": "Node 038",
+    "hall": "Magus",
+    "traditions": [
+      "Hermetic"
+    ],
+    "angle_deg": 92.5,
+    "ring": 2
+  },
+  {
+    "id": 39,
+    "name": "Node 039",
+    "hall": "Empress",
+    "traditions": [
+      "Noetic"
+    ],
+    "angle_deg": 95.0,
+    "ring": 3
+  },
+  {
+    "id": 40,
+    "name": "Node 040",
+    "hall": "Emperor",
+    "traditions": [
+      "Astrology"
+    ],
+    "angle_deg": 97.5,
+    "ring": 4
+  },
+  {
+    "id": 41,
+    "name": "Node 041",
+    "hall": "Hierophant",
+    "traditions": [
+      "Geomancy"
+    ],
+    "angle_deg": 100.0,
+    "ring": 5
+  },
+  {
+    "id": 42,
+    "name": "Node 042",
+    "hall": "Lovers",
+    "traditions": [
+      "Tarot"
+    ],
+    "angle_deg": 102.5,
+    "ring": 6
+  },
+  {
+    "id": 43,
+    "name": "Node 043",
+    "hall": "Chariot",
+    "traditions": [
+      "Runic"
+    ],
+    "angle_deg": 105.0,
+    "ring": 7
+  },
+  {
+    "id": 44,
+    "name": "Node 044",
+    "hall": "Strength",
+    "traditions": [
+      "Gnostic"
+    ],
+    "angle_deg": 107.5,
+    "ring": 8
+  },
+  {
+    "id": 45,
+    "name": "Node 045",
+    "hall": "Hermit",
+    "traditions": [
+      "Tantric"
+    ],
+    "angle_deg": 110.0,
+    "ring": 9
+  },
+  {
+    "id": 46,
+    "name": "Node 046",
+    "hall": "Wheel",
+    "traditions": [
+      "Dreamwork"
+    ],
+    "angle_deg": 112.5,
+    "ring": 1
+  },
+  {
+    "id": 47,
+    "name": "Node 047",
+    "hall": "Justice",
+    "traditions": [
+      "Mythic"
+    ],
+    "angle_deg": 115.0,
+    "ring": 2
+  },
+  {
+    "id": 48,
+    "name": "Node 048",
+    "hall": "Hanged Man",
+    "traditions": [
+      "Sound"
+    ],
+    "angle_deg": 117.5,
+    "ring": 3
+  },
+  {
+    "id": 49,
+    "name": "Node 049",
+    "hall": "Fool",
+    "traditions": [
+      "Alchemy"
+    ],
+    "angle_deg": 120.0,
+    "ring": 4
+  },
+  {
+    "id": 50,
+    "name": "Node 050",
+    "hall": "Magus",
+    "traditions": [
+      "Hermetic"
+    ],
+    "angle_deg": 122.5,
+    "ring": 5
+  },
+  {
+    "id": 51,
+    "name": "Node 051",
+    "hall": "Empress",
+    "traditions": [
+      "Noetic"
+    ],
+    "angle_deg": 125.0,
+    "ring": 6
+  },
+  {
+    "id": 52,
+    "name": "Node 052",
+    "hall": "Emperor",
+    "traditions": [
+      "Astrology"
+    ],
+    "angle_deg": 127.5,
+    "ring": 7
+  },
+  {
+    "id": 53,
+    "name": "Node 053",
+    "hall": "Hierophant",
+    "traditions": [
+      "Geomancy"
+    ],
+    "angle_deg": 130.0,
+    "ring": 8
+  },
+  {
+    "id": 54,
+    "name": "Node 054",
+    "hall": "Lovers",
+    "traditions": [
+      "Tarot"
+    ],
+    "angle_deg": 132.5,
+    "ring": 9
+  },
+  {
+    "id": 55,
+    "name": "Node 055",
+    "hall": "Chariot",
+    "traditions": [
+      "Runic"
+    ],
+    "angle_deg": 135.0,
+    "ring": 1
+  },
+  {
+    "id": 56,
+    "name": "Node 056",
+    "hall": "Strength",
+    "traditions": [
+      "Gnostic"
+    ],
+    "angle_deg": 137.5,
+    "ring": 2
+  },
+  {
+    "id": 57,
+    "name": "Node 057",
+    "hall": "Hermit",
+    "traditions": [
+      "Tantric"
+    ],
+    "angle_deg": 140.0,
+    "ring": 3
+  },
+  {
+    "id": 58,
+    "name": "Node 058",
+    "hall": "Wheel",
+    "traditions": [
+      "Dreamwork"
+    ],
+    "angle_deg": 142.5,
+    "ring": 4
+  },
+  {
+    "id": 59,
+    "name": "Node 059",
+    "hall": "Justice",
+    "traditions": [
+      "Mythic"
+    ],
+    "angle_deg": 145.0,
+    "ring": 5
+  },
+  {
+    "id": 60,
+    "name": "Node 060",
+    "hall": "Hanged Man",
+    "traditions": [
+      "Sound"
+    ],
+    "angle_deg": 147.5,
+    "ring": 6
+  },
+  {
+    "id": 61,
+    "name": "Node 061",
+    "hall": "Fool",
+    "traditions": [
+      "Alchemy"
+    ],
+    "angle_deg": 150.0,
+    "ring": 7
+  },
+  {
+    "id": 62,
+    "name": "Node 062",
+    "hall": "Magus",
+    "traditions": [
+      "Hermetic"
+    ],
+    "angle_deg": 152.5,
+    "ring": 8
+  },
+  {
+    "id": 63,
+    "name": "Node 063",
+    "hall": "Empress",
+    "traditions": [
+      "Noetic"
+    ],
+    "angle_deg": 155.0,
+    "ring": 9
+  },
+  {
+    "id": 64,
+    "name": "Node 064",
+    "hall": "Emperor",
+    "traditions": [
+      "Astrology"
+    ],
+    "angle_deg": 157.5,
+    "ring": 1
+  },
+  {
+    "id": 65,
+    "name": "Node 065",
+    "hall": "Hierophant",
+    "traditions": [
+      "Geomancy"
+    ],
+    "angle_deg": 160.0,
+    "ring": 2
+  },
+  {
+    "id": 66,
+    "name": "Node 066",
+    "hall": "Lovers",
+    "traditions": [
+      "Tarot"
+    ],
+    "angle_deg": 162.5,
+    "ring": 3
+  },
+  {
+    "id": 67,
+    "name": "Node 067",
+    "hall": "Chariot",
+    "traditions": [
+      "Runic"
+    ],
+    "angle_deg": 165.0,
+    "ring": 4
+  },
+  {
+    "id": 68,
+    "name": "Node 068",
+    "hall": "Strength",
+    "traditions": [
+      "Gnostic"
+    ],
+    "angle_deg": 167.5,
+    "ring": 5
+  },
+  {
+    "id": 69,
+    "name": "Node 069",
+    "hall": "Hermit",
+    "traditions": [
+      "Tantric"
+    ],
+    "angle_deg": 170.0,
+    "ring": 6
+  },
+  {
+    "id": 70,
+    "name": "Node 070",
+    "hall": "Wheel",
+    "traditions": [
+      "Dreamwork"
+    ],
+    "angle_deg": 172.5,
+    "ring": 7
+  },
+  {
+    "id": 71,
+    "name": "Node 071",
+    "hall": "Justice",
+    "traditions": [
+      "Mythic"
+    ],
+    "angle_deg": 175.0,
+    "ring": 8
+  },
+  {
+    "id": 72,
+    "name": "Node 072",
+    "hall": "Hanged Man",
+    "traditions": [
+      "Sound"
+    ],
+    "angle_deg": 177.5,
+    "ring": 9
+  },
+  {
+    "id": 73,
+    "name": "Node 073",
+    "hall": "Fool",
+    "traditions": [
+      "Alchemy"
+    ],
+    "angle_deg": 180.0,
+    "ring": 1
+  },
+  {
+    "id": 74,
+    "name": "Node 074",
+    "hall": "Magus",
+    "traditions": [
+      "Hermetic"
+    ],
+    "angle_deg": 182.5,
+    "ring": 2
+  },
+  {
+    "id": 75,
+    "name": "Node 075",
+    "hall": "Empress",
+    "traditions": [
+      "Noetic"
+    ],
+    "angle_deg": 185.0,
+    "ring": 3
+  },
+  {
+    "id": 76,
+    "name": "Node 076",
+    "hall": "Emperor",
+    "traditions": [
+      "Astrology"
+    ],
+    "angle_deg": 187.5,
+    "ring": 4
+  },
+  {
+    "id": 77,
+    "name": "Node 077",
+    "hall": "Hierophant",
+    "traditions": [
+      "Geomancy"
+    ],
+    "angle_deg": 190.0,
+    "ring": 5
+  },
+  {
+    "id": 78,
+    "name": "Node 078",
+    "hall": "Lovers",
+    "traditions": [
+      "Tarot"
+    ],
+    "angle_deg": 192.5,
+    "ring": 6
+  },
+  {
+    "id": 79,
+    "name": "Node 079",
+    "hall": "Chariot",
+    "traditions": [
+      "Runic"
+    ],
+    "angle_deg": 195.0,
+    "ring": 7
+  },
+  {
+    "id": 80,
+    "name": "Node 080",
+    "hall": "Strength",
+    "traditions": [
+      "Gnostic"
+    ],
+    "angle_deg": 197.5,
+    "ring": 8
+  },
+  {
+    "id": 81,
+    "name": "Node 081",
+    "hall": "Hermit",
+    "traditions": [
+      "Tantric"
+    ],
+    "angle_deg": 200.0,
+    "ring": 9
+  },
+  {
+    "id": 82,
+    "name": "Node 082",
+    "hall": "Wheel",
+    "traditions": [
+      "Dreamwork"
+    ],
+    "angle_deg": 202.5,
+    "ring": 1
+  },
+  {
+    "id": 83,
+    "name": "Node 083",
+    "hall": "Justice",
+    "traditions": [
+      "Mythic"
+    ],
+    "angle_deg": 205.0,
+    "ring": 2
+  },
+  {
+    "id": 84,
+    "name": "Node 084",
+    "hall": "Hanged Man",
+    "traditions": [
+      "Sound"
+    ],
+    "angle_deg": 207.5,
+    "ring": 3
+  },
+  {
+    "id": 85,
+    "name": "Node 085",
+    "hall": "Fool",
+    "traditions": [
+      "Alchemy"
+    ],
+    "angle_deg": 210.0,
+    "ring": 4
+  },
+  {
+    "id": 86,
+    "name": "Node 086",
+    "hall": "Magus",
+    "traditions": [
+      "Hermetic"
+    ],
+    "angle_deg": 212.5,
+    "ring": 5
+  },
+  {
+    "id": 87,
+    "name": "Node 087",
+    "hall": "Empress",
+    "traditions": [
+      "Noetic"
+    ],
+    "angle_deg": 215.0,
+    "ring": 6
+  },
+  {
+    "id": 88,
+    "name": "Node 088",
+    "hall": "Emperor",
+    "traditions": [
+      "Astrology"
+    ],
+    "angle_deg": 217.5,
+    "ring": 7
+  },
+  {
+    "id": 89,
+    "name": "Node 089",
+    "hall": "Hierophant",
+    "traditions": [
+      "Geomancy"
+    ],
+    "angle_deg": 220.0,
+    "ring": 8
+  },
+  {
+    "id": 90,
+    "name": "Node 090",
+    "hall": "Lovers",
+    "traditions": [
+      "Tarot"
+    ],
+    "angle_deg": 222.5,
+    "ring": 9
+  },
+  {
+    "id": 91,
+    "name": "Node 091",
+    "hall": "Chariot",
+    "traditions": [
+      "Runic"
+    ],
+    "angle_deg": 225.0,
+    "ring": 1
+  },
+  {
+    "id": 92,
+    "name": "Node 092",
+    "hall": "Strength",
+    "traditions": [
+      "Gnostic"
+    ],
+    "angle_deg": 227.5,
+    "ring": 2
+  },
+  {
+    "id": 93,
+    "name": "Node 093",
+    "hall": "Hermit",
+    "traditions": [
+      "Tantric"
+    ],
+    "angle_deg": 230.0,
+    "ring": 3
+  },
+  {
+    "id": 94,
+    "name": "Node 094",
+    "hall": "Wheel",
+    "traditions": [
+      "Dreamwork"
+    ],
+    "angle_deg": 232.5,
+    "ring": 4
+  },
+  {
+    "id": 95,
+    "name": "Node 095",
+    "hall": "Justice",
+    "traditions": [
+      "Mythic"
+    ],
+    "angle_deg": 235.0,
+    "ring": 5
+  },
+  {
+    "id": 96,
+    "name": "Node 096",
+    "hall": "Hanged Man",
+    "traditions": [
+      "Sound"
+    ],
+    "angle_deg": 237.5,
+    "ring": 6
+  },
+  {
+    "id": 97,
+    "name": "Node 097",
+    "hall": "Fool",
+    "traditions": [
+      "Alchemy"
+    ],
+    "angle_deg": 240.0,
+    "ring": 7
+  },
+  {
+    "id": 98,
+    "name": "Node 098",
+    "hall": "Magus",
+    "traditions": [
+      "Hermetic"
+    ],
+    "angle_deg": 242.5,
+    "ring": 8
+  },
+  {
+    "id": 99,
+    "name": "Node 099",
+    "hall": "Empress",
+    "traditions": [
+      "Noetic"
+    ],
+    "angle_deg": 245.0,
+    "ring": 9
+  },
+  {
+    "id": 100,
+    "name": "Node 100",
+    "hall": "Emperor",
+    "traditions": [
+      "Astrology"
+    ],
+    "angle_deg": 247.5,
+    "ring": 1
+  },
+  {
+    "id": 101,
+    "name": "Node 101",
+    "hall": "Hierophant",
+    "traditions": [
+      "Geomancy"
+    ],
+    "angle_deg": 250.0,
+    "ring": 2
+  },
+  {
+    "id": 102,
+    "name": "Node 102",
+    "hall": "Lovers",
+    "traditions": [
+      "Tarot"
+    ],
+    "angle_deg": 252.5,
+    "ring": 3
+  },
+  {
+    "id": 103,
+    "name": "Node 103",
+    "hall": "Chariot",
+    "traditions": [
+      "Runic"
+    ],
+    "angle_deg": 255.0,
+    "ring": 4
+  },
+  {
+    "id": 104,
+    "name": "Node 104",
+    "hall": "Strength",
+    "traditions": [
+      "Gnostic"
+    ],
+    "angle_deg": 257.5,
+    "ring": 5
+  },
+  {
+    "id": 105,
+    "name": "Node 105",
+    "hall": "Hermit",
+    "traditions": [
+      "Tantric"
+    ],
+    "angle_deg": 260.0,
+    "ring": 6
+  },
+  {
+    "id": 106,
+    "name": "Node 106",
+    "hall": "Wheel",
+    "traditions": [
+      "Dreamwork"
+    ],
+    "angle_deg": 262.5,
+    "ring": 7
+  },
+  {
+    "id": 107,
+    "name": "Node 107",
+    "hall": "Justice",
+    "traditions": [
+      "Mythic"
+    ],
+    "angle_deg": 265.0,
+    "ring": 8
+  },
+  {
+    "id": 108,
+    "name": "Node 108",
+    "hall": "Hanged Man",
+    "traditions": [
+      "Sound"
+    ],
+    "angle_deg": 267.5,
+    "ring": 9
+  },
+  {
+    "id": 109,
+    "name": "Node 109",
+    "hall": "Fool",
+    "traditions": [
+      "Alchemy"
+    ],
+    "angle_deg": 270.0,
+    "ring": 1
+  },
+  {
+    "id": 110,
+    "name": "Node 110",
+    "hall": "Magus",
+    "traditions": [
+      "Hermetic"
+    ],
+    "angle_deg": 272.5,
+    "ring": 2
+  },
+  {
+    "id": 111,
+    "name": "Node 111",
+    "hall": "Empress",
+    "traditions": [
+      "Noetic"
+    ],
+    "angle_deg": 275.0,
+    "ring": 3
+  },
+  {
+    "id": 112,
+    "name": "Node 112",
+    "hall": "Emperor",
+    "traditions": [
+      "Astrology"
+    ],
+    "angle_deg": 277.5,
+    "ring": 4
+  },
+  {
+    "id": 113,
+    "name": "Node 113",
+    "hall": "Hierophant",
+    "traditions": [
+      "Geomancy"
+    ],
+    "angle_deg": 280.0,
+    "ring": 5
+  },
+  {
+    "id": 114,
+    "name": "Node 114",
+    "hall": "Lovers",
+    "traditions": [
+      "Tarot"
+    ],
+    "angle_deg": 282.5,
+    "ring": 6
+  },
+  {
+    "id": 115,
+    "name": "Node 115",
+    "hall": "Chariot",
+    "traditions": [
+      "Runic"
+    ],
+    "angle_deg": 285.0,
+    "ring": 7
+  },
+  {
+    "id": 116,
+    "name": "Node 116",
+    "hall": "Strength",
+    "traditions": [
+      "Gnostic"
+    ],
+    "angle_deg": 287.5,
+    "ring": 8
+  },
+  {
+    "id": 117,
+    "name": "Node 117",
+    "hall": "Hermit",
+    "traditions": [
+      "Tantric"
+    ],
+    "angle_deg": 290.0,
+    "ring": 9
+  },
+  {
+    "id": 118,
+    "name": "Node 118",
+    "hall": "Wheel",
+    "traditions": [
+      "Dreamwork"
+    ],
+    "angle_deg": 292.5,
+    "ring": 1
+  },
+  {
+    "id": 119,
+    "name": "Node 119",
+    "hall": "Justice",
+    "traditions": [
+      "Mythic"
+    ],
+    "angle_deg": 295.0,
+    "ring": 2
+  },
+  {
+    "id": 120,
+    "name": "Node 120",
+    "hall": "Hanged Man",
+    "traditions": [
+      "Sound"
+    ],
+    "angle_deg": 297.5,
+    "ring": 3
+  },
+  {
+    "id": 121,
+    "name": "Node 121",
+    "hall": "Fool",
+    "traditions": [
+      "Alchemy"
+    ],
+    "angle_deg": 300.0,
+    "ring": 4
+  },
+  {
+    "id": 122,
+    "name": "Node 122",
+    "hall": "Magus",
+    "traditions": [
+      "Hermetic"
+    ],
+    "angle_deg": 302.5,
+    "ring": 5
+  },
+  {
+    "id": 123,
+    "name": "Node 123",
+    "hall": "Empress",
+    "traditions": [
+      "Noetic"
+    ],
+    "angle_deg": 305.0,
+    "ring": 6
+  },
+  {
+    "id": 124,
+    "name": "Node 124",
+    "hall": "Emperor",
+    "traditions": [
+      "Astrology"
+    ],
+    "angle_deg": 307.5,
+    "ring": 7
+  },
+  {
+    "id": 125,
+    "name": "Node 125",
+    "hall": "Hierophant",
+    "traditions": [
+      "Geomancy"
+    ],
+    "angle_deg": 310.0,
+    "ring": 8
+  },
+  {
+    "id": 126,
+    "name": "Node 126",
+    "hall": "Lovers",
+    "traditions": [
+      "Tarot"
+    ],
+    "angle_deg": 312.5,
+    "ring": 9
+  },
+  {
+    "id": 127,
+    "name": "Node 127",
+    "hall": "Chariot",
+    "traditions": [
+      "Runic"
+    ],
+    "angle_deg": 315.0,
+    "ring": 1
+  },
+  {
+    "id": 128,
+    "name": "Node 128",
+    "hall": "Strength",
+    "traditions": [
+      "Gnostic"
+    ],
+    "angle_deg": 317.5,
+    "ring": 2
+  },
+  {
+    "id": 129,
+    "name": "Node 129",
+    "hall": "Hermit",
+    "traditions": [
+      "Tantric"
+    ],
+    "angle_deg": 320.0,
+    "ring": 3
+  },
+  {
+    "id": 130,
+    "name": "Node 130",
+    "hall": "Wheel",
+    "traditions": [
+      "Dreamwork"
+    ],
+    "angle_deg": 322.5,
+    "ring": 4
+  },
+  {
+    "id": 131,
+    "name": "Node 131",
+    "hall": "Justice",
+    "traditions": [
+      "Mythic"
+    ],
+    "angle_deg": 325.0,
+    "ring": 5
+  },
+  {
+    "id": 132,
+    "name": "Node 132",
+    "hall": "Hanged Man",
+    "traditions": [
+      "Sound"
+    ],
+    "angle_deg": 327.5,
+    "ring": 6
+  },
+  {
+    "id": 133,
+    "name": "Node 133",
+    "hall": "Fool",
+    "traditions": [
+      "Alchemy"
+    ],
+    "angle_deg": 330.0,
+    "ring": 7
+  },
+  {
+    "id": 134,
+    "name": "Node 134",
+    "hall": "Magus",
+    "traditions": [
+      "Hermetic"
+    ],
+    "angle_deg": 332.5,
+    "ring": 8
+  },
+  {
+    "id": 135,
+    "name": "Node 135",
+    "hall": "Empress",
+    "traditions": [
+      "Noetic"
+    ],
+    "angle_deg": 335.0,
+    "ring": 9
+  },
+  {
+    "id": 136,
+    "name": "Node 136",
+    "hall": "Emperor",
+    "traditions": [
+      "Astrology"
+    ],
+    "angle_deg": 337.5,
+    "ring": 1
+  },
+  {
+    "id": 137,
+    "name": "Node 137",
+    "hall": "Hierophant",
+    "traditions": [
+      "Geomancy"
+    ],
+    "angle_deg": 340.0,
+    "ring": 2
+  },
+  {
+    "id": 138,
+    "name": "Node 138",
+    "hall": "Lovers",
+    "traditions": [
+      "Tarot"
+    ],
+    "angle_deg": 342.5,
+    "ring": 3
+  },
+  {
+    "id": 139,
+    "name": "Node 139",
+    "hall": "Chariot",
+    "traditions": [
+      "Runic"
+    ],
+    "angle_deg": 345.0,
+    "ring": 4
+  },
+  {
+    "id": 140,
+    "name": "Node 140",
+    "hall": "Strength",
+    "traditions": [
+      "Gnostic"
+    ],
+    "angle_deg": 347.5,
+    "ring": 5
+  },
+  {
+    "id": 141,
+    "name": "Node 141",
+    "hall": "Hermit",
+    "traditions": [
+      "Tantric"
+    ],
+    "angle_deg": 350.0,
+    "ring": 6
+  },
+  {
+    "id": 142,
+    "name": "Node 142",
+    "hall": "Wheel",
+    "traditions": [
+      "Dreamwork"
+    ],
+    "angle_deg": 352.5,
+    "ring": 7
+  },
+  {
+    "id": 143,
+    "name": "Node 143",
+    "hall": "Justice",
+    "traditions": [
+      "Mythic"
+    ],
+    "angle_deg": 355.0,
+    "ring": 8
+  },
+  {
+    "id": 144,
+    "name": "Node 144",
+    "hall": "Hanged Man",
+    "traditions": [
+      "Sound"
+    ],
+    "angle_deg": 357.5,
+    "ring": 9
+  }
+]
