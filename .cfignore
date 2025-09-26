@@ -1,0 +1,10 @@
+# Exclude development and build artifacts from Cloudflare Pages upload
+node_modules/
+ci/
+scripts/
+build/
+.env*
+*.log
+.DS_Store
+Thumbs.db
+tmp/
