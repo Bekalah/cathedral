@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Codex 144.99 — Fractal Synthesis Engine</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:#0b0b12; color:#e8e8f0; }
+    header { padding:16px 20px; border-bottom:1px solid #1d1d2a; }
+    .fractal-controls { display:flex; gap:12px; align-items:center; }
+    select, button { padding:6px 10px; background:#1d1d2a; color:#e8e8f0; border:1px solid #3a3a4f; border-radius:4px; }
+    select:focus, button:focus { outline:2px solid #7c4dff; }
+    #fractal-status { margin-top:8px; font-size:12px; color:#a6a6c1; }
+    canvas { display:block; width:100vw; height:100vh; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="fractal-controls">
+      <label for="fractal-select">Fractal Lens</label>
+      <select id="fractal-select" onchange="loadFractal(this.value)">
+        <option value="soyga">Liber Soygæ (John Dee)</option>
+        <option value="iching">I Ching Hexagram</option>
+        <option value="kabbalah">Tree of Life</option>
+        <option value="astrology">Evolutionary Astrology</option>
+        <option value="noetics">Noetic Coherence</option>
+        <option value="biogeometrics">Earth Grid</option>
+        <option value="raku_reiki">Raku Fusion Reiki</option>
+      </select>
+      <button type="button" onclick="playReikiTone()">Play Raku Tone (963 Hz)</button>
+    </div>
+    <div id="fractal-status">Loading fractal presets…</div>
+  </header>
+
+  <canvas id="fractal-canvas" width="1280" height="720" aria-label="Fractal synthesis canvas"></canvas>
+
+  <script type="module">
+    import { renderSoyga } from "./fractals/soyga.js";
+    import { renderIChing } from "./fractals/iching.js";
+    import { renderKabbalah } from "./fractals/kabbalah.js";
+    import { renderAstrology } from "./fractals/astrology.js";
+    import { renderNoetics } from "./fractals/noetics.js";
+    import { renderBiogeometrics } from "./fractals/biogeometrics.js";
+    import { renderRakuReiki } from "./fractals/reiki.js";
+    import { playReikiTone as triggerTone } from "./harmonics/player.js";
+
+    const canvas = document.getElementById("fractal-canvas");
+    const ctx = canvas.getContext("2d");
+    const statusEl = document.getElementById("fractal-status");
+
+    const defaultPresets = {
+      soyga: {
+        name: "Liber Soygæ",
+        tradition: "John Dee",
+        type: "grid",
+        params: { size: 36, seed: "A", iterations: 7 }
+      },
+      iching: {
+        name: "I Ching Hexagram",
+        tradition: "King Wen",
+        type: "binary_tree",
+        params: { hexagram: 1, depth: 6 }
+      },
+      kabbalah: {
+        name: "Tree of Life",
+        tradition: "Hermetic Qabalah",
+        type: "graph",
+        params: { sephiroth: 10, paths: 22 }
+      },
+      astrology: {
+        name: "Evolutionary Orbs",
+        tradition: "Steven Forrest",
+        type: "orbital",
+        params: { bodies: 12, resonance: 0.618 }
+      },
+      noetics: {
+        name: "Noetic Coherence Field",
+        tradition: "IONS",
+        type: "interference",
+        params: { frequency: 7.83, coherence: 0.9 }
+      },
+      biogeometrics: {
+        name: "Earth Grid Harmonics",
+        tradition: "Bruce Cathie",
+        type: "lattice",
+        params: { grid: "666", harmonic: 144 }
+      },
+      raku_reiki: {
+        name: "Raku Fusion Flow",
+        tradition: "Raku Reiki + Shamanism",
+        type: "energy_field",
+        params: { chakras: 7, shamanic_layers: 3 }
+      }
+    };
+
+    const renderers = {
+      soyga: renderSoyga,
+      iching: renderIChing,
+      kabbalah: renderKabbalah,
+      astrology: renderAstrology,
+      noetics: renderNoetics,
+      biogeometrics: renderBiogeometrics,
+      raku_reiki: renderRakuReiki
+    };
+
+    let activePresets = defaultPresets;
+    let currentType = "raku_reiki";
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    async function loadPresets() {
+      try {
+        const res = await fetch("./data/fractal_presets.json", { cache: "no-store" });
+        if (!res.ok) {
+          throw new Error(String(res.status));
+        }
+        const json = await res.json();
+        activePresets = { ...defaultPresets, ...json };
+        statusEl.textContent = "Fractal presets loaded.";
+      } catch (error) {
+        activePresets = defaultPresets;
+        statusEl.textContent = "Presets missing; using built-in set.";
+      }
+    }
+
+    function drawFractal(type) {
+      const renderer = renderers[type];
+      if (!renderer) {
+        statusEl.textContent = "Renderer unavailable for " + type + ".";
+        return;
+      }
+      const preset = activePresets[type] || defaultPresets[type];
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const params = preset && preset.params ? preset.params : {};
+      renderer(ctx, params);
+      const label = preset && (preset.name || preset.type) ? preset.name || preset.type : type;
+      statusEl.textContent = "Showing " + label + " lens.";
+    }
+
+    window.loadFractal = (type) => {
+      currentType = type;
+      drawFractal(type);
+    };
+
+    window.playReikiTone = () => {
+      triggerTone(963, 4);
+    };
+
+    window.addEventListener("resize", () => {
+      resizeCanvas();
+      drawFractal(currentType);
+    });
+
+    resizeCanvas();
+    await loadPresets();
+    drawFractal(currentType);
+  </script>
+</body>
+</html>
