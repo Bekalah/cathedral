@@ -22,8 +22,8 @@
     <div><strong>Cosmic Helix Renderer</strong> - layered sacred geometry (offline, ND-safe)</div>
     <div class="status" id="status">Preparing canvas...</div>
 
-    <div><strong>Cosmic Helix Renderer</strong> — layered sacred geometry (offline, ND-safe)</div>
-    <div class="status" id="status">Preparing canvas…</div>
+    <div><strong>Cosmic Helix Renderer</strong> - layered sacred geometry (offline, ND-safe)</div>
+    <div class="status" id="status">Preparing canvas...</div>
 
   </header>
 
@@ -75,7 +75,7 @@
       });
 
       (async () => {
-        const palette = await loadJSON("./data/palette.json");
+        const palette = await loadJSON("./apps/web/public/registry/palette.json");
         const activePalette = palette || DEFAULTS.palette;
         statusEl.textContent = palette ? "Palette loaded." : "Palette missing; using safe fallback.";
 
@@ -119,7 +119,7 @@
       }
     }
 
-    const palette = await loadJSON("./data/palette.json");
+    const palette = await loadJSON("./apps/web/public/registry/palette.json");
     const activePalette = palette || DEFAULTS.palette;
     statusEl.textContent = palette ? "Palette loaded." : "Palette missing; using safe fallback.";
 
