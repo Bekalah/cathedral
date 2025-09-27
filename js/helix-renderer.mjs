@@ -291,7 +291,7 @@ function drawHelixLattice(ctx, settings) {
 
 function drawPaletteNotice(ctx, settings) {
   const { stage, palette, numerology } = settings;
-  const message = "Palette fallback active (data/palette.json missing).";
+  const message = "Palette fallback active (apps/web/public/registry/palette.json missing).";
   const padding = Math.max(8, stage.width / numerology.ONEFORTYFOUR);
   const x = stage.x + padding;
   const y = stage.y + padding;

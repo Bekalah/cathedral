@@ -21,7 +21,7 @@ const DIST_DIR = join(PROJECT_ROOT, 'dist');
 const SOURCE_FILES = Object.freeze([
   'index.html',
   'js/helix-renderer.mjs',
-  'data/palette.json',
+  'apps/web/public/registry/palette.json',
   'README_RENDERER.md'
 ]);
 
@@ -89,7 +89,7 @@ async function copyRendererBundle(targetKey) {
   await ensureDir(targetDir);
   await copyFile('index.html', join(targetDir, 'index.html'));
   await copyDir('js', join(targetDir, 'js'));
-  await copyDir('data', join(targetDir, 'data'));
+  await copyDir('apps/web/public/registry', join(targetDir, 'apps/web/public/registry'));
   await copyFile('README_RENDERER.md', join(targetDir, 'README_RENDERER.md'));
 }
 
@@ -138,6 +138,7 @@ async function copyFile(relativeSource, absoluteTarget) {
 
 async function copyDir(relativeSource, absoluteTarget) {
   const absoluteSource = join(PROJECT_ROOT, relativeSource);
+  await ensureDir(dirname(absoluteTarget));
   await fs.cp(absoluteSource, absoluteTarget, { recursive: true });
 }
 
@@ -167,7 +168,7 @@ function buildDistReadme() {
     '  /stone-grimoire/ -> placeholder shell kept static for ND-safe calm.',
     '  /circuitum99/   -> placeholder shell so Fly routes do not 404.',
     '',
-    'All assets stay offline. Update data/palette.json then rerun npm run bundle:static.',
+    'All assets stay offline. Update apps/web/public/registry/palette.json then rerun npm run bundle:static.',
     ''
   ].join('\n');
 }
