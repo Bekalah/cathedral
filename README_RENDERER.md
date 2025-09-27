@@ -10,6 +10,12 @@ Static HTML plus Canvas renderer that honors the Cosmic-Helix spec with layered 
 - `data/palettes/` - optional curated palettes to copy over `data/palette.json`.
 - `_headers` - security and CORS headers for Cloudflare Pages.
 - `.cfignore` - excludes development assets from the upload bundle.
+- `apps/web/public/registry/palette.json` - editable ND-safe palette. If missing, the renderer falls back to embedded colors and paints a gentle inline notice.
+- `apps/web/public/registry/palettes/` - optional curated palettes to copy over `apps/web/public/registry/palette.json`.
+
+- `index.html` - entry point with a 1440x900 canvas, palette loader, and ND-safe status copy.
+- `js/helix-renderer.mjs` - pure ES module that draws the Vesica field, Tree-of-Life scaffold, Fibonacci curve, and static double-helix lattice in that order.
+- `apps/web/public/registry/palette.json` - editable palette file. Remove it to test the inline fallback notice; the renderer stays safe.
 
 ## Rendered Layers
 1. **Vesica field** - Seven by nine circle lattice using constants 7 and 9 for grounding repetition.
@@ -19,8 +25,8 @@ Static HTML plus Canvas renderer that honors the Cosmic-Helix spec with layered 
 
 ## Palette Notes
 - Default palette favors serene blues, teals, gold, and violet on deep charcoal for readability.
-- Edit `data/palette.json` to adjust tones; keep six layer colors so each geometry band remains distinct.
-- To test the fallback, temporarily rename or remove `data/palette.json`. The canvas will render with embedded colors and note the fallback status.
+- Edit `apps/web/public/registry/palette.json` to adjust tones; keep six layer colors so each geometry band remains distinct.
+- To test the fallback, temporarily rename or remove `apps/web/public/registry/palette.json`. The canvas will render with embedded colors and note the fallback status.
 
 ## Offline Usage
 1. Keep the files in the same folder.

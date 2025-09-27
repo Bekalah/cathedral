@@ -3,9 +3,9 @@
 Offline-first home for the Cathedral corpus. This repository now acts as the
 primary hub that feeds every mode of the project:
 
-* **Stone Grimoire** – material body work (pigments, CSS, tactile palettes).
-* **Liber Arcanae** – tarot, correspondences, narrative spine.
-* **Cosmogenesis Engine** – interactive research and art laboratory.
+* **Stone Grimoire** - material body work (pigments, CSS, tactile palettes).
+* **Liber Arcanae** - tarot, correspondences, narrative spine.
+* **Cosmogenesis Engine** - interactive research and art laboratory.
 
 All datasets, shared schemata, and renderer assets live here so the satellite
 apps can pull from the same canon without juggling separate repositories or
@@ -19,7 +19,7 @@ assets/                # Overlay generators and shared imagery helpers
 codex-engines/         # Thin HTTP wrapper for blessed-build exports
 engines/               # Muse overlay builder that honours the padding law
 js/helix-renderer.mjs  # Sacred geometry renderer module (shared by static apps)
-data/
+apps/web/public/registry/
   palette.json         # Active palette for the Cosmic Helix renderer
   palettes/            # Archived palettes; copy one over palette.json to swap hues
 packages/
@@ -34,20 +34,20 @@ prototype so the lore remains available without cluttering the main document.
 ## Data Canon
 
 * `shared/corpus/` gathers all textual excerpts, symbols, and generated search
-  indexes. Each addition must be real canon – no placeholders.
+  indexes. Each addition must be real canon - no placeholders.
 * `shared/graph/` hosts correspondence tables and external graph hooks.
 * `shared/packs/` stores node and chapter packs for future Stone Grimoire or
   Liber Arcanae builds.
-* `data/palette.json` controls the colour scheme for the helix renderer. The new
-  `data/palettes/` directory archives alternative palettes (for example
-  `muse.json`). Copy the desired palette over `data/palette.json` to swap schemes
+* `apps/web/public/registry/palette.json` controls the colour scheme for the helix renderer. The
+  `apps/web/public/registry/palettes/` directory archives alternative palettes (for example
+  `muse.json`). Copy the desired palette over `apps/web/public/registry/palette.json` to swap schemes
   while staying offline-first.
 
 ## Renderer Integration
 
 `index.html` and `js/helix-renderer.mjs` expose the static Cosmic Helix renderer.
-They draw four calm layers – Vesica field, Tree-of-Life scaffold, Fibonacci
-curve, and double-helix lattice – using deterministic numerology constants
+They draw four calm layers - Vesica field, Tree-of-Life scaffold, Fibonacci
+curve, and double-helix lattice - using deterministic numerology constants
 (3, 7, 9, 11, 22, 33, 99, 144). No animation, autoplay, or external libraries are
 introduced.
 
