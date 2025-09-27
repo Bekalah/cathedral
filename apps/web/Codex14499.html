@@ -60,7 +60,7 @@
         ONEFORTYFOUR: 144
       });
 
-      const palette = await loadPalette("../../data/palette.json");
+      const palette = await loadPalette("./public/registry/palette.json");
       const active = palette || FALLBACK;
       elStatus.textContent = palette ? "Palette loaded." : "Palette missing; using safe fallback.";
 

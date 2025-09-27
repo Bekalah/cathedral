@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Codex 144.99 — Fractal Synthesis Engine</title>
+  <title>Codex 144.99 - Fractal Synthesis Engine</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
     body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:#0b0b12; color:#e8e8f0; }
@@ -19,7 +19,7 @@
     <div class="fractal-controls">
       <label for="fractal-select">Fractal Lens</label>
       <select id="fractal-select" onchange="loadFractal(this.value)">
-        <option value="soyga">Liber Soygæ (John Dee)</option>
+        <option value="soyga">Liber Soygae (John Dee)</option>
         <option value="iching">I Ching Hexagram</option>
         <option value="kabbalah">Tree of Life</option>
         <option value="astrology">Evolutionary Astrology</option>
@@ -29,7 +29,7 @@
       </select>
       <button type="button" onclick="playReikiTone()">Play Raku Tone (963 Hz)</button>
     </div>
-    <div id="fractal-status">Loading fractal presets…</div>
+    <div id="fractal-status">Loading fractal presets...</div>
   </header>
 
   <canvas id="fractal-canvas" width="1280" height="720" aria-label="Fractal synthesis canvas"></canvas>
@@ -50,7 +50,7 @@
 
     const defaultPresets = {
       soyga: {
-        name: "Liber Soygæ",
+        name: "Liber Soygae",
         tradition: "John Dee",
         type: "grid",
         params: { size: 36, seed: "A", iterations: 7 }
@@ -113,7 +113,7 @@
 
     async function loadPresets() {
       try {
-        const res = await fetch("./data/fractal_presets.json", { cache: "no-store" });
+        const res = await fetch("./apps/web/public/registry/fractal_presets.json", { cache: "no-store" });
         if (!res.ok) {
           throw new Error(String(res.status));
         }
