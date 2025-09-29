@@ -83,3 +83,24 @@ pnpm run deploy:pages
 **The Cathedral breathes with your soul** 🌟✨
 
 *Where Sacred Technology Meets Artistic Vision*
+
+---
+
+## 📜 Licensing & Ethical Use
+
+This project uses a **dual license model** to honor both open technical innovation and the protected symbolic / mythopoetic layers:
+
+- **Software / Engine / Infrastructure Code**: Licensed under **Apache License 2.0** (`LICENSE`).
+- **Symbolic / Narrative / Ritual / Archetypal Content & Mythic Datasets**: Licensed under **Creative Commons BY-NC-SA 4.0** (`LICENSE-CONTENT.md`).
+- **Hybrid Structured Symbolic JSON** (e.g. `TAROT_MASTER_DATASET.json`, `majors-complete.json`, `angels-72.json`, `codex_nodes.json`): Schema usage = Apache 2.0, embedded mythic meanings = CC BY-NC-SA 4.0.
+
+### Quick Attribution Format
+> Cathedral of Circuits – Living Grimoire Engine (© 2025 Rebecca "Bekalah" Lemke). Code: Apache-2.0. Symbolic Content & Mythic Datasets: CC BY-NC-SA 4.0.
+
+### Ethical / Safety Expectations
+Derivatives must preserve trauma-informed disclaimers, avoid coercive psychological profiling, and refrain from implying medical authority. See: `PROTECTION_AND_PRIVACY_SYSTEM.md`, `ACCESSIBILITY_AND_MEMORY_SUPPORT.md`.
+
+### Commercial / Closed Use
+Commercial embedding of symbolic correspondences or ritual engines requires a negotiated stewardship license. Open an Issue titled: `LICENSE INQUIRY`.
+
+For details read: `LICENSE` and `LICENSE-CONTENT.md`.
