@@ -1,0 +1,77 @@
+Cathedral of Circuits - Living Grimoire Engine
+Copyright (c) 2025 Rebecca Lemke ("Bekalah") and contributors.
+
+This product includes software developed by Rebecca "Bekalah" Lemke and the Cathedral of Circuits project contributors.
+
+================================================================================
+
+DUAL LICENSE NOTICE:
+
+Software Components (Apache License 2.0):
+- Engine scripts, infrastructure, automation, build systems
+- Integration logic, validation systems, quality guardians
+- Deployment configurations, server components
+- Structural schemas in JSON/YAML configuration files
+
+Creative Mythopoetic Content (CC BY-NC-SA 4.0):
+- Archetypal descriptions, tradition narratives, ritual language
+- Tarot correspondences, Codex 144:99 symbolic mappings
+- Healing protocol descriptions, sacred geometry narratives
+- Symbolic dataset elements embedding mythic ontology
+- Trauma-informed design documentation and safety protocols
+
+Dual-Character Assets:
+- TAROT_MASTER_DATASET.json: Schema structure (Apache-2.0), symbolic meanings (CC BY-NC-SA 4.0)
+- packages/data/arcana/*.json: Same dual treatment
+- packages/codex-144/*.json: Same dual treatment
+- grimoire_concepts.json: Same dual treatment
+
+================================================================================
+
+THIRD-PARTY COMPONENTS:
+
+This project may incorporate concepts, methodologies, or inspirations from:
+
+Public Domain Sources Referenced:
+- John Dee's Enochian system (16th century, public domain)
+- Paracelsus alchemical correspondences (16th century, public domain)
+- Traditional Tarot symbolism (various historical sources, public domain)
+- Sacred geometry principles (ancient mathematical concepts, public domain)
+- Solfeggio frequencies (historical healing tones, public domain)
+
+Modern Inspirational Context:
+- Trauma-informed design principles (academic/therapeutic literature)
+- Neurodivergent accessibility practices (community knowledge)
+- Sacred activism methodologies (various spiritual traditions)
+
+Note: This project creates original synthesis and implementation. No direct copying of copyrighted modern works is claimed or intended.
+
+================================================================================
+
+ATTRIBUTION REQUIREMENTS:
+
+When redistributing or adapting this work, include:
+
+For Software Components:
+"Portions of this software are based on Cathedral of Circuits by Rebecca 'Bekalah' Lemke, licensed under Apache-2.0."
+
+For Creative Content:
+"Symbolic content adapted from Cathedral of Circuits by Rebecca 'Bekalah' Lemke, licensed under CC BY-NC-SA 4.0."
+
+Full attribution format:
+"Cathedral of Circuits – Living Grimoire Engine (© 2025 Rebecca 'Bekalah' Lemke). Code: Apache-2.0. Symbolic Content & Mythic Datasets: CC BY-NC-SA 4.0."
+
+Repository: https://github.com/Bekalah/cathedral
+
+================================================================================
+
+ETHICAL USE COMMITMENT:
+
+This project is designed with trauma-informed principles and neurodivergent accessibility. Derivative works should maintain these commitments to user safety, consent, and inclusive design.
+
+Not intended as medical, psychological, or spiritual authority. Educational and artistic exploration only.
+
+================================================================================
+
+For license details, see LICENSE (Apache-2.0) and LICENSE-CONTENT.md (CC BY-NC-SA 4.0).
+For contribution guidelines, see CONTRIBUTING.md.
