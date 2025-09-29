@@ -1,0 +1,347 @@
+/**
+ * 🏛️✨ CATHEDRAL OF CIRCUITS - MAIN STYLES
+ * Sacred geometry meets trauma-informed design
+ */
+
+:root {
+  /* Sacred Colors - Trauma Safe Palette */
+  --cathedral-primary: #4169E1;      /* Royal Blue - calming */
+  --cathedral-secondary: #9932CC;    /* Dark Orchid - mystical */
+  --cathedral-accent: #FFD700;       /* Gold - illumination */
+  --cathedral-success: #32CD32;      /* Lime Green - growth */
+  --cathedral-warning: #FF8C00;      /* Dark Orange - energy */
+  --cathedral-danger: #DC143C;       /* Crimson - boundaries */
+  
+  /* Trauma-Safe Neutrals */
+  --bg-primary: #0F0F23;            /* Deep midnight */
+  --bg-secondary: #1A1A3A;          /* Soft dark */
+  --bg-card: #2D2D5A;               /* Card background */
+  --text-primary: #E6E6FA;          /* Lavender */
+  --text-secondary: #B8B8D4;        /* Muted lavender */
+  --border: #4A4A6A;                /* Gentle border */
+  
+  /* Sacred Measurements */
+  --golden-ratio: 1.618;
+  --sacred-spacing: 1.5rem;
+  --sacred-radius: 8px;
+  
+  /* Accessibility */
+  --focus-ring: 3px solid var(--cathedral-accent);
+  --safe-transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* Loading State */
+.cathedral-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.sacred-spinner {
+  font-size: 3rem;
+  animation: breathe 2s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+/* Main App Layout */
+.cathedral-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navigation */
+.cathedral-nav {
+  background: var(--bg-secondary);
+  padding: 1rem var(--sacred-spacing);
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand-link {
+  color: var(--cathedral-accent);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: var(--safe-transition);
+}
+
+.brand-link:hover {
+  color: var(--cathedral-primary);
+}
+
+.system-status {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--sacred-radius);
+  transition: var(--safe-transition);
+  border: 1px solid transparent;
+}
+
+.nav-link:hover {
+  background: var(--bg-card);
+  border-color: var(--cathedral-primary);
+  color: var(--cathedral-accent);
+}
+
+.nav-link:focus {
+  outline: var(--focus-ring);
+}
+
+/* Trauma Safety Banner */
+.trauma-safety-banner {
+  background: var(--cathedral-success);
+  color: var(--bg-primary);
+  padding: 0.5rem var(--sacred-spacing);
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Main Content */
+.cathedral-main {
+  flex: 1;
+  padding: var(--sacred-spacing);
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Home Page Styles */
+.home-page {
+  text-align: center;
+}
+
+.cathedral-header h1 {
+  font-size: 3rem;
+  margin: 2rem 0 1rem;
+  background: linear-gradient(45deg, var(--cathedral-accent), var(--cathedral-primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cathedral-header .subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.status-card {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: calc(var(--sacred-radius) * 2);
+  border: 2px solid var(--border);
+  transition: var(--safe-transition);
+}
+
+.status-card:hover {
+  border-color: var(--cathedral-primary);
+  transform: translateY(-2px);
+}
+
+.status-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.status-card .status {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.feature {
+  background: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: var(--sacred-radius);
+  border-left: 4px solid var(--cathedral-primary);
+}
+
+.start-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.start-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.start-card {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: var(--sacred-radius);
+  border: 2px solid var(--border);
+  transition: var(--safe-transition);
+  cursor: pointer;
+}
+
+.start-card:hover {
+  border-color: var(--cathedral-accent);
+  background: var(--bg-secondary);
+}
+
+/* Footer */
+.cathedral-footer {
+  background: var(--bg-secondary);
+  padding: 3rem var(--sacred-spacing) 1rem;
+  border-top: 2px solid var(--border);
+  margin-top: 4rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-content h4 {
+  color: var(--cathedral-accent);
+  margin-bottom: 0.5rem;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+/* Page-specific styles */
+.codex-page, .arcana-page, .fusion-page, .labs-page, .library-page {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.nodes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.node-card {
+  background: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: var(--sacred-radius);
+  border: 1px solid var(--border);
+}
+
+.node-meta {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.fallback-message {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-secondary);
+}
+
+.coming-soon {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-secondary);
+}
+
+.consent-required {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: var(--sacred-radius);
+  border-left: 4px solid var(--cathedral-warning);
+  margin: 2rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cathedral-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .cathedral-header h1 {
+    font-size: 2rem;
+  }
+  
+  .status-grid, .feature-grid, .start-options {
+    grid-template-columns: 1fr;
+  }
+  
+  .cathedral-main {
+    padding: 1rem;
+  }
+}

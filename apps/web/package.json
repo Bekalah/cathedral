@@ -1,0 +1,31 @@
+{
+  "name": "@bekalah/cathedral-web",
+  "version": "1.0.0",
+  "description": "Cathedral of Circuits - Web Interface with Codex 144:99 Integration",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5173 --host",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "vite preview --port 8080"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "@vitejs/plugin-react": "^4.2.0",
+    "typescript": "^5.3.0",
+    "vite": "^5.0.0"
+  },
+  "cathedral": {
+    "codex_integration": true,
+    "living_arcanae": true,
+    "fusion_kink": true,
+    "trauma_safe": true,
+    "artistic_vision": "Björk + Tori + Iris + Emma + 21 Taras"
+  }
+}

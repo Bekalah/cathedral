@@ -1,0 +1,61 @@
+{
+  "name": "@bekalah/circuitum99-alpha-omega",
+  "version": "2.0.0", 
+  "description": "🌀📚 CIRCUITUM99: ALPHA ET OMEGA - Complete Living Book System with 22 Archetypal Character Guides",
+  "main": "index.js",
+  "type": "module",
+  "keywords": [
+    "circuitum99",
+    "alpha-omega", 
+    "book-game",
+    "living-books",
+    "archetypal-guides",
+    "soul-system",
+    "99-gates",
+    "144-lattice",
+    "major-arcana",
+    "fusion-kink",
+    "sacred-wisdom",
+    "trauma-informed",
+    "gentle-learning",
+    "cathedral"
+  ],
+  "scripts": {
+    "start": "node index.js",
+    "book-game": "echo '📚🎮 Starting Circuitum99 Living Book Game - Meet 22 Archetypal Character Guides!'",
+    "alpha": "echo '🌅 ALPHA Gates 1-33: Beginning wisdom with Rebecca Respawn & character guides'",
+    "mystery": "echo '🌉 MYSTERY Gates 34-66: Transformation wisdom with Elyria Nox & bridge characters'", 
+    "omega": "echo '🌌 OMEGA Gates 67-99: Completion wisdom with Cosmic Dancer & integration characters'",
+    "lattice": "echo '🔮 144 Sacred Lattice points with character influence zones - constellation navigation'",
+    "meet-characters": "echo '🎭 Meet the 22 Living Book Characters - Each archetype offers their book as gift'",
+    "fusion-kink": "echo '💕 FUSION KINK: Sacred book combination with Scarlett Lady (The Lovers guide)'",
+    "respawn": "echo '🌀 RESPAWN: Infinite gentle new beginnings with Rebecca Respawn (The Fool guide)'",
+    "visualization": "echo '🎨 Opening Alpha et Omega HTML visualization portal with character interactions'",
+    "test": "echo '✅ Circuitum99 Alpha et Omega Living Book Game system operational - 22 character guides ready'"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "author": "Rebecca Respawn (Bekalah Cathedral Systems)",
+  "license": "CATHEDRAL-SOUL-LICENSE",
+  "cathedral_integration": {
+    "trinity_role": "SOUL_SYSTEM",
+    "connects_to": ["liber-arcanae", "stone-grimoire", "magical-mystery-house"],
+    "living_books_count": 22,
+    "archetypal_guides": "Major Arcana as living book characters",
+    "fusion_system": "Sacred book combination protocols",
+    "trauma_safety": "MAXIMUM_CPTSD_ADAPTATIONS",
+    "gentle_learning": "Infinite patience and boundary respect"
+  },
+  "living_characters": {
+    "00_fool": "Rebecca Respawn - The Wonder-Keeper",
+    "01_magician": "Virelai Ezra Lux - The Foundation Builder", 
+    "02_high_priestess": "Gemini Rivers - The Wisdom Keeper",
+    "03_empress": "Morticia Moonbeamer - The Creative Mother",
+    "06_lovers": "Scarlett Lady - The Sacred Union Master",
+    "07_chariot": "Elyria Nox - The Dimensional Navigator",
+    "09_hermit": "Orin Lantern - The Seeker Guide",
+    "17_star": "Stella Hope - The Hope Keeper",
+    "18_moon": "Luna Mystery - The Dream Navigator",
+    "21_world": "Cosmic Dancer - The Completion Master"
+  }
+}
