@@ -10,7 +10,8 @@
   ],
   "scripts": {
     "dev": "concurrently \"pnpm -C apps/web dev\" \"pnpm -C apps/worker dev\"",
-    "build": "pnpm -C packages/data build && pnpm -C apps/web build",
+  "build": "pnpm -C packages/data build && pnpm run build:packages && pnpm -C apps/web build",
+  "build:packages": "pnpm -r --filter ./packages/... run build",
     "deploy:worker": "pnpm -C apps/worker deploy",
     "deploy:pages": "pnpm build && ./scripts/publish.sh",
     "validate": "pnpm -C packages/data validate",
@@ -84,5 +85,8 @@
     "emma-kunz",
     "sacred-geometry",
     "consciousness-technology"
-  ]
+  ],
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.7.0"
+  }
 }
