@@ -877,11 +877,31 @@
                     portal.remove();
                     style.remove();
                     
-                    // Navigate to specific art teaching tool
-                    if (labName === 'Drawing Basics') {
+                    // Navigate to specific art teaching tools based on current chapel
+                    const currentChapelInfo = this.chapelData[this.currentChapel];
+                    
+                    if (labName === 'Drawing Basics' || labName === 'Color Theory') {
                         window.location.href = '../web/src/tools/cathedral-fractal-engine.html';
+                    } else if (labName === 'Digital Alchemy' || labName === '3D Modeling') {
+                        // Connect to Magician's digital tools
+                        window.location.href = '../web/src/tools/3d-creation-lab.html';
+                    } else if (labName === 'Sacred Geometry' || labName === 'Mandala Art') {
+                        // Connect to High Priestess sacred geometry
+                        window.location.href = '../web/src/tools/sacred-geometry-lab.html';
+                    } else if (labName === 'Collaborative Art' || labName === 'Movement Art') {
+                        // Connect to Lovers collaboration tools
+                        window.location.href = '../web/src/tools/collaboration-studio.html';
+                    } else if (labName === 'Digital Mastery' || labName === 'Game Art') {
+                        // Connect to Chariot digital arena
+                        window.location.href = '../web/src/tools/digital-arena.html';
                     } else {
-                        alert(`Welcome to ${labName} Lab! \n\nThis sacred space is being prepared for your artistic journey. \n\nSoon you will explore the mysteries of ${labName} through hands-on creation and divine guidance.`);
+                        // For other labs, show integration info
+                        alert(`🎨 ${labName} Sacred Lab\n\nGuided by ${currentChapelInfo.character}\n\nThis specialized teaching space integrates with:\n• ${currentChapelInfo.connects_to.join('\n• ')}\n\nConnecting to the Cathedral ecosystem...`);
+                        
+                        // Try to connect to the soul app for this archetype
+                        if (currentChapelInfo.connects_to[0]) {
+                            window.open(currentChapelInfo.connects_to[0], '_blank');
+                        }
                     }
                 }, 100);
             }
