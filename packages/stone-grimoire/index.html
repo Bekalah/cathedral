@@ -818,6 +818,7 @@
                 if (!info) return;
                 
                 document.querySelector('.chapel-name').textContent = info.name;
+                document.querySelector('.character-guide').textContent = `Guide: ${info.character}`;
                 document.querySelector('.chapel-teaching').textContent = info.teaching;
                 
                 const entitiesContainer = document.querySelector('.chapel-entities');
@@ -828,6 +829,21 @@
                     badge.textContent = entity;
                     entitiesContainer.appendChild(badge);
                 });
+                
+                const connectionsDiv = document.querySelector('.integration-links div');
+                const connectionNames = info.connects_to.map(path => {
+                    if (path.includes('circuitum99')) return 'Soul App';
+                    if (path.includes('fractal')) return 'Fractal Engine';
+                    if (path.includes('3d-creation')) return '3D Lab';
+                    if (path.includes('sacred-geometry')) return 'Geometry Lab';
+                    if (path.includes('nature-art')) return 'Nature Studio';
+                    if (path.includes('architecture')) return 'Architecture Lab';
+                    if (path.includes('masters')) return 'Masters Archive';
+                    if (path.includes('collaboration')) return 'Collaboration Studio';
+                    if (path.includes('digital-arena')) return 'Digital Arena';
+                    return 'Connected App';
+                }).join(' • ');
+                connectionsDiv.textContent = `Connects to: ${connectionNames}`;
             }
 
             enterArtLab(labName) {
