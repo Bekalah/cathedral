@@ -24,7 +24,7 @@ importers:
         specifier: ^5.3.0
         version: 5.9.2
       vite:
-        specifier: ^5.0.0
+        specifier: ^5.4.20
         version: 5.4.20(@types/node@20.19.17)
       wrangler:
         specifier: ^3.78.12
@@ -77,6 +77,10 @@ importers:
         specifier: ^3.78.0
         version: 3.114.14(@cloudflare/workers-types@4.20250927.0)
 
+  packages/brain: {}
+
+  packages/circuitum99: {}
+
   packages/data:
     devDependencies:
       typescript:
@@ -88,6 +92,10 @@ importers:
       typescript:
         specifier: ^5.3.0
         version: 5.9.2
+
+  packages/gentle-fusion-lab: {}
+
+  packages/magical-mystery-house: {}
 
 packages:
 
