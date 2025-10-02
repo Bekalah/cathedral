@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🌀 Cathedral Fractal Engine - Sacred Geometry Flows</title>
+    <title>�️ Rosslyn Cathedral Explorer - Sacred Stone Adventures</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -16,7 +16,9 @@
             --emerald-heart: #50c878;
             --ruby-fire: #e0115f;
             --celestial-silver: #c0c0c0;
-            --breath-duration: 4s;
+            --stone-gray: #8b8680;
+            --ancient-stone: #a0956b;
+            --sacred-shadows: #2c1810;
         }
 
         * {
@@ -26,25 +28,15 @@
         }
 
         body {
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(80, 200, 120, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(224, 17, 95, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(25, 25, 112, 0.4) 0%, transparent 50%),
-                linear-gradient(135deg, 
-                    var(--abyss-deep) 0%, 
-                    var(--mystic-blue) 25%, 
-                    var(--twilight-purple) 50%, 
-                    var(--mystic-blue) 75%, 
-                    var(--abyss-deep) 100%);
-            
-            background-size: 400% 400%;
-            animation: breatheBackground var(--breath-duration) ease-in-out infinite alternate;
-            
+            background: linear-gradient(180deg, 
+                var(--abyss-deep) 0%, 
+                var(--sacred-shadows) 30%,
+                var(--ancient-stone) 100%);
             color: var(--divine-light);
             font-family: 'Cormorant Garamond', serif;
-            overflow-x: hidden;
-            min-height: 100vh;
-            position: relative;
+            overflow: hidden;
+            height: 100vh;
+            cursor: crosshair;
         }
 
         .cathedral-header {
