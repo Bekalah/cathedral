@@ -129,6 +129,8 @@ importers:
 
   packages/circuitum99: {}
 
+  packages/crystals: {}
+
   packages/data:
     devDependencies:
       typescript:
@@ -150,6 +152,8 @@ importers:
   packages/shared: {}
 
   packages/soul: {}
+
+  packages/synth: {}
 
 packages:
 

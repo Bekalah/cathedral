@@ -6,11 +6,13 @@ import { StyleFusion } from '@cathedral/brain';
 import { archetypes, archetypeInterference } from '@cathedral/soul';
 import { CollaborativeLab } from '@cathedral/labs';
 import { listFusionSets, computeFusionResonance, listCrystalIds } from '@cathedral/crystals';
+import { SynthEngine } from '@cathedral/synth';
 
 const colorScience = new ColorScience();
 const soundScience = new SoundScience();
 const styleFusion = new StyleFusion();
 const collabLab = new CollaborativeLab();
+const synth = new SynthEngine();
 
 function TestGround() {
   // Example: Color and sound fusion
@@ -43,6 +45,8 @@ function TestGround() {
       <pre>{JSON.stringify(fusionResult, null, 2)}</pre>
       <h2>Available Crystal IDs:</h2>
       <pre>{JSON.stringify(crystalIds, null, 2)}</pre>
+      <h2>Synth Patch List:</h2>
+      <pre>{JSON.stringify(synth.listPatches(), null, 2)}</pre>
     </div>
   );
 }
