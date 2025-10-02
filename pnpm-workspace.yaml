@@ -1,3 +1,5 @@
 packages:
   - 'apps/*'
+  - 'apps/test-ground'
+  - 'apps/tarot-arena'
   - 'packages/*'
