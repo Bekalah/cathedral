@@ -4,5 +4,13 @@
     "jsx": "react-jsx",
     "outDir": "dist"
   },
-  "include": ["src"]
+  "include": ["src"],
+  "references": [
+    { "path": "../../packages/brain" },
+    { "path": "../../packages/soul" },
+    { "path": "../../packages/labs" },
+    { "path": "../../packages/shared" },
+    { "path": "../../packages/crystals" },
+    { "path": "../../packages/synth" }
+  ]
 }
