@@ -6,7 +6,7 @@ import { StyleFusion } from '@cathedral/brain';
 import { archetypes, archetypeInterference } from '@cathedral/soul';
 import { CollaborativeLab } from '@cathedral/labs';
 import { listFusionSets, computeFusionResonance, listCrystalIds } from '@cathedral/crystals';
-import { SynthEngine } from '@cathedral/synth';
+import { SynthEngine, mapFusionToPatchModifiers } from '@cathedral/synth';
 
 const colorScience = new ColorScience();
 const soundScience = new SoundScience();
@@ -24,6 +24,7 @@ function TestGround() {
   const fusionList = listFusionSets();
   const firstFusion = fusionList[0];
   const fusionResult = firstFusion ? computeFusionResonance(firstFusion.id) : null;
+  const fusionModifiers = firstFusion ? mapFusionToPatchModifiers(firstFusion.id, { listFusionSets, computeFusionResonance }) : null;
   const crystalIds = listCrystalIds();
 
   return (
@@ -43,6 +44,8 @@ function TestGround() {
       <pre>{JSON.stringify(fusionList, null, 2)}</pre>
       <h2>First Fusion Resonance:</h2>
       <pre>{JSON.stringify(fusionResult, null, 2)}</pre>
+  <h2>Fusion → Synth Mod Suggestions:</h2>
+  <pre>{JSON.stringify(fusionModifiers, null, 2)}</pre>
       <h2>Available Crystal IDs:</h2>
       <pre>{JSON.stringify(crystalIds, null, 2)}</pre>
       <h2>Synth Patch List:</h2>

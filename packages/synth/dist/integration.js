@@ -1,11 +1,10 @@
 // integration.ts - future hooks bridging crystals & archetypes to synth parameters
 import { patchLibrary } from './patchLibrary';
-import { listFusionSets, computeFusionResonance } from '@cathedral/crystals';
-export function mapFusionToPatchModifiers(fusionId) {
-    const fusion = listFusionSets().find(f => f.id === fusionId);
+export function mapFusionToPatchModifiers(fusionId, helpers) {
+    const fusion = helpers.listFusionSets().find(f => f.id === fusionId);
     if (!fusion)
         return null;
-    const resonance = computeFusionResonance(fusionId);
+    const resonance = helpers.computeFusionResonance(fusionId);
     if (!resonance)
         return null;
     // Map phiScore & stability into modulation shaping suggestions
