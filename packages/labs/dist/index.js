@@ -1,3 +1,3 @@
-// Re-export all modules for Vite/TypeScript compatibility
-export * from '../src/index';
-export * from '../src/collabLab';
+// Collaborative Lab entry
+export * from './collabLab';
+//# sourceMappingURL=index.js.map
