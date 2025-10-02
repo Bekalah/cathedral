@@ -630,24 +630,77 @@
                 
                 this.chapelData = {
                     0: {
-                        name: "Fool's Chapel",
-                        teaching: "Gateway to artistic awakening. Here, beginners discover the infinite potential within every mark, every color, every creative breath. Fear dissolves into wonder.",
-                        entities: ["Vehuiah", "Baal", "Beginner's Mind"],
-                        artForms: ["Drawing Basics", "Color Theory", "Creative Courage"]
+                        name: "Fool's Gate",
+                        character: "Rebecca Respawn",
+                        teaching: "Gateway to artistic awakening where infinite potential meets creative courage. Begin any artistic journey here with the blessing of wonder and fearless exploration.",
+                        entities: ["Vehuiah", "Rebecca Respawn", "The Void Guardian"],
+                        artForms: ["Drawing Basics", "Color Theory", "Creative Courage"],
+                        connects_to: ["../circuitum99/fool.html", "../web/src/tools/cathedral-fractal-engine.html"],
+                        datasets: ["codex_nodes.json:1", "angels-72.json:1", "majors-complete.json:fool"]
                     },
                     1: {
-                        name: "Magician's Lab",
-                        teaching: "Master of manifestation through digital arts. Transform pure intention into visual reality using the sacred tools of technology and traditional media combined.",
-                        entities: ["Jeliel", "Agares", "Creative Will"],
-                        artForms: ["Digital Alchemy", "3D Modeling", "Animation"]
+                        name: "Magician Lab",
+                        character: "Virelai Ezra Lux",
+                        teaching: "Master manifestation through digital alchemy. Transform pure intention into visual reality using sacred technology and traditional media in perfect union.",
+                        entities: ["Jeliel", "Virelai Ezra Lux", "Olympic Spirits"],
+                        artForms: ["Digital Alchemy", "3D Modeling", "Animation Magic"],
+                        connects_to: ["../circuitum99/magician.html", "../web/src/tools/3d-creation-lab.html"],
+                        datasets: ["codex_nodes.json:2", "angels-72.json:2", "majors-complete.json:magician"]
                     },
                     2: {
                         name: "High Priestess Hall",
-                        teaching: "Sanctuary of intuitive arts. Here, the mysteries of composition, sacred geometry, and the hidden language of symbols are revealed through meditation and practice.",
-                        entities: ["Sitael", "Vassago", "Inner Vision"],
-                        artForms: ["Sacred Geometry", "Symbolic Art", "Meditation Drawing"]
+                        character: "Gemini Rivers",
+                        teaching: "Sanctuary of intuitive arts where sacred geometry and mystical symbols reveal their secrets through meditation and inspired creation.",
+                        entities: ["Sitael", "Gemini Rivers", "Wisdom Keepers"],
+                        artForms: ["Sacred Geometry", "Sigil Creation", "Mandala Art"],
+                        connects_to: ["../circuitum99/high-priestess.html", "../web/src/tools/sacred-geometry-lab.html"],
+                        datasets: ["codex_nodes.json:3", "angels-72.json:3", "majors-complete.json:high_priestess"]
+                    },
+                    3: {
+                        name: "Empress Studio",
+                        character: "Morticia Moonbeamer",
+                        teaching: "Creative mother's realm of natural beauty. Study life, flora, and the abundant forms of nature through nurturing artistic practice.",
+                        entities: ["Elemiah", "Morticia Moonbeamer", "Nature Spirits"],
+                        artForms: ["Botanical Drawing", "Life Drawing", "Portrait Studies"],
+                        connects_to: ["../circuitum99/empress.html", "../web/src/tools/nature-art-studio.html"],
+                        datasets: ["codex_nodes.json:4", "angels-72.json:4", "majors-complete.json:empress"]
+                    },
+                    4: {
+                        name: "Emperor Forge",
+                        character: "Stone Architect",
+                        teaching: "Foundation builder's workshop of structure and form. Master technical drawing, architecture, and the art of bringing order to creative chaos.",
+                        entities: ["Mahasiah", "Stone Architect", "Building Masters"],
+                        artForms: ["Architecture", "Technical Drawing", "Sculpture"],
+                        connects_to: ["../circuitum99/emperor.html", "../web/src/tools/architecture-lab.html"],
+                        datasets: ["codex_nodes.json:5", "angels-72.json:5", "majors-complete.json:emperor"]
+                    },
+                    5: {
+                        name: "Hierophant Archive",
+                        character: "Master Keeper",
+                        teaching: "Sacred repository of traditional arts and wisdom of the masters. Study classical techniques and connect to the lineage of great artists.",
+                        entities: ["Nith-Haiah", "Master Keeper", "Art Masters"],
+                        artForms: ["Master Studies", "Calligraphy", "Classical Arts"],
+                        connects_to: ["../circuitum99/hierophant.html", "../web/src/tools/masters-archive.html"],
+                        datasets: ["codex_nodes.json:6", "angels-72.json:6", "majors-complete.json:hierophant"]
+                    },
+                    6: {
+                        name: "Lovers Atrium",
+                        character: "Scarlett Lady",
+                        teaching: "Sacred union of collaborative creation. Explore expressive arts, movement, and the magic that emerges when creative souls unite.",
+                        entities: ["Haaiah", "Scarlett Lady", "Union Guides"],
+                        artForms: ["Collaborative Art", "Movement Art", "Expressive Arts"],
+                        connects_to: ["../circuitum99/lovers.html", "../web/src/tools/collaboration-studio.html"],
+                        datasets: ["codex_nodes.json:7", "angels-72.json:7", "majors-complete.json:lovers"]
+                    },
+                    7: {
+                        name: "Chariot Arena",
+                        character: "Elyria Nox",
+                        teaching: "Dynamic mastery of digital realms. Race forward into the future of art with game design, VFX, and cutting-edge digital creation tools.",
+                        entities: ["Yerathel", "Elyria Nox", "Digital Warriors"],
+                        artForms: ["Digital Mastery", "Game Art", "VFX & Motion"],
+                        connects_to: ["../circuitum99/chariot.html", "../web/src/tools/digital-arena.html"],
+                        datasets: ["codex_nodes.json:8", "angels-72.json:8", "majors-complete.json:chariot"]
                     }
-                    // Add more chapel data...
                 };
 
                 this.init();
