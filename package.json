@@ -28,6 +28,7 @@
     "99-gates": "pnpm -C packages/circuitum99 alpha && pnpm -C packages/circuitum99 mystery && pnpm -C packages/circuitum99 omega",
     "144-lattice": "pnpm -C packages/circuitum99 lattice",
     "monorepo-setup": "./scripts/create-monorepo-structure.sh"
+    ,"ingest:scan": "node scripts/cathedral-ingest-scan.mjs"
   },
   "devDependencies": {
     "@types/node": "^20.10.0",
