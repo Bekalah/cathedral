@@ -10,5 +10,7 @@
 			"path": "connected-repos"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "cathedral"
+	}
 }
