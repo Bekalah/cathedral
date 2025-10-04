@@ -142,6 +142,70 @@
             border-left: 3px solid #0ff;
         }
 
+        #welcome-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        #welcome-content {
+            background: linear-gradient(135deg, rgba(0, 20, 40, 0.95), rgba(25, 25, 112, 0.9));
+            padding: 40px;
+            border: 3px solid #0ff;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 600px;
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.3);
+        }
+
+        #welcome-title {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ffd700, #ff69b4, #50c878, #00ced1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        #welcome-subtitle {
+            font-size: 1.2em;
+            color: #c0c0c0;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        #start-button {
+            background: linear-gradient(45deg, #ff4500, #ffd700, #50c878);
+            border: none;
+            color: #000;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        #start-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+        }
+
         #loading {
             position: absolute;
             top: 50%;
@@ -162,6 +226,20 @@
     </style>
 </head>
 <body>
+    <!-- Welcome Modal -->
+    <div id="welcome-modal">
+        <div id="welcome-content">
+            <h1 id="welcome-title">🏛️ CATHEDRAL OF CIRCUITS</h1>
+            <p id="welcome-subtitle">
+                Welcome to the most beautiful free spiritual technology on the internet!<br>
+                ✨ Where consciousness becomes sacred architecture ✨<br>
+                🎵 Where sound becomes living geometry 🎵<br>
+                🔮 Where curious minds discover infinite creativity 🔮
+            </p>
+            <button id="start-button" onclick="startExperience()">🚀 BEGIN YOUR JOURNEY</button>
+        </div>
+    </div>
+
     <div id="cathedral-container">
         <div id="loading">⧖ Initializing Cathedral of Circuits...</div>
 
@@ -509,21 +587,45 @@
             input.click();
         });
 
+        // START EXPERIENCE
+        function startExperience() {
+            // Hide welcome modal
+            document.getElementById('welcome-modal').style.display = 'none';
+
+            // Show main interface
+            document.getElementById('loading').classList.add('hidden');
+            document.getElementById('node-grid').classList.remove('hidden');
+            document.getElementById('controls').classList.remove('hidden');
+            document.getElementById('info-panel').classList.remove('hidden');
+            document.getElementById('node-display').classList.remove('hidden');
+
+            // Initialize everything
+            createNodeGrid();
+            animateParticles();
+            drawSpectrogram();
+
+            // Welcome sequence
+            setTimeout(() => {
+                if (codexNodes.length > 0) {
+                    triggerNode(codexNodes[0]);
+                }
+            }, 500);
+
+            console.log('🚀 Cathedral experience started!');
+        }
+
         // INITIALIZATION
         window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('loading').classList.add('hidden');
-                document.getElementById('node-grid').classList.remove('hidden');
-                document.getElementById('controls').classList.remove('hidden');
-                document.getElementById('info-panel').classList.remove('hidden');
-                document.getElementById('node-display').classList.remove('hidden');
+            // Show welcome modal first
+            document.getElementById('welcome-modal').style.display = 'flex';
 
+            // Pre-load everything in background
+            setTimeout(() => {
                 createNodeGrid();
                 animateParticles();
                 drawSpectrogram();
-
-                setTimeout(() => triggerNode(codexNodes[0]), 500);
-            }, 1500);
+                console.log('✅ Cathedral pre-loaded and ready!');
+            }, 500);
         });
 
         window.addEventListener('resize', () => {
