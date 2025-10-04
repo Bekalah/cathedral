@@ -11,6 +11,7 @@
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "cathedral"
+		"liveServer.settings.multiRootWorkspaceName": "cathedral",
+		"prettier.bracketSameLine": true
 	}
 }
