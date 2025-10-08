@@ -335,3 +335,60 @@ class Cathedral3DEngine {
                 background: radial-gradient(circle at 30% 30%, #ffd700, #b87333);
                 box-shadow: 0 0 50px rgba(255, 215, 0, 0.5);
                 position: absolute;
+                animation: pulse3D 3s ease-in-out infinite alternate;
+            }
+
+            @keyframes pulse3D {
+                0% { transform: scale(1) translateZ(0px); }
+                100% { transform: scale(1.2) translateZ(30px); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add CSS 3D elements to cathedral chamber
+        const cathedralChamber = document.getElementById('cathedral');
+        if (cathedralChamber) {
+            for (let i = 0; i < 5; i++) {
+                const orb = document.createElement('div');
+                orb.className = 'sacred-orb-css';
+                orb.style.left = `${20 + i * 15}%`;
+                orb.style.top = `${20 + (i % 2) * 20}%`;
+                orb.style.animationDelay = `${i * 0.5}s`;
+                cathedralChamber.appendChild(orb);
+            }
+        }
+    }
+
+    // Public API for external interaction
+    focusOnObject(objectName) {
+        // Camera animation to focus on specific 3D objects
+        console.log(`🎯 Focusing 3D camera on: ${objectName}`);
+    }
+
+    addSacredObject(geometry, material, position) {
+        const object = new THREE.Mesh(geometry, material);
+        object.position.set(...position);
+        this.scene.add(object);
+        this.sacredGeometry.push(object);
+        return object;
+    }
+}
+
+// Global 3D Engine Instance
+let cathedral3D = null;
+
+// Initialize 3D Graphics when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🚀 Initializing 3D Cathedral Graphics Engine...');
+
+    cathedral3D = new Cathedral3DEngine();
+
+    // Initialize after a short delay to ensure DOM is ready
+    setTimeout(() => {
+        cathedral3D.init();
+    }, 1000);
+});
+
+// Export for use in other modules
+window.Cathedral3DEngine = Cathedral3DEngine;
+window.cathedral3D = cathedral3D;
