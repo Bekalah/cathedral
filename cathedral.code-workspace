@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../.."
+		},
+		{
+			"path": "connected-repos"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "cathedral",
+		"prettier.bracketSameLine": true
+	}
+}
