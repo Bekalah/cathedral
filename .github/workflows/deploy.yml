@@ -36,8 +36,14 @@ jobs:
           rm -rf *
           cp -r apps/web/dist/* .
           git add .
-          git commit -m "Deploy to GitHub Pages" || echo "No changes to commit"
+          git commit -m "Deploy to GitHub Pages - bekalah.github.io" || echo "No changes to commit"
           git push origin gh-pages --force
+
+      - name: Setup GitHub Pages Custom Domain
+        run: |
+          echo "bekalah.github.io" > CNAME
+          git add CNAME
+          git commit -m "Add CNAME for bekalah.github.io" || echo "CNAME already exists"
 
       - name: Deploy to Cloudflare Pages
         run: |

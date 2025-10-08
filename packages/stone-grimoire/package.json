@@ -1,0 +1,52 @@
+{
+  "name": "@bekalah/stone-grimoire",
+  "version": "1.0.0",
+  "description": "🏛️ STONE-GRIMOIRE: BODY Component - Archive System with 8 Octagram Halls & Museum-Grade Documentation",
+  "main": "src/enhanced-world.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "echo '🏛️ Stone Grimoire archive system activated - 8 Octagram Halls ready'",
+    "chapels": "echo '🕯️ 8 Octagram Halls activated - lineage vaults with atelier systems'",
+    "archives": "echo '📚 144 folios museum-grade documentation system'",
+    "museums": "echo '🏛️ 5-point rubric museum standards applied'",
+    "geometry": "echo '🔮 Sacred geometry renderer activated'"
+  },
+  "keywords": [
+    "stone-grimoire",
+    "archive-system",
+    "octagram-halls",
+    "museum-standards",
+    "sacred-geometry",
+    "lineage-vaults",
+    "atelier-systems",
+    "trauma-informed",
+    "cathedral-body",
+    "esoteric-design"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.3.0"
+  },
+  "author": "Bekalah Cathedral Systems",
+  "license": "CATHEDRAL-SOUL-LICENSE",
+  "cathedral_integration": {
+    "trinity_role": "BODY_SYSTEM",
+    "chapels_count": 8,
+    "folios_count": 144,
+    "museum_standards": "5-point-rubric",
+    "sacred_geometry": "cosmic-helix-renderer",
+    "trauma_safety": "MAXIMUM_CPTSD_ADAPTATIONS",
+    "lineage_vaults": "8-octagram-halls",
+    "atelier_systems": "creative-workshops"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/stone-grimoire"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}
