@@ -1,0 +1,19 @@
+{
+  "name": "@bekalah/cyoa-book-game",
+  "version": "1.0.0",
+  "description": "Interactive Choose Your Own Adventure Book Game with Real Object Integration",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "game": "node dist/game.js"
+  },
+  "dependencies": {
+    "@bekalah/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0"
+  }
+}

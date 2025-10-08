@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cathedral Pigment Engine Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #0B0B0B, #2C0A52);
+            color: #F5F2EA;
+            font-family: 'Cinzel', serif;
+            min-height: 100vh;
+        }
+        
+        .test-panel {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #C8A44D;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .node-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .test-node {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid #C8A44D;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .test-node:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 20px rgba(200, 164, 77, 0.6);
+        }
+        
+        .controls {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, rgba(122, 51, 255, 0.3), rgba(200, 164, 77, 0.3));
+            border: 1px solid #7A33FF;
+            color: #C8A44D;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(135deg, rgba(122, 51, 255, 0.5), rgba(200, 164, 77, 0.5));
+            transform: scale(1.05);
+        }
+        
+        #display-canvas {
+            border: 2px solid #C8A44D;
+            border-radius: 10px;
+            max-width: 100%;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 style="text-align: center; color: #C8A44D;">🎨 Cathedral Pigment Engine Test</h1>
+    
+    <div class="test-panel">
+        <h3>Historical Pigments Test</h3>
+        <p>Click the nodes below to test museum-quality rendering with historical pigments:</p>
+        
+        <div class="node-grid">
+            <div class="test-node" data-node="1" data-element="Fire" style="background: #E34234;">1</div>
+            <div class="test-node" data-node="2" data-element="Water" style="background: #1E3A8A;">2</div>
+            <div class="test-node" data-node="3" data-element="Earth" style="background: #0BDA51;">3</div>
+            <div class="test-node" data-node="4" data-element="Air" style="background: #1034A6;">4</div>
+            <div class="test-node" data-node="5" data-element="Aether" style="background: #D4AF37;">5</div>
+            <div class="test-node" data-node="6" data-element="Fire" style="background: #43B3AE;">6</div>
+            <div class="test-node" data-node="7" data-element="Spirit" style="background: #4166F5;">7</div>
+            <div class="test-node" data-node="8" data-element="Metal" style="background: #702963;">8</div>
+        </div>
+        
+        <div class="controls">
+            <button class="btn" onclick="testPigmentMixing()">🧪 Test Pigment Mixing</button>
+            <button class="btn" onclick="testAudio()">🔊 Test Pro Audio</button>
+            <button class="btn" onclick="testParticles()">✨ Test Particles</button>
+            <button class="btn" onclick="testFractals()">🌀 Test Fractals</button>
+        </div>
+    </div>
+    
+    <div class="test-panel">
+        <h3>Visual Output</h3>
+        <canvas id="display-canvas" width="800" height="400"></canvas>
+    </div>
+    
+    <div class="test-panel">
+        <h3>System Status</h3>
+        <div id="status-output">
+            <p>Loading engines...</p>
+        </div>
+    </div>
+
+    <!-- Include the engines -->
+    <script src="js/pigment-engine.js"></script>
+    <script src="js/graphics-engine.js"></script>
+    <script src="js/pro-audio-engine.js"></script>
+    <script src="js/fractal-engine.js"></script>
+    <script src="js/fractal-ui.js"></script>
+
+    <script>
+        // Initialize engines
+        let graphicsEngine, audioEngine, fractalEngine, pigmentEngine;
+        
+        function initEngines() {
+            try {
+                graphicsEngine = new GraphicsEngine('display-canvas');
+                audioEngine = new ProAudioEngine();
+                fractalEngine = new FractalEngine();
+                pigmentEngine = new PigmentEngine();
+                
+                updateStatus('✅ All engines initialized successfully!');
+                console.log('🎨 Cathedral engines ready');
+                
+                // Start graphics animation
+                graphicsEngine.startAnimation();
+                
+            } catch (error) {
+                updateStatus('❌ Engine initialization failed: ' + error.message);
+                console.error('Engine init error:', error);
+            }
+        }
+        
+        function updateStatus(message) {
+            const status = document.getElementById('status-output');
+            if (status) {
+                status.innerHTML = `<p>${message}</p>`;
+            }
+        }
+        
+        // Test functions
+        function testPigmentMixing() {
+            if (!pigmentEngine) {
+                updateStatus('❌ Pigment engine not ready');
+                return;
+            }
+            
+            const mix = pigmentEngine.mixPigments('gold_leaf', 'lapis_lazuli', 0.7);
+            updateStatus(`🧪 Mixed gold leaf + lapis lazuli = ${mix?.hex || 'failed'}`);
+            
+            // Render mixed pigment
+            const canvas = document.getElementById('display-canvas');
+            const ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            if (mix) {
+                pigmentEngine.renderPigment('gold_leaf', 200, 200, 50, ctx);
+                pigmentEngine.renderPigment('lapis_lazuli', 400, 200, 50, ctx);
+                
+                // Show mixed result
+                ctx.fillStyle = mix.hex;
+                ctx.beginPath();
+                ctx.arc(600, 200, 50, 0, Math.PI * 2);
+                ctx.fill();
+                
+                ctx.fillStyle = '#FFF';
+                ctx.font = '14px Cinzel';
+                ctx.textAlign = 'center';
+                ctx.fillText('Gold Leaf', 200, 280);
+                ctx.fillText('Lapis Lazuli', 400, 280);
+                ctx.fillText('Mixed Result', 600, 280);
+            }
+        }
+        
+        function testAudio() {
+            if (!audioEngine) {
+                updateStatus('❌ Audio engine not ready');
+                return;
+            }
+            
+            // Test with solfeggio frequency
+            audioEngine.playTone(528, 1.0); // Love frequency
+            updateStatus('🔊 Playing 528 Hz (Love frequency) for 1 second');
+        }
+        
+        function testParticles() {
+            if (!graphicsEngine) {
+                updateStatus('❌ Graphics engine not ready');
+                return;
+            }
+            
+            const canvas = document.getElementById('display-canvas');
+            const rect = canvas.getBoundingClientRect();
+            graphicsEngine.createParticles(400, 200, '#C8A44D', 50);
+            updateStatus('✨ Created 50 golden particles');
+        }
+        
+        function testFractals() {
+            if (!fractalEngine) {
+                updateStatus('❌ Fractal engine not ready');
+                return;
+            }
+            
+            const mockNode = {
+                id: 1,
+                name: 'Test Node',
+                color: '#C8A44D',
+                element: 'Fire',
+                fractal: {
+                    type: 'Mandelbrot',
+                    recursionDepth: 5,
+                    parameters: {
+                        centerReal: -0.5,
+                        centerImag: 0,
+                        zoom: 1.0,
+                        maxIterations: 50
+                    }
+                }
+            };
+            
+            const arch = fractalEngine.generateArchitecture(mockNode, 10);
+            updateStatus(`🌀 Generated ${arch.layout.rooms.length} fractal rooms`);
+        }
+        
+        // Node click handlers
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('test-node')) {
+                const nodeId = e.target.dataset.node;
+                const element = e.target.dataset.element;
+                
+                // Create mock node for testing
+                const mockNode = {
+                    id: parseInt(nodeId),
+                    name: `Test Node ${nodeId}`,
+                    element: element,
+                    color: e.target.style.backgroundColor || '#C8A44D',
+                    solfeggio: 396 + (parseInt(nodeId) * 111)
+                };
+                
+                // Test graphics rendering
+                if (graphicsEngine) {
+                    const canvas = document.getElementById('display-canvas');
+                    const ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    
+                    graphicsEngine.renderNode(mockNode, 400, 200, 50, true);
+                    graphicsEngine.createParticles(400, 200, mockNode.color, 20);
+                }
+                
+                // Test audio
+                if (audioEngine) {
+                    audioEngine.playTone(mockNode.solfeggio, 0.5);
+                }
+                
+                updateStatus(`🎯 Selected Node ${nodeId} (${element}) - ${mockNode.solfeggio} Hz`);
+            }
+        });
+        
+        // Initialize on load
+        window.addEventListener('load', () => {
+            initEngines();
+        });
+        
+        // Add keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            switch(e.key.toLowerCase()) {
+                case '1':
+                    testPigmentMixing();
+                    break;
+                case '2':
+                    testAudio();
+                    break;
+                case '3':
+                    testParticles();
+                    break;
+                case '4':
+                    testFractals();
+                    break;
+                case 'f':
+                    if (window.fractalUI) {
+                        window.fractalUI.togglePanel();
+                    }
+                    break;
+            }
+        });
+    </script>
+</body>
+</html>
