@@ -268,53 +268,95 @@
                 🎀 Seven Ribbons of Knowledge
             </h2>
 
-            <div class="knowledge-ribbon">
-                <div class="ribbon-icon">🔬</div>
+            <div class="knowledge-ribbon" onclick="exploreRibbon('science')">
+                <div class="ribbon-icon" style="position: relative; width: 60px; height: 60px; margin: 0 auto;">
+                    <canvas id="science-3d" width="60" height="60" style="position: absolute; top: 0; left: 0;"></canvas>
+                </div>
                 <h3 class="ribbon-title">SCIENCE</h3>
                 <p class="ribbon-description">Empirical research, evidence-based practices, and scientific methodology applied to spiritual technologies.</p>
                 <p class="ribbon-focus">Focus: Research • Evidence • Methodology</p>
+                <div class="ribbon-content">
+                    <p><strong>Real Applications:</strong> Neuroplasticity research, quantum consciousness studies, biofeedback spiritual training</p>
+                    <p><strong>Current Research:</strong> 432Hz frequency effects on brain waves, meditation's impact on telomere length</p>
+                </div>
             </div>
 
-            <div class="knowledge-ribbon">
-                <div class="ribbon-icon">📖</div>
+            <div class="knowledge-ribbon" onclick="exploreRibbon('cannon')">
+                <div class="ribbon-icon" style="position: relative; width: 60px; height: 60px; margin: 0 auto;">
+                    <canvas id="cannon-3d" width="60" height="60" style="position: absolute; top: 0; left: 0;"></canvas>
+                </div>
                 <h3 class="ribbon-title">CANNON</h3>
                 <p class="ribbon-description">Canonical texts, established traditions, and foundational wisdom from verified sources.</p>
                 <p class="ribbon-focus">Focus: Tradition • Authority • Foundation</p>
+                <div class="ribbon-content">
+                    <p><strong>Core Texts:</strong> Nag Hammadi Library, Dead Sea Scrolls, Egyptian Book of the Dead, Tibetan Book of the Dead</p>
+                    <p><strong>Living Traditions:</strong> Kabbalah, Sufism, Taoism, Indigenous wisdom systems</p>
+                </div>
             </div>
 
-            <div class="knowledge-ribbon">
-                <div class="ribbon-icon">🧠</div>
+            <div class="knowledge-ribbon" onclick="exploreRibbon('psych')">
+                <div class="ribbon-icon" style="position: relative; width: 60px; height: 60px; margin: 0 auto;">
+                    <canvas id="psych-3d" width="60" height="60" style="position: absolute; top: 0; left: 0;"></canvas>
+                </div>
                 <h3 class="ribbon-title">PSYCH</h3>
                 <p class="ribbon-description">Psychology, consciousness studies, and the scientific exploration of spiritual experiences.</p>
                 <p class="ribbon-focus">Focus: Mind • Consciousness • Experience</p>
+                <div class="ribbon-content">
+                    <p><strong>Research Areas:</strong> Transpersonal psychology, altered states research, mindfulness neuroscience</p>
+                    <p><strong>Clinical Applications:</strong> MDMA-assisted therapy, psilocybin for depression, meditation for PTSD</p>
+                </div>
             </div>
 
-            <div class="knowledge-ribbon">
-                <div class="ribbon-icon">⚒️</div>
+            <div class="knowledge-ribbon" onclick="exploreRibbon('craft')">
+                <div class="ribbon-icon" style="position: relative; width: 60px; height: 60px; margin: 0 auto;">
+                    <canvas id="craft-3d" width="60" height="60" style="position: absolute; top: 0; left: 0;"></canvas>
+                </div>
                 <h3 class="ribbon-title">CRAFT</h3>
                 <p class="ribbon-description">Practical skills, techniques, and methodologies for spiritual and consciousness development.</p>
                 <p class="ribbon-focus">Focus: Practice • Technique • Application</p>
+                <div class="ribbon-content">
+                    <p><strong>Core Practices:</strong> Meditation techniques, breathwork methods, visualization protocols</p>
+                    <p><strong>Skill Development:</strong> Energy work, ritual construction, divination systems</p>
+                </div>
             </div>
 
-            <div class="knowledge-ribbon">
-                <div class="ribbon-icon">🔮</div>
+            <div class="knowledge-ribbon" onclick="exploreRibbon('esoteric')">
+                <div class="ribbon-icon" style="position: relative; width: 60px; height: 60px; margin: 0 auto;">
+                    <canvas id="esoteric-3d" width="60" height="60" style="position: absolute; top: 0; left: 0;"></canvas>
+                </div>
                 <h3 class="ribbon-title">ESOTERIC</h3>
                 <p class="ribbon-description">Hidden knowledge, mystical traditions, and esoteric wisdom systems from various cultures.</p>
                 <p class="ribbon-focus">Focus: Mystery • Initiation • Revelation</p>
+                <div class="ribbon-content">
+                    <p><strong>Mystical Systems:</strong> Hermeticism, Rosicrucianism, Freemasonry, Theosophy</p>
+                    <p><strong>Initiatory Paths:</strong> Mystery schools, esoteric orders, wisdom traditions</p>
+                </div>
             </div>
 
-            <div class="knowledge-ribbon">
-                <div class="ribbon-icon">🔍</div>
+            <div class="knowledge-ribbon" onclick="exploreRibbon('research')">
+                <div class="ribbon-icon" style="position: relative; width: 60px; height: 60px; margin: 0 auto;">
+                    <canvas id="research-3d" width="60" height="60" style="position: absolute; top: 0; left: 0;"></canvas>
+                </div>
                 <h3 class="ribbon-title">RESEARCH</h3>
                 <p class="ribbon-description">Ongoing investigation, experimentation, and discovery in consciousness and spiritual technologies.</p>
                 <p class="ribbon-focus">Focus: Discovery • Innovation • Exploration</p>
+                <div class="ribbon-content">
+                    <p><strong>Current Studies:</strong> Virtual reality meditation, AI consciousness interfaces, biofeedback spiritual training</p>
+                    <p><strong>Experimental Areas:</strong> Lucid dreaming protocols, remote viewing research, energy healing validation</p>
+                </div>
             </div>
 
-            <div class="knowledge-ribbon">
-                <div class="ribbon-icon">⚗️</div>
+            <div class="knowledge-ribbon" onclick="exploreRibbon('fusion')">
+                <div class="ribbon-icon" style="position: relative; width: 60px; height: 60px; margin: 0 auto;">
+                    <canvas id="fusion-3d" width="60" height="60" style="position: absolute; top: 0; left: 0;"></canvas>
+                </div>
                 <h3 class="ribbon-title">FUSION</h3>
                 <p class="ribbon-description">The synthesis of all knowledge domains into unified understanding and practical application.</p>
                 <p class="ribbon-focus">Focus: Synthesis • Integration • Unity</p>
+                <div class="ribbon-content">
+                    <p><strong>Integration Methods:</strong> Art-science fusion, technology-spirituality interface, ancient-modern synthesis</p>
+                    <p><strong>Applications:</strong> Consciousness technology, spiritual AI, neurotheology, cybernetic mysticism</p>
+                </div>
             </div>
         </section>
 
