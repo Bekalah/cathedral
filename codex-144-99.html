@@ -536,6 +536,118 @@
         // Monitor lattice health
         setInterval(monitorLatticeHealth, 7000);
 
+        // Initialize 3D Ribbon Graphics
+        function initRibbon3DGraphics() {
+            const ribbonConfigs = {
+                'science-3d': {
+                    geometry: 'icosahedron',
+                    color: 0x4682b4,
+                    rotationSpeed: 0.02
+                },
+                'cannon-3d': {
+                    geometry: 'dodecahedron',
+                    color: 0x8b4513,
+                    rotationSpeed: 0.015
+                },
+                'psych-3d': {
+                    geometry: 'octahedron',
+                    color: 0x9370db,
+                    rotationSpeed: 0.025
+                },
+                'craft-3d': {
+                    geometry: 'tetrahedron',
+                    color: 0x228b22,
+                    rotationSpeed: 0.018
+                },
+                'esoteric-3d': {
+                    geometry: 'torusKnot',
+                    color: 0x4b0082,
+                    rotationSpeed: 0.022
+                },
+                'research-3d': {
+                    geometry: 'cube',
+                    color: 0x00bfff,
+                    rotationSpeed: 0.02
+                },
+                'fusion-3d': {
+                    geometry: 'torus',
+                    color: 0x50c878,
+                    rotationSpeed: 0.025
+                }
+            };
+
+            Object.entries(ribbonConfigs).forEach(([canvasId, config]) => {
+                const canvas = document.getElementById(canvasId);
+                if (!canvas) return;
+
+                const scene = new THREE.Scene();
+                const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 1000);
+                const renderer = new THREE.WebGLRenderer({
+                    canvas: canvas,
+                    antialias: true,
+                    alpha: true
+                });
+
+                camera.position.z = 3;
+
+                let geometry;
+                switch(config.geometry) {
+                    case 'torusKnot':
+                        geometry = new THREE.TorusKnotGeometry(0.6, 0.2, 32, 8);
+                        break;
+                    case 'octahedron':
+                        geometry = new THREE.OctahedronGeometry(0.8);
+                        break;
+                    case 'icosahedron':
+                        geometry = new THREE.IcosahedronGeometry(0.8);
+                        break;
+                    case 'torus':
+                        geometry = new THREE.TorusGeometry(0.6, 0.2, 16, 32);
+                        break;
+                    case 'dodecahedron':
+                        geometry = new THREE.DodecahedronGeometry(0.8);
+                        break;
+                    case 'tetrahedron':
+                        geometry = new THREE.TetrahedronGeometry(0.8);
+                        break;
+                    case 'cube':
+                        geometry = new THREE.BoxGeometry(1, 1, 1);
+                        break;
+                    default:
+                        geometry = new THREE.OctahedronGeometry(0.8);
+                }
+
+                const material = new THREE.MeshPhongMaterial({
+                    color: config.color,
+                    wireframe: true,
+                    transparent: true,
+                    opacity: 0.8
+                });
+
+                const mesh = new THREE.Mesh(geometry, material);
+                scene.add(mesh);
+
+                const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
+                scene.add(ambientLight);
+
+                const pointLight = new THREE.PointLight(config.color, 1, 10);
+                pointLight.position.set(2, 2, 2);
+                scene.add(pointLight);
+
+                function animate() {
+                    requestAnimationFrame(animate);
+                    mesh.rotation.x += config.rotationSpeed;
+                    mesh.rotation.y += config.rotationSpeed * 1.2;
+                    renderer.render(scene, camera);
+                }
+
+                animate();
+            });
+        }
+
+        // Initialize 3D ribbon graphics
+        setTimeout(initRibbon3DGraphics, 2000);
+
         // Initialize codex consciousness
         document.addEventListener('DOMContentLoaded', function() {
             console.log('📚 Codex 144:99 Activated');
