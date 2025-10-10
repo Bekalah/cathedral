@@ -34,7 +34,7 @@ packages/
 ├── cosmogenesis-learning-engine/   # Spirit: Brain expansion engine
 ├── tesseract-bridge/              # Integration layer
 ├── liber-arcanae/                 # RPG engine + magical datasets
-├── codex-144/                     # Node system architecture
+├── codex-14499/                   # Complete 144:99 lattice system
 ├── gentle-fusion-lab/             # Healing + integration tools
 └── magical-mystery-house/         # Interactive exploration
 ```
