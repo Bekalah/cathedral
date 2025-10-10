@@ -1,347 +1,363 @@
 /**
- * 🏛️✨ CATHEDRAL OF CIRCUITS - MAIN STYLES
- * Sacred geometry meets trauma-informed design
+ * 🏛️✨ CATHEDRAL OF CIRCUITS - GAME INTERFACE STYLES
+ *
+ * CSS for your Guild Wars-style RPG with authentic Codex 144:99
+ * Trauma-safe design with mystical aesthetics
  */
 
 :root {
-  /* Sacred Colors - Trauma Safe Palette */
-  --cathedral-primary: #4169E1;      /* Royal Blue - calming */
-  --cathedral-secondary: #9932CC;    /* Dark Orchid - mystical */
-  --cathedral-accent: #FFD700;       /* Gold - illumination */
-  --cathedral-success: #32CD32;      /* Lime Green - growth */
-  --cathedral-warning: #FF8C00;      /* Dark Orange - energy */
-  --cathedral-danger: #DC143C;       /* Crimson - boundaries */
-  
-  /* Trauma-Safe Neutrals */
-  --bg-primary: #0F0F23;            /* Deep midnight */
-  --bg-secondary: #1A1A3A;          /* Soft dark */
-  --bg-card: #2D2D5A;               /* Card background */
-  --text-primary: #E6E6FA;          /* Lavender */
-  --text-secondary: #B8B8D4;        /* Muted lavender */
-  --border: #4A4A6A;                /* Gentle border */
-  
-  /* Sacred Measurements */
-  --golden-ratio: 1.618;
-  --sacred-spacing: 1.5rem;
-  --sacred-radius: 8px;
-  
-  /* Accessibility */
-  --focus-ring: 3px solid var(--cathedral-accent);
+  /* Your authentic color palette */
+  --void: #0B0B0B;
+  --ink: #141414;
+  --bone: #F8F5EF;
+  --violet-core: #7A33FF;
+  --violet-flare: #B39CFF;
+  --gold-leaf: #C8A44D;
+  --teal-glow: #00CED1;
+  --ember-core: #FF6A00;
+
+  /* Game interface colors */
+  --primary-bg: rgba(11, 11, 11, 0.95);
+  --secondary-bg: rgba(20, 20, 20, 0.9);
+  --accent-gold: #FFD700;
+  --accent-violet: #7A33FF;
+  --text-primary: #F8F5EF;
+  --text-secondary: #B39CFF;
+  --success: #00CED1;
+  --warning: #FF6A00;
+  --error: #FF4500;
+
+  /* Trauma-safe design */
   --safe-transition: all 0.3s ease;
+  --gentle-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --focus-ring: 0 0 0 3px rgba(255, 215, 0, 0.5);
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: var(--bg-primary);
+  font-family: 'Georgia', 'EB Garamond', serif;
+  background: radial-gradient(ellipse at center, var(--void) 0%, var(--ink) 50%, var(--violet-core) 100%);
   color: var(--text-primary);
-  line-height: 1.6;
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
 }
 
-/* Loading State */
 .cathedral-loading {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  text-align: center;
+  background: var(--primary-bg);
+  backdrop-filter: blur(10px);
 }
 
 .sacred-spinner {
-  font-size: 3rem;
-  animation: breathe 2s ease-in-out infinite;
+  font-size: 4rem;
+  animation: sacred-pulse 2s ease-in-out infinite;
+  margin-bottom: 1rem;
 }
 
-@keyframes breathe {
-  0%, 100% { transform: scale(1); opacity: 0.8; }
-  50% { transform: scale(1.1); opacity: 1; }
+@keyframes sacred-pulse {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.7; }
+  50% { transform: scale(1.1) rotate(180deg); opacity: 1; }
 }
 
-/* Main App Layout */
-.cathedral-app {
-  min-height: 100vh;
+.cathedral-game-interface {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: var(--primary-bg);
+  backdrop-filter: blur(10px);
+}
+
+.sacred-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.game-ui {
+  position: relative;
+  z-index: 10;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  padding: 1rem;
 }
 
-/* Navigation */
-.cathedral-nav {
-  background: var(--bg-secondary);
-  padding: 1rem var(--sacred-spacing);
-  border-bottom: 2px solid var(--border);
+.game-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+  padding: 1rem 2rem;
+  background: rgba(20, 20, 20, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(200, 164, 77, 0.3);
 }
 
-.nav-brand {
+.game-header h1 {
+  font-size: 2rem;
+  color: var(--accent-gold);
+  text-shadow: 0 0 20px rgba(200, 164, 77, 0.5);
+  letter-spacing: 2px;
+}
+
+.safety-status {
   display: flex;
+  gap: 1rem;
   align-items: center;
-  gap: 1rem;
 }
 
-.brand-link {
-  color: var(--cathedral-accent);
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: bold;
-  transition: var(--safe-transition);
-}
-
-.brand-link:hover {
-  color: var(--cathedral-primary);
-}
-
-.system-status {
-  display: flex;
-  gap: 1rem;
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-}
-
-.nav-links {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.nav-link {
-  color: var(--text-primary);
-  text-decoration: none;
+.safety-indicator, .trauma-indicator {
   padding: 0.5rem 1rem;
-  border-radius: var(--sacred-radius);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.safety-indicator {
+  background: rgba(0, 206, 209, 0.2);
+  color: var(--success);
+  border: 1px solid var(--success);
+}
+
+.trauma-indicator {
+  background: rgba(255, 105, 180, 0.2);
+  color: #FF69B4;
+  border: 1px solid #FF69B4;
+}
+
+.emergency-exit {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 69, 0, 0.8);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
   transition: var(--safe-transition);
-  border: 1px solid transparent;
 }
 
-.nav-link:hover {
-  background: var(--bg-card);
-  border-color: var(--cathedral-primary);
-  color: var(--cathedral-accent);
+.emergency-exit:hover {
+  background: rgba(255, 69, 0, 1);
+  transform: scale(1.05);
 }
 
-.nav-link:focus {
-  outline: var(--focus-ring);
-}
-
-/* Trauma Safety Banner */
-.trauma-safety-banner {
-  background: var(--cathedral-success);
-  color: var(--bg-primary);
-  padding: 0.5rem var(--sacred-spacing);
-  text-align: center;
-  font-size: 0.875rem;
-  font-weight: 500;
-}
-
-/* Main Content */
-.cathedral-main {
+.game-content {
   flex: 1;
-  padding: var(--sacred-spacing);
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Home Page Styles */
-.home-page {
+.main-menu {
   text-align: center;
+  max-width: 600px;
 }
 
-.cathedral-header h1 {
+.main-menu h2 {
   font-size: 3rem;
-  margin: 2rem 0 1rem;
-  background: linear-gradient(45deg, var(--cathedral-accent), var(--cathedral-primary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--accent-gold);
+  margin-bottom: 1rem;
+  text-shadow: 0 0 30px rgba(200, 164, 77, 0.5);
 }
 
-.cathedral-header .subtitle {
-  font-size: 1.25rem;
+.main-menu p {
+  font-size: 1.2rem;
   color: var(--text-secondary);
   margin-bottom: 3rem;
 }
 
-.status-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin: 2rem 0;
+.menu-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 3rem;
 }
 
-.status-card {
-  background: var(--bg-card);
-  padding: 2rem;
-  border-radius: calc(var(--sacred-radius) * 2);
-  border: 2px solid var(--border);
-  transition: var(--safe-transition);
-}
-
-.status-card:hover {
-  border-color: var(--cathedral-primary);
-  transform: translateY(-2px);
-}
-
-.status-card h3 {
-  margin: 0 0 0.5rem;
-  font-size: 1.5rem;
-}
-
-.status-card .status {
-  margin-top: 1rem;
+.primary-button, .secondary-button, .accent-button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
   font-weight: bold;
-}
-
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem 0;
-}
-
-.feature {
-  background: var(--bg-card);
-  padding: 1.5rem;
-  border-radius: var(--sacred-radius);
-  border-left: 4px solid var(--cathedral-primary);
-}
-
-.start-options {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem 0;
-}
-
-.start-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-.start-card {
-  background: var(--bg-card);
-  padding: 2rem;
-  border-radius: var(--sacred-radius);
-  border: 2px solid var(--border);
-  transition: var(--safe-transition);
   cursor: pointer;
+  transition: var(--safe-transition);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.start-card:hover {
-  border-color: var(--cathedral-accent);
-  background: var(--bg-secondary);
+.primary-button {
+  background: linear-gradient(135deg, var(--accent-gold), var(--ember-core));
+  color: var(--void);
+  box-shadow: var(--gentle-shadow);
 }
 
-/* Footer */
-.cathedral-footer {
-  background: var(--bg-secondary);
-  padding: 3rem var(--sacred-spacing) 1rem;
-  border-top: 2px solid var(--border);
-  margin-top: 4rem;
+.primary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(200, 164, 77, 0.4);
 }
 
-.footer-content {
+.secondary-button {
+  background: rgba(122, 51, 255, 0.2);
+  color: var(--text-primary);
+  border: 1px solid var(--accent-violet);
+}
+
+.secondary-button:hover {
+  background: rgba(122, 51, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.accent-button {
+  background: linear-gradient(135deg, var(--teal-glow), var(--success));
+  color: var(--void);
+}
+
+.accent-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 206, 209, 0.4);
+}
+
+.system-info {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
 }
 
-.footer-content h4 {
-  color: var(--cathedral-accent);
-  margin-bottom: 0.5rem;
-}
-
-.copyright {
+.system-info p {
+  margin: 0;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
   text-align: center;
-  margin-top: 2rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--border);
-  color: var(--text-secondary);
 }
 
-/* Page-specific styles */
-.codex-page, .arcana-page, .fusion-page, .labs-page, .library-page {
-  max-width: 800px;
-  margin: 0 auto;
+.safety-panel {
+  padding: 1rem;
+  background: rgba(20, 20, 20, 0.8);
+  border-top: 1px solid rgba(200, 164, 77, 0.3);
 }
 
-.nodes-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem 0;
+.safety-panel h4 {
+  color: var(--accent-gold);
+  margin-bottom: 1rem;
 }
 
-.node-card {
-  background: var(--bg-card);
-  padding: 1.5rem;
-  border-radius: var(--sacred-radius);
-  border: 1px solid var(--border);
-}
-
-.node-meta {
+.safety-controls {
   display: flex;
   gap: 1rem;
-  margin-top: 1rem;
-  font-size: 0.875rem;
-  color: var(--text-secondary);
+  justify-content: center;
 }
 
-.fallback-message {
-  text-align: center;
-  padding: 3rem;
-  color: var(--text-secondary);
+.safety-button {
+  padding: 0.5rem 1rem;
+  background: rgba(0, 206, 209, 0.2);
+  color: var(--success);
+  border: 1px solid var(--success);
+  border-radius: 15px;
+  cursor: pointer;
+  transition: var(--safe-transition);
 }
 
-.coming-soon {
-  text-align: center;
-  padding: 3rem;
-  color: var(--text-secondary);
+.safety-button:hover {
+  background: rgba(0, 206, 209, 0.4);
 }
 
-.consent-required {
-  background: var(--bg-card);
-  padding: 2rem;
-  border-radius: var(--sacred-radius);
-  border-left: 4px solid var(--cathedral-warning);
-  margin: 2rem 0;
-}
-
-/* Responsive Design */
+/* Responsive design */
 @media (max-width: 768px) {
-  .cathedral-nav {
+  .game-header {
     flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .nav-links {
-    width: 100%;
-    justify-content: center;
-  }
-  
-  .cathedral-header h1 {
-    font-size: 2rem;
-  }
-  
-  .status-grid, .feature-grid, .start-options {
-    grid-template-columns: 1fr;
-  }
-  
-  .cathedral-main {
+    gap: 1rem;
     padding: 1rem;
   }
+
+  .game-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .game-content {
+    padding: 1rem;
+  }
+
+  .main-menu h2 {
+    font-size: 2rem;
+  }
+
+  .menu-options {
+    gap: 0.5rem;
+  }
+
+  .primary-button, .secondary-button, .accent-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* High contrast mode for accessibility */
+@media (prefers-contrast: high) {
+  :root {
+    --primary-bg: rgba(0, 0, 0, 0.98);
+    --text-primary: #FFFFFF;
+    --accent-gold: #FFFF00;
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus styles for accessibility */
+button:focus-visible {
+  outline: var(--focus-ring);
+}
+
+/* Large text support */
+.large-text {
+  font-size: 120% !important;
+}
+
+.large-text .main-menu h2 {
+  font-size: 3.6rem !important;
+}
+
+/* Trauma-safe animations */
+.gentle-fade-in {
+  animation: gentle-fade-in 1s ease-out;
+}
+
+@keyframes gentle-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sacred-glow {
+  box-shadow: 0 0 20px rgba(200, 164, 77, 0.3);
+  transition: var(--safe-transition);
+}
+
+.sacred-glow:hover {
+  box-shadow: 0 0 30px rgba(200, 164, 77, 0.5);
 }

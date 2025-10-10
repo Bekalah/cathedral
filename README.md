@@ -1,106 +1,184 @@
-# 🌟✨ Cathedral of Circuits - Living Grimoire Engine
+# Cathedral of Circuits — Monorepo (Free / Open Source)
 
-*Trauma-informed consciousness technology with 22 Living Tradition Engines and Fusion Kink synthesis*
+Purpose
+Cathedral of Circuits is a modular platform for visionary art, archetypes & daimon experiences, scientific research integration, and RPG-style narrative learning — built with free and open-source tools.
 
-## 🃏 Living Arcanae System
+Quick local setup (dev)
+1. Clone + install:
+   ```bash
+   git clone <repo-url>
+   cd cathedral-of-circuits
+   npm i -g pnpm
+   pnpm install
+   ```
+2. Start frontend (dev):
+   ```bash
+   pnpm --filter web dev
+   ```
+3. Start Storybook:
+   ```bash
+   pnpm --filter packages/ui storybook
+   ```
+4. Start Strapi (dev):
+   - Option A: Docker Compose (recommended)
+     ```bash
+     docker compose up -d
+     # then check http://localhost:1337/admin
+     ```
+   - Option B: local (sqlite)
+     ```bash
+     cd backend/strapi
+     pnpm install
+     pnpm run develop
+     ```
 
-This Cathedral is **not flat information** — it's a complete consciousness technology platform where each of the 22 Major Arcana cards is a **Living Tradition Engine** with:
+Repository layout (recommended)
+- /apps
+  - /web           -> Vite + React app (public UI)
+  - /godot         -> Godot project for prototype gameplay (binary project files)
+- /packages
+  - /ui            -> Shared React components (used by apps/web & storybook)
+  - /api           -> API clients & types (Strapi client, search client)
+  - /storybook     -> Storybook app (may live under packages/ui)
+- /backend
+  - /strapi        -> Strapi project (content types, seed scripts)
+- /assets
+  - /2d
+  - /3d
+  - /ai-generated
+- /notebooks       -> Jupyter notebooks & data exports
+- /scripts        -> helper scripts (seed, import, export)
+- /docs
+- pnpm-workspace.yaml
+- nx.json / turbo.json
 
-- **Real Research Bases**: Connected to authentic public domain sources (John Dee, Dion Fortune, Emma Kunz, Paracelsus, etc.)
-- **Complete Science Correspondences**: Healing frequencies, crystals, sacred geometry, color wavelengths
-- **Laboratory Environments**: Interactive workshops for each archetypal tradition
-- **Fusion Kink Mechanics**: Sacred synthesis between any two tradition engines
-- **Trauma-Informed Design**: Maximum CPTSD-safe with ND accommodations
-- **Artistic Integration**: Björk + Tori Amos + Iris van Herpen + Emma Kunz + 21 Taras aesthetic
+Development conventions
+- TypeScript across frontend & packages.
+- Keep UI components in /packages/ui and add Storybook stories for every component change.
+- Create small, focused PRs that include Storybook updates for new or changed components.
+- Component Acceptance: each component must have:
+  - Storybook stories (default props + edge cases)
+  - Unit test (Jest or Vitest) for core behavior
+  - Accessibility checks manually in Storybook
 
-## ⚗️ Fusion Kink Heaven (144:99 System)
+Strapi: content models & best practices
+- Canonical models:
+  - book (title, authors, source_url, license)
+  - chapter (book -> chapter index, text, excerpt)
+  - archetype (see sample model in root /content-models)
+  - daimon (relation to archetype)
+  - artwork (media, metadata JSON)
+  - journey (ordered chapters, state machine metadata)
+  - journal_entry (user relation, content JSON)
+- Use Strapi relations rather than embedded JSON when you want referential integrity.
+- Seed scripts: put in /backend/strapi/scripts/seed-*.js to bootstrap demo content (use sqlite for local).
+- Web client: use the /api endpoints (REST or GraphQL). Expose only public read endpoints to anonymous users.
 
-**Fusion Kink** is the sacred union of opposites — combining any two Major Arcana creates new laboratories, teachings, and healing approaches:
-
-- **Magus + High Priestess** = Enochian Sacred Geometry Laboratory
-- **Fool + Lovers** = Void Union Sanctuary (fresh start relationships)
-- **Hermit + Temperance** = Alchemical Solitude Laboratory
-- **Star + Sun** = Cosmic Genius Workshop (Bruno + Leonardo fusion)
-
-Each fusion creates:
-- New laboratory environment with combined aesthetics
-- Synthesized teaching from both traditions
-- Harmonized frequencies and healing protocols
-- Integrated artistic vision and therapeutic applications
-
-## 🚀 Getting Started
-
-### Quick Start
-
-```bash
-# Clone the unified monorepo
-git clone https://github.com/Bekalah/cathedral.git
-cd cathedral
-
-# Install all dependencies
-pnpm install
-
-# Validate Living Arcanae system
-pnpm run trauma-check
-pnpm run living-arcanae  
-pnpm run fusion-kink
-
-# Start development
-pnpm run dev
-
-# Deploy
-pnpm run deploy:pages
+Example API call (frontend)
+```ts
+// packages/api/strapiClient.ts
+export async function getArchetypes(): Promise<Archetype[]> {
+  const res = await fetch(`${process.env.STRAPI_URL}/api/archetypes`);
+  const json = await res.json();
+  return json.data;
+}
 ```
 
-## 📡 Live Deployment
+Asset & metadata workflow
+- Add assets under relevant /assets subfolder.
+- Add a metadata file named <slug>.meta.json alongside each asset:
+  ```json
+  {
+    "title": "Archetype Portrait",
+    "author": "Artist Name",
+    "license": "CC-BY-4.0",
+    "source": "local-generation",
+    "created_at": "2025-10-09T00:00:00Z",
+    "model": "stable-diffusion-v1",
+    "prompt": "visionary archetype portrait, ...",
+    "seed": 123456789,
+    "tags": ["visionary","archetype"]
+  }
+  ```
+- If large binary assets are used, enable Git LFS or store in MinIO/S3-compatible store and reference via Strapi media uploads.
 
-- **GitHub Pages**: [bekalah.github.io/cathedral](https://bekalah.github.io/cathedral)
-- **Cloudflare Pages**: `https://cathedral.pages.dev` 
-- **Worker API**: `https://cathedral-api.bekalah.workers.dev`
+AI art generation (developer)
+- Preferred approach: keep generation local. Use Python diffusers scripts to generate and produce metadata JSON.
+- Example (python pseudo):
+  ```bash
+  python scripts/generate_sd.py --prompt "visionary daimon portrait" --out-dir assets/ai-generated
+  ```
+- Script writes image and <image>.meta.json.
 
-## 🛡️ Trauma Safety & Accessibility
+Narrative & Twine integration
+- Author Twine stories and export to JSON or HTML.
+- Convert Twine export to a Strapi Journey content item with ordered chapters and step metadata.
+- Godot can fetch a Journey JSON via REST and render chapters locally.
 
-### Maximum CPTSD-Safe Design
-- **No triggering content** without explicit consent
-- **Always-available safety exits** and grounding tools
-- **Professional therapeutic integration** and referrals
-- **Memory support** for amnesia and cognitive differences
+Godot integration pattern
+- Use Strapi as canonical content provider.
+- Godot scenes read JSON for chapters and assets; fallback to embed content for offline prototypes.
+- For web parity, mirror UI state and content model shapes in packages/api to share types.
 
-### ND Accommodations
-- **Sensory considerations** (adjustable stimulation levels)
-- **Processing time allowances** (no rushed interactions)
-- **Multiple interaction modalities** (visual, audio, tactile)
-- **Clear, predictable interface design**
+CI & Pull Requests
+- GitHub Actions tasks:
+  - Install pnpm dependencies
+  - Run linters (ESLint)
+  - Run unit tests (Vitest/Jest)
+  - Build Storybook (artifact)
+  - Optionally run a Strapi Docker build/test step
+- PR checklist:
+  - Has unit tests or Storybook stories for UI changes
+  - Strapi schema changes documented in /docs or via content-model JSON
+  - Assets added have metadata files
+  - No secret keys in commits
 
-### Protected Complexity
-- **Complex thinking celebrated**, not simplified
-- **Artistic vision expression** safely supported
-- **Healing through beauty** and creativity
-- **Personal boundaries** always respected
+Testing
+- Unit tests: packages/ui components with Vitest or Jest + Testing Library
+- Storybook snapshots: for visual regression (optional)
+- Integration tests: minimal E2E with Playwright targeting frontend routes and API availability
 
----
+Debugging tips
+- API 401/403: check Strapi roles & permissions for public endpoints
+- Missing images: verify Strapi media library or file path under /assets
+- Search failures: check Meilisearch index status and webhook connectivity from Strapi
 
-**The Cathedral breathes with your soul** 🌟✨
+Adding a new archetype (developer steps)
+1. Create Strapi content entry (Archetype) with title, summary, full_text and upload artwork.
+2. Add related books via Book content-type or link external sources.
+3. Create Storybook stories for UI cards/displays that show the archetype entry shape.
+4. Add indexing: ensure Strapi webhook updates Meilisearch on create/update.
+5. Add unit tests for components consuming archetype data.
 
-*Where Sacred Technology Meets Artistic Vision*
+Content model example (Archetype)
+```json
+{
+  "collectionName": "archetypes",
+  "info": {"name": "Archetype"},
+  "attributes": {
+    "title": {"type": "string"},
+    "slug": {"type": "uid"},
+    "summary": {"type": "text"},
+    "full_text": {"type": "richtext"},
+    "tags": {"type": "json"},
+    "artwork": {"type": "media", "multiple": true}
+  }
+}
+```
 
----
+Contribution & code review
+- Use feature branches: feature/<short-description>
+- Keep commits focused and atomic; write clear PR descriptions referencing issues.
+- Tag reviewers for UI, backend (Strapi), and content when relevant.
 
-## 📜 Licensing & Ethical Use
+Onboarding checklist for new dev
+- Install dependencies (pnpm)
+- Run Docker Compose to start Strapi and Meilisearch
+- Start frontend & Storybook
+- Run seed script to populate demo content
+- Read INFRASTRUCTURE.md & USER_GUIDE.md
 
-This project uses a **dual license model** to honor both open technical innovation and the protected symbolic / mythopoetic layers:
-
-- **Software / Engine / Infrastructure Code**: Licensed under **Apache License 2.0** (`LICENSE`).
-- **Symbolic / Narrative / Ritual / Archetypal Content & Mythic Datasets**: Licensed under **Creative Commons BY-NC-SA 4.0** (`LICENSE-CONTENT.md`).
-- **Hybrid Structured Symbolic JSON** (e.g. `TAROT_MASTER_DATASET.json`, `majors-complete.json`, `angels-72.json`, `codex_nodes.json`): Schema usage = Apache 2.0, embedded mythic meanings = CC BY-NC-SA 4.0.
-
-### Quick Attribution Format
-> Cathedral of Circuits – Living Grimoire Engine (© 2025 Rebecca "Bekalah" Lemke). Code: Apache-2.0. Symbolic Content & Mythic Datasets: CC BY-NC-SA 4.0.
-
-### Ethical / Safety Expectations
-Derivatives must preserve trauma-informed disclaimers, avoid coercive psychological profiling, and refrain from implying medical authority. See: `PROTECTION_AND_PRIVACY_SYSTEM.md`, `ACCESSIBILITY_AND_MEMORY_SUPPORT.md`.
-
-### Commercial / Closed Use
-Commercial embedding of symbolic correspondences or ritual engines requires a negotiated stewardship license. Open an Issue titled: `LICENSE INQUIRY`.
-
-For details read: `LICENSE` and `LICENSE-CONTENT.md`.
+Contact & escalation
+- Project owner: Bekalah
+- Developer lead: Cline
+- For urgent infra issues: open a GitHub Issue with "infra" label and notify lead.

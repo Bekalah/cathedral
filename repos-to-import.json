@@ -1,0 +1,37 @@
+[
+  {
+    "remote": "https://github.com/Bekalah/circuitum99.git",
+    "branch": "main",
+    "prefix": "packages/circuitum99"
+  },
+  {
+    "remote": "https://github.com/Bekalah/stone-grimoire.git",
+    "branch": "main",
+    "prefix": "packages/stone-grimoire"
+  },
+  {
+    "remote": "https://github.com/Bekalah/liber-arcanae.git",
+    "branch": "main",
+    "prefix": "packages/liber-arcanae"
+  },
+  {
+    "remote": "https://github.com/Bekalah/tesseract-bridge.git",
+    "branch": "main",
+    "prefix": "packages/tesseract-bridge"
+  },
+  {
+    "remote": "https://github.com/Bekalah/cosmogenesis-learning-engine.git",
+    "branch": "main",
+    "prefix": "packages/cosmogenesis-learning-engine"
+  },
+  {
+    "remote": "https://github.com/Bekalah/magical-mystery-house.git",
+    "branch": "main",
+    "prefix": "packages/magical-mystery-house"
+  },
+  {
+    "remote": "https://github.com/Bekalah/luxcrux.git",
+    "branch": "main",
+    "prefix": "packages/luxcrux"
+  }
+]
