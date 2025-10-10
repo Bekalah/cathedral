@@ -32,6 +32,7 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
+            z-index: 2;
         }
 
         #spectrogram-canvas {
@@ -42,6 +43,7 @@
             height: 150px;
             opacity: 0.7;
             pointer-events: none;
+            z-index: 3;
         }
 
         #node-display {
@@ -481,48 +483,44 @@
             document.getElementById('active-count').textContent = activeNodes.size;
         }
 
-        // PARTICLE SYSTEM
-        const particleCanvas = document.getElementById('particle-canvas');
-        const particleCtx = particleCanvas.getContext('2d');
-        particleCanvas.width = window.innerWidth;
-        particleCanvas.height = window.innerHeight;
+        // VISIONARY PARTICLE SYSTEM - Initialize GraphicsEngine
+        let visionaryGraphics = null;
 
-        const particles = [];
-        class Particle {
-            constructor() {
-                this.x = Math.random() * particleCanvas.width;
-                this.y = Math.random() * particleCanvas.height;
-                this.vx = (Math.random() - 0.5) * 0.5;
-                this.vy = (Math.random() - 0.5) * 0.5;
-                this.size = Math.random() * 2;
-                this.opacity = Math.random();
+        // Initialize the visionary graphics system
+        function initVisionaryGraphics() {
+            try {
+                // Load the GraphicsEngine script if not already loaded
+                if (typeof GraphicsEngine === 'undefined') {
+                    console.log('Loading GraphicsEngine...');
+                    return; // Will be initialized after script loads
+                }
+
+                visionaryGraphics = new GraphicsEngine('particle-canvas');
+
+                // Customize the palette for visionary art aesthetics
+                visionaryGraphics.palette = {
+                    backgroundStart: '#0a0a1a',    // Deep indigo
+                    backgroundEnd:   '#000000',     // Pure black
+                    astral:   'rgba(99, 66, 199, 0.6)',    // Deep purple/indigo
+                    void:     'rgba(10, 20, 40, 0.45)',    // Blue-black
+                    akasha:   'rgba(64, 224, 208, 0.35)',  // Ethereal cyan-green
+                    quantum:  'rgba(147, 112, 219, 0.5)',  // Iridescent violet
+                    neural:   'rgba(218, 165, 32, 0.35)'   // Soft golden
+                };
+
+                // Update layer names to mystical concepts
+                if (visionaryGraphics.layers && visionaryGraphics.layers.length > 0) {
+                    visionaryGraphics.layers[0].name = 'ASTRAL PLANE';
+                    visionaryGraphics.layers[1].name = 'VOID PASSAGE';
+                    visionaryGraphics.layers[2].name = 'DIGITAL AKASHA';
+                    visionaryGraphics.layers[3].name = 'QUANTUM FIELD';
+                    visionaryGraphics.layers[4].name = 'NEURAL COSMOS';
+                }
+
+                console.log('✅ Visionary graphics system initialized');
+            } catch (error) {
+                console.error('Failed to initialize visionary graphics:', error);
             }
-
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-                if (this.x < 0 || this.x > particleCanvas.width) this.vx *= -1;
-                if (this.y < 0 || this.y > particleCanvas.height) this.vy *= -1;
-            }
-
-            draw() {
-                particleCtx.fillStyle = `rgba(0, 255, 255, ${this.opacity})`;
-                particleCtx.fillRect(this.x, this.y, this.size, this.size);
-            }
-        }
-
-        for (let i = 0; i < 100; i++) particles.push(new Particle());
-
-        function animateParticles() {
-            particleCtx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-            particleCtx.fillRect(0, 0, particleCanvas.width, particleCanvas.height);
-
-            particles.forEach(p => {
-                p.update();
-                p.draw();
-            });
-
-            requestAnimationFrame(animateParticles);
         }
 
         // SPECTROGRAM DISPLAY
@@ -601,8 +599,13 @@
 
             // Initialize everything
             createNodeGrid();
-            animateParticles();
+            initVisionaryGraphics();
             drawSpectrogram();
+
+            // Start visionary graphics animation if available
+            if (visionaryGraphics && visionaryGraphics.startAnimation) {
+                visionaryGraphics.startAnimation();
+            }
 
             // Welcome sequence
             setTimeout(() => {
@@ -622,19 +625,31 @@
             // Pre-load everything in background
             setTimeout(() => {
                 createNodeGrid();
-                animateParticles();
+                initVisionaryGraphics();
                 drawSpectrogram();
+
+                // Start visionary graphics animation if available
+                if (visionaryGraphics && visionaryGraphics.startAnimation) {
+                    visionaryGraphics.startAnimation();
+                }
+
                 console.log('✅ Cathedral pre-loaded and ready!');
             }, 500);
         });
 
         window.addEventListener('resize', () => {
-            particleCanvas.width = window.innerWidth;
-            particleCanvas.height = window.innerHeight;
+            // Update spectrogram canvas
             spectCanvas.width = window.innerWidth;
+
+            // Update visionary graphics if available
+            if (visionaryGraphics && visionaryGraphics.resize) {
+                visionaryGraphics.resize();
+            }
         });
     </script>
 
+    <script src="js/graphics-engine.js"></script>
+    <script src="js/pigment-engine.js"></script>
     <script src="audio-spectral.js"></script>
     <script src="cathedral-bridge.js"></script>
     <script src="creative-engine.js"></script>

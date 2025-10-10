@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏛️ STONE-GRIMOIRE - Sacred Archive System</title>
+    <meta name="description" content="Museum-grade archive system with 8 Octagram Halls, sacred geometry, and lineage vault ateliers">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Three.js for 3D Graphics -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js'></script>
+    <style>
+        :root {
+            --archive-gold: #d4af37;
+            --parchment: #f4e4bc;
+            --sacred-red: #8b0000;
+            --monastery-stone: #708090;
+            --wisdom-purple: #4b0082;
+            --divine-light: #fff8dc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient(135deg, #2c1810 0%, #4a4a4a 50%, #2c1810 100%);
+            color: var(--divine-light);
+            font-family: 'Cormorant Garamond', serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .archive-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .archive-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 3rem;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 30px;
+            border: 3px solid var(--archive-gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .archive-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            background: linear-gradient(45deg, var(--archive-gold), var(--sacred-red), var(--wisdom-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .archive-subtitle {
+            font-size: 1.3rem;
+            color: var(--monastery-stone);
+            margin-bottom: 1rem;
+        }
+
+        .sacred-oath {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--archive-gold);
+            margin-top: 2rem;
+            border-top: 2px solid var(--archive-gold);
+            padding-top: 1rem;
+        }
+
+        .octagram-halls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .chapel-hall {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(139, 0, 0, 0.1));
+            border: 2px solid var(--archive-gold);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chapel-hall:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.25), rgba(139, 0, 0, 0.2));
+        }
+
+        .chapel-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+        }
+
+        .chapel-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            color: var(--archive-gold);
+            margin-bottom: 1rem;
+        }
+
+        .chapel-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .chapel-lineage {
+            font-style: italic;
+            color: var(--monastery-stone);
+            font-size: 0.9rem;
+        }
+
+        .archive-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: rgba(75, 0, 130, 0.1);
+            border-radius: 20px;
+            border: 2px solid var(--wisdom-purple);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            border: 1px solid var(--monastery-stone);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--archive-gold);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--divine-light);
+        }
+
+        .sacred-geometry {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            border-radius: 20px;
+            border: 2px solid var(--archive-gold);
+            text-align: center;
+        }
+
+        .geometry-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: var(--archive-gold);
+            margin-bottom: 1rem;
+        }
+
+        .geometry-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .museum-standards {
+            background: linear-gradient(135deg, var(--sacred-red), var(--wisdom-purple));
+            padding: 1rem 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+            border: 2px solid var(--archive-gold);
+        }
+
+        .standards-title {
+            color: var(--archive-gold);
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .standards-list {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .standard {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            border: 1px solid var(--archive-gold);
+        }
+
+        @media (max-width: 768px) {
+            .archive-container {
+                padding: 1rem;
+            }
+
+            .octagram-halls {
+                grid-template-columns: 1fr;
+            }
+
+            .archive-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="archive-container">
+        <header class="archive-header">
+            <h1 class="archive-title">🏛️ STONE-GRIMOIRE</h1>
+            <p class="archive-subtitle">Sacred Archive System & Museum of Consciousness</p>
+            <p class="sacred-oath">
+                "In stone and spirit, we preserve the eternal wisdom.<br>
+                Eight halls of lineage, one sacred purpose: the preservation of consciousness."
+            </p>
+        </header>
+
+        <!-- Archive Statistics -->
+        <section class="archive-stats">
+            <div class="stat-item">
+                <span class="stat-number">8</span>
+                <span class="stat-label">Octagram Halls</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">144</span>
+                <span class="stat-label">Sacred Folios</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">33</span>
+                <span class="stat-label">Lineage Vaults</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">5</span>
+                <span class="stat-label">Museum Standards</span>
+            </div>
+        </section>
+
+        <!-- Sacred Geometry Section -->
+        <section class="sacred-geometry">
+            <h2 class="geometry-title">🔮 Sacred Geometry Renderer</h2>
+            <p class="geometry-description">
+                The Stone Grimoire employs advanced sacred geometry algorithms to render
+                consciousness patterns into visual forms. Each geometric pattern represents
+                a different aspect of spiritual development and mystical understanding.
+            </p>
+            <div style="margin-top: 2rem;">
+                <canvas id="sacred-canvas" width="400" height="400" style="border: 2px solid var(--archive-gold); border-radius: 10px; background: rgba(0,0,0,0.3);"></canvas>
+            </div>
+        </section>
+
+        <!-- Octagram Halls -->
+        <section class="octagram-halls">
+            <h2 style="text-align: center; font-family: 'Cinzel', serif; font-size: 2rem; color: var(--archive-gold); margin-bottom: 2rem;">
+                🕯️ The Eight Octagram Halls
+            </h2>
+
+            <div class="chapel-hall">
+                <div class="chapel-icon">🏛️</div>
+                <h3 class="chapel-title">Hall of the Ancients</h3>
+                <p class="chapel-description">Primary lineage vault containing the oldest mystical traditions and spiritual technologies preserved through centuries.</p>
+                <p class="chapel-lineage">Founded: Eternal • Lineage: Primordial Wisdom Keepers</p>
+            </div>
+
+            <div class="chapel-hall">
+                <div class="chapel-icon">⚗️</div>
+                <h3 class="chapel-title">Alchemical Atelier</h3>
+                <p class="chapel-description">Sacred laboratory for spiritual transformation processes, ritual technologies, and consciousness alchemy.</p>
+                <p class="chapel-lineage">Founded: Renaissance • Lineage: Hermetic Masters</p>
+            </div>
+
+            <div class="chapel-hall">
+                <div class="chapel-icon">📚</div>
+                <h3 class="chapel-title">Scriptorium of Stars</h3>
+                <p class="chapel-description">Celestial archive containing astrological wisdom, stellar correspondences, and cosmic consciousness patterns.</p>
+                <p class="chapel-lineage">Founded: Classical • Lineage: Stellar Sages</p>
+            </div>
+
+            <div class="chapel-hall">
+                <div class="chapel-icon">🌿</div>
+                <h3 class="chapel-title">Garden of Essences</h3>
+                <p class="chapel-description">Living archive of plant spirits, herbal wisdom, and nature consciousness integration practices.</p>
+                <p class="chapel-lineage">Founded: Medieval • Lineage: Green Wisdom</p>
+            </div>
+
+            <div class="chapel-hall">
+                <div class="chapel-icon">🔮</div>
+                <h3 class="chapel-title">Crystal Oracle Sanctum</h3>
+                <p class="chapel-description">Mineral consciousness repository with crystal healing technologies and geological spirit communications.</p>
+                <p class="chapel-lineage">Founded: Modern • Lineage: Crystal Keepers</p>
+            </div>
+
+            <div class="chapel-hall">
+                <div class="chapel-icon">🎭</div>
+                <h3 class="chapel-title">Theater of Archetypes</h3>
+                <p class="chapel-description">Performance space for archetypal dramas, mythological enactments, and consciousness theater productions.</p>
+                <p class="chapel-lineage">Founded: Contemporary • Lineage: Mythic Players</p>
+            </div>
+
+            <div class="chapel-hall">
+                <div class="chapel-icon">🌌</div>
+                <h3 class="chapel-title">Quantum Library</h3>
+                <p class="chapel-description">Digital archive of consciousness research, quantum mysticism, and future spiritual technologies.</p>
+                <p class="chapel-lineage">Founded: Digital Age • Lineage: Cyber Mystics</p>
+            </div>
+
+            <div class="chapel-hall">
+                <div class="chapel-icon">🕊️</div>
+                <h3 class="chapel-title">Sanctuary of Peace</h3>
+                <p class="chapel-description">Meditation hall for spiritual practices, contemplative technologies, and inner peace cultivation.</p>
+                <p class="chapel-lineage">Founded: Universal • Lineage: Peace Weavers</p>
+            </div>
+        </section>
+
+        <!-- Museum Standards -->
+        <section class="museum-standards">
+            <h3 class="standards-title">🏛️ Museum-Grade Standards Applied</h3>
+            <div class="standards-list">
+                <span class="standard">Provenance Verified</span>
+                <span class="standard">Trauma-Informed</span>
+                <span class="standard">Research-Backed</span>
+                <span class="standard">ND-Safe Design</span>
+                <span class="standard">Eternally Preserved</span>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: rgba(75, 0, 130, 0.1); border-radius: 20px; border: 2px solid var(--wisdom-purple);">
+            <h3 style="color: var(--archive-gold); margin-bottom: 1rem;">Navigate the Archives</h3>
+            <p style="margin-bottom: 2rem; color: var(--divine-light);">Choose your path through the sacred knowledge:</p>
+            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <button onclick="window.location.href='../index.html'" style="background: var(--archive-gold); color: #000; padding: 1rem 2rem; border: none; border-radius: 10px; cursor: pointer; font-family: 'Cinzel', serif; font-size: 1.1rem;">🏛️ Return to Cathedral</button>
+                <button onclick="exploreRandomHall()" style="background: var(--sacred-red); color: white; padding: 1rem 2rem; border: none; border-radius: 10px; cursor: pointer; font-family: 'Cinzel', serif; font-size: 1.1rem;">🎲 Random Hall</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sacred Geometry Canvas Animation
+        const canvas = document.getElementById('sacred-canvas');
+        const ctx = canvas.getContext('2d');
+
+        function drawSacredGeometry() {
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const time = Date.now() * 0.001;
+
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw Octagram (8-pointed star)
+            ctx.strokeStyle = `rgba(212, 175, 55, ${0.3 + Math.sin(time) * 0.2})`;
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+
+            for (let i = 0; i < 8; i++) {
+                const angle1 = (i * Math.PI) / 4;
+                const angle2 = ((i * 2 + 1) * Math.PI) / 4;
+
+                const x1 = centerX + Math.cos(angle1) * 150;
+                const y1 = centerY + Math.sin(angle1) * 150;
+                const x2 = centerX + Math.cos(angle2) * 150;
+                const y2 = centerY + Math.sin(angle2) * 150;
+
+                if (i === 0) {
+                    ctx.moveTo(x1, y1);
+                } else {
+                    ctx.lineTo(x1, y1);
+                }
+                ctx.lineTo(x2, y2);
+            }
+
+            ctx.closePath();
+            ctx.stroke();
+
+            // Draw inner sacred geometry
+            ctx.strokeStyle = `rgba(139, 0, 0, ${0.4 + Math.sin(time * 1.5) * 0.2})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+
+            for (let i = 0; i < 16; i++) {
+                const angle = (i * Math.PI) / 8;
+                const radius = 80 + Math.sin(time * 2 + i) * 20;
+                const x = centerX + Math.cos(angle) * radius;
+                const y = centerY + Math.sin(angle) * radius;
+
+                if (i === 0) {
+                    ctx.moveTo(x, y);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+            }
+
+            ctx.closePath();
+            ctx.stroke();
+
+            requestAnimationFrame(drawSacredGeometry);
+        }
+
+        drawSacredGeometry();
+
+        function exploreRandomHall() {
+            const halls = [
+                'hall-of-ancients',
+                'alchemical-atelier',
+                'scriptorium-of-stars',
+                'garden-of-essences',
+                'crystal-oracle-sanctum',
+                'theater-of-archetypes',
+                'quantum-library',
+                'sanctuary-of-peace'
+            ];
+
+            const randomHall = halls[Math.floor(Math.random() * halls.length)];
+            alert(`Exploring: ${randomHall.replace(/-/g, ' ').toUpperCase()}\n\nThis hall contains sacred knowledge and mystical teachings preserved through the ages.`);
+        }
+
+        // Breathing animation for the entire page
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🏛️ Stone Grimoire Archive System Activated');
+            console.log('🕯️ 8 Octagram Halls • 144 Sacred Folios • Museum Standards Applied');
+            console.log('📚 Eternal Wisdom Preservation Protocols Active');
+        });
+    </script>
+</body>
+</html>
