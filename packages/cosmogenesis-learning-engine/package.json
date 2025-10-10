@@ -1,0 +1,49 @@
+{
+  "name": "@bekalah/cosmogenesis-learning-engine",
+  "version": "1.0.0",
+  "description": "🌌 COSMOGENESIS LEARNING ENGINE: SPIRIT Component - Browser-native spiral-learning platform with trauma-aware design",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "echo '🌌 Cosmogenesis Learning Engine activated - spiral learning platform ready'",
+    "spiral": "echo '🌀 Spiral learning algorithms activated'",
+    "alchemy": "echo '⚗️ Alchemy-inspired visuals activated'",
+    "trauma-aware": "echo '🛡️ Trauma-informed design protocols active'",
+    "plates": "echo '📊 Interactive plates system ready'"
+  },
+  "keywords": [
+    "cosmogenesis",
+    "learning-engine",
+    "spiral-learning",
+    "trauma-aware",
+    "browser-native",
+    "interactive-plates",
+    "alchemy-visuals",
+    "modular-experiences",
+    "cathedral-spirit",
+    "consciousness-technology"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "author": "Bekalah Cathedral Systems",
+  "license": "CATHEDRAL-SOUL-LICENSE",
+  "cathedral_integration": {
+    "trinity_role": "SPIRIT_SYSTEM",
+    "learning_method": "spiral-learning",
+    "design_philosophy": "trauma-aware",
+    "visual_system": "alchemy-inspired",
+    "platform": "browser-native",
+    "experiences": "modular-plugin-system",
+    "safety": "neurodivergent-friendly"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/cosmogenesis-learning-engine"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}

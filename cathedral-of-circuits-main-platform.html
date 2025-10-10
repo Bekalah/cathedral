@@ -2379,12 +2379,31 @@ function playCathedralTone(freqIndex = 0) {
         // Initialize when page loads
         window.addEventListener('DOMContentLoaded', () => {
             window.cosmogenesis = new CosmogenesisNovaElegantia();
+            
+            // Initialize new graphics and audio engines
+            window.graphicsEngine = new GraphicsEngine('cosmicCanvas');
+            window.audioEngine = new ProAudioEngine();
+            window.fractalEngine = new FractalEngine();
+            
+            graphicsEngine.startAnimation();
+            
+            console.log('🎨 Museum-quality graphics engine initialized');
+            console.log('🔊 Professional audio engine ready');
+            console.log('🌀 Fractal engine loaded');
         });
 
         console.log('🌌 COSMOGENESIS NOVA ELEGANTIA - Theosophical World Builder');
         console.log('✨ Elegant Blavatsky-inspired world creation platform');
         console.log('🏗️ Body-Mind-Soul architecture with sacred geometry');
         console.log('🎵 Harmonic resonance and numerological generation');
+        console.log('🎨 Now with museum-quality pigment system!');
     </script>
+
+    <!-- Enhanced Graphics and Audio Engines -->
+    <script src="js/pigment-engine.js"></script>
+    <script src="js/graphics-engine.js"></script>
+    <script src="js/pro-audio-engine.js"></script>
+    <script src="js/fractal-engine.js"></script>
+    <script src="js/fractal-ui.js"></script>
 </body>
 </html>

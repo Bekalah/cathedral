@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Haute Couture Baseline Styles -->
+    <link rel="stylesheet" href="/packages/shared/assets/css/couture.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cosmogenesis Visualizer - Sacred World Building for Soul Healing</title>
@@ -315,6 +317,8 @@
     </style>
 </head>
 <body>
+    <!-- Haute Couture Baseline Container -->
+    <div class="cathedral-couture"></div>
     <div class="stars" id="starField"></div>
 
     <header class="cosmic-header">
@@ -372,7 +376,17 @@
         All worlds are designed to be gentle and healing. If anything feels overwhelming, take a break. Your healing happens at your perfect pace.
     </div>
 
-    <script>
+        <!-- Import the shared couture engine -->
+        <script type="module">
+            import '/packages/shared/couture-engine.js';
+            window.addEventListener('DOMContentLoaded', () => {
+                if (window.CathedralCoutureEngine) {
+                    const couture = new window.CathedralCoutureEngine();
+                    couture.init();
+                }
+            });
+        </script>
+        <script>
         class CosmogenesisVisualizer {
             constructor() {
                 this.selectedArchetype = null;
