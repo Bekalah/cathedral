@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CIRCUITUM99: ALPHA ET OMEGA - Book System | CATHEDRAL OF CIRCUITS</title>
+
+    <!-- Circuitum99 System Integration -->
+    <script type="module" src="../packages/circuitum99/index.js"></script>
+    <script src="../packages/circuitum99/character-data.js"></script>
+
+    <!-- Cathedral Unified System Integration -->
+    <script src="../cathedral-unified-system.js"></script>
+    <script src="../cathedral-node-data-connector.js"></script>
     <style>
         * {
             margin: 0;
@@ -568,10 +576,20 @@
             }, 'image/png');
         }
 
-        // Initialize
+        // Initialize Circuitum99 Integration
         window.addEventListener('load', () => {
             setupCanvas();
             animate();
+
+            // Initialize character data integration
+            if (typeof window.Circuitum99AlphaOmega !== 'undefined') {
+                console.log('🔗 Connecting to Circuitum99 character data...');
+                window.circuitum99System = new Circuitum99AlphaOmega();
+                console.log('✅ Circuitum99 character system connected');
+                console.log('👥 22 Living characters ready for interaction');
+                console.log('🚪 99 Gates system operational');
+                console.log('⚗️ Fusion kink mechanics available');
+            }
         });
 
         window.addEventListener('resize', setupCanvas);
@@ -588,9 +606,10 @@
         });
 
         console.log('🌌 Cosmogenesis Engine initialized');
-        console.log('🎵 Solfeggio frequencies active');  
+        console.log('🎵 Solfeggio frequencies active');
         console.log('🎨 Sacred geometry rendering');
         console.log('📐 Export functionality ready');
+        console.log('🔗 Circuitum99 character integration active');
     </script>
 </body>
 </html>
