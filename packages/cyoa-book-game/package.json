@@ -11,7 +11,7 @@
     "game": "node dist/game.js"
   },
   "dependencies": {
-    "@bekalah/shared": "workspace:*"
+    "@cathedral/shared": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.3.0"

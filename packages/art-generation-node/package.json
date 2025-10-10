@@ -12,7 +12,7 @@
     "fusion": "node dist/fusion/fusionEngine.js"
   },
   "dependencies": {
-    "@bekalah/shared": "workspace:*",
+    "@cathedral/shared": "workspace:*",
     "@bekalah/cyoa-book-game": "workspace:*",
     "canvas": "^2.11.2",
     "d3": "^7.8.5",
