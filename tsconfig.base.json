@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["DOM", "DOM.Iterable", "ES6"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@cathedral/*": ["packages/*/src"],
+      "@cathedral/codex": ["packages/codex-144/src"],
+      "@cathedral/arcanae": ["packages/liber-arcanae/src"],
+      "@cathedral/circuitum": ["packages/circuitum99/src"],
+      "@cathedral/bridge": ["packages/tesseract-bridge/src"],
+      "@cathedral/brain": ["packages/brain/src"],
+      "@cathedral/soul": ["packages/soul/src"],
+      "@cathedral/data": ["packages/data/src"],
+      "@cathedral/crystals": ["packages/crystals/src"],
+      "@cathedral/labs": ["packages/labs/src"],
+      "@cathedral/shared": ["packages/shared/src"]
+    },
+    "preserveSymlinks": true
+  },
+  "include": [
+    "apps/**/*",
+    "packages/**/*",
+    "backend/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.spec.ts",
+    "**/*.test.ts"
+  ]
+}

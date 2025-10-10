@@ -15,6 +15,19 @@
     <!-- Import Sacred Typography -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Julius+Sans+One&display=swap" rel="stylesheet">
     
+    <!-- Three.js for 3D Graphics -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js'></script>
+
+    <!-- Cathedral 3D Graphics Engine -->
+    <script src='cathedral-3d-engine.js'></script>
+
+    <!-- Node Data Connector for Real Dataset Integration -->
+    <script src='cathedral-node-data-connector.js'></script>
+
+    <!-- Cathedral Unified System for Cohesive Integration -->
+    <script src='cathedral-unified-system.js'></script>
+
     <!-- Cloudflare Analytics -->
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js'></script>
     
@@ -354,99 +367,242 @@
                 background: rgba(0, 0, 0, 0.8);
             }
         }
+
+        /* Featured Experience Section */
+        .featured-experience {
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.2), rgba(80, 200, 120, 0.2));
+            border: 2px solid #ffd700;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .featured-title {
+            color: #ffd700;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .featured-description {
+            color: #c0c0c0;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .experience-button {
+            background: linear-gradient(45deg, #ff4500, #ffd700, #50c878);
+            border: none;
+            color: #000;
+            padding: 12px 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .experience-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+        }
     </style>
 </head>
 <body>
     <!-- Living Particle System -->
     <div class="sacred-particles" id="particleSystem"></div>
-    
-    <!-- The Cathedral Realm -->
+
+    <!-- Cathedral Chamber Hero Visuals -->
+    <div class="cathedral-chamber" id="cathedral">
+        <!-- Depth Layer 3 - Background -->
+        <div class="depth-layer depth-layer-3">
+            <div class="gothic-arch arch-3"></div>
+        </div>
+        <!-- Depth Layer 2 - Mid -->
+        <div class="depth-layer depth-layer-2">
+            <div class="gothic-arch arch-1"></div>
+            <div class="gothic-arch arch-2"></div>
+        </div>
+        <!-- Depth Layer 1 - Foreground -->
+        <div class="depth-layer depth-layer-1">
+            <div class="gothic-column column-1"></div>
+            <div class="gothic-column column-2"></div>
+            <div class="gothic-column column-3"></div>
+            <div class="gothic-column column-4"></div>
+            <div class="stained-glass glass-1"></div>
+            <div class="stained-glass glass-2"></div>
+        </div>
+        <!-- Sacred Geometry Canvas -->
+        <canvas class="sacred-overlay" id="sacred-canvas"></canvas>
+        <!-- Cymatic Visualization -->
+        <div id="cymatic-container"></div>
+        <!-- Angel Wheel -->
+        <div class="angel-wheel" id="angel-wheel">
+            <svg viewBox="0 0 400 400">
+                <defs>
+                    <radialGradient id="wheelGradient">
+                        <stop offset="0%" style="stop-color:#9400D3;stop-opacity:0.8" />
+                        <stop offset="100%" style="stop-color:#4B0082;stop-opacity:0.2" />
+                    </radialGradient>
+                </defs>
+                <circle cx="200" cy="200" r="180" fill="none" stroke="url(#wheelGradient)" stroke-width="2" opacity="0.5"/>
+                <circle cx="200" cy="200" r="150" fill="none" stroke="url(#wheelGradient)" stroke-width="1" opacity="0.4"/>
+                <circle cx="200" cy="200" r="120" fill="none" stroke="url(#wheelGradient)" stroke-width="1" opacity="0.3"/>
+            </svg>
+        </div>
+        <!-- Museum Plaque -->
+        <div class="museum-plaque">
+            <h3 class="plaque-title">Cathedral of Living Resonance</h3>
+            <p class="plaque-text">
+                A sacred digital space where frequency becomes form,<br>
+                and ancient wisdom merges with quantum harmonics.<br>
+                Each visitor shapes the temple through their presence.
+            </p>
+        </div>
+    </div>
+
+    <!-- Control Panel -->
+    <div class="control-panel">
+        <button class="control-button" onclick="activateSolfeggio()">Activate Solfeggio</button>
+        <button class="control-button" onclick="showAngelWheel()">Summon Angels</button>
+        <button class="control-button" onclick="startCymatic()">Begin Cymatics</button>
+        <button class="control-button" onclick="fusionDemo()">Elemental Fusion</button>
+    </div>
+
+    <!-- The Cathedral Realm (existing content) -->
     <div class="cathedral-realm">
         <!-- Sacred Crown -->
         <header class="sacred-crown">
             <h1 class="cathedral-title">THE CATHEDRAL OF CIRCUITS</h1>
             <p class="sacred-subtitle">Living Visionary Architecture</p>
             <p class="divine-tagline">✨ Where Consciousness Becomes Sacred Space ✨</p>
+
+            <!-- Featured Interactive Experience -->
+            <div class="featured-experience">
+                <h3 class="featured-title">🎨 NEW: Interactive Alchemical Laboratory</h3>
+                <p class="featured-description">
+                    Experience the most engaging spiritual technology ever created!<br>
+                    Click archetypal orbs to generate unique sounds, explore harmonic relationships,<br>
+                    and discover infinite creative possibilities.
+                </p>
+                <a href="cathedral-interactive.html" class="experience-button">
+                    🚀 ENTER THE LABORATORY
+                </a>
+            </div>
+
             <p class="sacred-subtitle">Unbreakable • Infinitely Scalable • Forever Free • Phenomenal Beauty</p>
         </header>
-        
         <!-- Sacred Architectural Lattice -->
         <main class="sacred-lattice">
-        <!-- Sacred Architectural Lattice -->
-        <main class="sacred-lattice">
-            <!-- Chamber of Sacred Art -->
-            <article class="architectural-chamber" onclick="window.open('https://github.com/Bekalah/circuitum99', '_blank')">
-                <span class="chamber-icon">🎨</span>
-                <h2 class="chamber-title">CHAMBER OF SACRED ART</h2>
-                <p class="chamber-description">Where divine creativity flows through infinite galleries</p>
-                <p class="chamber-essence">Sacred geometry • Living grimoires • Museum-grade masterpieces • Professional portfolio that breathes with your soul</p>
+            <!-- Circuitum99 - SOUL System -->
+            <article class="architectural-chamber" onclick="window.location.href='circuitum99-alpha-et-omega.html'" style="cursor: pointer;">
+                <div class="chamber-icon" style="position: relative; width: 80px; height: 80px; margin: 0 auto;">
+                    <canvas id="circuitum99-3d" width="80" height="80" style="position: absolute; top: 0; left: 0;"></canvas>
+                </div>
+                <h3 class="chamber-title">CIRCUITUM99: ALPHA ET OMEGA</h3>
+                <p class="chamber-description">Living Book System with 22 Archetypal Character Guides & 99 Sacred Gates</p>
+                <p class="chamber-essence">Experience the complete wisdom tradition with Rebecca Respawn, Scarlett Lady & 20 other living teachers</p>
             </article>
-            
-            <!-- Laboratory of Consciousness -->
-            <article class="architectural-chamber" onclick="window.open('https://github.com/Bekalah/stone-grimoire', '_blank')">
-                <span class="chamber-icon">🔬</span>
-                <h2 class="chamber-title">LABORATORY OF CONSCIOUSNESS</h2>
-                <p class="chamber-description">Scientific exploration of the infinite mysteries within</p>
-                <p class="chamber-essence">Crystal science • BioGeometry • Trauma healing • Research that transforms reality itself</p>
+
+            <!-- Stone Grimoire - BODY System -->
+            <article class="architectural-chamber" onclick="window.location.href='stone-grimoire/index.html'" style="cursor: pointer;">
+                <div class="chamber-icon" style="position: relative; width: 80px; height: 80px; margin: 0 auto;">
+                    <canvas id="stonegrimoire-3d" width="80" height="80" style="position: absolute; top: 0; left: 0;"></canvas>
+                </div>
+                <h3 class="chamber-title">STONE-GRIMOIRE</h3>
+                <p class="chamber-description">Archive System with 8 Octagram Halls & Museum-Grade Documentation</p>
+                <p class="chamber-essence">Sacred geometry renderer with 144 folios and lineage vault ateliers</p>
             </article>
-            
-            <!-- Fusion Synthesis Atelier -->
-            <article class="architectural-chamber" onclick="window.open('https://github.com/Bekalah/cosmogenesis-learning-engine', '_blank')">
-                <span class="chamber-icon">🎵</span>
-                <h2 class="chamber-title">FUSION SYNTHESIS ATELIER</h2>
-                <p class="chamber-description">Where sound becomes light and art transcends dimensions</p>
-                <p class="chamber-essence">Solfeggio frequencies • Interactive sound sculptures • Modular synthesis of the spheres</p>
+
+            <!-- Liber Arcanae - Living Tarot -->
+            <article class="architectural-chamber" onclick="window.location.href='liber-arcanae-living-arcana-deck.html'" style="cursor: pointer;">
+                <div class="chamber-icon" style="position: relative; width: 80px; height: 80px; margin: 0 auto;">
+                    <canvas id="liberarcanae-3d" width="80" height="80" style="position: absolute; top: 0; left: 0;"></canvas>
+                </div>
+                <h3 class="chamber-title">LIBER ARCANAE</h3>
+                <p class="chamber-description">Living Arcana Deck - 22 Tradition Engines as Interactive Consciousness</p>
+                <p class="chamber-essence">22 mystical traditions as living teachers with real-time wisdom integration</p>
             </article>
-            
-            <!-- The Living Arcana Sanctum -->
-            <article class="architectural-chamber" onclick="window.open('liber-arcanae-living-arcana-deck.html', '_blank')">
-                <span class="chamber-icon">🃏</span>
-                <h2 class="chamber-title">LIVING ARCANA SANCTUM</h2>
-                <p class="chamber-description">LIBER ARCANAE - The breathing Tarot that guides your journey</p>
-                <p class="chamber-essence">22 Living Arcana • Merkaba Vehicles • Consciousness navigation through infinite wisdom</p>
+
+            <!-- Cosmogenesis Learning Engine - SPIRIT System -->
+            <article class="architectural-chamber" onclick="window.location.href='cosmogenesis-learning-engine.html'" style="cursor: pointer;">
+                <div class="chamber-icon" style="position: relative; width: 80px; height: 80px; margin: 0 auto;">
+                    <canvas id="cosmogenesis-3d" width="80" height="80" style="position: absolute; top: 0; left: 0;"></canvas>
+                </div>
+                <h3 class="chamber-title">COSMOGENESIS LEARNING ENGINE</h3>
+                <p class="chamber-description">Browser-native spiral-learning platform with trauma-aware design</p>
+                <p class="chamber-essence">Interactive plates system merging alchemy visuals with consciousness technology</p>
             </article>
-            
-            <!-- The Mystery House Portal -->
-            <article class="architectural-chamber" onclick="window.open('https://github.com/Bekalah/magical-mystery-house', '_blank')">
-                <span class="chamber-icon">🏠</span>
-                <h2 class="chamber-title">MYSTERY HOUSE PORTAL</h2>
-                <p class="chamber-description">An interactive mansion where every room reveals deeper truths</p>
-                <p class="chamber-essence">Consciousness navigation • Spiral learning • Infinite exploration of inner worlds</p>
+
+            <!-- Game Portal Chamber -->
+            <article class="architectural-chamber" onclick="window.location.href='apps/web/src/cyoa-game.html'" style="cursor: pointer;">
+                <div class="chamber-icon" style="position: relative; width: 80px; height: 80px; margin: 0 auto;">
+                    <canvas id="gameportal-3d" width="80" height="80" style="position: absolute; top: 0; left: 0;"></canvas>
+                </div>
+                <h3 class="chamber-title">The Living Game</h3>
+                <p class="chamber-description">Choose Your Own Adventure connecting to real books, artworks, and sacred places</p>
+                <p class="chamber-essence">Experience spiritual growth and discovery like Fable or Skyrim</p>
             </article>
-            
-            <!-- Tesseract Bridge Observatory -->
-            <article class="architectural-chamber" onclick="window.open('https://github.com/Bekalah/tesseract-bridge', '_blank')">
-                <span class="chamber-icon">🌉</span>
-                <h2 class="chamber-title">TESSERACT BRIDGE</h2>
-                <p class="chamber-description">Dimensional bridges connecting all consciousness lattices</p>
-                <p class="chamber-essence">Neural pathways • Infinite reflection • Hyperdimensional architecture of the mind</p>
+
+            <!-- Art Studio Chamber -->
+            <article class="architectural-chamber" onclick="window.location.href='apps/web/src/art-studio.html'" style="cursor: pointer;">
+                <div class="chamber-icon" style="position: relative; width: 80px; height: 80px; margin: 0 auto;">
+                    <canvas id="artstudio-3d" width="80" height="80" style="position: absolute; top: 0; left: 0;"></canvas>
+                </div>
+                <h3 class="chamber-title">Pattern Art Studio</h3>
+                <p class="chamber-description">Professional art generation studio with Codex knowledge and pattern science</p>
+                <p class="chamber-essence">Create museum-quality art using sacred mathematics and real-world beauty</p>
             </article>
-            
-            <!-- LuxCrux - The Light Cross Shrine -->
-            <article class="architectural-chamber" onclick="window.open('https://github.com/Bekalah/luxcrux', '_blank')">
-                <span class="chamber-icon">✨</span>
-                <h2 class="chamber-title">LUXCRUX LIGHT SHRINE</h2>
-                <p class="chamber-description">Where sacred alchemy transforms darkness into divine illumination</p>
-                <p class="chamber-essence">Sacred alchemy • Hermetic synthesis • Light work • The cross of infinite radiance</p>
+
+            <!-- Adventure Time Cathedral Chamber -->
+            <article class="architectural-chamber" onclick="window.location.href='apps/web/src/adventure-time-cathedral.html'" style="cursor: pointer;">
+                <div class="chamber-icon" style="position: relative; width: 80px; height: 80px; margin: 0 auto;">
+                    <canvas id="adventuretime-3d" width="80" height="80" style="position: absolute; top: 0; left: 0;"></canvas>
+                </div>
+                <h3 class="chamber-title">Adventure Time Cathedral</h3>
+                <p class="chamber-description">3D Double Tree of Life with Björk, Tori Amos, Iris van Herpen & Emma Kunz</p>
+                <p class="chamber-essence">Interactive 3D experience with 72 angels, 72 demons & living mentors</p>
             </article>
-            
-            <!-- The Interactive Heart -->
-            <article class="architectural-chamber" onclick="window.open('./connection-map.html', '_blank')">
-                <span class="chamber-icon">🎹</span>
-                <h2 class="chamber-title">THE INTERACTIVE HEART</h2>
-                <p class="chamber-description">A living piano interface that connects all sacred chambers</p>
-                <p class="chamber-essence">Fractal navigation • Accessibility features • Memory support • The music of the spheres</p>
+
+            <!-- Magical Mystery House -->
+            <article class="architectural-chamber" onclick="window.location.href='magical-mystery-house.html'" style="cursor: pointer;">
+                <div class="chamber-icon" style="position: relative; width: 80px; height: 80px; margin: 0 auto;">
+                    <canvas id="mysteryhouse-3d" width="80" height="80" style="position: absolute; top: 0; left: 0;"></canvas>
+                </div>
+                <h3 class="chamber-title">MAGICAL MYSTERY HOUSE</h3>
+                <p class="chamber-description">Open-world exploration with spiral learning and artistic mastery</p>
+                <p class="chamber-essence">Living Codex that grows with visitors - exploration becomes enlightenment</p>
             </article>
-            
-            <!-- Cathedral Source Code Temple -->
-            <article class="architectural-chamber" onclick="window.open('https://github.com/Bekalah/cathedral', '_blank')">
-                <span class="chamber-icon">🏛️</span>
-                <h2 class="chamber-title">SOURCE CODE TEMPLE</h2>
-                <p class="chamber-description">The living architecture's sacred blueprints and documentation</p>
-                <p class="chamber-essence">System architecture • Privacy protection • Deployment wisdom • The cathedral's DNA</p>
+
+            <!-- Tesseract Bridge -->
+            <article class="architectural-chamber" onclick="window.location.href='tesseract-bridge.html'" style="cursor: pointer;">
+                <div class="chamber-icon" style="position: relative; width: 80px; height: 80px; margin: 0 auto;">
+                    <canvas id="tesseract-3d" width="80" height="80" style="position: absolute; top: 0; left: 0;"></canvas>
+                </div>
+                <h3 class="chamber-title">TESSERACT BRIDGE</h3>
+                <p class="chamber-description">Central Connector linking all five living repositories</p>
+                <p class="chamber-essence">Cross-dimensional integration protocols for unified consciousness</p>
             </article>
+
+            <!-- Codex 144:99 -->
+            <article class="architectural-chamber" onclick="window.location.href='codex-144-99.html'" style="cursor: pointer;">
+                <div class="chamber-icon" style="position: relative; width: 80px; height: 80px; margin: 0 auto;">
+                    <canvas id="codex-3d" width="80" height="80" style="position: absolute; top: 0; left: 0;"></canvas>
+                </div>
+                <h3 class="chamber-title">CODEX 144:99</h3>
+                <p class="chamber-description">Sacred lattice with seven ribbons of knowledge</p>
+                <p class="chamber-essence">SCIENCE • CANNON • PSYCH • CRAFT • ESOTERIC • RESEARCH • FUSION</p>
+            </article>
+
+            <!-- ...existing chambers... -->
+            <!-- (No change to chamber content) -->
         </main>
-        
         <!-- Sacred Foundation -->
         <footer class="sacred-foundation">
             <p class="divine-blessing">✨ This Sacred Architecture is Forever Free ✨</p>
@@ -568,6 +724,140 @@
                 document.body.style.transition = '';
             }, 300);
         });
+
+        // Initialize 3D Chamber Icons
+        function initChamber3DGraphics() {
+            // Chamber 3D Graphics Configuration
+            const chamberConfigs = {
+                'circuitum99-3d': {
+                    geometry: 'torusKnot',
+                    color: 0xffd700,
+                    rotationSpeed: 0.02
+                },
+                'stonegrimoire-3d': {
+                    geometry: 'octahedron',
+                    color: 0x8b4513,
+                    rotationSpeed: 0.015
+                },
+                'liberarcanae-3d': {
+                    geometry: 'icosahedron',
+                    color: 0x4b0082,
+                    rotationSpeed: 0.025
+                },
+                'cosmogenesis-3d': {
+                    geometry: 'torus',
+                    color: 0x50c878,
+                    rotationSpeed: 0.018
+                },
+                'gameportal-3d': {
+                    geometry: 'dodecahedron',
+                    color: 0xe0115f,
+                    rotationSpeed: 0.022
+                },
+                'artstudio-3d': {
+                    geometry: 'tetrahedron',
+                    color: 0x4682b4,
+                    rotationSpeed: 0.02
+                },
+                'adventuretime-3d': {
+                    geometry: 'octahedron',
+                    color: 0xffd700,
+                    rotationSpeed: 0.015
+                },
+                'mysteryhouse-3d': {
+                    geometry: 'cube',
+                    color: 0x8b4513,
+                    rotationSpeed: 0.018
+                },
+                'tesseract-3d': {
+                    geometry: 'icosahedron',
+                    color: 0x00bfff,
+                    rotationSpeed: 0.025
+                },
+                'codex-3d': {
+                    geometry: 'dodecahedron',
+                    color: 0x50c878,
+                    rotationSpeed: 0.02
+                }
+            };
+
+            // Initialize each chamber's 3D graphics
+            Object.entries(chamberConfigs).forEach(([canvasId, config]) => {
+                const canvas = document.getElementById(canvasId);
+                if (!canvas) return;
+
+                const scene = new THREE.Scene();
+                const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 1000);
+                const renderer = new THREE.WebGLRenderer({
+                    canvas: canvas,
+                    antialias: true,
+                    alpha: true
+                });
+
+                camera.position.z = 3;
+
+                // Create geometry based on config
+                let geometry;
+                switch(config.geometry) {
+                    case 'torusKnot':
+                        geometry = new THREE.TorusKnotGeometry(0.8, 0.3, 32, 8);
+                        break;
+                    case 'octahedron':
+                        geometry = new THREE.OctahedronGeometry(1);
+                        break;
+                    case 'icosahedron':
+                        geometry = new THREE.IcosahedronGeometry(1);
+                        break;
+                    case 'torus':
+                        geometry = new THREE.TorusGeometry(0.8, 0.3, 16, 32);
+                        break;
+                    case 'dodecahedron':
+                        geometry = new THREE.DodecahedronGeometry(1);
+                        break;
+                    case 'tetrahedron':
+                        geometry = new THREE.TetrahedronGeometry(1);
+                        break;
+                    case 'cube':
+                        geometry = new THREE.BoxGeometry(1.2, 1.2, 1.2);
+                        break;
+                    default:
+                        geometry = new THREE.OctahedronGeometry(1);
+                }
+
+                const material = new THREE.MeshPhongMaterial({
+                    color: config.color,
+                    wireframe: true,
+                    transparent: true,
+                    opacity: 0.8
+                });
+
+                const mesh = new THREE.Mesh(geometry, material);
+                scene.add(mesh);
+
+                // Add lighting
+                const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
+                scene.add(ambientLight);
+
+                const pointLight = new THREE.PointLight(config.color, 1, 10);
+                pointLight.position.set(2, 2, 2);
+                scene.add(pointLight);
+
+                // Animation loop
+                function animate() {
+                    requestAnimationFrame(animate);
+
+                    mesh.rotation.x += config.rotationSpeed;
+                    mesh.rotation.y += config.rotationSpeed * 1.2;
+
+                    renderer.render(scene, camera);
+                }
+
+                animate();
+            });
+        }
+
+        // Initialize 3D chamber graphics after page load
+        setTimeout(initChamber3DGraphics, 2000);
     </script>
 </body>
 </html>

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Haute Couture Baseline Styles -->
+    <link rel="stylesheet" href="/packages/shared/assets/css/couture.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cathedral Connection Map - Soul Reclamation Through Archetypes</title>
@@ -247,6 +249,8 @@
     </style>
 </head>
 <body>
+    <!-- Haute Couture Baseline Container -->
+    <div class="cathedral-couture"></div>
     <div class="safety-header">
         <div class="breathing-guide" onclick="startBreathing()">
             🫁 Breathing Guide - Click for 4-7-8 breath
@@ -278,7 +282,17 @@
         </div>
     </div>
 
-    <script>
+        <!-- Import the shared couture engine -->
+        <script type="module">
+            import '/packages/shared/couture-engine.js';
+            window.addEventListener('DOMContentLoaded', () => {
+                if (window.CathedralCoutureEngine) {
+                    const couture = new window.CathedralCoutureEngine();
+                    couture.init();
+                }
+            });
+        </script>
+        <script>
         // CPTSD-Safe Archetypal Soul Reclamation System
         class CathedralConnectionMap {
             constructor() {

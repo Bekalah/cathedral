@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Haute Couture Baseline Styles -->
+    <link rel="stylesheet" href="/packages/shared/assets/css/couture.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Master Catalog Browser - Museum-Quality Soul Resources</title>
@@ -248,6 +250,8 @@
     </style>
 </head>
 <body>
+    <!-- Haute Couture Baseline Container -->
+    <div class="cathedral-couture"></div>
     <header class="catalog-header">
         <h1 class="catalog-title">📚 Master Catalog Browser</h1>
         <p class="catalog-subtitle">Museum-Quality Spiritual & Healing Resources</p>
@@ -270,7 +274,17 @@
         </div>
     </main>
 
-    <script>
+        <!-- Import the shared couture engine -->
+        <script type="module">
+            import '/packages/shared/couture-engine.js';
+            window.addEventListener('DOMContentLoaded', () => {
+                if (window.CathedralCoutureEngine) {
+                    const couture = new window.CathedralCoutureEngine();
+                    couture.init();
+                }
+            });
+        </script>
+        <script>
         class MasterCatalogBrowser {
             constructor() {
                 this.activeFilters = {
