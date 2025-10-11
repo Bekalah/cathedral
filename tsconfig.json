@@ -26,8 +26,10 @@
       "@cathedral/soul": ["packages/soul/src"],
       "@cathedral/labs": ["packages/labs/src"],
       "@cathedral/shared": ["packages/shared/src"],
-  "@cathedral/crystals": ["packages/crystals/src"],
-  "@cathedral/synth": ["packages/synth/src"]
+      "@cathedral/crystals": ["packages/crystals/src"],
+      "@cathedral/synth": ["packages/synth/src"],
+      "codex-144-99": ["external/codex-144-99/src"],
+      "liber-arcanae": ["external/liber-arcanae/src"]
     }
   }
 }

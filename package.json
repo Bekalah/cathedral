@@ -6,7 +6,10 @@
   "private": true,
   "workspaces": [
     "apps/*",
-    "packages/*"
+    "packages/*",
+    "tools/*",
+    "docs/*",
+    "external/*"
   ],
   "scripts": {
     "turbo:dev": "turbo run dev --parallel",
@@ -94,6 +97,8 @@
     "consciousness-technology"
   ],
   "dependencies": {
-    "@vitejs/plugin-react": "^4.7.0"
+    "@vitejs/plugin-react": "^4.7.0",
+    "codex-144-99": "workspace:*",
+    "liber-arcanae": "workspace:*"
   }
 }
