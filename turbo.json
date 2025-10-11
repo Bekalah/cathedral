@@ -1,21 +1,24 @@
 {
-  "$schema": "https://turborepo.org/schema.json",
+  "$schema": "https://turbo.build/schema.json",
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**"],
-      "cache": true
+      "outputs": ["dist/**", "build/**", ".next/**", "storybook-static/**"]
+    },
+    "lint": {
+      "outputs": []
+    },
+    "test": {
+      "outputs": []
     },
     "dev": {
       "cache": false,
       "persistent": true
     },
-    "lint": {
-      "outputs": [],
-      "cache": true
-    },
-    "clean": {
-      "cache": false
+    "start": {
+      "dependsOn": ["^build"],
+      "outputs": []
     }
-  }
+  },
+  "globalDependencies": ["pnpm-lock.yaml", "package.json"]
 }
