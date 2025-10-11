@@ -1,0 +1,4 @@
+
+> liber-arcanae@0.1.0 build /Users/rebeccalemke/cathedral/cathedral/external/liber-arcanae
+> tsc -p tsconfig.build.json
+
