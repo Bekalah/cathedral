@@ -1,0 +1,97 @@
+#!/usr/bin/env bash
+# tools/g — lightweight git/dev helper for CODEX 144:99
+# Usage: ./tools/g develop
+# Make executable: chmod +x tools/g
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$ROOT" || exit 1
+
+cmd="${1:-help}"
+shift || true
+
+log(){ printf "» %s\n" "$*"; }
+err(){ >&2 printf "✖ %s\n" "$*"; exit 1; }
+
+ensure_pnpm() {
+  if ! command -v pnpm >/dev/null 2>&1; then
+    log "Enabling pnpm via corepack..."
+    if command -v corepack >/dev/null 2>&1; then
+      corepack prepare pnpm@latest --activate
+    else
+      err "corepack not found — please install Node 16+ or pnpm manually"
+    fi
+  fi
+}
+
+git_branch_exists_remote(){
+  git ls-remote --exit-code --heads origin "$1" >/dev/null 2>&1
+}
+
+case "$cmd" in
+  develop)
+    log "→ Switch to or create 'develop' branch, pull, install deps, start dev"
+    ensure_pnpm
+
+    if git rev-parse --verify develop >/dev/null 2>&1; then
+      git checkout develop
+    else
+      if git_branch_exists_remote develop; then
+        git checkout -b develop origin/develop
+      else
+        log "No remote 'develop' found — creating local 'develop' from current branch"
+        git checkout -b develop
+      fi
+    fi
+
+    log "→ Pulling with rebase"
+    git pull --rebase --autostash || true
+
+    log "→ Installing dependencies (workspace)"
+    pnpm -w install
+
+    log "→ Running health-check"
+    node tools/health-check.js || true
+
+    log "→ Starting turbo dev pipeline (dev servers)"
+    pnpm run dev
+    ;;
+
+  status|st)
+    git status --short --branch
+    ;;
+
+  pr)
+    # g pr feature/name "Title for PR"
+    branch="${1:-feature/auto-branch}"
+    title="${2:-Automated PR from g helper}"
+    log "→ Creating branch: $branch"
+    git checkout -b "$branch"
+    git push -u origin "$branch"
+    log "→ Branch pushed. Create PR manually on GitHub with title: $title"
+    ;;
+
+  build)
+    log "→ Running a CI-style build (install -> turbo build)"
+    ensure_pnpm
+    pnpm -w install
+    pnpm run build
+    ;;
+
+  help|--help|-h)
+    cat <<EOF
+tools/g — CODEX 144:99 helper
+Usage: tools/g <command>
+Commands:
+  develop   - checkout/pull develop, install deps, run dev
+  status|st - short git status
+  pr        - create & push a feature branch (usage: g pr feature/name "Title")
+  build     - run workspace install + turbo build
+  help      - show this message
+EOF
+    ;;
+
+  *)
+    err "Unknown command: $cmd. Run 'tools/g help' for usage."
+    ;;
+esac
