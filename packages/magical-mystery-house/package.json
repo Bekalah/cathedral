@@ -1,32 +1,30 @@
 {
-  "name": "@bekalah/magical-mystery-house",
+  "name": "@cathedral/magical-mystery-house",
   "version": "1.0.0",
-  "description": "Navigation System for Cathedral Trinity Architecture - Open World Consciousness Exploration",
-  "main": "index.js", 
+  "description": "Magical Mystery House - Extended Universe with Mystery Chambers and Rooms",
   "type": "module",
-  "keywords": [
-    "magical-mystery-house",
-    "navigation-system",
-    "cathedral-trinity",
-    "open-world",
-    "consciousness-exploration",
-    "trauma-informed",
-    "mystery-house"
-  ],
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "types": "src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts"
+    }
+  },
   "scripts": {
-    "start": "node index.js",
-    "explore": "echo '🏠 Opening Magical Mystery House - Navigate all Cathedral systems'",
-    "soul": "echo '📚 SOUL LIBRARY: Access Circuitum99 Alpha et Omega book game'",
-    "body": "echo '🏛️ BODY ARCHIVE: Navigate Stone-Grimoire chapel system'", 
-    "spirit": "echo '🧠 SPIRIT OBSERVATORY: Connect to Cosmogenesis Learning Engine'",
-    "fusion": "echo '⚗️ FUSION CHAMBER: Enter 144:99 Kink Heaven (consent required)'",
-    "ribbon": "echo '🌉 RIBBON NEXUS: Access 7-ribbon Tesseract Bridge control room'",
-    "archetypes": "echo '🃏 ARCHETYPAL GROVE: Meet 22 Living Major Arcana beings'",
-    "mystery": "echo '🌀 MYSTERY PORTAL: Explore extended universe connections'",
-    "test": "echo '✅ Magical Mystery House navigation system ready'"
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "echo 'Tests for Magical Mystery House'"
   },
   "dependencies": {},
-  "devDependencies": {},
-  "author": "Bekalah Cathedral Systems",
-  "license": "CATHEDRAL-TRINITY-ARCHITECTURE"
+  "devDependencies": {
+    "typescript": "^5.3.0"
+  },
+  "cathedral": {
+    "layer": "SPIRIT",
+    "rooms": "mystery-chambers",
+    "architecture": "extended-universe",
+    "integration": ["mystery-rooms", "discovery-mechanics", "narrative-expansion"]
+  }
 }

@@ -18,7 +18,9 @@
     "start": "node dist/index.js",
     "game": "node dist/game.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@cathedral/shared": "workspace:*"
+  },
   "devDependencies": {
     "typescript": "^5.3.0"
   }
