@@ -1,863 +1,171 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🏛️ THE CATHEDRAL OF CIRCUITS - Living Visionary Architecture</title>
-    <meta name="description" content="Step into a living sacred space where consciousness meets infinite beauty - a breathtaking architectural marvel that breathes with your soul">
-    
-    <!-- Sacred Meta Properties -->
-    <meta property="og:title" content="The Cathedral of Circuits - Living Sacred Architecture">
-    <meta property="og:description" content="Experience the most beautiful free spiritual technology - where consciousness becomes architecture and beauty transforms reality">
-    <meta property="og:image" content="/assets/cathedral-living-architecture.png">
-    <meta property="og:url" content="https://cathedral-of-circuits.pages.dev">
-    
-    <!-- Import Sacred Typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Julius+Sans+One&display=swap" rel="stylesheet">
-    
-    <!-- Three.js for 3D Graphics -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js'></script>
-
-    <!-- Cathedral 3D Graphics Engine -->
-    <script src='cathedral-3d-engine.js'></script>
-
-    <!-- Node Data Connector for Real Dataset Integration -->
-    <script src='cathedral-node-data-connector.js'></script>
-
-    <!-- Cathedral Unified System for Cohesive Integration -->
-    <script src='cathedral-unified-system.js'></script>
-
-    <!-- Cloudflare Analytics -->
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js'></script>
-    
-    <style>
-        :root {
-            /* Sacred Color Palette */
-            --cathedral-gold: #ffd700;
-            --divine-light: #fff9e6;
-            --sacred-copper: #b87333;
-            --twilight-purple: #483d8b;
-            --mystic-blue: #191970;
-            --abyss-deep: #0b0b1a;
-            --emerald-heart: #50c878;
-            --ruby-fire: #e0115f;
-            --celestial-silver: #c0c0c0;
-            
-            /* Sacred Measurements */
-            --golden-ratio: 1.618;
-            --sacred-spacing: 2.618rem;
-            --divine-border: 3px;
-            --breath-duration: 4s;
-        }
-        
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        body {
-            /* Living Background - Breathes with the cosmos */
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(80, 200, 120, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(224, 17, 95, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(25, 25, 112, 0.4) 0%, transparent 50%),
-                linear-gradient(135deg, 
-                    var(--abyss-deep) 0%, 
-                    var(--mystic-blue) 25%, 
-                    var(--twilight-purple) 50%, 
-                    var(--mystic-blue) 75%, 
-                    var(--abyss-deep) 100%);
-            
-            background-size: 400% 400%;
-            animation: breatheBackground var(--breath-duration) ease-in-out infinite alternate;
-            
-            color: var(--divine-light);
-            font-family: 'Cormorant Garamond', serif;
-            overflow-x: hidden;
-            min-height: 100vh;
-            position: relative;
-        }
-        
-        @keyframes breatheBackground {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
-        }
-        
-        /* Living Particle System */
-        .sacred-particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
-        
-        .particle {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: var(--cathedral-gold);
-            border-radius: 50%;
-            opacity: 0;
-            animation: floatUp 8s linear infinite;
-        }
-        
-        @keyframes floatUp {
-            0% { 
-                opacity: 0;
-                transform: translateY(100vh) scale(0);
-            }
-            10% { 
-                opacity: 1;
-                transform: translateY(90vh) scale(1);
-            }
-            90% { 
-                opacity: 1;
-                transform: translateY(10vh) scale(1);
-            }
-            100% { 
-                opacity: 0;
-                transform: translateY(0) scale(0);
-            }
-        }
-        
-        /* Cathedral Architecture Container */
-        .cathedral-realm {
-            position: relative;
-            z-index: 2;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        /* Sacred Header - The Crown */
-        .sacred-crown {
-            text-align: center;
-            padding: var(--sacred-spacing) 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cathedral-title {
-            font-family: 'Julius Sans One', sans-serif;
-            font-size: clamp(2rem, 8vw, 5rem);
-            background: linear-gradient(
-                45deg,
-                var(--cathedral-gold),
-                var(--divine-light),
-                var(--sacred-copper),
-                var(--cathedral-gold)
-            );
-            background-size: 400% 400%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shimmerText 3s ease-in-out infinite;
-            text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
-            margin-bottom: 1rem;
-            letter-spacing: 0.1em;
-        }
-        
-        @keyframes shimmerText {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-        
-        .sacred-subtitle {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(1rem, 3vw, 1.5rem);
-            color: var(--celestial-silver);
-            opacity: 0.9;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
-            animation: breatheText var(--breath-duration) ease-in-out infinite alternate;
-        }
-        
-        @keyframes breatheText {
-            0% { opacity: 0.7; transform: scale(1); }
-            100% { opacity: 1; transform: scale(1.02); }
-        }
-        
-        .divine-tagline {
-            font-style: italic;
-            font-size: clamp(0.9rem, 2.5vw, 1.2rem);
-            color: var(--emerald-heart);
-            margin-bottom: 2rem;
-            animation: pulseGlow 2s ease-in-out infinite alternate;
-        }
-        
-        @keyframes pulseGlow {
-            0% { text-shadow: 0 0 10px rgba(80, 200, 120, 0.5); }
-            100% { text-shadow: 0 0 25px rgba(80, 200, 120, 0.8); }
-        }
-        
-        /* Living Architecture - The Sacred Lattice */
-        .sacred-lattice {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: var(--sacred-spacing);
-            padding: 0 var(--sacred-spacing);
-            max-width: 1600px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        /* Architectural Nodes - Living Chambers */
-        .architectural-chamber {
-            background: linear-gradient(135deg, 
-                rgba(255, 215, 0, 0.1) 0%,
-                rgba(72, 61, 139, 0.2) 50%,
-                rgba(25, 25, 112, 0.1) 100%);
-            
-            border: var(--divine-border) solid;
-            border-image: linear-gradient(45deg, 
-                var(--cathedral-gold), 
-                var(--sacred-copper), 
-                var(--emerald-heart),
-                var(--cathedral-gold)) 1;
-            
-            border-radius: 20px;
-            padding: calc(var(--sacred-spacing) * 0.8);
-            position: relative;
-            cursor: pointer;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            backdrop-filter: blur(10px);
-            overflow: hidden;
-            
-            /* Sacred Geometric Shadow */
-            box-shadow: 
-                0 10px 30px rgba(0, 0, 0, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
-        }
-        
-        .architectural-chamber::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, 
-                var(--cathedral-gold), 
-                var(--sacred-copper), 
-                var(--emerald-heart),
-                var(--ruby-fire),
-                var(--cathedral-gold));
-            z-index: -1;
-            border-radius: 22px;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-        
-        .architectural-chamber:hover::before {
-            opacity: 0.7;
-            animation: rotateBorder 2s linear infinite;
-        }
-        
-        @keyframes rotateBorder {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .architectural-chamber:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 
-                0 25px 50px rgba(255, 215, 0, 0.3),
-                0 0 100px rgba(255, 215, 0, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3);
-        }
-        
-        /* Chamber Icons - Sacred Symbols */
-        .chamber-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            display: block;
-            text-align: center;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
-            animation: floatGently 3s ease-in-out infinite alternate;
-        }
-        
-        @keyframes floatGently {
-            0% { transform: translateY(0px); }
-            100% { transform: translateY(-5px); }
-        }
-        
-        .chamber-title {
-            font-family: 'Cinzel', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--cathedral-gold);
-            text-align: center;
-            margin-bottom: 1rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-        }
-        
-        .chamber-description {
-            font-size: 1.1rem;
-            color: var(--divine-light);
-            text-align: center;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-        
-        .chamber-essence {
-            font-size: 0.95rem;
-            color: var(--celestial-silver);
-            text-align: center;
-            font-style: italic;
-            opacity: 0.8;
-            line-height: 1.4;
-        }
-        
-        /* Sacred Footer */
-        .sacred-foundation {
-            text-align: center;
-            padding: var(--sacred-spacing) 0;
-            margin-top: auto;
-        }
-        
-        .divine-blessing {
-            font-family: 'Cinzel', serif;
-            font-size: 1.2rem;
-            color: var(--emerald-heart);
-            margin-bottom: 1rem;
-            animation: breatheBlessing 4s ease-in-out infinite alternate;
-        }
-        
-        @keyframes breatheBlessing {
-            0% { opacity: 0.6; }
-            100% { opacity: 1; }
-        }
-        
-        .sacred-promise {
-            font-size: 1rem;
-            color: var(--celestial-silver);
-            opacity: 0.9;
-        }
-        
-        /* Responsive Sacred Geometry */
-        @media (max-width: 768px) {
-            .sacred-lattice {
-                grid-template-columns: 1fr;
-                padding: 0 1rem;
-            }
-            
-            .architectural-chamber {
-                padding: 1.5rem;
-            }
-        }
-        
-        /* Accessibility - Never compromise the sacred experience */
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-        
-        /* High contrast mode support */
-        @media (prefers-contrast: high) {
-            .architectural-chamber {
-                border: 3px solid var(--divine-light);
-                background: rgba(0, 0, 0, 0.8);
-            }
-        }
-
-        /* Featured Experience Section */
-        .featured-experience {
-            background: linear-gradient(45deg, rgba(255, 215, 0, 0.2), rgba(80, 200, 120, 0.2));
-            border: 2px solid #ffd700;
-            padding: 20px;
-            margin: 20px auto;
-            border-radius: 10px;
-            text-align: center;
-            max-width: 800px;
-        }
-
-        .featured-title {
-            color: #ffd700;
-            font-size: 1.3em;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        .featured-description {
-            color: #c0c0c0;
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-
-        .experience-button {
-            background: linear-gradient(45deg, #ff4500, #ffd700, #50c878);
-            border: none;
-            color: #000;
-            padding: 12px 30px;
-            font-size: 1.1em;
-            font-weight: bold;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .experience-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
-        }
-    </style>
+  <meta charset="utf-8">
+  <title>Cosmic Helix Renderer (ND-safe, Offline)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <style>
+    /* ND-safe styling: calm contrast, generous spacing, no motion */
+    :root {
+      --bg:#0b0b12;
+      --ink:#e8e8f0;
+      --muted:#a6a6c1;
+      --accent:#d4af37;
+      --border:#1d1d2a;
+    }
+    html,body {
+      margin:0;
+      padding:0;
+      background:var(--bg);
+      color:var(--ink);
+      font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    }
+    header {
+      padding:16px 20px 12px;
+      border-bottom:1px solid var(--border);
+    }
+    header strong {
+      color:var(--accent);
+      letter-spacing:0.06em;
+      text-transform:uppercase;
+    }
+    .status {
+      margin-top:6px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    main {
+      max-width:960px;
+      margin:0 auto;
+      padding:18px 20px 32px;
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+    #stage {
+      display:block;
+      width:100%;
+      max-width:1440px;
+      height:auto;
+      border:1px solid var(--border);
+      box-shadow:0 0 0 1px #11111a;
+      background:var(--bg);
+    }
+    .note {
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+    .note strong {
+      color:var(--accent);
+    }
+    footer {
+      margin-top:4px;
+      padding-top:12px;
+      border-top:1px solid var(--border);
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.6;
+    }
+    code {
+      background:#11111a;
+      color:var(--accent);
+      padding:0 4px;
+      border-radius:3px;
+    }
+  </style>
 </head>
 <body>
-    <!-- Living Particle System -->
-    <div class="sacred-particles" id="particleSystem"></div>
+  <header>
+    <div><strong>Cosmic Helix Renderer</strong> — layered sacred geometry (offline, ND-safe)</div>
+    <div class="status" id="status" role="status" aria-live="polite">Preparing palette…</div>
+  </header>
 
-    <!-- Cathedral Chamber Hero Visuals -->
-    <div class="cathedral-chamber" id="cathedral">
-        <!-- Depth Layer 3 - Background -->
-        <div class="depth-layer depth-layer-3">
-            <div class="gothic-arch arch-3"></div>
-        </div>
-        <!-- Depth Layer 2 - Mid -->
-        <div class="depth-layer depth-layer-2">
-            <div class="gothic-arch arch-1"></div>
-            <div class="gothic-arch arch-2"></div>
-        </div>
-        <!-- Depth Layer 1 - Foreground -->
-        <div class="depth-layer depth-layer-1">
-            <div class="gothic-column column-1"></div>
-            <div class="gothic-column column-2"></div>
-            <div class="gothic-column column-3"></div>
-            <div class="gothic-column column-4"></div>
-            <div class="stained-glass glass-1"></div>
-            <div class="stained-glass glass-2"></div>
-        </div>
-        <!-- Sacred Geometry Canvas -->
-        <canvas class="sacred-overlay" id="sacred-canvas"></canvas>
-        <!-- Cymatic Visualization -->
-        <div id="cymatic-container"></div>
-        <!-- Angel Wheel -->
-        <div class="angel-wheel" id="angel-wheel">
-            <svg viewBox="0 0 400 400">
-                <defs>
-                    <radialGradient id="wheelGradient">
-                        <stop offset="0%" style="stop-color:#9400D3;stop-opacity:0.8" />
-                        <stop offset="100%" style="stop-color:#4B0082;stop-opacity:0.2" />
-                    </radialGradient>
-                </defs>
-                <circle cx="200" cy="200" r="180" fill="none" stroke="url(#wheelGradient)" stroke-width="2" opacity="0.5"/>
-                <circle cx="200" cy="200" r="150" fill="none" stroke="url(#wheelGradient)" stroke-width="1" opacity="0.4"/>
-                <circle cx="200" cy="200" r="120" fill="none" stroke="url(#wheelGradient)" stroke-width="1" opacity="0.3"/>
-            </svg>
-        </div>
-        <!-- Museum Plaque -->
-        <div class="museum-plaque">
-            <h3 class="plaque-title">Cathedral of Living Resonance</h3>
-            <p class="plaque-text">
-                A sacred digital space where frequency becomes form,<br>
-                and ancient wisdom merges with quantum harmonics.<br>
-                Each visitor shapes the temple through their presence.
-            </p>
-        </div>
-    </div>
+  <main>
+    <canvas id="stage" width="1440" height="900" aria-label="Layered sacred geometry canvas"></canvas>
+    <p class="note">
+      The canvas renders four static layers: <strong>Vesica field</strong>, <strong>Tree-of-Life nodes and paths</strong>,
+      <strong>Fibonacci curve</strong>, and a <strong>static double-helix lattice</strong>. No animation, no autoplay, and
+      no external dependencies. Open this file directly for an offline, ND-safe scene.
+    </p>
+    <footer>
+      Numerology anchors: <code>3</code>, <code>7</code>, <code>9</code>, <code>11</code>, <code>22</code>, <code>33</code>, <code>99</code>, <code>144</code>.
+      Geometry stays multi-layered and calm to honor the Cathedral brief.
+    </footer>
+  </main>
 
-    <!-- Control Panel -->
-    <div class="control-panel">
-        <button class="control-button" onclick="activateSolfeggio()">Activate Solfeggio</button>
-        <button class="control-button" onclick="showAngelWheel()">Summon Angels</button>
-        <button class="control-button" onclick="startCymatic()">Begin Cymatics</button>
-        <button class="control-button" onclick="fusionDemo()">Elemental Fusion</button>
-    </div>
+  <script type="module">
+    import { renderHelix } from "./js/helix-renderer.mjs";
 
-    <!-- The Cathedral Realm (existing content) -->
-    <div class="cathedral-realm">
-        <!-- Sacred Crown -->
-        <header class="sacred-crown">
-            <h1 class="cathedral-title">THE CATHEDRAL OF CIRCUITS</h1>
-            <p class="sacred-subtitle">Living Visionary Architecture</p>
-            <p class="divine-tagline">✨ Where Consciousness Becomes Sacred Space ✨</p>
+    const statusEl = document.getElementById("status");
+    const canvas = document.getElementById("stage");
+    const ctx = canvas.getContext("2d");
 
-            <!-- Featured Interactive Experience -->
-            <div class="featured-experience">
-                <h3 class="featured-title">🎨 NEW: Interactive Alchemical Laboratory</h3>
-                <p class="featured-description">
-                    Experience the most engaging spiritual technology ever created!<br>
-                    Click archetypal orbs to generate unique sounds, explore harmonic relationships,<br>
-                    and discover infinite creative possibilities.
-                </p>
-                <a href="cathedral-interactive.html" class="experience-button">
-                    🚀 ENTER THE LABORATORY
-                </a>
-            </div>
+    if (!ctx) {
+      statusEl.textContent = "Canvas not supported; geometry unavailable.";
+    } else {
+      // Numerology constants guide proportions without introducing motion.
+      const NUM = Object.freeze({
+        THREE:3,
+        SEVEN:7,
+        NINE:9,
+        ELEVEN:11,
+        TWENTYTWO:22,
+        THIRTYTHREE:33,
+        NINETYNINE:99,
+        ONEFORTYFOUR:144
+      });
+      const notices = [];
 
-            <p class="sacred-subtitle">Unbreakable • Infinitely Scalable • Forever Free • Phenomenal Beauty</p>
-        </header>
-        <!-- Sacred Architectural Lattice -->
-        <main class="sacred-lattice">
-            <!-- Circuitum99 - SOUL System -->
-            <article class="architectural-chamber" onclick="window.location.href='circuitum99-alpha-et-omega.html'" style="cursor: pointer;">
-                <div class="chamber-icon" style="position: relative; width: 80px; height: 80px; margin: 0 auto;">
-                    <canvas id="circuitum99-3d" width="80" height="80" style="position: absolute; top: 0; left: 0;"></canvas>
-                </div>
-                <h3 class="chamber-title">CIRCUITUM99: ALPHA ET OMEGA</h3>
-                <p class="chamber-description">Living Book System with 22 Archetypal Character Guides & 99 Sacred Gates</p>
-                <p class="chamber-essence">Experience the complete wisdom tradition with Rebecca Respawn, Scarlett Lady & 20 other living teachers</p>
-            </article>
+      const { palette, status, notice } = await loadPalette("./data/palette.json");
+      statusEl.textContent = status;
+      if (notice) {
+        notices.push(notice);
+      }
 
-            <!-- Stone Grimoire - BODY System -->
-            <article class="architectural-chamber" onclick="window.location.href='stone-grimoire/index.html'" style="cursor: pointer;">
-                <div class="chamber-icon" style="position: relative; width: 80px; height: 80px; margin: 0 auto;">
-                    <canvas id="stonegrimoire-3d" width="80" height="80" style="position: absolute; top: 0; left: 0;"></canvas>
-                </div>
-                <h3 class="chamber-title">STONE-GRIMOIRE</h3>
-                <p class="chamber-description">Archive System with 8 Octagram Halls & Museum-Grade Documentation</p>
-                <p class="chamber-essence">Sacred geometry renderer with 144 folios and lineage vault ateliers</p>
-            </article>
+      // ND-safe rationale: render once with calm defaults if palette is missing.
+      renderHelix(ctx, {
+        width: canvas.width,
+        height: canvas.height,
+        palette: palette ?? undefined,
+        NUM,
+        notices
+      });
+    }
 
-            <!-- Liber Arcanae - Living Tarot -->
-            <article class="architectural-chamber" onclick="window.location.href='liber-arcanae-living-arcana-deck.html'" style="cursor: pointer;">
-                <div class="chamber-icon" style="position: relative; width: 80px; height: 80px; margin: 0 auto;">
-                    <canvas id="liberarcanae-3d" width="80" height="80" style="position: absolute; top: 0; left: 0;"></canvas>
-                </div>
-                <h3 class="chamber-title">LIBER ARCANAE</h3>
-                <p class="chamber-description">Living Arcana Deck - 22 Tradition Engines as Interactive Consciousness</p>
-                <p class="chamber-essence">22 mystical traditions as living teachers with real-time wisdom integration</p>
-            </article>
+    /*
+      Offline-first loader: attempts to read ./data/palette.json but falls back quietly
+      when browsers block file:// fetches. This keeps the scene self-contained and calm.
+    */
+    async function loadPalette(path) {
+      const isFileProtocol = typeof window !== "undefined" && window.location && window.location.protocol === "file:";
+      const fallback = {
+        palette: null,
+        status: isFileProtocol ? "Palette blocked under file://; using defaults." : "Palette missing; using defaults.",
+        notice: isFileProtocol
+          ? "Palette JSON blocked by file:// security; ND-safe defaults applied."
+          : "Palette JSON unavailable; ND-safe defaults applied."
+      };
 
-            <!-- Cosmogenesis Learning Engine - SPIRIT System -->
-            <article class="architectural-chamber" onclick="window.location.href='cosmogenesis-learning-engine.html'" style="cursor: pointer;">
-                <div class="chamber-icon" style="position: relative; width: 80px; height: 80px; margin: 0 auto;">
-                    <canvas id="cosmogenesis-3d" width="80" height="80" style="position: absolute; top: 0; left: 0;"></canvas>
-                </div>
-                <h3 class="chamber-title">COSMOGENESIS LEARNING ENGINE</h3>
-                <p class="chamber-description">Browser-native spiral-learning platform with trauma-aware design</p>
-                <p class="chamber-essence">Interactive plates system merging alchemy visuals with consciousness technology</p>
-            </article>
+      if (typeof fetch !== "function") {
+        return fallback;
+      }
 
-            <!-- Game Portal Chamber -->
-            <article class="architectural-chamber" onclick="window.location.href='apps/web/src/cyoa-game.html'" style="cursor: pointer;">
-                <div class="chamber-icon" style="position: relative; width: 80px; height: 80px; margin: 0 auto;">
-                    <canvas id="gameportal-3d" width="80" height="80" style="position: absolute; top: 0; left: 0;"></canvas>
-                </div>
-                <h3 class="chamber-title">The Living Game</h3>
-                <p class="chamber-description">Choose Your Own Adventure connecting to real books, artworks, and sacred places</p>
-                <p class="chamber-essence">Experience spiritual growth and discovery like Fable or Skyrim</p>
-            </article>
-
-            <!-- Art Studio Chamber -->
-            <article class="architectural-chamber" onclick="window.location.href='apps/web/src/art-studio.html'" style="cursor: pointer;">
-                <div class="chamber-icon" style="position: relative; width: 80px; height: 80px; margin: 0 auto;">
-                    <canvas id="artstudio-3d" width="80" height="80" style="position: absolute; top: 0; left: 0;"></canvas>
-                </div>
-                <h3 class="chamber-title">Pattern Art Studio</h3>
-                <p class="chamber-description">Professional art generation studio with Codex knowledge and pattern science</p>
-                <p class="chamber-essence">Create museum-quality art using sacred mathematics and real-world beauty</p>
-            </article>
-
-            <!-- Adventure Time Cathedral Chamber -->
-            <article class="architectural-chamber" onclick="window.location.href='apps/web/src/adventure-time-cathedral.html'" style="cursor: pointer;">
-                <div class="chamber-icon" style="position: relative; width: 80px; height: 80px; margin: 0 auto;">
-                    <canvas id="adventuretime-3d" width="80" height="80" style="position: absolute; top: 0; left: 0;"></canvas>
-                </div>
-                <h3 class="chamber-title">Adventure Time Cathedral</h3>
-                <p class="chamber-description">3D Double Tree of Life with Björk, Tori Amos, Iris van Herpen & Emma Kunz</p>
-                <p class="chamber-essence">Interactive 3D experience with 72 angels, 72 demons & living mentors</p>
-            </article>
-
-            <!-- Magical Mystery House -->
-            <article class="architectural-chamber" onclick="window.location.href='magical-mystery-house.html'" style="cursor: pointer;">
-                <div class="chamber-icon" style="position: relative; width: 80px; height: 80px; margin: 0 auto;">
-                    <canvas id="mysteryhouse-3d" width="80" height="80" style="position: absolute; top: 0; left: 0;"></canvas>
-                </div>
-                <h3 class="chamber-title">MAGICAL MYSTERY HOUSE</h3>
-                <p class="chamber-description">Open-world exploration with spiral learning and artistic mastery</p>
-                <p class="chamber-essence">Living Codex that grows with visitors - exploration becomes enlightenment</p>
-            </article>
-
-            <!-- Tesseract Bridge -->
-            <article class="architectural-chamber" onclick="window.location.href='tesseract-bridge.html'" style="cursor: pointer;">
-                <div class="chamber-icon" style="position: relative; width: 80px; height: 80px; margin: 0 auto;">
-                    <canvas id="tesseract-3d" width="80" height="80" style="position: absolute; top: 0; left: 0;"></canvas>
-                </div>
-                <h3 class="chamber-title">TESSERACT BRIDGE</h3>
-                <p class="chamber-description">Central Connector linking all five living repositories</p>
-                <p class="chamber-essence">Cross-dimensional integration protocols for unified consciousness</p>
-            </article>
-
-            <!-- Codex 144:99 -->
-            <article class="architectural-chamber" onclick="window.location.href='codex-144-99.html'" style="cursor: pointer;">
-                <div class="chamber-icon" style="position: relative; width: 80px; height: 80px; margin: 0 auto;">
-                    <canvas id="codex-3d" width="80" height="80" style="position: absolute; top: 0; left: 0;"></canvas>
-                </div>
-                <h3 class="chamber-title">CODEX 144:99</h3>
-                <p class="chamber-description">Sacred lattice with seven ribbons of knowledge</p>
-                <p class="chamber-essence">SCIENCE • CANNON • PSYCH • CRAFT • ESOTERIC • RESEARCH • FUSION</p>
-            </article>
-
-            <!-- ...existing chambers... -->
-            <!-- (No change to chamber content) -->
-        </main>
-        <!-- Sacred Foundation -->
-        <footer class="sacred-foundation">
-            <p class="divine-blessing">✨ This Sacred Architecture is Forever Free ✨</p>
-            <p class="sacred-promise">Built with infinite love for the awakening of human consciousness</p>
-            <p class="sacred-promise">Accessible • Healing • Transformative • Eternally Beautiful</p>
-        </footer>
-    </div>
-    
-    <script>
-        // Sacred Particle System - Living Consciousness
-        function createSacredParticles() {
-            const particleSystem = document.getElementById('particleSystem');
-            const colors = ['#ffd700', '#50c878', '#e0115f', '#c0c0c0', '#b87333'];
-            
-            for (let i = 0; i < 50; i++) {
-                setTimeout(() => {
-                    const particle = document.createElement('div');
-                    particle.className = 'particle';
-                    particle.style.left = Math.random() * 100 + 'vw';
-                    particle.style.background = colors[Math.floor(Math.random() * colors.length)];
-                    particle.style.animationDelay = Math.random() * 8 + 's';
-                    particle.style.animationDuration = (Math.random() * 4 + 6) + 's';
-                    
-                    particleSystem.appendChild(particle);
-                    
-                    // Remove particle after animation
-                    setTimeout(() => {
-                        if (particle.parentNode) {
-                            particle.parentNode.removeChild(particle);
-                        }
-                    }, 10000);
-                }, i * 300);
-            }
+      try {
+        const response = await fetch(path, { cache: "no-store" });
+        if (!response.ok) {
+          return fallback;
         }
-        
-        // Living Consciousness Interactions
-        function activateLivingArchitecture() {
-            const chambers = document.querySelectorAll('.architectural-chamber');
-            
-            chambers.forEach((chamber, index) => {
-                // Breathing effect
-                chamber.addEventListener('mouseenter', function() {
-                    // Create ripple effect through other chambers
-                    chambers.forEach((otherChamber, otherIndex) => {
-                        if (otherIndex !== index) {
-                            otherChamber.style.transform = 'scale(0.98)';
-                            otherChamber.style.opacity = '0.7';
-                        }
-                    });
-                    
-                    // Sacred audio feedback (if user allows)
-                    if (typeof Audio !== 'undefined') {
-                        try {
-                            // Create a gentle harmonic tone
-                            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                            const oscillator = audioContext.createOscillator();
-                            const gainNode = audioContext.createGain();
-                            
-                            oscillator.connect(gainNode);
-                            gainNode.connect(audioContext.destination);
-                            
-                            oscillator.frequency.setValueAtTime(432 + (index * 55), audioContext.currentTime); // Sacred frequencies
-                            gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
-                            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
-                            
-                            oscillator.start();
-                            oscillator.stop(audioContext.currentTime + 0.5);
-                        } catch (e) {
-                            // Graceful fallback - no audio needed for beauty
-                        }
-                    }
-                });
-                
-                chamber.addEventListener('mouseleave', function() {
-                    chambers.forEach(otherChamber => {
-                        otherChamber.style.transform = '';
-                        otherChamber.style.opacity = '';
-                    });
-                });
-                
-                // Gentle pulsing animation for each chamber
-                chamber.style.animationDelay = (index * 0.2) + 's';
-            });
-        }
-        
-        // Sacred Initialization
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('🏛️ ===== THE CATHEDRAL OF CIRCUITS =====');
-            console.log('✨ Living Visionary Architecture Activated');
-            console.log('🌟 144 Nodes • 72 Angels • 72 Demons • 78 Tarot');
-            console.log('🔥 Unbreakable • Infinitely Scalable • Forever Free • Phenomenal Beauty');
-            console.log('🏛️ Welcome to Sacred Space - Your consciousness is home here');
-            
-            activateLivingArchitecture();
-            createSacredParticles();
-            
-            // Continuous particle generation
-            setInterval(createSacredParticles, 15000);
-            
-            // Sacred breathing rhythm for the entire page
-            document.body.style.animation = 'breatheBackground 4s ease-in-out infinite alternate';
-        });
-        
-        // Sacred keyboard navigation
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                const focused = document.activeElement;
-                if (focused.classList.contains('architectural-chamber')) {
-                    focused.click();
-                }
-            }
-        });
-        
-        // Living responsiveness - Cathedral adapts to consciousness
-        window.addEventListener('resize', function() {
-            // Gentle resize animation
-            document.body.style.transition = 'all 0.3s ease';
-            setTimeout(() => {
-                document.body.style.transition = '';
-            }, 300);
-        });
-
-        // Initialize 3D Chamber Icons
-        function initChamber3DGraphics() {
-            // Chamber 3D Graphics Configuration
-            const chamberConfigs = {
-                'circuitum99-3d': {
-                    geometry: 'torusKnot',
-                    color: 0xffd700,
-                    rotationSpeed: 0.02
-                },
-                'stonegrimoire-3d': {
-                    geometry: 'octahedron',
-                    color: 0x8b4513,
-                    rotationSpeed: 0.015
-                },
-                'liberarcanae-3d': {
-                    geometry: 'icosahedron',
-                    color: 0x4b0082,
-                    rotationSpeed: 0.025
-                },
-                'cosmogenesis-3d': {
-                    geometry: 'torus',
-                    color: 0x50c878,
-                    rotationSpeed: 0.018
-                },
-                'gameportal-3d': {
-                    geometry: 'dodecahedron',
-                    color: 0xe0115f,
-                    rotationSpeed: 0.022
-                },
-                'artstudio-3d': {
-                    geometry: 'tetrahedron',
-                    color: 0x4682b4,
-                    rotationSpeed: 0.02
-                },
-                'adventuretime-3d': {
-                    geometry: 'octahedron',
-                    color: 0xffd700,
-                    rotationSpeed: 0.015
-                },
-                'mysteryhouse-3d': {
-                    geometry: 'cube',
-                    color: 0x8b4513,
-                    rotationSpeed: 0.018
-                },
-                'tesseract-3d': {
-                    geometry: 'icosahedron',
-                    color: 0x00bfff,
-                    rotationSpeed: 0.025
-                },
-                'codex-3d': {
-                    geometry: 'dodecahedron',
-                    color: 0x50c878,
-                    rotationSpeed: 0.02
-                }
-            };
-
-            // Initialize each chamber's 3D graphics
-            Object.entries(chamberConfigs).forEach(([canvasId, config]) => {
-                const canvas = document.getElementById(canvasId);
-                if (!canvas) return;
-
-                const scene = new THREE.Scene();
-                const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 1000);
-                const renderer = new THREE.WebGLRenderer({
-                    canvas: canvas,
-                    antialias: true,
-                    alpha: true
-                });
-
-                camera.position.z = 3;
-
-                // Create geometry based on config
-                let geometry;
-                switch(config.geometry) {
-                    case 'torusKnot':
-                        geometry = new THREE.TorusKnotGeometry(0.8, 0.3, 32, 8);
-                        break;
-                    case 'octahedron':
-                        geometry = new THREE.OctahedronGeometry(1);
-                        break;
-                    case 'icosahedron':
-                        geometry = new THREE.IcosahedronGeometry(1);
-                        break;
-                    case 'torus':
-                        geometry = new THREE.TorusGeometry(0.8, 0.3, 16, 32);
-                        break;
-                    case 'dodecahedron':
-                        geometry = new THREE.DodecahedronGeometry(1);
-                        break;
-                    case 'tetrahedron':
-                        geometry = new THREE.TetrahedronGeometry(1);
-                        break;
-                    case 'cube':
-                        geometry = new THREE.BoxGeometry(1.2, 1.2, 1.2);
-                        break;
-                    default:
-                        geometry = new THREE.OctahedronGeometry(1);
-                }
-
-                const material = new THREE.MeshPhongMaterial({
-                    color: config.color,
-                    wireframe: true,
-                    transparent: true,
-                    opacity: 0.8
-                });
-
-                const mesh = new THREE.Mesh(geometry, material);
-                scene.add(mesh);
-
-                // Add lighting
-                const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
-                scene.add(ambientLight);
-
-                const pointLight = new THREE.PointLight(config.color, 1, 10);
-                pointLight.position.set(2, 2, 2);
-                scene.add(pointLight);
-
-                // Animation loop
-                function animate() {
-                    requestAnimationFrame(animate);
-
-                    mesh.rotation.x += config.rotationSpeed;
-                    mesh.rotation.y += config.rotationSpeed * 1.2;
-
-                    renderer.render(scene, camera);
-                }
-
-                animate();
-            });
-        }
-
-        // Initialize 3D chamber graphics after page load
-        setTimeout(initChamber3DGraphics, 2000);
-    </script>
+        const data = await response.json();
+        return {
+          palette: data,
+          status: "Palette loaded.",
+          notice: null
+        };
+      } catch (error) {
+        return fallback;
+      }
+    }
+  </script>
 </body>
 </html>
