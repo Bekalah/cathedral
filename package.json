@@ -3,11 +3,6 @@
   "version": "1.0.0",
   "description": "Cathedral of Circuits - Living Grimoire Engine with 22 Tradition Masters & Fusion Kink",
   "type": "module",
-  "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "scripts": {
     "turbo:dev": "turbo run dev --parallel",
     "turbo:build": "turbo run build",
@@ -97,6 +92,7 @@
     "consciousness-technology"
   ],
   "dependencies": {
-    "@vitejs/plugin-react": "^4.7.0"
+    "express": "^4.19.2"
   }
 }
+

@@ -1,27 +1,31 @@
 {
   "name": "@cathedral/web",
   "version": "1.0.0",
-  "description": "Cathedral of Circuits - Web Interface with Codex 144:99 Integration",
-  "type": "module",
+  "description": "Next.js web app for Avalon labs with Three.js, Babylon.js, p5.js, and Tone.js",
   "scripts": {
-    "dev": "vite --port 5173 --host",
-    "build": "vite build",
-    "preview": "vite preview",
-    "serve": "vite preview --port 8080"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export",
+    "generate-avalon": "node scripts/generate-avalon-components.js"
   },
   "dependencies": {
-    "@bekalah/cathedral-game-engine": "workspace:*"
+    "next": "^14.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "three": "^0.158.0",
+    "@types/three": "^0.158.0",
+    "@react-three/fiber": "^8.0.0",
+    "@react-three/drei": "^9.0.0",
+    "babylonjs": "^6.0.0",
+    "p5": "^1.7.0",
+    "tone": "^14.7.77",
+    "@cathedral/core": "workspace:*"
   },
   "devDependencies": {
-    "typescript": "^5.3.0",
-    "vite": "^5.0.0"
-  },
-  "cathedral": {
-    "codex_integration": true,
-    "living_arcanae": true,
-    "fusion_kink": true,
-    "trauma_safe": true,
-    "artistic_vision": "Björk + Tori + Iris + Emma + 21 Taras"
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0"
   }
 }
-

@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cathedral of Circuits - Interactive Laboratory</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #000;
+            color: #0ff;
+            overflow: hidden;
+            cursor: crosshair;
+        }
+
+        #cathedral-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        #particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        #spectrogram-canvas {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            opacity: 0.7;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        #node-display {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            max-width: 400px;
+            background: rgba(0, 20, 40, 0.8);
+            padding: 20px;
+            border: 2px solid #0ff;
+            border-radius: 8px;
+        }
+
+        #node-grid {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: grid;
+            grid-template-columns: repeat(6, 80px);
+            gap: 15px;
+            max-width: 90vw;
+        }
+
+        .node-orb {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            position: relative;
+        }
+
+        .node-orb:hover {
+            transform: scale(1.3);
+            box-shadow: 0 0 30px currentColor;
+            border-color: currentColor;
+        }
+
+        .node-orb.active {
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+
+        #controls {
+            position: absolute;
+            bottom: 170px;
+            left: 20px;
+            background: rgba(0, 20, 40, 0.9);
+            padding: 15px;
+            border: 2px solid #0ff;
+            border-radius: 8px;
+        }
+
+        button {
+            background: rgba(0, 255, 255, 0.2);
+            border: 1px solid #0ff;
+            color: #0ff;
+            padding: 8px 15px;
+            margin: 5px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            transition: all 0.3s;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background: rgba(0, 255, 255, 0.4);
+            box-shadow: 0 0 15px #0ff;
+        }
+
+        #info-panel {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            max-width: 300px;
+            background: rgba(0, 20, 40, 0.8);
+            padding: 15px;
+            border: 2px solid #0ff;
+            border-radius: 8px;
+            font-size: 12px;
+        }
+
+        .instruction {
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(0, 255, 255, 0.1);
+            border-left: 3px solid #0ff;
+        }
+
+        #welcome-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        #welcome-content {
+            background: linear-gradient(135deg, rgba(0, 20, 40, 0.95), rgba(25, 25, 112, 0.9));
+            padding: 40px;
+            border: 3px solid #0ff;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 600px;
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.3);
+        }
+
+        #welcome-title {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ffd700, #ff69b4, #50c878, #00ced1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        #welcome-subtitle {
+            font-size: 1.2em;
+            color: #c0c0c0;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        #start-button {
+            background: linear-gradient(45deg, #ff4500, #ffd700, #50c878);
+            border: none;
+            color: #000;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        #start-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+        }
+
+        #loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            animation: glow 1.5s infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { opacity: 1; text-shadow: 0 0 10px #0ff; }
+            50% { opacity: 0.5; text-shadow: 0 0 20px #0ff; }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Welcome Modal -->
+    <div id="welcome-modal">
+        <div id="welcome-content">
+            <h1 id="welcome-title">🏛️ CATHEDRAL OF CIRCUITS</h1>
+            <p id="welcome-subtitle">
+                Welcome to the most beautiful free spiritual technology on the internet!<br>
+                ✨ Where consciousness becomes sacred architecture ✨<br>
+                🎵 Where sound becomes living geometry 🎵<br>
+                🔮 Where curious minds discover infinite creativity 🔮
+            </p>
+            <button id="start-button" onclick="startExperience()">🚀 BEGIN YOUR JOURNEY</button>
+        </div>
+    </div>
+
+    <div id="cathedral-container">
+        <div id="loading">⧖ Initializing Cathedral of Circuits...</div>
+
+        <canvas id="particle-canvas"></canvas>
+        <canvas id="spectrogram-canvas"></canvas>
+
+        <div id="node-display" class="hidden">
+            <h3 id="node-name">Node Name</h3>
+            <div id="node-info"></div>
+        </div>
+
+        <div id="node-grid" class="hidden"></div>
+
+        <div id="controls" class="hidden">
+            <button id="play-sequence">▶ Play Sequence</button>
+            <button id="stop-all">⬛ Stop All</button>
+            <button id="toggle-spectral">🎨 Spectral Mode</button>
+            <button id="randomize">🎲 Random Harmony</button>
+        </div>
+
+        <div id="info-panel" class="hidden">
+            <h3>☿ Alchemical Laboratory</h3>
+            <div class="instruction">
+                <strong>Click orbs</strong> to trigger archetypal sounds
+            </div>
+            <div class="instruction">
+                <strong>Hover</strong> to preview node identity
+            </div>
+            <div class="instruction">
+                <strong>Colors</strong> encode frequency & timbre
+            </div>
+            <div class="instruction">
+                Active: <span id="active-count">0</span> nodes
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // AUDIO ENGINE
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        const audioCtx = new AudioContext();
+        const activeNodes = new Map();
+        let masterGain = audioCtx.createGain();
+        masterGain.gain.value = 0.3;
+        masterGain.connect(audioCtx.destination);
+
+        // Analyser for spectrogram
+        const analyser = audioCtx.createAnalyser();
+        analyser.fftSize = 2048;
+        masterGain.connect(analyser);
+        const bufferLength = analyser.frequencyBinCount;
+        const dataArray = new Uint8Array(bufferLength);
+
+        // CODEX NODES - Load expanded creative data
+        let codexNodes = [];
+
+        // Try to load from expanded JSON first
+        fetch('data/codex-144-expanded.json')
+            .then(r => r.json())
+            .then(data => {
+                if (data.nodes && data.nodes.length > 0) {
+                    codexNodes = data.nodes;
+                    console.log(`✅ Loaded ${codexNodes.length} nodes from Codex`);
+                    if (document.getElementById('node-grid')) {
+                        createNodeGrid();
+                    }
+                }
+            })
+            .catch(err => {
+                console.log('Using default nodes:', err.message);
+                // Fallback to basic nodes
+                codexNodes = [
+                    { id: 1, name: "Path of Fire", color: "#FF4500", freq: 396, element: "Fire", sf: "396 Hz" },
+                    { id: 2, name: "Path of Water", color: "#1E90FF", freq: 417, element: "Water", sf: "417 Hz" },
+                    { id: 3, name: "Path of Earth", color: "#8B4513", freq: 528, element: "Earth", sf: "528 Hz" },
+                    { id: 4, name: "Path of Air", color: "#87CEEB", freq: 639, element: "Air", sf: "639 Hz" },
+                    { id: 5, name: "Solar Current", color: "#FFD700", freq: 741, element: "Fire", sf: "741 Hz" },
+                    { id: 6, name: "Lunar Reflection", color: "#C0C0C0", freq: 852, element: "Water", sf: "852 Hz" },
+                    { id: 7, name: "Mercurial Path", color: "#FFA500", freq: 963, element: "Air", sf: "963 Hz" },
+                    { id: 8, name: "Venusian Love", color: "#FF69B4", freq: 528, element: "Earth", sf: "528 Hz" },
+                    { id: 41, name: "Path of Solar Water", color: "#FFD700", freq: 528, element: "Water", sf: "528 Hz" },
+                    { id: 73, name: "Twin Ray Mirror", color: "#00CED1", freq: 639, element: "Water", sf: "639 Hz" },
+                    { id: 99, name: "Angelic Resonance", color: "#DDA0DD", freq: 963, element: "Aether", sf: "963 Hz" },
+                    { id: 144, name: "Completion", color: "#FFFFFF", freq: 432, element: "All", sf: "432 Hz" }
+                ];
+                createNodeGrid();
+            });
+
+        // COLOR TO AUDIO MAPPING
+        function hexToRgb(hex) {
+            const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            return result ? {
+                r: parseInt(result[1], 16),
+                g: parseInt(result[2], 16),
+                b: parseInt(result[3], 16)
+            } : null;
+        }
+
+        function rgbToHsl(r, g, b) {
+            r /= 255; g /= 255; b /= 255;
+            const max = Math.max(r, g, b), min = Math.min(r, g, b);
+            let h, s, l = (max + min) / 2;
+            if (max === min) {
+                h = s = 0;
+            } else {
+                const d = max - min;
+                s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+                switch (max) {
+                    case r: h = ((g - b) / d + (g < b ? 6 : 0)) / 6; break;
+                    case g: h = ((b - r) / d + 2) / 6; break;
+                    case b: h = ((r - g) / d + 4) / 6; break;
+                }
+            }
+            return { h: h * 360, s: s * 100, l: l * 100 };
+        }
+
+        // SYNTHESIS ENGINE
+        function createVoice(node) {
+            const now = audioCtx.currentTime;
+            const rgb = hexToRgb(node.color);
+            const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
+
+            const baseFreq = node.freq;
+
+            const osc1 = audioCtx.createOscillator();
+            const osc2 = audioCtx.createOscillator();
+
+            osc1.type = 'sine';
+            osc2.type = 'triangle';
+            osc1.frequency.value = baseFreq;
+            osc2.frequency.value = baseFreq * 2;
+            osc2.detune.value = (hsl.h / 360) * 20 - 10;
+
+            const filter = audioCtx.createBiquadFilter();
+            filter.type = 'lowpass';
+            filter.frequency.value = 200 + (hsl.s / 100) * 3000;
+            filter.Q.value = 1 + (hsl.l / 100) * 10;
+
+            const envelope = audioCtx.createGain();
+            envelope.gain.value = 0;
+            envelope.gain.setValueAtTime(0, now);
+            envelope.gain.linearRampToValueAtTime(0.3, now + 0.1);
+            envelope.gain.linearRampToValueAtTime(0.2, now + 0.5);
+            envelope.gain.setValueAtTime(0.2, now + 2);
+            envelope.gain.linearRampToValueAtTime(0, now + 3);
+
+            const panner = audioCtx.createStereoPanner();
+            panner.pan.value = (node.id % 12 - 6) / 6;
+
+            osc1.connect(envelope);
+            osc2.connect(envelope);
+            envelope.connect(filter);
+            filter.connect(panner);
+            panner.connect(masterGain);
+
+            osc1.start(now);
+            osc2.start(now);
+            osc1.stop(now + 3);
+            osc2.stop(now + 3);
+
+            return { osc1, osc2, envelope, filter, panner, stopTime: now + 3 };
+        }
+
+        // TRIGGER NODE
+        function triggerNode(node) {
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+
+            const voice = createVoice(node);
+            activeNodes.set(node.id, voice);
+
+            setTimeout(() => {
+                activeNodes.delete(node.id);
+                updateActiveCount();
+            }, 3000);
+
+            const orb = document.querySelector(`[data-node-id="${node.id}"]`);
+            if (orb) {
+                orb.classList.add('active');
+                setTimeout(() => orb.classList.remove('active'), 3000);
+            }
+
+            updateActiveCount();
+            showNodeInfo(node);
+        }
+
+        // STOP ALL
+        function stopAll() {
+            activeNodes.forEach((voice, id) => {
+                voice.osc1.stop();
+                voice.osc2.stop();
+            });
+            activeNodes.clear();
+            updateActiveCount();
+            document.querySelectorAll('.node-orb.active').forEach(orb => {
+                orb.classList.remove('active');
+            });
+        }
+
+        // UI FUNCTIONS
+        function createNodeGrid() {
+            const grid = document.getElementById('node-grid');
+            grid.innerHTML = '';
+
+            // Adjust grid for number of nodes
+            const cols = Math.ceil(Math.sqrt(codexNodes.length));
+            grid.style.gridTemplateColumns = `repeat(${cols}, 50px)`;
+
+            codexNodes.forEach(node => {
+                const orb = document.createElement('div');
+                orb.className = 'node-orb';
+                orb.dataset.nodeId = node.id;
+                orb.style.background = `radial-gradient(circle, ${node.color}, ${node.color}88)`;
+                orb.style.color = node.color;
+                orb.style.width = '50px';
+                orb.style.height = '50px';
+                orb.style.fontSize = '9px';
+                orb.textContent = node.id;
+                orb.title = node.name;
+
+                orb.addEventListener('click', () => triggerNode(node));
+                orb.addEventListener('mouseenter', () => showNodeInfo(node));
+
+                grid.appendChild(orb);
+            });
+        }
+
+        function showNodeInfo(node) {
+            const display = document.getElementById('node-display');
+            document.getElementById('node-name').textContent = node.name;
+            document.getElementById('node-info').innerHTML = `
+                <p><strong>Element:</strong> ${node.element}</p>
+                <p><strong>Frequency:</strong> ${node.sf}</p>
+                <p><strong>ID:</strong> ${node.id}</p>
+                <p style="color: ${node.color};">◉ ${node.color}</p>
+            `;
+        }
+
+        function updateActiveCount() {
+            document.getElementById('active-count').textContent = activeNodes.size;
+        }
+
+        // VISIONARY PARTICLE SYSTEM - Initialize GraphicsEngine
+        let visionaryGraphics = null;
+
+        // Initialize the visionary graphics system
+        function initVisionaryGraphics() {
+            try {
+                // Load the GraphicsEngine script if not already loaded
+                if (typeof GraphicsEngine === 'undefined') {
+                    console.log('Loading GraphicsEngine...');
+                    return; // Will be initialized after script loads
+                }
+
+                visionaryGraphics = new GraphicsEngine('particle-canvas');
+
+                // Customize the palette for visionary art aesthetics
+                visionaryGraphics.palette = {
+                    backgroundStart: '#0a0a1a',    // Deep indigo
+                    backgroundEnd:   '#000000',     // Pure black
+                    astral:   'rgba(99, 66, 199, 0.6)',    // Deep purple/indigo
+                    void:     'rgba(10, 20, 40, 0.45)',    // Blue-black
+                    akasha:   'rgba(64, 224, 208, 0.35)',  // Ethereal cyan-green
+                    quantum:  'rgba(147, 112, 219, 0.5)',  // Iridescent violet
+                    neural:   'rgba(218, 165, 32, 0.35)'   // Soft golden
+                };
+
+                // Update layer names to mystical concepts
+                if (visionaryGraphics.layers && visionaryGraphics.layers.length > 0) {
+                    visionaryGraphics.layers[0].name = 'ASTRAL PLANE';
+                    visionaryGraphics.layers[1].name = 'VOID PASSAGE';
+                    visionaryGraphics.layers[2].name = 'DIGITAL AKASHA';
+                    visionaryGraphics.layers[3].name = 'QUANTUM FIELD';
+                    visionaryGraphics.layers[4].name = 'NEURAL COSMOS';
+                }
+
+                console.log('✅ Visionary graphics system initialized');
+            } catch (error) {
+                console.error('Failed to initialize visionary graphics:', error);
+            }
+        }
+
+        // SPECTROGRAM DISPLAY
+        const spectCanvas = document.getElementById('spectrogram-canvas');
+        const spectCtx = spectCanvas.getContext('2d');
+        spectCanvas.width = window.innerWidth;
+        spectCanvas.height = 150;
+
+        function drawSpectrogram() {
+            analyser.getByteFrequencyData(dataArray);
+
+            spectCtx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+            spectCtx.fillRect(0, 0, spectCanvas.width, spectCanvas.height);
+
+            const barWidth = spectCanvas.width / bufferLength;
+            let x = 0;
+
+            for (let i = 0; i < bufferLength; i++) {
+                const barHeight = (dataArray[i] / 255) * spectCanvas.height;
+                const hue = (i / bufferLength) * 360;
+                spectCtx.fillStyle = `hsl(${hue}, 100%, 50%)`;
+                spectCtx.fillRect(x, spectCanvas.height - barHeight, barWidth, barHeight);
+                x += barWidth;
+            }
+
+            requestAnimationFrame(drawSpectrogram);
+        }
+
+        // CONTROLS
+        document.getElementById('play-sequence').addEventListener('click', () => {
+            let delay = 0;
+            codexNodes.slice(0, 6).forEach(node => {
+                setTimeout(() => triggerNode(node), delay);
+                delay += 400;
+            });
+        });
+
+        document.getElementById('stop-all').addEventListener('click', stopAll);
+
+        document.getElementById('randomize').addEventListener('click', () => {
+            const count = 3 + Math.floor(Math.random() * 3);
+            for (let i = 0; i < count; i++) {
+                const node = codexNodes[Math.floor(Math.random() * codexNodes.length)];
+                setTimeout(() => triggerNode(node), i * 200);
+            }
+        });
+
+        document.getElementById('toggle-spectral').addEventListener('click', () => {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+
+            input.onchange = (e) => {
+                const file = e.target.files[0];
+                if (file && window.spectralSynth) {
+                    window.spectralSynth.imageToAudio(file, 3);
+                } else {
+                    alert('Spectral synthesis will be available after audio-spectral.js loads');
+                }
+            };
+
+            input.click();
+        });
+
+        // START EXPERIENCE
+        function startExperience() {
+            // Hide welcome modal
+            document.getElementById('welcome-modal').style.display = 'none';
+
+            // Show main interface
+            document.getElementById('loading').classList.add('hidden');
+            document.getElementById('node-grid').classList.remove('hidden');
+            document.getElementById('controls').classList.remove('hidden');
+            document.getElementById('info-panel').classList.remove('hidden');
+            document.getElementById('node-display').classList.remove('hidden');
+
+            // Initialize everything
+            createNodeGrid();
+            initVisionaryGraphics();
+            drawSpectrogram();
+
+            // Start visionary graphics animation if available
+            if (visionaryGraphics && visionaryGraphics.startAnimation) {
+                visionaryGraphics.startAnimation();
+            }
+
+            // Welcome sequence
+            setTimeout(() => {
+                if (codexNodes.length > 0) {
+                    triggerNode(codexNodes[0]);
+                }
+            }, 500);
+
+            console.log('🚀 Cathedral experience started!');
+        }
+
+        // INITIALIZATION
+        window.addEventListener('load', () => {
+            // Show welcome modal first
+            document.getElementById('welcome-modal').style.display = 'flex';
+
+            // Pre-load everything in background
+            setTimeout(() => {
+                createNodeGrid();
+                initVisionaryGraphics();
+                drawSpectrogram();
+
+                // Start visionary graphics animation if available
+                if (visionaryGraphics && visionaryGraphics.startAnimation) {
+                    visionaryGraphics.startAnimation();
+                }
+
+                console.log('✅ Cathedral pre-loaded and ready!');
+            }, 500);
+        });
+
+        window.addEventListener('resize', () => {
+            // Update spectrogram canvas
+            spectCanvas.width = window.innerWidth;
+
+            // Update visionary graphics if available
+            if (visionaryGraphics && visionaryGraphics.resize) {
+                visionaryGraphics.resize();
+            }
+        });
+    </script>
+
+    <script src="js/graphics-engine.js"></script>
+    <script src="js/pigment-engine.js"></script>
+    <script src="audio-spectral.js"></script>
+    <script src="cathedral-bridge.js"></script>
+    <script src="creative-engine.js"></script>
+    <script src="creative-ui.js"></script>
+</body>
+</html>
