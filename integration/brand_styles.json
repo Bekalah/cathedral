@@ -1,0 +1,49 @@
+{
+  "palettes": {
+    "primary": {
+      "name": "Cathedral Core",
+      "colors": ["#2C3E50", "#34495E", "#ECF0F1", "#BDC3C7"],
+      "description": "ND-safe core palette with high contrast ratios"
+    },
+    "secondary": {
+      "name": "Mystic Arcana",
+      "colors": ["#8E44AD", "#9B59B6", "#AF7AC5", "#C8A8D8"],
+      "description": "Mystical purple tones, ND-safe intensity"
+    }
+  },
+  "typography": {
+    "primary": "Georgia, serif",
+    "secondary": "system-ui, -apple-system, sans-serif",
+    "monospace": "SF Mono, Monaco, Consolas, monospace",
+    "sizes": {
+      "xs": "0.75rem",
+      "sm": "0.875rem",
+      "base": "1rem",
+      "lg": "1.125rem",
+      "xl": "1.25rem",
+      "2xl": "1.5rem"
+    }
+  },
+  "spacing": {
+    "xs": "0.25rem",
+    "sm": "0.5rem",
+    "md": "1rem",
+    "lg": "1.5rem",
+    "xl": "2rem",
+    "2xl": "3rem"
+  },
+  "borders": {
+    "radius": {
+      "sm": "0.25rem",
+      "md": "0.5rem",
+      "lg": "0.75rem",
+      "xl": "1rem"
+    }
+  },
+  "accessibility": {
+    "minContrastRatio": 4.5,
+    "focusRing": "2px solid #4A90E2",
+    "animationDuration": "0.3s ease-in-out",
+    "reducedMotion": "@media (prefers-reduced-motion: reduce)"
+  }
+}
