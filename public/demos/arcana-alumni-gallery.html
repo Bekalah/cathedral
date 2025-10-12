@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARCANA ALUMNI GALLERY - Cathedral of Circuits</title>
+    <meta name="description" content="Professional portraits and profiles of the 22 Major Arcana as faculty/alumni of the Cathedral of Circuits mystical university">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Cathedral Color Palette */
+            --void-primordial: #0B0B0B;
+            --bone-atlantean: #F8F5EF;
+            --gold-blavatsky: #C8A44D;
+            --violet-core: #7A33FF;
+            --violet-aura: #2C0A52;
+            --pearl-lemurian: #F5F2EA;
+            --astral-silver: #C9D1E7;
+            --threshold-glow: #98FFE2;
+            --obsidian-glass: #0f1014;
+            --obsidian-rainbow: #33214e;
+        }
+
+        body {
+            font-family: 'Cinzel', 'Georgia', serif;
+            background: radial-gradient(ellipse at center, 
+                var(--void-primordial) 0%, 
+                var(--obsidian-glass) 40%,
+                var(--violet-aura) 80%, 
+                var(--obsidian-rainbow) 100%);
+            color: var(--bone-atlantean);
+            min-height: 100vh;
+            letter-spacing: 0.5px;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .gallery-header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, 
+                rgba(11, 11, 11, 0.9), 
+                rgba(44, 10, 82, 0.8));
+            backdrop-filter: blur(20px);
+            border-bottom: 2px solid var(--gold-blavatsky);
+            margin-bottom: 40px;
+        }
+
+        .gallery-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            letter-spacing: 4px;
+            color: var(--gold-blavatsky);
+            text-shadow: 0 0 30px rgba(200, 164, 77, 0.8);
+            margin-bottom: 12px;
+        }
+
+        .gallery-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            letter-spacing: 2px;
+            color: var(--pearl-lemurian);
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .gallery-description {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--astral-silver);
+            opacity: 0.8;
+        }
+
+        /* Alumni Grid */
+        .alumni-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            padding: 0 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Individual Alumni Card (Gen V Style) */
+        .alumni-card {
+            background: linear-gradient(145deg, 
+                rgba(15, 16, 20, 0.95), 
+                rgba(44, 10, 82, 0.9));
+            border: 2px solid var(--gold-blavatsky);
+            border-radius: 20px;
+            padding: 25px;
+            backdrop-filter: blur(15px);
+            box-shadow: 
+                0 10px 40px rgba(0, 0, 0, 0.7),
+                0 0 30px rgba(200, 164, 77, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .alumni-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: var(--threshold-glow);
+            box-shadow: 
+                0 15px 50px rgba(0, 0, 0, 0.8),
+                0 0 50px rgba(152, 255, 226, 0.4);
+        }
+
+        /* Portrait Section */
+        .portrait-section {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .portrait-frame {
+            width: 120px;
+            height: 120px;
+            border: 3px solid var(--gold-blavatsky);
+            border-radius: 50%;
+            background: radial-gradient(circle, 
+                var(--violet-core), 
+                var(--obsidian-glass));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portrait-frame::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50%;
+            background: conic-gradient(
+                var(--gold-blavatsky) 0deg,
+                var(--violet-core) 90deg,
+                var(--threshold-glow) 180deg,
+                var(--gold-blavatsky) 270deg,
+                var(--gold-blavatsky) 360deg
+            );
+            z-index: -1;
+            animation: portraitGlow 6s linear infinite;
+        }
+
+        @keyframes portraitGlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .basic-info {
+            flex: 1;
+        }
+
+        .arcana-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            color: var(--gold-blavatsky);
+            margin-bottom: 5px;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .arcana-number {
+            font-size: 0.9rem;
+            color: var(--violet-core);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .archetype-title {
+            font-size: 1rem;
+            color: var(--threshold-glow);
+            font-style: italic;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .element-path {
+            font-size: 0.85rem;
+            color: var(--astral-silver);
+            opacity: 0.8;
+        }
+
+        /* Powers & Abilities Section */
+        .powers-section {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(122, 51, 255, 0.1);
+            border-radius: 12px;
+            border: 1px solid var(--violet-core);
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            color: var(--gold-blavatsky);
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .powers-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .power-item {
+            background: rgba(200, 164, 77, 0.1);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: var(--pearl-lemurian);
+            border: 1px solid rgba(200, 164, 77, 0.3);
+            text-align: center;
+        }
+
+        /* Merkaba Chariot Section */
+        .merkaba-section {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(152, 255, 226, 0.1);
+            border-radius: 12px;
+            border: 1px solid var(--threshold-glow);
+        }
+
+        .merkaba-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: var(--threshold-glow);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .merkaba-description {
+            font-size: 0.85rem;
+            color: var(--astral-silver);
+            line-height: 1.4;
+            font-style: italic;
+        }
+
+        .transport-power {
+            margin-top: 8px;
+            padding: 8px;
+            background: rgba(152, 255, 226, 0.2);
+            border-radius: 6px;
+            font-size: 0.8rem;
+            color: var(--bone-atlantean);
+            font-weight: 500;
+        }
+
+        /* Lineage & Faculty Section */
+        .lineage-section {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(200, 164, 77, 0.1);
+            border-radius: 12px;
+            border: 1px solid var(--gold-blavatsky);
+        }
+
+        .faculty-status {
+            display: inline-block;
+            background: var(--gold-blavatsky);
+            color: var(--void-primordial);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .lineage-list {
+            font-size: 0.85rem;
+            color: var(--astral-silver);
+            line-height: 1.4;
+        }
+
+        .lineage-master {
+            color: var(--gold-blavatsky);
+            font-weight: 500;
+        }
+
+        /* Specialization Tags */
+        .specializations {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .spec-tag {
+            background: linear-gradient(45deg, var(--violet-core), var(--gold-blavatsky));
+            color: var(--void-primordial);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Navigation Controls */
+        .gallery-controls {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, 
+                rgba(11, 11, 11, 0.9), 
+                rgba(44, 10, 82, 0.9));
+            backdrop-filter: blur(15px);
+            border: 2px solid var(--violet-core);
+            border-radius: 15px;
+            padding: 15px;
+            z-index: 1000;
+        }
+
+        .control-button {
+            display: block;
+            width: 100%;
+            padding: 10px 15px;
+            margin-bottom: 8px;
+            background: linear-gradient(45deg, var(--violet-core), var(--gold-blavatsky));
+            color: var(--void-primordial);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .control-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(122, 51, 255, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .alumni-grid {
+                grid-template-columns: 1fr;
+                padding: 0 15px;
+                gap: 20px;
+            }
+            
+            .gallery-title {
+                font-size: 2rem;
+            }
+            
+            .portrait-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .powers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Mystical Background Animation */
+        .mystical-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+            background: radial-gradient(circle at 20% 20%, var(--violet-core) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, var(--gold-blavatsky) 0%, transparent 50%),
+                        radial-gradient(circle at 50% 50%, var(--threshold-glow) 0%, transparent 70%);
+            animation: mysticalPulse 15s ease-in-out infinite alternate;
+        }
+
+        @keyframes mysticalPulse {
+            0% { transform: scale(1) rotate(0deg); opacity: 0.1; }
+            100% { transform: scale(1.1) rotate(5deg); opacity: 0.2; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mystical Background -->
+    <div class="mystical-bg"></div>
+
+    <!-- Gallery Controls -->
+    <nav class="gallery-controls">
+        <button class="control-button" onclick="window.location.href='cathedral-of-circuits-main-platform.html'">
+            🏰 Return to Cathedral
+        </button>
+        <button class="control-button" onclick="filterByMajors()">
+            🌟 Major Arcana
+        </button>
+        <button class="control-button" onclick="filterByFaculty()">
+            🎓 Faculty Status
+        </button>
+        <button class="control-button" onclick="showMerkabaDemo()">
+            🚗 Merkaba Demo
+        </button>
+    </nav>
+
+    <!-- Header -->
+    <header class="gallery-header">
+        <h1 class="gallery-title">✦ ARCANA ALUMNI GALLERY ✦</h1>
+        <p class="gallery-subtitle">Faculty & Alumni Profiles • Cathedral of Circuits University</p>
+        <p class="gallery-description">
+            Meet the distinguished faculty and alumni of our mystical institution. Each Major Arcana serves as both 
+            professor and practitioner, guiding students through the sacred pathways of consciousness and digital gnosis. 
+            Every member possesses unique powers, their own Merkaba Chariot for interdimensional travel, and lineage 
+            connections to the great masters of the Western Mystery Tradition.
+        </p>
+    </header>
+
+    <!-- Alumni Grid -->
+    <div class="alumni-grid" id="alumniGrid">
+        <!-- The Fool -->
+        <div class="alumni-card" data-category="major-arcana" data-faculty="active">
+            <div class="portrait-section">
+                <div class="portrait-frame">🃏</div>
+                <div class="basic-info">
+                    <h2 class="arcana-name">THE FOOL</h2>
+                    <div class="arcana-number">Arcana 0 • The Beginning</div>
+                    <div class="archetype-title">Professor of Infinite Potential</div>
+                    <div class="element-path">Element: Air • Path: Aleph</div>
+                </div>
+            </div>
+            
+            <div class="lineage-section">
+                <div class="faculty-status">FOUNDING FACULTY</div>
+                <div class="lineage-list">
+                    <strong>Primary Lineage:</strong><br>
+                    <span class="lineage-master">Aleister Crowley</span> • Holy Books of Thelema<br>
+                    <span class="lineage-master">Dion Fortune</span> • Mystical Qabalah<br>
+                    <span class="lineage-master">Carl Jung</span> • Archetypal Psychology
+                </div>
+            </div>
+            
+            <div class="powers-section">
+                <div class="section-title">🔥 Powers & Abilities</div>
+                <div class="powers-grid">
+                    <div class="power-item">Quantum Leap</div>
+                    <div class="power-item">Reality Reset</div>
+                    <div class="power-item">Beginner's Mind</div>
+                    <div class="power-item">Infinite Courage</div>
+                </div>
+            </div>
+            
+            <div class="merkaba-section">
+                <div class="merkaba-name">🌀 Sphere of Infinite Potential</div>
+                <div class="merkaba-description">
+                    A translucent, ever-shifting sphere that contains all possibilities simultaneously. 
+                    Appears as a soap bubble that reflects infinite realities.
+                </div>
+                <div class="transport-power">
+                    <strong>Transport Power:</strong> Can leap to any realm, timeline, or dimension instantly
+                </div>
+            </div>
+            
+            <div class="specializations">
+                <div class="spec-tag">New Beginnings</div>
+                <div class="spec-tag">Leap of Faith</div>
+                <div class="spec-tag">Sacred Ignorance</div>
+            </div>
+        </div>
+
+        <!-- The Magician -->
+        <div class="alumni-card" data-category="major-arcana" data-faculty="active">
+            <div class="portrait-section">
+                <div class="portrait-frame">🎩</div>
+                <div class="basic-info">
+                    <h2 class="arcana-name">THE MAGICIAN</h2>
+                    <div class="arcana-number">Arcana I • The Creator</div>
+                    <div class="archetype-title">Professor of Manifestation Arts</div>
+                    <div class="element-path">Element: Mercury • Path: Beth</div>
+                </div>
+            </div>
+            
+            <div class="lineage-section">
+                <div class="faculty-status">DEPARTMENT HEAD</div>
+                <div class="lineage-list">
+                    <strong>Primary Lineage:</strong><br>
+                    <span class="lineage-master">Éliphas Lévi</span> • Ritual Magic<br>
+                    <span class="lineage-master">John Dee</span> • Enochian System<br>
+                    <span class="lineage-master">Cornelius Agrippa</span> • Occult Philosophy
+                </div>
+            </div>
+            
+            <div class="powers-section">
+                <div class="section-title">🔥 Powers & Abilities</div>
+                <div class="powers-grid">
+                    <div class="power-item">Reality Shaping</div>
+                    <div class="power-item">Element Control</div>
+                    <div class="power-item">Will Focus</div>
+                    <div class="power-item">Tool Mastery</div>
+                </div>
+            </div>
+            
+            <div class="merkaba-section">
+                <div class="merkaba-name">⚡ Wand of Manifestation</div>
+                <div class="merkaba-description">
+                    A crystalline wand that transforms thought into reality through focused intention. 
+                    Crackling with electrical energy and surrounded by the four elements.
+                </div>
+                <div class="transport-power">
+                    <strong>Transport Power:</strong> Create new worlds and realities through will
+                </div>
+            </div>
+            
+            <div class="specializations">
+                <div class="spec-tag">Creative Manifestation</div>
+                <div class="spec-tag">Elemental Magic</div>
+                <div class="spec-tag">Focused Will</div>
+            </div>
+        </div>
+
+        <!-- The High Priestess -->
+        <div class="alumni-card" data-category="major-arcana" data-faculty="emeritus">
+            <div class="portrait-section">
+                <div class="portrait-frame">🌙</div>
+                <div class="basic-info">
+                    <h2 class="arcana-name">THE HIGH PRIESTESS</h2>
+                    <div class="arcana-number">Arcana II • The Guardian</div>
+                    <div class="archetype-title">Professor Emeritus of Hidden Knowledge</div>
+                    <div class="element-path">Element: Moon • Path: Gimel</div>
+                </div>
+            </div>
+            
+            <div class="lineage-section">
+                <div class="faculty-status">EMERITUS FACULTY</div>
+                <div class="lineage-list">
+                    <strong>Primary Lineage:</strong><br>
+                    <span class="lineage-master">Dion Fortune</span> • Lunar Mysteries<br>
+                    <span class="lineage-master">Violet Firth</span> • Psychic Development<br>
+                    <span class="lineage-master">Marie-Louise von Franz</span> • Feminine Wisdom
+                </div>
+            </div>
+            
+            <div class="powers-section">
+                <div class="section-title">🔥 Powers & Abilities</div>
+                <div class="powers-grid">
+                    <div class="power-item">Psychic Vision</div>
+                    <div class="power-item">Lunar Mysteries</div>
+                    <div class="power-item">Intuitive Navigation</div>
+                    <div class="power-item">Sacred Silence</div>
+                </div>
+            </div>
+            
+            <div class="merkaba-section">
+                <div class="merkaba-name">🎭 Veil of Mysteries</div>
+                <div class="merkaba-description">
+                    A shimmering veil that reveals and conceals simultaneously. Made of moonlight 
+                    and shadow, it shows truth to those ready to receive it.
+                </div>
+                <div class="transport-power">
+                    <strong>Transport Power:</strong> Navigate through veils between worlds using intuition
+                </div>
+            </div>
+            
+            <div class="specializations">
+                <div class="spec-tag">Hidden Knowledge</div>
+                <div class="spec-tag">Lunar Wisdom</div>
+                <div class="spec-tag">Psychic Arts</div>
+            </div>
+        </div>
+
+        <!-- The Empress -->
+        <div class="alumni-card" data-category="major-arcana" data-faculty="active">
+            <div class="portrait-section">
+                <div class="portrait-frame">👑</div>
+                <div class="basic-info">
+                    <h2 class="arcana-name">THE EMPRESS</h2>
+                    <div class="arcana-number">Arcana III • The Mother</div>
+                    <div class="archetype-title">Professor of Creative Abundance</div>
+                    <div class="element-path">Element: Venus • Path: Daleth</div>
+                </div>
+            </div>
+            
+            <div class="lineage-section">
+                <div class="faculty-status">ACTIVE FACULTY</div>
+                <div class="lineage-list">
+                    <strong>Primary Lineage:</strong><br>
+                    <span class="lineage-master">Hilma af Klint</span> • Sacred Art<br>
+                    <span class="lineage-master">Emma Kunz</span> • Healing Geometry<br>
+                    <span class="lineage-master">Maria Prophetissa</span> • Alchemical Arts
+                </div>
+            </div>
+            
+            <div class="powers-section">
+                <div class="section-title">🔥 Powers & Abilities</div>
+                <div class="powers-grid">
+                    <div class="power-item">Fertility Magic</div>
+                    <div class="power-item">Creative Birth</div>
+                    <div class="power-item">Natural Healing</div>
+                    <div class="power-item">Abundance Flow</div>
+                </div>
+            </div>
+            
+            <div class="merkaba-section">
+                <div class="merkaba-name">🌺 Garden of Creation</div>
+                <div class="merkaba-description">
+                    A floating garden of infinite beauty where all creative projects take root and bloom. 
+                    Surrounded by butterflies and flowing with the waters of inspiration.
+                </div>
+                <div class="transport-power">
+                    <strong>Transport Power:</strong> Nurture and manifest creative projects across realms
+                </div>
+            </div>
+            
+            <div class="specializations">
+                <div class="spec-tag">Creative Arts</div>
+                <div class="spec-tag">Natural Magic</div>
+                <div class="spec-tag">Healing Arts</div>
+            </div>
+        </div>
+
+        <!-- The Emperor -->
+        <div class="alumni-card" data-category="major-arcana" data-faculty="active">
+            <div class="portrait-section">
+                <div class="portrait-frame">⚔️</div>
+                <div class="basic-info">
+                    <h2 class="arcana-name">THE EMPEROR</h2>
+                    <div class="arcana-number">Arcana IV • The Father</div>
+                    <div class="archetype-title">Professor of Sacred Architecture</div>
+                    <div class="element-path">Element: Aries • Path: Heh</div>
+                </div>
+            </div>
+            
+            <div class="lineage-section">
+                <div class="faculty-status">DEAN OF STRUCTURE</div>
+                <div class="lineage-list">
+                    <strong>Primary Lineage:</strong><br>
+                    <span class="lineage-master">Vitruvius</span> • Sacred Architecture<br>
+                    <span class="lineage-master">Christopher Wren</span> • Masonic Geometry<br>
+                    <span class="lineage-master">Rudolf Steiner</span> • Anthroposophy
+                </div>
+            </div>
+            
+            <div class="powers-section">
+                <div class="section-title">🔥 Powers & Abilities</div>
+                <div class="powers-grid">
+                    <div class="power-item">Structure Building</div>
+                    <div class="power-item">Leadership Command</div>
+                    <div class="power-item">Order Creation</div>
+                    <div class="power-item">Sacred Geometry</div>
+                </div>
+            </div>
+            
+            <div class="merkaba-section">
+                <div class="merkaba-name">🏛️ Throne of Order</div>
+                <div class="merkaba-description">
+                    A crystalline throne that imposes divine order wherever it travels. Built from 
+                    living geometry and powered by righteous authority.
+                </div>
+                <div class="transport-power">
+                    <strong>Transport Power:</strong> Establish structure and order in chaotic realms
+                </div>
+            </div>
+            
+            <div class="specializations">
+                <div class="spec-tag">Sacred Architecture</div>
+                <div class="spec-tag">Leadership</div>
+                <div class="spec-tag">Order & Structure</div>
+            </div>
+        </div>
+
+        <!-- The Hierophant -->
+        <div class="alumni-card" data-category="major-arcana" data-faculty="active">
+            <div class="portrait-section">
+                <div class="portrait-frame">⛪</div>
+                <div class="basic-info">
+                    <h2 class="arcana-name">THE HIEROPHANT</h2>
+                    <div class="arcana-number">Arcana V • The Teacher</div>
+                    <div class="archetype-title">Grand Professor of Sacred Tradition</div>
+                    <div class="element-path">Element: Taurus • Path: Vau</div>
+                </div>
+            </div>
+            
+            <div class="lineage-section">
+                <div class="faculty-status">CHANCELLOR</div>
+                <div class="lineage-list">
+                    <strong>Primary Lineage:</strong><br>
+                    <span class="lineage-master">Paul Foster Case</span> • B.O.T.A.<br>
+                    <span class="lineage-master">Arthur Edward Waite</span> • Golden Dawn<br>
+                    <span class="lineage-master">Manly P. Hall</span> • Secret Teachings
+                </div>
+            </div>
+            
+            <div class="powers-section">
+                <div class="section-title">🔥 Powers & Abilities</div>
+                <div class="powers-grid">
+                    <div class="power-item">Sacred Teaching</div>
+                    <div class="power-item">Tradition Keeper</div>
+                    <div class="power-item">Initiation Rites</div>
+                    <div class="power-item">Divine Authority</div>
+                </div>
+            </div>
+            
+            <div class="merkaba-section">
+                <div class="merkaba-name">🌉 Bridge of Wisdom</div>
+                <div class="merkaba-description">
+                    A golden bridge that connects earth to heaven, tradition to innovation. 
+                    Adorned with the symbols of all mystery schools throughout time.
+                </div>
+                <div class="transport-power">
+                    <strong>Transport Power:</strong> Transmit sacred teachings across time and space
+                </div>
+            </div>
+            
+            <div class="specializations">
+                <div class="spec-tag">Sacred Tradition</div>
+                <div class="spec-tag">Initiation</div>
+                <div class="spec-tag">Spiritual Authority</div>
+            </div>
+        </div>
+
+        <!-- The Lovers -->
+        <div class="alumni-card" data-category="major-arcana" data-faculty="visiting">
+            <div class="portrait-section">
+                <div class="portrait-frame">💕</div>
+                <div class="basic-info">
+                    <h2 class="arcana-name">THE LOVERS</h2>
+                    <div class="arcana-number">Arcana VI • The Choice</div>
+                    <div class="archetype-title">Visiting Professor of Sacred Union</div>
+                    <div class="element-path">Element: Gemini • Path: Zain</div>
+                </div>
+            </div>
+            
+            <div class="lineage-section">
+                <div class="faculty-status">VISITING FACULTY</div>
+                <div class="lineage-list">
+                    <strong>Primary Lineage:</strong><br>
+                    <span class="lineage-master">Marsilio Ficino</span> • Renaissance Love Magic<br>
+                    <span class="lineage-master">Ibn Arabi</span> • Divine Love<br>
+                    <span class="lineage-master">Rumi</span> • Mystical Union
+                </div>
+            </div>
+            
+            <div class="powers-section">
+                <div class="section-title">🔥 Powers & Abilities</div>
+                <div class="powers-grid">
+                    <div class="power-item">Sacred Choice</div>
+                    <div class="power-item">Divine Union</div>
+                    <div class="power-item">Harmony Creation</div>
+                    <div class="power-item">Path Selection</div>
+                </div>
+            </div>
+            
+            <div class="merkaba-section">
+                <div class="merkaba-name">🔮 Choice Point Nexus</div>
+                <div class="merkaba-description">
+                    A crystalline intersection where all possible paths converge. Shows the 
+                    outcomes of every choice with perfect clarity.
+                </div>
+                <div class="transport-power">
+                    <strong>Transport Power:</strong> Navigate decision points and choose optimal paths
+                </div>
+            </div>
+            
+            <div class="specializations">
+                <div class="spec-tag">Sacred Choice</div>
+                <div class="spec-tag">Divine Union</div>
+                <div class="spec-tag">Relationship Harmony</div>
+            </div>
+        </div>
+
+        <!-- The Chariot -->
+        <div class="alumni-card" data-category="major-arcana" data-faculty="active">
+            <div class="portrait-section">
+                <div class="portrait-frame">🏎️</div>
+                <div class="basic-info">
+                    <h2 class="arcana-name">THE CHARIOT</h2>
+                    <div class="arcana-number">Arcana VII • The Victor</div>
+                    <div class="archetype-title">Professor of Directed Will</div>
+                    <div class="element-path">Element: Cancer • Path: Cheth</div>
+                </div>
+            </div>
+            
+            <div class="lineage-section">
+                <div class="faculty-status">MASTER OF VEHICLES</div>
+                <div class="lineage-list">
+                    <strong>Primary Lineage:</strong><br>
+                    <span class="lineage-master">Aleister Crowley</span> • Thelemic Will<br>
+                    <span class="lineage-master">Israel Regardie</span> • Golden Dawn<br>
+                    <span class="lineage-master">Austin Osman Spare</span> • Chaos Magic
+                </div>
+            </div>
+            
+            <div class="powers-section">
+                <div class="section-title">🔥 Powers & Abilities</div>
+                <div class="powers-grid">
+                    <div class="power-item">Willpower Control</div>
+                    <div class="power-item">Victory Achievement</div>
+                    <div class="power-item">Opposing Force Unity</div>
+                    <div class="power-item">Momentum Mastery</div>
+                </div>
+            </div>
+            
+            <div class="merkaba-section">
+                <div class="merkaba-name">🌪️ Merkaba of Will</div>
+                <div class="merkaba-description">
+                    Twin spinning tetrahedra that move through sheer force of will. Balances 
+                    opposing forces while maintaining unstoppable forward momentum.
+                </div>
+                <div class="transport-power">
+                    <strong>Transport Power:</strong> Move through any obstacle via concentrated will
+                </div>
+            </div>
+            
+            <div class="specializations">
+                <div class="spec-tag">Will Direction</div>
+                <div class="spec-tag">Victory Magic</div>
+                <div class="spec-tag">Force Balance</div>
+            </div>
+        </div>
+
+        <!-- Add more Major Arcana cards following the same pattern... -->
+        <!-- For brevity, I'll add just a few more key ones -->
+
+        <!-- The Tower -->
+        <div class="alumni-card" data-category="major-arcana" data-faculty="active">
+            <div class="portrait-section">
+                <div class="portrait-frame">⚡</div>
+                <div class="basic-info">
+                    <h2 class="arcana-name">THE TOWER</h2>
+                    <div class="arcana-number">Arcana XVI • The Awakening</div>
+                    <div class="archetype-title">Professor of Sacred Destruction</div>
+                    <div class="element-path">Element: Mars • Path: Peh</div>
+                </div>
+            </div>
+            
+            <div class="lineage-section">
+                <div class="faculty-status">TRANSFORMATION SPECIALIST</div>
+                <div class="lineage-list">
+                    <strong>Primary Lineage:</strong><br>
+                    <span class="lineage-master">Aleister Crowley</span> • Aeon of Horus<br>
+                    <span class="lineage-master">Frater Achad</span> • Formula of Ma-Ion<br>
+                    <span class="lineage-master">Nema</span> • Maat Current
+                </div>
+            </div>
+            
+            <div class="powers-section">
+                <div class="section-title">🔥 Powers & Abilities</div>
+                <div class="powers-grid">
+                    <div class="power-item">Structure Collapse</div>
+                    <div class="power-item">Lightning Strike</div>
+                    <div class="power-item">Sudden Revelation</div>
+                    <div class="power-item">False Belief Destruction</div>
+                </div>
+            </div>
+            
+            <div class="merkaba-section">
+                <div class="merkaba-name">⚡ Lightning of Awakening</div>
+                <div class="merkaba-description">
+                    A crackling bolt of divine lightning that shatters all illusions instantly. 
+                    Painful but ultimately liberating, it clears the way for truth.
+                </div>
+                <div class="transport-power">
+                    <strong>Transport Power:</strong> Breakthrough any false reality via sudden shock
+                </div>
+            </div>
+            
+            <div class="specializations">
+                <div class="spec-tag">Breakthrough</div>
+                <div class="spec-tag">Lightning Gnosis</div>
+                <div class="spec-tag">Ego Destruction</div>
+            </div>
+        </div>
+
+        <!-- The Star -->
+        <div class="alumni-card" data-category="major-arcana" data-faculty="active">
+            <div class="portrait-section">
+                <div class="portrait-frame">⭐</div>
+                <div class="basic-info">
+                    <h2 class="arcana-name">THE STAR</h2>
+                    <div class="arcana-number">Arcana XVII • The Hope</div>
+                    <div class="archetype-title">Professor of Divine Inspiration</div>
+                    <div class="element-path">Element: Aquarius • Path: Tzaddi</div>
+                </div>
+            </div>
+            
+            <div class="lineage-section">
+                <div class="faculty-status">INSPIRATION FACULTY</div>
+                <div class="lineage-list">
+                    <strong>Primary Lineage:</strong><br>
+                    <span class="lineage-master">H.P. Blavatsky</span> • Theosophical Wisdom<br>
+                    <span class="lineage-master">Alice Bailey</span> • Djwhal Khul Teachings<br>
+                    <span class="lineage-master">Rudolf Steiner</span> • Anthroposophy
+                </div>
+            </div>
+            
+            <div class="powers-section">
+                <div class="section-title">🔥 Powers & Abilities</div>
+                <div class="powers-grid">
+                    <div class="power-item">Divine Inspiration</div>
+                    <div class="power-item">Hope Restoration</div>
+                    <div class="power-item">Stellar Navigation</div>
+                    <div class="power-item">Future Vision</div>
+                </div>
+            </div>
+            
+            <div class="merkaba-section">
+                <div class="merkaba-name">💧 Waters of Hope</div>
+                <div class="merkaba-description">
+                    A flowing fountain of starlight that nourishes all dreams and aspirations. 
+                    Fed by celestial streams from the most distant stars.
+                </div>
+                <div class="transport-power">
+                    <strong>Transport Power:</strong> Inspire hope and vision across all realms
+                </div>
+            </div>
+            
+            <div class="specializations">
+                <div class="spec-tag">Divine Hope</div>
+                <div class="spec-tag">Stellar Wisdom</div>
+                <div class="spec-tag">Future Vision</div>
+            </div>
+        </div>
+
+        <!-- The World -->
+        <div class="alumni-card" data-category="major-arcana" data-faculty="emeritus">
+            <div class="portrait-section">
+                <div class="portrait-frame">🌍</div>
+                <div class="basic-info">
+                    <h2 class="arcana-name">THE WORLD</h2>
+                    <div class="arcana-number">Arcana XXI • The Completion</div>
+                    <div class="archetype-title">Chancellor Emeritus of Cosmic Consciousness</div>
+                    <div class="element-path">Element: Saturn • Path: Tau</div>
+                </div>
+            </div>
+            
+            <div class="lineage-section">
+                <div class="faculty-status">CHANCELLOR EMERITUS</div>
+                <div class="lineage-list">
+                    <strong>Primary Lineage:</strong><br>
+                    <span class="lineage-master">Plotinus</span> • Neoplatonic Unity<br>
+                    <span class="lineage-master">Meister Eckhart</span> • Divine Union<br>
+                    <span class="lineage-master">Pierre Teilhard de Chardin</span> • Noosphere
+                </div>
+            </div>
+            
+            <div class="powers-section">
+                <div class="section-title">🔥 Powers & Abilities</div>
+                <div class="powers-grid">
+                    <div class="power-item">Cosmic Consciousness</div>
+                    <div class="power-item">Universal Integration</div>
+                    <div class="power-item">Completion Mastery</div>
+                    <div class="power-item">Mandala Creation</div>
+                </div>
+            </div>
+            
+            <div class="merkaba-section">
+                <div class="merkaba-name">🕉️ Cosmic Dance</div>
+                <div class="merkaba-description">
+                    The eternal dance of creation and destruction, held within a perfect mandala. 
+                    Contains all of existence in perfect, harmonious motion.
+                </div>
+                <div class="transport-power">
+                    <strong>Transport Power:</strong> Access any point in the cosmic cycle of existence
+                </div>
+            </div>
+            
+            <div class="specializations">
+                <div class="spec-tag">Cosmic Consciousness</div>
+                <div class="spec-tag">Universal Completion</div>
+                <div class="spec-tag">Sacred Dance</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 40px; margin-top: 40px; border-top: 1px solid var(--gold-blavatsky); background: rgba(11, 11, 11, 0.8);">
+        <p style="color: var(--gold-blavatsky); font-family: 'Cinzel', serif;">
+            ✦ CATHEDRAL OF CIRCUITS UNIVERSITY ✦<br>
+            <small style="color: var(--astral-silver);">Where Sacred Technology Meets Mystical Tradition</small>
+        </p>
+    </footer>
+
+    <script>
+        // Gallery Interactivity
+        function filterByMajors() {
+            const cards = document.querySelectorAll('.alumni-card');
+            cards.forEach(card => {
+                card.style.display = 'block';
+            });
+            console.log('🌟 Showing all Major Arcana faculty members');
+        }
+
+        function filterByFaculty() {
+            const select = prompt('Filter by faculty status:\n1. Active Faculty\n2. Emeritus Faculty\n3. Visiting Faculty\n4. All Faculty');
+            const statusMap = {
+                '1': 'active',
+                '2': 'emeritus', 
+                '3': 'visiting',
+                '4': 'all'
+            };
+            
+            const filterStatus = statusMap[select];
+            const cards = document.querySelectorAll('.alumni-card');
+            
+            cards.forEach(card => {
+                if (filterStatus === 'all') {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = card.dataset.faculty === filterStatus ? 'block' : 'none';
+                }
+            });
+            
+            console.log(`🎓 Filtering by faculty status: ${filterStatus}`);
+        }
+
+        function showMerkabaDemo() {
+            const demoText = `
+🚗 MERKABA CHARIOT DEMONSTRATION 🚗
+
+Each Major Arcana possesses a unique Merkaba Chariot for interdimensional travel:
+
+• The Fool's "Sphere of Infinite Potential" - leaps to any realm instantly
+• The Magician's "Wand of Manifestation" - creates new worlds through will  
+• The High Priestess's "Veil of Mysteries" - navigates via intuition
+• The Chariot's "Merkaba of Will" - moves through obstacles via concentration
+• The Tower's "Lightning of Awakening" - breakthrough false realities via shock
+• The Star's "Waters of Hope" - inspires vision across all realms
+• The World's "Cosmic Dance" - accesses any point in cosmic cycles
+
+Each vehicle reflects the Arcana's essential nature and provides unique transportation abilities throughout the multiverse!
+            `;
+            alert(demoText);
+        }
+
+        // Mystical hover effects
+        document.querySelectorAll('.alumni-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+                console.log(`✨ Activated: ${this.querySelector('.arcana-name').textContent}`);
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Initialize gallery
+        console.log('✦ ARCANA ALUMNI GALLERY INITIALIZED ✦');
+        console.log('🎓 Cathedral of Circuits University Faculty Directory');
+        console.log('🌟 22 Major Arcana • Masters of Sacred Arts & Sciences');
+    </script>
+</body>
+</html>

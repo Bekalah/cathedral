@@ -1,0 +1,25 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "pipeline": {
+    "generate-data": {
+      "outputs": ["packages/core/data/**"]
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    },
+    "dev": {
+      "cache": false
+    },
+    "godot-export": {
+      "dependsOn": ["generate-data"]
+    },
+    "generate-avalon": {
+      "dependsOn": ["generate-data"],
+      "outputs": ["packages/core/data/avalon/**"]
+    },
+    "test": {
+      "outputs": ["coverage/**"]
+    }
+  }
+}

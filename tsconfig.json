@@ -1,0 +1,43 @@
+{
+  "files": [],
+  "references": [
+    { "path": "packages/core" },
+    { "path": "packages/circuitum99" },
+    { "path": "packages/stone-grimoire" },
+    { "path": "packages/liber-arcanae" },
+    { "path": "packages/tesseract-bridge" },
+    { "path": "packages/cosmogenesis-learning-engine" },
+    { "path": "packages/magical-mystery-house" },
+    { "path": "packages/luxcrux" }
+  ],
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "composite": true,
+    "baseUrl": ".",
+    "paths": {
+      "@cathedral/core": ["packages/core/src"],
+      "@cathedral/circuitum99": ["packages/circuitum99/src"],
+      "@cathedral/stone-grimoire": ["packages/stone-grimoire/src"],
+      "@cathedral/liber-arcanae": ["packages/liber-arcanae/src"],
+      "@cathedral/tesseract-bridge": ["packages/tesseract-bridge/src"],
+      "@cathedral/cosmogenesis-learning-engine": ["packages/cosmogenesis-learning-engine/src"],
+      "@cathedral/magical-mystery-house": ["packages/magical-mystery-house/src"],
+      "@cathedral/luxcrux": ["packages/luxcrux/src"],
+      "@cathedral/integration": ["integration"],
+      "@/*": ["apps/*/src"]
+    }
+  }
+}
