@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# tools/g — lightweight git/dev helper for CODEX 144:99
+# tools/g — lightweight git/dev helper for Circuitum99
 # Usage: ./tools/g develop
 # Make executable: chmod +x tools/g
 set -euo pipefail
@@ -80,7 +80,7 @@ case "$cmd" in
 
   help|--help|-h)
     cat <<EOF
-tools/g — CODEX 144:99 helper
+tools/g — helper
 Usage: tools/g <command>
 Commands:
   develop   - checkout/pull develop, install deps, run dev

@@ -13,22 +13,6 @@
         "panel": "dedicated"
       },
       "group": { "kind": "build", "isDefault": true }
-    },
-    {
-      "label": "g: build",
-      "type": "shell",
-      "command": "${workspaceFolder}/tools/g",
-      "args": ["build"],
-      "problemMatcher": [],
-      "group": "build"
-    },
-    {
-      "label": "Health Check",
-      "type": "shell",
-      "command": "node",
-      "args": ["${workspaceFolder}/tools/health-check.js"],
-      "problemMatcher": [],
-      "group": "test"
     }
   ]
 }

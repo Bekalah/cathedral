@@ -1,48 +1,99 @@
-name: Deploy Cathedral
+name: Deploy Avalon Labs
 
 on:
   push:
-    branches: [main]
-  workflow_dispatch:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
-  build-and-deploy:
+  # Build and test all apps
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+    - uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'pnpm'
 
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v4
-        with:
-          version: latest
+    - name: Install dependencies
+      run: pnpm install --frozen-lockfile
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+    - name: Generate Avalon data
+      run: pnpm nx run core:generate-data
 
-      - name: Build project with Turborepo
-        run: pnpm run turbo:build
+    - name: Build all apps
+      run: pnpm nx run build --parallel=3
 
-      - name: Deploy to GitHub Pages
-        run: |
-          git config --global user.email "action@github.com"
-          git config --global user.name "GitHub Action"
-          git checkout -b gh-pages 2>/dev/null || git checkout gh-pages
-          rm -rf *
-          cp -r apps/web/dist/* .
-          git add .
-          git commit -m "Deploy to GitHub Pages - bekalah.github.io" || echo "No changes to commit"
-          git push origin gh-pages --force
+    - name: Test all apps
+      run: pnpm nx run test --parallel=3
 
-      - name: Setup GitHub Pages Custom Domain
-        run: |
-          echo "bekalah.github.io" > CNAME
-          git add CNAME
-          git commit -m "Add CNAME for bekalah.github.io" || echo "CNAME already exists"
+    - name: Lint all apps
+      run: pnpm nx run lint --parallel=3
+
+  # Deploy to Cloudflare Pages
+  deploy-cloudflare:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'pnpm'
+
+    - name: Install dependencies
+      run: pnpm install --frozen-lockfile
+
+    - name: Generate Avalon data
+      run: pnpm nx run core:generate-data
+
+    - name: Build web app
+      run: pnpm nx run web:build
+
+    - name: Deploy to Cloudflare Pages
+      uses: cloudflare/pages-action@v1
+      with:
+        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        projectName: avalon-labs
+        directory: apps/web/out
+        wranglerVersion: '3'
+
+  # Deploy to Azure Static Web Apps
+  deploy-azure:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'pnpm'
+
+    - name: Install dependencies
+      run: pnpm install --frozen-lockfile
+
+    - name: Generate Avalon data
+      run: pnpm nx run core:generate-data
+
+    - name: Build web app
+      run: pnpm nx run web:build
+
+    - name: Deploy to Azure Static Web Apps
+      uses: Azure/static-web-apps-deploy@v1
+      with:
+        azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_TOKEN }}
+        action: "upload"
+        app_location: "apps/web"
+        output_location: "out"
+        config_file: "apps/web/azure-static-web-apps.yml"

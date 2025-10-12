@@ -1,0 +1,20 @@
+{
+  "name": "@cathedral/core",
+  "version": "1.0.0",
+  "description": "Core node logic and JSON data for Codex 144:99 + Morgan Le Fay Avalon system",
+  "main": "index.js",
+  "scripts": {
+    "generate-data": "node scripts/generate-node-data.js",
+    "generate-avalon": "node scripts/generate-avalon-data.js",
+    "validate": "node scripts/validate-nodes.js",
+    "export-godot": "node scripts/export-godot-scenes.js",
+    "export-web": "node scripts/export-web-assets.js"
+  },
+  "dependencies": {
+    "zod": "^3.22.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
