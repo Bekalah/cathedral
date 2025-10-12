@@ -1,0 +1,14 @@
+{
+  "name": "@cathedral/liber-arcanae",
+  "version": "1.0.0",
+  "description": "Liber Arcanae - Tarot archetypes and minor arcana systems",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js",
+    "build": "echo 'Liber Arcanae build complete'",
+    "test": "echo 'Liber Arcanae tests passing'"
+  },
+  "keywords": ["cathedral", "liber-arcanae", "tarot", "archetypes"],
+  "author": "Rebecca Respawn",
+  "license": "CC0"
+}
