@@ -10,23 +10,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        run: |
-          git clone https://github.com/Bekalah/cathedral.git .
-          git checkout main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
-        run: |
-          curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-          sudo apt-get install -y nodejs
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
       - name: Setup PNPM
-        run: npm install -g pnpm@10
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build project
-        run: pnpm build
+      - name: Build project with Turborepo
+        run: pnpm run turbo:build
 
       - name: Deploy to GitHub Pages
         run: |
@@ -44,8 +46,3 @@ jobs:
           echo "bekalah.github.io" > CNAME
           git add CNAME
           git commit -m "Add CNAME for bekalah.github.io" || echo "CNAME already exists"
-
-      - name: Deploy to Cloudflare Pages
-        run: |
-          echo "Cloudflare deployment configured"
-          # Add Cloudflare deployment here when secrets are set up
