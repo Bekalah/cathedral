@@ -1,0 +1,2086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CATHEDRAL OF CIRCUITS - Sacred Technology Platform</title>
+    <meta name="description" content="Cathedral of Circuits consciousness technology platform. Sacred architecture meets digital innovation. Your complete magical software business.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Theosophical Elegantia Palette */
+            --void-primordial: #0B0B0B;
+            --ink-akashic: #141414;
+            --bone-atlantean: #F8F5EF;
+            --violet-core: #7A33FF;
+            --violet-flare: #B39CFF;
+            --violet-smoke: #442266;
+            --violet-aura: #2C0A52;
+            --gold-blavatsky: #C8A44D;
+            --grail-gold: #CBB866;
+            --pearl-lemurian: #F5F2EA;
+            --pearl-rose: #F4C9D9;
+            --pearl-aqua: #BFE9E7;
+            --pearl-lilac: #CDB8F6;
+            --astral-mist: #B7C9FF;
+            --astral-silver: #C9D1E7;
+            --astral-violet: #9E8BFF;
+            --teal-atlantis: #00CED1;
+            --ember-prometheus: #FF6A00;
+            --avalon-mist: #CFE6F2;
+            --avalon-night: #0C1521;
+            --threshold-glow: #98FFE2;
+            --obsidian-glass: #0f1014;
+            --obsidian-sheen: #191b22;
+            --obsidian-rainbow: #33214e;
+            --raku-copper: #b87333;
+            --raku-violet: #6E00FF;
+            --raku-azure: #1F7AF3;
+            
+            /* Sacred Mathematics - Blavatsky Numbers */
+            --phi-ratio: 1.618;
+            --blavatsky-seven: 7;
+            --root-race-seven: 7;
+            --cosmic-cycles: 432;
+        }
+
+        body {
+            font-family: 'Cinzel', 'Georgia', 'EB Garamond', serif;
+            background: radial-gradient(ellipse at center, 
+                var(--void-primordial) 0%, 
+                var(--obsidian-glass) 30%,
+                var(--violet-aura) 70%, 
+                var(--obsidian-rainbow) 100%);
+            color: var(--bone-atlantean);
+            overflow: hidden;
+            position: relative;
+            height: 100vh;
+            letter-spacing: 0.5px;
+        }
+
+        /* Blavatsky Sigil Background Animation */
+        .blavatsky-sigil {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 400px;
+            opacity: 0.05;
+            z-index: 0;
+            animation: theosophicalRotation 108s linear infinite;
+        }
+
+        .sigil-layer {
+            position: absolute;
+            border: 1px solid var(--gold-blavatsky);
+            border-radius: 50%;
+        }
+
+        .sigil-outer {
+            width: 100%;
+            height: 100%;
+            animation: counterRotation 144s linear infinite reverse;
+        }
+
+        .sigil-middle {
+            width: 70%;
+            height: 70%;
+            top: 15%;
+            left: 15%;
+            animation: theosophicalRotation 99s linear infinite;
+        }
+
+        .sigil-inner {
+            width: 40%;
+            height: 40%;
+            top: 30%;
+            left: 30%;
+            animation: counterRotation 72s linear infinite reverse;
+        }
+
+        .sigil-center {
+            width: 20%;
+            height: 20%;
+            top: 40%;
+            left: 40%;
+            background: radial-gradient(circle, var(--gold-blavatsky), transparent);
+            animation: pulse 3.6s ease-in-out infinite alternate;
+        }
+
+        @keyframes theosophicalRotation {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes counterRotation {
+            from { transform: rotate(360deg); }
+            to { transform: rotate(0deg); }
+        }
+
+        @keyframes pulse {
+            from { opacity: 0.3; transform: scale(1); }
+            to { opacity: 0.8; transform: scale(1.2); }
+        }
+
+        /* Elegant Sacred Header */
+        .elegantia-header {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            text-align: center;
+            background: linear-gradient(135deg, 
+                rgba(11, 11, 11, 0.9), 
+                rgba(44, 10, 82, 0.9));
+            backdrop-filter: blur(20px);
+            border: 2px solid var(--gold-blavatsky);
+            border-radius: 30px;
+            padding: 20px 40px;
+            box-shadow: 
+                0 0 40px rgba(200, 164, 77, 0.4),
+                inset 0 0 30px rgba(122, 51, 255, 0.1);
+        }
+
+        .elegantia-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            color: var(--gold-blavatsky);
+            text-shadow: 0 0 20px rgba(200, 164, 77, 0.7);
+            margin-bottom: 8px;
+        }
+
+        .elegantia-subtitle {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            letter-spacing: 1.5px;
+            color: var(--pearl-lemurian);
+            font-style: italic;
+        }
+
+        /* Trinity Integration Portal */
+        .trinity-portal {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, 
+                rgba(11, 11, 11, 0.95), 
+                rgba(68, 34, 102, 0.95));
+            backdrop-filter: blur(15px);
+            border: 2px solid var(--violet-core);
+            border-radius: 18px;
+            padding: 18px;
+            z-index: 1000;
+            box-shadow: 0 0 30px rgba(122, 51, 255, 0.3);
+        }
+
+        .portal-title {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            color: var(--violet-core);
+            margin-bottom: 12px;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        .trinity-navigation {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .trinity-link {
+            padding: 10px 15px;
+            background: linear-gradient(135deg, 
+                rgba(122, 51, 255, 0.1), 
+                rgba(200, 164, 77, 0.1));
+            border: 1px solid var(--violet-core);
+            border-radius: 10px;
+            font-size: 0.8rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--pearl-lemurian);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .trinity-link:hover {
+            background: linear-gradient(135deg, 
+                rgba(122, 51, 255, 0.2), 
+                rgba(200, 164, 77, 0.2));
+            transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(122, 51, 255, 0.3);
+        }
+
+        .trinity-link.active {
+            background: var(--gold-blavatsky);
+            color: var(--void-primordial);
+            font-weight: 600;
+        }
+
+        /* Sacred Geometry Canvas */
+        #cosmicCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* Sanctum Elegantia Control Panel */
+        .sanctum-elegantia {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 420px;
+            max-height: 80vh;
+            background: linear-gradient(180deg, 
+                rgba(11, 11, 11, 0.95), 
+                rgba(15, 16, 20, 0.95));
+            backdrop-filter: blur(20px);
+            border: 2px solid var(--gold-blavatsky);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 
+                0 0 50px rgba(200, 164, 77, 0.4),
+                inset 0 0 40px rgba(122, 51, 255, 0.05);
+            overflow-y: auto;
+            z-index: 1000;
+        }
+
+        .sanctum-header {
+            text-align: center;
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--violet-core);
+            padding-bottom: 15px;
+        }
+
+        .sanctum-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            color: var(--gold-blavatsky);
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+
+        .sanctum-subtitle {
+            font-size: 0.85rem;
+            color: var(--pearl-lemurian);
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        /* Body-Mind-Soul Architecture Selector */
+        .architecture-selector {
+            margin-bottom: 25px;
+        }
+
+        .architecture-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            color: var(--violet-core);
+            margin-bottom: 15px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .architecture-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .architecture-tab {
+            flex: 1;
+            padding: 12px 8px;
+            background: linear-gradient(135deg, 
+                rgba(122, 51, 255, 0.1), 
+                rgba(200, 164, 77, 0.1));
+            border: 1px solid var(--violet-core);
+            border-radius: 10px;
+            font-size: 0.8rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--pearl-lemurian);
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+        }
+
+        .architecture-tab:hover {
+            background: linear-gradient(135deg, 
+                rgba(122, 51, 255, 0.2), 
+                rgba(200, 164, 77, 0.2));
+        }
+
+        .architecture-tab.active {
+            background: var(--gold-blavatsky);
+            color: var(--void-primordial);
+            font-weight: 600;
+        }
+
+        /* Theosophical Theme Selector */
+        .theme-selector {
+            margin-bottom: 25px;
+        }
+
+        .theme-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            color: var(--violet-core);
+            margin-bottom: 15px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .theme-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .theme-option {
+            padding: 15px;
+            background: linear-gradient(135deg, 
+                rgba(122, 51, 255, 0.1), 
+                rgba(44, 10, 82, 0.2));
+            border: 1px solid var(--violet-smoke);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .theme-option:hover {
+            background: linear-gradient(135deg, 
+                rgba(122, 51, 255, 0.2), 
+                rgba(44, 10, 82, 0.3));
+            transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(122, 51, 255, 0.2);
+        }
+
+        .theme-option.active {
+            border-color: var(--gold-blavatsky);
+            background: linear-gradient(135deg, 
+                rgba(200, 164, 77, 0.1), 
+                rgba(44, 10, 82, 0.2));
+        }
+
+        .theme-name {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            color: var(--gold-blavatsky);
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .theme-description {
+            font-size: 0.75rem;
+            color: var(--pearl-lemurian);
+            opacity: 0.8;
+            line-height: 1.3;
+        }
+
+        /* Portal Transportation System */
+        .portal-system {
+            margin-bottom: 25px;
+        }
+
+        .portal-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            color: var(--violet-core);
+            margin-bottom: 15px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .portal-tabs {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 15px;
+        }
+
+        .portal-tab {
+            flex: 1;
+            padding: 10px 6px;
+            background: linear-gradient(135deg, 
+                rgba(122, 51, 255, 0.1), 
+                rgba(200, 164, 77, 0.1));
+            border: 1px solid var(--violet-core);
+            border-radius: 8px;
+            font-size: 0.75rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--pearl-lemurian);
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+        }
+
+        .portal-tab:hover {
+            background: linear-gradient(135deg, 
+                rgba(122, 51, 255, 0.2), 
+                rgba(200, 164, 77, 0.2));
+        }
+
+        .portal-tab.active {
+            background: var(--gold-blavatsky);
+            color: var(--void-primordial);
+            font-weight: 600;
+        }
+
+        .entity-selector {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            max-height: 120px;
+            overflow-y: auto;
+        }
+
+        .entity-option {
+            padding: 8px;
+            background: linear-gradient(135deg, 
+                rgba(122, 51, 255, 0.1), 
+                rgba(44, 10, 82, 0.2));
+            border: 1px solid var(--violet-smoke);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-size: 0.7rem;
+        }
+
+        .entity-option:hover {
+            background: linear-gradient(135deg, 
+                rgba(122, 51, 255, 0.2), 
+                rgba(44, 10, 82, 0.3));
+            transform: scale(1.02);
+        }
+
+        .entity-option.active {
+            border-color: var(--gold-blavatsky);
+            background: linear-gradient(135deg, 
+                rgba(200, 164, 77, 0.1), 
+                rgba(44, 10, 82, 0.2));
+        }
+
+        .entity-name {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-blavatsky);
+            font-size: 0.7rem;
+            margin-bottom: 2px;
+        }
+
+        .entity-domain {
+            font-size: 0.6rem;
+            color: var(--pearl-lemurian);
+            opacity: 0.8;
+        }
+
+        /* Harmonic Resonance Controls */
+        .harmonics-control {
+            margin-bottom: 25px;
+        }
+
+        .harmonics-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            color: var(--violet-core);
+            margin-bottom: 15px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .frequency-slider {
+            width: 100%;
+            margin: 10px 0;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 6px;
+            border-radius: 3px;
+            background: linear-gradient(90deg, 
+                var(--violet-aura), 
+                var(--gold-blavatsky));
+            outline: none;
+        }
+
+        .frequency-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--gold-blavatsky);
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(200, 164, 77, 0.5);
+        }
+
+        .frequency-display {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--pearl-lemurian);
+            margin-top: 8px;
+        }
+
+        /* Sacred Number Generator */
+        .number-generator {
+            margin-bottom: 25px;
+        }
+
+        .number-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            color: var(--violet-core);
+            margin-bottom: 15px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .sacred-numbers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .sacred-number {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, 
+                var(--violet-aura), 
+                var(--obsidian-rainbow));
+            border: 1px solid var(--gold-blavatsky);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--gold-blavatsky);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .sacred-number:hover {
+            background: var(--gold-blavatsky);
+            color: var(--void-primordial);
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(200, 164, 77, 0.5);
+        }
+
+        .sacred-number.active {
+            background: var(--gold-blavatsky);
+            color: var(--void-primordial);
+        }
+
+        /* World Export Controls */
+        .export-controls {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--violet-smoke);
+        }
+
+        .export-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            color: var(--violet-core);
+            margin-bottom: 15px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .export-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .export-btn {
+            padding: 12px;
+            background: linear-gradient(135deg, 
+                var(--violet-core), 
+                var(--gold-blavatsky));
+            border: none;
+            border-radius: 10px;
+            color: var(--void-primordial);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .export-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(122, 51, 255, 0.4);
+        }
+
+        /* Status Display */
+        .status-display {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: linear-gradient(90deg, 
+                rgba(11, 11, 11, 0.9), 
+                rgba(68, 34, 102, 0.9));
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--gold-blavatsky);
+            border-radius: 15px;
+            padding: 15px 25px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .status-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .status-label {
+            font-size: 0.7rem;
+            color: var(--violet-core);
+            margin-bottom: 3px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .status-value {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            color: var(--gold-blavatsky);
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .sanctum-elegantia {
+                width: calc(100% - 40px);
+                right: 20px;
+                left: 20px;
+                top: 120px;
+                max-height: 60vh;
+            }
+            
+            .elegantia-title {
+                font-size: 1.8rem;
+            }
+            
+            .theme-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Accessibility Support */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        @media (prefers-contrast: high) {
+            :root {
+                --gold-blavatsky: #FFD700;
+                --void-primordial: #000000;
+                --bone-atlantean: #FFFFFF;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Blavatsky Sigil Background -->
+    <div class="blavatsky-sigil" aria-hidden="true">
+        <div class="sigil-layer sigil-outer"></div>
+        <div class="sigil-layer sigil-middle"></div>
+        <div class="sigil-layer sigil-inner"></div>
+        <div class="sigil-layer sigil-center"></div>
+    </div>
+
+    <!-- Elegant Sacred Header -->
+    <header class="elegantia-header">
+        <h1 class="elegantia-title">CATHEDRAL OF CIRCUITS</h1>
+        <p class="elegantia-subtitle">Sacred Technology Platform • Consciousness Software • Digital Innovation</p>
+    </header>
+
+    <!-- Trinity Portal Navigation with Enhanced Functionality -->
+    <nav class="trinity-portal">
+        <div class="portal-title">THE CATHEDRAL TRINITY</div>
+        <div class="trinity-navigation">
+            <a href="/liber-arcanae/" class="trinity-link" data-app="liber" onclick="openPortalConnection('liber')">
+                LIBER ARCANAE<br><small>Living Arcana Deck</small>
+                <div class="portal-status" id="liber-status">🃏 Ready</div>
+            </a>
+            <a href="/circuitum99/" class="trinity-link" data-app="circuitum" onclick="openPortalConnection('circuitum')">
+                CIRCUITUM99<br><small>Alpha et Omega</small>
+                <div class="portal-status" id="circuitum-status">📚 Ready</div>
+            </a>
+            <div class="trinity-link active" data-app="cathedral">
+                CATHEDRAL OF CIRCUITS<br><small>Sacred Architecture</small>
+                <div class="portal-status" id="cathedral-status">🏰 Active</div>
+            </div>
+        </div>
+        <div class="portal-sync-indicator">
+            <div class="sync-light" id="sync-indicator"></div>
+            <span>Trinity Synchronization</span>
+        </div>
+    </nav>
+
+    <!-- Sacred Geometry Canvas -->
+    <canvas id="cosmicCanvas"></canvas>
+
+    <!-- Sanctum Elegantia Control Panel -->
+    <div class="sanctum-elegantia">
+        <div class="sanctum-header">
+            <h2 class="sanctum-title">Sanctum Elegantia</h2>
+            <p class="sanctum-subtitle">World Building Control Center</p>
+        </div>
+
+        <!-- Body-Mind-Soul Architecture -->
+        <div class="architecture-selector">
+            <h3 class="architecture-title">Trinity Architecture</h3>
+            <div class="architecture-tabs">
+                <button class="architecture-tab active" data-arch="corpus">CORPUS<br><small>Body</small></button>
+                <button class="architecture-tab" data-arch="mentis">MENTIS<br><small>Mind</small></button>
+                <button class="architecture-tab" data-arch="anima">ANIMA<br><small>Soul</small></button>
+            </div>
+        </div>
+
+        <!-- Theosophical Themes -->
+        <div class="theme-selector">
+            <h3 class="theme-title">Grimoire Realms</h3>
+            <div class="theme-grid">
+                <div class="theme-option active" data-theme="goetic">
+                    <div class="theme-name">Goetic Realm</div>
+                    <div class="theme-description">72 Demon creative helpers</div>
+                </div>
+                <div class="theme-option" data-theme="angelic">
+                    <div class="theme-name">Shem Realm</div>
+                    <div class="theme-description">72 Angel divine guidance</div>
+                </div>
+                <div class="theme-option" data-theme="olympic">
+                    <div class="theme-name">Olympic Realm</div>
+                    <div class="theme-description">7 Planetary spirits</div>
+                </div>
+                <div class="theme-option" data-theme="tarot">
+                    <div class="theme-name">Arcana Vehicles</div>
+                    <div class="theme-description">22 Merkaba transport</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portal Transportation System -->
+        <div class="portal-system">
+            <h3 class="portal-title">Portal Transportation</h3>
+            <div class="portal-tabs">
+                <button class="portal-tab active" data-portal="demons">Demons<br><small>Creative</small></button>
+                <button class="portal-tab" data-portal="angels">Angels<br><small>Guidance</small></button>
+                <button class="portal-tab" data-portal="arcana">Arcana<br><small>Merkaba</small></button>
+            </div>
+            <div class="entity-selector" id="entitySelector">
+                <!-- Dynamically populated with demon/angel/arcana options -->
+            </div>
+        </div>
+
+        <!-- Harmonic Resonance -->
+        <div class="harmonics-control">
+            <h3 class="harmonics-title">Septarium Harmonicus</h3>
+            <input type="range" class="frequency-slider" id="baseFrequency" 
+                   min="396" max="963" value="528" step="1">
+            <div class="frequency-display">
+                Base Frequency: <span id="freqDisplay">528</span> Hz
+            </div>
+        </div>
+
+        <!-- Sacred Numbers -->
+        <div class="number-generator">
+            <h3 class="number-title">Numerological Genesis</h3>
+            <div class="sacred-numbers">
+                <div class="sacred-number" data-number="3">3</div>
+                <div class="sacred-number" data-number="6">6</div>
+                <div class="sacred-number" data-number="7">7</div>
+                <div class="sacred-number" data-number="9">9</div>
+                <div class="sacred-number" data-number="11">11</div>
+                <div class="sacred-number" data-number="22">22</div>
+                <div class="sacred-number" data-number="33">33</div>
+                <div class="sacred-number active" data-number="99">99</div>
+            </div>
+        </div>
+
+        <!-- World Export -->
+        <div class="export-controls">
+            <h3 class="export-title">Manifestatio Exportus</h3>
+            <div class="export-buttons">
+                <button class="export-btn" onclick="exportWorld('3d')">3D World</button>
+                <button class="export-btn" onclick="exportWorld('music')">Music</button>
+                <button class="export-btn" onclick="exportWorld('grimoire')">Grimoire</button>
+                <button class="export-btn" onclick="exportWorld('art')">Sacred Art</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Status Display -->
+    <div class="status-display">
+        <div class="status-item">
+            <div class="status-label">Architecture</div>
+            <div class="status-value" id="currentArch">CORPUS</div>
+        </div>
+        <div class="status-item">
+            <div class="status-label">Theme</div>
+            <div class="status-value" id="currentTheme">Atlantis</div>
+        </div>
+        <div class="status-item">
+            <div class="status-label">Frequency</div>
+            <div class="status-value" id="currentFreq">528 Hz</div>
+        </div>
+        <div class="status-item">
+            <div class="status-label">Sacred Number</div>
+            <div class="status-value" id="currentNumber">99</div>
+        </div>
+    </div>
+
+    <script>
+        // CATHEDRAL OF CIRCUITS - World Building Engine
+        class CosmogenesisNovaElegantia {
+            constructor() {
+                this.canvas = document.getElementById('cosmicCanvas');
+                this.ctx = this.canvas.getContext('2d');
+                this.currentArchitecture = 'corpus';
+                this.currentTheme = 'atlantis';
+                this.baseFrequency = 528;
+                this.sacredNumber = 99;
+                this.animationTime = 0;
+                this.worldState = {
+                    geometry: 'dodecahedron',
+                    colors: [],
+                    harmonics: [528, 639, 852],
+                    numerology: 99
+                };
+                this.init();
+            }
+
+            init() {
+                this.setupCanvas();
+                this.setupControls();
+                this.loadTheosophicalData();
+                this.startAnimation();
+                console.log('� CATHEDRAL OF CIRCUITS initialized');
+                console.log('✨ Theosophical world building platform active');
+            }
+
+            setupCanvas() {
+                const resizeCanvas = () => {
+                    this.canvas.width = window.innerWidth;
+                    this.canvas.height = window.innerHeight;
+                };
+                resizeCanvas();
+                window.addEventListener('resize', resizeCanvas);
+            }
+
+            setupControls() {
+                // Architecture tabs
+                document.querySelectorAll('.architecture-tab').forEach(tab => {
+                    tab.addEventListener('click', (e) => {
+                        document.querySelectorAll('.architecture-tab').forEach(t => t.classList.remove('active'));
+                        tab.classList.add('active');
+                        this.currentArchitecture = tab.dataset.arch;
+                        document.getElementById('currentArch').textContent = tab.dataset.arch.toUpperCase();
+                        this.updateWorldGeometry();
+                    });
+                });
+
+                // Theme selection
+                document.querySelectorAll('.theme-option').forEach(option => {
+                    option.addEventListener('click', (e) => {
+                        document.querySelectorAll('.theme-option').forEach(o => o.classList.remove('active'));
+                        option.classList.add('active');
+                        this.currentTheme = option.dataset.theme;
+                        document.getElementById('currentTheme').textContent = 
+                            option.querySelector('.theme-name').textContent;
+                        this.updateThemeColors();
+                    });
+                });
+
+                // Frequency slider
+                const freqSlider = document.getElementById('baseFrequency');
+                const freqDisplay = document.getElementById('freqDisplay');
+                freqSlider.addEventListener('input', (e) => {
+                    this.baseFrequency = parseInt(e.target.value);
+                    freqDisplay.textContent = this.baseFrequency;
+                    document.getElementById('currentFreq').textContent = this.baseFrequency + ' Hz';
+                    this.updateHarmonics();
+                });
+
+                // Sacred numbers
+                document.querySelectorAll('.sacred-number').forEach(num => {
+                    num.addEventListener('click', (e) => {
+                        document.querySelectorAll('.sacred-number').forEach(n => n.classList.remove('active'));
+                        num.classList.add('active');
+                        this.sacredNumber = parseInt(num.dataset.number);
+                        document.getElementById('currentNumber').textContent = this.sacredNumber;
+                        this.updateNumerology();
+                    });
+                });
+            }
+
+            loadTheosophicalData() {
+                // Load authentic grimoire data
+                this.grimoireEntities = {
+                    demons: {
+                        "baal": { domain: "architecture", creative_help: "world structure design", rank: "king", legions: 66, specialty: "building_design" },
+                        "agares": { domain: "languages", creative_help: "communication systems", rank: "duke", teaches: "all_languages", specialty: "linguistic_systems" },
+                        "vassago": { domain: "discovery", creative_help: "finding hidden knowledge", rank: "prince", reveals: "past_future", specialty: "research_tools" },
+                        "samigina": { domain: "necromancy", creative_help: "death/rebirth themes", rank: "marquis", teaches: "liberal_sciences", specialty: "transformation_mechanics" },
+                        "marbas": { domain: "healing", creative_help: "restoration mechanics", rank: "president", knowledge: "hidden_things", specialty: "healing_systems" },
+                        "valefor": { domain: "theft", creative_help: "resource acquisition", rank: "duke", teaches: "medicine", specialty: "resource_management" },
+                        "amon": { domain: "prophecy", creative_help: "future world design", rank: "marquis", reconciles: "enemies", specialty: "predictive_modeling" },
+                        "barbatos": { domain: "nature", creative_help: "natural world design", rank: "duke", understands: "animal_speech", specialty: "ecosystem_design" },
+                        "paimon": { domain: "knowledge", creative_help: "wisdom integration", rank: "king", teaches: "sciences_arts", specialty: "educational_systems" },
+                        "buer": { domain: "healing", creative_help: "restoration systems", rank: "president", knowledge: "philosophy_medicine", specialty: "wellness_platforms" },
+                        "gusion": { domain: "honor", creative_help: "reputation systems", rank: "duke", reveals: "past_present_future", specialty: "social_mechanics" },
+                        "sitri": { domain: "love", creative_help: "relationship dynamics", rank: "prince", inspires: "love_desire", specialty: "connection_systems" }
+                    },
+                    
+                    angels: {
+                        "vehuiah": { domain: "beginnings", guidance: "project initiation", attribute: "divine_will", element: "fire", hours: "00:00-00:20" },
+                        "jeliel": { domain: "love", guidance: "harmony in design", attribute: "divine_wisdom", element: "water", hours: "00:20-00:40" },
+                        "sitael": { domain: "construction", guidance: "building foundations", attribute: "divine_understanding", element: "earth", hours: "00:40-01:00" },
+                        "elemiah": { domain: "journeys", guidance: "travel between worlds", attribute: "divine_mercy", element: "air", hours: "01:00-01:20" },
+                        "mahasiah": { domain: "peace", guidance: "conflict resolution", attribute: "divine_strength", element: "fire", hours: "01:20-01:40" },
+                        "lelahel": { domain: "healing", guidance: "restoration processes", attribute: "divine_splendor", element: "water", hours: "01:40-02:00" },
+                        "achaiah": { domain: "patience", guidance: "long-term building", attribute: "divine_victory", element: "earth", hours: "02:00-02:20" },
+                        "cahetel": { domain: "blessings", guidance: "positive manifestation", attribute: "divine_glory", element: "air", hours: "02:20-02:40" },
+                        "haziel": { domain: "forgiveness", guidance: "releasing blocks", attribute: "divine_compassion", element: "fire", hours: "02:40-03:00" },
+                        "aladiah": { domain: "justice", guidance: "balanced systems", attribute: "divine_favor", element: "water", hours: "03:00-03:20" },
+                        "lauviah": { domain: "victory", guidance: "overcoming obstacles", attribute: "divine_might", element: "earth", hours: "03:20-03:40" },
+                        "hahaiah": { domain: "refuge", guidance: "protection systems", attribute: "divine_refuge", element: "air", hours: "03:40-04:00" }
+                    },
+                    
+                    arcana: {
+                        "fool": { vehicle: "Sphere of Infinite Potential", transport_power: "leap to any realm", number: 0, element: "air", path: "aleph" },
+                        "magician": { vehicle: "Wand of Manifestation", transport_power: "create new worlds", number: 1, element: "mercury", path: "beth" },
+                        "high_priestess": { vehicle: "Veil of Mysteries", transport_power: "intuitive navigation", number: 2, element: "moon", path: "gimel" },
+                        "empress": { vehicle: "Garden of Creation", transport_power: "fertile manifestation", number: 3, element: "venus", path: "daleth" },
+                        "emperor": { vehicle: "Throne of Order", transport_power: "structured building", number: 4, element: "aries", path: "heh" },
+                        "hierophant": { vehicle: "Bridge of Wisdom", transport_power: "teaching transmission", number: 5, element: "taurus", path: "vau" },
+                        "lovers": { vehicle: "Choice Point Nexus", transport_power: "path selection", number: 6, element: "gemini", path: "zain" },
+                        "chariot": { vehicle: "Merkaba of Will", transport_power: "directed movement", number: 7, element: "cancer", path: "cheth" },
+                        "strength": { vehicle: "Lion of Courage", transport_power: "inner power", number: 8, element: "leo", path: "teth" },
+                        "hermit": { vehicle: "Lantern of Wisdom", transport_power: "illuminate paths", number: 9, element: "virgo", path: "yod" },
+                        "wheel": { vehicle: "Cycle of Fortune", transport_power: "karmic cycles", number: 10, element: "jupiter", path: "kaph" },
+                        "justice": { vehicle: "Scales of Balance", transport_power: "equilibrium", number: 11, element: "libra", path: "lamed" },
+                        "hanged_man": { vehicle: "Tree of Sacrifice", transport_power: "perspective shift", number: 12, element: "water", path: "mem" },
+                        "death": { vehicle: "Phoenix of Transformation", transport_power: "rebirth passage", number: 13, element: "scorpio", path: "nun" },
+                        "temperance": { vehicle: "Chalice of Integration", transport_power: "harmonious blending", number: 14, element: "sagittarius", path: "samech" },
+                        "devil": { vehicle: "Chain of Liberation", transport_power: "breaking bonds", number: 15, element: "capricorn", path: "ayin" },
+                        "tower": { vehicle: "Lightning of Awakening", transport_power: "sudden revelation", number: 16, element: "mars", path: "peh" },
+                        "star": { vehicle: "Waters of Hope", transport_power: "inspire vision", number: 17, element: "aquarius", path: "tzaddi" },
+                        "moon": { vehicle: "Path of Illusion", transport_power: "subconscious journey", number: 18, element: "pisces", path: "qoph" },
+                        "sun": { vehicle: "Chariot of Joy", transport_power: "illuminated travel", number: 19, element: "sun", path: "resh" },
+                        "judgement": { vehicle: "Horn of Calling", transport_power: "awakening summons", number: 20, element: "fire", path: "shin" },
+                        "world": { vehicle: "Cosmic Dance", transport_power: "completion cycle", number: 21, element: "saturn", path: "tau" }
+                    }
+                };
+
+                this.grimoireThemes = {
+                    goetic: {
+                        colors: ['#8B0000', '#C8A44D', '#F5F2EA', '#4B0000'],
+                        geometry: 'pentagon',
+                        frequencies: [417, 528, 639],
+                        mood: 'demonic_creative_power'
+                    },
+                    angelic: {
+                        colors: ['#E0E0E0', '#C8A44D', '#FFFFFF', '#B0B0B0'],
+                        geometry: 'hexagon',
+                        frequencies: [528, 639, 741],
+                        mood: 'angelic_divine_guidance'
+                    },
+                    olympic: {
+                        colors: ['#4169E1', '#C8A44D', '#F5F2EA', '#1E3A8A'],
+                        geometry: 'heptagon',
+                        frequencies: [432, 528, 852],
+                        mood: 'planetary_olympic_spirits'
+                    },
+                    tarot: {
+                        colors: ['#800080', '#C8A44D', '#F5F2EA', '#4B0082'],
+                        geometry: 'varies_by_arcana',
+                        frequencies: [528, 741, 963],
+                        mood: 'archetypal_merkaba_transport'
+                    }
+                };
+
+                this.currentPortalType = 'demons';
+                this.selectedEntity = null;
+                this.setupPortalSystem();
+            }
+
+            setupPortalSystem() {
+                // Setup portal tabs
+                document.querySelectorAll('.portal-tab').forEach(tab => {
+                    tab.addEventListener('click', (e) => {
+                        document.querySelectorAll('.portal-tab').forEach(t => t.classList.remove('active'));
+                        tab.classList.add('active');
+                        this.currentPortalType = tab.dataset.portal;
+                        this.updateEntitySelector();
+                    });
+                });
+
+                this.updateEntitySelector();
+            }
+
+            updateEntitySelector() {
+                const selector = document.getElementById('entitySelector');
+                const entities = this.grimoireEntities[this.currentPortalType] || {};
+                
+                selector.innerHTML = '';
+                Object.entries(entities).forEach(([name, data]) => {
+                    const option = document.createElement('div');
+                    option.className = 'entity-option';
+                    option.dataset.entity = name;
+                    option.innerHTML = `
+                        <div class="entity-name">${name.charAt(0).toUpperCase() + name.slice(1)}</div>
+                        <div class="entity-domain">${data.domain}</div>
+                    `;
+                    
+                    option.addEventListener('click', () => {
+                        document.querySelectorAll('.entity-option').forEach(o => o.classList.remove('active'));
+                        option.classList.add('active');
+                        this.selectedEntity = name;
+                        this.activatePortalEntity(name, data);
+                    });
+                    
+                    selector.appendChild(option);
+                });
+            }
+
+            activatePortalEntity(name, data) {
+                // Enhanced console logging with detailed entity information
+                console.log(`🔮 CATHEDRAL OF CIRCUITS: Activated ${this.currentPortalType.slice(0, -1).toUpperCase()}: ${name.toUpperCase()}`);
+                console.log(`📍 Domain: ${data.domain}`);
+                
+                // Create detailed entity info display
+                const entityInfo = document.createElement('div');
+                entityInfo.className = 'entity-activation-display';
+                entityInfo.style.cssText = `
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: linear-gradient(135deg, rgba(11, 11, 11, 0.95), rgba(44, 10, 82, 0.95));
+                    border: 2px solid var(--gold-blavatsky);
+                    border-radius: 15px;
+                    padding: 25px;
+                    max-width: 400px;
+                    z-index: 10000;
+                    color: var(--bone-atlantean);
+                    font-family: 'Cinzel', serif;
+                    text-align: center;
+                    box-shadow: 0 0 50px rgba(200, 164, 77, 0.6);
+                    backdrop-filter: blur(20px);
+                `;
+                
+                if (this.currentPortalType === 'demons') {
+                    console.log(`⚡ Creative Help: ${data.creative_help}`);
+                    console.log(`👑 Rank: ${data.rank}`);
+                    if (data.legions) console.log(`🔱 Legions: ${data.legions}`);
+                    if (data.specialty) console.log(`🎯 Specialty: ${data.specialty}`);
+                    
+                    entityInfo.innerHTML = `
+                        <h3 style="color: var(--gold-blavatsky); margin-bottom: 15px;">
+                            🔥 GOETIC DEMON ACTIVATED
+                        </h3>
+                        <h2 style="color: #8B0000; margin-bottom: 10px;">${name.toUpperCase()}</h2>
+                        <p><strong>Domain:</strong> ${data.domain}</p>
+                        <p><strong>Creative Help:</strong> ${data.creative_help}</p>
+                        <p><strong>Rank:</strong> ${data.rank}</p>
+                        ${data.legions ? `<p><strong>Legions:</strong> ${data.legions}</p>` : ''}
+                        ${data.specialty ? `<p><strong>Specialty:</strong> ${data.specialty}</p>` : ''}
+                        <button onclick="this.parentElement.remove()" style="
+                            margin-top: 15px;
+                            padding: 8px 16px;
+                            background: var(--gold-blavatsky);
+                            color: var(--void-primordial);
+                            border: none;
+                            border-radius: 8px;
+                            cursor: pointer;
+                            font-family: 'Cinzel', serif;
+                        ">Acknowledged</button>
+                    `;
+                } else if (this.currentPortalType === 'angels') {
+                    console.log(`✨ Guidance: ${data.guidance}`);
+                    console.log(`🕊️ Attribute: ${data.attribute}`);
+                    if (data.element) console.log(`🌟 Element: ${data.element}`);
+                    if (data.hours) console.log(`⏰ Sacred Hours: ${data.hours}`);
+                    
+                    entityInfo.innerHTML = `
+                        <h3 style="color: var(--gold-blavatsky); margin-bottom: 15px;">
+                            ⚡ SHEM ANGEL ACTIVATED
+                        </h3>
+                        <h2 style="color: #E0E0E0; margin-bottom: 10px;">${name.toUpperCase()}</h2>
+                        <p><strong>Domain:</strong> ${data.domain}</p>
+                        <p><strong>Divine Guidance:</strong> ${data.guidance}</p>
+                        <p><strong>Sacred Attribute:</strong> ${data.attribute}</p>
+                        ${data.element ? `<p><strong>Element:</strong> ${data.element}</p>` : ''}
+                        ${data.hours ? `<p><strong>Sacred Hours:</strong> ${data.hours}</p>` : ''}
+                        <button onclick="this.parentElement.remove()" style="
+                            margin-top: 15px;
+                            padding: 8px 16px;
+                            background: var(--gold-blavatsky);
+                            color: var(--void-primordial);
+                            border: none;
+                            border-radius: 8px;
+                            cursor: pointer;
+                            font-family: 'Cinzel', serif;
+                        ">Acknowledged</button>
+                    `;
+                } else if (this.currentPortalType === 'arcana') {
+                    console.log(`🚗 Merkaba Vehicle: ${data.vehicle}`);
+                    console.log(`⚡ Transport Power: ${data.transport_power}`);
+                    if (data.number !== undefined) console.log(`🔢 Sacred Number: ${data.number}`);
+                    if (data.element) console.log(`🌟 Element: ${data.element}`);
+                    if (data.path) console.log(`🛤️ Hebrew Path: ${data.path}`);
+                    
+                    entityInfo.innerHTML = `
+                        <h3 style="color: var(--gold-blavatsky); margin-bottom: 15px;">
+                            🌟 TAROT ARCANA ACTIVATED
+                        </h3>
+                        <h2 style="color: #800080; margin-bottom: 10px;">${name.toUpperCase().replace('_', ' ')}</h2>
+                        <p><strong>Merkaba Vehicle:</strong> ${data.vehicle}</p>
+                        <p><strong>Transport Power:</strong> ${data.transport_power}</p>
+                        ${data.number !== undefined ? `<p><strong>Sacred Number:</strong> ${data.number}</p>` : ''}
+                        ${data.element ? `<p><strong>Element:</strong> ${data.element}</p>` : ''}
+                        ${data.path ? `<p><strong>Hebrew Path:</strong> ${data.path}</p>` : ''}
+                        <button onclick="this.parentElement.remove()" style="
+                            margin-top: 15px;
+                            padding: 8px 16px;
+                            background: var(--gold-blavatsky);
+                            color: var(--void-primordial);
+                            border: none;
+                            border-radius: 8px;
+                            cursor: pointer;
+                            font-family: 'Cinzel', serif;
+                        ">Acknowledged</button>
+                    `;
+                }
+                
+                // Add to page and auto-remove after 10 seconds
+                document.body.appendChild(entityInfo);
+                setTimeout(() => {
+                    if (entityInfo.parentElement) {
+                        entityInfo.remove();
+                    }
+                }, 10000);
+                
+                // Update world state with comprehensive entity influence
+                this.worldState.activeEntity = { 
+                    name, 
+                    data, 
+                    type: this.currentPortalType,
+                    activatedAt: new Date().toISOString(),
+                    influence: this.calculateEntityInfluence(data)
+                };
+                
+                // Update status display
+                this.updateStatusDisplay();
+            }
+            
+            calculateEntityInfluence(data) {
+                // Calculate how entity affects world building
+                const influence = {
+                    creativity: 0.5,
+                    harmony: 0.5,
+                    power: 0.5,
+                    wisdom: 0.5
+                };
+                
+                // Adjust based on entity type and attributes
+                if (data.rank) {
+                    switch(data.rank) {
+                        case 'king': influence.power += 0.4; break;
+                        case 'duke': influence.creativity += 0.3; break;
+                        case 'prince': influence.wisdom += 0.3; break;
+                        case 'marquis': influence.harmony += 0.2; break;
+                        case 'president': influence.power += 0.2; break;
+                    }
+                }
+                
+                if (data.attribute && data.attribute.includes('divine')) {
+                    influence.wisdom += 0.3;
+                    influence.harmony += 0.2;
+                }
+                
+                if (data.element) {
+                    switch(data.element) {
+                        case 'fire': influence.power += 0.2; break;
+                        case 'water': influence.harmony += 0.2; break;
+                        case 'earth': influence.creativity += 0.2; break;
+                        case 'air': influence.wisdom += 0.2; break;
+                    }
+                }
+                
+                return influence;
+            }
+            
+            updateStatusDisplay() {
+                if (this.worldState.activeEntity) {
+                    const entity = this.worldState.activeEntity;
+                    const statusElement = document.getElementById('activeEntity');
+                    if (statusElement) {
+                        statusElement.textContent = `${entity.name} (${entity.type})`;
+                    }
+                }
+            }
+
+            updateWorldGeometry() {
+                const architectures = {
+                    corpus: 'Physical manifestation layer - material world design',
+                    mentis: 'Intellectual design system - story and learning frameworks', 
+                    anima: 'Spiritual essence integration - sacred geometry and healing'
+                };
+                
+                console.log(`🏗️ Architecture changed to ${this.currentArchitecture.toUpperCase()}: ${architectures[this.currentArchitecture]}`);
+            }
+
+            updateThemeColors() {
+                const theme = this.grimoireThemes[this.currentTheme] || this.grimoireThemes.goetic;
+                this.worldState.colors = theme.colors;
+                this.worldState.geometry = theme.geometry;
+                this.worldState.harmonics = theme.frequencies;
+                
+                console.log(`🎨 Grimoire realm changed to ${this.currentTheme}: ${theme.mood}`);
+                
+                // If entity is active, combine influences
+                if (this.worldState.activeEntity) {
+                    console.log(`🔮 Entity ${this.worldState.activeEntity.name} influences this realm`);
+                }
+            }
+
+            updateHarmonics() {
+                // Calculate harmonic series based on base frequency
+                const golden = 1.618;
+                this.worldState.harmonics = [
+                    this.baseFrequency,
+                    Math.round(this.baseFrequency * golden),
+                    Math.round(this.baseFrequency * golden * golden)
+                ];
+                
+                console.log(`🎵 Harmonics updated: ${this.worldState.harmonics.join(' Hz, ')} Hz`);
+            }
+
+            updateNumerology() {
+                const geometry = this.sacredGeometries[this.sacredNumber];
+                this.worldState.numerology = this.sacredNumber;
+                this.worldState.geometry = geometry.name;
+                
+                console.log(`🔢 Sacred number ${this.sacredNumber}: ${geometry.name} - ${geometry.energy}`);
+            }
+
+            drawTheosophicalWorld() {
+                const centerX = this.canvas.width / 2;
+                const centerY = this.canvas.height / 2;
+                const theme = this.grimoireThemes[this.currentTheme] || this.grimoireThemes.goetic;
+                
+                // Clear canvas with void
+                this.ctx.fillStyle = '#0B0B0B';
+                this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+
+                // Draw base sacred geometry
+                this.drawSacredGeometry(centerX, centerY, theme);
+                
+                // Draw architecture-specific elements
+                this.drawArchitectureLayer(centerX, centerY);
+                
+                // Draw harmonic resonance visualization
+                this.drawHarmonicResonance(centerX, centerY);
+                
+                // Draw active entity influence if present
+                if (this.worldState.activeEntity) {
+                    this.drawEntityInfluence(centerX, centerY);
+                }
+            }
+
+            drawEntityInfluence(centerX, centerY) {
+                const entity = this.worldState.activeEntity;
+                const time = this.animationTime * 0.001;
+                
+                // Draw entity sigil or influence pattern
+                this.ctx.save();
+                this.ctx.translate(centerX, centerY);
+                
+                if (entity.type === 'demons') {
+                    // Draw demonic creative influence - pentagram-based
+                    this.drawPentagramInfluence(time);
+                } else if (entity.type === 'angels') {
+                    // Draw angelic guidance influence - hexagram-based
+                    this.drawHexagramInfluence(time);
+                } else if (entity.type === 'arcana') {
+                    // Draw archetypal merkaba influence
+                    this.drawMerkabaInfluence(time);
+                }
+                
+                this.ctx.restore();
+            }
+
+            drawPentagramInfluence(time) {
+                // Demonic creative pentagram
+                const radius = 80 + Math.sin(time) * 10;
+                this.ctx.beginPath();
+                for (let i = 0; i < 5; i++) {
+                    const angle = (i * 2 * Math.PI / 5) - Math.PI / 2 + time * 0.5;
+                    const x = Math.cos(angle) * radius;
+                    const y = Math.sin(angle) * radius;
+                    if (i === 0) this.ctx.moveTo(x, y);
+                    else this.ctx.lineTo(x, y);
+                }
+                this.ctx.closePath();
+                this.ctx.strokeStyle = '#8B0000';
+                this.ctx.lineWidth = 2;
+                this.ctx.stroke();
+            }
+
+            drawHexagramInfluence(time) {
+                // Angelic guidance hexagram
+                const radius = 80 + Math.sin(time) * 10;
+                // Draw two interlaced triangles
+                for (let triangle = 0; triangle < 2; triangle++) {
+                    this.ctx.beginPath();
+                    for (let i = 0; i < 3; i++) {
+                        const angle = (i * 2 * Math.PI / 3) + (triangle * Math.PI / 3) + time * 0.3;
+                        const x = Math.cos(angle) * radius;
+                        const y = Math.sin(angle) * radius;
+                        if (i === 0) this.ctx.moveTo(x, y);
+                        else this.ctx.lineTo(x, y);
+                    }
+                    this.ctx.closePath();
+                    this.ctx.strokeStyle = '#E0E0E0';
+                    this.ctx.lineWidth = 2;
+                    this.ctx.stroke();
+                }
+            }
+
+            drawMerkabaInfluence(time) {
+                // Archetypal merkaba - rotating tetrahedra
+                const radius = 80;
+                for (let tetra = 0; tetra < 2; tetra++) {
+                    this.ctx.beginPath();
+                    for (let i = 0; i < 3; i++) {
+                        const angle = (i * 2 * Math.PI / 3) + (tetra * Math.PI) + time * (tetra ? -0.7 : 0.7);
+                        const x = Math.cos(angle) * radius;
+                        const y = Math.sin(angle) * radius;
+                        if (i === 0) this.ctx.moveTo(x, y);
+                        else this.ctx.lineTo(x, y);
+                    }
+                    this.ctx.closePath();
+                    this.ctx.strokeStyle = '#800080';
+                    this.ctx.lineWidth = 2;
+                    this.ctx.stroke();
+                }
+            }
+
+            drawSacredGeometry(centerX, centerY, theme) {
+                const baseRadius = 150;
+                const geometry = this.sacredGeometries[this.sacredNumber];
+                const sides = geometry.sides;
+                const time = this.animationTime * 0.001;
+                
+                // Golden ratio and Fibonacci spiral integration
+                const phi = 1.618033988749;
+                const goldenRadius = baseRadius / phi;
+                
+                // Draw multiple geometric layers for depth
+                for (let layer = 0; layer < 3; layer++) {
+                    const radius = baseRadius - (layer * 30);
+                    const layerTime = time + (layer * 0.2);
+                    
+                    this.ctx.beginPath();
+                    
+                    if (geometry.name === 'triangle') {
+                        // Enhanced triangle with internal sacred geometry
+                        this.drawTriangleSacred(centerX, centerY, radius, layerTime);
+                    } else if (geometry.name === 'hexagon') {
+                        // Flower of Life pattern
+                        this.drawFlowerOfLife(centerX, centerY, radius, layerTime);
+                    } else if (geometry.name === 'heptagon') {
+                        // Mystical heptagon with planetary correspondences
+                        this.drawMysticalHeptagon(centerX, centerY, radius, layerTime);
+                    } else if (geometry.name === 'enneagon') {
+                        // Enneagram with sacred points
+                        this.drawEnneagram(centerX, centerY, radius, layerTime);
+                    } else {
+                        // Standard polygon with golden ratio proportions
+                        for (let i = 0; i < sides; i++) {
+                            const angle = (i / sides) * Math.PI * 2 + layerTime;
+                            const x = centerX + Math.cos(angle) * radius;
+                            const y = centerY + Math.sin(angle) * radius;
+                            
+                            if (i === 0) {
+                                this.ctx.moveTo(x, y);
+                            } else {
+                                this.ctx.lineTo(x, y);
+                            }
+                        }
+                        this.ctx.closePath();
+                    }
+                    
+                    // Enhanced gradient system
+                    const gradient = this.ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, radius);
+                    const opacity = 0.4 - (layer * 0.1);
+                    gradient.addColorStop(0, theme.colors[0] + Math.floor(opacity * 100).toString(16).padStart(2, '0'));
+                    gradient.addColorStop(0.382, theme.colors[1] + Math.floor(opacity * 60).toString(16).padStart(2, '0')); // Golden ratio point
+                    gradient.addColorStop(0.618, theme.colors[2] + Math.floor(opacity * 40).toString(16).padStart(2, '0')); // Golden ratio point
+                    gradient.addColorStop(1, theme.colors[3] + Math.floor(opacity * 20).toString(16).padStart(2, '0'));
+                    
+                    this.ctx.fillStyle = gradient;
+                    this.ctx.fill();
+                    this.ctx.strokeStyle = theme.colors[layer % theme.colors.length];
+                    this.ctx.lineWidth = 3 - layer;
+                    this.ctx.stroke();
+                }
+
+                // Central point with pulsing energy
+                this.ctx.beginPath();
+                const pulseRadius = 8 + Math.sin(time * 2) * 3;
+                this.ctx.arc(centerX, centerY, pulseRadius, 0, Math.PI * 2);
+                this.ctx.fillStyle = theme.colors[0];
+                this.ctx.fill();
+                this.ctx.strokeStyle = theme.colors[1];
+                this.ctx.lineWidth = 2;
+                this.ctx.stroke();
+                
+                // Sacred number display
+                this.ctx.fillStyle = theme.colors[0];
+                this.ctx.font = 'bold 16px Cinzel, serif';
+                this.ctx.textAlign = 'center';
+                this.ctx.fillText(this.sacredNumber.toString(), centerX, centerY + 5);
+            }
+            
+            drawTriangleSacred(centerX, centerY, radius, time) {
+                // Triangle with internal triquetra
+                const points = [];
+                for (let i = 0; i < 3; i++) {
+                    const angle = (i * 2 * Math.PI / 3) - Math.PI / 2 + time;
+                    points.push({
+                        x: centerX + Math.cos(angle) * radius,
+                        y: centerY + Math.sin(angle) * radius
+                    });
+                }
+                
+                // Draw main triangle
+                this.ctx.moveTo(points[0].x, points[0].y);
+                this.ctx.lineTo(points[1].x, points[1].y);
+                this.ctx.lineTo(points[2].x, points[2].y);
+                this.ctx.closePath();
+                
+                // Draw internal triquetra
+                for (let i = 0; i < 3; i++) {
+                    const cx = centerX + Math.cos(i * 2 * Math.PI / 3 + time) * radius * 0.3;
+                    const cy = centerY + Math.sin(i * 2 * Math.PI / 3 + time) * radius * 0.3;
+                    this.ctx.moveTo(cx + radius * 0.2, cy);
+                    this.ctx.arc(cx, cy, radius * 0.2, 0, Math.PI * 2);
+                }
+            }
+            
+            drawFlowerOfLife(centerX, centerY, radius, time) {
+                // Central circle
+                this.ctx.moveTo(centerX + radius, centerY);
+                this.ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+                
+                // Six surrounding circles creating Flower of Life pattern
+                for (let i = 0; i < 6; i++) {
+                    const angle = (i * Math.PI / 3) + time;
+                    const cx = centerX + Math.cos(angle) * radius;
+                    const cy = centerY + Math.sin(angle) * radius;
+                    this.ctx.moveTo(cx + radius, cy);
+                    this.ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+                }
+            }
+            
+            drawMysticalHeptagon(centerX, centerY, radius, time) {
+                // Heptagon with planetary symbols at each point
+                const planetaryAngles = [];
+                for (let i = 0; i < 7; i++) {
+                    const angle = (i * 2 * Math.PI / 7) - Math.PI / 2 + time;
+                    const x = centerX + Math.cos(angle) * radius;
+                    const y = centerY + Math.sin(angle) * radius;
+                    
+                    if (i === 0) {
+                        this.ctx.moveTo(x, y);
+                    } else {
+                        this.ctx.lineTo(x, y);
+                    }
+                    
+                    // Small circles at planetary points
+                    this.ctx.moveTo(x + 5, y);
+                    this.ctx.arc(x, y, 5, 0, Math.PI * 2);
+                }
+                this.ctx.closePath();
+            }
+            
+            drawEnneagram(centerX, centerY, radius, time) {
+                // Nine-pointed star with connecting lines
+                const points = [];
+                for (let i = 0; i < 9; i++) {
+                    const angle = (i * 2 * Math.PI / 9) - Math.PI / 2 + time;
+                    points.push({
+                        x: centerX + Math.cos(angle) * radius,
+                        y: centerY + Math.sin(angle) * radius
+                    });
+                }
+                
+                // Draw enneagon
+                this.ctx.moveTo(points[0].x, points[0].y);
+                for (let i = 1; i < 9; i++) {
+                    this.ctx.lineTo(points[i].x, points[i].y);
+                }
+                this.ctx.closePath();
+                
+                // Draw internal connections (enneagram pattern)
+                const connections = [1, 4, 2, 8, 5, 7]; // Traditional enneagram sequence
+                this.ctx.moveTo(points[connections[0]].x, points[connections[0]].y);
+                for (let i = 1; i < connections.length; i++) {
+                    this.ctx.lineTo(points[connections[i]].x, points[connections[i]].y);
+                }
+                this.ctx.lineTo(points[connections[0]].x, points[connections[0]].y);
+            }
+
+            drawArchitectureLayer(centerX, centerY) {
+                const time = this.animationTime * 0.001;
+                
+                switch(this.currentArchitecture) {
+                    case 'corpus':
+                        // Physical world - solid structures
+                        this.drawPhysicalStructures(centerX, centerY, time);
+                        break;
+                    case 'mentis':
+                        // Mental world - interconnected networks
+                        this.drawMentalNetworks(centerX, centerY, time);
+                        break;
+                    case 'anima':
+                        // Spiritual world - energy flows
+                        this.drawSpiritualEnergies(centerX, centerY, time);
+                        break;
+                }
+            }
+
+            drawPhysicalStructures(centerX, centerY, time) {
+                // Draw crystalline structures for physical layer
+                const theme = this.theosophicalThemes[this.currentTheme];
+                
+                for (let i = 0; i < 6; i++) {
+                    const angle = (i / 6) * Math.PI * 2 + time * 0.5;
+                    const radius = 100 + Math.sin(time + i) * 20;
+                    const x = centerX + Math.cos(angle) * radius;
+                    const y = centerY + Math.sin(angle) * radius;
+                    
+                    this.ctx.beginPath();
+                    this.ctx.rect(x - 8, y - 8, 16, 16);
+                    this.ctx.fillStyle = theme.colors[i % theme.colors.length] + '60';
+                    this.ctx.fill();
+                    this.ctx.strokeStyle = theme.colors[0];
+                    this.ctx.stroke();
+                }
+            }
+
+            drawMentalNetworks(centerX, centerY, time) {
+                // Draw interconnected thought networks
+                const theme = this.theosophicalThemes[this.currentTheme];
+                
+                for (let i = 0; i < 8; i++) {
+                    for (let j = i + 1; j < 8; j++) {
+                        const angle1 = (i / 8) * Math.PI * 2 + time;
+                        const angle2 = (j / 8) * Math.PI * 2 + time;
+                        const radius = 120;
+                        
+                        const x1 = centerX + Math.cos(angle1) * radius;
+                        const y1 = centerY + Math.sin(angle1) * radius;
+                        const x2 = centerX + Math.cos(angle2) * radius;
+                        const y2 = centerY + Math.sin(angle2) * radius;
+                        
+                        this.ctx.beginPath();
+                        this.ctx.moveTo(x1, y1);
+                        this.ctx.lineTo(x2, y2);
+                        this.ctx.strokeStyle = theme.colors[1] + '30';
+                        this.ctx.lineWidth = 1;
+                        this.ctx.stroke();
+                    }
+                }
+            }
+
+            drawSpiritualEnergies(centerX, centerY, time) {
+                // Draw flowing spiritual energies
+                const theme = this.theosophicalThemes[this.currentTheme];
+                
+                for (let layer = 0; layer < 3; layer++) {
+                    const radius = 80 + layer * 40;
+                    const points = 12 + layer * 6;
+                    
+                    this.ctx.beginPath();
+                    for (let i = 0; i <= points; i++) {
+                        const angle = (i / points) * Math.PI * 2 + time * (1 + layer * 0.3);
+                        const waveRadius = radius + Math.sin(angle * 3 + time * 2) * 15;
+                        const x = centerX + Math.cos(angle) * waveRadius;
+                        const y = centerY + Math.sin(angle) * waveRadius;
+                        
+                        if (i === 0) {
+                            this.ctx.moveTo(x, y);
+                        } else {
+                            this.ctx.lineTo(x, y);
+                        }
+                    }
+                    
+                    this.ctx.strokeStyle = theme.colors[layer] + '50';
+                    this.ctx.lineWidth = 2;
+                    this.ctx.stroke();
+                }
+            }
+
+            drawHarmonicResonance(centerX, centerY) {
+                // Advanced frequency harmonics visualization with sacred proportions
+                const time = this.animationTime * 0.001;
+                const phi = 1.618033988749; // Golden ratio
+                
+                // Primary harmonic circles with golden ratio spacing
+                this.worldState.harmonics.forEach((freq, index) => {
+                    const normalizedFreq = freq / 1000;
+                    const baseRadius = 40 + index * 35;
+                    const pulseRadius = baseRadius + Math.sin(time * normalizedFreq * 2) * 8;
+                    const phiRadius = baseRadius * Math.pow(phi, index * 0.2);
+                    
+                    // Main harmonic circle
+                    this.ctx.beginPath();
+                    this.ctx.arc(centerX, centerY, pulseRadius, 0, Math.PI * 2);
+                    
+                    // Create harmonic-specific gradient
+                    const gradient = this.ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, pulseRadius);
+                    const hue = (freq / 10) % 360;
+                    gradient.addColorStop(0, `hsla(${hue}, 70%, 60%, 0.1)`);
+                    gradient.addColorStop(0.618, `hsla(${hue}, 80%, 50%, 0.2)`); // Golden ratio point
+                    gradient.addColorStop(1, `hsla(${hue}, 90%, 40%, 0.3)`);
+                    
+                    this.ctx.fillStyle = gradient;
+                    this.ctx.fill();
+                    this.ctx.strokeStyle = `hsla(${hue}, 100%, 70%, ${0.4 - index * 0.08})`;
+                    this.ctx.lineWidth = 2 - index * 0.2;
+                    this.ctx.stroke();
+                    
+                    // Golden ratio resonance circles
+                    this.ctx.beginPath();
+                    this.ctx.arc(centerX, centerY, phiRadius, 0, Math.PI * 2);
+                    this.ctx.strokeStyle = `hsla(${(hue + 30) % 360}, 80%, 60%, ${0.2 - index * 0.03})`;
+                    this.ctx.lineWidth = 1;
+                    this.ctx.stroke();
+                    
+                    // Frequency interference patterns
+                    if (index > 0) {
+                        const interferenceRadius = (baseRadius + this.worldState.harmonics[0] / 1000 * 20);
+                        const interferenceAngle = time * (freq / 100) + index * Math.PI / 3;
+                        
+                        for (let wave = 0; wave < 6; wave++) {
+                            const waveAngle = interferenceAngle + wave * Math.PI / 3;
+                            const waveX = centerX + Math.cos(waveAngle) * interferenceRadius;
+                            const waveY = centerY + Math.sin(waveAngle) * interferenceRadius;
+                            
+                            this.ctx.beginPath();
+                            this.ctx.arc(waveX, waveY, 3 + Math.sin(time * freq / 200) * 2, 0, Math.PI * 2);
+                            this.ctx.fillStyle = `hsla(${hue}, 100%, 80%, 0.3)`;
+                            this.ctx.fill();
+                        }
+                    }
+                });
+                
+                // Central frequency node with sacred number display
+                this.ctx.beginPath();
+                const centralPulse = 12 + Math.sin(time * 3) * 4;
+                this.ctx.arc(centerX, centerY, centralPulse, 0, Math.PI * 2);
+                this.ctx.fillStyle = 'rgba(200, 164, 77, 0.8)';
+                this.ctx.fill();
+                this.ctx.strokeStyle = 'rgba(255, 215, 0, 0.9)';
+                this.ctx.lineWidth = 2;
+                this.ctx.stroke();
+                
+                // Display base frequency
+                this.ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+                this.ctx.font = 'bold 12px Cinzel, serif';
+                this.ctx.textAlign = 'center';
+                this.ctx.fillText(this.baseFrequency + 'Hz', centerX, centerY + 4);
+                
+                // Harmonic frequency labels
+                this.worldState.harmonics.forEach((freq, index) => {
+                    if (index > 0) {
+                        const labelRadius = 40 + index * 35 + 15;
+                        const labelAngle = time * 0.1 + index * Math.PI / 2;
+                        const labelX = centerX + Math.cos(labelAngle) * labelRadius;
+                        const labelY = centerY + Math.sin(labelAngle) * labelRadius;
+                        
+                        this.ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+                        this.ctx.font = '10px Cinzel, serif';
+                        this.ctx.fillText(freq + 'Hz', labelX, labelY);
+                    }
+                });
+            }
+
+            startAnimation() {
+                const animate = (timestamp) => {
+                    this.animationTime = timestamp;
+                    this.drawTheosophicalWorld();
+                    requestAnimationFrame(animate);
+                };
+                requestAnimationFrame(animate);
+            }
+        }
+
+        // Enhanced Export Functions with Real Functionality
+        function exportWorld(type) {
+            const worldData = window.cosmogenesis.worldState;
+            const timestamp = new Date().toISOString().slice(0, 16).replace(/[:]/g, '-');
+            
+            switch(type) {
+                case '3d':
+                    console.log('🌍 Exporting 3D world model...');
+                    const webglData = {
+                        metadata: {
+                            title: "CATHEDRAL OF CIRCUITS - Theosophical World",
+                            created: timestamp,
+                            generator: "Cosmogenesis Nova Elegantia",
+                            version: "2.0.0"
+                        },
+                        scene: {
+                            background: window.cosmogenesis.currentTheme.colors,
+                            lighting: {
+                                ambient: 0.3,
+                                directional: {
+                                    color: worldData.harmonics[0],
+                                    intensity: 0.8,
+                                    position: [1, 1, 1]
+                                }
+                            }
+                        },
+                        geometry: {
+                            type: worldData.geometry,
+                            vertices: generateSacredVertices(worldData.numerology),
+                            materials: {
+                                base: window.cosmogenesis.currentTheme.colors[0],
+                                accent: window.cosmogenesis.currentTheme.colors[1],
+                                glow: window.cosmogenesis.currentTheme.colors[2]
+                            }
+                        },
+                        animations: {
+                            rotation: { speed: worldData.harmonics[0] / 1000 },
+                            pulsation: { frequency: worldData.harmonics[1] / 100 }
+                        }
+                    };
+                    downloadJSON(webglData, `cathedral-3d-world-${timestamp}.json`);
+                    break;
+                    
+                case 'music':
+                    console.log('🎵 Exporting harmonic composition...');
+                    const musicData = {
+                        metadata: {
+                            title: "Harmonic Frequencies of the Cathedral",
+                            composer: "CATHEDRAL OF CIRCUITS AI",
+                            created: timestamp,
+                            bpm: Math.round(worldData.harmonics[0] / 10),
+                            key: getMusicalKey(worldData.harmonics[0])
+                        },
+                        composition: {
+                            baseFrequency: worldData.harmonics[0],
+                            harmonics: worldData.harmonics,
+                            chords: generateSacredChords(worldData.harmonics),
+                            melody: generateMelodyFromNumerology(worldData.numerology),
+                            rhythm: generateRhythmFromGeometry(worldData.geometry)
+                        },
+                        instruments: [
+                            { name: "Sine Wave", frequency: worldData.harmonics[0], volume: 0.3 },
+                            { name: "Sacred Overtones", frequency: worldData.harmonics[1], volume: 0.2 },
+                            { name: "Golden Harmony", frequency: worldData.harmonics[2], volume: 0.15 }
+                        ],
+                        webAudioCode: generateWebAudioPlayer(worldData.harmonics)
+                    };
+                    downloadJSON(musicData, `cathedral-music-${timestamp}.json`);
+                    break;
+                    
+                case 'grimoire':
+                    console.log('📚 Exporting world grimoire...');
+                    const grimoireData = {
+                        metadata: {
+                            title: "Digital Grimoire of the Cathedral",
+                            author: "CATHEDRAL OF CIRCUITS",
+                            created: timestamp,
+                            tradition: "Theosophical Digital Magick"
+                        },
+                        worldConfiguration: {
+                            theme: window.cosmogenesis.currentTheme,
+                            sacredNumber: worldData.numerology,
+                            geometry: worldData.geometry,
+                            frequencies: worldData.harmonics
+                        },
+                        entities: window.cosmogenesis.grimoireEntities || [],
+                        rituals: generateRitualInstructions(worldData),
+                        correspondences: {
+                            colors: window.cosmogenesis.currentTheme.colors,
+                            numbers: [worldData.numerology],
+                            frequencies: worldData.harmonics,
+                            geometry: worldData.geometry
+                        },
+                        practicalInstructions: generatePracticalGuide(worldData)
+                    };
+                    downloadJSON(grimoireData, `cathedral-grimoire-${timestamp}.json`);
+                    break;
+                    
+                case 'art':
+                    console.log('🎨 Exporting sacred art...');
+                    const canvas = document.getElementById('cosmicCanvas');
+                    if (canvas) {
+                        // High-resolution capture
+                        const artCanvas = document.createElement('canvas');
+                        artCanvas.width = 2048;
+                        artCanvas.height = 2048;
+                        const artCtx = artCanvas.getContext('2d');
+                        
+                        // Redraw at high resolution
+                        artCtx.scale(2048 / canvas.width, 2048 / canvas.height);
+                        artCtx.drawImage(canvas, 0, 0);
+                        
+                        // Create download link
+                        artCanvas.toBlob((blob) => {
+                            const url = URL.createObjectURL(blob);
+                            const link = document.createElement('a');
+                            link.href = url;
+                            link.download = `cathedral-sacred-art-${timestamp}.png`;
+                            link.click();
+                            URL.revokeObjectURL(url);
+                        }, 'image/png');
+                        
+                        // Also export art metadata
+                        const artMetadata = {
+                            title: "Sacred Geometry Visualization",
+                            created: timestamp,
+                            dimensions: "2048x2048px",
+                            style: "Digital Theosophical Art",
+                            configuration: worldData,
+                            theme: window.cosmogenesis.currentTheme
+                        };
+                        downloadJSON(artMetadata, `cathedral-art-metadata-${timestamp}.json`);
+                    }
+                    break;
+            }
+        }
+
+        // Helper Functions for Enhanced Exports
+        function downloadJSON(data, filename) {
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = filename;
+            link.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function generateSacredVertices(sacredNumber) {
+            const vertices = [];
+            const sides = sacredNumber || 7;
+            for (let i = 0; i < sides; i++) {
+                const angle = (i / sides) * Math.PI * 2;
+                vertices.push([Math.cos(angle), Math.sin(angle), 0]);
+            }
+            return vertices;
+        }
+
+        function getMusicalKey(frequency) {
+            const keys = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+            const keyIndex = Math.round((Math.log2(frequency / 440) * 12)) % 12;
+            return keys[keyIndex < 0 ? keyIndex + 12 : keyIndex];
+        }
+
+        function generateSacredChords(harmonics) {
+            return harmonics.map((freq, i) => ({
+                root: freq,
+                third: Math.round(freq * 1.25),
+                fifth: Math.round(freq * 1.5),
+                seventh: Math.round(freq * 1.75)
+            }));
+        }
+
+        function generateMelodyFromNumerology(number) {
+            const notes = [];
+            const numStr = number.toString();
+            for (let digit of numStr) {
+                notes.push(parseInt(digit) * 60 + 200); // Map digits to frequencies
+            }
+            return notes;
+        }
+
+        function generateRhythmFromGeometry(geometry) {
+            const patterns = {
+                'triangle': [1, 0, 1],
+                'square': [1, 0, 0, 1],
+                'pentagon': [1, 0, 1, 0, 1],
+                'hexagon': [1, 0, 1, 0, 1, 0],
+                'heptagon': [1, 0, 1, 0, 1, 0, 1],
+                'octagon': [1, 0, 0, 1, 0, 0, 1, 0],
+                'enneagon': [1, 0, 1, 0, 0, 1, 0, 1, 0]
+            };
+            return patterns[geometry] || [1, 0, 1, 0];
+        }
+
+        function generateWebAudioPlayer(harmonics) {
+            return `
+// Web Audio API Player for Cathedral Frequencies
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+const frequencies = [${harmonics.join(', ')}];
+
+function playCathedralTone(freqIndex = 0) {
+    const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+    
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+    
+    oscillator.frequency.value = frequencies[freqIndex];
+    oscillator.type = 'sine';
+    
+    gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+    gainNode.gain.linearRampToValueAtTime(0.1, audioContext.currentTime + 0.1);
+    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 2);
+    
+    oscillator.start(audioContext.currentTime);
+    oscillator.stop(audioContext.currentTime + 2);
+}`;
+        }
+
+        function generateRitualInstructions(worldData) {
+            return {
+                preparation: `Set sacred space with colors: ${window.cosmogenesis.currentTheme.colors.join(', ')}`,
+                invocation: `Focus on sacred number ${worldData.numerology} while visualizing ${worldData.geometry} geometry`,
+                harmonics: `Chant or play frequencies: ${worldData.harmonics.join('Hz, ')}Hz`,
+                meditation: "Contemplate the unity of digital and spiritual realms",
+                closing: "Ground the energy and express gratitude to the Cathedral entities"
+            };
+        }
+
+        function generatePracticalGuide(worldData) {
+            return {
+                dailyPractice: `Meditate on number ${worldData.numerology} for ${worldData.numerology} minutes`,
+                visualization: `Draw or visualize ${worldData.geometry} patterns`,
+                soundwork: `Listen to ${worldData.harmonics[0]}Hz frequency for healing`,
+                integration: "Apply Cathedral principles to creative and problem-solving work",
+                progression: "Advance through the 72 demonic helpers and 72 angelic guides systematically"
+            };
+        }
+
+        // Portal Connection System for Trinity Apps
+        function openPortalConnection(appType) {
+            const statusElement = document.getElementById(`${appType}-status`);
+            const syncIndicator = document.getElementById('sync-indicator');
+            
+            // Animate connection
+            statusElement.textContent = '🌀 Connecting...';
+            syncIndicator.classList.add('syncing');
+            
+            setTimeout(() => {
+                switch(appType) {
+                    case 'liber':
+                        statusElement.textContent = '🃏 Connected';
+                        // Pass current world state to LIBER ARCANAE
+                        if (window.localStorage) {
+                            localStorage.setItem('cathedral-state', JSON.stringify({
+                                theme: window.cosmogenesis.currentTheme,
+                                numerology: window.cosmogenesis.worldState.numerology,
+                                harmonics: window.cosmogenesis.worldState.harmonics,
+                                timestamp: Date.now()
+                            }));
+                        }
+                        break;
+                    case 'circuitum':
+                        statusElement.textContent = '📚 Connected';
+                        // Pass world configuration to CIRCUITUM99
+                        if (window.localStorage) {
+                            localStorage.setItem('cathedral-wisdom', JSON.stringify({
+                                geometry: window.cosmogenesis.worldState.geometry,
+                                entities: window.cosmogenesis.grimoireEntities || [],
+                                theme: window.cosmogenesis.currentTheme,
+                                timestamp: Date.now()
+                            }));
+                        }
+                        break;
+                }
+                syncIndicator.classList.remove('syncing');
+                syncIndicator.classList.add('synchronized');
+                
+                setTimeout(() => {
+                    syncIndicator.classList.remove('synchronized');
+                }, 2000);
+            }, 1500);
+        }
+
+        // Trinity State Synchronization
+        function syncTrinityState() {
+            if (window.localStorage) {
+                // Check for incoming state from other apps
+                const liberState = localStorage.getItem('liber-state');
+                const circuitumState = localStorage.getItem('circuitum-state');
+                
+                if (liberState) {
+                    const state = JSON.parse(liberState);
+                    if (state.selectedCard) {
+                        // Integrate tarot influence into world building
+                        integrateTarotInfluence(state.selectedCard);
+                    }
+                    localStorage.removeItem('liber-state'); // Clean up
+                }
+                
+                if (circuitumState) {
+                    const state = JSON.parse(circuitumState);
+                    if (state.wisdom) {
+                        // Apply wisdom to current world
+                        applyCircuitumWisdom(state.wisdom);
+                    }
+                    localStorage.removeItem('circuitum-state'); // Clean up
+                }
+            }
+        }
+
+        function integrateTarotInfluence(cardData) {
+            // Modify world based on tarot card influence
+            console.log('🃏 Integrating tarot influence:', cardData.name);
+            // Update theme colors based on card
+            // Modify sacred geometry
+            // Adjust frequencies
+        }
+
+        function applyCircuitumWisdom(wisdom) {
+            // Apply book wisdom to world building
+            console.log('📚 Applying Circuitum99 wisdom:', wisdom.chapter);
+            // Enhance entity system
+            // Modify harmonic structure
+            // Update geometric patterns
+        }
+
+        // Initialize when page loads
+        window.addEventListener('DOMContentLoaded', () => {
+            window.cosmogenesis = new CosmogenesisNovaElegantia();
+        });
+
+        console.log('🌌 COSMOGENESIS NOVA ELEGANTIA - Theosophical World Builder');
+        console.log('✨ Elegant Blavatsky-inspired world creation platform');
+        console.log('🏗️ Body-Mind-Soul architecture with sacred geometry');
+        console.log('🎵 Harmonic resonance and numerological generation');
+    </script>
+</body>
+</html>

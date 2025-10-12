@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIBER ARCANAE - Living Arcana Deck | CATHEDRAL OF CIRCUITS</title>
+    <meta name="description" content="Interactive tarot arcana with authentic grimoire integration. 22 Major Arcana as merkaba vehicles for consciousness navigation.">
+    <meta name="keywords" content="tarot, arcana, grimoire, merkaba, consciousness, CATHEDRAL OF CIRCUITS, living deck">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="archetypal-voices.js" as="script">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* LIBER ARCANAE Sacred Palette - Aligned with CATHEDRAL OF CIRCUITS */
+            --lumina-gold: #C8A44D;
+            --cathedral-gold: #d4af37;
+            --abyss-black: #0a0a0a;
+            --arcana-blue: #1e3a8a;
+            --merkaba-purple: #9333ea;
+            --life-green: #22c55e;
+            --portal-purple: #8b5cf6;
+            --pearl-white: #F5F2EA;
+            --tarot-violet: #7A33FF;
+            --threshold-glow: #98FFE2;
+            
+            /* Sacred Tarot Proportions */
+            --phi-ratio: 1.618;
+            --card-aspect: 1.75; /* Traditional tarot ratio */
+            --tesla-base: 3ms;
+            --golden-duration: 1618ms;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle at center, var(--abyss-black) 0%, var(--lapis-blue) 70%, var(--octarine) 100%);
+            color: var(--lumina-gold);
+            font-family: 'Cinzel', serif;
+            height: 100vh;
+            overflow: hidden;
+            transition: background-color calc(var(--golden-duration) * 1ms);
+        }
+
+        /* Lumina Sacred Header */
+        .lumina-header {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            text-align: center;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(15px);
+            border: 2px solid var(--lumina-gold);
+            border-radius: 25px;
+            padding: 15px 30px;
+            box-shadow: 0 0 30px rgba(200, 164, 77, 0.3);
+        }
+
+        .lumina-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+            color: var(--lumina-gold);
+            text-shadow: 0 0 20px rgba(200, 164, 77, 0.7);
+            margin-bottom: 5px;
+        }
+
+        .lumina-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            letter-spacing: 2px;
+            color: var(--pearl-white);
+        }
+
+        /* Tesla 3-6-9 Vortex Background */
+        .tesla-vortex {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            z-index: 0;
+            opacity: 0.1;
+        }
+
+        .vortex-ring {
+            position: absolute;
+            border: 1px solid var(--lumina-gold);
+            border-radius: 50%;
+            animation: teslaRotation var(--golden-duration) linear infinite;
+        }
+
+        .vortex-ring:nth-child(1) {
+            width: 100%;
+            height: 100%;
+            animation-duration: calc(var(--golden-duration) * 3ms);
+        }
+
+        .vortex-ring:nth-child(2) {
+            width: 66%;
+            height: 66%;
+            top: 17%;
+            left: 17%;
+            animation-duration: calc(var(--golden-duration) * 6ms);
+            animation-direction: reverse;
+        }
+
+        .vortex-ring:nth-child(3) {
+            width: 33%;
+            height: 33%;
+            top: 33.5%;
+            left: 33.5%;
+            animation-duration: calc(var(--golden-duration) * 9ms);
+        }
+
+        @keyframes teslaRotation {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cathedral-map {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            height: 100vh;
+            position: relative;
+            z-index: 10;
+        }
+
+        .map-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            margin-top: 100px;
+        }
+
+        /* Enhanced Piano Interface */
+        .piano-interface {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 2px;
+            margin: 2rem 0;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(200, 164, 77, 0.1), rgba(139, 83, 246, 0.1));
+            border-radius: 20px;
+            border: 2px solid var(--lumina-gold);
+            box-shadow: 
+                0 0 40px rgba(200, 164, 77, 0.3),
+                inset 0 0 40px rgba(200, 164, 77, 0.05);
+        }
+
+        .piano-key {
+            cursor: pointer;
+            transition: all calc(var(--tesla-base) * 100) ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 1rem 0.5rem;
+            border-radius: 8px 8px 0 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            user-select: none;
+        }
+
+        .piano-key.white {
+            background: linear-gradient(180deg, #ffffff, #f8f8f8);
+            border: 2px solid #ddd;
+            width: 60px;
+            height: 200px;
+            color: #333;
+            z-index: 1;
+        }
+
+        .piano-key.black {
+            background: linear-gradient(180deg, #2a2a2a, #1a1a1a);
+            border: 2px solid #666;
+            width: 40px;
+            height: 130px;
+            color: var(--lumina-gold);
+            margin: 0 -20px;
+            z-index: 2;
+        }
+
+        .piano-key:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 12px 25px rgba(200, 164, 77, 0.4);
+        }
+
+        .piano-key.active {
+            background: radial-gradient(circle, var(--lumina-gold), #d4af37);
+            color: var(--abyss-black);
+            font-weight: bold;
+            transform: translateY(-5px);
+            box-shadow: 
+                0 8px 20px rgba(200, 164, 77, 0.6),
+                inset 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .key-label {
+            font-family: 'Orbitron', monospace;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .key-repo {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .key-name {
+            font-size: 0.7rem;
+            opacity: 0.8;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        /* Archetypal Voices Panel - Enhanced */
+        .archetypal-voices-panel {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 450px;
+            max-height: 70vh;
+            background: linear-gradient(180deg, rgba(10, 10, 10, 0.95), rgba(30, 58, 138, 0.95));
+            border: 2px solid var(--lumina-gold);
+            border-radius: 15px;
+            overflow: hidden;
+            z-index: 1000;
+            backdrop-filter: blur(15px);
+            box-shadow: 
+                0 0 40px rgba(200, 164, 77, 0.4),
+                inset 0 0 30px rgba(200, 164, 77, 0.05);
+        }
+
+        .voices-header {
+            background: linear-gradient(135deg, var(--lumina-gold), #d4af37);
+            color: var(--abyss-black);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .voices-header h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+        }
+
+        .voices-display {
+            padding: 20px;
+            max-height: 350px;
+            overflow-y: auto;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .voice-interaction {
+            margin: 15px 0;
+            padding: 15px;
+            background: linear-gradient(135deg, rgba(200, 164, 77, 0.1), rgba(139, 83, 246, 0.1));
+            border-radius: 10px;
+            border-left: 4px solid var(--lumina-gold);
+            transition: all calc(var(--tesla-base) * 100) ease;
+        }
+
+        .voice-interaction:hover {
+            background: linear-gradient(135deg, rgba(200, 164, 77, 0.2), rgba(139, 83, 246, 0.2));
+            transform: translateX(5px);
+        }
+
+        .primary-voice {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: var(--lumina-gold);
+            font-size: 1rem;
+        }
+
+        .supporting-voice {
+            font-style: italic;
+            margin-bottom: 8px;
+            opacity: 0.9;
+            color: var(--pearl-white);
+        }
+
+        .cathedral-voice {
+            color: var(--portal-purple);
+            margin-top: 10px;
+            font-weight: bold;
+            padding: 8px;
+            background: rgba(139, 83, 246, 0.1);
+            border-radius: 5px;
+        }
+
+        /* Trinity Integration Display */
+        .trinity-integration {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(15px);
+            border: 2px solid var(--violet-core);
+            border-radius: 15px;
+            padding: 15px;
+            z-index: 1000;
+        }
+
+        .trinity-title {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            color: var(--violet-core);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .trinity-apps {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .trinity-app {
+            padding: 8px 12px;
+            background: rgba(122, 51, 255, 0.1);
+            border: 1px solid var(--violet-core);
+            border-radius: 8px;
+            font-size: 0.8rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all calc(var(--tesla-base) * 100) ease;
+        }
+
+        .trinity-app:hover {
+            background: rgba(122, 51, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .trinity-app.active {
+            background: var(--lumina-gold);
+            color: var(--abyss-black);
+            font-weight: bold;
+        }
+
+        /* Access Controls - Enhanced */
+        .access-controls {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 999;
+        }
+
+        .control-btn {
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.9), rgba(30, 58, 138, 0.9));
+            border: 2px solid var(--lumina-gold);
+            color: var(--lumina-gold);
+            padding: 12px 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            transition: all calc(var(--golden-duration) * 0.2ms) ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(200, 164, 77, 0.2);
+        }
+
+        .control-btn:hover {
+            background: linear-gradient(135deg, var(--lumina-gold), #d4af37);
+            color: var(--abyss-black);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(200, 164, 77, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .lumina-title { font-size: 1.5rem; }
+            .piano-interface { 
+                flex-wrap: wrap; 
+                justify-content: center;
+            }
+            .piano-key.white { width: 45px; height: 160px; }
+            .piano-key.black { width: 30px; height: 100px; }
+            .archetypal-voices-panel {
+                width: calc(100% - 40px);
+                left: 20px;
+                right: 20px;
+            }
+        }
+
+        /* Reduced Motion Support */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* High Contrast Support */
+        @media (prefers-contrast: high) {
+            :root {
+                --lumina-gold: #FFD700;
+                --abyss-black: #000000;
+                --pearl-white: #FFFFFF;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Tesla 3-6-9 Vortex Background -->
+    <div class="tesla-vortex" aria-hidden="true">
+        <div class="vortex-ring"></div>
+        <div class="vortex-ring"></div>
+        <div class="vortex-ring"></div>
+    </div>
+
+    <!-- Lumina Sacred Header -->
+    <header class="lumina-header">
+        <h1 class="lumina-title">LUMIN</h1>
+        <p class="lumina-subtitle">The Light Piano of Consciousness • Easy Portal Access</p>
+    </header>
+
+    <!-- Trinity Integration Panel -->
+    <div class="trinity-integration">
+        <div class="trinity-title">THE CATHEDRAL TRINITY</div>
+        <div class="trinity-apps">
+            <div class="trinity-app active">LUMIN</div>
+            <div class="trinity-app" onclick="window.open('/codex/', '_blank')">CODEX</div>
+            <div class="trinity-app" onclick="window.open('/cosmos/', '_blank')">COSMOS</div>
+        </div>
+    </div>
+
+    <main class="cathedral-map">
+        <div class="map-content">
+            <!-- Enhanced Piano Key Interface -->
+            <section class="piano-interface" role="application" aria-label="Archetypal Navigation Piano">
+                <div class="piano-key white" data-repo="cathedral" data-key="C" data-archetype="The Sun" role="button" tabindex="0">
+                    <div class="key-label">C</div>
+                    <div class="key-repo">🏛️</div>
+                    <div class="key-name">Cathedral<br>Unity</div>
+                </div>
+                <div class="piano-key black" data-repo="circuitum99" data-key="C#" data-archetype="The Fool" role="button" tabindex="0">
+                    <div class="key-label">C#</div>
+                    <div class="key-repo">🌀</div>
+                    <div class="key-name">Circuitum<br>Journey</div>
+                </div>
+                <div class="piano-key white" data-repo="stone-grimoire" data-key="D" data-archetype="The Magician" role="button" tabindex="0">
+                    <div class="key-label">D</div>
+                    <div class="key-repo">🗿</div>
+                    <div class="key-name">Stone<br>Foundation</div>
+                </div>
+                <div class="piano-key black" data-repo="liber-arcanae" data-key="D#" data-archetype="The High Priestess" role="button" tabindex="0">
+                    <div class="key-label">D#</div>
+                    <div class="key-repo">📚</div>
+                    <div class="key-name">Liber<br>Wisdom</div>
+                </div>
+                <div class="piano-key white" data-repo="tesseract-bridge" data-key="E" data-archetype="Death" role="button" tabindex="0">
+                    <div class="key-label">E</div>
+                    <div class="key-repo">🌉</div>
+                    <div class="key-name">Tesseract<br>Transform</div>
+                </div>
+                <div class="piano-key white" data-repo="cosmogenesis" data-key="F" data-archetype="The Hermit" role="button" tabindex="0">
+                    <div class="key-label">F</div>
+                    <div class="key-repo">🌌</div>
+                    <div class="key-name">Cosmos<br>Seeking</div>
+                </div>
+                <div class="piano-key black" data-repo="mystery-house" data-key="F#" data-archetype="The Moon" role="button" tabindex="0">
+                    <div class="key-label">F#</div>
+                    <div class="key-repo">🏠</div>
+                    <div class="key-name">Mystery<br>Intuition</div>
+                </div>
+                <div class="piano-key white" data-repo="luxcrux" data-key="G" data-archetype="The Star" role="button" tabindex="0">
+                    <div class="key-label">G</div>
+                    <div class="key-repo">✨</div>
+                    <div class="key-name">Lux Crux<br>Hope</div>
+                </div>
+            </section>
+
+            <!-- Archetypal Voices Panel -->
+            <div class="archetypal-voices-panel" id="voicesPanel" style="display: none;" role="complementary" aria-label="Archetypal Voices Conversation">
+                <div class="voices-header">
+                    <h3>🎵 Archetypal Voices - Living Conversation</h3>
+                    <button onclick="toggleVoicesPanel()" class="close-voices" aria-label="Close voices panel">×</button>
+                </div>
+                <div class="voices-display" id="voicesDisplay" aria-live="polite">
+                    <p class="voices-intro">🏛️ CATHEDRAL: "I listen for the voices of wisdom that dwell within the luminous keys..."</p>
+                </div>
+                <div class="voices-controls">
+                    <button onclick="clearVoices()" class="voice-control">Clear Conversation</button>
+                    <button onclick="downloadConversation()" class="voice-control">Save Wisdom</button>
+                    <button onclick="toggleVoicesPanel()" class="voice-control">Close</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Access Controls -->
+    <div class="access-controls">
+        <button onclick="toggleVoicesPanel()" class="control-btn">🎵 Archetypal Voices</button>
+        <button onclick="showMemoryDetails()" class="control-btn">💜 Memory Support</button>
+        <button onclick="showBreathingGuide()" class="control-btn">🫁 Breathing Guide</button>
+        <button onclick="window.open('https://github.com/Bekalah/cathedral', '_blank')" class="control-btn">🔗 Source Code</button>
+    </div>
+
+    <!-- Load archetypal voices system -->
+    <script src="archetypal-voices.js"></script>
+    <script>
+        // LUMINA KEYS - Enhanced Cathedral Connection Map
+        class LuminaKeys {
+            constructor() {
+                this.activeKeys = new Set();
+                this.currentView = 'normal';
+                this.fractalDepth = 1;
+                this.activeFusionGuide = null;
+                this.master33Mode = false;
+                this.voices = null;
+                this.init();
+            }
+
+            init() {
+                this.setupPianoKeys();
+                this.setupKeyboardNavigation();
+                this.setupAccessibility();
+                this.initializeVoices();
+                this.loadSavedState();
+                this.startAutoSave();
+                console.log('🎹 LUMINA KEYS initialized with Tesla 3-6-9 resonance');
+            }
+
+            setupPianoKeys() {
+                const keys = document.querySelectorAll('.piano-key');
+                keys.forEach(key => {
+                    // Click/Touch interaction
+                    key.addEventListener('click', () => this.activateKey(key));
+                    
+                    // Keyboard support
+                    key.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            this.activateKey(key);
+                        }
+                    });
+
+                    // Hover effects with Tesla timing
+                    key.addEventListener('mouseenter', () => {
+                        if (!key.classList.contains('active')) {
+                            key.style.transform = 'translateY(-3px) scale(1.02)';
+                        }
+                    });
+
+                    key.addEventListener('mouseleave', () => {
+                        if (!key.classList.contains('active')) {
+                            key.style.transform = '';
+                        }
+                    });
+                });
+            }
+
+            activateKey(keyElement) {
+                const repo = keyElement.dataset.repo;
+                const archetype = keyElement.dataset.archetype;
+                const keyNote = keyElement.dataset.key;
+                
+                // Repository URL mapping
+                const repoUrls = {
+                    'cathedral': 'https://github.com/Bekalah/cathedral',
+                    'circuitum99': 'https://github.com/Bekalah/circuitum99',
+                    'stone-grimoire': 'https://github.com/Bekalah/stone-grimoire',
+                    'liber-arcanae': 'https://github.com/Bekalah/liber-arcanae',
+                    'tesseract-bridge': 'https://github.com/Bekalah/tesseract-bridge',
+                    'cosmogenesis': 'https://github.com/Bekalah/cosmogenesis-learning-engine',
+                    'mystery-house': 'https://github.com/Bekalah/magical-mystery-house',
+                    'luxcrux': 'https://github.com/Bekalah/luxcrux'
+                };
+
+                // Visual feedback with golden ratio timing
+                keyElement.classList.add('active');
+                setTimeout(() => {
+                    keyElement.classList.remove('active');
+                }, 1618); // Golden mean duration
+
+                // Activate archetypal voice
+                if (this.voices && archetype) {
+                    const situation = `illuminating the ${repo} pathway`;
+                    this.voices.activateVoice(archetype, situation);
+                    this.updateVoicesDisplay();
+                }
+
+                // Navigate to repository
+                if (repoUrls[repo]) {
+                    window.open(repoUrls[repo], '_blank');
+                    console.log(`✨ LUMINA: Illuminating ${repo} - ${archetype}`);
+                }
+
+                // Track for state persistence
+                this.activeKeys.add(repo);
+                this.autoSave();
+            }
+
+            setupKeyboardNavigation() {
+                const keyMap = {
+                    'c': 'cathedral',
+                    'v': 'circuitum99', 
+                    'd': 'stone-grimoire',
+                    'r': 'liber-arcanae',
+                    'e': 'tesseract-bridge',
+                    'f': 'cosmogenesis',
+                    't': 'mystery-house',
+                    'g': 'luxcrux'
+                };
+
+                document.addEventListener('keydown', (e) => {
+                    if (keyMap[e.key.toLowerCase()]) {
+                        const keyElement = document.querySelector(`[data-repo="${keyMap[e.key.toLowerCase()]}"]`);
+                        if (keyElement) this.activateKey(keyElement);
+                    }
+
+                    // ESC for safe exit
+                    if (e.key === 'Escape') {
+                        this.safeExit();
+                    }
+                });
+            }
+
+            setupAccessibility() {
+                // Announce interactions for screen readers
+                const announcer = document.createElement('div');
+                announcer.setAttribute('aria-live', 'polite');
+                announcer.setAttribute('aria-atomic', 'true');
+                announcer.className = 'sr-only';
+                announcer.style.position = 'absolute';
+                announcer.style.left = '-10000px';
+                document.body.appendChild(announcer);
+                this.announcer = announcer;
+
+                // Prefers-reduced-motion support
+                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    document.body.classList.add('reduced-motion');
+                }
+            }
+
+            initializeVoices() {
+                if (typeof ArchetypalVoices !== 'undefined') {
+                    this.voices = new ArchetypalVoices();
+                    console.log('🎵 Archetypal voices system activated');
+                }
+            }
+
+            updateVoicesDisplay() {
+                if (!this.voices) return;
+                
+                const display = document.getElementById('voicesDisplay');
+                const recentVoices = this.voices.displayRecentVoices();
+                
+                if (recentVoices) {
+                    display.innerHTML = recentVoices;
+                    display.scrollTop = display.scrollHeight;
+                }
+            }
+
+            safeExit() {
+                // Gentle transition to center/calm state
+                document.querySelectorAll('.piano-key.active').forEach(key => {
+                    key.classList.remove('active');
+                });
+                
+                this.announcer.textContent = "Returned to center. You are safe.";
+                console.log('🕊️ LUMINA: Safe exit activated');
+            }
+
+            autoSave() {
+                const state = {
+                    activeKeys: Array.from(this.activeKeys),
+                    timestamp: new Date().toISOString(),
+                    sessionActivity: "Exploring consciousness through LUMINA KEYS",
+                    luminaVersion: "1.0.0"
+                };
+                
+                localStorage.setItem('lumina-keys-state', JSON.stringify(state));
+            }
+
+            loadSavedState() {
+                const saved = localStorage.getItem('lumina-keys-state');
+                if (saved) {
+                    const state = JSON.parse(saved);
+                    this.activeKeys = new Set(state.activeKeys || []);
+                    console.log('💜 LUMINA: Previous session restored');
+                }
+            }
+
+            startAutoSave() {
+                setInterval(() => this.autoSave(), 30000); // Every 30 seconds
+            }
+        }
+
+        // Global helper functions
+        function toggleVoicesPanel() {
+            const panel = document.getElementById('voicesPanel');
+            panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function clearVoices() {
+            if (window.luminaKeys && window.luminaKeys.voices) {
+                window.luminaKeys.voices.voiceLog = [];
+                document.getElementById('voicesDisplay').innerHTML = 
+                    '<p class="voices-intro">🏛️ CATHEDRAL: "I listen for the voices of wisdom that dwell within the luminous keys..."</p>';
+            }
+        }
+
+        function downloadConversation() {
+            if (window.luminaKeys && window.luminaKeys.voices) {
+                const conversation = window.luminaKeys.voices.getCurrentConversation();
+                const blob = new Blob([conversation], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `lumina-keys-wisdom-${new Date().toISOString().slice(0, 10)}.txt`;
+                a.click();
+                URL.revokeObjectURL(url);
+            }
+        }
+
+        function showMemoryDetails() {
+            const saved = localStorage.getItem('lumina-keys-state');
+            if (saved) {
+                const state = JSON.parse(saved);
+                alert(`💜 LUMINA KEYS Memory Support:\n\nLast Session: ${new Date(state.timestamp).toLocaleString()}\nYou were: ${state.sessionActivity}\nExplored Keys: ${state.activeKeys?.join(', ') || 'Cathedral center'}\n\nYou are safe and supported in your consciousness exploration.`);
+            } else {
+                alert(`💜 LUMINA KEYS Memory Support:\n\nThis is your first session with LUMINA KEYS - the illuminated piano of consciousness.\n\nYou can press any key to activate archetypal voices and explore different aspects of wisdom.\n\nYou are safe and supported.`);
+            }
+        }
+
+        function showBreathingGuide() {
+            alert(`🫁 LUMINA KEYS Breathing Guide:\n\nTake a moment to breathe deeply...\n\n• Inhale for 4 counts\n• Hold for 4 counts  \n• Exhale for 6 counts\n• Rest for 2 counts\n\nRepeat as needed. You are grounded and safe.`);
+        }
+
+        // Initialize when page loads
+        window.addEventListener('DOMContentLoaded', () => {
+            window.luminaKeys = new LuminaKeys();
+        });
+
+        console.log('✨ LUMINA KEYS - Tesla 3-6-9 Vortex Active');
+        console.log('🎹 Piano interface with archetypal voice generation');
+        console.log('🛡️ Trauma-informed design with accessibility support');
+        console.log('🔗 Repository navigation and wisdom preservation');
+    </script>
+</body>
+</html>
