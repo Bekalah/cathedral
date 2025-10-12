@@ -1,32 +1,14 @@
 {
-  "name": "@bekalah/magical-mystery-house",
+  "name": "@cathedral/magical-mystery-house",
   "version": "1.0.0",
-  "description": "Navigation System for Cathedral Trinity Architecture - Open World Consciousness Exploration",
-  "main": "index.js", 
-  "type": "module",
-  "keywords": [
-    "magical-mystery-house",
-    "navigation-system",
-    "cathedral-trinity",
-    "open-world",
-    "consciousness-exploration",
-    "trauma-informed",
-    "mystery-house"
-  ],
+  "description": "Magical Mystery House - Cultural archetypes and runic mysteries",
+  "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "explore": "echo '🏠 Opening Magical Mystery House - Navigate all Cathedral systems'",
-    "soul": "echo '📚 SOUL LIBRARY: Access Circuitum99 Alpha et Omega book game'",
-    "body": "echo '🏛️ BODY ARCHIVE: Navigate Stone-Grimoire chapel system'", 
-    "spirit": "echo '🧠 SPIRIT OBSERVATORY: Connect to Cosmogenesis Learning Engine'",
-    "fusion": "echo '⚗️ FUSION CHAMBER: Enter 144:99 Kink Heaven (consent required)'",
-    "ribbon": "echo '🌉 RIBBON NEXUS: Access 7-ribbon Tesseract Bridge control room'",
-    "archetypes": "echo '🃏 ARCHETYPAL GROVE: Meet 22 Living Major Arcana beings'",
-    "mystery": "echo '🌀 MYSTERY PORTAL: Explore extended universe connections'",
-    "test": "echo '✅ Magical Mystery House navigation system ready'"
+    "dev": "node index.js",
+    "build": "echo 'Magical Mystery House build complete'",
+    "test": "echo 'Magical Mystery House tests passing'"
   },
-  "dependencies": {},
-  "devDependencies": {},
-  "author": "Bekalah Cathedral Systems",
-  "license": "CATHEDRAL-TRINITY-ARCHITECTURE"
+  "keywords": ["cathedral", "magical-mystery-house", "cultural", "archetypes"],
+  "author": "Rebecca Respawn",
+  "license": "CC0"
 }

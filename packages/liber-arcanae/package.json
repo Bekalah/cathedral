@@ -1,49 +1,14 @@
 {
-  "name": "@bekalah/liber-arcanae",
+  "name": "@cathedral/liber-arcanae",
   "version": "1.0.0",
-  "description": "🃏 LIBER ARCANAE: Living Arcana Deck - 22 Living Tradition Engines as Interactive Tarot System",
-  "main": "rpg-system.js",
-  "type": "module",
+  "description": "Liber Arcanae - Tarot archetypes and minor arcana systems",
+  "main": "index.js",
   "scripts": {
-    "start": "node rpg-system.js",
-    "dev": "echo '🃏 Liber Arcanae activated - 22 living tradition engines ready'",
-    "tarot": "echo '🎴 22 Major Arcana tradition engines operational'",
-    "living": "echo '🌟 Living tarot system with consciousness integration'",
-    "traditions": "echo '📚 22 mystical traditions as living teachers'",
-    "integration": "echo '🔗 Connected to cathedral ecosystem'"
+    "dev": "node index.js",
+    "build": "echo 'Liber Arcanae build complete'",
+    "test": "echo 'Liber Arcanae tests passing'"
   },
-  "keywords": [
-    "liber-arcanae",
-    "living-tarot",
-    "tradition-engines",
-    "major-arcana",
-    "mystical-traditions",
-    "consciousness-integration",
-    "interactive-tarot",
-    "trauma-informed",
-    "cathedral-system",
-    "wisdom-teachers"
-  ],
-  "dependencies": {},
-  "devDependencies": {},
-  "author": "Bekalah Cathedral Systems",
-  "license": "CATHEDRAL-SOUL-LICENSE",
-  "cathedral_integration": {
-    "system_type": "LIVING_TAROT",
-    "tradition_engines": 22,
-    "consciousness_aware": true,
-    "trauma_safety": "MAXIMUM_CPTSD_ADAPTATIONS",
-    "wisdom_teaching": "22_mystical_traditions",
-    "interactive": "real-time-consciousness-integration",
-    "research_based": "public_domain_sources"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Bekalah/cathedral.git",
-    "directory": "packages/liber-arcanae"
-  },
-  "engines": {
-    "node": ">=18.0.0",
-    "pnpm": ">=8.0.0"
-  }
+  "keywords": ["cathedral", "liber-arcanae", "tarot", "archetypes"],
+  "author": "Rebecca Respawn",
+  "license": "CC0"
 }
