@@ -1,0 +1,95 @@
+{
+  "_license": "SPDX-License-Identifier: CC-BY-NC-SA-4.0",
+  "_copyright": "Copyright (c) 2025 Rebecca 'Bekalah' Lemke",
+  "_notice": "Safety content under CC BY-NC-SA 4.0. Professional review required for translations.",
+  "_source": "https://github.com/Bekalah/cathedral",
+  
+  "disclaimers": {
+    "notMedicalAdvice": "This is not medical, psychological, or spiritual advice. For professional support, consult qualified practitioners.",
+    "experimentalSystem": "This is an experimental creative and educational system. Use with personal discernment.",
+    "traumaInformed": "This platform is designed with trauma-informed principles. You have full control over your experience.",
+    "consentBased": "All interactions are consent-based. You can stop, pause, or modify your experience at any time."
+  },
+  
+  "warnings": {
+    "flashingLights": "This content contains flashing or strobing effects",
+    "loudSounds": "This content may contain sudden or loud sounds", 
+    "movingImages": "This content contains moving or animated visuals",
+    "emotionalContent": "This content may evoke strong emotional responses",
+    "spiritualContent": "This content engages with spiritual or mystical themes"
+  },
+  
+  "safetyTools": {
+    "pauseButton": "Emergency Pause",
+    "exitButton": "Safe Exit",
+    "calmSpace": "Calm Space",
+    "groundingExercise": "Grounding Exercise",
+    "breathingTool": "Breathing Tool",
+    "supportContacts": "Support Contacts"
+  },
+  
+  "grounding": {
+    "title": "Grounding Exercise",
+    "instruction1": "Notice 5 things you can see around you",
+    "instruction2": "Notice 4 things you can touch or feel",
+    "instruction3": "Notice 3 things you can hear",
+    "instruction4": "Notice 2 things you can smell",
+    "instruction5": "Notice 1 thing you can taste",
+    "breathe": "Take three deep, slow breaths",
+    "safe": "You are safe. You are in control."
+  },
+  
+  "breathing": {
+    "title": "Breathing Exercise",
+    "inhale": "Breathe in slowly",
+    "hold": "Hold gently", 
+    "exhale": "Breathe out slowly",
+    "inhaleCount": "Inhale for {count}",
+    "holdCount": "Hold for {count}",
+    "exhaleCount": "Exhale for {count}",
+    "followTheCircle": "Follow the circle with your breath"
+  },
+  
+  "supportResources": {
+    "title": "Support Resources",
+    "crisis": "Crisis Support",
+    "therapy": "Therapy Resources",
+    "community": "Community Support",
+    "emergency": "Emergency Services",
+    "disclaimer": "These are general resources. Always consult your local emergency services in crisis."
+  },
+  
+  "consent": {
+    "enteringSpace": "You are about to enter a sacred creative space",
+    "yourChoice": "Participation is entirely your choice",
+    "canLeave": "You can leave or pause at any time",
+    "noJudgment": "There is no judgment here",
+    "ready": "I'm ready to proceed",
+    "needMoreTime": "I need more time to decide",
+    "notToday": "Not today, thank you"
+  },
+  
+  "boundaries": {
+    "respectYours": "We respect your boundaries completely",
+    "setYourOwn": "Set your own pace and limits",
+    "changeMind": "You can change your mind at any time",
+    "noExplanation": "No explanation is ever required",
+    "yourWellbeing": "Your wellbeing is our priority"
+  },
+  
+  "memorySupport": {
+    "forgettingOkay": "Forgetting is completely okay",
+    "noShame": "There is no shame in needing reminders",
+    "saveProgress": "Your progress is automatically saved",
+    "helpfulReminders": "We provide gentle, helpful reminders",
+    "amnesiaSafe": "This space is amnesia-safe"
+  },
+  
+  "neurodivergentSupport": {
+    "noMasking": "No masking or pretending required",
+    "stimmingWelcome": "Stimming and self-regulation welcome",
+    "processTime": "Take all the time you need to process",
+    "overloadPrevention": "We help prevent sensory overload",
+    "differentIsFine": "Different ways of being are honored here"
+  }
+}

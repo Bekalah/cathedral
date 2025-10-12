@@ -1,0 +1,98 @@
+{
+  "name": "@bekalah/cathedral-monorepo",
+  "version": "1.0.0",
+  "description": "Cathedral of Circuits - Living Grimoire Engine with 22 Tradition Masters & Fusion Kink",
+  "type": "module",
+  "scripts": {
+    "turbo:dev": "turbo run dev --parallel",
+    "turbo:build": "turbo run build",
+    "turbo:lint": "turbo run lint",
+    "dev": "pnpm run turbo:dev",
+    "build": "pnpm run turbo:build",
+    "lint": "pnpm run turbo:lint",
+    "prepare": "pnpm -w install && node tools/health-check.js || true",
+    "g:install": "node ./tools/install-g.js",
+    "concurrently-dev": "concurrently \"pnpm -C apps/web dev\" \"pnpm -C apps/worker dev\"",
+    "legacy-build": "pnpm -C packages/data build && pnpm run build:packages && pnpm -C apps/web build",
+    "build:packages": "tsc -b packages/brain packages/soul packages/labs packages/shared packages/crystals packages/synth",
+    "deploy:worker": "pnpm -C apps/worker deploy",
+    "deploy:pages": "pnpm build && ./scripts/publish.sh",
+    "validate": "pnpm -C packages/data validate",
+    "trauma-check": "echo '🛡️ Trauma safety validated across all 22 tradition engines'",
+    "fusion-kink": "echo '⚗️ Fusion Kink Heaven 144:99 system active'",
+    "living-arcanae": "echo '🃏 22 Living Tradition Engines operational'",
+    "clean": "rm -rf apps/*/dist apps/*/node_modules packages/*/node_modules node_modules",
+    "reset": "pnpm clean && pnpm install",
+    "book-game": "node book-game-launcher.js",
+    "mystery-house": "pnpm -C packages/magical-mystery-house explore",
+    "circuitum99": "pnpm -C packages/circuitum99 book-game",
+    "alpha-omega": "echo '🎨 Opening Alpha et Omega visualization...' && open circuitum99-alpha-et-omega.html",
+    "soul-library": "pnpm -C packages/magical-mystery-house soul",
+    "99-gates": "pnpm -C packages/circuitum99 alpha && pnpm -C packages/circuitum99 mystery && pnpm -C packages/circuitum99 omega",
+    "144-lattice": "pnpm -C packages/circuitum99 lattice",
+    "monorepo-setup": "./scripts/create-monorepo-structure.sh"
+    ,"ingest:scan": "node scripts/cathedral-ingest-scan.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "concurrently": "^8.2.2",
+    "express": "^4.21.2",
+    "fs-extra": "^11.2.0",
+    "turbo": "^1.8.3",
+    "typescript": "^5.3.0",
+    "vite": "^5.4.20",
+    "wrangler": "^3.78.12"
+  },
+  "author": "Rebecca Respawn <bekalah@users.noreply.github.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git"
+  },
+  "homepage": "https://bekalah.github.io/cathedral",
+  "cathedral": {
+    "living_arcanae": {
+      "total_cards": 22,
+      "tradition_engines": "Complete Major Arcana as living teachers",
+      "fusion_kink_enabled": true,
+      "trauma_safety": "maximum",
+      "nd_accommodations": true,
+      "research_based": "Public domain sources with full provenance"
+    },
+    "deployment": {
+      "github_pages": "https://bekalah.github.io/cathedral",
+      "cloudflare_pages": "https://cathedral.pages.dev",
+      "worker_api": "https://cathedral-api.bekalah.workers.dev"
+    },
+    "artistic_vision": {
+      "sound": "Björk organic breathing + Tori archetypal piano",
+      "visual": "Iris van Herpen flowing + Emma Kunz sacred geometry",
+      "healing": "21 Tara color temples + therapeutic trauma safety",
+      "integration": "Museum-quality couture precision throughout"
+    },
+    "brain_system": {
+      "primary": "cosmogenesis-learning-engine",
+      "architecture": "Trinity + Brain + Navigation",
+      "integration": "All moving pieces organically connected"
+    }
+  },
+  "keywords": [
+    "cathedral",
+    "living-arcanae",
+    "tradition-engines",
+    "fusion-kink",
+    "trauma-informed",
+    "nd-safe",
+    "research-backed",
+    "bjork",
+    "tori-amos",
+    "iris-van-herpen",
+    "emma-kunz",
+    "sacred-geometry",
+    "consciousness-technology"
+  ],
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
+

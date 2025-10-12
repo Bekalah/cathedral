@@ -1,0 +1,20 @@
+{
+  "chapters": [
+    {
+      "number": 1,
+      "title": "The Foundation",
+      "gates": ["Alpha", "Omega"],
+      "characters": ["Rebecca Respawn", "Aleister Crowley"],
+      "factions": ["Weavers", "Catalysts"]
+    },
+    {
+      "number": 2,
+      "title": "The Awakening",
+      "gates": ["Birth", "Death"],
+      "characters": ["Paul Foster Case", "Moonchild Tarot"],
+      "factions": ["Alchemists", "Poets"]
+    }
+  ],
+  "total_chapters": 33,
+  "structure": "Living narrative spine with integrated character and faction bindings"
+}

@@ -1,0 +1,81 @@
+{
+  "_license": "SPDX-License-Identifier: CC-BY-NC-SA-4.0",
+  "_copyright": "Copyright (c) 2025 Rebecca 'Bekalah' Lemke",
+  "_notice": "Accessibility feature descriptions under CC BY-NC-SA 4.0",
+  "_source": "https://github.com/Bekalah/cathedral",
+  
+  "vision": {
+    "screenReaderOptimized": "Fully optimized for screen readers",
+    "highContrast": "High contrast mode available",
+    "fontSizeScaling": "Adjustable font sizes from 50% to 300%",
+    "colorIndependent": "No information conveyed by color alone",
+    "alternativeText": "Descriptive alternative text for all images",
+    "focusIndicators": "Clear, high-contrast focus indicators",
+    "darkLightMode": "Dark and light mode options"
+  },
+  
+  "hearing": {
+    "visualSoundIndicators": "Visual representations of all audio",
+    "closedCaptions": "Captions available for all audio content",
+    "soundAlternatives": "Visual alternatives to sound cues",
+    "frequencyVisualization": "Visual representation of healing frequencies",
+    "volumeControls": "Precise volume control with mute options",
+    "hapticFeedback": "Haptic feedback where supported"
+  },
+  
+  "motor": {
+    "keyboardNavigation": "Full keyboard navigation support",
+    "largeClickTargets": "Large, easy-to-click buttons and links",
+    "gestureAlternatives": "Alternative inputs for all gestures",
+    "timingControls": "User control over timed interactions",
+    "motionReduction": "Reduced motion options available",
+    "voiceControl": "Voice control compatibility"
+  },
+  
+  "cognitive": {
+    "processingTime": "No rushed interactions or time pressure",
+    "memorySupport": "Save states and progress indicators",
+    "complexityLayers": "Information in manageable chunks",
+    "multipleLearningModes": "Visual, auditory, and text options",
+    "overwhelmPrevention": "Sensory overload controls",
+    "executiveFunction": "Clear navigation and task management",
+    "attentionSupport": "Focus modes and distraction reduction"
+  },
+  
+  "neurodivergent": {
+    "adhdSupport": "ADHD-friendly focus and time awareness features",
+    "autismSupport": "Predictable navigation and sensory controls",
+    "dyslexiaSupport": "Dyslexia-friendly fonts and reading aids",
+    "memoryDifferences": "Memory-friendly design with no punishment for forgetting",
+    "cognitiveLoad": "Adjustable information density",
+    "decisionSupport": "Clear options without overwhelming choices"
+  },
+  
+  "customization": {
+    "personalizeInterface": "Customize interface to your needs",
+    "savePreferences": "Save your accessibility preferences",
+    "multipleProfiles": "Create profiles for different needs",
+    "instantToggle": "Instantly toggle accessibility features",
+    "contextualHelp": "Help available when and where you need it",
+    "emergencyOverride": "Emergency accessibility override available"
+  },
+  
+  "assistiveTech": {
+    "screenReaders": "Compatible with JAWS, NVDA, VoiceOver, TalkBack",
+    "voiceRecognition": "Works with Dragon NaturallySpeaking",
+    "eyeTracking": "Support for eye-gaze navigation",
+    "switchNavigation": "Single and multiple switch input support",
+    "brailleDisplays": "Braille display compatibility",
+    "headMouse": "Head-tracking mouse compatibility"
+  },
+  
+  "features": {
+    "skipLinks": "Skip navigation links for efficient browsing",
+    "landmarkRegions": "Properly labeled page regions",
+    "headingStructure": "Logical heading hierarchy",
+    "formLabels": "Clear, descriptive form labels",
+    "errorHandling": "Clear, helpful error messages",
+    "progressIndicators": "Visual and audible progress indicators",
+    "timeouts": "Generous timeouts with extension options"
+  }
+}
