@@ -1,24 +1,25 @@
 {
-  "$schema": "https://turbo.build/schema.json",
+  "$schema": "https://turborepo.org/schema.json",
   "pipeline": {
+    "generate-data": {
+      "outputs": ["packages/core/data/**"]
+    },
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", "build/**", ".next/**", "storybook-static/**"]
-    },
-    "lint": {
-      "outputs": []
-    },
-    "test": {
-      "outputs": []
+      "outputs": ["dist/**"]
     },
     "dev": {
-      "cache": false,
-      "persistent": true
+      "cache": false
     },
-    "start": {
-      "dependsOn": ["^build"],
-      "outputs": []
+    "godot-export": {
+      "dependsOn": ["generate-data"]
+    },
+    "generate-avalon": {
+      "dependsOn": ["generate-data"],
+      "outputs": ["packages/core/data/avalon/**"]
+    },
+    "test": {
+      "outputs": ["coverage/**"]
     }
-  },
-  "globalDependencies": ["pnpm-lock.yaml", "package.json"]
+  }
 }

@@ -1,35 +1,43 @@
 {
   "files": [],
   "references": [
-    { "path": "packages/brain" },
-    { "path": "packages/soul" },
-    { "path": "packages/labs" },
-  { "path": "packages/shared" },
-  { "path": "packages/crystals" },
-  { "path": "packages/synth" }
+    { "path": "packages/core" },
+    { "path": "packages/circuitum99" },
+    { "path": "packages/stone-grimoire" },
+    { "path": "packages/liber-arcanae" },
+    { "path": "packages/tesseract-bridge" },
+    { "path": "packages/cosmogenesis-learning-engine" },
+    { "path": "packages/magical-mystery-house" },
+    { "path": "packages/luxcrux" }
   ],
   "compilerOptions": {
-    "target": "ES2020",
+    "target": "ES2022",
     "module": "ESNext",
-    "moduleResolution": "Node",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "bundler",
+
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+
+    "jsx": "react-jsx",
     "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
     "composite": true,
     "baseUrl": ".",
     "paths": {
-      "@cathedral/brain": ["packages/brain/src"],
-      "@cathedral/soul": ["packages/soul/src"],
-      "@cathedral/labs": ["packages/labs/src"],
-      "@cathedral/shared": ["packages/shared/src"],
-      "@cathedral/crystals": ["packages/crystals/src"],
-      "@cathedral/synth": ["packages/synth/src"],
-      "codex-144-99": ["external/codex-144-99/src"],
-      "liber-arcanae": ["external/liber-arcanae/src"]
+      "@cathedral/core": ["packages/core/src"],
+      "@cathedral/circuitum99": ["packages/circuitum99/src"],
+      "@cathedral/stone-grimoire": ["packages/stone-grimoire/src"],
+      "@cathedral/liber-arcanae": ["packages/liber-arcanae/src"],
+      "@cathedral/tesseract-bridge": ["packages/tesseract-bridge/src"],
+      "@cathedral/cosmogenesis-learning-engine": ["packages/cosmogenesis-learning-engine/src"],
+      "@cathedral/magical-mystery-house": ["packages/magical-mystery-house/src"],
+      "@cathedral/luxcrux": ["packages/luxcrux/src"],
+      "@cathedral/integration": ["integration"],
+      "@/*": ["apps/*/src"]
     }
   }
 }

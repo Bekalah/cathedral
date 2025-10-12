@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Spiral Poet",
+    "pair": ["The Fool","The Hierophant"],
+    "ability": ["riddle_speak","pattern_teach"],
+    "lineage": ["Rebecca Respawn","Moonchild Tarot"],
+    "source": ["cosmogenesis-learning-engine/data/octarine_fusion_rules.json"]
+  },
+  {
+    "name": "Shock Alchemist",
+    "pair": ["Temperance","The Tower"],
+    "ability": ["break_and_blend"],
+    "lineage": ["Paul Foster Case","Aleister Crowley"],
+    "source": ["cosmogenesis-learning-engine/data/octarine_fusion_rules.json"]
+  }
+]
