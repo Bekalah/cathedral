@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Integration Hub Playground</title>
+<style>
+  body{font-family:Georgia,sans-serif;margin:0;padding:2rem;background:#f8f5ef;color:#222;}
+  select, button{margin:0.5rem 0;padding:0.5rem;font-size:1rem;}
+  #info{margin-top:1rem;padding:1rem;border:1px solid #ccc;background:#fff;border-radius:8px;}
+</style>
+</head>
+<body>
+<h1>Integration Hub Playground</h1>
+
+<label for="nodeSelect">Select Node:</label>
+<select id="nodeSelect"></select>
+
+<label for="boonSelect">Select Boon:</label>
+<select id="boonSelect"></select>
+
+<div id="info"></div>
+
+<script>
+async function loadData() {
+  const nodes = await fetch('codex_nodes.json').then(r=>r.json());
+  const boons = await fetch('fusionist_registry.json').then(r=>r.json());
+
+  const nodeSelect = document.getElementById('nodeSelect');
+  nodes.forEach(n => { const o = document.createElement('option'); o.value=n.tarot; o.textContent=n.tarot; nodeSelect.appendChild(o); });
+
+  const boonSelect = document.getElementById('boonSelect');
+  boons.forEach(b => { const o = document.createElement('option'); o.value=b.name; o.textContent=b.name; boonSelect.appendChild(o); });
+
+  function updateInfo() {
+    const n = nodes.find(x => x.tarot === nodeSelect.value);
+    const b = boons.find(x => x.name === boonSelect.value);
+    document.getElementById('info').innerHTML = `
+      <h2>Node: ${n.tarot}</h2>
+      <p>Archetype: ${n.archetype}</p>
+      <p>Role: ${n.role}</p>
+      <h3>Boon: ${b.name}</h3>
+      <p>Abilities: ${b.ability.join(', ')}</p>
+      <p>Lineage: ${b.lineage.join(', ')}</p>
+    `;
+  }
+
+  nodeSelect.addEventListener('change', updateInfo);
+  boonSelect.addEventListener('change', updateInfo);
+  updateInfo();
+}
+
+loadData();
+</script>
+</body>
+</html>

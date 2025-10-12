@@ -1,0 +1,1 @@
+{"version":3,"file":"colorScience.d.ts","sourceRoot":"","sources":["../src/colorScience.ts"],"names":[],"mappings":"AACA,qBAAa,YAAY;IACvB,eAAe,CAAC,UAAU,EAAE,MAAM;;;;;IAsBlC,oBAAoB,CAAC,GAAG,EAAE;QAAC,CAAC,EAAC,MAAM,CAAC;QAAA,CAAC,EAAC,MAAM,CAAC;QAAA,CAAC,EAAC,MAAM,CAAA;KAAC;;WAAzB,MAAM;WAAG,MAAM;WAAG,MAAM;;IAIrD,cAAc,CAAC,cAAc,EAAE,MAAM;;;;;;;CAStC"}
