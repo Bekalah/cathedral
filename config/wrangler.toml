@@ -1,0 +1,48 @@
+name = "cathedral-of-circuits"
+compatibility_date = "2024-09-28"
+
+[env.production]
+name = "cathedral-of-circuits"
+
+[env.staging]
+name = "cathedral-of-circuits-staging"
+
+# Static site configuration
+[build]
+command = "npm run build"
+publish = "dist"
+
+# Environment variables for lattice connections
+[vars]
+LATTICE_MODE = "production"
+CATHEDRAL_VERSION = "1.0.0"
+JEWEL_INDRA_ACTIVE = "true"
+
+# Custom domains and routing
+[[redirects]]
+from = "/circuitum99/*"
+to = "https://circuitum99.pages.dev/:splat"
+status = 200
+
+[[redirects]]
+from = "/liber-arcanae/*" 
+to = "https://liber-arcanae.pages.dev/:splat"
+status = 200
+
+[[redirects]]
+from = "/stone-grimoire/*"
+to = "https://stone-grimoire.pages.dev/:splat"
+status = 200
+
+[[redirects]]
+from = "/tesseract-bridge/*"
+to = "https://tesseract-bridge.pages.dev/:splat"
+status = 200
+
+# Headers for lattice interconnection
+[[headers]]
+for = "/*"
+[headers.values]
+X-Cathedral-Lattice = "active"
+X-Jewel-Indra = "reflecting"
+Access-Control-Allow-Origin = "*"

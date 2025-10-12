@@ -1,0 +1,4 @@
+
+> codex-144-99@0.1.0 build /Users/rebeccalemke/cathedral/cathedral/external/codex-144-99
+> tsc -p tsconfig.build.json
+

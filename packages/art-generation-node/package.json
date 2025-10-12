@@ -1,5 +1,5 @@
 {
-  "name": "@bekalah/art-generation-node",
+  "name": "@cathedral/art-generation-node",
   "version": "1.0.0",
   "description": "High-end art generation and pattern science node connected to real data",
   "main": "dist/index.js",
@@ -12,6 +12,8 @@
     "fusion": "node dist/fusion/fusionEngine.js"
   },
   "dependencies": {
+    "@cathedral/shared": "workspace:*",
+    "@cathedral/cyoa-book-game": "workspace:*",
     "@cathedral/shared": "workspace:*",
     "@bekalah/cyoa-book-game": "workspace:*",
     "canvas": "^2.11.2",
