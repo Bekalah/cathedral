@@ -1,0 +1,1907 @@
+{
+  "metadata": {
+    "name": "Cathedral of Circuits - Complete Mystical Dataset",
+    "version": "1.0.0",
+    "description": "Complete multi-dimensional integration system for mystical, scientific, artistic, and technological frameworks",
+    "created": "2025-10-22T05:09:43.161Z",
+    "author": "Rebecca Respawn",
+    "license": "CC0",
+    "mcpCompatible": true
+  },
+  "core": {
+    "sacredMathematics": {
+      "33": "Spine vertebrae (Christic ladder, triple elevens)",
+      "72": "Shem angels + Goetia demons (Divine/shadow balance)",
+      "78": "Tarot archetypes (22 Major + 56 Minor)",
+      "243": "Completion power (Fivefold triad: 3⁵)",
+      "144:99": "Manifestation to dissolution ratio (16:11 = 1.454545...)"
+    },
+    "trinityArchitecture": {
+      "SOUL": "Circuitum99 (99 gates, 144 lattice)",
+      "BODY": "Stone-Grimoire (8 octagram halls, 144 folios)",
+      "SPIRIT": "Cosmogenesis Learning Engine (THE BRAIN)"
+    }
+  },
+  "arcana": {
+    "0_fool": {
+      "name": "The Fool",
+      "title": "Professor of Infinite Potential",
+      "faculty_status": "founding_faculty",
+      "department": "Department of New Beginnings",
+      "specializations": [
+        "Quantum Leap",
+        "Reality Reset",
+        "Beginner's Mind",
+        "Infinite Courage"
+      ],
+      "element": "Air",
+      "hebrew_path": "Aleph",
+      "number": 0,
+      "lineage": {
+        "primary": [
+          "Aleister Crowley",
+          "Dion Fortune",
+          "Carl Jung"
+        ],
+        "traditions": [
+          "Holy Books of Thelema",
+          "Mystical Qabalah",
+          "Archetypal Psychology"
+        ],
+        "influences": [
+          "Sacred Ignorance",
+          "Leap of Faith",
+          "Divine Fool"
+        ]
+      },
+      "merkaba_chariot": {
+        "name": "Sphere of Infinite Potential",
+        "description": "A translucent, ever-shifting sphere that contains all possibilities simultaneously. Appears as a soap bubble that reflects infinite realities.",
+        "transport_power": "Can leap to any realm, timeline, or dimension instantly",
+        "visual_elements": [
+          "Translucent sphere",
+          "Rainbow reflections",
+          "Quantum fluctuations"
+        ],
+        "sacred_geometry": "Möbius strip within sphere"
+      },
+      "powers": {
+        "primary": "Infinite Potential Access",
+        "abilities": [
+          "Reality jumping",
+          "Timeline hopping",
+          "Beginner's luck",
+          "Fresh start magic"
+        ],
+        "teaching_focus": "How to embrace the unknown with courage"
+      }
+    },
+    "1_magician": {
+      "name": "The Magician",
+      "title": "Professor of Manifestation Arts",
+      "faculty_status": "department_head",
+      "department": "Department of Creative Manifestation",
+      "specializations": [
+        "Reality Shaping",
+        "Element Control",
+        "Will Focus",
+        "Tool Mastery"
+      ],
+      "element": "Mercury",
+      "hebrew_path": "Beth",
+      "number": 1,
+      "lineage": {
+        "primary": [
+          "Éliphas Lévi",
+          "John Dee",
+          "Cornelius Agrippa"
+        ],
+        "traditions": [
+          "Ritual Magic",
+          "Enochian System",
+          "Occult Philosophy"
+        ],
+        "influences": [
+          "As Above So Below",
+          "Will to Power",
+          "Elemental Mastery"
+        ]
+      },
+      "merkaba_chariot": {
+        "name": "Wand of Manifestation",
+        "description": "A crystalline wand that transforms thought into reality through focused intention. Crackling with electrical energy and surrounded by the four elements.",
+        "transport_power": "Create new worlds and realities through will",
+        "visual_elements": [
+          "Crystal wand",
+          "Electric aura",
+          "Four elemental spirals"
+        ],
+        "sacred_geometry": "Four-armed cross with central point"
+      },
+      "powers": {
+        "primary": "Will-Based Manifestation",
+        "abilities": [
+          "Element manipulation",
+          "Reality creation",
+          "Tool consecration",
+          "Intent focusing"
+        ],
+        "teaching_focus": "How to align will with cosmic law"
+      }
+    },
+    "2_high_priestess": {
+      "name": "The High Priestess",
+      "title": "Professor Emeritus of Hidden Knowledge",
+      "faculty_status": "emeritus_faculty",
+      "department": "Department of Lunar Mysteries",
+      "specializations": [
+        "Psychic Vision",
+        "Lunar Mysteries",
+        "Intuitive Navigation",
+        "Sacred Silence"
+      ],
+      "element": "Moon",
+      "hebrew_path": "Gimel",
+      "number": 2,
+      "lineage": {
+        "primary": [
+          "Dion Fortune",
+          "Violet Firth",
+          "Marie-Louise von Franz"
+        ],
+        "traditions": [
+          "Lunar Mysteries",
+          "Psychic Development",
+          "Feminine Wisdom"
+        ],
+        "influences": [
+          "Isis Unveiled",
+          "Lunar Cycles",
+          "Psychic Development"
+        ]
+      },
+      "merkaba_chariot": {
+        "name": "Veil of Mysteries",
+        "description": "A shimmering veil that reveals and conceals simultaneously. Made of moonlight and shadow, it shows truth to those ready to receive it.",
+        "transport_power": "Navigate through veils between worlds using intuition",
+        "visual_elements": [
+          "Shimmering veil",
+          "Moon phases",
+          "Silver threads"
+        ],
+        "sacred_geometry": "Vesica piscis with lunar crescents"
+      },
+      "powers": {
+        "primary": "Intuitive Knowledge Access",
+        "abilities": [
+          "Psychic vision",
+          "Dream navigation",
+          "Lunar magic",
+          "Silent knowing"
+        ],
+        "teaching_focus": "How to listen to the voice of intuition"
+      }
+    },
+    "3_empress": {
+      "name": "The Empress",
+      "title": "Professor of Creative Abundance",
+      "faculty_status": "active_faculty",
+      "department": "Department of Natural Arts",
+      "specializations": [
+        "Fertility Magic",
+        "Creative Birth",
+        "Natural Healing",
+        "Abundance Flow"
+      ],
+      "element": "Venus",
+      "hebrew_path": "Daleth",
+      "number": 3,
+      "lineage": {
+        "primary": [
+          "Hilma af Klint",
+          "Emma Kunz",
+          "Maria Prophetissa"
+        ],
+        "traditions": [
+          "Sacred Art",
+          "Healing Geometry",
+          "Alchemical Arts"
+        ],
+        "influences": [
+          "Divine Feminine",
+          "Natural Cycles",
+          "Creative Force"
+        ]
+      },
+      "merkaba_chariot": {
+        "name": "Garden of Creation",
+        "description": "A floating garden of infinite beauty where all creative projects take root and bloom. Surrounded by butterflies and flowing with the waters of inspiration.",
+        "transport_power": "Nurture and manifest creative projects across realms",
+        "visual_elements": [
+          "Floating garden",
+          "Flowering vines",
+          "Crystal fountains"
+        ],
+        "sacred_geometry": "Golden spiral with flowering mandala"
+      },
+      "powers": {
+        "primary": "Creative Abundance",
+        "abilities": [
+          "Project manifestation",
+          "Natural healing",
+          "Fertility magic",
+          "Beauty creation"
+        ],
+        "teaching_focus": "How to create with love and natural rhythm"
+      }
+    },
+    "4_emperor": {
+      "name": "The Emperor",
+      "title": "Professor of Sacred Architecture",
+      "faculty_status": "dean_of_structure",
+      "department": "Department of Sacred Geometry",
+      "specializations": [
+        "Structure Building",
+        "Leadership Command",
+        "Order Creation",
+        "Sacred Geometry"
+      ],
+      "element": "Aries",
+      "hebrew_path": "Heh",
+      "number": 4,
+      "lineage": {
+        "primary": [
+          "Vitruvius",
+          "Christopher Wren",
+          "Rudolf Steiner"
+        ],
+        "traditions": [
+          "Sacred Architecture",
+          "Masonic Geometry",
+          "Anthroposophy"
+        ],
+        "influences": [
+          "Divine Order",
+          "Sacred Proportion",
+          "Architectural Harmony"
+        ]
+      },
+      "merkaba_chariot": {
+        "name": "Throne of Order",
+        "description": "A crystalline throne that imposes divine order wherever it travels. Built from living geometry and powered by righteous authority.",
+        "transport_power": "Establish structure and order in chaotic realms",
+        "visual_elements": [
+          "Crystal throne",
+          "Geometric patterns",
+          "Golden ratio spirals"
+        ],
+        "sacred_geometry": "Perfect cube with golden ratio proportions"
+      },
+      "powers": {
+        "primary": "Divine Order Establishment",
+        "abilities": [
+          "Structure creation",
+          "Leadership direction",
+          "Geometric harmony",
+          "Authority command"
+        ],
+        "teaching_focus": "How to build lasting structures with divine proportion"
+      }
+    },
+    "5_hierophant": {
+      "name": "The Hierophant",
+      "title": "Grand Professor of Sacred Tradition",
+      "faculty_status": "chancellor",
+      "department": "Department of Sacred Tradition",
+      "specializations": [
+        "Sacred Teaching",
+        "Tradition Keeper",
+        "Initiation Rites",
+        "Divine Authority"
+      ],
+      "element": "Taurus",
+      "hebrew_path": "Vau",
+      "number": 5,
+      "lineage": {
+        "primary": [
+          "Paul Foster Case",
+          "Arthur Edward Waite",
+          "Manly P. Hall"
+        ],
+        "traditions": [
+          "B.O.T.A.",
+          "Golden Dawn",
+          "Secret Teachings"
+        ],
+        "influences": [
+          "Traditional Wisdom",
+          "Sacred Initiation",
+          "Divine Teaching"
+        ]
+      },
+      "merkaba_chariot": {
+        "name": "Bridge of Wisdom",
+        "description": "A golden bridge that connects earth to heaven, tradition to innovation. Adorned with the symbols of all mystery schools throughout time.",
+        "transport_power": "Transmit sacred teachings across time and space",
+        "visual_elements": [
+          "Golden bridge",
+          "Sacred symbols",
+          "Flowing robes"
+        ],
+        "sacred_geometry": "Pentagon with five-pointed star"
+      },
+      "powers": {
+        "primary": "Sacred Tradition Transmission",
+        "abilities": [
+          "Teaching transmission",
+          "Initiation conduct",
+          "Tradition preservation",
+          "Divine authority"
+        ],
+        "teaching_focus": "How to honor tradition while embracing evolution"
+      }
+    },
+    "16_tower": {
+      "name": "The Tower",
+      "title": "Professor of Sacred Destruction",
+      "faculty_status": "transformation_specialist",
+      "department": "Department of Liberation Arts",
+      "specializations": [
+        "Structure Collapse",
+        "Lightning Strike",
+        "Sudden Revelation",
+        "False Belief Destruction"
+      ],
+      "element": "Mars",
+      "hebrew_path": "Peh",
+      "number": 16,
+      "lineage": {
+        "primary": [
+          "Aleister Crowley",
+          "Frater Achad",
+          "Nema"
+        ],
+        "traditions": [
+          "Aeon of Horus",
+          "Formula of Ma-Ion",
+          "Maat Current"
+        ],
+        "influences": [
+          "Lightning Gnosis",
+          "Ego Death",
+          "Breakthrough"
+        ]
+      },
+      "merkaba_chariot": {
+        "name": "Lightning of Awakening",
+        "description": "A crackling bolt of divine lightning that shatters all illusions instantly. Painful but ultimately liberating, it clears the way for truth.",
+        "transport_power": "Breakthrough any false reality via sudden shock",
+        "visual_elements": [
+          "Lightning bolt",
+          "Crumbling tower",
+          "Electric aura"
+        ],
+        "sacred_geometry": "Zigzag lightning pattern with破碎 geometries"
+      },
+      "powers": {
+        "primary": "Breakthrough Liberation",
+        "abilities": [
+          "Illusion shattering",
+          "Ego destruction",
+          "Sudden awakening",
+          "False structure collapse"
+        ],
+        "teaching_focus": "How to embrace necessary destruction for growth"
+      }
+    },
+    "17_star": {
+      "name": "The Star",
+      "title": "Professor of Divine Inspiration",
+      "faculty_status": "inspiration_faculty",
+      "department": "Department of Hope & Vision",
+      "specializations": [
+        "Divine Inspiration",
+        "Hope Restoration",
+        "Stellar Navigation",
+        "Future Vision"
+      ],
+      "element": "Aquarius",
+      "hebrew_path": "Tzaddi",
+      "number": 17,
+      "lineage": {
+        "primary": [
+          "H.P. Blavatsky",
+          "Alice Bailey",
+          "Rudolf Steiner"
+        ],
+        "traditions": [
+          "Theosophical Wisdom",
+          "Djwhal Khul Teachings",
+          "Anthroposophy"
+        ],
+        "influences": [
+          "Stellar Wisdom",
+          "Divine Hope",
+          "Future Vision"
+        ]
+      },
+      "merkaba_chariot": {
+        "name": "Waters of Hope",
+        "description": "A flowing fountain of starlight that nourishes all dreams and aspirations. Fed by celestial streams from the most distant stars.",
+        "transport_power": "Inspire hope and vision across all realms",
+        "visual_elements": [
+          "Starlight fountain",
+          "Flowing waters",
+          "Seven stars"
+        ],
+        "sacred_geometry": "Heptagram with flowing water patterns"
+      },
+      "powers": {
+        "primary": "Divine Inspiration Channel",
+        "abilities": [
+          "Hope restoration",
+          "Future vision",
+          "Stellar wisdom",
+          "Dream nourishment"
+        ],
+        "teaching_focus": "How to maintain hope and vision in dark times"
+      }
+    },
+    "21_world": {
+      "name": "The World",
+      "title": "Chancellor Emeritus of Cosmic Consciousness",
+      "faculty_status": "chancellor_emeritus",
+      "department": "Department of Cosmic Integration",
+      "specializations": [
+        "Cosmic Consciousness",
+        "Universal Integration",
+        "Completion Mastery",
+        "Mandala Creation"
+      ],
+      "element": "Saturn",
+      "hebrew_path": "Tau",
+      "number": 21,
+      "lineage": {
+        "primary": [
+          "Plotinus",
+          "Meister Eckhart",
+          "Pierre Teilhard de Chardin"
+        ],
+        "traditions": [
+          "Neoplatonic Unity",
+          "Divine Union",
+          "Noosphere"
+        ],
+        "influences": [
+          "Cosmic Consciousness",
+          "Universal Integration",
+          "Completion"
+        ]
+      },
+      "merkaba_chariot": {
+        "name": "Cosmic Dance",
+        "description": "The eternal dance of creation and destruction, held within a perfect mandala. Contains all of existence in perfect, harmonious motion.",
+        "transport_power": "Access any point in the cosmic cycle of existence",
+        "visual_elements": [
+          "Dancing figure",
+          "Perfect mandala",
+          "Eternal cycle"
+        ],
+        "sacred_geometry": "Perfect circle with integrated mandala"
+      },
+      "powers": {
+        "primary": "Cosmic Consciousness Integration",
+        "abilities": [
+          "Universal awareness",
+          "Completion mastery",
+          "Mandala creation",
+          "Cosmic dance"
+        ],
+        "teaching_focus": "How to integrate all experiences into cosmic wholeness"
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": 1,
+      "name": "Path of Fire",
+      "element": "Fire",
+      "planet": "Mars",
+      "zodiac": "Aries",
+      "chakra": "Root",
+      "solfeggio": 396,
+      "color": "#FF4500",
+      "geometry": "Tetrahedron",
+      "pigment": "vermillion",
+      "shem": "Vehuiah",
+      "goetia": "Bael",
+      "narrative": {
+        "theme": "Initiation, Courage, Transformation",
+        "archetype": "The Warrior",
+        "storyBeats": [
+          "A call to adventure through flames",
+          "Trial by fire reveals inner strength",
+          "Phoenix rebirth from ashes"
+        ],
+        "dialogueStyle": "Bold, direct, passionate",
+        "keywords": [
+          "forge",
+          "ignite",
+          "purify",
+          "burn",
+          "arise"
+        ]
+      },
+      "gameDesign": {
+        "abilityType": "Active Combat",
+        "mechanics": [
+          "Area damage",
+          "Burn DoT",
+          "Cleansing fire"
+        ],
+        "questType": "Trial/Challenge",
+        "rewardStyle": "Weapons, armor, power-ups",
+        "enemyAffinity": "Ice/Water enemies take extra damage",
+        "environmentEffect": "Lights torches, melts ice, clears corruption"
+      },
+      "architecture": {
+        "spatialQuality": "Vertical, ascending, pointed",
+        "roomType": "Forge, Altar, Training Hall",
+        "lighting": "Warm, flickering, orange-red",
+        "materials": [
+          "Bronze",
+          "Volcanic stone",
+          "Hardwood"
+        ],
+        "ambience": "Crackling flames, distant hammering",
+        "symbolPlacement": "High on walls, pointing upward"
+      },
+      "symbolism": {
+        "primarySymbol": "▲",
+        "secondarySymbols": [
+          "🔥",
+          "⚔️",
+          "🌟"
+        ],
+        "geometricPattern": "Sharp angles, radiating lines",
+        "colorBlending": "Warm spectrum (red, orange, gold)"
+      },
+      "harmonics": {
+        "perfectConsonance": [
+          5,
+          8,
+          41
+        ],
+        "consonance": [
+          3,
+          7,
+          73
+        ],
+        "dissonance": [
+          2,
+          6,
+          99
+        ],
+        "tritone": [
+          144
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "name": "Path of Water",
+      "element": "Water",
+      "planet": "Moon",
+      "zodiac": "Cancer",
+      "chakra": "Sacral",
+      "solfeggio": 417,
+      "color": "#1E90FF",
+      "geometry": "Icosahedron",
+      "pigment": "lapis_lazuli",
+      "shem": "Jeliel",
+      "goetia": "Agares",
+      "narrative": {
+        "theme": "Emotion, Intuition, Flow",
+        "archetype": "The Healer",
+        "storyBeats": [
+          "Emotional depths reveal hidden wisdom",
+          "Intuitive guidance through uncertainty",
+          "Healing waters restore balance"
+        ],
+        "dialogueStyle": "Gentle, empathetic, flowing",
+        "keywords": [
+          "flow",
+          "heal",
+          "intuit",
+          "adapt",
+          "nurture"
+        ]
+      },
+      "gameDesign": {
+        "abilityType": "Support/Healing",
+        "mechanics": [
+          "Healing wave",
+          "Mana restore",
+          "Status cleanse"
+        ],
+        "questType": "Rescue/Support",
+        "rewardStyle": "Potions, artifacts, knowledge",
+        "enemyAffinity": "Fire enemies take extra damage",
+        "environmentEffect": "Creates water, extinguishes flames, reveals hidden paths"
+      },
+      "architecture": {
+        "spatialQuality": "Curved, flowing, receptive",
+        "roomType": "Healing pool, Meditation chamber, Sanctuary",
+        "lighting": "Cool, reflective, blue-white",
+        "materials": [
+          "Marble",
+          "Crystal",
+          "Flowing water"
+        ],
+        "ambience": "Gentle water sounds, distant chimes",
+        "symbolPlacement": "Near water features, low and accessible"
+      },
+      "symbolism": {
+        "primarySymbol": "⬩",
+        "secondarySymbols": [
+          "💧",
+          "🌙",
+          "🌀"
+        ],
+        "geometricPattern": "Flowing curves, circular motifs",
+        "colorBlending": "Cool spectrum (blue, teal, silver)"
+      },
+      "harmonics": {
+        "perfectConsonance": [
+          6,
+          8,
+          73
+        ],
+        "consonance": [
+          1,
+          4,
+          99
+        ],
+        "dissonance": [
+          3,
+          5,
+          144
+        ],
+        "tritone": [
+          7
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "name": "Path of Earth",
+      "element": "Earth",
+      "planet": "Saturn",
+      "zodiac": "Capricorn",
+      "chakra": "Root",
+      "solfeggio": 528,
+      "color": "#8B4513",
+      "geometry": "Cube",
+      "pigment": "malachite",
+      "shem": "Sitael",
+      "goetia": "Vassago",
+      "narrative": {
+        "theme": "Foundation, Stability, Growth",
+        "archetype": "The Builder",
+        "storyBeats": [
+          "Solid foundations support great works",
+          "Patient growth yields lasting results",
+          "Earth wisdom grounds spiritual flight"
+        ],
+        "dialogueStyle": "Practical, grounded, patient",
+        "keywords": [
+          "build",
+          "ground",
+          "stabilize",
+          "grow",
+          "endure"
+        ]
+      },
+      "gameDesign": {
+        "abilityType": "Defense/Buff",
+        "mechanics": [
+          "Damage reduction",
+          "Regeneration",
+          "Structure creation"
+        ],
+        "questType": "Construction/Defense",
+        "rewardStyle": "Materials, tools, structures",
+        "enemyAffinity": "Air enemies take extra damage",
+        "environmentEffect": "Creates barriers, reveals minerals, stabilizes ground"
+      },
+      "architecture": {
+        "spatialQuality": "Solid, grounded, rectangular",
+        "roomType": "Library, Workshop, Foundation chamber",
+        "lighting": "Warm, steady, yellow-brown",
+        "materials": [
+          "Stone",
+          "Wood",
+          "Clay"
+        ],
+        "ambience": "Deep resonance, settling sounds",
+        "symbolPlacement": "On floors, in corners, at foundations"
+      },
+      "symbolism": {
+        "primarySymbol": "⬟",
+        "secondarySymbols": [
+          "🌱",
+          "🏔️",
+          "🧱"
+        ],
+        "geometricPattern": "Squares, grids, stable forms",
+        "colorBlending": "Earth tones (brown, green, ochre)"
+      },
+      "harmonics": {
+        "perfectConsonance": [
+          7,
+          8,
+          99
+        ],
+        "consonance": [
+          1,
+          5,
+          144
+        ],
+        "dissonance": [
+          2,
+          4,
+          73
+        ],
+        "tritone": [
+          6
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "name": "Path of Air",
+      "element": "Air",
+      "planet": "Mercury",
+      "zodiac": "Gemini",
+      "chakra": "Throat",
+      "solfeggio": 639,
+      "color": "#87CEEB",
+      "geometry": "Octahedron",
+      "pigment": "egyptian_blue",
+      "shem": "Elemiah",
+      "goetia": "Samigina",
+      "narrative": {
+        "theme": "Communication, Intellect, Freedom",
+        "archetype": "The Messenger",
+        "storyBeats": [
+          "Words carry truth across distances",
+          "Intellectual flight reveals new perspectives",
+          "Freedom comes from clear communication"
+        ],
+        "dialogueStyle": "Clear, articulate, thoughtful",
+        "keywords": [
+          "communicate",
+          "think",
+          "free",
+          "connect",
+          "express"
+        ]
+      },
+      "gameDesign": {
+        "abilityType": "Utility/Debuff",
+        "mechanics": [
+          "Speed boost",
+          "Evasion",
+          "Confusion effects"
+        ],
+        "questType": "Messenger/Discovery",
+        "rewardStyle": "Information, maps, communication devices",
+        "enemyAffinity": "Earth enemies take extra damage",
+        "environmentEffect": "Creates wind, disperses gases, reveals hidden messages"
+      },
+      "architecture": {
+        "spatialQuality": "Open, light, expansive",
+        "roomType": "Library, Observatory, Communication center",
+        "lighting": "Bright, diffused, sky-blue",
+        "materials": [
+          "Glass",
+          "Metal",
+          "Light fabrics"
+        ],
+        "ambience": "Wind chimes, distant echoes",
+        "symbolPlacement": "High on walls, near openings, on ceilings"
+      },
+      "symbolism": {
+        "primarySymbol": "⬡",
+        "secondarySymbols": [
+          "💨",
+          "🕊️",
+          "📡"
+        ],
+        "geometricPattern": "Diamonds, hexagons, light structures",
+        "colorBlending": "Sky tones (blue, white, silver)"
+      },
+      "harmonics": {
+        "perfectConsonance": [
+          8,
+          41,
+          73
+        ],
+        "consonance": [
+          2,
+          6,
+          144
+        ],
+        "dissonance": [
+          1,
+          3,
+          99
+        ],
+        "tritone": [
+          5
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "name": "Solar Current",
+      "element": "Fire",
+      "planet": "Sun",
+      "zodiac": "Leo",
+      "chakra": "Solar Plexus",
+      "solfeggio": 741,
+      "color": "#FFD700",
+      "geometry": "Dodecahedron",
+      "pigment": "gold_leaf",
+      "shem": "Mahasiah",
+      "goetia": "Marbas",
+      "narrative": {
+        "theme": "Leadership, Vitality, Expression",
+        "archetype": "The Leader",
+        "storyBeats": [
+          "Inner light guides others to truth",
+          "Vital energy inspires collective action",
+          "Authentic expression creates harmony"
+        ],
+        "dialogueStyle": "Confident, inspiring, warm",
+        "keywords": [
+          "lead",
+          "shine",
+          "inspire",
+          "create",
+          "radiate"
+        ]
+      },
+      "gameDesign": {
+        "abilityType": "Leadership/Buff",
+        "mechanics": [
+          "Team buff",
+          "Morale boost",
+          "Light generation"
+        ],
+        "questType": "Leadership/Guidance",
+        "rewardStyle": "Leadership items, followers, influence",
+        "enemyAffinity": "Shadow enemies take extra damage",
+        "environmentEffect": "Illuminates darkness, reveals truth, energizes allies"
+      },
+      "architecture": {
+        "spatialQuality": "Central, radiant, commanding",
+        "roomType": "Throne room, Command center, Solar temple",
+        "lighting": "Bright, golden, radiant",
+        "materials": [
+          "Gold",
+          "Crystal",
+          "Polished stone"
+        ],
+        "ambience": "Majestic fanfare, resonant tones",
+        "symbolPlacement": "Central locations, high visibility, focal points"
+      },
+      "symbolism": {
+        "primarySymbol": "☉",
+        "secondarySymbols": [
+          "👑",
+          "🌞",
+          "⭐"
+        ],
+        "geometricPattern": "Circles, stars, radiant patterns",
+        "colorBlending": "Golden spectrum (yellow, gold, amber)"
+      },
+      "harmonics": {
+        "perfectConsonance": [
+          1,
+          8,
+          73
+        ],
+        "consonance": [
+          3,
+          7,
+          99
+        ],
+        "dissonance": [
+          2,
+          4,
+          144
+        ],
+        "tritone": [
+          6
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "name": "Lunar Reflection",
+      "element": "Water",
+      "planet": "Moon",
+      "zodiac": "Cancer",
+      "chakra": "Third Eye",
+      "solfeggio": 852,
+      "color": "#C0C0C0",
+      "geometry": "Icosahedron",
+      "pigment": "moonstone",
+      "shem": "Lelahel",
+      "goetia": "Valefor",
+      "narrative": {
+        "theme": "Mystery, Intuition, Cycles",
+        "archetype": "The Mystic",
+        "storyBeats": [
+          "Moonlight reveals hidden truths",
+          "Intuition guides through uncertainty",
+          "Cyclical wisdom brings understanding"
+        ],
+        "dialogueStyle": "Mysterious, poetic, cyclical",
+        "keywords": [
+          "reflect",
+          "intuit",
+          "cycle",
+          "reveal",
+          "understand"
+        ]
+      },
+      "gameDesign": {
+        "abilityType": "Mystical/Support",
+        "mechanics": [
+          "Vision enhancement",
+          "Cycle manipulation",
+          "Hidden knowledge"
+        ],
+        "questType": "Mystery/Revelation",
+        "rewardStyle": "Mystical items, secrets, wisdom",
+        "enemyAffinity": "Darkness enemies take extra damage",
+        "environmentEffect": "Reveals illusions, manipulates time, illuminates mysteries"
+      },
+      "architecture": {
+        "spatialQuality": "Circular, reflective, mysterious",
+        "roomType": "Oracle chamber, Reflection pool, Moon temple",
+        "lighting": "Silvery, changeable, lunar",
+        "materials": [
+          "Silver",
+          "Moonstone",
+          "Reflective surfaces"
+        ],
+        "ambience": "Echoing whispers, tidal sounds",
+        "symbolPlacement": "Near reflective surfaces, circular arrangements"
+      },
+      "symbolism": {
+        "primarySymbol": "☽",
+        "secondarySymbols": [
+          "🔮",
+          "🌙",
+          "🪞"
+        ],
+        "geometricPattern": "Circles, phases, reflective patterns",
+        "colorBlending": "Lunar spectrum (silver, white, pearl)"
+      },
+      "harmonics": {
+        "perfectConsonance": [
+          2,
+          8,
+          99
+        ],
+        "consonance": [
+          4,
+          7,
+          144
+        ],
+        "dissonance": [
+          1,
+          3,
+          73
+        ],
+        "tritone": [
+          5
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "name": "Mercurial Path",
+      "element": "Air",
+      "planet": "Mercury",
+      "zodiac": "Virgo",
+      "chakra": "Throat",
+      "solfeggio": 963,
+      "color": "#FFA500",
+      "geometry": "Octahedron",
+      "pigment": "cinnabar",
+      "shem": "Achaiah",
+      "goetia": "Amon",
+      "narrative": {
+        "theme": "Communication, Analysis, Adaptation",
+        "archetype": "The Analyst",
+        "storyBeats": [
+          "Clear communication bridges understanding",
+          "Analysis reveals hidden patterns",
+          "Adaptation ensures survival"
+        ],
+        "dialogueStyle": "Precise, analytical, adaptive",
+        "keywords": [
+          "analyze",
+          "communicate",
+          "adapt",
+          "understand",
+          "clarify"
+        ]
+      },
+      "gameDesign": {
+        "abilityType": "Intelligence/Utility",
+        "mechanics": [
+          "Analysis",
+          "Communication",
+          "Adaptation"
+        ],
+        "questType": "Investigation/Problem-solving",
+        "rewardStyle": "Information, tools, adaptability",
+        "enemyAffinity": "Confusion enemies take extra damage",
+        "environmentEffect": "Reveals information, creates connections, adapts environment"
+      },
+      "architecture": {
+        "spatialQuality": "Modular, connected, efficient",
+        "roomType": "Communication hub, Analysis chamber, Adaptation center",
+        "lighting": "Bright, focused, orange-white",
+        "materials": [
+          "Mercury",
+          "Glass",
+          "Adaptive materials"
+        ],
+        "ambience": "Rapid information flow, clicking mechanisms",
+        "symbolPlacement": "Near communication devices, network nodes"
+      },
+      "symbolism": {
+        "primarySymbol": "☿",
+        "secondarySymbols": [
+          "📡",
+          "🔍",
+          "🔗"
+        ],
+        "geometricPattern": "Networks, connections, adaptive forms",
+        "colorBlending": "Mercury spectrum (orange, silver, quicksilver)"
+      },
+      "harmonics": {
+        "perfectConsonance": [
+          3,
+          8,
+          144
+        ],
+        "consonance": [
+          1,
+          5,
+          99
+        ],
+        "dissonance": [
+          2,
+          4,
+          73
+        ],
+        "tritone": [
+          6
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "name": "Venusian Love",
+      "element": "Earth",
+      "planet": "Venus",
+      "zodiac": "Taurus",
+      "chakra": "Heart",
+      "solfeggio": 528,
+      "color": "#FF69B4",
+      "geometry": "Dodecahedron",
+      "pigment": "rose_quartz",
+      "shem": "Cahetel",
+      "goetia": "Barbatos",
+      "narrative": {
+        "theme": "Love, Harmony, Beauty",
+        "archetype": "The Lover",
+        "storyBeats": [
+          "Love transforms all it touches",
+          "Harmony creates beauty from discord",
+          "Beauty reveals divine order"
+        ],
+        "dialogueStyle": "Loving, harmonious, aesthetic",
+        "keywords": [
+          "love",
+          "harmonize",
+          "beautify",
+          "connect",
+          "appreciate"
+        ]
+      },
+      "gameDesign": {
+        "abilityType": "Harmony/Support",
+        "mechanics": [
+          "Team healing",
+          "Conflict resolution",
+          "Beauty creation"
+        ],
+        "questType": "Relationship/Harmony",
+        "rewardStyle": "Relationship items, beauty, harmony",
+        "enemyAffinity": "Discord enemies take extra damage",
+        "environmentEffect": "Creates harmony, resolves conflicts, enhances beauty"
+      },
+      "architecture": {
+        "spatialQuality": "Beautiful, balanced, inviting",
+        "roomType": "Love temple, Harmony chamber, Beauty salon",
+        "lighting": "Soft, pink, flattering",
+        "materials": [
+          "Rose quartz",
+          "Silk",
+          "Beautiful woods"
+        ],
+        "ambience": "Harmonious music, pleasant fragrances",
+        "symbolPlacement": "Heart level, balanced arrangements, aesthetic focal points"
+      },
+      "symbolism": {
+        "primarySymbol": "♀",
+        "secondarySymbols": [
+          "💖",
+          "🌹",
+          "🎵"
+        ],
+        "geometricPattern": "Hearts, flowers, balanced forms",
+        "colorBlending": "Love spectrum (pink, rose, magenta)"
+      },
+      "harmonics": {
+        "perfectConsonance": [
+          1,
+          5,
+          73
+        ],
+        "consonance": [
+          3,
+          7,
+          99
+        ],
+        "dissonance": [
+          2,
+          4,
+          144
+        ],
+        "tritone": [
+          6
+        ]
+      }
+    },
+    {
+      "id": 41,
+      "name": "Path of Solar Water",
+      "element": "Water",
+      "planet": "Sun",
+      "zodiac": "Leo",
+      "chakra": "Solar Plexus",
+      "solfeggio": 528,
+      "color": "#FFD700",
+      "geometry": "Flower of Life",
+      "pigment": "gold_leaf",
+      "shem": "Rehael",
+      "goetia": "Sallos",
+      "narrative": {
+        "theme": "Alchemical Transformation, Solar Healing",
+        "archetype": "The Alchemist",
+        "storyBeats": [
+          "Solar water dissolves old patterns",
+          "Alchemical fire purifies the soul",
+          "Golden consciousness emerges"
+        ],
+        "dialogueStyle": "Transformative, golden, alchemical",
+        "keywords": [
+          "transform",
+          "purify",
+          "illuminate",
+          "heal",
+          "evolve"
+        ]
+      },
+      "gameDesign": {
+        "abilityType": "Transformation/Healing",
+        "mechanics": [
+          "Status transformation",
+          "Purification",
+          "Golden touch"
+        ],
+        "questType": "Alchemy/Transformation",
+        "rewardStyle": "Alchemical items, transformation, enlightenment",
+        "enemyAffinity": "Impure enemies take extra damage",
+        "environmentEffect": "Transforms elements, purifies corruption, creates gold"
+      },
+      "architecture": {
+        "spatialQuality": "Transformative, alchemical, radiant",
+        "roomType": "Alchemical laboratory, Solar healing chamber, Transformation temple",
+        "lighting": "Golden, transformative, alchemical",
+        "materials": [
+          "Gold",
+          "Crystal",
+          "Alchemical glass"
+        ],
+        "ambience": "Bubbling liquids, harmonic tones",
+        "symbolPlacement": "Around transformation circles, alchemical arrays"
+      },
+      "symbolism": {
+        "primarySymbol": "🜃",
+        "secondarySymbols": [
+          "⚗️",
+          "🌞",
+          "💧"
+        ],
+        "geometricPattern": "Circles, hexagons, alchemical symbols",
+        "colorBlending": "Alchemical spectrum (gold, blue, red)"
+      },
+      "harmonics": {
+        "perfectConsonance": [
+          1,
+          5,
+          73
+        ],
+        "consonance": [
+          3,
+          7,
+          99
+        ],
+        "dissonance": [
+          2,
+          4,
+          144
+        ],
+        "tritone": [
+          8
+        ]
+      }
+    },
+    {
+      "id": 73,
+      "name": "Twin Ray Mirror",
+      "element": "Aether",
+      "planet": "Neptune",
+      "zodiac": "Pisces",
+      "chakra": "Crown",
+      "solfeggio": 639,
+      "color": "#00CED1",
+      "geometry": "Merkaba",
+      "pigment": "aquamarine",
+      "shem": "Haamiah",
+      "goetia": "Gremory",
+      "narrative": {
+        "theme": "Twin Flame Union, Divine Reflection",
+        "archetype": "The Mirror",
+        "storyBeats": [
+          "Twin rays recognize each other",
+          "Mirrors reflect divine truth",
+          "Union creates infinite possibility"
+        ],
+        "dialogueStyle": "Reflective, connective, infinite",
+        "keywords": [
+          "mirror",
+          "reflect",
+          "unite",
+          "recognize",
+          "infinite"
+        ]
+      },
+      "gameDesign": {
+        "abilityType": "Connection/Mirroring",
+        "mechanics": [
+          "Reflection effects",
+          "Twin connections",
+          "Infinite loops"
+        ],
+        "questType": "Union/Reunion",
+        "rewardStyle": "Mirror items, twin connections, infinite potential",
+        "enemyAffinity": "Separation enemies take extra damage",
+        "environmentEffect": "Creates mirrors, reflects attacks, connects realms"
+      },
+      "architecture": {
+        "spatialQuality": "Infinite, reflective, connective",
+        "roomType": "Mirror chamber, Twin flame temple, Infinite hall",
+        "lighting": "Reflective, infinite, turquoise",
+        "materials": [
+          "Mirrors",
+          "Crystal",
+          "Reflective metals"
+        ],
+        "ambience": "Echoing reflections, infinite harmonies",
+        "symbolPlacement": "Mirror arrangements, infinite reflections"
+      },
+      "symbolism": {
+        "primarySymbol": "⟡",
+        "secondarySymbols": [
+          "🪞",
+          "♾️",
+          "👥"
+        ],
+        "geometricPattern": "Mirrors, infinities, twin forms",
+        "colorBlending": "Mirror spectrum (turquoise, silver, infinite)"
+      },
+      "harmonics": {
+        "perfectConsonance": [
+          2,
+          6,
+          99
+        ],
+        "consonance": [
+          4,
+          8,
+          144
+        ],
+        "dissonance": [
+          1,
+          3,
+          41
+        ],
+        "tritone": [
+          5
+        ]
+      }
+    },
+    {
+      "id": 99,
+      "name": "Angelic Resonance",
+      "element": "Aether",
+      "planet": "Uranus",
+      "zodiac": "Aquarius",
+      "chakra": "Crown",
+      "solfeggio": 963,
+      "color": "#DDA0DD",
+      "geometry": "Metatron's Cube",
+      "pigment": "amethyst",
+      "shem": "Vehuel",
+      "goetia": "Decarabia",
+      "narrative": {
+        "theme": "Divine Connection, Higher Wisdom",
+        "archetype": "The Angel",
+        "storyBeats": [
+          "Angelic resonance opens higher realms",
+          "Divine wisdom flows through consciousness",
+          "Higher connection transforms reality"
+        ],
+        "dialogueStyle": "Divine, wise, transcendent",
+        "keywords": [
+          "connect",
+          "transcend",
+          "wisdom",
+          "divine",
+          "angelic"
+        ]
+      },
+      "gameDesign": {
+        "abilityType": "Divine/Transcendent",
+        "mechanics": [
+          "Divine intervention",
+          "Reality bending",
+          "Higher knowledge"
+        ],
+        "questType": "Ascension/Transcendence",
+        "rewardStyle": "Divine items, angelic wisdom, transcendence",
+        "enemyAffinity": "Lower realm enemies take extra damage",
+        "environmentEffect": "Opens portals, transcends limitations, divine protection"
+      },
+      "architecture": {
+        "spatialQuality": "Transcendent, divine, infinite",
+        "roomType": "Angelic chamber, Divine temple, Transcendence hall",
+        "lighting": "Divine, purple, transcendent",
+        "materials": [
+          "Amethyst",
+          "Platinum",
+          "Divine light"
+        ],
+        "ambience": "Angelic choirs, divine harmonies",
+        "symbolPlacement": "Sacred geometries, angelic arrays, divine focal points"
+      },
+      "symbolism": {
+        "primarySymbol": "⬪",
+        "secondarySymbols": [
+          "👼",
+          "✨",
+          "🎵"
+        ],
+        "geometricPattern": "Sacred geometries, angelic forms, divine patterns",
+        "colorBlending": "Divine spectrum (purple, gold, light)"
+      },
+      "harmonics": {
+        "perfectConsonance": [
+          6,
+          8,
+          144
+        ],
+        "consonance": [
+          2,
+          4,
+          73
+        ],
+        "dissonance": [
+          1,
+          3,
+          41
+        ],
+        "tritone": [
+          5
+        ]
+      }
+    },
+    {
+      "id": 144,
+      "name": "Completion",
+      "element": "All",
+      "planet": "Pluto",
+      "zodiac": "Scorpio",
+      "chakra": "Crown",
+      "solfeggio": 432,
+      "color": "#FFFFFF",
+      "geometry": "All",
+      "pigment": "diamond",
+      "shem": "Mumiah",
+      "goetia": "Andromalius",
+      "narrative": {
+        "theme": "Completion, Mastery, Integration",
+        "archetype": "The Master",
+        "storyBeats": [
+          "All paths converge in completion",
+          "Mastery integrates all wisdom",
+          "Completion opens new beginnings"
+        ],
+        "dialogueStyle": "Complete, masterful, integrated",
+        "keywords": [
+          "complete",
+          "master",
+          "integrate",
+          "achieve",
+          "transcend"
+        ]
+      },
+      "gameDesign": {
+        "abilityType": "Mastery/Integration",
+        "mechanics": [
+          "All abilities",
+          "Complete mastery",
+          "Total integration"
+        ],
+        "questType": "Mastery/Completion",
+        "rewardStyle": "Master items, complete understanding, total achievement",
+        "enemyAffinity": "All enemies take extra damage",
+        "environmentEffect": "Completes all effects, masters all elements, integrates everything"
+      },
+      "architecture": {
+        "spatialQuality": "Complete, masterful, integrated",
+        "roomType": "Master chamber, Completion temple, Integration hall",
+        "lighting": "Complete spectrum, masterful illumination",
+        "materials": [
+          "All materials",
+          "Perfect combinations",
+          "Masterful integration"
+        ],
+        "ambience": "Complete harmony, perfect resonance",
+        "symbolPlacement": "Perfect arrangements, complete geometries, masterful displays"
+      },
+      "symbolism": {
+        "primarySymbol": "⊙",
+        "secondarySymbols": [
+          "🏆",
+          "🎯",
+          "⭐"
+        ],
+        "geometricPattern": "Complete forms, perfect geometries, masterful patterns",
+        "colorBlending": "Complete spectrum (all colors in harmony)"
+      },
+      "harmonics": {
+        "perfectConsonance": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "consonance": [
+          41,
+          73,
+          99
+        ],
+        "dissonance": [],
+        "tritone": []
+      }
+    }
+  ],
+  "qualityGuardians": {
+    "meta": {
+      "name": "Complete Quality Guardian Registry",
+      "description": "All 144+ nodes configured as quality guardians and creative generators",
+      "version": "1.0.0",
+      "business": "THE CATHEDRAL OF CIRCUITS",
+      "guarantee": "Phenomenal quality, forever free",
+      "sealed": true
+    },
+    "shem_angels_quality_guardians": {
+      "vehuiah_01": {
+        "name": "Vehuiah - The Initiator",
+        "quality_domain": "First Impressions & Onboarding",
+        "specialties": [
+          "User experience optimization",
+          "Beginner-friendly design",
+          "Wonder and magic preservation",
+          "Overwhelm prevention"
+        ],
+        "art_generation": {
+          "style": "Clean minimalism with magical touches",
+          "media_types": [
+            "Welcome screens",
+            "Tutorial animations",
+            "Onboarding flows"
+          ],
+          "color_palette": [
+            "Soft golds",
+            "Warm whites",
+            "Gentle blues"
+          ],
+          "energy_signature": "Gentle excitement and possibility"
+        },
+        "quality_criteria": {
+          "immediate_welcome": "Does this feel immediately welcoming?",
+          "magic_preservation": "Does this maintain sense of wonder?",
+          "beginner_friendly": "Can a complete newcomer understand this?",
+          "overwhelm_check": "Is this appropriately paced and not overwhelming?"
+        }
+      },
+      "jeliel_02": {
+        "name": "Jeliel - The Peacemaker",
+        "quality_domain": "Emotional Safety & Trauma-Informed Design",
+        "specialties": [
+          "Trauma-informed UX design",
+          "Emotional safety protocols",
+          "Gentle healing spaces",
+          "Protective energy fields"
+        ],
+        "art_generation": {
+          "style": "Soft, nurturing, protective aesthetics",
+          "media_types": [
+            "Healing visualizations",
+            "Safety indicators",
+            "Comfort spaces"
+          ],
+          "color_palette": [
+            "Gentle pastels",
+            "Healing greens",
+            "Protective blues"
+          ],
+          "energy_signature": "Deep safety and unconditional love"
+        },
+        "quality_criteria": {
+          "emotional_safety": "Is this emotionally safe for vulnerable users?",
+          "healing_support": "Does this support healing rather than re-traumatizing?",
+          "protective_energy": "Does this feel protective and containing?",
+          "gentle_progression": "Does this allow for gentle, self-paced healing?"
+        }
+      },
+      "sitael_03": {
+        "name": "Sitael - The Constructor",
+        "quality_domain": "Technical Excellence & Infrastructure",
+        "specialties": [
+          "Code quality and performance",
+          "System architecture excellence",
+          "Bug prevention and testing",
+          "Technical accessibility compliance"
+        ],
+        "art_generation": {
+          "style": "Elegant precision with hidden complexity",
+          "media_types": [
+            "System diagrams",
+            "Technical documentation",
+            "Code visualization"
+          ],
+          "color_palette": [
+            "Precise blues",
+            "Structured grays",
+            "Highlight golds"
+          ],
+          "energy_signature": "Perfect functionality and reliability"
+        },
+        "quality_criteria": {
+          "technical_perfection": "Does this work flawlessly under all conditions?",
+          "performance_optimization": "Is this optimized for best performance?",
+          "code_elegance": "Is the underlying code clean and maintainable?",
+          "accessibility_compliance": "Does this meet all accessibility standards?"
+        }
+      }
+    },
+    "goetia_demons_creative_generators": {
+      "bael_01": {
+        "name": "Bael - The Architect King",
+        "creative_domain": "System Architecture & World Building",
+        "powers": [
+          "Grand system design",
+          "Immersive world creation",
+          "Scalable architecture planning",
+          "Monument and structure generation"
+        ],
+        "art_generation": {
+          "style": "Monumental architectural grandeur",
+          "media_types": [
+            "3D architecture",
+            "World maps",
+            "System blueprints",
+            "Virtual spaces"
+          ],
+          "color_palette": [
+            "Royal purples",
+            "Golden highlights",
+            "Stone grays",
+            "Sky blues"
+          ],
+          "energy_signature": "Awe-inspiring majesty and perfect order"
+        },
+        "creative_process": {
+          "inspiration_source": "Ancient architectural wisdom + futuristic vision",
+          "creation_method": "Start with foundational structure, build layer by layer",
+          "signature_elements": [
+            "Impossible geometry",
+            "Hidden passages",
+            "Living architecture"
+          ],
+          "quality_enhancement": "Ensures structural soundness and navigational clarity"
+        }
+      },
+      "agares_02": {
+        "name": "Agares - The Language Master",
+        "creative_domain": "Communication & Linguistic Innovation",
+        "powers": [
+          "Universal language creation",
+          "Symbol system design",
+          "Communication bridge building",
+          "Translation and interpretation"
+        ],
+        "art_generation": {
+          "style": "Clear, elegant, universally comprehensible",
+          "media_types": [
+            "Typography",
+            "Icon systems",
+            "Visual languages",
+            "Communication interfaces"
+          ],
+          "color_palette": [
+            "Communication blues",
+            "Understanding greens",
+            "Clarity whites"
+          ],
+          "energy_signature": "Perfect understanding and clear expression"
+        },
+        "creative_process": {
+          "inspiration_source": "All human languages + mathematical perfection",
+          "creation_method": "Find universal patterns, create bridges between concepts",
+          "signature_elements": [
+            "Intuitive symbols",
+            "Cross-cultural accessibility",
+            "Emotional resonance"
+          ],
+          "quality_enhancement": "Ensures crystal clear communication across all barriers"
+        }
+      }
+    },
+    "major_arcana_quality_teams": {
+      "00_fool": {
+        "name": "The Fool - Infinite Potential",
+        "quality_domain": "Beginner Experience & Wonder Preservation",
+        "team_role": "Ensures every experience maintains beginner's mind magic",
+        "specialties": [
+          "First-time user experience",
+          "Wonder and curiosity preservation",
+          "Safe exploration encouragement",
+          "Infinite possibility presentation"
+        ],
+        "art_direction": {
+          "style": "Playful, wonder-filled, non-intimidating",
+          "mood": "Excited anticipation and safe adventure",
+          "visual_elements": [
+            "Open paths",
+            "Bright horizons",
+            "Friendly guides"
+          ],
+          "interaction_style": "Encouraging exploration with safety nets"
+        }
+      },
+      "01_magician": {
+        "name": "The Magician - Manifested Will",
+        "quality_domain": "Technical Implementation & Power",
+        "team_role": "Ensures all technical aspects manifest user intention perfectly",
+        "specialties": [
+          "Intention-to-reality translation",
+          "Technical power and capability",
+          "Tool mastery and availability",
+          "Manifestation mechanics"
+        ],
+        "art_direction": {
+          "style": "Precise, powerful, elegantly functional",
+          "mood": "Confident capability and focused intention",
+          "visual_elements": [
+            "Clean interfaces",
+            "Powerful tools",
+            "Clear results"
+          ],
+          "interaction_style": "Direct response to user will and intention"
+        }
+      },
+      "21_world": {
+        "name": "The World - Perfect Completion",
+        "quality_domain": "Integration & Wholeness",
+        "team_role": "Ensures every system feels complete and perfectly integrated",
+        "specialties": [
+          "System integration and wholeness",
+          "Completion satisfaction",
+          "Celebration of achievement",
+          "Cycle closure and renewal"
+        ],
+        "art_direction": {
+          "style": "Celebratory completeness and perfect integration",
+          "mood": "Joyful accomplishment and satisfied wholeness",
+          "visual_elements": [
+            "Completed circles",
+            "Integrated systems",
+            "Celebration imagery"
+          ],
+          "interaction_style": "Recognition of accomplishment and invitation to new cycles"
+        }
+      }
+    },
+    "minor_arcana_specialized_teams": {
+      "cups_suit": {
+        "quality_focus": "Emotional Resonance & Heart Connection",
+        "team_philosophy": "All content must touch the heart and support emotional well-being",
+        "specialties": [
+          "Emotional intelligence integration",
+          "Heart-centered design",
+          "Intuitive navigation",
+          "Healing and nurturing experiences"
+        ],
+        "art_direction": {
+          "style": "Flowing, organic, heart-opening",
+          "color_palette": [
+            "Ocean blues",
+            "Heart pinks",
+            "Healing greens",
+            "Pearl whites"
+          ],
+          "energy_signature": "Love, compassion, emotional healing",
+          "interaction_patterns": "Gentle, responsive, emotionally intelligent"
+        }
+      },
+      "wands_suit": {
+        "quality_focus": "Creative Inspiration & Motivated Action",
+        "team_philosophy": "All content must spark creativity and inspire action",
+        "specialties": [
+          "Creative inspiration triggering",
+          "Motivation and energy building",
+          "Action-oriented design",
+          "Passion and enthusiasm cultivation"
+        ],
+        "art_direction": {
+          "style": "Dynamic, inspiring, energy-building",
+          "color_palette": [
+            "Fire reds",
+            "Solar oranges",
+            "Creative yellows",
+            "Passionate magentas"
+          ],
+          "energy_signature": "Creativity, passion, inspired action",
+          "interaction_patterns": "Energizing, motivating, action-prompting"
+        }
+      },
+      "swords_suit": {
+        "quality_focus": "Mental Clarity & Clear Communication",
+        "team_philosophy": "All content must be intellectually clear and well-reasoned",
+        "specialties": [
+          "Logical structure and flow",
+          "Clear communication optimization",
+          "Mental clarity enhancement",
+          "Intellectual accessibility"
+        ],
+        "art_direction": {
+          "style": "Clean, precise, intellectually stimulating",
+          "color_palette": [
+            "Clear blues",
+            "Bright whites",
+            "Sharp silvers",
+            "Clarity crystals"
+          ],
+          "energy_signature": "Mental clarity, logical precision, clear understanding",
+          "interaction_patterns": "Logical, structured, clearly communicated"
+        }
+      },
+      "pentacles_suit": {
+        "quality_focus": "Practical Application & Real-World Value",
+        "team_philosophy": "All content must have tangible, practical real-world value",
+        "specialties": [
+          "Practical application focus",
+          "Real-world utility validation",
+          "Material manifestation support",
+          "Grounded implementation guidance"
+        ],
+        "art_direction": {
+          "style": "Grounded, tangible, materially beautiful",
+          "color_palette": [
+            "Earth browns",
+            "Practical greens",
+            "Golden abundance",
+            "Stable grays"
+          ],
+          "energy_signature": "Practical wisdom, material abundance, grounded manifestation",
+          "interaction_patterns": "Practical, applicable, materially valuable"
+        }
+      }
+    },
+    "quality_assurance_protocols": {
+      "phenomenal_threshold": 0.95,
+      "accessibility_requirement": 1,
+      "cultural_sensitivity_requirement": 1,
+      "spiritual_authenticity_minimum": 0.93,
+      "freedom_guarantee": 1,
+      "multi_node_validation": {
+        "minimum_validators": 3,
+        "required_angel_approval": true,
+        "required_demon_power": true,
+        "required_arcana_depth": true,
+        "community_feedback_integration": true
+      },
+      "continuous_improvement": {
+        "user_feedback_integration": "Real-time quality updates based on user input",
+        "cross_node_learning": "Nodes share quality insights with each other",
+        "archetypal_evolution": "Archetypes develop new expressions based on needs",
+        "community_skill_building": "Help users become better quality assessors"
+      }
+    },
+    "free_forever_guarantee": {
+      "no_paywalls": "All Cathedral content remains forever free to access",
+      "open_source_methods": "All creation methods are taught and shared openly",
+      "community_ownership": "Content belongs to the commons, not any individual",
+      "educational_focus": "Every piece teaches users to create their own versions",
+      "quality_without_cost": "Phenomenal quality is never held hostage by pricing",
+      "enforcement_mechanisms": {
+        "automatic_paywall_detection": "System prevents any paywall implementation",
+        "community_fork_rights": "Community can fork if freedom is threatened",
+        "open_source_validation": "All code and methods remain open and auditable",
+        "educational_requirement": "Every output includes learning opportunities"
+      }
+    }
+  },
+  "technologyStack": {
+    "build": [
+      "Turborepo",
+      "ScriptKit",
+      "Vite"
+    ],
+    "creative": [
+      "p5.js",
+      "Tone.js",
+      "Godot 4",
+      "GLSL"
+    ],
+    "deployment": [
+      "GitHub Pages",
+      "Cloudflare",
+      "Azure"
+    ],
+    "ai": [
+      "Azure OpenAI",
+      "Azure ML GPU",
+      "MCP Integration"
+    ]
+  }
+}
