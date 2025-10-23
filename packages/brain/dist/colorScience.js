@@ -1,5 +1,17 @@
-// ColorScience: wavelength to RGB, tetrachromat, harmonic colors
+next.haracteci; // ColorScience: wavelength to RGB, tetrachromat, harmonic colors, enhanced with Azure AI
+import { OpenAIClient, AzureKeyCredential } from '@azure/openai';
+import * as dotenv from 'dotenv';
+dotenv.config();
 export class ColorScience {
+    openaiClient;
+    constructor() {
+        const endpoint = process.env.AZURE_OPENAI_ENDPOINT;
+        const key = process.env.AZURE_OPENAI_KEY;
+        const deployment = process.env.AZURE_OPENAI_DEPLOYMENT;
+        if (endpoint && key && deployment) {
+            this.openaiClient = new OpenAIClient(endpoint, new AzureKeyCredential(key));
+        }
+    }
     wavelengthToRGB(wavelength) {
         let R = 0, G = 0, B = 0;
         if (wavelength >= 380 && wavelength < 440) {
@@ -37,5 +49,23 @@ export class ColorScience {
             majorThird: baseWavelength * 1.25
         };
     }
+    async generateVisionaryColorPalette(theme, count = 5) {
+        if (!this.openaiClient) {
+            throw new Error('Azure OpenAI client not configured');
+        }
+        const prompt = `Generate a visionary color palette for the theme "${theme}". Provide ${count} hex colors that evoke high-end metaphysical and artistic qualities, focusing on color science, shading, and light. Ensure the palette supports uncensored, visionary art processes. List only the hex colors separated by commas.`;
+        try {
+            const response = await this.openaiClient.getCompletions(process.env.AZURE_OPENAI_DEPLOYMENT, prompt, { maxTokens: 100 });
+            const colors = response.choices[0].text?.trim().split(',').map(c => c.trim()) || [];
+            return colors.slice(0, count);
+        }
+        catch (error) {
+            console.error('Error generating color palette:', error);
+            return this.fallbackColorPalette(count);
+        }
+    }
+    fallbackColorPalette(count) {
+        const fallbackColors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7'];
+        return fallbackColors.slice(0, count);
+    }
 }
-//# sourceMappingURL=colorScience.js.map
