@@ -178,6 +178,93 @@ Research Location → Production Location
 
 ---
 
+## 🎨 Visionary Art Standards
+
+### **Art Generation Principles**
+All art in the Cathedral follows these standards:
+- **Sacred Geometry Compliance**: Golden ratio (1.618) in all compositions
+- **Color Science Integration**: Wavelength-based color palettes with harmonic relationships
+- **Shading and Light Techniques**: Azure AI-enhanced lighting for metaphysical depth
+- **Uncensored Expression**: Full creative freedom without content restrictions
+
+### **Pattern Types**
+```typescript
+// Supported pattern types in art generation
+enum PatternType {
+  GEOMETRIC = 'geometric',     // Polygons, circles, lines
+  ORGANIC = 'organic',         // Natural, flowing forms
+  FRACTAL = 'fractal',         // Mandelbrot, Julia sets
+  SACRED = 'sacred',           // Flower of Life, vesica piscis
+  FUSION = 'fusion'            // Combined patterns with mutations
+}
+```
+
+### **Shading and Light Implementation**
+- **Radial Gradients**: For mystical illumination effects
+- **Alpha Blending**: Layered transparency for depth
+- **AI-Enhanced Shadows**: Dynamic shading based on consciousness resonance
+- **Light Overlays**: Radial light sources for divine presence
+
+## 🔮 Metaphysics, Science, and Technology Integration
+
+### **Sacred Mathematics in Code**
+All systems use the 144:99 ratio for calculations:
+```javascript
+const SACRED_RATIO = 144 / 99; // ≈ 1.4545
+const GOLDEN_RATIO = 1.618;
+const SOLFEGGIO_FREQUENCIES = [396, 417, 528, 639, 741, 852, 963];
+```
+
+### **Consciousness-Responsive Features**
+- **Biometric Adaptation**: Future heart rate variability integration
+- **Emotional Resonance**: AI adjusts content based on user state
+- **Frequency Harmonics**: Audio synced to sacred frequencies
+- **Trauma Safety**: Automatic intensity reduction protocols
+
+### **High-End Game Support**
+- **RPG Mechanics**: Stats, abilities, progression for each archetype
+- **World Building**: Sacred worlds with 6 themed environments
+- **Fusion Kink**: Combine any two elements for new experiences
+- **AI Narratives**: Dynamic stories generated from player choices
+
+## 🧪 Azure AI Setup and Balanced Processing
+
+### **Environment Configuration**
+```bash
+# Required environment variables
+AZURE_OPENAI_ENDPOINT=https://your-resource.openai.azure.com/
+AZURE_OPENAI_KEY=your-api-key
+AZURE_OPENAI_DEPLOYMENT=gpt-4-vision-preview
+AZURE_COMPUTER_VISION_ENDPOINT=https://your-cv.cognitiveservices.azure.com/
+AZURE_COMPUTER_VISION_KEY=your-cv-key
+```
+
+### **Balanced Data Processing**
+- **No Censorship**: All AI prompts allow full creative expression
+- **User Consent**: Explicit agreements for sensitive content
+- **Ephemeral Processing**: No permanent data storage
+- **Ethical AI**: Enhances human creativity without override
+
+### **Setup Steps**
+1. Create Azure Cognitive Services resources
+2. Set environment variables in `.env`
+3. Test with sample prompts
+4. Integrate into art and game pipelines
+
+## 🃏 Liber Arcanae Codex Abyssiae Alchemy Deck Standards
+
+### **78-Card System by Rebecca Susan Lemke**
+- **Creator Attribution**: All cards credit Rebecca Susan Lemke aka Rebecca Respawn
+- **Alchemy Theme**: Profound transformation through elemental and planetary forces
+- **Living Characters**: Each card as story, game, and wisdom teacher
+- **Cross-App Consistency**: Unified art and mechanics across all apps
+
+### **Art Standards for Tarot**
+- **Visionary Style**: High-end metaphysical art with sacred geometry
+- **Color Palettes**: Harmonic colors based on elemental correspondences
+- **Symbolism**: Authentic alchemical and kabbalistic symbols
+- **Trauma Safety**: Safe visual elements with grounding options
+
 ## 🆘 TROUBLESHOOTING
 
 ### Common Issues:
@@ -185,6 +272,7 @@ Research Location → Production Location
 - **Missing Dependencies:** Run `npm install` in root and packages
 - **Integration Broken:** Check tesseract-bridge connections
 - **Data Missing:** Verify datasets in `/data/` directory
+- **Azure AI Errors:** Verify environment variables and API keys
 
 ### Quick Health Check:
 ```bash
@@ -199,6 +287,9 @@ npm run test:core
 
 # Verify integrations
 npm run test:integration
+
+# Test Azure AI
+npm run test:azure-ai
 ```
 
 ---
@@ -215,6 +306,9 @@ When working on Cathedral components:
 - [ ] Does cross-app navigation work?
 - [ ] Is the design CPTSD-safe and mystically accurate?
 - [ ] Have I tested builds and deployment?
+- [ ] Does art follow visionary standards with sacred geometry?
+- [ ] Is Azure AI integrated for enhancements?
+- [ ] Are tarot elements consistent across apps?
 
 ---
 
