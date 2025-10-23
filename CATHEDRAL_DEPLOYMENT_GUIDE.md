@@ -1,4 +1,4 @@
-# 🌟 CATHEDRAL DEPLOYMENT GUIDE: VS Code → GitHub → Cloudflare Integration
+ desi fl# 🌟 CATHEDRAL DEPLOYMENT GUIDE: VS Code → GitHub → Cloudflare Integration
 
 ## 🎭 Your Living System Architecture
 
@@ -172,6 +172,33 @@ When combining **Magus + High Priestess**:
 - **Audio Synthesis**: Mercury tones + Lunar frequencies
 - **Visual Overlay**: Sigils within vesica piscis geometry
 - **Exploration Application**: Safe spiritual contact with strong boundaries
+
+## 🌍 Global Deployment with Safety Considerations
+
+### **Safe Global Access for Creative Geniuses**
+Your Cathedral is designed to appeal to creative geniuses worldwide while prioritizing safety for LGBTQ+ users, trauma survivors, and all marginalized communities:
+
+- **Target Audience**: Artists, musicians, writers, designers, therapists, and visionaries seeking sacred technology
+- **Allowed Regions**: United States, Canada, European Union, Australia, New Zealand, Japan, South Korea, Taiwan, and other safe democracies
+- **Restricted Regions**: Russia, China, Middle East countries with anti-LGBTQ+ laws, any region with high risk of violence against queer people or creative expression
+- **Safety Features**: All content includes trauma-informed design, consent protocols, professional resource links, and creative freedom protections
+- **Global Appeal**: Emphasizes uncensored artistic expression, sacred mathematics, and visionary art processes
+- **Open World Learning**: Real spiral dynamic learning without gatekeeping, paywalls, or fake guru elements
+
+### **Deployment Platforms**
+- **Cloudflare Pages**: Primary hosting with global CDN and geo-blocking capabilities
+- **GitHub Pages**: Backup deployment for safe regions only
+- **Azure Static Web Apps**: Alternative deployment for enhanced features
+
+### **Geo-Restriction Implementation**
+```bash
+# Cloudflare Pages geo-restrictions (via dashboard)
+# Allowed countries: US, CA, EU countries, AU, NZ, JP, KR, TW
+# Blocked countries: RU, CN, and high-risk regions
+
+# Azure Static Web Apps geo-filtering
+# Configure in Azure portal under "Networking" > "Geo-filtering"
+```
 
 ## 🚀 Deployment Process
 
