@@ -1,4 +1,4 @@
-# 🏛️ CATHEDRAL MAIN REPOSITORY - DEVELOPMENT GUIDE
+sionaraesirld ence and # 🏛️ CATHEDRAL MAIN REPOSITORY - DEVELOPMENT GUIDE
 
 ## ✅ CORRECT LOCATION - THIS IS THE MAIN REPOSITORY
 
@@ -183,8 +183,8 @@ Research Location → Production Location
 ### **Art Generation Principles**
 All art in the Cathedral follows these standards:
 - **Sacred Geometry Compliance**: Golden ratio (1.618) in all compositions
-- **Color Science Integration**: Wavelength-based color palettes with harmonic relationships
-- **Shading and Light Techniques**: Azure AI-enhanced lighting for metaphysical depth
+- **Color Science Integration**: Wavelength-based color palettes with harmonic relationships and pure algorithmic generation
+- **Shading and Light Techniques**: Algorithmic lighting for metaphysical depth
 - **Uncensored Expression**: Full creative freedom without content restrictions
 
 ### **Pattern Types**
@@ -202,7 +202,7 @@ enum PatternType {
 ### **Shading and Light Implementation**
 - **Radial Gradients**: For mystical illumination effects
 - **Alpha Blending**: Layered transparency for depth
-- **AI-Enhanced Shadows**: Dynamic shading based on consciousness resonance
+- **Algorithmic Shadows**: Dynamic shading based on consciousness resonance
 - **Light Overlays**: Radial light sources for divine presence
 
 ## 🔮 Metaphysics, Science, and Technology Integration
@@ -217,7 +217,7 @@ const SOLFEGGIO_FREQUENCIES = [396, 417, 528, 639, 741, 852, 963];
 
 ### **Consciousness-Responsive Features**
 - **Biometric Adaptation**: Future heart rate variability integration
-- **Emotional Resonance**: AI adjusts content based on user state
+- **Emotional Resonance**: Algorithmic content adjustment based on user state
 - **Frequency Harmonics**: Audio synced to sacred frequencies
 - **Trauma Safety**: Automatic intensity reduction protocols
 
@@ -225,13 +225,13 @@ const SOLFEGGIO_FREQUENCIES = [396, 417, 528, 639, 741, 852, 963];
 - **RPG Mechanics**: Stats, abilities, progression for each archetype
 - **World Building**: Sacred worlds with 6 themed environments
 - **Fusion Kink**: Combine any two elements for new experiences
-- **AI Narratives**: Dynamic stories generated from player choices
+- **Algorithmic Narratives**: Dynamic stories generated from player choices
 
 ## 🧪 Azure AI Setup and Balanced Processing
 
-### **Environment Configuration**
+### **Environment Configuration (Optional)**
 ```bash
-# Required environment variables
+# Optional environment variables for AI-enhanced features
 AZURE_OPENAI_ENDPOINT=https://your-resource.openai.azure.com/
 AZURE_OPENAI_KEY=your-api-key
 AZURE_OPENAI_DEPLOYMENT=gpt-4-vision-preview
@@ -239,13 +239,15 @@ AZURE_COMPUTER_VISION_ENDPOINT=https://your-cv.cognitiveservices.azure.com/
 AZURE_COMPUTER_VISION_KEY=your-cv-key
 ```
 
-### **Balanced Data Processing**
+### **Balanced Data Processing (Optional AI Features)**
 - **No Censorship**: All AI prompts allow full creative expression
 - **User Consent**: Explicit agreements for sensitive content
 - **Ephemeral Processing**: No permanent data storage
 - **Ethical AI**: Enhances human creativity without override
 
-### **Setup Steps**
+**Note**: Codex 144:99 components are designed to be pure code-based without AI involvement. AI features are optional and can be used for other parts of the system.
+
+### **Setup Steps (Optional)**
 1. Create Azure Cognitive Services resources
 2. Set environment variables in `.env`
 3. Test with sample prompts
@@ -307,7 +309,7 @@ When working on Cathedral components:
 - [ ] Is the design CPTSD-safe and mystically accurate?
 - [ ] Have I tested builds and deployment?
 - [ ] Does art follow visionary standards with sacred geometry?
-- [ ] Is Azure AI integrated for enhancements?
+- [ ] Is Azure AI integrated for enhancements? (Optional for Codex 144:99)
 - [ ] Are tarot elements consistent across apps?
 
 ---

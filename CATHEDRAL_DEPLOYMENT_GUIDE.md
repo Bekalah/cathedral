@@ -78,7 +78,7 @@ cathedral/
 
 ### **Archetypal Piano Interface**
 - **Piano Keys**: Each connects to living archetypal being
-- **Voice Generation**: AI-powered personality for each archetype
+- **Voice Generation**: Algorithmic personality for each archetype
 - **Emotional Resonance**: Piano responds to user's emotional state
 - **File**: `apps/cathedral-connection-map/index.html` (piano interface)
 
@@ -273,7 +273,7 @@ Contemporary studies supporting each tradition:
 ## 🌟 Next Evolution Phase
 
 ### **Enhanced Features to Implement**
-1. **AI Archetypal Personalities**: Each card becomes truly conversational
+1. **Algorithmic Archetypal Personalities**: Each card becomes truly conversational
 2. **Biometric Integration**: Heart rate variability for user safety
 3. **Advanced Audio Synthesis**: High-level organic sound generation
 4. **Professional Platform**: Tools for practitioners
@@ -288,10 +288,10 @@ Contemporary studies supporting each tradition:
 
 ---
 
-## 🔮 Azure AI Integrations
+## 🔮 Algorithmic Processing Pipeline
 
-### **Advanced AI Processing Pipeline**
-Your Cathedral integrates Azure OpenAI, Computer Vision, and Custom Models for transforming photos into mystical assets:
+### **Optional AI Enhancement Pipeline**
+Your Cathedral can integrate Azure OpenAI, Computer Vision, and Custom Models for transforming photos into mystical assets (optional for Codex 144:99, algorithmic by default):
 
 ```javascript
 // packages/core/gut/azure-ai-integration.js
@@ -349,7 +349,7 @@ export class PatternGenerator {
 - **Wavelength to RGB Conversion**: Precise color mapping from light frequencies
 - **Tetrachromat Expansion**: Enhanced color perception beyond standard RGB
 - **Harmonic Colors**: Mathematical color relationships (octaves, fifths, thirds)
-- **Azure AI Enhancement**: AI-driven shading and light effects for metaphysical depth
+- **Algorithmic Enhancement**: Algorithmic shading and light effects for metaphysical depth
 
 ### **Sacred Geometry Integration**
 - **Flower of Life Patterns**: Overlapping circles with golden ratio compliance
@@ -376,7 +376,7 @@ Each Major and Minor Arcana is a complete **Tradition Engine** in the **Liber Ar
 ### **Cross-App Integration**
 - **Story Characters**: Each card becomes a narrative entity in your games
 - **Game Characters**: RPG stats and abilities for interactive play
-- **Wisdom Teachers**: AI-powered personalities for guidance and teaching
+- **Wisdom Teachers**: Algorithmic personalities for guidance and teaching
 - **Art Standards**: Consistent visionary art across all 78 cards
 
 ### **RPG CYOA Game Connection**
@@ -404,9 +404,9 @@ Each Major and Minor Arcana is a complete **Tradition Engine** in the **Liber Ar
 - **Safe Alchemy**: Exploration through symbolic transformation
 - **Abyssiae Integration**: Deep mystical connections to the 144:99 system
 
-## 🧪 Azure Credits Setup Instructions
+## 🧪 Optional Azure AI Setup Instructions
 
-### **Getting Started with Azure AI**
+### **Getting Started with Azure AI (Optional)**
 1. **Create Azure Account**: Visit [Azure Portal](https://portal.azure.com) and sign up
 2. **Set Up OpenAI Service**:
    - Navigate to Azure Cognitive Services
@@ -435,12 +435,12 @@ Each Major and Minor Arcana is a complete **Tradition Engine** in the **Liber Ar
 
 ## 📊 Workflow Diagrams
 
-### **AI Integration and Art Generation Process**
+### **Algorithmic Integration and Art Generation Process**
 ```mermaid
 graph TD
-    A[User Input: Photo or Theme] --> B[Azure Computer Vision Analysis]
+    A[User Input: Photo or Theme] --> B[Algorithmic Computer Vision Analysis]
     B --> C[Object Detection & Description]
-    C --> D[Azure OpenAI Vision Prompt]
+    C --> D[Algorithmic Vision Processing]
     D --> E[Mystical Analysis & Enhancement]
     E --> F[Custom Model Processing]
     F --> G[Integrate Mystical Results]
@@ -453,7 +453,7 @@ graph TD
 
     N[Pattern Generator] --> O[Geometric/Organic/Fractal Patterns]
     O --> P[Sacred Geometry Overlay]
-    P --> Q[AI-Enhanced Shading & Light]
+    P --> Q[Algorithmic Shading & Light]
     Q --> I
 ```
 
@@ -468,7 +468,7 @@ graph TD
     F --> G[Surreal Experiences: Matrix/Alice/Real Life]
     G --> H[Cross-App Characters & Teachers]
     H --> I[Consistent Art & Standards]
-    I --> J[AI-Generated Narratives & Mechanics]
+    I --> J[Algorithmic Narratives & Mechanics]
 ```
 
 ## 🎮 High-End Games and Projects Support
@@ -483,7 +483,7 @@ Your Cathedral supports advanced projects through:
 ### **Game Mechanics Examples**
 - **Fusion Kink Mechanics**: Combine any two tarot cards for new abilities
 - **Sacred Geometry Puzzles**: Solve patterns for progression
-- **AI-Generated Narratives**: Dynamic stories based on player choices
+- **Algorithmic Narratives**: Dynamic stories based on mathematical patterns
 - **Biometric Integration**: Heart rate for adaptive difficulty (future feature)
 
 ## 🎯 Implementation Checklist
@@ -497,7 +497,7 @@ Your Cathedral supports advanced projects through:
 - [x] Organic artistic vision integration
 - [x] GitHub Pages deployment active
 - [x] Cloudflare integration ready
-- [x] Azure AI integration for art and game enhancement
+- [x] Algorithmic integration for art and game enhancement
 - [x] Visionary art processes with sacred geometry
 - [x] Color science and light effects implementation
 

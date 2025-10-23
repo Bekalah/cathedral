@@ -1,5 +1,4 @@
 export declare class ColorScience {
-    private openaiClient;
     constructor();
     wavelengthToRGB(wavelength: number): {
         r: number;
@@ -24,6 +23,7 @@ export declare class ColorScience {
         majorThird: number;
     };
     generateVisionaryColorPalette(theme: string, count?: number): Promise<string[]>;
+    private algorithmicColorPalette;
     private fallbackColorPalette;
 }
 //# sourceMappingURL=colorScience.d.ts.map

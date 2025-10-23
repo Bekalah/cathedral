@@ -47,62 +47,12 @@ export async function computeFusionResonance(fusionId: string): Promise<Resonanc
     stability: Number((fusion.synergyModel.coherence * regularity).toFixed(3))
   };
 
-  // Enhance with Azure AI for metaphysical processing
-  const aiEnhancement = await generateMetaphysicalEnhancement(fusion, members, baseResult);
-
   return {
     ...baseResult,
-    aiLore: aiEnhancement
+    aiLore: 'Pure algorithmic resonance computation - no AI involvement.'
   };
 }
 
-async function generateMetaphysicalEnhancement(fusion: CrystalFusionSet, members: Crystal[], result: ResonanceComputationResult): Promise<string> {
-  const endpoint = process.env.AZURE_OPENAI_ENDPOINT;
-  const key = process.env.AZURE_OPENAI_KEY;
-  const deployment = process.env.AZURE_OPENAI_DEPLOYMENT;
-
-  if (!endpoint || !key || !deployment) {
-    console.warn('Azure OpenAI not configured for metaphysical enhancement.');
-    return 'Metaphysical enhancement unavailable.';
-  }
-
-  const prompt = `Generate a short, visionary metaphysical description for the crystal fusion "${fusion.name}" involving crystals: ${members.map(c => c.displayName).join(', ')}. Incorporate elements of light, resonance, and balanced metaphysical data processing. Ensure uncensored, high-end visionary content. Keep it under 100 words.`;
-
-  try {
-    const response = await fetch(`${endpoint}/openai/deployments/${deployment}/chat/completions`, {
-      method: 'POST',
-      headers: {
-        'api-key': key,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        messages: [
-          {
-            role: 'system',
-            content: 'You are a master of metaphysical lore and visionary descriptions. Provide uncensored, high-end content.'
-          },
-          {
-            role: 'user',
-            content: prompt
-          }
-        ],
-        max_tokens: 100,
-        temperature: 0.8
-      })
-    });
-
-    if (response.ok) {
-      const data = await response.json();
-      return data.choices[0].message.content?.trim() || 'AI-generated lore unavailable.';
-    } else {
-      console.error('Error generating metaphysical enhancement:', response.statusText);
-      return 'Metaphysical enhancement failed.';
-    }
-  } catch (error) {
-    console.error('Error generating metaphysical enhancement:', error);
-    return 'Metaphysical enhancement failed.';
-  }
-}
 
 export function listCrystalIds() { return baseCrystals.map(c => c.id); }
 export function listFusionSets() { return fusionSets.map(f => ({ id: f.id, name: f.name })); }

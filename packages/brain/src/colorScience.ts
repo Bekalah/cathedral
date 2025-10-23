@@ -1,22 +1,6 @@
 export class ColorScience {
-  private endpoint: string | undefined;
-  private apiKey: string | undefined;
-  private deployment: string | undefined;
-
   constructor() {
-    this.endpoint = process.env.AZURE_OPENAI_ENDPOINT;
-    this.apiKey = process.env.AZURE_OPENAI_KEY;
-    this.deployment = process.env.AZURE_OPENAI_DEPLOYMENT;
-
-    console.log('ColorScience Azure OpenAI Endpoint:', this.endpoint);
-    console.log('ColorScience Azure OpenAI Key:', this.apiKey ? 'Set' : 'Not set');
-    console.log('ColorScience Azure OpenAI Deployment:', this.deployment);
-
-    if (this.endpoint && this.apiKey && this.deployment) {
-      console.log('ColorScience Azure OpenAI configuration loaded successfully.');
-    } else {
-      console.warn('ColorScience Azure OpenAI configuration incomplete. AI enhancements will be disabled.');
-    }
+    console.log('ColorScience initialized with pure algorithmic color generation.');
   }
 
   wavelengthToRGB(wavelength: number) {
@@ -58,48 +42,26 @@ export class ColorScience {
   }
 
   async generateVisionaryColorPalette(theme: string, count: number = 5): Promise<string[]> {
-    if (!this.endpoint || !this.apiKey || !this.deployment) {
-      console.warn('Azure OpenAI not configured, using fallback palette.');
-      return this.fallbackColorPalette(count);
+    // Pure algorithmic color generation based on theme hash and harmonic colors
+    console.log('Using pure algorithmic color palette generation for theme:', theme);
+    return this.algorithmicColorPalette(theme, count);
+  }
+
+  private algorithmicColorPalette(theme: string, count: number): string[] {
+    // Generate colors based on theme string hash and harmonic relationships
+    const hash = theme.split('').reduce((a, b) => {
+      a = ((a << 5) - a) + b.charCodeAt(0);
+      return a & a;
+    }, 0);
+
+    const colors: string[] = [];
+    for (let i = 0; i < count; i++) {
+      const hue = (hash + i * 137.5) % 360; // Golden angle for harmonic distribution
+      const saturation = 70 + (i * 10) % 30;
+      const lightness = 50 + (i * 15) % 30;
+      colors.push(`hsl(${hue}, ${saturation}%, ${lightness}%)`);
     }
-
-    const prompt = `Generate a visionary color palette for the theme "${theme}". Provide ${count} hex colors that evoke high-end metaphysical and artistic qualities, focusing on color science, shading, and light. Ensure the palette supports uncensored, visionary art processes. List only the hex colors separated by commas.`;
-
-    try {
-      const response = await fetch(`${this.endpoint}/openai/deployments/${this.deployment}/chat/completions`, {
-        method: 'POST',
-        headers: {
-          'api-key': this.apiKey,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          messages: [
-            {
-              role: 'system',
-              content: 'You are an expert in color science and visionary art. Provide hex colors only, separated by commas.'
-            },
-            {
-              role: 'user',
-              content: prompt
-            }
-          ],
-          max_tokens: 100,
-          temperature: 0.8
-        })
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        const colors = data.choices[0].message.content?.trim().split(',').map((c: string) => c.trim()) || [];
-        return colors.slice(0, count);
-      } else {
-        console.error('Error generating color palette:', response.statusText);
-        return this.fallbackColorPalette(count);
-      }
-    } catch (error) {
-      console.error('Error generating color palette:', error);
-      return this.fallbackColorPalette(count);
-    }
+    return colors;
   }
 
   private fallbackColorPalette(count: number): string[] {
