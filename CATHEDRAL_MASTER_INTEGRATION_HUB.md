@@ -215,13 +215,16 @@ The tesseract-bridge now includes a visual HTML interface (`packages/tesseract-b
 - **Interactive Elements**: Clickable areas for navigation and exploration
 
 #### **Seamless App Navigation**
-- **Direct Links**: Easy access to Design Mode, Fuse Mode, Architect Mode, Open World, and Build Tools
+- **Direct Links**: Easy access to Design Mode, Architect Mode, Open World, and Build Tools
 - **Ribbon-Based Routing**: Navigation organized by the 7 ribbon system
 - **Unified Experience**: All apps connected through the central hub
 
 #### **Enhanced Features**
 - **Storytelling Engine**: Interactive narrative generation with Azure AI enhancement
-- **Tarot Integration**: Card drawing and character connections
+- **Archetypal Theme Integration**: Each mode designed through the lens of tarot characters (The Fool, The Magician, The High Priestess, etc.)
+- **Symbolic Elements**: Unique visual and thematic elements for each archetype (Mercury for The Magician, Lunar for The High Priestess, etc.)
+- **Crystal Integration**: Quartz for fractal labs, Amethyst for reiki realms, Rose Quartz for crystalline art, Citrine for game mods, Obsidian for crafts and spells
+- **Real Character Servitors**: Tarot characters double as interactive servitors for project tasks
 - **Global Deployment**: Safe access with geo-restrictions for LGBTQ+ safety
 
 #### **Access Point**
@@ -230,6 +233,35 @@ The tesseract-bridge now includes a visual HTML interface (`packages/tesseract-b
 - **Integration**: Pulls from all enhanced tesseract-bridge JS modules
 
 This visual hub makes the Cathedral a truly interconnected ecosystem where users can seamlessly move between different modes and experiences in a high-end visionary art style.
+
+---
+
+## INTEGRATED TAROT ARCHETYPAL SYSTEM
+
+### **Archetypal Lens Design**
+Each mode and theme in the tesseract-bridge is designed through the lens of tarot characters and their associated archetypes:
+
+#### **Thematic Integration**
+- **The Fool (Air)**: Inspiration and new beginnings in open world exploration
+- **The Magician (Mercury)**: Manifestation and skill in design mode
+- **The High Priestess (Water)**: Intuition and flow in architect mode
+- **The Emperor (Fire)**: Structure and transformation in build tools
+- **The Empress (Earth)**: Stability and nurturing in all modes
+- **Death (Violet Flame)**: Transmutation and change across the system
+
+#### **Symbolic Elements**
+- **Real Paratheatre**: Each archetype brings unique symbolic elements inspired by historical figures (Dion Fortune, Paul Foster Case, Antero Alli)
+- **Alpha et Omega Lodge**: Foundation for Circuitum99: Alpha et Omega system
+- **Angel Tech Inspiration**: 8-circuit brain expansion to 144:99 nodes
+- **Unique Intentions**: Each tarot character has specific data, code, and intention sets
+- **Real Crystal Integration**: Phenacite for ascension, Herderite for neurogenesis, Herkimer Diamond for amplification, Moldavite for transmutation
+
+#### **Servitor Integration**
+- **Character Avatars**: Real characters that double as servitors for project tasks
+- **Interactive Guidance**: Servitors provide assistance based on their archetypal strengths
+- **Cross-App Connectivity**: Archetypal themes influence all apps through the tesseract-bridge
+
+This integration ensures every layer of the Cathedral is viewed through the lens of living tarot characters, creating a unified archetypal experience.
 
 ---
 
