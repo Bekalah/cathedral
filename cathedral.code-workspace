@@ -2,19 +2,10 @@
 	"folders": [
 		{
 			"path": "."
-		},
-		{
-			"path": "../.."
-		},
-		{
-			"path": "connected-repos"
-		},
-		{
-			"path": "../../Library/Mobile Documents/com~apple~CloudDocs/cathedral-research"
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "cathedral",
+		"liveServer.settings.multiRootWorkspaceName": "cathedral-1",
 		"prettier.bracketSameLine": true
 	}
 }

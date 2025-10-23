@@ -13,9 +13,7 @@
   },
   "dependencies": {
     "@cathedral/shared": "workspace:*",
-    "@cathedral/cyoa-book-game": "workspace:*",
-    "@cathedral/shared": "workspace:*",
-    "@bekalah/cyoa-book-game": "workspace:*",
+    "@cathedral/cathedral-game-engine": "workspace:*",
     "canvas": "^2.11.2",
     "d3": "^7.8.5",
     "ml-matrix": "^6.10.4",
