@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+nc se#!/usr/bin/env node
 
 /**
  * Cathedral CLI - Universal Access Tool
@@ -119,7 +119,7 @@ class CathedralCLI {
 
   showHelp() {
     /* eslint-disable */console.log(...oo_oo(`3284225721_117_4_146_6_4`,`
-🌟 Cathedral CLI - Universal Sacred Technology Access
+Cathedral CLI
 
 Usage: cathedral <command> [options]
 
@@ -131,6 +131,12 @@ Commands:
   fusion <cards>       Create fusion session
   design               Open design studio (if available)
   tarot                Open tarot readings (if available)
+  update               Update system and dependencies
+  monorepo             Manage monorepo operations
+  sync                 Sync all connected repositories
+  health               Check system health and integrity
+  backup               Create system backup
+  restore              Restore from backup
   help                 Show this help
 
 Examples:
@@ -139,12 +145,16 @@ Examples:
   cathedral arcanae 0_fool
   cathedral arcanae search transformation
   cathedral fusion "0_fool,1_magician"
+  cathedral update
+  cathedral monorepo install
+  cathedral sync
+  cathedral health
   cathedral design
   cathedral tarot
 
-✨ Zero external dependencies - works immediately!
-🔒 No hoop jumping - direct access to all functionality!
-🎯 ND-friendly - designed for neurodivergent thinking!
+Zero external dependencies - works immediately.
+No authentication required - direct access to all functionality.
+Trauma-informed design - ND-friendly interface.
 
 For more information, visit: https://github.com/Bekalah/cathedral
     `));
@@ -168,6 +178,24 @@ For more information, visit: https://github.com/Bekalah/cathedral
         break;
       case 'tarot':
         this.handleTarot();
+        break;
+      case 'update':
+        await this.handleUpdate();
+        break;
+      case 'monorepo':
+        await this.handleMonorepo();
+        break;
+      case 'sync':
+        await this.handleSync();
+        break;
+      case 'health':
+        await this.handleHealth();
+        break;
+      case 'backup':
+        await this.handleBackup();
+        break;
+      case 'restore':
+        await this.handleRestore();
         break;
       default:
         this.showHelp();
@@ -279,47 +307,317 @@ For more information, visit: https://github.com/Bekalah/cathedral
   handleFusion() {
     const cardIds = process.argv[3]?.split(',') || [];
     if (cardIds.length < 2) {
-      /* eslint-disable */console.log(...oo_oo(`3284225721_278_6_278_68_4`,'❌ Please provide at least 2 card IDs for fusion'));
+      /* eslint-disable */console.log(...oo_oo(`3284225721_278_6_278_68_4`,'Please provide at least 2 card IDs for fusion'));
       /* eslint-disable */console.log(...oo_oo(`3284225721_279_6_279_66_4`,'Example: cathedral fusion "0_fool,1_magician"'));
       return;
     }
 
-    /* eslint-disable */console.log(...oo_oo(`3284225721_283_4_283_73_4`,`⚗️ Creating fusion session with: ${cardIds.join(', ')}`));
+    /* eslint-disable */console.log(...oo_oo(`3284225721_283_4_283_73_4`,'Creating fusion session with: ' + cardIds.join(', ')));
     const session = this.fusion.createSession(cardIds, 'sacred_union');
 
-    /* eslint-disable */console.log(...oo_oo(`3284225721_286_4_286_46_4`,`\n✅ Fusion Session Created:`));
-    /* eslint-disable */console.log(...oo_oo(`3284225721_287_4_287_39_4`,`   ID: ${session.id}`));
-    /* eslint-disable */console.log(...oo_oo(`3284225721_288_4_288_43_4`,`   Type: ${session.type}`));
-    /* eslint-disable */console.log(...oo_oo(`3284225721_289_4_289_56_4`,`   Intensity: ${session.intensity}/10`));
-    /* eslint-disable */console.log(...oo_oo(`3284225721_290_4_290_59_4`,`   Duration: ${session.duration} minutes`));
-    /* eslint-disable */console.log(...oo_oo(`3284225721_291_4_291_47_4`,`   Safety: ${session.safety}`));
-    /* eslint-disable */console.log(...oo_oo(`3284225721_292_4_292_79_4`,`   Consent: ${session.consent ? 'Required' : 'Not required'}`));
-    /* eslint-disable */console.log(...oo_oo(`3284225721_293_4_293_63_4`,`   Transformation: ${session.transformation}`));
+    /* eslint-disable */console.log(...oo_oo(`3284225721_286_4_286_46_4`,'\nFusion Session Created:'));
+    /* eslint-disable */console.log(...oo_oo(`3284225721_287_4_287_39_4`,'   ID: ' + session.id));
+    /* eslint-disable */console.log(...oo_oo(`3284225721_288_4_288_43_4`,'   Type: ' + session.type));
+    /* eslint-disable */console.log(...oo_oo(`3284225721_289_4_289_56_4`,'   Intensity: ' + session.intensity + '/10'));
+    /* eslint-disable */console.log(...oo_oo(`3284225721_290_4_290_59_4`,'   Duration: ' + session.duration + ' minutes'));
+    /* eslint-disable */console.log(...oo_oo(`3284225721_291_4_291_47_4`,'   Safety: ' + session.safety));
+    /* eslint-disable */console.log(...oo_oo(`3284225721_292_4_292_79_4`,'   Consent: ' + (session.consent ? 'Required' : 'Not required')));
+    /* eslint-disable */console.log(...oo_oo(`3284225721_293_4_293_63_4`,'   Transformation: ' + session.transformation));
   }
 
   handleDesign() {
-    /* eslint-disable */console.log(...oo_oo(`3284225721_297_4_297_45_4`,'🎨 Cathedral Design Studio'));
+    /* eslint-disable */console.log(...oo_oo(`3284225721_297_4_297_45_4`,'Design Studio'));
     /* eslint-disable */console.log(...oo_oo(`3284225721_298_4_298_46_4`,'Opening design interface...'));
     /* eslint-disable */console.log(...oo_oo(`3284225721_299_4_299_53_4`,'\nTo use the visual design studio:'));
     /* eslint-disable */console.log(...oo_oo(`3284225721_300_4_300_67_4`,'1. Open: apps/cathedral-design-studio/index.html'));
-    /* eslint-disable */console.log(...oo_oo(`3284225721_301_4_301_47_4`,'2. Use sacred geometry tools'));
+    /* eslint-disable */console.log(...oo_oo(`3284225721_301_4_301_47_4`,'2. Use geometry tools'));
     /* eslint-disable */console.log(...oo_oo(`3284225721_302_4_302_46_4`,'3. Apply 144:99 mathematics'));
     /* eslint-disable */console.log(...oo_oo(`3284225721_303_4_303_55_4`,'4. Create with your authentic vision'));
   }
 
   handleTarot() {
-    /* eslint-disable */console.log(...oo_oo(`3284225721_307_4_307_50_4`,'🃏 Liber Arcanae Tarot Readings'));
+    /* eslint-disable */console.log(...oo_oo(`3284225721_307_4_307_50_4`,'Liber Arcanae Tarot Readings'));
     /* eslint-disable */console.log(...oo_oo(`3284225721_308_4_308_45_4`,'Opening tarot interface...'));
     /* eslint-disable */console.log(...oo_oo(`3284225721_309_4_309_50_4`,'\nTo use the tarot reading app:'));
     /* eslint-disable */console.log(...oo_oo(`3284225721_310_4_310_63_4`,'1. Open: apps/liber-arcanae-tarot/index.html'));
-    /* eslint-disable */console.log(...oo_oo(`3284225721_311_4_311_47_4`,'2. Choose your sacred spread'));
+    /* eslint-disable */console.log(...oo_oo(`3284225721_311_4_311_47_4`,'2. Choose your spread'));
     /* eslint-disable */console.log(...oo_oo(`3284225721_312_4_312_66_4`,'3. Experience real readings with alchemy themes'));
     /* eslint-disable */console.log(...oo_oo(`3284225721_313_4_313_66_4`,'4. Explore symbol meanings and fusion mechanics'));
+  }
+
+  async handleUpdate() {
+    /* eslint-disable */console.log(...oo_oo(`3284225721_320_4_320_45_4`,'System Update'));
+    /* eslint-disable */console.log(...oo_oo(`3284225721_321_4_321_46_4`,'Updating system and dependencies...'));
+
+    try {
+      // Update dependencies
+      /* eslint-disable */console.log(...oo_oo(`3284225721_325_6_325_40_4`,'Installing dependencies...'));
+      await this.runCommand('pnpm install');
+
+      // Update turbo cache
+      /* eslint-disable */console.log(...oo_oo(`3284225721_329_6_329_40_4`,'Building packages...'));
+      await this.runCommand('pnpm run turbo:build');
+
+      // Check for security updates
+      /* eslint-disable */console.log(...oo_oo(`3284225721_333_6_333_45_4`,'Checking security updates...'));
+      await this.runCommand('pnpm audit fix');
+
+      /* eslint-disable */console.log(...oo_oo(`3284225721_336_6_336_45_4`,'Update completed successfully'));
+
+    } catch (error) {
+      /* eslint-disable */console.log(...oo_oo(`3284225721_340_6_340_45_4`,'Update failed:', error.message));
+    }
+  }
+
+  async handleMonorepo() {
+    const subcommand = process.argv[3];
+
+    switch (subcommand) {
+      case 'install':
+        await this.handleMonorepoInstall();
+        break;
+      case 'build':
+        await this.handleMonorepoBuild();
+        break;
+      case 'dev':
+        await this.handleMonorepoDev();
+        break;
+      case 'clean':
+        await this.handleMonorepoClean();
+        break;
+      default:
+        /* eslint-disable */console.log(...oo_oo(`3284225721_358_8_358_55_4`,'Monorepo Management'));
+        /* eslint-disable */console.log(...oo_oo(`3284225721_359_8_359_60_4`,'Usage: cathedral monorepo <command>'));
+        /* eslint-disable */console.log(...oo_oo(`3284225721_360_8_360_60_4`,'Commands: install, build, dev, clean'));
+        break;
+    }
+  }
+
+  async handleMonorepoInstall() {
+    /* eslint-disable */console.log(...oo_oo(`3284225721_366_4_366_50_4`,'📦 Installing monorepo dependencies...'));
+    try {
+      await this.runCommand('pnpm install');
+      /* eslint-disable */console.log(...oo_oo(`3284225721_369_6_369_50_4`,'✅ Dependencies installed successfully'));
+    } catch (error) {
+      /* eslint-disable */console.log(...oo_oo(`3284225721_371_6_371_50_4`,'❌ Installation failed:', error.message));
+    }
+  }
+
+  async handleMonorepoBuild() {
+    /* eslint-disable */console.log(...oo_oo(`3284225721_376_4_376_50_4`,'🔨 Building monorepo packages...'));
+    try {
+      await this.runCommand('pnpm run turbo:build');
+      /* eslint-disable */console.log(...oo_oo(`3284225721_379_6_379_50_4`,'✅ Build completed successfully'));
+    } catch (error) {
+      /* eslint-disable */console.log(...oo_oo(`3284225721_381_6_381_50_4`,'❌ Build failed:', error.message));
+    }
+  }
+
+  async handleMonorepoDev() {
+    /* eslint-disable */console.log(...oo_oo(`3284225721_386_4_386_50_4`,'🚀 Starting development servers...'));
+    try {
+      await this.runCommand('pnpm run turbo:dev');
+      /* eslint-disable */console.log(...oo_oo(`3284225721_389_6_389_50_4`,'✅ Development servers started'));
+    } catch (error) {
+      /* eslint-disable */console.log(...oo_oo(`3284225721_391_6_391_50_4`,'❌ Failed to start dev servers:', error.message));
+    }
+  }
+
+  async handleMonorepoClean() {
+    /* eslint-disable */console.log(...oo_oo(`3284225721_396_4_396_50_4`,'🧹 Cleaning monorepo...'));
+    try {
+      await this.runCommand('pnpm run clean');
+      /* eslint-disable */console.log(...oo_oo(`3284225721_399_6_399_50_4`,'✅ Cleanup completed successfully'));
+    } catch (error) {
+      /* eslint-disable */console.log(...oo_oo(`3284225721_401_6_401_50_4`,'❌ Cleanup failed:', error.message));
+    }
+  }
+
+  async handleSync() {
+    /* eslint-disable */console.log(...oo_oo(`3284225721_407_4_407_45_4`,'Sync Connected Repositories'));
+    /* eslint-disable */console.log(...oo_oo(`3284225721_408_4_408_46_4`,'Synchronizing all ecosystem components...'));
+
+    try {
+      // Sync git repositories
+      await this.runCommand('git pull origin main');
+
+      // Update submodules if any
+      await this.runCommand('git submodule update --init --recursive');
+
+      // Update dependencies
+      await this.runCommand('pnpm install');
+
+      /* eslint-disable */console.log(...oo_oo(`3284225721_418_6_418_45_4`,'Sync completed successfully'));
+
+    } catch (error) {
+      /* eslint-disable */console.log(...oo_oo(`3284225721_421_6_421_45_4`,'Sync failed:', error.message));
+    }
+  }
+
+  async handleHealth() {
+    /* eslint-disable */console.log(...oo_oo(`3284225721_426_4_426_45_4`,'System Health Check'));
+    /* eslint-disable */console.log(...oo_oo(`3284225721_427_4_427_46_4`,'Analyzing system integrity and performance...'));
+
+    const health = {
+      timestamp: new Date().toISOString(),
+      status: 'healthy',
+      checks: []
+    };
+
+    try {
+      // Check package.json integrity
+      const packageExists = fs.existsSync('package.json');
+      health.checks.push({
+        name: 'Package Configuration',
+        status: packageExists ? 'OK' : 'ERROR',
+        details: packageExists ? 'Valid package.json found' : 'Missing package.json'
+      });
+
+      // Check turbo.json integrity
+      const turboExists = fs.existsSync('turbo.json');
+      health.checks.push({
+        name: 'Turbo Configuration',
+        status: turboExists ? 'OK' : 'ERROR',
+        details: turboExists ? 'Valid turbo.json found' : 'Missing turbo.json'
+      });
+
+      // Check data files
+      const dataFiles = ['codex-144-expanded.json', 'complete-arcana-profiles.json'];
+      dataFiles.forEach(file => {
+        const exists = fs.existsSync(`data/${file}`);
+        health.checks.push({
+          name: `Data: ${file}`,
+          status: exists ? 'OK' : 'ERROR',
+          details: exists ? 'Data file present' : 'Missing data file'
+        });
+      });
+
+      // Check node_modules
+      const nodeModulesExists = fs.existsSync('node_modules');
+      health.checks.push({
+        name: 'Dependencies',
+        status: nodeModulesExists ? 'OK' : 'ERROR',
+        details: nodeModulesExists ? 'Dependencies installed' : 'Missing node_modules'
+      });
+
+      // Overall status
+      const failedChecks = health.checks.filter(check => check.status === 'ERROR');
+      health.status = failedChecks.length === 0 ? 'healthy' : 'degraded';
+
+      // Display results
+      /* eslint-disable */console.log(...oo_oo(`3284225721_470_6_470_45_4`,'\nHealth Check Results:'));
+      health.checks.forEach(check => {
+        /* eslint-disable */console.log(...oo_oo(`3284225721_472_8_472_45_4`,`${check.status} ${check.name}: ${check.details}`));
+      });
+
+      /* eslint-disable */console.log(...oo_oo(`3284225721_475_6_475_45_4`,`\nOverall Status: ${health.status.toUpperCase()}`));
+
+    } catch (error) {
+      /* eslint-disable */console.log(...oo_oo(`3284225721_478_6_478_45_4`,'Health check failed:', error.message));
+      health.status = 'error';
+    }
+  }
+
+  async handleBackup() {
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+    const backupDir = `backup-${timestamp}`;
+
+    /* eslint-disable */console.log(...oo_oo(`3284225721_486_4_486_45_4`, `💾 Creating System Backup: ${backupDir}`));
+
+    try {
+      // Create backup directory
+      await this.runCommand(`mkdir -p ${backupDir}`);
+
+      // Backup critical files
+      const filesToBackup = [
+        'package.json',
+        'turbo.json',
+        'pnpm-lock.yaml',
+        'data/',
+        'packages/',
+        'apps/'
+      ];
+
+      for (const file of filesToBackup) {
+        if (fs.existsSync(file)) {
+          await this.runCommand(`cp -r ${file} ${backupDir}/`);
+          /* eslint-disable */console.log(...oo_oo(`3284225721_502_10_502_45_4`,`✅ Backed up: ${file}`));
+        }
+      }
+
+      // Create backup manifest
+      const manifest = {
+        timestamp: new Date().toISOString(),
+        version: '1.0.0',
+        files: filesToBackup,
+        description: 'Cathedral system backup'
+      };
+
+      fs.writeFileSync(`${backupDir}/backup-manifest.json`, JSON.stringify(manifest, null, 2));
+
+      /* eslint-disable */console.log(...oo_oo(`3284225721_514_6_514_45_4`,`✅ Backup completed successfully: ${backupDir}`));
+
+    } catch (error) {
+      /* eslint-disable */console.log(...oo_oo(`3284225721_517_6_517_45_4`,'❌ Backup failed:', error.message));
+    }
+  }
+
+  async handleRestore() {
+    const backupDir = process.argv[3];
+
+    if (!backupDir) {
+      /* eslint-disable */console.log(...oo_oo(`3284225721_524_6_524_45_4`,'❌ Please specify backup directory'));
+      /* eslint-disable */console.log(...oo_oo(`3284225721_525_6_525_45_4`,'Usage: cathedral restore <backup-directory>'));
+      return;
+    }
+
+    /* eslint-disable */console.log(...oo_oo(`3284225721_529_4_529_45_4`, `🔄 Restoring from Backup: ${backupDir}`));
+
+    try {
+      // Verify backup manifest
+      const manifestPath = `${backupDir}/backup-manifest.json`;
+      if (!fs.existsSync(manifestPath)) {
+        throw new Error('Invalid backup: missing manifest');
+      }
+
+      const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+      /* eslint-disable */console.log(...oo_oo(`3284225721_538_6_538_45_4`, `📋 Restoring backup from ${manifest.timestamp}`));
+
+      // Restore files
+      for (const file of manifest.files) {
+        const backupPath = `${backupDir}/${file}`;
+        if (fs.existsSync(backupPath)) {
+          await this.runCommand(`cp -r ${backupPath} ./`);
+          /* eslint-disable */console.log(...oo_oo(`3284225721_545_10_545_45_4`,`✅ Restored: ${file}`));
+        }
+      }
+
+      // Restore dependencies
+      await this.runCommand('pnpm install');
+
+      /* eslint-disable */console.log(...oo_oo(`3284225721_551_6_551_45_4`,`✅ Restore completed successfully`));
+
+    } catch (error) {
+      /* eslint-disable */console.log(...oo_oo(`3284225721_554_6_554_45_4`,'❌ Restore failed:', error.message));
+    }
+  }
+
+  async runCommand(command) {
+    return new Promise((resolve, reject) => {
+      const { exec } = require('child_process');
+      exec(command, { cwd: process.cwd() }, (error, stdout, stderr) => {
+        if (error) {
+          reject(error);
+          return;
+        }
+        resolve({ stdout, stderr });
+      });
+    });
   }
 }
 
 // Run the CLI
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   const cli = new CathedralCLI();
   cli.run().catch(console.error);
 }
