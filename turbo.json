@@ -1,25 +1,63 @@
 {
   "$schema": "https://turborepo.org/schema.json",
+  "globalDependencies": ["**/*.json"],
   "pipeline": {
     "generate-data": {
-      "outputs": ["packages/core/data/**"]
+      "outputs": ["packages/core/data/**", "data/**"]
     },
     "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**"]
+      "dependsOn": ["^build", "generate-data"],
+      "outputs": ["dist/**", "build/**"]
     },
     "dev": {
-      "cache": false
+      "cache": false,
+      "persistent": true
+    },
+    "test": {
+      "dependsOn": ["build"],
+      "outputs": ["coverage/**"]
+    },
+    "lint": {
+      "outputs": []
+    },
+    "type-check": {
+      "dependsOn": ["build"],
+      "outputs": []
+    },
+    "clean": {
+      "outputs": []
+    },
+    "deploy": {
+      "dependsOn": ["build", "test"],
+      "outputs": []
+    },
+    "validate": {
+      "dependsOn": ["build"],
+      "outputs": []
+    },
+    "story": {
+      "dependsOn": ["build"],
+      "outputs": []
+    },
+    "fusion": {
+      "dependsOn": ["build"],
+      "outputs": []
+    },
+    "design": {
+      "dependsOn": ["build"],
+      "outputs": []
     },
     "godot-export": {
-      "dependsOn": ["generate-data"]
+      "dependsOn": ["generate-data"],
+      "outputs": ["exports/**"]
     },
     "generate-avalon": {
       "dependsOn": ["generate-data"],
       "outputs": ["packages/core/data/avalon/**"]
     },
-    "test": {
-      "outputs": ["coverage/**"]
+    "publish": {
+      "dependsOn": ["build", "test", "lint"],
+      "outputs": []
     }
   }
 }
