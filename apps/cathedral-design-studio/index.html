@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎨 Cathedral Design Studio - Sacred Design Tool</title>
+    <title>🏛️ Cathedral Design Studio - Visionary Art Realms</title>
     <style>
         * {
             margin: 0;
@@ -11,12 +11,47 @@
             box-sizing: border-box;
         }
 
+        :root {
+            /* Atelier Protocol Colors - Stone Grimoire Standard */
+            --gold-leaf: #C8A44D;
+            --silver-mist: #E8E8E8;
+            --platinum: #E5E4E2;
+            --pearl-white: #F5F5F5;
+            --cosmic-indigo: #4B0082;
+            --violet-aura: #7A33FF;
+            --obsidian-rainbow: #1C1C1C;
+            --void: #0A0A0F;
+
+            /* Jewel Tones */
+            --ruby: #E0115F;
+            --sapphire: #0F52BA;
+            --emerald: #50C878;
+            --amethyst: #9966CC;
+            --topaz: #FFC649;
+            --diamond: #F8F8FF;
+            --garnet: #C32148;
+            --aquamarine: #7FFFD4;
+
+            /* Metallics */
+            --bronze: #CD7F32;
+            --copper: #B87333;
+            --rose-gold: #E8B4B8;
+            --antique-gold: #D4AF37;
+
+            /* Theosophical Gradients */
+            --atelier-gradient: radial-gradient(ellipse at center, var(--void) 0%, var(--violet-aura) 40%, var(--obsidian-rainbow) 100%);
+            --jewel-gradient: linear-gradient(135deg, var(--ruby) 0%, var(--sapphire) 25%, var(--emerald) 50%, var(--amethyst) 75%, var(--topaz) 100%);
+            --metallic-gradient: linear-gradient(45deg, var(--gold-leaf) 0%, var(--platinum) 50%, var(--silver-mist) 100%);
+        }
+
         body {
-            font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
-            color: #e0e0e0;
+            font-family: 'Book Antiqua', 'Palatino Linotype', serif;
+            background: var(--atelier-gradient);
+            color: var(--pearl-white);
             min-height: 100vh;
-            overflow-x: hidden;
+            overflow: hidden;
+            cursor: default;
+            perspective: 3000px;
         }
 
         .app-container {
@@ -145,32 +180,330 @@
             box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
         }
 
-        /* Canvas */
+        /* 3D Visionary Realms */
         .canvas-container {
             flex: 1;
             position: relative;
             overflow: hidden;
+            perspective: 4000px;
+            transform-style: preserve-3d;
         }
 
         .canvas {
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at center, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            background: radial-gradient(ellipse at center, var(--ethereal-light) 0%, var(--ethereal-glow) 30%, var(--ethereal-mist) 60%, var(--cathedral-deep) 100%);
             position: relative;
-            cursor: crosshair;
+            cursor: grab;
+            transform-style: preserve-3d;
         }
 
+        /* 3D Realm Navigation */
+        .realm-3d {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 2s ease;
+        }
+
+        .realm-3d.fire-active {
+            transform: rotateY(0deg) translateZ(0px);
+        }
+
+        .realm-3d.water-active {
+            transform: rotateY(90deg) translateZ(500px);
+        }
+
+        .realm-3d.earth-active {
+            transform: rotateY(180deg) translateZ(1000px);
+        }
+
+        .realm-3d.air-active {
+            transform: rotateY(270deg) translateZ(1500px);
+        }
+
+        .realm-3d.aether-active {
+            transform: rotateX(90deg) translateZ(2000px);
+        }
+
+        /* 3D Rooms and Spaces */
+        .realm-space {
+            position: absolute;
+            width: 2000px;
+            height: 1500px;
+            transform-style: preserve-3d;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .realm-space.active {
+            opacity: 1;
+        }
+
+        /* Fire Realm - Transformation Chamber */
+        .fire-realm {
+            background: radial-gradient(ellipse at center, var(--fire-light) 0%, var(--fire-glow) 20%, var(--fire-shadow) 80%);
+            border: 5px solid var(--fire-primary);
+            box-shadow:
+                inset 0 0 100px var(--fire-glow),
+                0 0 200px var(--fire-primary);
+        }
+
+        .fire-realm::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent 0px,
+                var(--fire-glow) 2px,
+                transparent 4px,
+                var(--fire-primary) 6px
+            );
+            opacity: 0.3;
+            animation: fireFlicker 0.1s infinite alternate;
+        }
+
+        @keyframes fireFlicker {
+            0% { opacity: 0.2; }
+            100% { opacity: 0.4; }
+        }
+
+        /* Water Realm - Crystal Caverns */
+        .water-realm {
+            background: radial-gradient(ellipse at center, var(--water-light) 0%, var(--water-glow) 30%, var(--water-shadow) 100%);
+            border: 5px solid var(--water-primary);
+            box-shadow:
+                inset 0 0 150px var(--water-glow),
+                0 0 300px var(--water-primary);
+        }
+
+        .water-realm::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent 0px,
+                var(--water-glow) 3px,
+                transparent 6px,
+                var(--water-primary) 9px
+            );
+            opacity: 0.4;
+            animation: waterFlow 3s ease-in-out infinite;
+        }
+
+        @keyframes waterFlow {
+            0%, 100% { transform: translateX(0px); }
+            50% { transform: translateX(20px); }
+        }
+
+        /* Earth Realm - Sacred Gardens */
+        .earth-realm {
+            background: radial-gradient(ellipse at center, var(--earth-light) 0%, var(--earth-glow) 40%, var(--earth-shadow) 100%);
+            border: 5px solid var(--earth-primary);
+            box-shadow:
+                inset 0 0 120px var(--earth-glow),
+                0 0 250px var(--earth-primary);
+        }
+
+        .earth-realm::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                135deg,
+                transparent 0px,
+                var(--earth-glow) 4px,
+                transparent 8px,
+                var(--earth-primary) 12px
+            );
+            opacity: 0.3;
+            animation: earthPulse 4s ease-in-out infinite;
+        }
+
+        @keyframes earthPulse {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Air Realm - Floating Sanctuaries */
+        .air-realm {
+            background: radial-gradient(ellipse at center, var(--air-light) 0%, var(--air-glow) 25%, var(--air-shadow) 100%);
+            border: 5px solid var(--air-primary);
+            box-shadow:
+                inset 0 0 180px var(--air-glow),
+                0 0 350px var(--air-primary);
+        }
+
+        .air-realm::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                180deg,
+                transparent 0px,
+                var(--air-glow) 2px,
+                transparent 4px,
+                var(--air-primary) 6px
+            );
+            opacity: 0.35;
+            animation: airDrift 5s ease-in-out infinite;
+        }
+
+        @keyframes airDrift {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Aether Realm - Cosmic Void */
+        .aether-realm {
+            background: radial-gradient(ellipse at center, var(--aether-light) 0%, var(--aether-glow) 20%, var(--aether-shadow) 100%);
+            border: 5px solid var(--aether-primary);
+            box-shadow:
+                inset 0 0 200px var(--aether-glow),
+                0 0 400px var(--aether-primary);
+        }
+
+        .aether-realm::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent 0px,
+                var(--aether-glow) 5px,
+                transparent 10px,
+                var(--aether-primary) 15px
+            );
+            opacity: 0.25;
+            animation: aetherShimmer 6s ease-in-out infinite;
+        }
+
+        @keyframes aetherShimmer {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.6; }
+        }
+
+        /* 3D Navigation Controls */
+        .navigation-3d {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .nav-3d-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid var(--spiral-gold);
+            background: var(--ethereal-shadow);
+            color: var(--spiral-gold);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-3d-btn:hover {
+            background: var(--ethereal-glow);
+            transform: scale(1.1);
+            box-shadow: 0 0 30px var(--spiral-gold);
+        }
+
+        .nav-3d-btn.active {
+            background: var(--spiral-gold);
+            color: var(--cathedral-deep);
+            box-shadow: 0 0 40px var(--spiral-gold);
+        }
+
+        /* Realm Portals */
+        .realm-portal {
+            position: absolute;
+            width: 200px;
+            height: 300px;
+            background: linear-gradient(180deg, var(--ethereal-light) 0%, var(--ethereal-glow) 50%, var(--ethereal-mist) 100%);
+            border: 4px solid var(--spiral-gold);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            transform-style: preserve-3d;
+            backdrop-filter: blur(5px);
+        }
+
+        .realm-portal:hover {
+            transform: scale(1.05) rotateY(5deg);
+            box-shadow: 0 0 50px var(--spiral-gold);
+        }
+
+        .portal-content {
+            padding: 20px;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .portal-icon {
+            font-size: 4rem;
+            margin-bottom: 15px;
+        }
+
+        .portal-title {
+            font-size: 1.2rem;
+            color: var(--spiral-gold);
+            font-weight: bold;
+        }
+
+        .portal-description {
+            font-size: 0.9rem;
+            color: var(--spiral-rose);
+            line-height: 1.4;
+        }
+
+        /* Sacred Grid Overlay */
         .sacred-grid {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            opacity: 0.1;
+            opacity: 0.15;
             background-image:
-                linear-gradient(rgba(255, 215, 0, 0.3) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 215, 0, 0.3) 1px, transparent 1px);
-            background-size: 100px 100px;
+                linear-gradient(var(--spiral-gold) 1px, transparent 1px),
+                linear-gradient(90deg, var(--spiral-gold) 1px, transparent 1px),
+                radial-gradient(circle at 137.5px 137.5px, var(--spiral-blue) 2px, transparent 2px);
+            background-size: 144px 144px, 144px 144px, 275px 275px;
+            animation: gridPulse 8s ease-in-out infinite;
+        }
+
+        @keyframes gridPulse {
+            0%, 100% { opacity: 0.1; }
+            50% { opacity: 0.25; }
         }
 
         .design-element {
@@ -346,63 +679,64 @@
             <div class="toolbar">
                 <!-- Sacred Mathematics -->
                 <div class="tool-section">
-                    <h3>📐 Sacred Mathematics</h3>
+                    <h3>🌀 Sacred Mathematics</h3>
                     <div class="sacred-math">
                         <div class="ratio">144:99 = {(144/99).toFixed(3)}</div>
+                        <div class="sequence">Golden Ratio: 1.618...</div>
                         <div class="sequence">Fibonacci: 1, 1, 2, 3, 5, 8, 13, 21...</div>
                     </div>
                 </div>
 
-                <!-- Sacred Elements -->
+                <!-- Visionary Art Elements -->
                 <div class="tool-section">
-                    <h3>🔥 Sacred Elements</h3>
+                    <h3>🎨 Visionary Elements</h3>
                     <div class="element-library">
-                        <div class="element-item" onclick="addElement('fire')" title="Fire - Transformation">🔥</div>
-                        <div class="element-item" onclick="addElement('water')" title="Water - Emotion">💧</div>
-                        <div class="element-item" onclick="addElement('earth')" title="Earth - Foundation">🌍</div>
-                        <div class="element-item" onclick="addElement('air')" title="Air - Communication">💨</div>
-                        <div class="element-item" onclick="addElement('aether')" title="Aether - Spirit">⭐</div>
+                        <div class="element-item" onclick="enterRealm('fire')" title="Fire - Transformation Chamber">🔥</div>
+                        <div class="element-item" onclick="enterRealm('water')" title="Water - Crystal Laboratory">💧</div>
+                        <div class="element-item" onclick="enterRealm('earth')" title="Earth - Sacred Gardens">🌍</div>
+                        <div class="element-item" onclick="enterRealm('air')" title="Air - Floating Sanctuaries">💨</div>
+                        <div class="element-item" onclick="enterRealm('aether')" title="Aether - Cosmic Void">⭐</div>
                     </div>
                 </div>
 
-                <!-- Sacred Geometry -->
+                <!-- Sacred Geometry Labs -->
                 <div class="tool-section">
-                    <h3>📐 Sacred Geometry</h3>
+                    <h3>🔬 Sacred Geometry Labs</h3>
                     <div class="element-library">
-                        <div class="element-item" onclick="addGeometry('tetrahedron')" title="Tetrahedron - Fire">▲</div>
-                        <div class="element-item" onclick="addGeometry('icosahedron')" title="Icosahedron - Water">⬟</div>
-                        <div class="element-item" onclick="addGeometry('cube')" title="Cube - Earth">⬜</div>
-                        <div class="element-item" onclick="addGeometry('octahedron')" title="Octahedron - Air">⬡</div>
-                        <div class="element-item" onclick="addGeometry('dodecahedron')" title="Dodecahedron - Aether">⬟</div>
+                        <div class="element-item" onclick="enterLab('tetrahedron')" title="Fire Tetrahedron Lab">▲</div>
+                        <div class="element-item" onclick="enterLab('icosahedron')" title="Water Icosahedron Lab">⬟</div>
+                        <div class="element-item" onclick="enterLab('cube')" title="Earth Cube Lab">⬜</div>
+                        <div class="element-item" onclick="enterLab('octahedron')" title="Air Octahedron Lab">⬡</div>
+                        <div class="element-item" onclick="enterLab('dodecahedron')" title="Aether Dodecahedron Lab">⬟</div>
                     </div>
                 </div>
 
-                <!-- Color Palettes -->
+                <!-- Visionary Color Labs -->
                 <div class="tool-section">
-                    <h3>🎨 Sacred Colors</h3>
+                    <h3>🌈 Visionary Color Labs</h3>
                     <div class="color-palette">
-                        <div class="color-item" style="background: #FF4500" onclick="setColor('#FF4500')" title="Fire"></div>
-                        <div class="color-item" style="background: #1E90FF" onclick="setColor('#1E90FF')" title="Water"></div>
-                        <div class="color-item" style="background: #8B4513" onclick="setColor('#8B4513')" title="Earth"></div>
-                        <div class="color-item" style="background: #87CEEB" onclick="setColor('#87CEEB')" title="Air"></div>
-                        <div class="color-item" style="background: #DDA0DD" onclick="setColor('#DDA0DD')" title="Aether"></div>
-                        <div class="color-item" style="background: #FFD700" onclick="setColor('#FFD700')" title="Gold"></div>
-                        <div class="color-item" style="background: #C0C0C0" onclick="setColor('#C0C0C0')" title="Silver"></div>
-                        <div class="color-item" style="background: #FF69B4" onclick="setColor('#FF69B4')" title="Pink"></div>
-                        <div class="color-item" style="background: #00CED1" onclick="setColor('#00CED1')" title="Turquoise"></div>
-                        <div class="color-item" style="background: #32CD32" onclick="setColor('#32CD32')" title="Lime"></div>
+                        <div class="color-item" style="background: var(--fire-primary)" onclick="setRealmColor('fire')" title="Fire Lab"></div>
+                        <div class="color-item" style="background: var(--water-primary)" onclick="setRealmColor('water')" title="Water Lab"></div>
+                        <div class="color-item" style="background: var(--earth-primary)" onclick="setRealmColor('earth')" title="Earth Lab"></div>
+                        <div class="color-item" style="background: var(--air-primary)" onclick="setRealmColor('air')" title="Air Lab"></div>
+                        <div class="color-item" style="background: var(--aether-primary)" onclick="setRealmColor('aether')" title="Aether Lab"></div>
+                        <div class="color-item" style="background: var(--spiral-gold)" onclick="setRealmColor('gold')" title="Golden Ratio Lab"></div>
+                        <div class="color-item" style="background: var(--spiral-purple)" onclick="setRealmColor('purple')" title="Mystical Lab"></div>
+                        <div class="color-item" style="background: var(--spiral-teal)" onclick="setRealmColor('teal')" title="Healing Lab"></div>
+                        <div class="color-item" style="background: var(--spiral-rose)" onclick="setRealmColor('rose')" title="Love Lab"></div>
+                        <div class="color-item" style="background: var(--cathedral-light)" onclick="setRealmColor('light')" title="Divine Light Lab"></div>
                     </div>
                 </div>
 
-                <!-- Psychological Archetypes -->
+                <!-- Consciousness Expansion Tools -->
                 <div class="tool-section">
-                    <h3>🧠 Psychological Archetypes</h3>
+                    <h3>🧠 Consciousness Tools</h3>
                     <div class="element-library">
-                        <div class="element-item" onclick="addArchetype('hero')" title="Hero - Courage">🛡️</div>
-                        <div class="element-item" onclick="addArchetype('shadow')" title="Shadow - Hidden">👤</div>
-                        <div class="element-item" onclick="addArchetype('anima')" title="Anima - Feminine">♀️</div>
-                        <div class="element-item" onclick="addArchetype('animus')" title="Animus - Masculine">♂️</div>
-                        <div class="element-item" onclick="addArchetype('self')" title="Self - Integration">🔵</div>
+                        <div class="element-item" onclick="activateTool('meditation')" title="Meditation Chamber">🧘</div>
+                        <div class="element-item" onclick="activateTool('fusion')" title="Fusion Laboratory">⚗️</div>
+                        <div class="element-item" onclick="activateTool('crystals')" title="Crystal Resonance Lab">💎</div>
+                        <div class="element-item" onclick="activateTool('sound')" title="Sacred Sound Studio">🎵</div>
+                        <div class="element-item" onclick="activateTool('vision')" title="Vision Quest Chamber">👁️</div>
                     </div>
                 </div>
             </div>
@@ -410,155 +744,333 @@
             <div class="canvas-container">
                 <div class="canvas" id="design-canvas">
                     <div class="sacred-grid"></div>
-                    <!-- Design elements will be added here -->
+
+                    <!-- 3D Realm Navigation System -->
+                    <div class="realm-3d" id="realm-navigation">
+                        <!-- Fire Transformation Chamber -->
+                        <div class="realm-space fire-realm active" id="fire-space">
+                            <div class="realm-portal" style="top: 20%; left: 15%;" onclick="enterLab('fire-tetrahedron')">
+                                <div class="portal-content">
+                                    <div class="portal-icon">🔥</div>
+                                    <div class="portal-title">Fire Tetrahedron Lab</div>
+                                    <div class="portal-description">Transform with sacred fire geometry</div>
+                                </div>
+                            </div>
+
+                            <div class="realm-portal" style="top: 60%; right: 20%;" onclick="enterLab('fire-alchemy')">
+                                <div class="portal-content">
+                                    <div class="portal-icon">⚗️</div>
+                                    <div class="portal-title">Alchemy Chamber</div>
+                                    <div class="portal-description">Transmute consciousness through fire</div>
+                                </div>
+                            </div>
+
+                            <div class="realm-portal" style="bottom: 30%; left: 40%;" onclick="enterLab('fire-fusion')">
+                                <div class="portal-content">
+                                    <div class="portal-icon">🔥⚡</div>
+                                    <div class="portal-title">Fusion Forge</div>
+                                    <div class="portal-description">Merge elements in sacred fire</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Water Crystal Laboratory -->
+                        <div class="realm-space water-realm" id="water-space">
+                            <div class="realm-portal" style="top: 15%; left: 20%;" onclick="enterLab('water-crystals')">
+                                <div class="portal-content">
+                                    <div class="portal-icon">💎</div>
+                                    <div class="portal-title">Crystal Resonance Lab</div>
+                                    <div class="portal-description">Harmonize with water crystal frequencies</div>
+                                </div>
+                            </div>
+
+                            <div class="realm-portal" style="top: 50%; right: 15%;" onclick="enterLab('water-emotion')">
+                                <div class="portal-content">
+                                    <div class="portal-icon">💧💙</div>
+                                    <div class="portal-title">Emotion Healing Lab</div>
+                                    <div class="portal-description">Flow through emotional waters</div>
+                                </div>
+                            </div>
+
+                            <div class="realm-portal" style="bottom: 25%; left: 35%;" onclick="enterLab('water-intuition')">
+                                <div class="portal-content">
+                                    <div class="portal-icon">🔮</div>
+                                    <div class="portal-title">Intuition Chamber</div>
+                                    <div class="portal-description">Deepen intuitive wisdom</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Earth Sacred Gardens -->
+                        <div class="realm-space earth-realm" id="earth-space">
+                            <div class="realm-portal" style="top: 25%; left: 25%;" onclick="enterLab('earth-garden')">
+                                <div class="portal-content">
+                                    <div class="portal-icon">🌱</div>
+                                    <div class="portal-title">Sacred Garden</div>
+                                    <div class="portal-description">Grow with earth's nurturing wisdom</div>
+                                </div>
+                            </div>
+
+                            <div class="realm-portal" style="top: 45%; right: 25%;" onclick="enterLab('earth-stability')">
+                                <div class="portal-content">
+                                    <div class="portal-icon">🏛️</div>
+                                    <div class="portal-title">Foundation Lab</div>
+                                    <div class="portal-description">Build stable sacred structures</div>
+                                </div>
+                            </div>
+
+                            <div class="realm-portal" style="bottom: 20%; left: 45%;" onclick="enterLab('earth-manifestation')">
+                                <div class="portal-content">
+                                    <div class="portal-icon">✨</div>
+                                    <div class="portal-title">Manifestation Grove</div>
+                                    <div class="portal-description">Ground dreams into reality</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Air Floating Sanctuaries -->
+                        <div class="realm-space air-realm" id="air-space">
+                            <div class="realm-portal" style="top: 30%; left: 20%;" onclick="enterLab('air-communication')">
+                                <div class="portal-content">
+                                    <div class="portal-icon">💬</div>
+                                    <div class="portal-title">Communication Lab</div>
+                                    <div class="portal-description">Express through air's clarity</div>
+                                </div>
+                            </div>
+
+                            <div class="realm-portal" style="top: 55%; right: 20%;" onclick="enterLab('air-freedom')">
+                                <div class="portal-content">
+                                    <div class="portal-icon">🕊️</div>
+                                    <div class="portal-title">Freedom Sanctuary</div>
+                                    <div class="portal-description">Soar with liberated consciousness</div>
+                                </div>
+                            </div>
+
+                            <div class="realm-portal" style="bottom: 35%; left: 40%;" onclick="enterLab('air-inspiration')">
+                                <div class="portal-content">
+                                    <div class="portal-icon">💡</div>
+                                    <div class="portal-title">Inspiration Chamber</div>
+                                    <div class="portal-description">Breathe divine inspiration</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Aether Cosmic Void -->
+                        <div class="realm-space aether-realm" id="aether-space">
+                            <div class="realm-portal" style="top: 20%; left: 30%;" onclick="enterLab('aether-cosmic')">
+                                <div class="portal-content">
+                                    <div class="portal-icon">🌌</div>
+                                    <div class="portal-title">Cosmic Void Lab</div>
+                                    <div class="portal-description">Explore infinite consciousness</div>
+                                </div>
+                            </div>
+
+                            <div class="realm-portal" style="top: 50%; right: 30%;" onclick="enterLab('aether-unity')">
+                                <div class="portal-content">
+                                    <div class="portal-icon">🔗</div>
+                                    <div class="portal-title">Unity Chamber</div>
+                                    <div class="portal-description">Merge with universal consciousness</div>
+                                </div>
+                            </div>
+
+                            <div class="realm-portal" style="bottom: 30%; left: 50%;" onclick="enterLab('aether-transcendence')">
+                                <div class="portal-content">
+                                    <div class="portal-icon">🌟</div>
+                                    <div class="portal-title">Transcendence Lab</div>
+                                    <div class="portal-description">Transcend all limitations</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3D Navigation Controls -->
+                    <div class="navigation-3d">
+                        <div class="nav-3d-btn active" onclick="navigateRealm('fire')" title="Fire Transformation Chamber">🔥</div>
+                        <div class="nav-3d-btn" onclick="navigateRealm('water')" title="Water Crystal Laboratory">💧</div>
+                        <div class="nav-3d-btn" onclick="navigateRealm('earth')" title="Earth Sacred Gardens">🌍</div>
+                        <div class="nav-3d-btn" onclick="navigateRealm('air')" title="Air Floating Sanctuaries">💨</div>
+                        <div class="nav-3d-btn" onclick="navigateRealm('aether')" title="Aether Cosmic Void">⭐</div>
+                    </div>
                 </div>
             </div>
 
             <div class="properties-panel">
                 <div class="property-group">
-                    <h4>🎯 Selected Element</h4>
-                    <div id="selected-info">No element selected</div>
+                    <h4>🏛️ Current Realm</h4>
+                    <div id="current-realm">Fire Transformation Chamber</div>
                 </div>
 
                 <div class="property-group">
-                    <h4>📐 Position & Size</h4>
+                    <h4>🎨 Visionary Colors</h4>
                     <div class="property-control">
-                        <label>X Position</label>
-                        <input type="number" id="pos-x" value="100">
-                    </div>
-                    <div class="property-control">
-                        <label>Y Position</label>
-                        <input type="number" id="pos-y" value="100">
-                    </div>
-                    <div class="property-control">
-                        <label>Width</label>
-                        <input type="number" id="width" value="100">
-                    </div>
-                    <div class="property-control">
-                        <label>Height</label>
-                        <input type="number" id="height" value="100">
-                    </div>
-                </div>
-
-                <div class="property-group">
-                    <h4>🎨 Appearance</h4>
-                    <div class="property-control">
-                        <label>Background Color</label>
-                        <input type="color" id="bg-color" value="#ffffff">
-                    </div>
-                    <div class="property-control">
-                        <label>Border Color</label>
-                        <input type="color" id="border-color" value="#ffd700">
-                    </div>
-                    <div class="property-control">
-                        <label>Border Width</label>
-                        <input type="number" id="border-width" value="2">
-                    </div>
-                </div>
-
-                <div class="property-group">
-                    <h4>🔄 Transform</h4>
-                    <div class="property-control">
-                        <label>Rotation</label>
-                        <input type="number" id="rotation" value="0" min="0" max="360">
-                    </div>
-                    <div class="property-control">
-                        <label>Scale</label>
-                        <input type="number" id="scale" value="1" min="0.1" max="5" step="0.1">
-                    </div>
-                </div>
-
-                <div class="property-group">
-                    <h4>⚗️ Sacred Properties</h4>
-                    <div class="property-control">
-                        <label>Sacred Ratio</label>
-                        <input type="number" id="sacred-ratio" value="1.618" step="0.001">
-                    </div>
-                    <div class="property-control">
-                        <label>Element</label>
-                        <select id="element-select">
-                            <option value="fire">Fire</option>
-                            <option value="water">Water</option>
-                            <option value="earth">Earth</option>
-                            <option value="air">Air</option>
-                            <option value="aether">Aether</option>
+                        <label>Primary Element</label>
+                        <select id="element-select" onchange="updateRealmElement()">
+                            <option value="fire">🔥 Fire - Transformation</option>
+                            <option value="water">💧 Water - Emotion</option>
+                            <option value="earth">🌍 Earth - Foundation</option>
+                            <option value="air">💨 Air - Communication</option>
+                            <option value="aether">⭐ Aether - Spirit</option>
                         </select>
                     </div>
+                    <div class="property-control">
+                        <label>Lighting Intensity</label>
+                        <input type="range" id="lighting-intensity" min="0.1" max="2" step="0.1" value="1">
+                    </div>
+                    <div class="property-control">
+                        <label>Ethereal Mist</label>
+                        <input type="range" id="mist-intensity" min="0" max="1" step="0.1" value="0.3">
+                    </div>
                 </div>
 
                 <div class="property-group">
-                    <button class="nav-btn" onclick="duplicateElement()" style="width: 100%; margin-bottom: 10px;">Duplicate</button>
-                    <button class="nav-btn" onclick="deleteElement()" style="width: 100%; background: #dc3545; border-color: #dc3545;">Delete</button>
+                    <h4>🧘 Consciousness Tools</h4>
+                    <button class="nav-btn" onclick="activateMeditation()" style="width: 100%; margin-bottom: 10px;">🧘 Enter Meditation</button>
+                    <button class="nav-btn" onclick="activateFusion()" style="width: 100%; margin-bottom: 10px;">⚗️ Sacred Fusion</button>
+                    <button class="nav-btn" onclick="activateCrystals()" style="width: 100%; margin-bottom: 10px;">💎 Crystal Resonance</button>
+                    <button class="nav-btn" onclick="activateSound()" style="width: 100%; margin-bottom: 10px;">🎵 Sacred Sound</button>
+                </div>
+
+                <div class="property-group">
+                    <h4>📐 Sacred Mathematics</h4>
+                    <div class="sacred-math">
+                        <div class="ratio">144:99 = {(144/99).toFixed(3)}</div>
+                        <div class="sequence">Golden Ratio: 1.618...</div>
+                        <div class="sequence">Current Realm: Active</div>
+                    </div>
+                </div>
+
+                <div class="property-group">
+                    <button class="nav-btn" onclick="exportDesign()" style="width: 100%; margin-bottom: 10px;">📤 Export Creation</button>
+                    <button class="nav-btn" onclick="resetRealm()" style="width: 100%; background: var(--pause-orange); border-color: var(--pause-orange);">🔄 Reset Space</button>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        // Design Studio State
-        let activeTool = 'select';
-        let selectedElement = null;
-        let elements = [];
-        let elementId = 0;
+        // Visionary Design Studio State
+        let currentRealm = 'fire';
+        let activeTool = 'explore';
+        let selectedPortal = null;
+        let consciousnessMode = 'awake';
+        let etherealIntensity = 0.3;
+        let lightingIntensity = 1.0;
 
-        // Canvas and elements
+        // 3D Realm Navigation
+        const realmNavigation = document.getElementById('realm-navigation');
         const canvas = document.getElementById('design-canvas');
 
         // Sacred mathematics constants
         const SACRED_RATIO = 1.618033988749;
         const FIBONACCI_SEQUENCE = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144];
 
-        // Initialize
+        // Initialize the visionary studio
         document.addEventListener('DOMContentLoaded', () => {
-            setupCanvas();
-            setupEventListeners();
-            updatePropertiesPanel();
+            initializeStudio();
+            setupRealmNavigation();
+            setupConsciousnessTools();
+            updateRealmDisplay();
         });
+
+        function initializeStudio() {
+            // Set initial ethereal atmosphere
+            updateEtherealAtmosphere();
+
+            // Start sacred geometry animations
+            animateSacredGrid();
+
+            // Initialize consciousness state
+            consciousnessMode = 'awake';
+            updateConsciousnessDisplay();
+        }
+
+        function updateEtherealAtmosphere() {
+            const root = document.documentElement;
+            root.style.setProperty('--ethereal-mist', `rgba(147, 112, 219, ${etherealIntensity})`);
+            root.style.setProperty('--ethereal-glow', `rgba(255, 179, 71, ${etherealIntensity * 0.8})`);
+            root.style.setProperty('--ethereal-light', `rgba(255, 239, 213, ${etherealIntensity * 0.6})`);
+        }
+
+        function animateSacredGrid() {
+            const grid = document.querySelector('.sacred-grid');
+            if (grid) {
+                let pulsePhase = 0;
+                setInterval(() => {
+                    pulsePhase += 0.02;
+                    const opacity = 0.1 + 0.15 * Math.sin(pulsePhase);
+                    grid.style.opacity = opacity;
+                }, 50);
+            }
+        }
+
+        function updateConsciousnessDisplay() {
+            const consciousnessStates = {
+                'awake': '🧘 Awake Awareness',
+                'meditative': '🌸 Meditative Flow',
+                'trance': '✨ Sacred Trance',
+                'ecstatic': '🌟 Divine Ecstasy',
+                'transcendent': '🌌 Cosmic Unity'
+            };
+
+            document.getElementById('current-realm').textContent = consciousnessStates[consciousnessMode] || consciousnessStates['awake'];
+        }
 
         function setActiveTool(tool) {
             activeTool = tool;
             document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
 
-            canvas.style.cursor = tool === 'select' ? 'default' : 'crosshair';
+            // Update cursor based on tool
+            canvas.style.cursor = tool === 'explore' ? 'grab' : 'pointer';
         }
 
-        function setupCanvas() {
-            // Add sacred geometry background
-            const geometry = createSacredGeometry();
-            canvas.appendChild(geometry);
+        function setupRealmNavigation() {
+            // Set up 3D realm navigation
+            const navButtons = document.querySelectorAll('.nav-3d-btn');
+            navButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const realm = e.target.textContent.trim();
+                    navigateRealm(realm);
+                });
+            });
+
+            // Set up portal interactions
+            const portals = document.querySelectorAll('.realm-portal');
+            portals.forEach(portal => {
+                portal.addEventListener('click', (e) => {
+                    const labType = e.currentTarget.onclick.toString().match(/'([^']+)'/)[1];
+                    enterLab(labType);
+                });
+            });
         }
 
-        function createSacredGeometry() {
-            const container = document.createElement('div');
-            container.className = 'sacred-geometry';
-            container.style.width = '100%';
-            container.style.height = '100%';
-            container.style.position = 'absolute';
-            container.style.top = '0';
-            container.style.left = '0';
-            container.style.pointerEvents = 'none';
+        function setupConsciousnessTools() {
+            // Lighting intensity control
+            const lightingControl = document.getElementById('lighting-intensity');
+            if (lightingControl) {
+                lightingControl.addEventListener('input', (e) => {
+                    lightingIntensity = parseFloat(e.target.value);
+                    updateLighting();
+                });
+            }
 
-            // Add golden ratio spiral
-            const spiral = createGoldenSpiral();
-            container.appendChild(spiral);
-
-            return container;
+            // Ethereal mist control
+            const mistControl = document.getElementById('mist-intensity');
+            if (mistControl) {
+                mistControl.addEventListener('input', (e) => {
+                    etherealIntensity = parseFloat(e.target.value);
+                    updateEtherealAtmosphere();
+                });
+            }
         }
 
-        function createGoldenSpiral() {
-            const spiral = document.createElement('div');
-            spiral.style.position = 'absolute';
-            spiral.style.width = '200px';
-            spiral.style.height = '200px';
-            spiral.style.border = '2px solid rgba(255, 215, 0, 0.3)';
-            spiral.style.borderRadius = '50%';
-            spiral.style.top = '50%';
-            spiral.style.left = '50%';
-            spiral.style.transform = 'translate(-50%, -50%)';
-            spiral.style.background = 'radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%)';
-
-            return spiral;
+        function updateLighting() {
+            // Update lighting effects based on intensity
+            const realms = document.querySelectorAll('.realm-space');
+            realms.forEach(realm => {
+                const intensity = lightingIntensity;
+                realm.style.filter = `brightness(${intensity}) contrast(${0.8 + intensity * 0.2})`;
+            });
         }
 
         function setupEventListeners() {
@@ -818,6 +1330,387 @@
             updatePropertiesPanel();
         }
 
+        // 3D Realm Navigation Functions
+        function navigateRealm(realm) {
+            // Update current realm
+            currentRealm = realm;
+
+            // Update navigation buttons
+            document.querySelectorAll('.nav-3d-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Update realm visibility
+            document.querySelectorAll('.realm-space').forEach(space => {
+                space.classList.remove('active');
+            });
+
+            const realmMap = {
+                '🔥': 'fire',
+                '💧': 'water',
+                '🌍': 'earth',
+                '💨': 'air',
+                '⭐': 'aether'
+            };
+
+            const realmKey = realmMap[realm] || 'fire';
+            const realmSpace = document.getElementById(`${realmKey}-space`);
+            if (realmSpace) {
+                realmSpace.classList.add('active');
+            }
+
+            // Update realm navigation 3D transform
+            const realmNavigation = document.getElementById('realm-navigation');
+            const transforms = {
+                'fire': 'rotateY(0deg) translateZ(0px)',
+                'water': 'rotateY(90deg) translateZ(500px)',
+                'earth': 'rotateY(180deg) translateZ(1000px)',
+                'air': 'rotateY(270deg) translateZ(1500px)',
+                'aether': 'rotateX(90deg) translateZ(2000px)'
+            };
+
+            if (realmNavigation) {
+                realmNavigation.style.transform = transforms[realmKey] || transforms['fire'];
+            }
+
+            // Update consciousness display
+            updateRealmDisplay();
+
+            // Sacred transition effect
+            canvas.style.filter = 'brightness(1.2) saturate(1.3)';
+            setTimeout(() => {
+                canvas.style.filter = '';
+            }, 500);
+        }
+
+        function enterRealm(realm) {
+            console.log(`🌀 Entering ${realm} realm...`);
+            navigateRealm(realm === 'fire' ? '🔥' : realm === 'water' ? '💧' : realm === 'earth' ? '🌍' : realm === 'air' ? '💨' : '⭐');
+        }
+
+        function enterLab(labType) {
+            console.log(`🔬 Entering ${labType} laboratory...`);
+
+            // Create immersive lab experience
+            const labDescriptions = {
+                'fire-tetrahedron': '🔥 Fire Tetrahedron Lab - Transform with sacred fire geometry',
+                'fire-alchemy': '⚗️ Alchemy Chamber - Transmute consciousness through fire',
+                'fire-fusion': '🔥⚡ Fusion Forge - Merge elements in sacred fire',
+                'water-crystals': '💎 Crystal Resonance Lab - Harmonize with water crystal frequencies',
+                'water-emotion': '💧💙 Emotion Healing Lab - Flow through emotional waters',
+                'water-intuition': '🔮 Intuition Chamber - Deepen intuitive wisdom',
+                'earth-garden': '🌱 Sacred Garden - Grow with earth\'s nurturing wisdom',
+                'earth-stability': '🏛️ Foundation Lab - Build stable sacred structures',
+                'earth-manifestation': '✨ Manifestation Grove - Ground dreams into reality',
+                'air-communication': '💬 Communication Lab - Express through air\'s clarity',
+                'air-freedom': '🕊️ Freedom Sanctuary - Soar with liberated consciousness',
+                'air-inspiration': '💡 Inspiration Chamber - Breathe divine inspiration',
+                'aether-cosmic': '🌌 Cosmic Void Lab - Explore infinite consciousness',
+                'aether-unity': '🔗 Unity Chamber - Merge with universal consciousness',
+                'aether-transcendence': '🌟 Transcendence Lab - Transcend all limitations'
+            };
+
+            const description = labDescriptions[labType] || `🔬 ${labType} Laboratory`;
+            console.log(description);
+
+            // Visual feedback
+            const portals = document.querySelectorAll('.realm-portal');
+            portals.forEach(portal => {
+                portal.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    portal.style.transform = '';
+                }, 200);
+            });
+        }
+
+        function setRealmColor(colorType) {
+            console.log(`🎨 Setting realm color theme: ${colorType}`);
+
+            const colorThemes = {
+                'fire': {
+                    primary: 'var(--fire-primary)',
+                    glow: 'var(--fire-glow)',
+                    shadow: 'var(--fire-shadow)',
+                    light: 'var(--fire-light)'
+                },
+                'water': {
+                    primary: 'var(--water-primary)',
+                    glow: 'var(--water-glow)',
+                    shadow: 'var(--water-shadow)',
+                    light: 'var(--water-light)'
+                },
+                'earth': {
+                    primary: 'var(--earth-primary)',
+                    glow: 'var(--earth-glow)',
+                    shadow: 'var(--earth-shadow)',
+                    light: 'var(--earth-light)'
+                },
+                'air': {
+                    primary: 'var(--air-primary)',
+                    glow: 'var(--air-glow)',
+                    shadow: 'var(--air-shadow)',
+                    light: 'var(--air-light)'
+                },
+                'aether': {
+                    primary: 'var(--aether-primary)',
+                    glow: 'var(--aether-glow)',
+                    shadow: 'var(--aether-shadow)',
+                    light: 'var(--aether-light)'
+                },
+                'gold': {
+                    primary: 'var(--spiral-gold)',
+                    glow: 'var(--spiral-gold)',
+                    shadow: 'var(--cathedral-deep)',
+                    light: 'var(--cathedral-light)'
+                },
+                'purple': {
+                    primary: 'var(--spiral-purple)',
+                    glow: 'var(--spiral-purple)',
+                    shadow: 'var(--cathedral-deep)',
+                    light: 'var(--cathedral-light)'
+                },
+                'teal': {
+                    primary: 'var(--spiral-teal)',
+                    glow: 'var(--spiral-teal)',
+                    shadow: 'var(--cathedral-deep)',
+                    light: 'var(--cathedral-light)'
+                },
+                'rose': {
+                    primary: 'var(--spiral-rose)',
+                    glow: 'var(--spiral-rose)',
+                    shadow: 'var(--cathedral-deep)',
+                    light: 'var(--cathedral-light)'
+                },
+                'light': {
+                    primary: 'var(--cathedral-light)',
+                    glow: 'var(--cathedral-light)',
+                    shadow: 'var(--cathedral-deep)',
+                    light: 'var(--cathedral-light)'
+                }
+            };
+
+            const theme = colorThemes[colorType] || colorThemes['fire'];
+
+            // Apply theme to current realm
+            const currentSpace = document.querySelector('.realm-space.active');
+            if (currentSpace) {
+                currentSpace.style.borderColor = theme.primary;
+                currentSpace.style.boxShadow = `
+                    inset 0 0 100px ${theme.glow},
+                    0 0 200px ${theme.primary}
+                `;
+            }
+
+            // Update portals
+            const portals = document.querySelectorAll('.realm-portal');
+            portals.forEach(portal => {
+                portal.style.borderColor = theme.primary;
+                portal.style.boxShadow = `0 0 30px ${theme.glow}`;
+            });
+        }
+
+        function updateRealmElement() {
+            const elementSelect = document.getElementById('element-select');
+            const selectedElement = elementSelect.value;
+
+            console.log(`🔄 Updating realm element to: ${selectedElement}`);
+
+            // Update realm colors and effects based on element
+            const elementColors = {
+                'fire': 'fire',
+                'water': 'water',
+                'earth': 'earth',
+                'air': 'air',
+                'aether': 'aether'
+            };
+
+            const colorType = elementColors[selectedElement] || 'fire';
+            setRealmColor(colorType);
+
+            // Update consciousness state
+            consciousnessMode = selectedElement;
+            updateConsciousnessDisplay();
+        }
+
+        function updateRealmDisplay() {
+            const realmNames = {
+                'fire': '🔥 Fire Transformation Chamber',
+                'water': '💧 Water Crystal Laboratory',
+                'earth': '🌍 Earth Sacred Gardens',
+                'air': '💨 Air Floating Sanctuaries',
+                'aether': '⭐ Aether Cosmic Void'
+            };
+
+            const realmName = realmNames[currentRealm] || realmNames['fire'];
+            document.getElementById('current-realm').textContent = realmName;
+
+            // Update consciousness state based on realm
+            const consciousnessStates = {
+                'fire': 'ecstatic',
+                'water': 'meditative',
+                'earth': 'awake',
+                'air': 'trance',
+                'aether': 'transcendent'
+            };
+
+            consciousnessMode = consciousnessStates[currentRealm] || 'awake';
+            updateConsciousnessDisplay();
+        }
+
+        // Consciousness Expansion Tools
+        function activateMeditation() {
+            console.log('🧘 Entering sacred meditation...');
+            consciousnessMode = 'meditative';
+            updateConsciousnessDisplay();
+
+            // Visual meditation effect
+            canvas.style.filter = 'blur(2px) brightness(1.1)';
+            setTimeout(() => {
+                canvas.style.filter = '';
+            }, 3000);
+
+            // Sacred sound
+            playSacredTone(528); // DNA repair frequency
+        }
+
+        function activateFusion() {
+            console.log('⚗️ Activating sacred fusion laboratory...');
+            consciousnessMode = 'ecstatic';
+            updateConsciousnessDisplay();
+
+            // Fusion visual effect
+            const portals = document.querySelectorAll('.realm-portal');
+            portals.forEach((portal, index) => {
+                setTimeout(() => {
+                    portal.style.transform = 'scale(1.2) rotate(360deg)';
+                    setTimeout(() => {
+                        portal.style.transform = '';
+                    }, 1000);
+                }, index * 200);
+            });
+        }
+
+        function activateCrystals() {
+            console.log('💎 Activating crystal resonance laboratory...');
+            consciousnessMode = 'trance';
+            updateConsciousnessDisplay();
+
+            // Crystal resonance effect
+            canvas.style.animation = 'pulse 2s ease-in-out infinite';
+            setTimeout(() => {
+                canvas.style.animation = '';
+            }, 4000);
+        }
+
+        function activateSound() {
+            console.log('🎵 Entering sacred sound studio...');
+            consciousnessMode = 'meditative';
+            updateConsciousnessDisplay();
+
+            // Sound wave visualization
+            playSacredMelody();
+        }
+
+        function activateVision() {
+            console.log('👁️ Entering vision quest chamber...');
+            consciousnessMode = 'transcendent';
+            updateConsciousnessDisplay();
+
+            // Vision quest effect
+            canvas.style.filter = 'hue-rotate(90deg) saturate(1.5)';
+            setTimeout(() => {
+                canvas.style.filter = '';
+            }, 5000);
+        }
+
+        function playSacredTone(frequency) {
+            try {
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+
+                oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+                oscillator.type = 'sine';
+
+                gainNode.gain.setValueAtTime(0.05, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 3);
+
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+
+                oscillator.start();
+                oscillator.stop(audioContext.currentTime + 3);
+            } catch (error) {
+                console.log('Sacred sound requires user interaction');
+            }
+        }
+
+        function playSacredMelody() {
+            const frequencies = [396, 417, 528, 639, 741, 852, 963]; // Solfeggio frequencies
+
+            frequencies.forEach((freq, index) => {
+                setTimeout(() => {
+                    playSacredTone(freq);
+                }, index * 500);
+            });
+        }
+
+        function exportDesign() {
+            console.log('📤 Exporting visionary creation...');
+
+            // Create export data
+            const exportData = {
+                realm: currentRealm,
+                consciousness: consciousnessMode,
+                elements: elements.length,
+                sacredRatio: SACRED_RATIO,
+                timestamp: new Date().toISOString(),
+                description: `Visionary art creation from ${currentRealm} realm in ${consciousnessMode} consciousness state`
+            };
+
+            // Download as JSON
+            const dataStr = JSON.stringify(exportData, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            const url = URL.createObjectURL(dataBlob);
+
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `cathedral-creation-${Date.now()}.json`;
+            link.click();
+
+            URL.revokeObjectURL(url);
+
+            console.log('✨ Sacred creation exported successfully');
+        }
+
+        function resetRealm() {
+            console.log('🔄 Resetting sacred space...');
+
+            // Reset all elements
+            elements.forEach(element => {
+                if (element.domElement && element.domElement.parentNode) {
+                    canvas.removeChild(element.domElement);
+                }
+            });
+            elements = [];
+
+            // Reset to fire realm
+            navigateRealm('🔥');
+
+            // Reset consciousness
+            consciousnessMode = 'awake';
+            updateConsciousnessDisplay();
+
+            // Reset controls
+            document.getElementById('lighting-intensity').value = 1.0;
+            document.getElementById('mist-intensity').value = 0.3;
+            updateLighting();
+            updateEtherealAtmosphere();
+
+            console.log('✨ Sacred space purified and renewed');
+        }
+
         // Make functions global for onclick handlers
         window.setActiveTool = setActiveTool;
         window.addElement = addElement;
@@ -827,6 +1720,18 @@
         window.updateElementProperty = updateElementProperty;
         window.duplicateElement = duplicateElement;
         window.deleteElement = deleteElement;
+        window.navigateRealm = navigateRealm;
+        window.enterRealm = enterRealm;
+        window.enterLab = enterLab;
+        window.setRealmColor = setRealmColor;
+        window.updateRealmElement = updateRealmElement;
+        window.activateMeditation = activateMeditation;
+        window.activateFusion = activateFusion;
+        window.activateCrystals = activateCrystals;
+        window.activateSound = activateSound;
+        window.activateVision = activateVision;
+        window.exportDesign = exportDesign;
+        window.resetRealm = resetRealm;
         window.generateReading = () => console.log('Tarot reading feature available');
     </script>
 </body>
