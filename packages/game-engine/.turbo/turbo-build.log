@@ -1,5 +1,5 @@
 
-> @cathedral/game-engine@1.0.0 build /Users/rebeccalemke/cathedral/cathedral/packages/game-engine
+> @cathedral/game-engine@1.0.0 build /Users/rebeccalemke/cathedral-1/packages/game-engine
 > tsc
 
 [41m[30m ELIFECYCLE [39m[49m [31mCommand failed.[39m

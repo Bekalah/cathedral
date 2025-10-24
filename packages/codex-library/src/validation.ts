@@ -13,7 +13,7 @@ import {
   ValidationRule,
   ValidationError,
   ValidationWarning
-} from './types.js';
+} from './types';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

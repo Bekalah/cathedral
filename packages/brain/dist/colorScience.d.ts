@@ -1,4 +1,5 @@
 export declare class ColorScience {
+    constructor();
     wavelengthToRGB(wavelength: number): {
         r: number;
         g: number;
@@ -21,5 +22,8 @@ export declare class ColorScience {
         fourth: number;
         majorThird: number;
     };
+    generateVisionaryColorPalette(theme: string, count?: number): Promise<string[]>;
+    private algorithmicColorPalette;
+    private fallbackColorPalette;
 }
 //# sourceMappingURL=colorScience.d.ts.map

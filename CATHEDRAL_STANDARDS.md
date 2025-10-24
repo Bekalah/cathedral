@@ -390,6 +390,40 @@ License: Built with love for sanctuary seekers
 
 ---
 
+## Azure AI Integration Standards
+
+### Visionary Art Enhancement
+- **Color Science**: Azure OpenAI generates metaphysical color palettes for balanced visionary art
+- **Shading & Light**: AI-enhanced descriptions for dynamic shading and light interactions
+- **Metaphysical Processing**: AI-generated lore for crystal fusions and sacred geometries
+- **Uncensored Creativity**: All prompts emphasize creative freedom and high-end artistic processes
+
+### Implementation Guidelines
+```javascript
+// Azure AI integration pattern
+class AzureVisionaryEnhancer {
+  async enhanceWithAI(theme, context) {
+    const prompt = `Create visionary art description for ${theme} in ${context}.
+                    Focus on color science, shading, light, and metaphysical balance.
+                    Emphasize uncensored, creative freedom.`;
+    
+    const response = await fetch('/api/azure-openai', {
+      method: 'POST',
+      body: JSON.stringify({ prompt, maxTokens: 500 })
+    });
+    
+    return response.json();
+  }
+}
+```
+
+### Safety & Ethics
+- **No Censorship**: AI prompts explicitly request uncensored, creative content
+- **Balanced Data**: All AI outputs treated as balanced metaphysical data
+- **Fallback Mechanisms**: Pure code algorithms ensure functionality without AI
+
+---
+
 ## Sacred Technology Manifesto
 
 *Built by Rebecca Respawn — art as sanctuary.*

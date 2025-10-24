@@ -8,7 +8,7 @@ import {
   FusionKinkSession,
   FusionTransformation,
   FusionOutcome
-} from '../types.js';
+} from '../types';
 
 export class FusionKinkEngine {
   private activeSessions: Map<string, FusionKinkSession> = new Map();
