@@ -175,7 +175,7 @@ app.get('/health', (req, res) => {
         trauma_safety: 'maximum CPTSD-safe protocols',
         nd_accommodations: 'full sensory and cognitive support',
         artistic_integration: 'Björk + Tori + Iris + Emma + 21 Taras',
-        beauty_level: 'breathtaking museum quality',
+        beauty_level: 'museum-quality artistic integration',
         accessibility: '100% - forever for all consciousness',
         timestamp: new Date().toISOString(),
         system: 'THE CATHEDRAL OF CIRCUITS v2.0',
