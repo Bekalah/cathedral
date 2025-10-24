@@ -23,10 +23,7 @@
         "learning-interface",
         "consciousness-interface"
       ],
-      "dependencies": [
-        "tesseract-bridge",
-        "data-layer"
-      ]
+      "dependencies": ["tesseract-bridge", "data-layer"]
     },
 
     "circuitum99-arcanae-cyoa": {
@@ -40,15 +37,8 @@
         "data/soul-narrative/**/*",
         "apps/circuitum99/**/*"
       ],
-      "interfaces": [
-        "soul-interface",
-        "narrative-interface",
-        "gate-interface"
-      ],
-      "dependencies": [
-        "tesseract-bridge",
-        "data-layer"
-      ]
+      "interfaces": ["soul-interface", "narrative-interface", "gate-interface"],
+      "dependencies": ["tesseract-bridge", "data-layer"]
     },
 
     "stone-grimoire": {
@@ -67,10 +57,7 @@
         "geometry-interface",
         "ritual-interface"
       ],
-      "dependencies": [
-        "tesseract-bridge",
-        "data-layer"
-      ]
+      "dependencies": ["tesseract-bridge", "data-layer"]
     },
 
     "magical-mystery-house": {
@@ -88,10 +75,7 @@
         "exploration-interface",
         "portal-interface"
       ],
-      "dependencies": [
-        "tesseract-bridge",
-        "all-components"
-      ]
+      "dependencies": ["tesseract-bridge", "all-components"]
     },
 
     "tesseract-bridge": {
@@ -109,9 +93,7 @@
         "ribbon-interface",
         "fusion-interface"
       ],
-      "dependencies": [
-        "all-components"
-      ]
+      "dependencies": ["all-components"]
     },
 
     "liber-arcanae": {
@@ -129,10 +111,7 @@
         "archetype-interface",
         "character-interface"
       ],
-      "dependencies": [
-        "tesseract-bridge",
-        "data-layer"
-      ]
+      "dependencies": ["tesseract-bridge", "data-layer"]
     }
   },
 
@@ -142,21 +121,13 @@
       "data/sacred-mathematics.json",
       "data/trauma-safety-protocols.json"
     ],
-    "docs": [
-      "docs/master/*.md",
-      "docs/standards/*.md",
-      "docs/safety/*.md"
-    ],
+    "docs": ["docs/master/*.md", "docs/standards/*.md", "docs/safety/*.md"],
     "tools": [
       "tools/validation/*.js",
       "tools/health-check.js",
       "tools/cathedral-cli.js"
     ],
-    "config": [
-      "package.json",
-      "turbo.json",
-      ".gitignore"
-    ]
+    "config": ["package.json", "turbo.json", ".gitignore"]
   },
 
   "conflict_resolution": {
