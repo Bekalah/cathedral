@@ -63,7 +63,7 @@ export const CathedralGameInterface: React.FC = () => {
 
       // Create game engine instance
       const gameModule = (await import(
-        "@cathedral/game-engine/src/index.js"
+        "../../../../packages/game-engine/src/CodexGameEngine.js"
       )) as any;
       const game = new gameModule.CodexGameEngine();
       await game.initialize();
