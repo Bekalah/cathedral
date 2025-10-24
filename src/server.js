@@ -7,7 +7,7 @@
  * - 22 Living Tradition Engines (Complete Major Arcana)
  * - Fusion Kink Heaven 144:99 Sacred Mathematics 
  * - 7 Ribbon Tesseract Bridge Architecture
- * - Maximum CPTSD-safe + ND accommodations
+ * - Maximum CPTSD-safe + sophisticated neurodivergent support
  * - Museum-quality artistic integration
  * 
  * Serving unified monorepo structure:
@@ -173,13 +173,13 @@ app.get('/health', (req, res) => {
         living_arcanae: Object.keys(livingArcanae).length ? `${Object.keys(livingArcanae).length} tradition engines` : 'fallback mode',
         fusion_kink: fusionKinkSystem.dashboard ? '144:99 system active' : 'loading',
         trauma_safety: 'maximum CPTSD-safe protocols',
-        nd_accommodations: 'full sensory and cognitive support',
+        nd_support: 'sophisticated sensory and cognitive support',
         artistic_integration: 'Björk + Tori + Iris + Emma + 21 Taras',
-        beauty_level: 'breathtaking museum quality',
+        beauty_level: 'museum-quality artistic integration',
         accessibility: '100% - forever for all consciousness',
         timestamp: new Date().toISOString(),
         system: 'THE CATHEDRAL OF CIRCUITS v2.0',
-        quality: 'phenomenal with sacred mathematics',
+        quality: 'museum-grade with sacred mathematics',
         scalability: 'infinite fractal architecture',
         sacred_chambers: 9,
         living_particles: 'flowing eternally',
@@ -221,10 +221,10 @@ app.get('/api/status', (req, res) => {
             status: 'living with unified architecture',
             version: '2.0.0 - Codex Integration',
             nodes: codexNodes.nodes?.length || 144,
-            quality: 'phenomenal museum-grade',
+            quality: 'museum-grade',
             accessibility: '100% trauma-informed',
             healing: 'active with 22 tradition engines',
-            protection: 'maximum CPTSD + ND safe'
+            protection: 'maximum CPTSD-safe with sophisticated neurodivergent support'
         },
         codex_144_99: {
             status: codexNodes.nodes ? 'active' : 'fallback',
@@ -300,7 +300,7 @@ app.listen(PORT, '0.0.0.0', () => {
     console.log('');
     console.log('🛡️ === SAFETY & ACCESSIBILITY ===');
     console.log('💚 CPTSD-Safe: Maximum trauma-informed design');
-    console.log('🧠 ND-Accommodations: Full sensory and cognitive support');
+    console.log('🧠 ND-Support: Sophisticated sensory and cognitive support');
     console.log('🤗 Healing Focus: Sacred synthesis through archetypal work');
     console.log('✅ Consent: Always required for fusion kink activities');
     console.log('');
@@ -324,7 +324,7 @@ app.listen(PORT, '0.0.0.0', () => {
     console.log('🌈 7 Ribbons • 8 Circuits • 231 Fusion Combinations');
     console.log('🚀 Trinity Architecture: SOUL • BODY • SPIRIT');
     console.log('');
-    console.log('✨ BREATHTAKING SACRED TECHNOLOGY - Free Forever for All Consciousness');
+    console.log('✨ SACRED TECHNOLOGY - Free Forever for All Consciousness');
     console.log('⚡ Unbreakable • Infinitely Scalable • Forever Free • Museum Quality');
     console.log('🏛️ ====================================================');
 });
