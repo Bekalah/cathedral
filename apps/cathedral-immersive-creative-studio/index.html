@@ -591,6 +591,12 @@
           <button class="nav-button" onclick="showRealm('fusion')">
             Fusion Lab
           </button>
+          <button class="nav-button" onclick="showRealm('crystals')">
+            Crystal Lab
+          </button>
+          <button class="nav-button" onclick="showRealm('library')">
+            Sacred Library
+          </button>
         </div>
 
         <!-- Archetype Selection -->
@@ -754,6 +760,106 @@
 
         <!-- Add more realms for other elements... -->
 
+        <!-- Crystal Lab Realm -->
+        <div id="crystals-realm" class="archetype-realm">
+          <div class="realm-header">
+            <div class="realm-title">Crystal Laboratory</div>
+            <div class="realm-subtitle">
+              Sacred Resonance & Fusion Mechanics
+            </div>
+          </div>
+          <div class="realm-content">
+            <div class="creative-activities">
+              <div
+                class="activity-portal"
+                onclick="startActivity('crystals', 'resonance')">
+                <div class="activity-icon">🔮</div>
+                <div class="activity-title">Resonance Lab</div>
+                <div class="activity-description">
+                  Calculate crystal harmonics and phi scores
+                </div>
+              </div>
+              <div
+                class="activity-portal"
+                onclick="startActivity('crystals', 'fusion')">
+                <div class="activity-icon">⚗️</div>
+                <div class="activity-title">Fusion Chamber</div>
+                <div class="activity-description">
+                  Combine crystals for enhanced effects
+                </div>
+              </div>
+              <div
+                class="activity-portal"
+                onclick="startActivity('crystals', 'analysis')">
+                <div class="activity-icon">🔬</div>
+                <div class="activity-title">Crystal Analysis</div>
+                <div class="activity-description">
+                  Study physical and metaphysical properties
+                </div>
+              </div>
+              <div
+                class="activity-portal"
+                onclick="startActivity('crystals', 'layout')">
+                <div class="activity-icon">📐</div>
+                <div class="activity-title">Sacred Layouts</div>
+                <div class="activity-description">
+                  Design crystal grids and sacred geometry
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sacred Library Realm -->
+        <div id="library-realm" class="archetype-realm">
+          <div class="realm-header">
+            <div class="realm-title">Sacred Library</div>
+            <div class="realm-subtitle">
+              Museum-Quality Spiritual Resources
+            </div>
+          </div>
+          <div class="realm-content">
+            <div class="creative-activities">
+              <div
+                class="activity-portal"
+                onclick="startActivity('library', 'hermetic')">
+                <div class="activity-icon">📚</div>
+                <div class="activity-title">Hermetic Texts</div>
+                <div class="activity-description">
+                  Golden Dawn and alchemical manuscripts
+                </div>
+              </div>
+              <div
+                class="activity-portal"
+                onclick="startActivity('library', 'kabbalah')">
+                <div class="activity-icon">🌳</div>
+                <div class="activity-title">Kabbalistic Wisdom</div>
+                <div class="activity-description">
+                  Tree of Life and sacred correspondences
+                </div>
+              </div>
+              <div
+                class="activity-portal"
+                onclick="startActivity('library', 'tarot')">
+                <div class="activity-icon">🃏</div>
+                <div class="activity-title">Tarot Archives</div>
+                <div class="activity-description">
+                  Historical and archetypal card meanings
+                </div>
+              </div>
+              <div
+                class="activity-portal"
+                onclick="startActivity('library', 'healing')">
+                <div class="activity-icon">🌟</div>
+                <div class="activity-title">Healing Arts</div>
+                <div class="activity-description">
+                  Trauma-informed spiritual practices
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Overlays -->
         <div id="learning-overlay" class="learning-overlay">
           <div class="learning-title">Learning Integration</div>
@@ -843,7 +949,18 @@
 
         // Show selected realm
         if (realmType !== "home") {
-          const realm = document.getElementById(`${currentArchetype}-realm`);
+          let realmId = "";
+
+          // Handle special realms that don't depend on archetype
+          if (realmType === "crystals") {
+            realmId = "crystals-realm";
+          } else if (realmType === "library") {
+            realmId = "library-realm";
+          } else {
+            realmId = `${currentArchetype}-realm`;
+          }
+
+          const realm = document.getElementById(realmId);
           if (realm) {
             realm.classList.add("active");
           }
@@ -928,6 +1045,38 @@
             // Start scientific exploration
             toggleScienceOverlay();
             break;
+          case "resonance":
+            // Start crystal resonance lab
+            showCrystalResonance();
+            break;
+          case "fusion":
+            // Start crystal fusion chamber
+            showCrystalFusion();
+            break;
+          case "analysis":
+            // Start crystal analysis
+            showCrystalAnalysis();
+            break;
+          case "layout":
+            // Start sacred layouts
+            showSacredLayouts();
+            break;
+          case "hermetic":
+            // Start hermetic library
+            showHermeticLibrary();
+            break;
+          case "kabbalah":
+            // Start kabbalistic wisdom
+            showKabbalahLibrary();
+            break;
+          case "tarot":
+            // Start tarot archives
+            showTarotArchives();
+            break;
+          case "healing":
+            // Start healing arts
+            showHealingArts();
+            break;
         }
       }
 
@@ -994,6 +1143,40 @@
         // Initialize game mechanics
       }
 
+      // Crystal Lab Functions
+      function showCrystalResonance() {
+        alert("🔮 Crystal Resonance Lab\n\nCalculating harmonics and phi scores...\n\nIn the full system, this would open the crystal resonance calculator with real-time frequency analysis and golden ratio alignment metrics.");
+      }
+
+      function showCrystalFusion() {
+        alert("⚗️ Crystal Fusion Chamber\n\nCombining crystals for enhanced effects...\n\nIn the full system, this would open the fusion interface where you can combine multiple crystals and see their resonance calculations in real-time.");
+      }
+
+      function showCrystalAnalysis() {
+        alert("🔬 Crystal Analysis Lab\n\nAnalyzing physical and metaphysical properties...\n\nIn the full system, this would show detailed crystal properties including Mohs hardness, refractive index, elemental correspondences, and chakra alignments.");
+      }
+
+      function showSacredLayouts() {
+        alert("📐 Sacred Layout Designer\n\nCreating crystal grids and sacred geometry...\n\nIn the full system, this would open the layout designer with drag-and-drop crystals and real-time resonance visualization.");
+      }
+
+      // Sacred Library Functions
+      function showHermeticLibrary() {
+        alert("📚 Hermetic Library\n\nAccessing Golden Dawn and alchemical manuscripts...\n\nIn the full system, this would open the hermetic text collection with museum-quality scans and trauma-safe reading protocols.");
+      }
+
+      function showKabbalahLibrary() {
+        alert("🌳 Kabbalistic Wisdom\n\nExploring Tree of Life and sacred correspondences...\n\nIn the full system, this would open the complete Kabbalistic library with interactive Tree of Life and correspondence matrices.");
+      }
+
+      function showTarotArchives() {
+        alert("🃏 Tarot Archives\n\nHistorical and archetypal card meanings...\n\nIn the full system, this would open the complete tarot archive with historical decks, archetypal analysis, and fusion mechanics.");
+      }
+
+      function showHealingArts() {
+        alert("🌟 Healing Arts Library\n\nTrauma-informed spiritual practices...\n\nIn the full system, this would open the healing arts collection with CPTSD-safe protocols and integration techniques.");
+      }
+
       // Make functions global for onclick handlers
       window.showRealm = showRealm;
       window.selectArchetype = selectArchetype;
@@ -1005,6 +1188,14 @@
       window.toggleScienceOverlay = toggleScienceOverlay;
       window.playSound = playSound;
       window.startGameMode = startGameMode;
+      window.showCrystalResonance = showCrystalResonance;
+      window.showCrystalFusion = showCrystalFusion;
+      window.showCrystalAnalysis = showCrystalAnalysis;
+      window.showSacredLayouts = showSacredLayouts;
+      window.showHermeticLibrary = showHermeticLibrary;
+      window.showKabbalahLibrary = showKabbalahLibrary;
+      window.showTarotArchives = showTarotArchives;
+      window.showHealingArts = showHealingArts;
     </script>
   </body>
 </html>
