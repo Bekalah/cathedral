@@ -1,4 +1,4 @@
-nc se#!/usr/bin/env node
+#!/usr/bin/env node
 
 /**
  * Cathedral CLI - Universal Access Tool
