@@ -39,7 +39,9 @@
     "cathedral:sync": "node tools/cathedral-cli.js sync",
     "cathedral:health": "node tools/cathedral-cli.js health",
     "cathedral:backup": "node tools/cathedral-cli.js backup",
-    "cathedral:restore": "node tools/cathedral-cli.js restore"
+    "cathedral:restore": "node tools/cathedral-cli.js restore",
+    "validate:config": "node tools/validate-turbo-config.js",
+    "prebuild": "pnpm run validate:config"
   },
   "devDependencies": {
     "@types/node": "^20.10.0",
