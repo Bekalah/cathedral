@@ -34,11 +34,23 @@ export interface ArcanaCard {
   // Art and symbolism
   symbolism: ArcanaSymbolism;
 
-  // Fusion kink mechanics
-  fusion: ArcanaFusion;
+  // Fusion reiki mechanics (user's personal system)
+  fusionReiki: FusionReiki;
 
   // Creator information
   creator: ArcanaCreator;
+
+  // User's personal certifications and interests
+  personalIntegration: PersonalIntegration;
+
+  // Evolutionary astrology (Jeffrey Wolf Green)
+  evolutionaryAstrology: EvolutionaryAstrology;
+
+  // Angel correspondences (user's obsession)
+  angelCorrespondences: AngelCorrespondences;
+
+  // Soul reclamation mechanics (user's personal journey)
+  soulReclamation: SoulReclamation;
 }
 
 export type ArcanaSuit = 'wands' | 'cups' | 'swords' | 'pentacles';
@@ -264,4 +276,60 @@ export interface ArcanaAnalytics {
   artGenerations: number;
   wisdomSessions: number;
   lastUpdated: Date;
+}
+
+// User's personal system interfaces
+export interface FusionReiki {
+  type: 'fusion_reiki';
+  intensity: number;
+  mechanics: string[];
+  safetyProtocols: string[];
+  consentRequirements: string[];
+  transformationElements: string[];
+  personalTouch: string;
+  certifications: string[];
+}
+
+export interface PersonalIntegration {
+  reikiCertifications: string[];
+  personalJourney: string;
+  soulLoss: string;
+  forgiveness: string;
+  selfCompassion: string;
+  ndOptimization: string;
+  creativeFreedom: string;
+  authenticExpression: string;
+}
+
+export interface EvolutionaryAstrology {
+  source: 'jeffrey_wolf_green';
+  archetype: string;
+  evolutionaryStage: string;
+  karmicLessons: string[];
+  soulPurpose: string;
+  growthOpportunities: string[];
+  shadowWork: string[];
+  integration: string;
+}
+
+export interface AngelCorrespondences {
+  primaryAngel: string;
+  archangel: string;
+  angelHierarchy: string;
+  personalConnection: string;
+  angelicGuidance: string[];
+  divineMessages: string[];
+  protection: string[];
+  healing: string[];
+}
+
+export interface SoulReclamation {
+  personalJourney: string;
+  soulLoss: string;
+  reclamationProcess: string[];
+  forgiveness: string;
+  selfCompassion: string;
+  rebuilding: string[];
+  integration: string;
+  transformation: string;
 }

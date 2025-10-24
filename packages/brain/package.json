@@ -7,5 +7,7 @@
     "dev": "tsc --watch",
     "build": "tsc",
     "clean": "rm -rf dist"
+  },
+  "dependencies": {
   }
 }

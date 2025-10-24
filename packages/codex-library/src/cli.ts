@@ -5,8 +5,8 @@
  * Command-line interface for interacting with the sacred knowledge library
  */
 
-import { CodexLibrary } from './CodexLibrary.js';
-import { CodexValidator } from './validation.js';
+import { CodexLibrary } from './CodexLibrary';
+import { CodexValidator } from './validation';
 
 const library = new CodexLibrary();
 const validator = new CodexValidator();

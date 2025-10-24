@@ -31,4 +31,3 @@ export class SoundScience {
         };
     }
 }
-//# sourceMappingURL=soundScience.js.map

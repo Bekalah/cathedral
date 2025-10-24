@@ -86,4 +86,3 @@ export const baseCrystals = [
         narrativeHook: 'Interstellar glass-born surge vector—ignites metamorphic restructuring across archetypal channels.'
     }
 ];
-//# sourceMappingURL=baseCrystals.js.map

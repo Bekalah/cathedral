@@ -13,13 +13,14 @@
   },
   "dependencies": {
     "@cathedral/shared": "workspace:*",
-    "@cathedral/cyoa-book-game": "workspace:*",
-    "@cathedral/shared": "workspace:*",
-    "@bekalah/cyoa-book-game": "workspace:*",
+    "@cathedral/cathedral-game-engine": "workspace:*",
     "canvas": "^2.11.2",
     "d3": "^7.8.5",
     "ml-matrix": "^6.10.4",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "@azure/openai": "^1.0.0-beta.12",
+    "@azure/cognitiveservices-computervision": "^8.2.0",
+    "dotenv": "^16.3.1"
   },
   "devDependencies": {
     "@types/d3": "^7.4.0",
