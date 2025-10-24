@@ -1,6 +1,5 @@
 
-> codex-14499@1.0.0 build /Users/rebeccalemke/cathedral/cathedral/packages/codex-14499
+> codex-14499@1.0.0 build /Users/rebeccalemke/cathedral-1/packages/codex-14499
 > vite build
 
 [41m[30m ELIFECYCLE [39m[49m [31mCommand failed.[39m
-[43m[30m WARN [39m[49m  Local package.json exists, but node_modules missing, did you mean to install?
