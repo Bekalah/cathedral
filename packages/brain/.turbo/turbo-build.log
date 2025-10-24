@@ -2,31 +2,5 @@
 > @cathedral/brain@0.1.0 build /Users/rebeccalemke/cathedral-1/packages/brain
 > tsc
 
-[96msrc/colorScience.ts[0m:[93m67[0m:[93m11[0m - [91merror[0m[90m TS6133: [0m'fallbackColorPalette' is declared but its value is never read.
-
-[7m67[0m   private fallbackColorPalette(count: number): string[] {
-[7m  [0m [91m          ~~~~~~~~~~~~~~~~~~~~[0m
-
-[96msrc/styleFusion.ts[0m:[93m3[0m:[93m25[0m - [91merror[0m[90m TS6133: [0m'imageData' is declared but its value is never read.
-
-[7m3[0m   async fourierAnalysis(imageData: Float32Array) {
-[7m [0m [91m                        ~~~~~~~~~[0m
-
-[96msrc/styleFusion.ts[0m:[93m18[0m:[93m19[0m - [91merror[0m[90m TS6133: [0m'type' is declared but its value is never read.
-
-[7m18[0m   generateFractal(type: string, iterations = 5) {
-[7m  [0m [91m                  ~~~~[0m
-
-[96msrc/styleFusion.ts[0m:[93m18[0m:[93m33[0m - [91merror[0m[90m TS6133: [0m'iterations' is declared but its value is never read.
-
-[7m18[0m   generateFractal(type: string, iterations = 5) {
-[7m  [0m [91m                                ~~~~~~~~~~[0m
-
-
-Found 4 errors in 2 files.
-
-Errors  Files
-     1  src/colorScience.ts[90m:67[0m
-     3  src/styleFusion.ts[90m:3[0m
-[41m[30m ELIFECYCLE [39m[49m [31mCommand failed with exit code 2.[39m
+[41m[30m ELIFECYCLE [39m[49m [31mCommand failed.[39m
 [43m[30m WARN [39m[49m  Local package.json exists, but node_modules missing, did you mean to install?

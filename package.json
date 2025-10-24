@@ -40,7 +40,7 @@
     "cathedral:health": "node tools/cathedral-cli.js health",
     "cathedral:backup": "node tools/cathedral-cli.js backup",
     "cathedral:restore": "node tools/cathedral-cli.js restore",
-    "validate:config": "node tools/validate-turbo-config.js",
+    "validate:config": "node tools/validate-turbo-config.cjs",
     "prebuild": "pnpm run validate:config"
   },
   "devDependencies": {
