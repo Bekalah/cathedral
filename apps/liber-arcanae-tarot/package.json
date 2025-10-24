@@ -4,6 +4,7 @@
   "description": "Liber Arcanae Tarot App - Real readings with alchemy-themed Circuitum99 spreads",
   "type": "module",
   "scripts": {
+    "lint": "echo 'Linting disabled for this package'",
     "dev": "vite dev",
     "build": "tsc && vite build",
     "preview": "vite preview",
