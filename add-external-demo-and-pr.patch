@@ -15,9 +15,27 @@
 +  describe() {
 +    return `SpiralEngine(seed=${this.config.seed}, depth=${this.config.depth})`;
 +  }
-+  // placeholder for later: generate nodes, narrative threads, spiral transforms
++  // Generate nodes based on sacred mathematics and Complete Numerical Architecture
 +  generateNode(index = 0) {
-+    return { id: `node-${index}`, archetype: `archetype-${index % 12}` };
++    const sacredRatio = 144 / 99; // Manifestation to dissolution balance
++    const archetypeNames = [
++      "The Fool", "The Magician", "The High Priestess", "The Empress", "The Emperor",
++      "The Hierophant", "The Lovers", "The Chariot", "Strength", "The Hermit",
++      "Wheel of Fortune", "Justice", "The Hanged Man", "Death", "Temperance",
++      "The Devil", "The Tower", "The Star", "The Moon", "The Sun", "Judgement", "The World"
++    ];
+
++    const nodeId = Math.floor((index * sacredRatio) % 144) + 1; // 144 nodes total
++    const archetypeIndex = Math.floor((index * sacredRatio) % 22);
++    const archetype = archetypeNames[archetypeIndex];
+
++    return {
++      id: `C144N-${nodeId.toString().padStart(3, '0')}`,
++      archetype: archetype,
++      resonance: (index * sacredRatio) % 1,
++      element: ['Fire', 'Water', 'Earth', 'Air', 'Aether'][Math.floor((index * sacredRatio) % 5)],
++      frequency: 396 + (index % 9) * 39 // Solfeggio frequencies
++    };
 +  }
 +}
 +

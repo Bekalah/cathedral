@@ -14,7 +14,7 @@
     "g:install": "node ./tools/install-g.js",
     "concurrently-dev": "concurrently \"pnpm -C apps/web dev\" \"pnpm -C apps/worker dev\"",
     "legacy-build": "pnpm -C packages/data build && pnpm run build:packages && pnpm -C apps/web build",
-    "build:packages": "tsc -b packages/brain packages/soul packages/labs packages/shared packages/crystals packages/synth",
+    "build:packages": "tsc -b packages/brain packages/soul packages/labs packages/shared packages/crystals packages/synth packages/cathedral-lightweight-library",
     "deploy:worker": "pnpm -C apps/worker deploy",
     "deploy:pages": "pnpm build && ./scripts/publish.sh",
     "validate": "pnpm -C packages/data validate",
@@ -40,8 +40,15 @@
     "cathedral:health": "node tools/cathedral-cli.js health",
     "cathedral:backup": "node tools/cathedral-cli.js backup",
     "cathedral:restore": "node tools/cathedral-cli.js restore",
-    "validate:config": "node tools/validate-turbo-config.js",
-    "prebuild": "pnpm run validate:config"
+    "validate:config": "node tools/validate-turbo-config.cjs",
+    "validate:ownership": "node tools/validate-ownership.js",
+    "validate:integration": "pnpm run validate:config && pnpm run validate:ownership",
+    "validate:compatibility": "node tools/validate-compatibility.js",
+    "validate:sacred-math": "node tools/validate-sacred-math.js",
+    "validate:trauma-safety": "node tools/validate-trauma-safety.js",
+    "validate:complete": "pnpm run validate:integration && pnpm run validate:sacred-math && pnpm run validate:trauma-safety",
+    "prebuild": "pnpm run validate:complete",
+    "precommit": "pnpm run validate:ownership"
   },
   "devDependencies": {
     "@types/node": "^20.10.0",

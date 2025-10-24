@@ -1,0 +1,125 @@
+{
+  "spiral-gold": "#ffb347",
+  "spiral-blue": "#4a90e2",
+  "spiral-purple": "#9370db",
+  "spiral-teal": "#20b2aa",
+  "spiral-rose": "#f5b7b1",
+  "cathedral-deep": "#1a1a2e",
+  "cathedral-stone": "#3c3c54",
+  "cathedral-light": "#ffefd5",
+  "escape-glow": "#ffff00",
+  "safe-green": "#90ee90",
+  "pause-orange": "#ffa500",
+  "primary": "#ffb347",
+  "secondary": "#4a90e2",
+  "accent": "#9370db",
+  "background": "#1a1a2e",
+  "surface": "#3c3c54",
+  "text": "#ffefd5",
+  "text-secondary": "#f5b7b1",
+  "success": "#90ee90",
+  "warning": "#ffa500",
+  "error": "#ff6b6b",
+  "info": "#4a90e2",
+  "visionary": {
+    "fire": "#FF4500",
+    "water": "#1E90FF",
+    "earth": "#8B4513",
+    "air": "#87CEEB",
+    "aether": "#DDA0DD",
+    "gold": "#FFD700",
+    "silver": "#C0C0C0",
+    "pink": "#FF69B4",
+    "turquoise": "#00CED1",
+    "lime": "#32CD32"
+  },
+  "metallics": {
+    "gold-leaf": "#C8A44D",
+    "silver-mist": "#E8E8E8",
+    "platinum": "#E5E4E2",
+    "bronze": "#CD7F32",
+    "copper": "#B87333",
+    "rose-gold": "#E8B4B8",
+    "white-gold": "#F5F5F5",
+    "antique-gold": "#D4AF37"
+  },
+  "jewels": {
+    "diamond": "#F8F8FF",
+    "emerald": "#50C878",
+    "sapphire": "#0F52BA",
+    "ruby": "#E0115F",
+    "amethyst": "#9966CC",
+    "topaz": "#FFC649",
+    "garnet": "#C32148",
+    "aquamarine": "#7FFFD4",
+    "pearl": "#F5F5DC",
+    "obsidian": "#000000",
+    "crystal": "#E6E6FA"
+  },
+  "theosophical": {
+    "void": "#0A0A0F",
+    "violet-aura": "#7A33FF",
+    "obsidian-rainbow": "#1C1C1C",
+    "pearl-white": "#F5F5F5",
+    "cosmic-indigo": "#4B0082",
+    "star-silver": "#C0C0C0",
+    "moon-glow": "#E6E6FA",
+    "sun-gold": "#FFD700"
+  },
+  "atelier": {
+    "oil-base": "#2F2F2F",
+    "glaze-medium": "rgba(255, 255, 255, 0.1)",
+    "varnish": "rgba(255, 215, 0, 0.05)",
+    "pigment": "rgba(139, 69, 19, 0.8)",
+    "canvas": "#F5F5DC",
+    "palette": "#8B4513",
+    "brush": "#654321",
+    "easel": "#D2691E"
+  },
+  "ethereal": {
+    "shadow": "rgba(26, 26, 46, 0.8)",
+    "light": "rgba(255, 239, 213, 0.1)",
+    "glow": "rgba(255, 179, 71, 0.3)",
+    "mist": "rgba(147, 112, 219, 0.2)",
+    "aura": "rgba(32, 178, 170, 0.4)"
+  },
+  "elemental": {
+    "fire": {
+      "primary": "#FF4500",
+      "glow": "#FFD700",
+      "shadow": "#8B0000",
+      "light": "#FFA500"
+    },
+    "water": {
+      "primary": "#1E90FF",
+      "glow": "#00CED1",
+      "shadow": "#00008B",
+      "light": "#87CEEB"
+    },
+    "earth": {
+      "primary": "#8B4513",
+      "glow": "#228B22",
+      "shadow": "#654321",
+      "light": "#D2691E"
+    },
+    "air": {
+      "primary": "#87CEEB",
+      "glow": "#E0FFFF",
+      "shadow": "#4682B4",
+      "light": "#B0E0E6"
+    },
+    "aether": {
+      "primary": "#DDA0DD",
+      "glow": "#9370DB",
+      "shadow": "#4B0082",
+      "light": "#D8BFD8"
+    }
+  },
+  "gradients": {
+    "spiral": "linear-gradient(45deg, #ffb347 0%, #4a90e2 25%, #9370db 50%, #20b2aa 75%, #f5b7b1 100%)",
+    "cathedral": "radial-gradient(ellipse at center, #ffefd5 0%, #3c3c54 60%, #1a1a2e 100%)",
+    "energy": "linear-gradient(180deg, #ffb347 0%, transparent 50%, #4a90e2 100%)",
+    "ethereal": "radial-gradient(ellipse at center, rgba(255, 239, 213, 0.1) 0%, rgba(255, 179, 71, 0.05) 30%, rgba(147, 112, 219, 0.03) 60%, rgba(26, 26, 46, 0.8) 100%)",
+    "visionary": "linear-gradient(135deg, rgba(255, 69, 0, 0.1) 0%, rgba(30, 144, 255, 0.1) 25%, rgba(147, 112, 219, 0.1) 50%, rgba(32, 178, 170, 0.1) 75%, rgba(245, 183, 177, 0.1) 100%)"
+  }
+}

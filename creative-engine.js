@@ -627,19 +627,103 @@ class SymbolFusion {
     generateSVG(nodes, harmony) {
         const symbols = nodes.map(n => n.symbolism?.primarySymbol || '◯');
         const colors = nodes.map(n => n.color);
+        const geometry = harmony.geometricCompatibility.types[0] || 'Organic';
 
-        // Simple SVG template
-        return `<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+        // Enhanced SVG with fractal-making technologies and sacred geometry
+        const size = 300;
+        const center = size / 2;
+
+        let svgContent = `<svg width="${size}" height="${size}" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <radialGradient id="fusion-gradient">
       ${colors.map((c, i) => `<stop offset="${i / colors.length * 100}%" stop-color="${c}" />`).join('\n      ')}
     </radialGradient>
-  </defs>
-  <circle cx="100" cy="100" r="80" fill="url(#fusion-gradient)" opacity="0.8"/>
-  <text x="100" y="110" text-anchor="middle" font-size="48" fill="white">
-    ${symbols.join('')}
-  </text>
-</svg>`;
+    <pattern id="sacred-pattern" patternUnits="userSpaceOnUse" width="20" height="20">
+      <circle cx="10" cy="10" r="2" fill="${colors[0]}" opacity="0.5"/>
+    </pattern>
+  </defs>`;
+
+        // Base shape based on sacred geometry
+        if (geometry === 'Tetrahedron') {
+            svgContent += this.generateTetrahedron(center, 100, colors[0]);
+        } else if (geometry === 'Cube') {
+            svgContent += this.generateCube(center, 100, colors[0]);
+        } else if (geometry === 'Octahedron') {
+            svgContent += this.generateOctahedron(center, 100, colors[0]);
+        } else {
+            // Default to fractal-inspired mandala
+            svgContent += this.generateFractalMandala(center, 100, symbols, colors, harmony);
+        }
+
+        // Add symbols with precise positioning
+        symbols.forEach((symbol, i) => {
+            const angle = (i / symbols.length) * 2 * Math.PI;
+            const radius = 80;
+            const x = center + Math.cos(angle) * radius;
+            const y = center + Math.sin(angle) * radius;
+            svgContent += `<text x="${x}" y="${y}" text-anchor="middle" font-size="24" fill="${colors[i] || 'white'}">${symbol}</text>`;
+        });
+
+        svgContent += `</svg>`;
+        return svgContent;
+    }
+
+    generateTetrahedron(center, radius, color) {
+        // Generate tetrahedron shape using sacred geometry
+        const points = [
+            [center, center - radius],
+            [center - radius * 0.866, center + radius / 2],
+            [center + radius * 0.866, center + radius / 2],
+            [center, center + radius * 0.5]
+        ];
+
+        return `<polygon points="${points.map(p => p.join(',')).join(' ')}" fill="${color}" opacity="0.7" stroke="white" stroke-width="2"/>`;
+    }
+
+    generateCube(center, radius, color) {
+        // Generate cube projection
+        const half = radius / 2;
+        return `<rect x="${center - half}" y="${center - half}" width="${radius}" height="${radius}" fill="${color}" opacity="0.7" stroke="white" stroke-width="2"/>`;
+    }
+
+    generateOctahedron(center, radius, color) {
+        // Generate octahedron shape
+        return `<polygon points="${center},${center - radius} ${center + radius},${center} ${center},${center + radius} ${center - radius},${center}" fill="${color}" opacity="0.7" stroke="white" stroke-width="2"/>`;
+    }
+
+    generateFractalMandala(center, radius, symbols, colors, harmony) {
+        // Generate fractal-inspired mandala using 144:99 ratio
+        const layers = Math.floor(harmony.consonanceScore);
+        let content = '';
+
+        for (let i = 1; i <= layers; i++) {
+            const layerRadius = (radius * i) / layers;
+            const opacity = 1 - (i / layers) * 0.5;
+            content += `<circle cx="${center}" cy="${center}" r="${layerRadius}" fill="none" stroke="${colors[i % colors.length]}" stroke-width="2" opacity="${opacity}"/>`;
+        }
+
+        // Add fractal elements
+        const fractalPoints = this.generateFractalPoints(center, radius, harmony);
+        content += `<path d="${fractalPoints}" fill="none" stroke="${colors[0]}" stroke-width="1" opacity="0.6"/>`;
+
+        return content;
+    }
+
+    generateFractalPoints(center, radius, harmony) {
+        // Generate fractal path using sacred ratio
+        const points = [];
+        const steps = 12; // Based on 144/12 = 12
+        const sacredRatio = 144 / 99;
+
+        for (let i = 0; i < steps; i++) {
+            const angle = (i / steps) * 2 * Math.PI * sacredRatio;
+            const r = radius * (0.5 + 0.5 * Math.sin(angle * 3));
+            const x = center + Math.cos(angle) * r;
+            const y = center + Math.sin(angle) * r;
+            points.push(`${i === 0 ? 'M' : 'L'} ${x} ${y}`);
+        }
+        points.push('Z');
+        return points.join(' ');
     }
 }
 
