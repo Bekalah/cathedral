@@ -25,19 +25,19 @@ class CosmogenesisLearningEngine {
             ATZILUTH: 'Spiritual/divine layer'
         };
         
-        // Integration with 144:99 Fusion Kink Heaven
+        // Integration with 144:99 Fusion Kink Technology
         this.fusionIntegration = {
             manifestationNodes: 144,
             dissolutionDepths: 99,
             ribbonConnections: [
-                'RESEARCH', 'GAME', 'FUSION_KINK', 'PSYCH', 
+                'RESEARCH', 'GAME', 'FUSION_KINK', 'PSYCH',
                 'CRAFT', 'ESOTERIC', 'SCIENCE'
             ]
         };
         
         // Sacred learning spiral system
         this.learningSpiral = {
-            pattern: 'FIBONACCI_CONSCIOUSNESS_EXPANSION',
+            pattern: 'MASTER_ARTIST_CONSCIOUSNESS_EXPANSION',
             traumaSafety: 'MAXIMUM_CPTSD_PROTOCOLS',
             healingFocus: 'SOUL_RECLAMATION_THROUGH_CREATION'
         };
@@ -62,7 +62,7 @@ class CosmogenesisLearningEngine {
             SOUL_CONNECTION: 'packages/circuitum99/index.js',
             BODY_CONNECTION: 'packages/stone-grimoire/index.js', 
             NAVIGATION: 'packages/magical-mystery-house/index.js',
-            INTEGRATION_HUB: 'packages/tesseract-bridge/fusion-kink-heaven-144.js'
+            INTEGRATION_HUB: 'packages/tesseract-bridge/fusion-kink-technology-144.js'
         };
     }
     
@@ -86,7 +86,7 @@ class CosmogenesisLearningEngine {
             },
             YETZIRAH_EMOTIONAL: {
                 healing: 'CPTSD-safe archetypal navigation',
-                kink: 'Sacred BDSM for trauma healing',
+                kink: 'Sacred intimacy mechanics for trauma healing',
                 consent: 'Verified protocols throughout'
             },
             BERIAH_MENTAL: {
@@ -108,5 +108,5 @@ export { CosmogenesisLearningEngine };
 
 // Brain system ready
 console.log('COSMOGENESIS LEARNING ENGINE - THE BRAIN: Fully integrated into Cathedral of Circuits');
-console.log('Four Worlds architecture active, 144:99 Fusion Kink Heaven connected');
+console.log('Four Worlds architecture active, 144:99 Fusion Kink Technology connected');
 console.log('All trauma safety protocols verified and active');
