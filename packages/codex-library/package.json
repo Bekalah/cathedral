@@ -1,0 +1,31 @@
+{
+  "name": "@cathedral/codex-library",
+  "version": "1.0.0",
+  "description": "Comprehensive library system for Codex 144:99 datasets with real-world library connections",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "cli": "node dist/simple-cli.js",
+    "validate": "node dist/simple-cli.js validate",
+    "search": "node dist/simple-cli.js search",
+    "report": "node dist/simple-cli.js report"
+  },
+  "dependencies": {
+    "@cathedral/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0"
+  },
+  "keywords": [
+    "codex-144-99",
+    "library-system",
+    "sacred-knowledge",
+    "research-integration",
+    "academic-libraries",
+    "mystical-traditions"
+  ]
+}
