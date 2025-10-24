@@ -25,7 +25,7 @@ class CosmogenesisLearningEngine {
             SOUL_CONNECTION: 'packages/circuitum99/index.js',
             BODY_CONNECTION: 'packages/stone-grimoire/index.js',
             NAVIGATION: 'packages/magical-mystery-house/index.js',
-            INTEGRATION_HUB: 'packages/tesseract-bridge/fusion-kink-heaven-144.js',
+            INTEGRATION_HUB: 'packages/tesseract-bridge/fusion-kink-technology-144.js',
             LIBER_ARCANAE: 'packages/liber-arcanae/src/LiberArcanae.ts',
             CODEX_LIBRARY: 'packages/codex-library/src/CodexLibrary.ts',
             DESIGN_LIBRARY: 'packages/cathedral-design-library/src/DesignLibrary.ts'
@@ -54,7 +54,7 @@ class CosmogenesisLearningEngine {
             },
             YETZIRAH_EMOTIONAL: {
                 healing: 'CPTSD-safe archetypal navigation',
-                kink: 'Sacred BDSM for trauma healing',
+                kink: 'Sacred intimacy mechanics for trauma healing',
                 consent: 'Verified protocols throughout',
                 personal: 'Your fusion kink mechanics and safety protocols'
             },

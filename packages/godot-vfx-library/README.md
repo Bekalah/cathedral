@@ -238,6 +238,7 @@ material.breathing_effect = true
 - [Safety Protocols](documentation/safety_protocols.md)
 
 ### **🎓 Tutorials**
+
 - [Getting Started](documentation/tutorials/getting_started.md)
 - [Sacred Geometry](documentation/tutorials/sacred_geometry.md)
 - [Trauma-Safe Design](documentation/tutorials/trauma_safe.md)
@@ -250,6 +251,7 @@ material.breathing_effect = true
 - [Game Integration](examples/game_integration.tscn)
 
 ---
+
 
 ## 🤝 **Contributing**
 
