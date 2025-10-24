@@ -15,4 +15,3 @@ export function mapFusionToPatchModifiers(fusionId, helpers) {
         patchCandidates: patchLibrary.slice(0, 3).map(p => p.id)
     };
 }
-//# sourceMappingURL=integration.js.map

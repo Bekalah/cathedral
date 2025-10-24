@@ -1,31 +1,23 @@
 
-> @cathedral/tarot-arena@1.0.0 build /Users/rebeccalemke/cathedral-1/apps/tarot-arena
+> @cathedral/tarot-arena@1.0.0 build /Users/rebeccalemke/cathedral/apps/tarot-arena
 > vite build
 
 [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
-[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
-[36mvite v5.4.20 [32mbuilding for production...[36m[39m
-[2K[1Gtransforming (1) [2mindex.html[22m[2K[1Gtransforming (3) [2msrc/index.tsx[22m[2K[1Gtransforming (4) [2m../../AvalonRealmEngine.js[22m[2K[1Gtransforming (9) [2m../../node_modules/.pnpm/react@18.3.1/node_modules/react/cjs/react.production.min.js[22[2K[1Gtransforming (11) [2m../../node_modules/.pnpm/react@18.3.1/node_modules/react/cjs/react-jsx-runtime.producti[2K[1Gtransforming (21) [2m../../node_modules/.pnpm/scheduler@0.23.2/node_modules/scheduler/cjs/scheduler.producti[2K[1Gtransforming (24) [2m../../node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/index.js[2K[1G[32m✓[39m 34 modules transformed.
-[2K[1G[31mx[39m Build failed in 5.16s
+[31mfailed to load config from /Users/rebeccalemke/cathedral/apps/tarot-arena/vite.config.ts[39m
 [31merror during build:
-[31msrc/index.tsx (7:9): "MorganLeFay" is not exported by "../../MorganLeFay.js", imported by "src/index.tsx".[31m
-file: [36m/Users/rebeccalemke/cathedral-1/apps/tarot-arena/src/index.tsx:7:9[31m
-[33m
-5: 
-6: // Import Morgan Le Fay Avalon System
-7: import { MorganLeFay } from '../../../MorganLeFay.js';
-            ^
-8: import { AvalonRealmEngine } from '../../../AvalonRealmEngine.js';
-9: import { TarotCreatureSystem } from '../../../TarotCreatureSystem.js';
-[31m
-    at getRollupError (file:///Users/rebeccalemke/cathedral-1/node_modules/.pnpm/rollup@4.52.3/node_modules/rollup/dist/es/shared/parseAst.js:401:41)
-    at error (file:///Users/rebeccalemke/cathedral-1/node_modules/.pnpm/rollup@4.52.3/node_modules/rollup/dist/es/shared/parseAst.js:397:42)
-    at Module.error (file:///Users/rebeccalemke/cathedral-1/node_modules/.pnpm/rollup@4.52.3/node_modules/rollup/dist/es/shared/node-entry.js:16938:16)
-    at Module.traceVariable (file:///Users/rebeccalemke/cathedral-1/node_modules/.pnpm/rollup@4.52.3/node_modules/rollup/dist/es/shared/node-entry.js:17390:29)
-    at ModuleScope.findVariable (file:///Users/rebeccalemke/cathedral-1/node_modules/.pnpm/rollup@4.52.3/node_modules/rollup/dist/es/shared/node-entry.js:15060:39)
-    at FunctionScope.findVariable (file:///Users/rebeccalemke/cathedral-1/node_modules/.pnpm/rollup@4.52.3/node_modules/rollup/dist/es/shared/node-entry.js:5642:38)
-    at FunctionBodyScope.findVariable (file:///Users/rebeccalemke/cathedral-1/node_modules/.pnpm/rollup@4.52.3/node_modules/rollup/dist/es/shared/node-entry.js:5642:38)
-    at ReturnValueScope.findVariable (file:///Users/rebeccalemke/cathedral-1/node_modules/.pnpm/rollup@4.52.3/node_modules/rollup/dist/es/shared/node-entry.js:5642:38)
-    at FunctionBodyScope.findVariable (file:///Users/rebeccalemke/cathedral-1/node_modules/.pnpm/rollup@4.52.3/node_modules/rollup/dist/es/shared/node-entry.js:5642:38)
-    at Identifier.bind (file:///Users/rebeccalemke/cathedral-1/node_modules/.pnpm/rollup@4.52.3/node_modules/rollup/dist/es/shared/node-entry.js:5413:40)[39m
+Error: Cannot find module '@vitejs/plugin-react'
+Require stack:
+- /Users/rebeccalemke/cathedral/apps/tarot-arena/vite.config.ts
+- /Users/rebeccalemke/cathedral/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.require (node:internal/modules/cjs/loader:1463:12)
+    at require (node:internal/modules/helpers:147:16)
+    at Object.<anonymous> (/Users/rebeccalemke/cathedral/apps/tarot-arena/vite.config.ts:37:35)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)[39m
 [41m[30m ELIFECYCLE [39m[49m [31mCommand failed with exit code 1.[39m
+[43m[30m WARN [39m[49m  Local package.json exists, but node_modules missing, did you mean to install?

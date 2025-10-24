@@ -1,5 +1,4 @@
 
-> liber-arcanae@0.1.0 build /Users/rebeccalemke/cathedral-1/external/liber-arcanae
+> liber-arcanae@0.1.0 build /Users/rebeccalemke/cathedral/external/liber-arcanae
 > tsc -p tsconfig.build.json
 
-[41m[30m ELIFECYCLE [39m[49m [31mCommand failed.[39m
