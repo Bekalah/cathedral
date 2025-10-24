@@ -67,7 +67,7 @@ app.get('/', (c) => {
       fusion: '/api/fusion/dashboard - Fusion Kink Heaven',
       status: '/api/status - Complete system status'
     },
-    trauma_safety: 'Maximum CPTSD-safe with ND accommodations',
+    trauma_safety: 'Maximum CPTSD-safe with sophisticated neurodivergent support',
     artistic_vision: 'Björk + Tori + Iris + Emma + 21 Taras',
     timestamp: new Date().toISOString()
   })
@@ -154,7 +154,7 @@ app.get('/api/fusion/dashboard', (c) => {
     sacred_ratio: "144:99",
     fusion_combinations: 231,
     consent_required: "Always and explicitly for all fusion activities",
-    trauma_safety: "Maximum CPTSD-safe design with ND accommodations",
+    trauma_safety: "Maximum CPTSD-safe design with sophisticated neurodivergent support",
     archetypal_protection: "Living beings maintain energetic safety",
     artistic_integration: "Björk + Tori Amos + Iris van Herpen + Emma Kunz + 21 Taras"
   })
@@ -169,7 +169,7 @@ app.get('/api/status', (c) => {
       version: '2.0.0 - Codex Integration',
       worker_edge: 'Cloudflare distributed',
       quality: 'museum-grade phenomenal',
-      accessibility: '100% trauma-informed'
+      accessibility: '100% trauma-informed with sophisticated neurodivergent support'
     },
     codex_144_99: {
       status: codexNodes?.nodes ? 'active' : 'fallback',
@@ -193,7 +193,7 @@ app.get('/api/status', (c) => {
     },
     trauma_safety: {
       maximum_cptsd_safe: true,
-      nd_accommodations: 'full sensory and cognitive support',
+      nd_support: 'sophisticated sensory and cognitive support',
       professional_integration: 'trauma-informed therapeutic backing',
       always_consensual: 'explicit consent for all activities'
     },
