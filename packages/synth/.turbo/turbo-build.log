@@ -1,6 +1,4 @@
 
-> @cathedral/synth@0.1.0 build /Users/rebeccalemke/cathedral-1/packages/synth
+> @cathedral/synth@0.1.0 build /Users/rebeccalemke/cathedral/packages/synth
 > tsc
 
-[41m[30m ELIFECYCLE [39m[49m [31mCommand failed.[39m
-[43m[30m WARN [39m[49m  Local package.json exists, but node_modules missing, did you mean to install?
