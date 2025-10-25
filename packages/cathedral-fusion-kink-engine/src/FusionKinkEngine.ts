@@ -471,4 +471,215 @@ ${session.aftercare.map(care => `- ${care}`).join('\n')}
 *${new Date().toISOString()}*
     `;
   }
-}
+
+  /**
+   * Generate Emma Kunz-style fusion visualization
+   * Emma Kunz was a fusion scientist/artist who created geometric art without being "an artist"
+   */
+  public generateEmmaKunzVisualization(session: FusionKinkSession): {
+    geometricPattern: string;
+    researchNotes: string;
+    scientificObservations: string;
+    artisticImplications: string;
+  } {
+    const participants = session.participants;
+    const intensity = session.intensity;
+
+    // Generate geometric pattern based on fusion participants
+    const pattern = this.generateSacredGeometryPattern(participants, intensity);
+
+    return {
+      geometricPattern: pattern,
+      researchNotes: `Scientific observation of fusion dynamics between ${participants.join(' and ')} at intensity ${intensity}. Pattern reveals underlying mathematical relationships.`,
+      scientificObservations: `Fusion creates ${participants.length * intensity} dimensional intersections. Energy patterns follow ${this.calculateGeometricProgression(participants)} mathematical sequence.`,
+      artisticImplications: `This pattern suggests new possibilities for artistic expression beyond traditional square-canvas thinking. Consider circular, oval, and hexagonal compositions.`
+    };
+  }
+
+  private generateSacredGeometryPattern(participants: string[], intensity: number): string {
+    // Generate Emma Kunz-style geometric pattern
+    const baseElements = participants.length;
+    const complexity = Math.floor(intensity / 2);
+
+    let pattern = '';
+
+    // Start with central point (Monad)
+    pattern += '•\n';
+
+    // Add radiating elements based on participants
+    for (let i = 0; i < baseElements; i++) {
+      const angle = (i * 360) / baseElements;
+      pattern += `  ${' '.repeat(i * 2)}◉\n`;
+    }
+
+    // Add complexity based on intensity
+    if (complexity > 3) {
+      pattern += '\nHexagonal lattice formation detected\n';
+      pattern += '◉◉◉\n';
+      pattern += ' ◉◉◉ \n';
+      pattern += '◉◉◉\n';
+    }
+
+    return pattern;
+  }
+
+  private calculateGeometricProgression(participants: string[]): string {
+    // Calculate mathematical progression for Emma Kunz-style analysis
+    const elements = participants.length;
+    return `Fibonacci sequence extended by ${elements} elements, creating ${elements * 1.618} harmonic ratio`;
+  }
+
+  /**
+   * Generate 99-gates sound art visualization
+   * Transform musical gates into fractal/visionary art
+   */
+  public generateSoundArtVisualization(gateNumber: number, musicalInput: any): {
+    fractalPattern: string;
+    visionaryElements: string[];
+    soundMapping: string;
+    artisticOutput: string;
+  } {
+    return {
+      fractalPattern: this.generateFractalForGate(gateNumber),
+      visionaryElements: [
+        'Sacred geometry responding to sound frequencies',
+        'Color patterns shifting with musical rhythm',
+        'Geometric forms breathing with the music',
+        'Fractal dimensions expanding with harmonic complexity'
+      ],
+      soundMapping: `Gate ${gateNumber} maps to frequency ${this.getFrequencyForGate(gateNumber)}Hz`,
+      artisticOutput: `Transform musical gates into living, breathing visual art that responds to sound in real-time`
+    };
+  }
+
+  private generateFractalForGate(gateNumber: number): string {
+    // Generate fractal pattern based on gate number
+    let fractal = '';
+
+    // Simple fractal representation
+    for (let i = 0; i < gateNumber % 5 + 3; i++) {
+      fractal += '◉'.repeat(i + 1) + '\n';
+      if (i > 0) {
+        fractal += ' '.repeat(i) + '◉\n';
+      }
+    }
+
+    return fractal;
+  }
+
+  private getFrequencyForGate(gateNumber: number): number {
+    // Map gate numbers to solfeggio frequencies
+    const frequencies = [396, 417, 528, 639, 741, 852, 963];
+    return frequencies[gateNumber % frequencies.length];
+  }
+
+  /**
+   * Generate atelier-scribe tool package for specific arcanae
+   */
+  public generateAtelierScribePackage(arcanaName: string): {
+    toolName: string;
+    canvasType: 'circular' | 'oval' | 'hexagonal' | 'traditional';
+    specializedBrushes: string[];
+    colorPalettes: string[];
+    geometricTemplates: string[];
+    fusionMechanics: string[];
+  } {
+    const arcana = this.getArcanaByName(arcanaName);
+
+    return {
+      toolName: `${arcanaName} Atelier-Scribe Studio`,
+      canvasType: this.getCanvasTypeForArcana(arcana),
+      specializedBrushes: this.getBrushesForArcana(arcana),
+      colorPalettes: this.getColorPaletteForArcana(arcana),
+      geometricTemplates: this.getGeometricTemplatesForArcana(arcana),
+      fusionMechanics: this.getFusionMechanicsForArcana(arcana)
+    };
+  }
+
+  private getArcanaByName(name: string): any {
+    // This would query the LiberArcanae system
+    return {
+      name,
+      element: 'Aether',
+      geometry: 'Metatron\'s Cube',
+      style: 'visionary'
+    };
+  }
+
+  private getCanvasTypeForArcana(arcana: any): 'circular' | 'oval' | 'hexagonal' | 'traditional' {
+    // Map arcana to non-square canvas types
+    const element = arcana.element?.toLowerCase();
+
+    switch (element) {
+      case 'water':
+        return 'oval';
+      case 'earth':
+        return 'hexagonal';
+      case 'fire':
+        return 'circular';
+      case 'air':
+        return 'oval';
+      default:
+        return 'circular'; // Default to circular (Monad principle)
+    }
+  }
+
+  private getBrushesForArcana(arcana: any): string[] {
+    const brushes = ['sacred geometry', 'elemental flow', 'archetypal essence'];
+
+    if (arcana.element === 'Fire') {
+      brushes.push('flame wisps', 'ember trails', 'phoenix feathers');
+    } else if (arcana.element === 'Water') {
+      brushes.push('flowing streams', 'mist veils', 'crystal droplets');
+    } else if (arcana.element === 'Earth') {
+      brushes.push('root systems', 'crystal growth', 'mountain contours');
+    } else if (arcana.element === 'Air') {
+      brushes.push('wind currents', 'thought forms', 'ethereal wisps');
+    }
+
+    return brushes;
+  }
+
+  private getColorPaletteForArcana(arcana: any): string[] {
+    const palettes = ['sacred spectrum', 'elemental harmony', 'mystical gradients'];
+
+    if (arcana.element === 'Fire') {
+      palettes.push('crimson-gold', 'ember-orange', 'phoenix-red');
+    } else if (arcana.element === 'Water') {
+      palettes.push('ocean-deep', 'aqua-teal', 'pearl-silver');
+    } else if (arcana.element === 'Earth') {
+      palettes.push('forest-emerald', 'amber-ochre', 'crystal-clear');
+    } else if (arcana.element === 'Air') {
+      palettes.push('sky-azure', 'cloud-white', 'ethereal-lavender');
+    }
+
+    return palettes;
+  }
+
+  private getGeometricTemplatesForArcana(arcana: any): string[] {
+    const templates = ['sacred geometry', 'mandala forms', 'archetypal patterns'];
+
+    if (arcana.geometry === 'Metatron\'s Cube') {
+      templates.push('metatron-cube', 'platonic-solids', 'merkaba-forms');
+    } else if (arcana.geometry === 'Flower of Life') {
+      templates.push('flower-of-life', 'seed-of-life', 'egg-of-life');
+    } else if (arcana.geometry === 'Sri Yantra') {
+      templates.push('sri-yantra', 'yantra-forms', 'mandalic-patterns');
+    }
+
+    return templates;
+  }
+
+  private getFusionMechanicsForArcana(arcana: any): string[] {
+    const mechanics = ['elemental fusion', 'archetypal blending', 'consciousness merging'];
+
+    if (arcana.element === 'Fire') {
+      mechanics.push('passionate union', 'creative combustion', 'inspirational fusion');
+    } else if (arcana.element === 'Water') {
+      mechanics.push('emotional depth', 'intuitive flow', 'healing immersion');
+    } else if (arcana.element === 'Earth') {
+      mechanics.push('grounded stability', 'practical wisdom', 'material harmony');
+    } else if (arcana.element === 'Air') {
+      mechanics.push('mental clarity', 'intellectual expansion', 'communication flow');
+    }
+
