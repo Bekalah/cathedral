@@ -4,7 +4,6 @@ export declare class PatternGenerator {
     private height;
     private canvas;
     private ctx;
-    private openaiClient;
     constructor(width?: number, height?: number);
     generateArt(request: ArtGenerationRequest): Promise<GeneratedArtwork>;
     private setupCanvasQuality;
@@ -28,8 +27,9 @@ export declare class PatternGenerator {
     private addSacredGeometryOverlay;
     private drawGoldenRectangle;
     private addSurrealEffects;
-    private enhanceWithAzureAI;
-    private applyAIEnhancements;
+    private enhanceWithAlgorithmicProcessing;
+    private generateAlgorithmicEnhancement;
+    private applyAlgorithmicEnhancements;
     private addLightOverlay;
     private hslToRgb;
     private fadeColor;
