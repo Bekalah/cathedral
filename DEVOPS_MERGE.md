@@ -76,3 +76,4 @@ If you need:
 - A jscodeshift transform to update old import paths to new aliases — I can produce it.
 
 Run the scripts now with dry-run and paste the dry-run output here if you'd like me to inspect and refine before committing.
+```
