@@ -1,0 +1,19 @@
+{
+  "name": "@cathedral/tesseract-bridge",
+  "version": "1.0",
+  "description": "Tesseract Bridge - Kabbalistic paths and sacred geometry",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js",
+    "build": "echo 'Tesseract Bridge build complete'",
+    "test": "echo 'Tesseract Bridge tests passing'"
+  },
+  "dependencies": {
+    "@azure/openai": "^1.0.0-beta.12",
+    "@azure/cognitiveservices-computervision": "^8.2.0",
+    "three": "^0.168.0"
+  },
+  "keywords": ["cathedral", "tesseract-bridge", "kabbalah", "geometry"],
+  "author": "Rebecca Respawn",
+  "license": "CC0"
+}

@@ -1,4 +1,3 @@
-```markdown
 # Monorepo Merge & Import Guide (for Cline)
 
 Purpose

@@ -1,0 +1,109 @@
+{
+  "_license": "SPDX-License-Identifier: CC-BY-NC-SA-4.0",
+  "_copyright": "Copyright (c) 2025 Rebecca 'Bekalah' Lemke",
+  "_notice": "UI text content under CC BY-NC-SA 4.0. Translation contributions welcome.",
+  "_source": "https://github.com/Bekalah/cathedral",
+  
+  "navigation": {
+    "home": "Home",
+    "arcana": "Living Arcana",
+    "laboratories": "Sacred Laboratories", 
+    "frequencies": "Healing Frequencies",
+    "geometry": "Sacred Geometry",
+    "fusion": "Fusion Kink",
+    "repositories": "Connected Repositories",
+    "settings": "Accessibility Settings",
+    "help": "Help & Support"
+  },
+  
+  "buttons": {
+    "play": "Play",
+    "pause": "Pause",
+    "stop": "Stop",
+    "next": "Next",
+    "previous": "Previous",
+    "close": "Close",
+    "open": "Open",
+    "save": "Save",
+    "load": "Load",
+    "reset": "Reset",
+    "customize": "Customize",
+    "fullscreen": "Enter Fullscreen",
+    "exitFullscreen": "Exit Fullscreen"
+  },
+  
+  "accessibility": {
+    "skipToMain": "Skip to main content",
+    "skipToNav": "Skip to navigation",
+    "menuToggle": "Toggle navigation menu",
+    "closeDialog": "Close dialog",
+    "openDialog": "Open dialog",
+    "loading": "Loading...",
+    "error": "Error occurred",
+    "success": "Action completed successfully"
+  },
+  
+  "settings": {
+    "language": "Language",
+    "theme": "Theme",
+    "fontSize": "Font Size",
+    "contrast": "Contrast",
+    "motionReduction": "Reduce Motion",
+    "audioDescription": "Audio Descriptions",
+    "keyboardNavigation": "Keyboard Navigation",
+    "screenReaderMode": "Screen Reader Mode",
+    "focusMode": "Focus Mode",
+    "calmMode": "Calm Mode"
+  },
+  
+  "modes": {
+    "light": "Light Mode",
+    "dark": "Dark Mode",
+    "highContrast": "High Contrast",
+    "lowStimulation": "Low Stimulation",
+    "focus": "Focus Mode",
+    "calm": "Calm Mode"
+  },
+  
+  "sizes": {
+    "small": "Small",
+    "medium": "Medium", 
+    "large": "Large",
+    "extraLarge": "Extra Large"
+  },
+  
+  "status": {
+    "online": "Connected",
+    "offline": "Offline",
+    "syncing": "Synchronizing",
+    "saved": "Saved",
+    "unsaved": "Unsaved changes"
+  },
+  
+  "time": {
+    "seconds": "seconds",
+    "minutes": "minutes",
+    "hours": "hours",
+    "timeRemaining": "Time remaining",
+    "sessionTime": "Session time",
+    "breakSuggestion": "Consider taking a break"
+  },
+  
+  "confirmation": {
+    "areYouSure": "Are you sure?",
+    "cannotUndo": "This action cannot be undone",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "yes": "Yes",
+    "no": "No"
+  },
+  
+  "errors": {
+    "networkError": "Network connection error",
+    "loadingError": "Error loading content",
+    "saveError": "Error saving data",
+    "permissionError": "Permission denied",
+    "notFound": "Content not found",
+    "tryAgain": "Try again"
+  }
+}

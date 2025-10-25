@@ -1,0 +1,52 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: cathedral-art-render
+  labels:
+    app: cathedral-of-circuits
+    component: art-generation
+spec:
+  template:
+    metadata:
+      labels:
+        app: cathedral-of-circuits
+        component: art-generation
+    spec:
+      containers:
+      - name: art-renderer
+        image: python:3.9-slim
+        command:
+        - python
+        - /app/tools/render_arcana_textures.py
+        - --arcana
+        - $(ARCANA_NAME)
+        - --resolution
+        - "4096x4096"
+        - --output
+        - /app/artifacts/base_textures/$(ARCANA_NAME)/
+        env:
+        - name: AZURE_STORAGE_CONNECTION_STRING
+          valueFrom:
+            secretKeyRef:
+              name: azure-storage-secret
+              key: connection-string
+        - name: ARCANA_NAME
+          value: ""
+        resources:
+          requests:
+            cpu: "2"
+            memory: "4Gi"
+            nvidia.com/gpu: "1"
+          limits:
+            cpu: "4"
+            memory: "8Gi"
+            nvidia.com/gpu: "1"
+        volumeMounts:
+        - name: artifacts-volume
+          mountPath: /app/artifacts
+      volumes:
+      - name: artifacts-volume
+        persistentVolumeClaim:
+          claimName: cathedral-artifacts-pvc
+      restartPolicy: Never
+  backoffLimit: 3

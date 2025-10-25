@@ -1,0 +1,21 @@
+{
+  "name": "@cathedral/lightweight-library",
+  "version": "1.0.0",
+  "description": "Expansive but lightweight library system for the Cathedral of Circuits",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'Lightweight library - no build needed'",
+    "dev": "echo 'Lightweight library - ready to use'"
+  },
+  "keywords": [
+    "cathedral",
+    "lightweight",
+    "library",
+    "modular",
+    "sacred-geometry",
+    "trauma-safe"
+  ],
+  "author": "Rebecca Respawn <bekalah@users.noreply.github.com>",
+  "license": "MIT"
+}

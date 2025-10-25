@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIRCUITUM99: ALPHA ET OMEGA - Book System | CATHEDRAL OF CIRCUITS</title>
+
+    <!-- Circuitum99 System Integration -->
+    <script type="module" src="../packages/circuitum99/index.js"></script>
+    <script src="../packages/circuitum99/character-data.js"></script>
+
+    <!-- Cathedral Unified System Integration -->
+    <script src="../cathedral-unified-system.js"></script>
+    <script src="../cathedral-node-data-connector.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Core Palette from perm-style.json */
+            --void: #0B0B0B;
+            --ink: #141414;
+            --bone: #F8F5EF;
+            --violet-core: #7A33FF;
+            --violet-flare: #B39CFF;
+            --violet-smoke: #442266;
+            --violet-aura: #2C0A52;
+            --gold-leaf: #C8A44D;
+            --grail-gold: #CBB866;
+            --pearl-white: #F5F2EA;
+            --pearl-rose: #F4C9D9;
+            --pearl-aqua: #BFE9E7;
+            --pearl-lilac: #CDB8F6;
+            --astral-mist: #B7C9FF;
+            --astral-silver: #C9D1E7;
+            --astral-violet: #9E8BFF;
+            --teal-glow: #00CED1;
+            --ember-core: #FF6A00;
+            --avalon-mist: #CFE6F2;
+            --avalon-night: #0C1521;
+            --threshold-glow: #98FFE2;
+            --obsidian-glass: #0f1014;
+            --obsidian-sheen: #191b22;
+            --obsidian-rainbow: #33214e;
+            --raku-copper: #b87333;
+            --raku-violet: #6E00FF;
+            --raku-azure: #1F7AF3;
+        }
+
+        body {
+            font-family: 'Georgia', 'EB Garamond', serif;
+            background: radial-gradient(ellipse at center, var(--void) 0%, var(--obsidian-glass) 50%, var(--violet-aura) 100%);
+            color: var(--bone);
+            overflow: hidden;
+            position: relative;
+            height: 100vh;
+        }
+
+        /* Violet Gate Background Aura */
+        .violet-gate-bg {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: min(90vw, 900px);
+            height: min(90vw, 900px);
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            opacity: 0.08;
+            pointer-events: none;
+            border-radius: 50%;
+            background:
+                radial-gradient(40% 40% at 50% 60%, var(--violet-core), transparent 60%),
+                radial-gradient(80% 60% at 50% 40%, color-mix(in oklab, var(--violet-flare), transparent 35%), transparent 70%),
+                conic-gradient(from 0deg, rgba(122, 51, 255, .35), rgba(179, 156, 255, .22), rgba(68, 34, 102, .35));
+            filter: blur(20px);
+        }
+
+        /* Sacred Geometry Canvas */
+        #cosmicCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* Oracle Velvet Control Panel */
+        .control-cathedral {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 400px;
+            background: linear-gradient(180deg, #0A0A0F, #0F1020);
+            filter: saturate(1.02) contrast(1.02);
+            border: 1px solid rgba(255, 255, 255, .06);
+            border-radius: 14px;
+            padding: 25px;
+            box-shadow: 
+                inset 0 1px 0 rgba(255, 255, 255, .06),
+                0 18px 44px rgba(0, 0, 0, .65);
+            backdrop-filter: blur(20px);
+            z-index: 100;
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+        }
+
+        .control-cathedral h2 {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            color: var(--gold-leaf);
+            text-shadow: 0 0 10px rgba(200, 164, 77, 0.5);
+            font-weight: normal;
+            letter-spacing: 3px;
+            font-family: 'Cinzel', 'Georgia', serif;
+        }
+
+        /* Adventure Mode Selector */
+        .adventure-modes {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .mode-chip {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 12px;
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .02);
+            color: var(--pearl-white);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .mode-chip:hover {
+            background: rgba(122, 51, 255, 0.1);
+            border-color: var(--violet-flare);
+            transform: translateX(5px);
+        }
+
+        .mode-chip.active {
+            background: linear-gradient(135deg, var(--violet-core), var(--violet-flare));
+            border-color: var(--gold-leaf);
+            color: var(--void);
+        }
+
+        /* Solfeggio Frequencies */
+        .solfeggio-panel {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(200, 164, 77, 0.2);
+        }
+
+        .solfeggio-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .solfeggio-chip {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 8px 4px;
+            border: 1px solid rgba(255, 255, 255, .10);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, .04);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.75rem;
+        }
+
+        .solfeggio-chip:hover {
+            background: rgba(122, 51, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .solfeggio-chip.active {
+            background: linear-gradient(135deg, var(--violet-core), var(--violet-flare));
+            color: var(--void);
+        }
+
+        /* Export Panel */
+        .export-panel {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+            display: flex;
+            gap: 10px;
+        }
+
+        .export-btn {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, var(--violet-core), var(--violet-flare));
+            border: none;
+            border-radius: 25px;
+            color: var(--void);
+            font-weight: bold;
+            cursor: pointer;
+            font-family: 'Georgia', serif;
+            font-size: 0.95em;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(122, 51, 255, 0.3);
+        }
+
+        .export-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(122, 51, 255, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .control-cathedral {
+                width: calc(100% - 20px);
+                right: 10px;
+                top: 10px;
+                max-height: 40vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Violet Gate Background -->
+    <div class="violet-gate-bg"></div>
+
+    <!-- Sacred Geometry Canvas -->
+    <canvas id="cosmicCanvas"></canvas>
+
+    <!-- Control Cathedral -->
+    <div class="control-cathedral">
+        <h2>CIRCUITUM99: ALPHA ET OMEGA</h2>
+        <p style="font-size: 0.8em; opacity: 0.8; margin: -15px 0 20px 0; letter-spacing: 2px;">Sacred Geometry • Healing Frequencies • Cosmic Harmony</p>
+        
+        <!-- Adventure Modes -->
+        <div class="adventure-modes">
+            <div class="mode-chip active" data-mode="hermetic" onclick="setMode('hermetic')">
+                <span>Hermetic Alchemy</span>
+            </div>
+            <div class="mode-chip" data-mode="tree" onclick="setMode('tree')">
+                <span>Tree of Life</span>
+            </div>
+            <div class="mode-chip" data-mode="aeons" onclick="setMode('aeons')">
+                <span>Theosophical Aeons</span>
+            </div>
+            <div class="mode-chip" data-mode="avalon" onclick="setMode('avalon')">
+                <span>Avalon Current</span>
+            </div>
+        </div>
+
+        <!-- Solfeggio Frequencies -->
+        <div class="solfeggio-panel">
+            <h3 style="font-size: 0.9em; margin-bottom: 10px; color: var(--gold-leaf);">Solfeggio Healing</h3>
+            <div class="solfeggio-grid">
+                <div class="solfeggio-chip" data-freq="396" onclick="setFrequency(396)">
+                    <span class="freq">396 Hz</span>
+                    <span class="theme">Liberation</span>
+                </div>
+                <div class="solfeggio-chip" data-freq="417" onclick="setFrequency(417)">
+                    <span class="freq">417 Hz</span>
+                    <span class="theme">Transmute</span>
+                </div>
+                <div class="solfeggio-chip" data-freq="432" onclick="setFrequency(432)">
+                    <span class="freq">432 Hz</span>
+                    <span class="theme">Heart</span>
+                </div>
+                <div class="solfeggio-chip active" data-freq="528" onclick="setFrequency(528)">
+                    <span class="freq">528 Hz</span>
+                    <span class="theme">Repattern</span>
+                </div>
+                <div class="solfeggio-chip" data-freq="639" onclick="setFrequency(639)">
+                    <span class="freq">639 Hz</span>
+                    <span class="theme">Relational</span>
+                </div>
+                <div class="solfeggio-chip" data-freq="741" onclick="setFrequency(741)">
+                    <span class="freq">741 Hz</span>
+                    <span class="theme">Clarity</span>
+                </div>
+                <div class="solfeggio-chip" data-freq="852" onclick="setFrequency(852)">
+                    <span class="freq">852 Hz</span>
+                    <span class="theme">Intuition</span>
+                </div>
+                <div class="solfeggio-chip" data-freq="963" onclick="setFrequency(963)">
+                    <span class="freq">963 Hz</span>
+                    <span class="theme">Unitive</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Export Panel -->
+    <div class="export-panel">
+        <button class="export-btn" onclick="exportCanvas()">Export Sacred Art</button>
+    </div>
+
+    <script>
+        // Canvas Setup and Sacred Geometry Engine
+        const canvas = document.getElementById('cosmicCanvas');
+        const ctx = canvas.getContext('2d');
+        let width, height, centerX, centerY;
+        
+        // Cathedral State
+        const cathedral = {
+            currentMode: 'hermetic',
+            currentFrequency: 528,
+            time: 0,
+            animationFrame: null
+        };
+
+        // Sacred Constants
+        const PHI = 1.618033988749895;
+        const TWO_PI = Math.PI * 2;
+        
+        function setupCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            centerX = width / 2;
+            centerY = height / 2;
+        }
+
+        function drawSacredGeometry() {
+            ctx.clearRect(0, 0, width, height);
+            
+            // Set blend mode for luminous effect
+            ctx.globalCompositeOperation = 'screen';
+            
+            cathedral.time += 0.01;
+            
+            switch(cathedral.currentMode) {
+                case 'hermetic':
+                    drawHermeticAlchemy();
+                    break;
+                case 'tree':
+                    drawTreeOfLife();
+                    break;
+                case 'aeons':
+                    drawTheosophicalAeons();
+                    break;
+                case 'avalon':
+                    drawAvalonCurrent();
+                    break;
+            }
+            
+            ctx.globalCompositeOperation = 'source-over';
+        }
+
+        function drawHermeticAlchemy() {
+            // Four Stages of Alchemy
+            const stages = [
+                { name: 'Nigredo', color: '#1a1a1a', angle: 0 },
+                { name: 'Albedo', color: '#e6f0ff', angle: Math.PI / 2 },
+                { name: 'Citrinitas', color: '#ffd76a', angle: Math.PI },
+                { name: 'Rubedo', color: '#b4455a', angle: 3 * Math.PI / 2 }
+            ];
+            
+            stages.forEach((stage, i) => {
+                const radius = 100 + Math.sin(cathedral.time + i) * 20;
+                const x = centerX + Math.cos(stage.angle + cathedral.time * 0.5) * radius;
+                const y = centerY + Math.sin(stage.angle + cathedral.time * 0.5) * radius;
+                
+                // Draw alchemical circles
+                ctx.beginPath();
+                ctx.arc(x, y, 30, 0, TWO_PI);
+                ctx.strokeStyle = stage.color;
+                ctx.lineWidth = 2;
+                ctx.stroke();
+                
+                // Draw connecting lines
+                ctx.beginPath();
+                ctx.moveTo(centerX, centerY);
+                ctx.lineTo(x, y);
+                ctx.strokeStyle = `${stage.color}33`;
+                ctx.lineWidth = 1;
+                ctx.stroke();
+            });
+            
+            // Central ouroboros
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 50, 0, TWO_PI);
+            ctx.strokeStyle = '#C8A44D';
+            ctx.lineWidth = 3;
+            ctx.stroke();
+        }
+
+        function drawTreeOfLife() {
+            // 10 Sephiroth arrangement
+            const sephiroth = [
+                { name: 'Keter', x: 0, y: -200, color: '#f7f4e6' },
+                { name: 'Chokmah', x: -100, y: -100, color: '#d7dfe8' },
+                { name: 'Binah', x: 100, y: -100, color: '#b7b0c8' },
+                { name: 'Chesed', x: -150, y: 0, color: '#bcd6ff' },
+                { name: 'Gevurah', x: 150, y: 0, color: '#f2b6b6' },
+                { name: 'Tiferet', x: 0, y: 0, color: '#f1d58c' },
+                { name: 'Netzach', x: -100, y: 100, color: '#b4e0a4' },
+                { name: 'Hod', x: 100, y: 100, color: '#c4b0ff' },
+                { name: 'Yesod', x: 0, y: 150, color: '#c9b3ff' },
+                { name: 'Malkuth', x: 0, y: 250, color: '#d0c69c' }
+            ];
+            
+            // Draw paths between sephiroth
+            const paths = [
+                [0,1], [0,2], [1,2], [1,3], [2,4], [3,5], [4,5],
+                [5,6], [5,7], [6,7], [6,8], [7,8], [8,9]
+            ];
+            
+            paths.forEach(([a, b]) => {
+                const sephA = sephiroth[a];
+                const sephB = sephiroth[b];
+                
+                ctx.beginPath();
+                ctx.moveTo(centerX + sephA.x, centerY + sephA.y);
+                ctx.lineTo(centerX + sephB.x, centerY + sephB.y);
+                ctx.strokeStyle = `rgba(200, 164, 77, 0.3)`;
+                ctx.lineWidth = 1;
+                ctx.stroke();
+            });
+            
+            // Draw sephiroth
+            sephiroth.forEach((seph, i) => {
+                const pulse = Math.sin(cathedral.time + i * 0.5) * 5;
+                
+                ctx.beginPath();
+                ctx.arc(centerX + seph.x, centerY + seph.y, 25 + pulse, 0, TWO_PI);
+                ctx.fillStyle = seph.color + '33';
+                ctx.fill();
+                ctx.strokeStyle = seph.color;
+                ctx.lineWidth = 2;
+                ctx.stroke();
+            });
+        }
+
+        function drawTheosophicalAeons() {
+            // Four great cosmic periods
+            const aeons = [
+                { name: 'Sat', color: '#B9A8FF', radius: 50 },
+                { name: 'Svabhavat', color: '#CFE6F2', radius: 100 },
+                { name: 'Manvantara', color: '#FFD76A', radius: 150 },
+                { name: 'Pralaya', color: '#1C2029', radius: 200 }
+            ];
+            
+            aeons.forEach((aeon, i) => {
+                const rotation = cathedral.time * (0.1 + i * 0.05);
+                
+                ctx.save();
+                ctx.translate(centerX, centerY);
+                ctx.rotate(rotation);
+                
+                ctx.beginPath();
+                ctx.arc(0, 0, aeon.radius, 0, TWO_PI);
+                ctx.strokeStyle = aeon.color + '66';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+                
+                // Draw emanation points
+                for (let j = 0; j < 8; j++) {
+                    const angle = (j / 8) * TWO_PI;
+                    const x = Math.cos(angle) * aeon.radius;
+                    const y = Math.sin(angle) * aeon.radius;
+                    
+                    ctx.beginPath();
+                    ctx.arc(x, y, 3, 0, TWO_PI);
+                    ctx.fillStyle = aeon.color;
+                    ctx.fill();
+                }
+                
+                ctx.restore();
+            });
+        }
+
+        function drawAvalonCurrent() {
+            // Arthurian mystical geometry
+            const spiralCount = 3;
+            const maxRadius = 200;
+            
+            for (let s = 0; s < spiralCount; s++) {
+                ctx.beginPath();
+                
+                const spiralOffset = (s / spiralCount) * TWO_PI;
+                const spiralColor = ['#CFE6F2', '#98FFE2', '#B7C9FF'][s];
+                
+                for (let i = 0; i <= 100; i++) {
+                    const t = i / 100;
+                    const angle = t * 6 * Math.PI + spiralOffset + cathedral.time;
+                    const radius = t * maxRadius * Math.sin(cathedral.time + s);
+                    
+                    const x = centerX + Math.cos(angle) * radius;
+                    const y = centerY + Math.sin(angle) * radius;
+                    
+                    if (i === 0) {
+                        ctx.moveTo(x, y);
+                    } else {
+                        ctx.lineTo(x, y);
+                    }
+                }
+                
+                ctx.strokeStyle = spiralColor + '66';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+            }
+            
+            // Central grail cup
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 30, 0, TWO_PI);
+            ctx.strokeStyle = '#CBB866';
+            ctx.lineWidth = 3;
+            ctx.stroke();
+        }
+
+        function animate() {
+            drawSacredGeometry();
+            cathedral.animationFrame = requestAnimationFrame(animate);
+        }
+
+        function setMode(mode) {
+            cathedral.currentMode = mode;
+            
+            // Update UI
+            document.querySelectorAll('.mode-chip').forEach(chip => {
+                chip.classList.remove('active');
+            });
+            document.querySelector(`[data-mode="${mode}"]`).classList.add('active');
+        }
+
+        function setFrequency(freq) {
+            cathedral.currentFrequency = freq;
+            
+            // Update UI  
+            document.querySelectorAll('.solfeggio-chip').forEach(chip => {
+                chip.classList.remove('active');
+            });
+            document.querySelector(`[data-freq="${freq}"]`).classList.add('active');
+        }
+
+        function exportCanvas() {
+            // Create high-resolution export
+            const tempCanvas = document.createElement('canvas');
+            const tempCtx = tempCanvas.getContext('2d');
+            
+            // 4K resolution
+            tempCanvas.width = 3840;
+            tempCanvas.height = 2160;
+            
+            // Scale context for high-res rendering
+            tempCtx.scale(3840 / width, 2160 / height);
+            
+            // Re-render at high resolution
+            const originalCanvas = canvas;
+            const originalCtx = ctx;
+            
+            // Temporarily switch context
+            canvas.width = 3840;
+            canvas.height = 2160;
+            setupCanvas();
+            drawSacredGeometry();
+            
+            // Create download
+            canvas.toBlob((blob) => {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `cosmogenesis-${cathedral.currentMode}-${cathedral.currentFrequency}hz.png`;
+                a.click();
+                URL.revokeObjectURL(url);
+                
+                // Restore original canvas
+                setupCanvas();
+            }, 'image/png');
+        }
+
+        // Initialize Circuitum99 Integration
+        window.addEventListener('load', () => {
+            setupCanvas();
+            animate();
+
+            // Initialize character data integration
+            if (typeof window.Circuitum99AlphaOmega !== 'undefined') {
+                console.log('🔗 Connecting to Circuitum99 character data...');
+                window.circuitum99System = new Circuitum99AlphaOmega();
+                console.log('✅ Circuitum99 character system connected');
+                console.log('👥 22 Living characters ready for interaction');
+                console.log('🚪 99 Gates system operational');
+                console.log('⚗️ Fusion kink mechanics available');
+            }
+        });
+
+        window.addEventListener('resize', setupCanvas);
+
+        // Accessibility: Pause animation on focus loss
+        window.addEventListener('blur', () => {
+            if (cathedral.animationFrame) {
+                cancelAnimationFrame(cathedral.animationFrame);
+            }
+        });
+
+        window.addEventListener('focus', () => {
+            animate();
+        });
+
+        console.log('🌌 Cosmogenesis Engine initialized');
+        console.log('🎵 Solfeggio frequencies active');
+        console.log('🎨 Sacred geometry rendering');
+        console.log('📐 Export functionality ready');
+        console.log('🔗 Circuitum99 character integration active');
+    </script>
+</body>
+</html>

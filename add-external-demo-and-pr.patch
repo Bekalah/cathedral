@@ -1,0 +1,106 @@
+*** Begin Patch
+*** Add File: external/codex-144-99/src/core.ts
++// external/codex-144-99/src/core.ts
++// SpiralEngine stub — small export so other packages can import a minimal API
++export type SpiralConfig = {
++  seed?: string;
++  depth?: number;
++};
++
++export class SpiralEngine {
++  config: SpiralConfig;
++  constructor(cfg?: SpiralConfig) {
++    this.config = { seed: cfg?.seed ?? "moonseed", depth: cfg?.depth ?? 3 };
++  }
++  describe() {
++    return `SpiralEngine(seed=${this.config.seed}, depth=${this.config.depth})`;
++  }
++  // Generate nodes based on sacred mathematics and Complete Numerical Architecture
++  generateNode(index = 0) {
++    const sacredRatio = 144 / 99; // Manifestation to dissolution balance
++    const archetypeNames = [
++      "The Fool", "The Magician", "The High Priestess", "The Empress", "The Emperor",
++      "The Hierophant", "The Lovers", "The Chariot", "Strength", "The Hermit",
++      "Wheel of Fortune", "Justice", "The Hanged Man", "Death", "Temperance",
++      "The Devil", "The Tower", "The Star", "The Moon", "The Sun", "Judgement", "The World"
++    ];
+
++    const nodeId = Math.floor((index * sacredRatio) % 144) + 1; // 144 nodes total
++    const archetypeIndex = Math.floor((index * sacredRatio) % 22);
++    const archetype = archetypeNames[archetypeIndex];
+
++    return {
++      id: `C144N-${nodeId.toString().padStart(3, '0')}`,
++      archetype: archetype,
++      resonance: (index * sacredRatio) % 1,
++      element: ['Fire', 'Water', 'Earth', 'Air', 'Aether'][Math.floor((index * sacredRatio) % 5)],
++      frequency: 396 + (index % 9) * 39 // Solfeggio frequencies
++    };
++  }
++}
++
+*** End Patch
+*** Begin Patch
+*** Add File: apps/web/src/components/liberCodexDemo.tsx
++// apps/web/src/components/liberCodexDemo.tsx
++import React from "react";
++import { MajorArcana, getCardName } from "liber-arcanae";
++import { SpiralEngine } from "codex-144-99/core";
++
++export default function LiberCodexDemo() {
++  const engine = new SpiralEngine({ seed: "luna", depth: 2 });
++  const node = engine.generateNode(1);
++  return (
++    <div style={{ padding: 20, fontFamily: "serif" }}>
++      <h2>Liber Arcanae + Codex 144:99 Demo</h2>
++      <p><strong>Engine:</strong> {engine.describe()}</p>
++      <p><strong>Generated node:</strong> {node.id} — {node.archetype}</p>
++      <h3>Sample Major Arcana</h3>
++      <ul>
++        {MajorArcana.slice(0, 6).map((c) => (
++          <li key={c}>{getCardName(c)}</li>
++        ))}
++      </ul>
++      <p style={{ fontSize: 12, opacity: 0.8 }}>
++        This is a safe, read-only demo component — extend it into the game UI as you please.
++      </p>
++    </div>
++  );
++}
++
+*** End Patch
+*** Begin Patch
+*** Add File: apps/web/src/pages/liber-codex-demo.tsx
++// apps/web/src/pages/liber-codex-demo.tsx
++import React from "react";
++import LiberCodexDemo from "../components/liberCodexDemo";
++
++export default function Page() {
++  return (
++    <main>
++      <LiberCodexDemo />
++    </main>
++  );
++}
++
+*** End Patch
+*** Begin Patch
+*** Add File: .github/PR_BODY_add_external_codex_liber.md
++Title: feat(external): add demo consumer for codex-144-99 & liber-arcanae, + PR metadata
++
++What
++- Adds a minimal `SpiralEngine` stub export at `external/codex-144-99/src/core.ts`.
++- Adds a small demo React component (`apps/web/src/components/liberCodexDemo.tsx`) and a page (`apps/web/src/pages/liber-codex-demo.tsx`) that import and show `liber-arcanae` and `codex-144-99`.
++
++Why
++- Provide a live, low-friction example that proves the `external/*` workspace packages can be imported by `apps/web`.
++- Makes it easier for reviewers to run the monorepo and see quick integration without heavy code.
++
++Notes & Next Steps
++- After merge, run `pnpm -w install` then `pnpm run dev` (or `pnpm run turbo:dev`) and visit the dev server route that serves the `apps/web` page (for Vite typical route: http://localhost:5173/liber-codex-demo or adapt based on your routing).
++- The `SpiralEngine` and `liber-arcanae` exports are intentionally minimal stubs. Replace with the real engine implementations as you develop.
++- This PR is append-only (adds new files only) and includes no destructive edits.
++
++— Moonchild (Rebecca Respawn)
++
+*** End Patch
