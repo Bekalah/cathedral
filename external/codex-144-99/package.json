@@ -1,6 +1,7 @@
 {
   "name": "codex-144-99",
   "version": "0.1.0",
+  "description": "Pure algorithmic Codex 144:99 - Sacred lattice research using only algorithmic and data-driven approaches",
   "private": true,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

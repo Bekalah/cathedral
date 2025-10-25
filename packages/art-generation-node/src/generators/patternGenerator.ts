@@ -9,18 +9,12 @@ import {
   RealWorldSource
 } from '../types';
 import { PATTERN_TEMPLATES, REAL_DATA_SOURCES } from '../realDataSources';
-import * as dotenv from 'dotenv';
-
-dotenv.config();
 
 export class PatternGenerator {
   private width: number;
   private height: number;
   private canvas: any;
   private ctx: any;
-  private endpoint: string | undefined;
-  private apiKey: string | undefined;
-  private deployment: string | undefined;
 
   constructor(width: number = 1920, height: number = 1080) {
     this.width = width;
@@ -28,19 +22,8 @@ export class PatternGenerator {
     this.canvas = createCanvas(width, height);
     this.ctx = this.canvas.getContext('2d');
 
-    this.endpoint = process.env.AZURE_OPENAI_ENDPOINT;
-    this.apiKey = process.env.AZURE_OPENAI_KEY;
-    this.deployment = process.env.AZURE_OPENAI_DEPLOYMENT;
-
-    console.log('Azure OpenAI Endpoint:', this.endpoint);
-    console.log('Azure OpenAI Key:', this.apiKey ? 'Set' : 'Not set');
-    console.log('Azure OpenAI Deployment:', this.deployment);
-
-    if (this.endpoint && this.apiKey && this.deployment) {
-      console.log('Azure OpenAI configuration loaded successfully.');
-    } else {
-      console.warn('Azure OpenAI configuration incomplete. AI enhancements will be disabled.');
-    }
+    // Azure AI configuration removed - using pure algorithmic approaches
+    console.log('PatternGenerator initialized with algorithmic processing only.');
   }
 
   public async generateArt(request: ArtGenerationRequest): Promise<GeneratedArtwork> {
@@ -483,8 +466,8 @@ export class PatternGenerator {
       this.addSurrealEffects();
     }
 
-    // Enhance with Azure AI for shading and light
-    this.enhanceWithAzureAI(style);
+    // Enhance with algorithmic processing for shading and light
+    this.enhanceWithAlgorithmicProcessing(style);
   }
 
   private applyColorHarmony(palette: any): void {
@@ -549,59 +532,47 @@ export class PatternGenerator {
     this.ctx.putImageData(imageData, 0, 0);
   }
 
-  private async enhanceWithAzureAI(style: any): Promise<void> {
-    if (!this.endpoint || !this.apiKey || !this.deployment) return;
+  private async enhanceWithAlgorithmicProcessing(style: any): Promise<void> {
+    // Use algorithmic approaches for shading and light effects
+    // Based on sacred mathematics and color theory principles
 
-    const prompt = `Enhance the art style "${style.name}" with advanced shading, light effects, and metaphysical data processing for high-end visionary art. Describe shading techniques and light interactions in detail, ensuring uncensored, creative freedom. Provide a short description for implementation.`;
+    const enhancement = this.generateAlgorithmicEnhancement(style);
 
-    try {
-      const response = await fetch(`${this.endpoint}/openai/deployments/${this.deployment}/chat/completions`, {
-        method: 'POST',
-        headers: {
-          'api-key': this.apiKey,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          messages: [
-            {
-              role: 'system',
-              content: 'You are an expert in visionary art and metaphysical enhancements. Provide detailed, uncensored descriptions for art improvements.'
-            },
-            {
-              role: 'user',
-              content: prompt
-            }
-          ],
-          max_tokens: 150,
-          temperature: 0.8
-        })
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        const enhancement = data.choices[0].message.content?.trim();
-
-        if (enhancement) {
-          // Apply simple enhancements based on AI description
-          this.applyAIEnhancements(enhancement);
-        }
-      } else {
-        console.error('Azure AI enhancement failed:', response.statusText);
-      }
-    } catch (error) {
-      console.error('Error enhancing with Azure AI:', error);
+    if (enhancement) {
+      // Apply algorithmic enhancements based on style analysis
+      this.applyAlgorithmicEnhancements(enhancement);
     }
   }
 
-  private applyAIEnhancements(description: string): void {
-    // Simple implementation: adjust global alpha or add overlays based on keywords
+  private generateAlgorithmicEnhancement(style: any): string {
+    // Generate enhancement description using algorithmic rules
+    const techniques = style.techniques || [];
+    const enhancements = [];
+
+    if (techniques.includes('sacred-geometry')) {
+      enhancements.push('golden-ratio-based shading');
+    }
+
+    if (techniques.includes('surreal-illustration')) {
+      enhancements.push('fibonacci-sequence light patterns');
+    }
+
+    if (style.colorPalette) {
+      enhancements.push('harmonic color relationships');
+    }
+
+    return enhancements.join(', ') || 'algorithmic light enhancement';
+  }
+
+  private applyAlgorithmicEnhancements(description: string): void {
+    // Algorithmic implementation: adjust global alpha or add overlays based on keywords
     if (description.includes('shadow')) {
       this.ctx.globalAlpha = 0.9;
     }
     if (description.includes('light')) {
       this.addLightOverlay();
     }
-    // More sophisticated parsing could be added
+    // More sophisticated algorithmic parsing could be added
   }
 
   private addLightOverlay(): void {

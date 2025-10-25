@@ -1,88 +1,64 @@
-// external/codex-144-99/src/core.ts
-// CODEX 144:99 - FRACTAL FLAMES INTEGRATION
-// Real Elements, Daimons, and Deities as Fractals
-// Permanent Technology for the Cathedral of Circuits
-
+// Pure algorithmic SpiralEngine — research and exploration using only algorithmic and data-driven approaches
 export type SpiralConfig = {
   seed?: string;
   depth?: number;
-  fractalFlames?: boolean;
+  ratio?: number; // Sacred mathematics ratio (144:99)
 };
 
 export class SpiralEngine {
   config: SpiralConfig;
-  fractalSystem: any;
-  sacredRatio: number;
 
   constructor(cfg?: SpiralConfig) {
     this.config = {
       seed: cfg?.seed ?? "moonseed",
       depth: cfg?.depth ?? 3,
-      fractalFlames: cfg?.fractalFlames ?? true
+      ratio: cfg?.ratio ?? 144/99
     };
-    this.sacredRatio = 144 / 99; // Eternal flame ratio
-  }
-
-  async initialize() {
-    // Initialize fractal flame system
-    if (this.config.fractalFlames) {
-      const { FractalFlamesDaemonDeity } = await import('@cathedral/fractal-flames-daemon-deity');
-      this.fractalSystem = new FractalFlamesDaemonDeity();
-      await this.fractalSystem.initialize();
-    }
   }
 
   describe() {
-    return `SpiralEngine(seed=${this.config.seed}, depth=${this.config.depth}, fractalFlames=${this.config.fractalFlames})`;
+    return `SpiralEngine(seed=${this.config.seed}, depth=${this.config.depth}, ratio=${this.config.ratio})`;
   }
 
-  // Generate nodes with fractal flame integration
+  // Pure algorithmic node generation using sacred mathematics
   generateNode(index = 0) {
-    const nodeId = Math.floor((index * this.sacredRatio) % 144) + 1;
-    const archetypeIndex = Math.floor((index * this.sacredRatio) % 22);
+    const phi = (1 + Math.sqrt(5)) / 2; // Golden ratio
+    const angle = index * this.config.ratio! * Math.PI * 2;
+    const radius = Math.sqrt(index) * this.config.depth!;
 
-    const archetypes = [
-      "The Fool", "The Magician", "The High Priestess", "The Empress", "The Emperor",
-      "The Hierophant", "The Lovers", "The Chariot", "Strength", "The Hermit",
-      "Wheel of Fortune", "Justice", "The Hanged Man", "Death", "Temperance",
-      "The Devil", "The Tower", "The Star", "The Moon", "The Sun", "Judgement", "The World"
-    ];
-
-    const elements = ['Fire', 'Water', 'Earth', 'Air', 'Aether'];
-    const elementIndex = Math.floor((index * this.sacredRatio) % 5);
-
-    const baseNode = {
-      id: `C144N-${nodeId.toString().padStart(3, '0')}`,
-      archetype: archetypes[archetypeIndex],
-      element: elements[elementIndex],
-      resonance: (index * this.sacredRatio) % 1,
-      frequency: 396 + (index % 9) * 39,
-      fractalFlame: null
+    return {
+      id: `node-${index}`,
+      archetype: `archetype-${index % 12}`,
+      position: {
+        x: Math.cos(angle) * radius,
+        y: Math.sin(angle) * radius,
+        z: index * phi * 0.1
+      },
+      connections: this.calculateConnections(index)
     };
+  }
 
-    // Add fractal flame if available
-    if (this.fractalSystem) {
-      const flame = this.fractalSystem.generateFractalFlame(elements[elementIndex]);
-      baseNode.fractalFlame = flame;
+  // Algorithmic connection calculation using Fibonacci sequence
+  private calculateConnections(index: number): number[] {
+    const connections: number[] = [];
+    const fib = this.fibonacci(Math.min(index + 1, 12));
+
+    for (let i = 1; i < fib.length; i++) {
+      const connectionIndex = index - fib[i];
+      if (connectionIndex >= 0) {
+        connections.push(connectionIndex);
+      }
     }
 
-    return baseNode;
+    return connections;
   }
 
-  // Generate fractal flame experience for a node
-  generateFractalExperience(nodeIndex = 0) {
-    if (!this.fractalSystem) return null;
-
-    const node = this.generateNode(nodeIndex);
-    const element = node.element;
-    const daimonType = this.getDaimonType(nodeIndex);
-    const deity = node.archetype;
-
-    return this.fractalSystem.generateCompleteExperience(element, daimonType, deity);
-  }
-
-  getDaimonType(nodeIndex) {
-    const types = ['goetic', 'angelic', 'elemental', 'astral'];
-    return types[nodeIndex % types.length];
+  // Fibonacci sequence for sacred mathematics
+  private fibonacci(n: number): number[] {
+    const sequence = [0, 1];
+    for (let i = 2; i < n; i++) {
+      sequence.push(sequence[i-1] + sequence[i-2]);
+    }
+    return sequence;
   }
 }
