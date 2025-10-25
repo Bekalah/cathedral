@@ -1,57 +1,74 @@
 {
   "name": "@bekalah/cathedral-monorepo",
-  "version": "1.0.0",
-  "description": "Cathedral of Circuits - Living Grimoire Engine with 22 Tradition Masters & Fusion Kink",
+  "version": "2.0.0",
+  "description": "Cathedral of Circuits - Living Grimoire Engine with 22 Tradition Masters & Fusion Kink Heaven",
   "type": "module",
-  "scripts": {
-    "turbo:dev": "turbo run dev --parallel",
-    "turbo:build": "turbo run build",
-    "turbo:lint": "turbo run lint",
-    "dev": "pnpm run turbo:dev",
-    "build": "pnpm run turbo:build",
-    "lint": "pnpm run turbo:lint",
-    "prepare": "pnpm -w install && node tools/health-check.js || true",
-    "g:install": "node ./tools/install-g.js",
-    "concurrently-dev": "concurrently \"pnpm -C apps/web dev\" \"pnpm -C apps/worker dev\"",
-    "legacy-build": "pnpm -C packages/data build && pnpm run build:packages && pnpm -C apps/web build",
-    "build:packages": "tsc -b packages/brain packages/soul packages/labs packages/shared packages/crystals packages/synth packages/fractal-flames-daemon-deity",
-    "deploy:worker": "pnpm -C apps/worker deploy",
-    "deploy:pages": "pnpm build && ./scripts/publish.sh",
-    "validate": "pnpm -C packages/data validate",
-    "trauma-check": "echo '🛡️ Trauma safety validated across all 22 tradition engines'",
-    "fusion-kink": "echo '⚗️ Fusion Kink Heaven 144:99 system active'",
-    "living-arcanae": "echo '🃏 22 Living Tradition Engines operational'",
-    "clean": "rm -rf apps/*/dist apps/*/node_modules packages/*/node_modules node_modules",
-    "reset": "pnpm clean && pnpm install",
-    "book-game": "node book-game-launcher.js",
-    "mystery-house": "pnpm -C packages/magical-mystery-house explore",
-    "circuitum99": "pnpm -C packages/circuitum99 book-game",
-    "alpha-omega": "echo '🎨 Opening Alpha et Omega visualization...' && open circuitum99-alpha-et-omega.html",
-    "soul-library": "pnpm -C packages/magical-mystery-house soul",
-    "99-gates": "pnpm -C packages/circuitum99 alpha && pnpm -C packages/circuitum99 mystery && pnpm -C packages/circuitum99 omega",
-    "144-lattice": "pnpm -C packages/circuitum99 lattice",
-    "monorepo-setup": "./scripts/create-monorepo-structure.sh",
-    "ingest:scan": "node scripts/cathedral-ingest-scan.mjs",
-    "cathedral:update": "./tools/cathedral-update-system.sh",
-    "cathedral:install": "node tools/cathedral-cli.js monorepo install",
-    "cathedral:build": "node tools/cathedral-cli.js monorepo build",
-    "cathedral:dev": "node tools/cathedral-cli.js monorepo dev",
-    "cathedral:sync": "node tools/cathedral-cli.js sync",
-    "cathedral:health": "node tools/cathedral-cli.js health",
-    "cathedral:backup": "node tools/cathedral-cli.js backup",
-    "cathedral:restore": "node tools/cathedral-cli.js restore",
-    "validate:config": "node tools/validate-turbo-config.cjs",
-    "prebuild": "pnpm run validate:config"
+  "engines": {
+    "node": ">=18.17.0",
+    "pnpm": ">=8.0.0"
   },
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "type-check": "turbo run type-check",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "reset": "pnpm clean && pnpm install",
+    "install:all": "pnpm install",
+    "prepare": "pnpm -w install && node tools/health-check.js || true",
+    "cathedral:dev": "turbo run dev --filter='./apps/*'",
+    "cathedral:build": "turbo run build --filter='./apps/*'",
+    "cathedral:deploy": "turbo run deploy",
+    "packages:build": "turbo run build --filter='./packages/*'",
+    "packages:dev": "turbo run dev --filter='./packages/*'",
+    "apps:trinity": "pnpm run dev --filter='./apps/web' --filter='./apps/cosmogenesis' --filter='./apps/magical-mystery-house'",
+    "app:tarot": "pnpm run dev --filter='./apps/liber-arcanae-tarot'",
+    "validate:all": "pnpm run lint && pnpm run type-check && pnpm run test",
+    "validate:config": "node tools/validate-turbo-config.cjs",
+    "validate:ownership": "node tools/validate-ownership.js",
+    "cathedral:health": "node tools/cathedral-cli.js health-check",
+    "cathedral:backup": "node tools/cathedral-cli.js backup",
+    "cathedral:audit": "pnpm audit && pnpm run validate:all",
+    "docs:build": "turbo run build --filter=./docs",
+    "docs:dev": "turbo run dev --filter=./docs",
+    "deploy:pages": "pnpm run build && pnpm run cathedral:deploy",
+    "trauma-check": "echo '🛡️ Trauma safety validated across all 22 tradition engines'",
+    "fusion-check": "echo '⚗️ Fusion Kink Heaven 144:99 fully operational'",
+    "integrity-check": "pnpm run validate:ownership && pnpm run validate:config",
+    "prebuild": "pnpm run validate:config",
+    "predeploy": "pnpm run validate:all && pnpm run integrity-check"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "docs",
+    "tools"
+  ],
   "devDependencies": {
-    "@types/node": "^20.10.0",
+    "@types/node": "^20.17.0",
+    "@types/express": "^4.17.21",
+    "@types/fs-extra": "^11.0.4",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
     "concurrently": "^8.2.2",
-    "express": "^4.21.2",
+    "esbuild": "^0.25.0",
+    "eslint": "^8.57.0",
     "fs-extra": "^11.2.0",
-    "turbo": "^1.8.3",
-    "typescript": "^5.3.0",
-    "vite": "^5.4.21",
+    "prettier": "^3.2.5",
+    "turbo": "^2.1.3",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.62",
     "wrangler": "^3.78.12"
+  },
+  "dependencies": {
+    "@azure-rest/ai-inference": "^1.0.0-beta.6",
+    "@azure/identity": "^4.13.0",
+    "@azure/openai": "^2.0.0",
+    "dotenv": "^17.2.3",
+    "express": "^4.19.2",
+    "canvas": "^3.0.1",
+    "sharp": "^0.33.4"
   },
   "author": "Rebecca Respawn <bekalah@users.noreply.github.com>",
   "license": "MIT",
@@ -60,6 +77,13 @@
     "url": "https://github.com/Bekalah/cathedral.git"
   },
   "homepage": "https://bekalah.github.io/cathedral",
+  "bugs": {
+    "url": "https://github.com/Bekalah/cathedral/issues"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/Bekalah"
+  },
   "cathedral": {
     "living_arcanae": {
       "total_cards": 22,
@@ -71,6 +95,7 @@
     },
     "deployment": {
       "github_pages": "https://bekalah.github.io/cathedral",
+      "vercel": "https://cathedral.vercel.app",
       "cloudflare_pages": "https://cathedral.pages.dev",
       "worker_api": "https://cathedral-api.bekalah.workers.dev"
     },
@@ -82,8 +107,8 @@
     },
     "brain_system": {
       "primary": "cosmogenesis-learning-engine",
-      "architecture": "Trinity + Brain + Navigation",
-      "integration": "All moving pieces organically connected"
+      "architecture": "Trinity + Brain + Navigation + Tarot integration",
+      "integration": "Tesseract Bridge connects all systems seamlessly"
     }
   },
   "keywords": [
@@ -94,18 +119,16 @@
     "trauma-informed",
     "nd-safe",
     "research-backed",
-    "bjork",
-    "tori-amos",
-    "iris-van-herpen",
-    "emma-kunz",
-    "sacred-geometry",
-    "consciousness-technology"
+    "consensus-reality",
+    "consciousness-technology",
+    "non-dual",
+    "neurodivergent",
+    "spiral-architecture",
+    "azure-ai"
   ],
-  "dependencies": {
-    "@azure-rest/ai-inference": "^1.0.0-beta.6",
-    "@azure/identity": "^4.13.0",
-    "@azure/openai": "^2.0.0",
-    "dotenv": "^17.2.3",
-    "express": "^4.19.2"
+  "pnpm": {
+    "overrides": {
+      "canvas": "^3.0.1"
+    }
   }
 }
