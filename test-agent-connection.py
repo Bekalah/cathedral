@@ -1,18 +1,24 @@
 #!/usr/bin/env python3
 """
-Quick test to connect to Agent of KAOZ and use Azure AI Foundry credits
+Quick test to connect to Agent of KAOZ and use Azure AI Foundry credits.
+Uses the Azure AI Projects SDK (azure-ai-projects) with the correct project endpoint.
 """
 
 import asyncio
 import os
 from azure.ai.projects import AIProjectClient
 from azure.identity import DefaultAzureCredential
+from azure.ai.agents.models import ListSortOrder
 
 async def test_agent_connection():
     """Test connection to Agent of KAOZ"""
     
-    # Your Azure AI Foundry project endpoint
-    project_endpoint = "https://cathedral-resource.services.ai.azure.com/"
+    # Azure AI Foundry Project endpoint (Project -> Settings -> Keys and endpoints)
+    # Tip: you can export PROJECT_ENDPOINT to avoid hardcoding.
+    project_endpoint = os.environ.get(
+        "PROJECT_ENDPOINT",
+        "https://cathedral-resource.services.ai.azure.com/api/projects/cathedral",
+    )
     
     # Your Agent ID from the YAML file
     agent_id = "asst_72uzK1Yt2hsu2qVyt22NkMiO"
@@ -28,46 +34,47 @@ async def test_agent_connection():
         client = AIProjectClient(
             endpoint=project_endpoint,
             credential=credential,
-            subscription_id="88235353-b821-4046-9457-89f70c3d8e9e",
-            resource_group_name="cathedral-rg",
-            project_name="cathedral-resource"
         )
         
         print("✅ Connected successfully!")
         
-        # Create a thread for conversation  
-        thread = client.agents.create_thread({})
+        # Create a thread for conversation
+        thread = client.agents.threads.create()
         print(f"📝 Thread created: {thread.id}")
         
         # Send a test message to your agent
         test_message = "Hello Agent of KAOZ! Help me generate art for Rebecca Respawn showing divine and infernal harmony with a golden heart connecting them."
         
-        message = client.agents.create_message(
+        message = client.agents.messages.create(
             thread_id=thread.id,
             role="user",
-            content=test_message
+            content=test_message,
         )
         
         print(f"💬 Message sent: {test_message}")
         
         # Run the agent
-        run = client.agents.create_and_process_run(
+        run = client.agents.runs.create_and_process(
             thread_id=thread.id,
-            assistant_id=agent_id
+            agent_id=agent_id,
         )
         
         print(f"🏃 Agent run completed!")
         
         # Get the response
-        messages = client.agents.list_messages(thread_id=thread.id)
+        messages = client.agents.messages.list(thread_id=thread.id, order=ListSortOrder.ASCENDING)
         
         print("\n✨ Agent of KAOZ Response:")
         print("=" * 80)
-        for msg in messages.data:
-            if msg.role == "assistant":
-                for content in msg.content:
-                    if hasattr(content, 'text'):
-                        print(content.text.value)
+        for msg in messages:
+            # Print assistant text messages when present
+            if getattr(msg, "text_messages", None):
+                for tm in msg.text_messages:
+                    try:
+                        print(tm.text.value)
+                    except Exception:
+                        # Fallback if object shape differs
+                        print(str(tm))
         print("=" * 80)
         
         print("\n🎉 SUCCESS! Your Agent of KAOZ is working and using your credits!")

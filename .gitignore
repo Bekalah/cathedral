@@ -99,3 +99,13 @@ logs
 
 # Godot
 .godot/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+
+# Project-generated assets
+design-suite/outputs/
+agent_responses/
