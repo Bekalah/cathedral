@@ -39,7 +39,7 @@
     "vite": "^5.4.62",
     "@vitejs/plugin-react": "^4.3.1",
     "@cathedral/liber-arcanae": "workspace:*",
-    "@cathedral/codex-14499": "workspace:*",
+    "@cathedral/codex-144-99": "workspace:*",
     "@cathedral/tesseract-bridge": "workspace:*",
     "@cathedral/art-generation-node": "workspace:*",
     "@cathedral/crystals": "workspace:*",
