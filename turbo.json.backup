@@ -1,0 +1,132 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "globalDependencies": ["**/*.json", "**/*.md", "tsconfig.json"],
+  "pipeline": {
+    "//": "🔧 CORE DEVELOPMENT TASKS",
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", "build/**", ".turbo/cache/**"],
+      "env": ["NODE_ENV"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "type-check": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
+    "lint": {
+      "outputs": [],
+      "env": ["NODE_ENV"]
+    },
+    "test": {
+      "dependsOn": ["build"],
+      "outputs": ["coverage/**", ".nyc_output/**"],
+      "env": ["NODE_ENV", "CI"]
+    },
+    "clean": {
+      "outputs": [],
+      "cache": false
+    },
+    "//": "🎨 CATHEDRAL SPECIFIC TASKS",
+    "generate-data": {
+      "outputs": ["data/**", "packages/**/data/**"]
+    },
+    "art-generate": {
+      "dependsOn": ["build"],
+      "outputs": ["assets/generated/**", "public/art/**"]
+    },
+    "validate": {
+      "dependsOn": ["build"],
+      "outputs": []
+    },
+    "ownership-check": {
+      "outputs": []
+    },
+    "integrity-check": {
+      "dependsOn": ["lint", "type-check", "ownership-check"]
+    },
+    "//": "🏰 APP-SPECIFIC TASKS",
+    "story": {
+      "dependsOn": ["build", "generate-data"],
+      "outputs": []
+    },
+    "fusion": {
+      "dependsOn": ["build", "generate-data"],
+      "outputs": []
+    },
+    "design": {
+      "dependsOn": ["build"],
+      "outputs": []
+    },
+    "deploy": {
+      "dependsOn": ["build", "test", "lint", "validate"],
+      "outputs": [],
+      "env": ["VERCEL_TOKEN", "CLOUDFLARE_API_TOKEN"]
+    },
+    "preview": {
+      "dependsOn": ["build"],
+      "outputs": []
+    },
+    "//": "🎮 GAME ENGINE TASKS",
+    "godot-build": {
+      "dependsOn": ["godot-export"],
+      "outputs": ["dist/godot/**"]
+    },
+    "godot-export": {
+      "dependsOn": ["generate-data"],
+      "outputs": ["exports/**", "godot/export/**"]
+    },
+    "godot-test": {
+      "dependsOn": ["godot-build"],
+      "outputs": []
+    },
+    "//": "📚 LIBER ARCANAE TASKS",
+    "generate-tarot": {
+      "dependsOn": ["build", "generate-data"],
+      "outputs": ["apps/liber-arcanae-tarot/dist/**"]
+    },
+    "generate-faculty": {
+      "dependsOn": ["build", "art-generate"],
+      "outputs": ["assets/faculty/**"]
+    },
+    "generate-codex": {
+      "dependsOn": ["build", "generate-data"],
+      "outputs": ["packages/codex-library/codex-data/**"]
+    },
+    "//": "📊 ANALYSIS TASKS",
+    "generate-avalon": {
+      "dependsOn": ["generate-data"],
+      "outputs": ["data/avalon/**"]
+    },
+    "analytics": {
+      "dependsOn": ["build"],
+      "outputs": ["reports/**"]
+    },
+    "audit": {
+      "dependsOn": ["build", "test", "lint"],
+      "outputs": ["audit-reports/**"]
+    },
+    "//": "📦 PUBLISHING TASKS",
+    "publish": {
+      "dependsOn": ["build", "test", "lint", "validate", "audit"],
+      "outputs": []
+    },
+    "publish:app": {
+      "dependsOn": ["build", "test", "lint"],
+      "outputs": []
+    },
+    "publish:package": {
+      "dependsOn": ["build", "test", "lint", "validate"],
+      "outputs": []
+    }
+  },
+  "globalEnv": [
+    "NODE_ENV",
+    "CI",
+    "VERCEL_TOKEN",
+    "AZURE_AI_STUDIO_ENDPOINT",
+    "AZURE_AI_STUDIO_KEY"
+  ]
+}

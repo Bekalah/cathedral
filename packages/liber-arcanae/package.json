@@ -17,7 +17,7 @@
     "report": "node dist/cli.js report"
   },
   "dependencies": {
-    "@cathedral/codex-library": "workspace:*",
+    "@cathedral/codex-14499": "workspace:*",
     "@cathedral/shared": "workspace:*"
   },
   "devDependencies": {

@@ -1,0 +1,87 @@
+# Volcanic Fire - Tower/Crowley Archetype Spell
+# Integrates with Cathedral of Circuits archetypal engine
+
+id: "volcanic_fire"
+name: "Volcanic Fire"
+archetype: "Tower"
+element: "fire"
+tags: ["eruption", "creative_destruction", "energy", "transformation"]
+
+# Archetypal connections
+tarot_major: "XVI - The Tower"
+crowley_influence: "Aeon of Horus - Creative Destruction"
+rebecca_resonance: 0.85  # High chaos alignment with Rebecca Respawn
+
+# Spell parameters
+parameters:
+  musical_mode: "Phrygian"
+  color_palette: ["#ff4500", "#ffd700", "#ac2b00", "#FF1493"]
+  intensity: 0.8
+  chaos_factor: 90
+  order_factor: 10
+  duration: 12  # seconds
+
+# World transformation effects
+function:
+  transform: "destroy barriers, birth new terrain"
+  modify_world: "change weather to storm/wildlight"
+  npc_emotion: "awe, alarm, creative inspiration"
+  terrain_effect: "volcanic_eruption"
+  audio_effect: "rumbling_crescendo"
+  visual_effect: "lava_particles"
+
+# Oracle wisdom
+oracle_sentence: "From the depths comes the fire that cracks the world and brings new life in its wake."
+oracle_extended: |
+  The volcanic fire erupts not to destroy, but to create.
+  What seemed solid melts and reforms in patterns of pure potential.
+  In the chaos of eruption, new landscapes are born.
+
+# Agent of Kaoz integration
+agent_prompts:
+  activation: "Channel the Tower's volcanic fire - creative destruction that births new realities from molten chaos"
+  art_generation: "Generate volcanic eruption art with divine fire meeting shadow earth, golden lava flows creating new sacred geometries"
+  spell_effect: "Cast volcanic fire spell that transforms the cathedral environment with creative destruction energy"
+
+# Synth spell parameters
+synth_parameters:
+  waveform: "sawtooth_distorted"
+  attack: 0.1
+  decay: 2.0
+  sustain: 0.8
+  release: 3.0
+  filter_cutoff: 0.7
+  resonance: 0.9
+  effects: ["overdrive", "reverb_cathedral", "volcanic_rumble"]
+  frequency_range: [40, 400]  # Low rumbling to mid-range eruption
+
+# Chaos event triggers
+chaos_triggers:
+  low_chaos: "gentle_ember_dance"
+  medium_chaos: "lava_flow_creation"
+  high_chaos: "volcanic_eruption"
+  max_chaos: "reality_terrain_reshape"
+
+# NPC reactions by archetype
+npc_reactions:
+  fool: "Dances in the volcanic light, sees new paths in the lava flows"
+  magician: "Harnesses the eruption energy for reality manipulation spells"
+  high_priestess: "Reads the volcanic patterns as sacred omens and prophecy"
+  emperor: "Sees opportunity to build new structures from cooled lava"
+  
+# Three.js visual parameters
+visual_config:
+  particle_count: 2000
+  lava_color_start: "#ff4500"
+  lava_color_end: "#ffd700"
+  eruption_height: 15
+  terrain_crack_depth: 3
+  storm_intensity: 0.8
+  lighting_flicker: true
+
+# Integration hooks
+integration:
+  fastapi_endpoint: "/api/spells/volcanic_fire"
+  react_component: "VolcanicFireScene"
+  threejs_effect: "VolcanicFireEffect"
+  audio_component: "VolcanicFireAudio"

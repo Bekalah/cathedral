@@ -1,5 +1,6 @@
 {
-  "name": "codex-14499",
+  "name": "@cathedral/codex-14499",
+"name": "@cathedral/codex-14499",
   "version": "1.0.0",
   "description": "Cathedral Codex 144:99 - Complete lattice system connecting all Trinity apps",
   "type": "module",
