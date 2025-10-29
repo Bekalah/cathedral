@@ -15,7 +15,7 @@
     "theatre": "node dist/theatre/paraTheatreEngine.js"
   },
   "dependencies": {
-    "@cathedral/codex-library": "workspace:*",
+    "@cathedral/codex-14499": "workspace:*",
     "@cathedral/liber-arcanae": "workspace:*",
     "@cathedral/plugin-system": "workspace:*",
     "@cathedral/shared": "workspace:*"

@@ -47,7 +47,7 @@
     "babylonjs": "^7.40.0",
     "p5": "^1.10.0",
     "tone": "^15.0.4",
-    "@cathedral/codex-library": "workspace:*",
+    "@cathedral/codex-14499": "workspace:*",
     "@cathedral/liber-arcanae": "workspace:*",
     "@cathedral/tesseract-bridge": "workspace:*",
     "@cathedral/crystals": "workspace:*",
