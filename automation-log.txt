@@ -1,0 +1,30 @@
+🚀 CATHEDRAL COMPLETION - 2 HOUR MAXIMUM
+========================================
+Start: 2025-10-29 16:58:54
+
+▶️  STEP 1/3: Running main automation...
+🚀 CATHEDRAL AUTOMATION - 2 HOUR MAXIMUM FORCE MODE
+==================================================
+Start time: Wed Oct 29 16:58:54 CDT 2025
+
+📍 Working directory: /Users/rebeccalemke/cathedral-real
+
+⚡ PHASE 1: Resolving Git Conflicts...
+======================================
+Saved working directory and index state On main: automate-backup-1761775134
+Fixing apps/liber-arcanae-tarot/package.json...
+\033[0;32m✓ Fixed package.json\033[0m
+Fixing turbo.json...
+\033[0;32m✓ Converted pipeline to tasks format\033[0m
+Regenerating pnpm-lock.yaml...
+Scope: all 43 workspace projects
+Progress: resolved 0, reused 1, downloaded 0, added 0
+ WARN  deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+Progress: resolved 22, reused 22, downloaded 0, added 0
+Progress: resolved 31, reused 31, downloaded 0, added 0
+/Users/rebeccalemke/cathedral-real/apps/liber-arcanae-tarot:
+ ERR_PNPM_WORKSPACE_PKG_NOT_FOUND  In apps/liber-arcanae-tarot: "@cathedral/codex-144-99@workspace:*" is in the dependencies but no package named "@cathedral/codex-144-99" is present in the workspace
+
+This error happened while installing a direct dependency of /Users/rebeccalemke/cathedral-real/apps/liber-arcanae-tarot
+
+Packages found in the workspace: 
