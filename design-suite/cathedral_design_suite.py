@@ -7,7 +7,6 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Polygon, Circle, FancyBboxPatch
 from matplotlib.collections import LineCollection
 import matplotlib.patches as mpatches
-from scipy import interpolate
 import math
 from dataclasses import dataclass, field
 from typing import Dict, List, Any, Optional, Tuple
@@ -322,8 +321,10 @@ class CathedralDesignSuite:
         
         # Convert to image array
         fig.canvas.draw()
-        buf = np.frombuffer(fig.canvas.tostring_rgb(), dtype=np.uint8)
-        buf = buf.reshape(fig.canvas.get_width_height()[::-1] + (3,))
+        # Use backend-agnostic buffer access
+        rgba = np.frombuffer(fig.canvas.buffer_rgba(), dtype=np.uint8)
+        rgba = rgba.reshape(fig.canvas.get_width_height()[::-1] + (4,))
+        buf = rgba[:, :, :3]
         plt.close(fig)
         
         return buf
@@ -586,8 +587,9 @@ class CathedralDesignSuite:
         
         # Convert to image array
         fig.canvas.draw()
-        buf = np.frombuffer(fig.canvas.tostring_rgb(), dtype=np.uint8)
-        buf = buf.reshape(fig.canvas.get_width_height()[::-1] + (3,))
+        rgba = np.frombuffer(fig.canvas.buffer_rgba(), dtype=np.uint8)
+        rgba = rgba.reshape(fig.canvas.get_width_height()[::-1] + (4,))
+        buf = rgba[:, :, :3]
         plt.close(fig)
         
         return buf
