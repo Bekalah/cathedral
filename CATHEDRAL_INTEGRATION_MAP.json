@@ -237,28 +237,115 @@
     },
     "stone_grimoire": {
       "type": "mixed",
-      "location": "stone-grimoire/",
-      "purpose": "Cathedral architecture & chapel system",
-      "connects": ["all_characters", "all_research", "all_geometry"]
+      "role": "BODY",
+      "location": "packages/stone-grimoire/",
+      "root_backup": "stone-grimoire/",
+      "purpose": "Cathedral architecture, chapel system, 8 octagram halls with 144 folios",
+      "connects": ["all_characters", "all_research", "all_geometry"],
+      "features": [
+        "Archive system with sacred geometry navigation",
+        "Chapel system (alchemy, angels, crypts)",
+        "Visionary plates and mystical color systems",
+        "Museum-grade esoteric artifact collection",
+        "Trauma-safe archetypal exploration"
+      ],
+      "external_deployment": {
+        "url": "https://bekalah.github.io/stone-grimoire",
+        "repo": "https://github.com/Bekalah/stone-grimoire",
+        "status": "SEPARATE_REPOSITORY_DEPLOYMENT"
+      },
+      "files": ["index.html", "chapels/*", "atelier_protocol.md"]
     },
     "cosmogenesis_learning_engine": {
       "type": "typescript",
-      "location": "cosmogenesis-learning-engine/",
-      "purpose": "Educational pathways through wisdom gates",
+      "role": "SPIRIT",
+      "location": "packages/cosmogenesis-learning-engine/",
+      "root_backup": "cosmogenesis-learning-engine/",
+      "purpose": "Educational pathways, spiral pedagogy, Four Worlds consciousness architecture",
       "connects": [
         "144_codex_nodes",
         "99_dissolution_gates",
-        "22_arcana_teachers"
-      ]
+        "22_arcana_teachers",
+        "8_circuit_brain_model"
+      ],
+      "features": [
+        "Four Worlds navigation (Assiah, Yetzirah, Beriah, Atziluth)",
+        "Sacred learning spiral with master artist consciousness expansion",
+        "8 circuit brain model expanded to 144 nodes",
+        "Trauma-informed healing through conscious creation",
+        "Interactive consciousness exploration platform"
+      ],
+      "tech_stack": {
+        "frontend": "React 18.x, TypeScript 5.x, Vite 5.x",
+        "3d": "Three.js with custom shaders",
+        "audio": "Tone.js for synthesis",
+        "state": "Zustand with persistence"
+      },
+      "external_deployment": {
+        "planned_url": "https://bekalah.github.io/cosmogenesis-learning-engine",
+        "status": "INTEGRATED_IN_CATHEDRAL_MONOREPO"
+      },
+      "files": ["docs/*"]
     },
     "circuitum99": {
       "type": "typescript",
+      "role": "SOUL",
       "location": "packages/circuitum99/",
-      "purpose": "RPG story system for character narratives",
+      "purpose": "Book/wisdom system with 99 gates, 33 spine nodes, 144 lattice",
       "connects": [
         "22_arcana_stories",
         "historical_relationships",
-        "quest_systems"
+        "quest_systems",
+        "spine_33_vertebral_paths",
+        "gates_99_wisdom_portals"
+      ],
+      "features": [
+        "Living grimoire game system",
+        "Story branching based on real historical relationships",
+        "Spine pathways (33 vertebrae)",
+        "Gate system (99 wisdom portals)",
+        "Character narrative integration"
+      ],
+      "data": ["spine33.json", "gates99.json"]
+    },
+    "magical_mystery_house": {
+      "type": "typescript",
+      "role": "NAVIGATOR",
+      "location": "packages/magical-mystery-house/",
+      "purpose": "144 visionary minds navigation system connecting all Trinity systems",
+      "connects": [
+        "stone_grimoire_body",
+        "circuitum99_soul",
+        "cosmogenesis_spirit",
+        "144_master_builders"
+      ],
+      "features": [
+        "Intuitive navigation between all Cathedral systems",
+        "144 visionary minds (Einstein, Tesla, Agrippa, Solomon, John Dee, Hilma af Klint, etc.)",
+        "Portal system connecting Body-Soul-Spirit Trinity",
+        "Return navigation to preserve Cathedral session"
+      ]
+    },
+    "codex_144_99": {
+      "type": "typescript",
+      "role": "FOUNDATION",
+      "location": "packages/codex-144-99/",
+      "root_data": "codex/codex_14499.json",
+      "purpose": "Sacred mathematics core: 144:99 ratio, 72 angels + 72 demons, 33 spine",
+      "connects": ["all_systems"],
+      "features": [
+        "144 nodes (72 Shem angels + 72 Goetic demons)",
+        "99 dissolution gates",
+        "33 spine vertebral paths",
+        "Sacred ratio calculations",
+        "Complete numerology engine"
+      ],
+      "data_files": [
+        "packages/codex-144/angels-72.json",
+        "packages/codex-144/demons-72.json",
+        "packages/codex-144/spine-33.json",
+        "codex-144-expanded.json",
+        "codex-arcanae-mirror.json"
       ]
     }
   },
