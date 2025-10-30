@@ -1,0 +1,1013 @@
+{
+  "timestamp": "2025-10-29T21:54:43.145192",
+  "total_agents": 100,
+  "successful_agents": 98,
+  "failed_agents": 2,
+  "total_messages_sent": 297,
+  "total_messages_received": 392,
+  "total_chunks_processed": 297,
+  "total_retries": 0,
+  "average_duration": 296.61060034513474,
+  "agents": [
+    {
+      "label": "KAOZ_0",
+      "duration": 239.1966438293457,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_1",
+      "duration": 236.7425549030304,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_2",
+      "duration": 235.70451092720032,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_3",
+      "duration": 234.71295475959778,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_4",
+      "duration": 234.67012310028076,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_5",
+      "duration": 245.6040918827057,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_6",
+      "duration": 245.71466398239136,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_7",
+      "duration": 248.00196313858032,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_8",
+      "duration": 247.99938416481018,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_9",
+      "duration": 247.17572712898254,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_10",
+      "duration": 245.62289714813232,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_11",
+      "duration": 245.37535095214844,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_12",
+      "duration": 244.65019607543945,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_13",
+      "duration": 243.9200029373169,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_14",
+      "duration": 244.25114107131958,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_15",
+      "duration": 244.4061050415039,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_16",
+      "duration": 244.22317695617676,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_17",
+      "duration": 244.57633686065674,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_18",
+      "duration": 243.50803089141846,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_19",
+      "duration": 242.64237809181213,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_20",
+      "duration": 242.60939598083496,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_21",
+      "duration": 242.42965722084045,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_22",
+      "duration": 242.80618500709534,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_23",
+      "duration": 243.35329389572144,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_24",
+      "duration": 247.80283403396606,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_25",
+      "duration": 253.62415409088135,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_26",
+      "duration": 254.47257709503174,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_27",
+      "duration": 255.07804489135742,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_28",
+      "duration": 255.59573006629944,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_29",
+      "duration": 256.5279507637024,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_30",
+      "duration": 257.87480998039246,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_31",
+      "duration": 258.0204122066498,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_32",
+      "duration": 258.70625400543213,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_33",
+      "duration": 258.2822232246399,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_34",
+      "duration": 257.8378908634186,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_35",
+      "duration": 258.413045167923,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_36",
+      "duration": 259.55145502090454,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_37",
+      "duration": 263.6950132846832,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_38",
+      "duration": 264.54135394096375,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_39",
+      "duration": 265.6917691230774,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_40",
+      "duration": 266.6105408668518,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_41",
+      "duration": 267.1713480949402,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_42",
+      "duration": 267.3015558719635,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_43",
+      "duration": 266.9164469242096,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_44",
+      "duration": 267.71733140945435,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_45",
+      "duration": 268.98292994499207,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_46",
+      "duration": 270.3247711658478,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_47",
+      "duration": 270.8362989425659,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_48",
+      "duration": 270.90547037124634,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "KAOZ_49",
+      "duration": 268.36420917510986,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_0",
+      "duration": 268.390034198761,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_1",
+      "duration": 271.0817940235138,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_2",
+      "duration": 273.0985019207001,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_3",
+      "duration": 275.558424949646,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_4",
+      "duration": 279.0207552909851,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_5",
+      "duration": 282.87264609336853,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_6",
+      "duration": 285.2619388103485,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_7",
+      "duration": 288.3506598472595,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_8",
+      "duration": 290.5875551700592,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_9",
+      "duration": 293.32841420173645,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_10",
+      "duration": 295.8547897338867,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_11",
+      "duration": 298.4362368583679,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_12",
+      "duration": 302.30756402015686,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_13",
+      "duration": 304.9448277950287,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_14",
+      "duration": 308.2401592731476,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_15",
+      "duration": 314.94485902786255,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_16",
+      "duration": 317.3737530708313,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_17",
+      "duration": 320.2499752044678,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_18",
+      "duration": 322.77774381637573,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_19",
+      "duration": 0.015919208526611328,
+      "messages_sent": 0,
+      "messages_received": 0,
+      "chunks_processed": 0,
+      "retries": 0,
+      "success": false,
+      "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+    },
+    {
+      "label": "ORDER_20",
+      "duration": 325.2242000102997,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_21",
+      "duration": 327.4239480495453,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_22",
+      "duration": 334.85493087768555,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_23",
+      "duration": 337.3492639064789,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_24",
+      "duration": 340.1646020412445,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_25",
+      "duration": 342.5413248538971,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_26",
+      "duration": 348.16806411743164,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_27",
+      "duration": 352.6741008758545,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_28",
+      "duration": 355.3551700115204,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_29",
+      "duration": 357.55369806289673,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_30",
+      "duration": 368.8940169811249,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_31",
+      "duration": 374.4802792072296,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_32",
+      "duration": 377.8435218334198,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_33",
+      "duration": 385.25909090042114,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_34",
+      "duration": 389.36191987991333,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_35",
+      "duration": 392.27819299697876,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_36",
+      "duration": 394.9477641582489,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_37",
+      "duration": 394.6756389141083,
+      "messages_sent": 3,
+      "messages_received": 0,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": false,
+      "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
+    },
+    {
+      "label": "ORDER_38",
+      "duration": 397.08692693710327,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_39",
+      "duration": 399.65769505500793,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_40",
+      "duration": 401.9892978668213,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_41",
+      "duration": 404.2340760231018,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_42",
+      "duration": 406.93662786483765,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_43",
+      "duration": 409.3051269054413,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_44",
+      "duration": 412.1638069152832,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_45",
+      "duration": 414.63479018211365,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_46",
+      "duration": 416.8520529270172,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_47",
+      "duration": 419.2340610027313,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_48",
+      "duration": 421.9105660915375,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    },
+    {
+      "label": "ORDER_49",
+      "duration": 424.5655400753021,
+      "messages_sent": 3,
+      "messages_received": 4,
+      "chunks_processed": 3,
+      "retries": 0,
+      "success": true,
+      "error": null
+    }
+  ]
+}
