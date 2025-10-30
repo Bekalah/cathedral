@@ -1,6 +1,6 @@
 {
   "name": "@cathedral/tesseract-bridge",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "Tesseract Bridge - Kabbalistic paths and sacred geometry",
   "main": "index.js",
   "scripts": {
