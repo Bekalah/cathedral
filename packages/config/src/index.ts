@@ -3,33 +3,31 @@
  * Shared configuration constants for Cathedral monorepo
  */
 
+const getEnv = (key: string, fallback = ""): string => {
+    const env =
+        (globalThis as any)?.process?.env as Record<string, string | undefined> | undefined;
+    return env?.[key] ?? fallback;
+};
+
 export const CATHEDRAL_CONFIG = {
-  codex: {
-    nodeCount: 144,
-    ratio: "144:99",
-    categories: 8,
-  },
-  arcana: {
-    majorCount: 22,
-    aspectCount: 3, // divine, shadow, harmony
-  },
-  build: {
-    nodeEnv:
-      (typeof process !== "undefined" ? process.env.NODE_ENV : undefined) ||
-      "development",
-    target: "esnext",
-    minify: true,
-  },
-  azure: {
-    endpoint:
-      (typeof process !== "undefined"
-        ? process.env.AZURE_AI_STUDIO_ENDPOINT
-        : undefined) || "",
-    apiKey:
-      (typeof process !== "undefined"
-        ? process.env.AZURE_AI_STUDIO_KEY
-        : undefined) || "",
-  },
+    codex: {
+        nodeCount: 144,
+        ratio: "144:99",
+        categories: 8,
+    },
+    arcana: {
+        majorCount: 22,
+        aspectCount: 3, // divine, shadow, harmony
+    },
+    build: {
+        nodeEnv: getEnv("NODE_ENV", "development"),
+        target: "esnext",
+        minify: true,
+    },
+    azure: {
+        endpoint: getEnv("AZURE_AI_STUDIO_ENDPOINT", ""),
+        apiKey: getEnv("AZURE_AI_STUDIO_KEY", ""),
+    },
 } as const;
 
 export const SACRED_GEOMETRY_PATTERNS = [
