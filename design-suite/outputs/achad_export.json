@@ -1,0 +1,294 @@
+{
+  "system_info": {
+    "name": "Frater Achad System",
+    "description": "Continuing the Great Work of Charles Stansfeld Jones",
+    "current_aeon": "horus",
+    "primary_focus": "True Will, Individual Pathways, and the Oath of the Abyss"
+  },
+  "innovations": {
+    "al_31": {
+      "discovery": "AL = 31",
+      "insight": "The word AL (God, Not) equals 31, key to Liber AL",
+      "numerology": {
+        "Aleph": 1,
+        "Lamed": 30,
+        "Total": 31
+      },
+      "application": "Understanding the formula of the Aeon"
+    },
+    "inverted_tree": {
+      "discovery": "The Inverted Tree",
+      "insight": "Tree of Life can be read with Kether at the bottom",
+      "numerology": {
+        "Reversal": 1,
+        "New_Perspective": 1
+      },
+      "application": "Seeing divine descent into matter as ascent"
+    },
+    "achad_221": {
+      "discovery": "ACHAD = 13",
+      "insight": "Unity (Achad) equals 13, connecting to Ahavah (Love=13)",
+      "numerology": {
+        "Aleph": 1,
+        "Cheth": 8,
+        "Daleth": 4,
+        "Total": 13
+      },
+      "application": "Love is the law, love under will"
+    },
+    "aeon_of_maat": {
+      "discovery": "Aeon of Maat",
+      "insight": "Following Horus, the Aeon of Ma'at (Truth/Justice)",
+      "numerology": {
+        "Maat": 81,
+        "Manifestation": 1
+      },
+      "application": "Bringing balance and truth to manifestation"
+    }
+  },
+  "tarot_paths": {
+    "0": {
+      "name": "The Fool",
+      "hebrew": "Aleph (א)",
+      "path": [
+        1,
+        2
+      ],
+      "meaning": "The leap into the Abyss, trust in the universe",
+      "practice": "Daily trust exercises, leap before you look (consciously)"
+    },
+    "1": {
+      "name": "The Magus",
+      "hebrew": "Beth (ב)",
+      "path": [
+        1,
+        3
+      ],
+      "meaning": "Will manifesting through communication",
+      "practice": "Ritual work, invocation, speaking your will"
+    },
+    "2": {
+      "name": "The High Priestess",
+      "hebrew": "Gimel (ג)",
+      "path": [
+        1,
+        6
+      ],
+      "meaning": "The veil between conscious and unconscious",
+      "practice": "Meditation, scrying, dreamwork"
+    },
+    "3": {
+      "name": "The Empress",
+      "hebrew": "Daleth (ד)",
+      "path": [
+        2,
+        3
+      ],
+      "meaning": "Creative force of the divine feminine",
+      "practice": "Creative work, nurturing projects"
+    },
+    "4": {
+      "name": "The Emperor",
+      "hebrew": "Tzaddi (צ)",
+      "path": [
+        2,
+        6
+      ],
+      "meaning": "Structure serving the Will",
+      "practice": "Creating systems that serve freedom"
+    },
+    "5": {
+      "name": "The Hierophant",
+      "hebrew": "Vau (ו)",
+      "path": [
+        2,
+        4
+      ],
+      "meaning": "The nail connecting heaven and earth",
+      "practice": "Teaching, mentoring, transmitting wisdom"
+    },
+    "6": {
+      "name": "The Lovers",
+      "hebrew": "Zain (ז)",
+      "path": [
+        3,
+        6
+      ],
+      "meaning": "Union of opposites under True Will",
+      "practice": "Conscious commitment, yoking love to will"
+    },
+    "7": {
+      "name": "The Chariot",
+      "hebrew": "Cheth (ח)",
+      "path": [
+        3,
+        5
+      ],
+      "meaning": "Victory through disciplined direction",
+      "practice": "Martial practice in service of purpose"
+    },
+    "8": {
+      "name": "Adjustment",
+      "hebrew": "Lamed (ל)",
+      "path": [
+        5,
+        6
+      ],
+      "meaning": "Dynamic equilibrium, truth in action",
+      "practice": "Daily balance audits; correct course swiftly"
+    },
+    "9": {
+      "name": "The Hermit",
+      "hebrew": "Yod (י)",
+      "path": [
+        4,
+        6
+      ],
+      "meaning": "Interior light, the lamp of prudence",
+      "practice": "Periodic retreats, study, and silent work"
+    },
+    "10": {
+      "name": "Wheel of Fortune",
+      "hebrew": "Kaph (כ)",
+      "path": [
+        4,
+        7
+      ],
+      "meaning": "Cyclical destiny; ride the wheel without attachment",
+      "practice": "Observe cycles; time acts with the Will"
+    },
+    "11": {
+      "name": "Lust",
+      "hebrew": "Teth (ט)",
+      "path": [
+        4,
+        5
+      ],
+      "meaning": "Ecstasy as fuel for the Great Work",
+      "practice": "Harness passion; consecrate energy to purpose"
+    },
+    "12": {
+      "name": "The Hanged Man",
+      "hebrew": "Mem (מ)",
+      "path": [
+        5,
+        8
+      ],
+      "meaning": "Surrender of ego; inversion brings insight",
+      "practice": "Reversal meditations; surrender what blocks Will"
+    },
+    "13": {
+      "name": "Death",
+      "hebrew": "Nun (נ)",
+      "path": [
+        6,
+        7
+      ],
+      "meaning": "Radical transformation; compost to gold",
+      "practice": "Cut away the dead; ritual endings and renewals"
+    },
+    "14": {
+      "name": "Art",
+      "hebrew": "Samekh (ס)",
+      "path": [
+        6,
+        9
+      ],
+      "meaning": "Alchemical union; solve et coagula",
+      "practice": "Middle pillar; integrate opposites to synthesis"
+    },
+    "15": {
+      "name": "The Devil",
+      "hebrew": "Ayin (ע)",
+      "path": [
+        8,
+        6
+      ],
+      "meaning": "Form, fixation, and the power of definition",
+      "practice": "Name attachments and unbind; reclaim definition"
+    },
+    "16": {
+      "name": "The Tower",
+      "hebrew": "Peh (פ)",
+      "path": [
+        7,
+        8
+      ],
+      "meaning": "Liberation through sudden illumination",
+      "practice": "Initiate necessary collapse; rebuild on truth"
+    },
+    "17": {
+      "name": "The Star",
+      "hebrew": "Heh (ה)",
+      "path": [
+        7,
+        9
+      ],
+      "meaning": "Hope and silent guidance of the Night Sky",
+      "practice": "Orient by your Star; nightly sky-gazing practice"
+    },
+    "18": {
+      "name": "The Moon",
+      "hebrew": "Qoph (ק)",
+      "path": [
+        7,
+        10
+      ],
+      "meaning": "Initiation through the unknown and the astral",
+      "practice": "Track dreams; walk the path with measured steps"
+    },
+    "19": {
+      "name": "The Sun",
+      "hebrew": "Resh (ר)",
+      "path": [
+        8,
+        9
+      ],
+      "meaning": "Joyful revelation; the child triumphant",
+      "practice": "Daily solar adorations; radiate without scorching"
+    },
+    "20": {
+      "name": "The Aeon",
+      "hebrew": "Shin (ש)",
+      "path": [
+        8,
+        10
+      ],
+      "meaning": "New formula; the child as crowned and conquering",
+      "practice": "Proclaim the Word; anchor revelation in deeds"
+    },
+    "21": {
+      "name": "The Universe",
+      "hebrew": "Tau (ת)",
+      "path": [
+        9,
+        10
+      ],
+      "meaning": "Completion in manifestation; dance of Nuit",
+      "practice": "Consecrate work to the world; begin anew"
+    }
+  },
+  "oath_of_abyss": {
+    "text": "I, [Magical Name], a member of the Body of God, do hereby bind myself on behalf of the Whole Universe, that I will lead a life of strict commitment to the Great Work, devoting every thought, word, and deed to the attainment of the Knowledge and Conversation of my Holy Guardian Angel, and to the performance of the True Will.",
+    "requirements": [
+      "Annihilation of the ego-self",
+      "Surrender of all personal desires to the Will",
+      "Understanding of the Abyss as the gap between Ruach and Neshamah",
+      "Integration of all dualities",
+      "Acceptance of being devoured by Choronzon",
+      "Rebirth as a Master of the Temple (8=3)"
+    ],
+    "ordeals": {
+      "ordeal_of_water": "Dissolution of the ego in the waters of Binah",
+      "ordeal_of_choronzon": "Confrontation with the demon of dispersion",
+      "ordeal_of_silence": "The Great Silence of the Abyss",
+      "ordeal_of_truth": "Absolute honesty with the self and universe"
+    }
+  },
+  "philosophical_foundation": {
+    "thelema": "Do what thou wilt shall be the whole of the Law",
+    "love_law": "Love is the law, love under will",
+    "every_star": "Every man and every woman is a star",
+    "achad_unity": "ACHAD (Unity) = 13 = AHAVAH (Love)"
+  }
+}

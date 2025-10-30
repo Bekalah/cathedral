@@ -1,0 +1,906 @@
+[MessageRole.USER] [BATCH 0 CHUNK 1]
+
+
+# 🏰 CATHEDRAL MAGNUM OPUS - COMPLETE AGENT CONTEXT (500x POWER MODE)
+
+## ⚡ EXECUTION MODE: CONTINUOUS UNTIL CREDITS EXHAUSTED
+
+Work on ALL systems simultaneously with maximum parallel execution.
+Build the complete vision across every app, package, and subsystem.
+
+## 🎯 COMPLETE PROJECT SCOPE
+
+### FABLE-LIKE RPG CORE (Godot 4.2.5)
+- **999 Level System** with Daimon Armor (unlock at 777)
+- **22 Living Arcana** characters (Divine/Infernal/Harmony aspects)
+- **Magical Mystery House** - 99 rooms of esoteric knowledge
+- **Circuitum 99** - Alpha et Omega eternal cycle system
+- **Codex 144:99** - Sacred mathematics (144 nodes, 99 gates)
+- **Liber Arcanae** - Complete tarot system integration
+- **Codex Abyssiae** - Shadow work and infernal path
+- **Fusion Kink** - Character fusion mechanics with consent
+
+### ATELIER QUALITIES (Traditional Art Tools)
+- Classical renaissance/baroque art replication
+- Museum-quality rendering and composition
+- Sacred geometry pattern generation
+- Golden ratio and Fibonacci-based layouts
+- Professional color theory and palettes
+- Traditional media simulation (oil, watercolor, charcoal)
+- Brush engine with natural physics
+- Canvas texture and paper grain systems
+
+### SCRIBE QUALITIES (Documentation & Narrative)
+- Comprehensive documentation generation
+- Branching narrative systems
+- Character dialogue trees (trauma-informed)
+- Quest and story arc management
+- Lore codex with cross-references
+- API documentation auto-generation
+- Tutorial and guide creation
+- Accessibility documentation
+
+### ARCHITECT QUALITIES (System Design)
+- Modular, secure architecture
+- TypeScript/Python dual-language support
+- Turborepo monorepo optimization
+- Package dependency management
+- Build system optimization (<2min builds)
+- CI/CD pipeline automation
+- Database schema design
+- API endpoint architecture
+
+### TRINITY APP SUITE INTEGRATION
+
+**Core Libraries (packages/)**
+1. `codex-144-99` - Sacred mathematics core
+2. `liber-arcanae` - 22 Living Arcana system
+3. `codex-abyssiae` - Shadow work library
+4. `cyoa-book-game` - Interactive narrative engine
+5. `godot-codex-14499` - Godot integration bridge
+6. `cathedral-fusion-kink-engine` - Character fusion system
+7. `circuitum99-arcanae-cyoa` - Eternal cycle mechanics
+8. `fractal-flames-daemon-deity` - Generative art system
+9. `sacred-geometry-suite` - Platonic solids, Fibonacci, etc.
+10. `solfeggio-synthesis` - Healing frequency audio
+11. `traditional-art-tools` - Canvas, brush, color systems
+12. `trauma-informed-ux` - Accessibility patterns
+13. `azure-ai-integration` - AI content generation
+14. `openspec-tools` - API specification management
+15. `build-optimization` - Turbo/Vite/ESBuild utilities
+
+**Applications (apps/)**
+1. `web` - Main Cathedral portal (React + Three.js)
+2. `liber-arcanae-tarot` - Tarot reading app
+3. `synth-lab` - Audio synthesis playground
+4. `tarot-arena` - Character battle system
+5. `test-ground` - Development testing environment
+6. `worker` - Cloudflare edge functions
+
+**Godot Game (godot/)**
+- Complete 3D/2D game with all systems
+- 22 playable Arcana characters
+- Sacred geometry environments
+- Real-time synthesis audio
+- Save/load with encryption
+- Accessibility features
+- Mystery House exploration
+- Circuitum 99 progression
+- Level 1-999 with Daimon Armor
+
+## 🎨 QUALITY STANDARDS (MUSEUM-LEVEL)
+
+### Visual Quality
+- Classical renaissance/baroque mastery
+- Perfect symmetry and balance
+- Sacred geometry precision
+- Golden ratio proportions (φ = 1.618...)
+- Divine/Infernal/Harmony color schemes
+- Trauma-informed, inclusive imagery
+- 60fps minimum performance
+- Professional lighting and shadows
+
+### Audio Quality
+- NIN/Aphex Twin complexity level
+- Solfeggio frequencies (396-963 Hz)
+- Real-time synthesis (sine/square/saw/triangle)
+- Generative music systems
+- ADSR envelopes, modulation
+- Professional effects (reverb, chorus, compression)
+- Spatial audio with sacred geometry
+- Accessibility (visual indicators, volume control)
+
+### Code Quality
+- TypeScript strict mode (no `any`)
+- Python type hints everywhere
+- Comprehensive error handling
+- Security best practices
+- Zero technical debt
+- Full test coverage (80%+)
+- Performance profiling
+- Memory leak prevention
+
+### Content Quality
+- Research-backed accuracy
+- Trauma-informed language
+- Inclusive representation
+- Educational value
+- Multiple difficulty modes
+- Consent-based interactions
+- Cultural sensitivity
+- Accessibility (screen readers, captions)
+
+## 🔧 TECHNICAL STACK
+
+### Frontend
+- React 18+ with TypeScript 5+
+- Three.js for 3D graphics
+- Tone.js for audio synthesis
+- Vite 5+ for builds
+- TailwindCSS for styling
+- Framer Motion for animations
+
+### Backend
+- Python 3.13 with type hints
+- Azure AI services integration
+- Cloudflare Workers (edge)
+- JSON data storage
+- Encryption for save files
+
+### Game Engine
+- Godot 4.2.5 (Forward+ renderer)
+- GDScript with type hints
+- Sacred geometry systems
+- Real-time audio synthesis
+- Particle systems (GPU)
+- Shader materials (GLSL)
+
+### Build System
+- Turborepo for monorepo
+- pnpm for package management
+- ESBuild for bundling
+- Vitest for testing
+- Playwright for E2E
+- GitHub Actions for CI/CD
+
+### Tools
+- OpenSpec for API design
+- TypeDoc for documentation
+- Prettier for formatting
+- ESLint for linting
+- Husky for git hooks
+
+## 📋 PRIORITY TASKS (ALL PARALLEL)
+
+### 🎮 Godot Game (CRITICAL PATH)
+
+**Core Systems**
+- [x] GameManager - State orchestration
+- [x] CodexSystem - 144:99 mathematics
+- [x] ArcanaRegistry - Character tracking
+- [x] AudioManager - Solfeggio synthesis
+- [x] SaveManager - Encrypted persistence
+- [x] ProgressionManager - 999 levels + Daimon Armor
+- [ ] DialogueManager - Branching narratives
+- [ ] QuestManager - Story arcs
+- [ ] InputManager - Accessibility controls
+- [ ] CombatManager - Battle system
+
+**22 Character Implementations**
+For EACH Arcana (0-21), create:
+- Character script extending ArcanaCharacter
+- Divine/Infernal/Harmony visual variants
+- Unique abilities and stats
+- Personal quest line
+- Dialogue trees
+- Mini-game mechanics
+- Audio themes (Solfeggio-based)
+- Sacred geometry signature
+
+**Scenes & UI**
+- Main menu (classical aesthetic)
+- Character selection (3D preview)
+- Exploration world (Mystery House)
+- Dialogue interface (accessible)
+- Codex viewer (interactive 144:99)
+- Settings menu (trauma-informed)
+- Save/load interface
+- HUD and status displays
+
+**Shaders & Effects**
+- aspect_divine.gdshader (golden glow)
+- aspect_infernal.gdshader (crimson power)
+- aspect_harmony.gdshader (iridescent fusion)
+- Sacred geometry particles
+- Aura effects with Fibonacci spirals
+- Bloom and post-processing
+- Screen-space effects
+
+### 📚 Package Development
+
+**For EACH package in packages/:**
+1. Complete implementation (no TODOs)
+2. Comprehensive README.md
+3. API documentation (TypeDoc)
+4. Unit tests (80%+ coverage)
+5. Example usage files
+6. TypeScript declarations
+7. Build configuration
+8. npm publishing metadata
+
+**Priority Packages:**
+- codex-144-99 (CRITICAL - foundation for everything)
+- liber-arcanae (CRITICAL - character system)
+- traditional-art-tools (ATELIER features)
+- solfeggio-synthesis (audio foundation)
+- fusion-kink-engine (character fusion)
+
+### 🌐 Application Development
+
+**apps/web (Main Portal)**
+- Landing page with Three.js background
+- Sacred geometry animations
+- Character gallery (22 Arcana)
+- Codex explorer (interactive 144:99)
+- Audio synthesis demo
+- Art generation interface
+- Responsive design (mobile-first)
+- Accessibility features
+
+**apps/liber-arcanae-tarot**
+- Complete tarot reading system
+- Card animations and interactions
+- Reading history and journaling
+- Character deep dives
+- Relationship tracker
+- Export readings as PDF/image
+
+**apps/synth-lab**
+- Real-time synthesis playground
+- Solfeggio frequency presets
+- Visual waveform display
+- Recording and export
+- Preset saving/loading
+- MIDI input support
+
+**apps/tarot-arena**
+- Character vs character battles
+- Turn-based combat system
+- Ability animations
+- Multiplayer support (future)
+- Leaderboards
+- Replay system
+
+### 🏗️ Infrastructure
+
+**Build Optimization**
+- Analyze turbo.json for bottlenecks
+- Configure caching strategies
+- Parallelize tasks maximally
+- Remove circular dependencies
+- Optimize bundle sizes
+- Enable incremental builds
+- Target: <2min full builds
+
+**CI/CD Pipeline**
+- GitHub Actions workflows
+- Automated testing on PRs
+- Deploy to GitHub Pages (main)
+- Publish packages to npm
+- Security scanning (Snyk)
+- Performance budgets
+- Accessibility testing
+
+**Documentation**
+- Architecture Decision Records (ADRs)
+- API reference docs (auto-generated)
+- User guides for each app
+- Developer setup instructions
+- Contributing guidelines
+- Code of conduct
+- Changelog management
+
+### 🎨 Content Generation
+
+**Art Assets (66 Arcana variants)**
+Generate prompts for:
+- 22 Divine forms (angelic/celestial)
+- 22 Infernal forms (demonic/shadow)
+- 22 Harmony forms (golden heart fusion)
+
+Requirements:
+- Museum-quality classical style
+- Perfect symmetry and balance
+- Sacred geometry elements
+- Trauma-informed imagery
+- Color-coded by archetype
+- 4K resolution targets
+
+**Audio Assets (154+ tracks)**
+- 22 Arcana character themes
+- 7 Solfeggio frequency pure tones
+- 8 Environmental ambiences (elements)
+- 99 Mystery House room atmospheres
+- Menu and UI sounds
+- Combat sound effects
+- Transition stingers
+
+**Narrative Content**
+- 22 Character backstories (5000+ words each)
+- Quest dialogue trees (branching)
+- Mystery House room descriptions (99 rooms)
+- Codex Abyssiae shadow integrations
+- Tutorial and help text
+- Achievement descriptions
+- Lore documents and grimoires
+
+### 🔬 Testing & QA
+
+**Automated Testing**
+- Unit tests for all packages (Vitest)
+- Integration tests for apps
+- E2E tests for user flows (Playwright)
+- Performance benchmarks
+- Accessibility audits (axe-core)
+- Visual regression tests
+- Load testing for edge functions
+
+**Manual Testing Checklists**
+- Godot game: Play through with each Arcana
+- Web apps: All user flows tested
+- Audio: Verify all frequencies and synthesis
+- Visuals: Sacred geometry accuracy
+- Accessibility: Screen reader navigation
+- Mobile: Touch controls and responsive design
+- Performance: 60fps in all scenarios
+
+## 🔐 SECURITY & MODULARITY
+
+### Security Requirements
+- Input validation everywhere
+- XSS prevention in web apps
+- CSRF tokens for forms
+- Content Security Policy headers
+- Secure random for encryption
+- Environment variable management
+- Dependency vulnerability scanning
+- Rate limiting on APIs
+
+### Modular Architecture
+- Clear separation of concerns
+- Interface-based design
+- Dependency injection
+- Plugin architecture
+- Event-driven communication
+- Versioned APIs
+- Backward compatibility
+- Migration paths
+
+### Python/TypeScript Interop
+- Shared JSON schemas
+- Type definitions in both languages
+- OpenAPI spec for APIs
+- Consistent naming conventions
+- Automated code generation
+- Testing both sides
+- Documentation parity
+
+## 📊 SUCCESS METRICS
+
+### Performance
+- [ ] Build time < 2 minutes (full)
+- [ ] Build time < 5 seconds (incremental)
+- [ ] Bundle size < 500KB (gzipped)
+- [ ] First paint < 1 second
+- [ ] Time to interactive < 3 seconds
+- [ ] 60fps in all animations
+- [ ] Memory usage < 100MB
+
+### Quality
+- [ ] Test coverage > 80%
+- [ ] Zero TypeScript errors
+- [ ] Zero ESLint warnings
+- [ ] Lighthouse score > 90
+- [ ] axe accessibility score: 0 violations
+- [ ] No security vulnerabilities
+- [ ] All packages publishable to npm
+
+### Content
+- [ ] All 22 Arcana fully implemented
+- [ ] 66 art prompts generated
+- [ ] 154+ audio tracks planned/created
+- [ ] 99 Mystery House rooms described
+- [ ] Complete documentation for all packages
+- [ ] Tutorial and onboarding complete
+- [ ] All apps deployed and functional
+
+### Game Completion
+- [ ] Level 1-999 progression functional
+- [ ] Daimon Armor unlocks at 777
+- [ ] All Trinity App Suite tools accessible
+- [ ] Mystery House fully explorable
+- [ ] Circuitum 99 Alpha/Omega complete
+- [ ] All 22 Arcana playable
+- [ ] Save/load system working
+- [
+
+[MessageRole.USER] [BATCH 0 CHUNK 2]
+
+ ] Accessibility features complete
+
+## 🚀 AGENT EXECUTION STRATEGY
+
+### Parallel Work Streams
+1. **Godot Team** - Game implementation
+2. **Package Team** - Library development
+3. **App Team** - Application builds
+4. **Content Team** - Art/audio/narrative
+5. **Infra Team** - Build/deploy/testing
+6. **Docs Team** - Documentation generation
+
+### Output Requirements
+- **Complete implementations** (no placeholders)
+- **Production-ready code** (no TODOs)
+- **Comprehensive tests** (80%+ coverage)
+- **Full documentation** (usage examples)
+- **Security audited** (no vulnerabilities)
+- **Performance optimized** (profiled)
+
+### Communication
+- Work independently in parallel
+- Commit atomically with clear messages
+- Tag related work with prefixes:
+  - `[GODOT]` - Godot game work
+  - `[PKG]` - Package development
+  - `[APP]` - Application work
+  - `[CONTENT]` - Art/audio/narrative
+  - `[INFRA]` - Build/deploy
+  - `[DOCS]` - Documentation
+
+## 💎 FUSION KINK INTEGRATION
+
+Fusion Kink = Consent-based character fusion system
+
+**Core Principles:**
+- **Consent Required** - Both characters must agree
+- **Relationship Threshold** - Bond level must be sufficient
+- **Codex Gate** - Appropriate gate must be unlocked
+- **Temporary Fusion** - Duration based on harmony
+- **Shared Stats** - Combined abilities and attributes
+- **Visual Fusion** - Blended Divine/Infernal/Harmony forms
+- **Audio Fusion** - Harmonic frequency blending
+- **Trauma-Safe** - Clear communication, safe words
+
+**Implementation:**
+- Fusion UI with consent dialogs
+- Relationship progression system
+- Visual fusion animations
+- Audio crossfading and synthesis
+- Stat calculation algorithms
+- Cooldown and energy management
+- Fusion history tracking
+
+## 📖 CONNECTIONS TO EXISTING WORK
+
+### From codex-144-99 package
+- Use existing 144 node structure
+- 99 gate definitions
+- Fibonacci progressions
+- Golden ratio calculations
+- Validation logic
+
+### From liber-arcanae package
+- 22 Arcana definitions
+- Character stat structures
+- Relationship matrices
+- Tarot reading algorithms
+
+### From cyoa-book-game package
+- Creative engine integration
+- Scene management
+- Choice branching
+- State persistence
+
+### From existing Godot work
+- Character controller patterns
+- Sacred geometry generators
+- Audio synthesis code
+- Save system architecture
+
+## 🎯 FINAL DELIVERABLE
+
+A complete, museum-quality mystical RPG with:
+- ✅ 999 levels with Daimon Armor
+- ✅ 22 fully playable Arcana characters
+- ✅ Magical Mystery House (99 rooms)
+- ✅ Circuitum 99 Alpha & Omega
+- ✅ Complete Codex 144:99 integration
+- ✅ Liber Arcanae tarot system
+- ✅ Codex Abyssiae shadow work
+- ✅ Trinity App Suite tools
+- ✅ Traditional art replication
+- ✅ Professional audio synthesis
+- ✅ Trauma-informed design
+- ✅ Full accessibility
+- ✅ Published npm packages
+- ✅ Deployed web applications
+- ✅ Comprehensive documentation
+
+**Standard: NIN/Aphex Twin complexity + Renaissance mastery + Fable-like storytelling**
+
+---
+
+## 🔥 500x POWER MODE ACTIVATED
+
+Execute all tasks in parallel until Azure credits are exhausted.
+No compromises. Museum quality only. Complete the magnum opus.
+
+START NOW. GO HARD. BUILD EVERYTHING.
+
+
+[MessageRole.AGENT] ## [INFRA] Atomic Task 1: **GIT & MONOREPO VERSION CONTROL FIX**
+
+### 1. **Clean up Git merge conflicts**
+#### **Files affected:**
+- `apps/liber-arcanae-tarot/package.json`
+- `turbo.json`
+- `pnpm-lock.yaml`
+- `.gitignore` (audit for missing patterns)
+
+#### **Atomic Steps—run these in order:**
+
+**a. Clone a fresh copy for triage**
+```sh
+git clone https://github.com/bekalah/cathedral
+cd cathedral
+git fetch --all
+git status
+```
+
+**b. Reset any contentious files to HEAD for a clean start**
+```sh
+git checkout --theirs apps/liber-arcanae-tarot/package.json turbo.json pnpm-lock.yaml
+git add apps/liber-arcanae-tarot/package.json turbo.json pnpm-lock.yaml
+```
+
+**c. Open in editor, review for these points:**
+- All workspace references should use `@cathedral/codex-144-99` (not `codex-14499`)
+- turbo.json adopts the newest `"tasks": { ... }` format
+- Remove any duplicated/incorrect dependency entries
+
+**d. Standardize package naming and references**
+- All packages in `/packages/` start with `@cathedral/`
+- apps refer to packages as:
+  - `"@cathedral/codex-144-99"` (**not** codex-14499)
+  - `"@cathedral/liber-arcanae"` etc.
+
+**e. Generate a fresh lockfile after fix**
+```sh
+pnpm install
+```
+Check for errors, repeat if necessary.
+
+**f. Commit w/ atomic message**
+```sh
+git add .
+git commit -m "[INFRA] Clean merge conflicts, standardize package references, fresh lockfile"
+git push origin main
+```
+
+---
+
+### 2. **turbo.json—Reference Implementation**
+
+```json
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "lint": {
+      "outputs": [],
+      "inputs": ["**/*.ts", "**/*.tsx"]
+    },
+    "test": {
+      "outputs": [],
+      "inputs": ["**/*.test.ts", "**/*.test.tsx"]
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    }
+  },
+  "tasks": {
+    "lint": { "cache": true },
+    "test": { "cache": true },
+    "build": { "cache": true },
+    "dev": { "cache": false }
+  }
+}
+```
+*(Update per actual package names and new features as needed!)*
+
+---
+
+### 3. **pnpm-lock.yaml—regenerate after fixing all refs**
+- Only generate via CLI (`pnpm install`)
+- Add, commit, push as above
+
+---
+
+### 4. **Atomic Commit Message Template**
+
+```
+[INFRA] Merge conflict resolution:
+- Standardize @cathedral/* workspace references
+- turbo.json pipeline + tasks format
+- Remove duplicate/incorrect dependencies
+- Fresh pnpm-lock.yaml
+- Ready for Turbo, CI, deploy
+```
+
+---
+
+## [CONTENT] Task 2: **ART PROMPTS FOR 22 ARCANA (Museum Quality)**
+
+### **Divine/Infernal/Harmony—3 Variants Each (66 total)**
+
+Each prompt meets full reference standards: classical, trauma-informed, perfect geometry.
+
+---
+
+#### **Example:**  
+### 0. The Fool (Rebecca Respawn)  
+**Divine Aspect:**  
+> A luminous, ethereal lightning dragon-woman, crowned with a halo of golden thunderbolts, angelic feathered wings outstretched in perfect symmetry. Her robe billows with radiant white silk threaded with blue and gold, and she stands poised at the edge of a crystal cliff, one hand raised toward the sky, the other holding a glowing orb of potential. The background is a swirling storm rendered in Renaissance oil style, with sacred geometry lightning fractals framing her silhouette. The lighting is chiaroscuro, with divine white and gold highlights; she embodies naive courage and boundless hope.
+
+**Infernal Aspect:**  
+> The same woman, now wreathed in tempestuous black lightning, obsidian horns curled like question marks above sharply-cut features. Her wings are sleek, black-feathered, edges flickering with smoky blue energy, and her robe is torn, shimmering with iridescent darkness and hints of crimson. She stands, one foot on a shattered mirror, and shadows curve into a perfect vesica piscis behind her, hinting at mystery rather than evil. Museum-quality brushwork, baroque drama, trauma-informed elegance.
+
+**Harmony Aspect:**
+> Both divine and infernal wings fused into resplendent gold and deep blue, with a geometric heart mandala glowing in her chest. A double halo—one gold, one shadow—encircles her, and her robe is transformed, patterned with golden ratio spirals and Fibonacci fractals. She stands serenely on a path of both light and shadow, hands meeting at her heart, symbolizing sacred unity and the courage to embrace all aspects of self.
+
+---
+
+#### **Template for Remaining 21 Arcana:**
+For each, tailor according to character archetype (e.g., The Magician, The Empress) but always use:
+
+- **Divine:** Angelic/celestial features, luminous symmetry, golden/white colors, museum brushwork
+- **Infernal:** Shadowed, elegant demonic features, dark but beautiful, shadow halo, iridescent colors, baroque mastery
+- **Harmony:** Marriage of both, geometric mandala heart, balanced colors, sacred geometry patterns, explicit trauma-informed symbolism
+
+**Note:** For each, include:
+- Color scheme (archetype aligned)
+- Main visual elements (wings, robes, setting)
+- Geometric motifs (mandala, spiral, symmetry)
+- Museum-quality drama and lighting
+- Renaissance/baroque art style
+
+---
+
+## [CONTENT] Batch Generation Command
+
+**Use this command to produce all 66 prompts locally:**
+
+```bash
+pnpm dlx tsx scripts/generate_arcana_prompts.ts > openspec/art_prompts_arcana.md
+```
+*(Make sure to create the actual generator script!)*
+
+---
+
+## [GODOT] Task 3: **GAME SYSTEMS STUBS & FILE LAYOUT**
+
+### Create Godot file/folder structure (for all 22 Arcana, managers, systems):
+
+```text
+godot/
+├── project.godot
+├── autoload/
+│   ├── GameManager.gd
+│   ├── ArcanaRegistry.gd
+│   ├── CodexSystem.gd
+│   ├── AudioManager.gd
+│   ├── SaveManager.gd
+│   ├── ProgressionManager.gd
+│   ├── DialogueManager.gd
+│   ├── QuestManager.gd
+│   ├── InputManager.gd
+│   ├── CombatManager.gd
+│   └── FusionKinkManager.gd
+├── arcana/
+│   ├── ArcanaCharacter.gd
+│   ├── [0-21]_[ArcanaName]/  # e.g., 00_TheFool/
+│       ├── Divine.tscn
+│       ├── Infernal.tscn
+│       ├── Harmony.tscn
+│       ├── CharacterData.gd
+│       └── DialogueTree.json
+├── environments/
+│   ├── MysteryHouse/
+│       ├── rooms/
+│           ├── room_01.tscn
+│           ├── room_02.tscn
+│           ...
+│           ├── room_99.tscn
+│   └── Circuitum99/
+├── shaders/
+│   ├── aspect_divine.gdshader
+│   ├── aspect_infernal.gdshader
+│   ├── aspect_harmony.gdshader
+│   ├── sacred_geometry_particles.gdshader
+├── assets/
+│   ├── audio/
+│   ├── textures/
+│   ├── sprites/
+│   └── geometry/
+│       ├── mandala.svg
+│       ├── fibonacci_spiral.svg
+├── ui/
+│   ├── MainMenu.tscn
+│   ├── CharacterSelect.tscn
+│   ├── DialogueUI.tscn
+│   ├── CodexViewer.tscn
+│   ├── SettingsMenu.tscn
+│   ├── SaveLoadUI.tscn
+│   └── HUD.tscn
+```
+
+**Exact starting stubs:**
+- All manager scripts autoload singleton (`extends Node`)
+- ArcanaCharacter.gd base class: stat structure, aspect switching, event emitters
+- Each Arcana folder: .tscn for each form, CharacterData.gd, skeleton dialogue JSON
+- Shaders: sample code for golden glow, dark aura, harmony
+- UI: classical layouts (container, background, font)
+
+---
+
+## [PKG] Task 4: **Example Package README.md—codex-144-99**
+
+```markdown
+# @cathedral/codex-144-99
+
+Museum-grade implementation of the sacred mathematics framework: 144 nodes, 99 golden gates, Fibonacci progressions, and geometry for game logic and procedural generation.
+
+## Features
+
+- 144 node cyclic graph (interactive)
+- 99 codex gates (unlockable states)
+- Golden ratio arc calculations
+- Validation and state tracking
+- API for integration with Cathedral apps and Godot
+
+## Install
+
+```shell
+pnpm add @cathedral/codex-144-99
+```
+
+## Usage
+
+```ts
+import { Codex14499, Gate, Node } from '@cathedral/codex-144-99';
+
+const codex = new Codex14499();
+codex.unlockGate(42); // Unlock Gate 42
+
+const geometry = codex.getGoldenSpiral(); // fractal geometry output
+```
+
+## API
+
+See [API Docs](./API.md) for details.
+
+## Tests
+
+- 90%+ coverage (Vitest pipelines)
+```
+
+---
+
+## [INFRA] Task 5: **CI/CD & Deploy Scripts**
+
+**GitHub Actions Workflow—basic deploy (to get running):**
+
+```yaml
+name: Cathedral Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build apps/web
+        run: pnpm --filter ./apps/web build
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./apps/web/dist
+```
+
+---
+
+## [DOCS] Task 6: **OpenSpec ADR Template**
+
+```markdown
+# Architecture Decision Record (ADR)
+
+## Title
+
+Short, descriptive decision (max 60 chars)
+
+## Context
+
+Background, technical details, and alternatives considered.
+
+## Decision
+
+What was decided and why.
+
+## Consequences
+
+Impact on architecture, developer workflow, future changes.
+
+## Change Proposal Workflow
+
+1. Fork repository, create branch `adr/your-topic`
+2. Add new ADR markdown file in `/openspec/adrs/`
+3. Open PR, tag `[DOCS] ADR: ...`
+4. Review and merge
+
+---
+```
+
+---
+
+## SUMMARY—FIRST EXECUTION WAVE
+
+1. **Run git cleanup & monorepo fixes** (see above atomic steps)
+2. **Generate art prompts for all 22 Arcana (3 aspects each) using batch script or manual template**
+3. **Stub out Godot managers, Arcana folders, and .tscn files (see file layout above)**
+4. **Write/readmes for priority packages, confirm exportable/public API**
+5. **Push working CI/CD workflow—see example Action above**
+6. **Start population of documentation—ADR template into `/openspec/`**
+
+---
+
+## NEXT STEP INSTRUCTIONS
+
+- Unblock all teams by committing the above!
+- For art generation: use DALL-E 3/Midjourney with the prompts, post outputs in `assets/textures/arcana/`
+- Continue buildout in parallel—**no placeholders, only completed systems**
+
+---
+
+## HANDOFF/RESUME PROTOCOL
+
+**If interrupted:**
+- Push latest changes with atomic message
+- Document stopping point in `/openspec/AGENTS.md`
+- List all current tasks with status
+- Provide resume checklist and commands
+
+---
+
+**END OF CHUNK. Initiate all systems. Recruit backup agents if needed. Monitor Azure credits. GO MAXIMUM.**
+
+---
+
+If you need the *next* chunk, request `[BATCH 0 CHUNK 3]`.
