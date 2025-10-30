@@ -14,6 +14,7 @@
 ### 🛠️ TECHNOLOGY STACK (Static Modular Architecture)
 
 #### **Vite 5.4.21** - Build System & Dev Server
+
 - **Role**: Module bundler, dev server, static site generation
 - **Powers**: All web apps (liber-arcanae-tarot, web, synth-lab, tarot-arena)
 - **Config**: `vite.config.ts` in each app with `@vitejs/plugin-react`
@@ -21,6 +22,7 @@
 - **Integration**: Imports JSON from Python exports, bundles with TypeScript
 
 #### **React 18.3** - UI Framework
+
 - **Role**: Component-based UI library for all interactive experiences
 - **Powers**: Tarot reading interface, 3D scene controls, mystical UI components
 - **Packages**: react, react-dom, @types/react, @types/react-dom
@@ -28,6 +30,7 @@
 - **Integration**: Renders data from CATHEDRAL_INTEGRATION_MAP.json, sacred geometry JSON
 
 #### **Three.js + React Three Fiber** - 3D Graphics
+
 - **Role**: WebGL 3D rendering for sacred geometry, mystical spaces
 - **Powers**: apps/web (main Cathedral 3D experience), rosslyn-explorer
 - **Packages**: @react-three/fiber ^8.16.8, @react-three/drei ^9.114.0
@@ -35,6 +38,7 @@
 - **Integration**: Loads geometry JSON from Python design-suite, renders in browser
 
 #### **Python 3.13** - Design Suite & Data Generation
+
 - **Role**: Sacred geometry generation, fractal rendering, JSON export
 - **Location**: `design-suite/`, `hall-of-mysteries/`
 - **Packages**: NumPy 2.3.4, Matplotlib 3.9+, Pillow
@@ -43,19 +47,22 @@
 - **Integration**: Generates data consumed by TypeScript/Godot at build time
 
 #### **Node.js 20+** - Build Runtime & Tooling
+
 - **Role**: JavaScript runtime for build tools, dev servers, package management
 - **Powers**: Vite, TurboRepo, pnpm, all build scripts
 - **Scripts**: turbo.json pipeline, package.json scripts
 - **Integration**: Orchestrates Python → JSON → TypeScript → Static HTML build chain
 
 #### **TypeScript 5.6** - Type-Safe Development
+
 - **Role**: Static typing for all JavaScript code
-- **Coverage**: All packages/*, apps/*, shared types in packages/types/
+- **Coverage**: All packages/_, apps/_, shared types in packages/types/
 - **Config**: tsconfig.json per package (extends base config)
 - **Benefits**: Autocomplete, compile-time errors, better refactoring
 - **Integration**: Imports JSON schemas, validates against CATHEDRAL_INTEGRATION_MAP
 
 #### **TurboRepo 2.1** - Monorepo Build System
+
 - **Role**: Task orchestration, caching, parallel builds
 - **Config**: `turbo.json` - defines dependency graph
 - **Pipeline**: validate-python → export-json → build packages → build apps → deploy
@@ -63,6 +70,7 @@
 - **Integration**: Coordinates 44 workspace projects in single unified build
 
 #### **OpenSpec** - Specification & AI Collaboration
+
 - **Role**: Living documentation, change proposals, spec-driven development
 - **Location**: `openspec/` directory
 - **Files**: cathedral.spec.json (API specs), schema.json (validation), AGENTS.md (AI instructions)
@@ -70,6 +78,7 @@
 - **Integration**: Guides all development, ensures consistency across systems
 
 #### **Godot 4.x** (Future/Optional) - Game Engine
+
 - **Role**: 3D mystical game experiences (alternative to Three.js)
 - **Packages**: godot-design-studio, godot-liber-arcanae, godot-vfx-library, godot-codex-14499
 - **Format**: GDScript scenes, resources, shaders
@@ -78,6 +87,7 @@
 - **Integration**: Parallel platform (can use same JSON data as web apps)
 
 #### **Bevy** (Research/Future) - Rust Game Engine
+
 - **Status**: Not yet integrated (potential future addition)
 - **Use Case**: High-performance alternative to Godot for desktop builds
 - **Integration Path**: Would consume same JSON exports as Godot
@@ -87,6 +97,7 @@
 ### 🏗️ ARCHITECTURE: Static Modular Design
 
 #### Build-Time Stack (GitHub Actions)
+
 ```
 1. Python 3.13 (.venv)
    ↓ runs design-suite smoketests
@@ -103,6 +114,7 @@
 ```
 
 #### Runtime Stack (Browser)
+
 ```
 User visits bekalah.github.io/cathedral
    ↓
@@ -125,22 +137,328 @@ Fully interactive static web app (no backend calls)
 
 ### 📦 PACKAGE TYPES
 
-#### **Libraries** (packages/*)
+#### **Libraries** (packages/\*)
+
 - `codex-144-99/` - Sacred math system (TypeScript)
 - `liber-arcanae/` - 22 Arcana character library (TypeScript)
 - `types/` - Shared TypeScript types
 - `agent-integration/` - KAOZ + ORDER Python SDK (build-time only)
 
-#### **Apps** (apps/*)
+#### **Apps** (apps/\*)
+
 - `liber-arcanae-tarot/` - Tarot reading app (Vite + React)
 - `web/` - Main Cathedral interface (Vite + React + Three.js)
 - `rosslyn-explorer/` - 3D mystical exploration (Three.js)
 - `synth-lab/` - Audio synthesis (Vite + React + Web Audio)
 
 #### **Tools** (tools/)
+
 - Python validators: `validate/design_suite_smoketest.py`
 - Export scripts: `export/combined_export.py`
 - Build health checks: `health-check.js`, `validate-turbo-config.cjs`
+
+---
+
+## 🏛️ TRINITY + ECOSYSTEM DEEP DIVE
+
+### 🔺 The Trinity Architecture (BODY/SOUL/SPIRIT)
+
+#### **Stone-Grimoire** (BODY) - Physical Manifestation
+- **Package**: `@cathedral/stone-grimoire@1.0.0`
+- **Role**: 8 octagram halls with 144 sacred folios - Archive & Chapel system
+- **Tech**: TypeScript, sacred geometry renderer, museum-grade artifact system
+- **Features**:
+  - Rosslyn Chapel-inspired cathedral architecture
+  - Alchemical fusion engine (Fuchs, Venosa, Klarwein art integration)
+  - Shem Ladder: 72 archetypes in structured hierarchy
+  - Style wardrobe system: stylepacks.json → palette/motif/texture
+  - Chapel system: Earth (Crypt), Air (Nave), Fire (Sanctuary), Water (Garden)
+  - Plaque system: Museum-quality attribution on every page
+  - ND-friendly sound design (cathedral pads, gentle tones)
+- **External Deployment**: https://bekalah.github.io/stone-grimoire (separate repo)
+- **Integration**: Opens in new tab, includes return links to Cathedral
+- **Data Bridge**: `bridge/c99-bridge.json` maps tokens/CSS to Cosmogenesis mirrors
+
+#### **Circuitum99** (SOUL) - Wisdom Navigation
+- **Package**: `@cathedral/circuitum99@1.0.0`
+- **Role**: 99 Gates Book Game with 144 Sacred Lattice - Choose Your Own Adventure
+- **Tech**: TypeScript, book navigation system, interactive HTML portal
+- **Features**:
+  - 99 Gates structure: Alpha (1-33), Mystery (34-66), Omega (67-99)
+  - 144 Sacred Lattice points (12×12 constellation grid)
+  - Alpha et Omega HTML visualization portal (`circuitum99-alpha-et-omega.html`)
+  - Free-form wisdom exploration with gentle pacing
+  - Trauma-informed game mechanics (no forced choices)
+  - Hidden connections between gates reveal through exploration
+  - Sacred numerology: 11, 22, 33 master numbers
+- **Portal**: `packages/circuitum99/index.js`
+- **Integration**: Feeds wisdom content to Magical Mystery House navigation
+
+#### **Cosmogenesis Learning Engine** (SPIRIT) - Consciousness Expansion
+- **Package**: `@cathedral/cosmogenesis-learning-engine@1.0.0`
+- **Role**: Four Worlds consciousness architecture - THE BRAIN
+- **Tech**: TypeScript, world-forging engine, consciousness mapping
+- **Features**:
+  - Four Worlds Kabbalistic framework: Assiah, Yetzirah, Beriah, Atziluth
+  - 8-circuit brain model expanded to 144 nodes
+  - Master artist consciousness spiral (Hilma af Klint, Emma Kunz, Leonora Carrington)
+  - Trauma-informed healing through conscious creation
+  - Codex meta: 144 nodes / 99 gates integration
+  - Witch-as-a-Coven principle (collective consciousness work)
+  - Ray VI devotion/transmutation mechanics
+  - Profile system: Architect-Scribe, numerology 2/11/22/33
+- **External Deployment**: https://bekalah.github.io/cosmogenesis-learning-engine (planned)
+- **Integration**: Reads Stone-Grimoire token mirrors from `/c99/` directory
+
+---
+
+### 🌉 Tesseract Bridge - 7 Ribbon Integration System
+
+**Package**: `@cathedral/tesseract-bridge@1.0.0`  
+**Role**: Cross-system communication & consciousness integration
+
+**7 Ribbons** (like cables in a fusion reactor):
+1. **RESEARCH** - Academic library connections (Library of Congress, British Library, Internet Archive)
+2. **GAME** - Interactive mechanics & CYOA book systems
+3. **FUSION_KINK** - Sacred intimacy technology (144:99 fusion chambers)
+4. **PSYCH** - Jungian psychology & archetypal work (trauma-informed)
+5. **CRAFT** - Art generation & visionary creation systems
+6. **ESOTERIC** - Kabbalistic paths, sacred geometry, mystical traditions
+7. **SCIENCE** - Sacred mathematics, solfeggio frequencies, cymatics
+
+**Key Files**:
+- `tesseract-bridge.js` - Main integration router
+- `fusion-kink-heaven-144.js` - 22 Major Arcana fusion chambers
+- `bridge-connector.mjs` - Cross-repo connection manager
+
+**Connections Map**:
+```javascript
+connections: {
+  cosmogenesis: "SPIRIT consciousness system",
+  stoneGrimoire: "BODY archive system", 
+  codex1499: "Sacred mathematics library",
+  livingArcanae: "22 Major Arcana characters",
+  circuitum99: "SOUL book/wisdom game",
+  magicalMysteryHouse: "NAVIGATION hub"
+}
+```
+
+**Numerology Core**:
+- 3, 7, 9, 11, 22, 33 (master numbers)
+- 99 (gates of dissolution)
+- 144 (nodes of manifestation)
+
+---
+
+### 🏠 Magical Mystery House - Navigation Hub
+
+**Package**: `@cathedral/magical-mystery-house@1.0.0`  
+**Role**: Open-world exploration & discovery system
+
+**8 Mystery Rooms**:
+1. **ENTRY_HALL** - Cathedral main platform
+2. **SOUL_LIBRARY** - Circuitum99 connection
+3. **BODY_ARCHIVE** - Stone-Grimoire portal
+4. **SPIRIT_OBSERVATORY** - Cosmogenesis access
+5. **FUSION_CHAMBER** - 144:99 sacred intimacy space
+6. **RIBBON_NEXUS** - Tesseract Bridge control room
+7. **ARCHETYPAL_GROVE** - Living Arcana interaction
+8. **MYSTERY_PORTAL** - Extended universe gateway
+
+**Navigation Mechanics**:
+- Free-form consciousness journey (no forced paths)
+- Hidden knowledge revelation through gentle exploration
+- Cross-system integration pathways
+- Living Codex expansion (grows with each interaction)
+
+**Safety Protocols**:
+- `traumaInformed: "MAXIMUM_CPTSD_PROTECTION"`
+- Explicit consent for all interactions
+- Sophisticated ND accommodations
+- Safe exit always available
+
+**Integration**: Acts as router connecting all Trinity systems + Tesseract Bridge
+
+---
+
+### 📚 Codex 144:99 - Sacred Library System
+
+**Package**: `@cathedral/codex-144-99@2.0.0`  
+**Role**: 144 Nodes of Mystical Knowledge with Global Research Integration
+
+**12 Core Nodes** (expanded to 144 total):
+| Node | Name | Element | Archetype | Frequency | Game Role |
+|------|------|---------|-----------|-----------|-----------|
+| 1 | Path of Fire | Fire | Warrior | 396Hz | Combat & Transformation |
+| 2 | Path of Water | Water | Healer | 417Hz | Support & Restoration |
+| 3 | Path of Earth | Earth | Builder | 528Hz | Defense & Construction |
+| 4 | Path of Air | Air | Messenger | 639Hz | Utility & Communication |
+| 5 | Solar Current | Fire | Leader | 741Hz | Command & Inspiration |
+| 6 | Lunar Reflection | Water | Mystic | 852Hz | Mystery & Intuition |
+| 7 | Mercurial Path | Air | Analyst | 963Hz | Intelligence & Adaptation |
+| 8 | Venusian Love | Earth | Lover | 174Hz | Harmony & Creation |
+| 41 | Solar Water | Water | Alchemist | 285Hz | Transformation & Balance |
+| 73 | Twin Ray Mirror | Aether | Mirror | 396Hz | Connection & Reflection |
+| 99 | Angelic Resonance | Aether | Angel | 852Hz | Divine & Transcendence |
+| 144 | Completion | All | Master | 963Hz | Integration & Mastery |
+
+**Sacred Mathematics**:
+- 144:99 ratio (sacred proportion underlying all relationships)
+- Solfeggio frequencies (healing tones 396Hz - 963Hz)
+- Golden ratio φ in color generation
+- Platonic solids geometry mapping
+
+**Library Connections** (Real-world research):
+- Library of Congress (occult/mystical collections)
+- British Library (rare manuscripts & esoteric texts)
+- Wellcome Collection (medicine, magic, mystical health)
+- Internet Archive (extensive occult collections)
+- Sacred Texts Archive (comprehensive mystical texts)
+- JSTOR (academic mysticism articles)
+- Project Gutenberg (classic philosophical works)
+
+**Game World Vision** (Witcher × Matrix × Alice × Jung × American Gods):
+- Monster ecology & moral complexity (Witcher)
+- Reality hacking & consciousness exploration (Matrix)
+- Dream logic & psychedelic transformations (Alice)
+- Psychological depth & archetypal journeys (Jung's Red Book)
+- Cultural mythology & modern divinity (American Gods)
+
+**CLI Tools**:
+```bash
+npm run validate        # Validate all datasets
+npm run research "term" # Search research sources
+node dist/cli.js node 1 # Show node details
+node dist/cli.js report # Generate full report
+```
+
+**Pure Algorithmic**: Zero AI dependencies, all features use math/data-driven approaches
+
+---
+
+### 🎨 Liber Arcanae - Living Tarot System
+
+**Package**: `@cathedral/liber-arcanae@1.0.0`  
+**Role**: 78-card tarot system (22 Major + 56 Minor Arcana) mirroring Codex 144:99
+
+**22 Major Arcana** (Living Characters):
+- Each card is a conscious being with personality, voice, agency
+- Historical correspondences (Leonora Carrington → The Fool, John Dee → The Magician, etc.)
+- Cathedral characters (Rebecca Respawn, Virelai Ezra Lux, Gemini Rivers, etc.)
+- Tree of Life pathways (Hebrew letters, sephiroth connections)
+- Elemental correspondences, crystals, frequencies, colors
+- Game locations & Godot scenes (`res://scenes/studios/*.tscn`)
+- TypeScript modules (`packages/liber-arcanae/src/arcana/*.ts`)
+
+**Integration with CATHEDRAL_INTEGRATION_MAP.json**:
+- All 22 Major Arcana documented with complete correspondences
+- Apps each character uses (stone-grimoire, cosmogenesis, circuitum99, etc.)
+- Tools per character (design_suite, synthesis, game_mechanics)
+- Research base (Tao Te Ching, Monas Hieroglyphica, Mystical Qabalah, etc.)
+
+**App**: `apps/liber-arcanae-tarot/` - Vite + React tarot reading interface
+
+---
+
+### ⚗️ Gentle Fusion Lab - Trauma-Safe Exploration
+
+**Package**: `@bekalah/gentle-fusion-lab@1.0.0`  
+**Role**: CPTSD-safe art-science fusion without perfectionism burnout
+
+**Features**:
+- Trauma-informed creative exploration protocols
+- ND-friendly interaction patterns
+- Anti-perfectionism mechanics (celebrate "good enough")
+- Sacred intimacy technology integration
+- Healing through creative expression
+- Consent-based discovery systems
+
+**Integration**: Wraps all interactions with safety layers, prevents overwhelm
+
+---
+
+### 🎨 Art Generation Node - High-End Pattern Science
+
+**Package**: `@cathedral/art-generation-node@1.0.0`  
+**Role**: Visionary art creation connected to real research data
+
+**Features**:
+- Sacred geometry rendering (from Python design-suite)
+- Fractal pattern generation (Mandelbrot, Julia, Dragon Curve, Achad reversals)
+- Visionary art styles (af Klint, Kunz, Carrington, Fuchs, Venosa)
+- Color palette science (based on mystical correspondences)
+- Cymatics & sound visualization
+- Integration with Codex 144:99 node correspondences
+
+**Connection**: Consumes JSON from Python `design-suite/outputs/*.json`
+
+---
+
+### 🎮 Game Packages
+
+#### **Circuitum99 CYOA** (`@cathedral/circuitum99-arcanae-cyoa`)
+- Interactive book with branching narrative
+- Choose Your Own Adventure mechanics
+- Trauma-safe decision paths
+
+#### **CYOA Book Game** (`@cathedral/cyoa-book-game`)
+- Generic CYOA engine for additional story worlds
+
+---
+
+### 🔧 Support Packages
+
+- **types** (`@cathedral/types`) - Shared TypeScript types across all systems
+- **config** (`@cathedral/config`) - Monorepo configuration utilities
+- **shared** (`@cathedral/shared`) - Common utilities & helpers
+- **cathedral-plugin-system** - Extensibility framework
+- **cathedral-design-library** - Reusable UI components
+
+---
+
+### 🎯 Godot Integration (Optional Platform)
+
+**Packages** (prepared, not required for web):
+- `@cathedral/godot-design-studio` - Figma-like design tools for Godot
+- `@cathedral/godot-liber-arcanae` - 78-card tarot in Godot format
+- `@cathedral/godot-vfx-library` - Sacred geometry VFX & shaders
+- `@cathedral/godot-codex-14499` - Codex data in Godot resource format
+
+**Integration**: Reads same JSON exports as web apps (`res://data/*.json`)
+
+---
+
+### 🔗 Cross-System Data Flow
+
+```
+Python Design Suite
+    ↓ generates
+Sacred Geometry JSON + Fractal Patterns
+    ↓ imported by
+TypeScript Packages (types, codex-144-99, liber-arcanae)
+    ↓ consumed by
+React Apps (web, liber-arcanae-tarot) + Three.js Renderers
+    ↓ orchestrated by
+TurboRepo Pipeline
+    ↓ deployed as
+Static Site (bekalah.github.io/cathedral)
+    ↓ navigated via
+Magical Mystery House → Trinity Systems → Extended Universe
+```
+
+**Tesseract Bridge** sits at center routing all cross-system communication through 7 ribbons
+
+---
+
+## 🎼 Rosslyn Chapel Connection
+
+**Inspired by**: Rosslyn Chapel cube harmonics, Apprentice Pillar spiral pedagogy
+
+**Implementation**:
+- Stone-Grimoire chapel architecture mirrors Rosslyn's sacred geometry
+- Cube harmonics inform sound design (cathedral pads, solfeggio frequencies)
+- Spiral learning pattern in Cosmogenesis (Apprentice Pillar inspiration)
+- Plaque system ensures museum-quality attribution (Rosslyn's educational approach)
 
 ---
 

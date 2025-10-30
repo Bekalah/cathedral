@@ -1,6 +1,12 @@
 from dataclasses import dataclass, field
 from typing import Dict, Any, List, Tuple
-import numpy as np
+try:
+    import numpy as np
+except ImportError as exc:
+    raise ImportError(
+        "NumPy is required for design_suite/fractals.py. "
+        "Install it with: python -m pip install numpy, then select the same interpreter in VS Code."
+    ) from exc
 
 
 @dataclass
