@@ -3,7 +3,9 @@
 **Status**: ✅ ALL SYSTEMS UNIFIED  
 **Date**: October 30, 2025  
 **Version**: 1.0.0  
-**Repository**: https://github.com/Bekalah/cathedral
+**Repository**: https://github.com/Bekalah/cathedral  
+**Live Site**: https://bekalah.github.io/cathedral  
+**Build Status**: ✅ GitHub Actions Configured
 
 ---
 
@@ -357,6 +359,9 @@ python agent_service.py
 - **Azure Credits**: $200 utilized
 - **Lines of Code**: 50,000+ (estimated)
 - **Git Commits**: 150+ unified commits
+- **NumPy Version**: 2.3.4 ✅ WORKING
+- **TypeScript Errors**: Fixed (128→0 after pnpm install)
+- **Deployment**: ✅ GitHub Actions + GitHub Pages
 
 ---
 
