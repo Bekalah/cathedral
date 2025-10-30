@@ -6,7 +6,7 @@
 export const CATHEDRAL_CONFIG = {
   codex: {
     nodeCount: 144,
-    ratio: '144:99',
+    ratio: "144:99",
     categories: 8,
   },
   arcana: {
@@ -14,23 +14,31 @@ export const CATHEDRAL_CONFIG = {
     aspectCount: 3, // divine, shadow, harmony
   },
   build: {
-    nodeEnv: process.env.NODE_ENV || 'development',
-    target: 'esnext',
+    nodeEnv:
+      (typeof process !== "undefined" ? process.env.NODE_ENV : undefined) ||
+      "development",
+    target: "esnext",
     minify: true,
   },
   azure: {
-    endpoint: process.env.AZURE_AI_STUDIO_ENDPOINT || '',
-    apiKey: process.env.AZURE_AI_STUDIO_KEY || '',
+    endpoint:
+      (typeof process !== "undefined"
+        ? process.env.AZURE_AI_STUDIO_ENDPOINT
+        : undefined) || "",
+    apiKey:
+      (typeof process !== "undefined"
+        ? process.env.AZURE_AI_STUDIO_KEY
+        : undefined) || "",
   },
 } as const;
 
 export const SACRED_GEOMETRY_PATTERNS = [
-  'flower-of-life',
-  'metatrons-cube',
-  'vesica-piscis',
-  'golden-spiral',
-  'seed-of-life',
-  'tree-of-life',
+  "flower-of-life",
+  "metatrons-cube",
+  "vesica-piscis",
+  "golden-spiral",
+  "seed-of-life",
+  "tree-of-life",
 ] as const;
 
 export const ARCANA_ELEMENTS = {
@@ -41,4 +49,4 @@ export const ARCANA_ELEMENTS = {
   spirit: [9, 10, 11, 14, 16, 17], // Hermit, Wheel, Justice, Temperance, Tower, Star
 } as const;
 
-export type SacredPattern = typeof SACRED_GEOMETRY_PATTERNS[number];
+export type SacredPattern = (typeof SACRED_GEOMETRY_PATTERNS)[number];

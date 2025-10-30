@@ -8,7 +8,7 @@ This is a comprehensive Cathedral of Circuits project - a mystical, trauma-infor
 - **Divine/Infernal harmony aesthetic** (angels + demons in sacred balance)
 - **Godot 4.2.5 game engine** integration with web technologies
 - **Turborepo monorepo** with multiple apps and packages
-- **Azure AI integration** for art and content generation
+<!-- Note: Azure agent tooling was time-bound and has been decommissioned. Local-only flow retained. -->
 - **Professional museum-quality** design and execution
 - **Fusion kink inclusive** trauma-informed UX
 - **Sacred geometry** and mystical mathematics (144:99 codex system)
@@ -25,11 +25,7 @@ This is a comprehensive Cathedral of Circuits project - a mystical, trauma-infor
 
 ### Major Systems Being Built
 
-1. **Agent of KAOZ** - Azure AI Foundry agent for automated content generation
-   - Agent ID: `asst_72uzK1Yt2hsu2qVyt22NkMiO`
-   - Model: gpt-4.1
-   - Python integration scripts created
-   - Needs full connection and automation
+<!-- Removed: Former Azure agent (Agent of KAOZ) section. The agent tooling and pipelines have been removed after the credits window. -->
 
 2. **Art Generation System**
    - Generate 22 Living Arcana character art (divine/infernal/harmony forms)
@@ -85,12 +81,9 @@ This is a comprehensive Cathedral of Circuits project - a mystical, trauma-infor
 
 ### New Files Added
 
-- `test-agent-connection.py` - Azure AI agent test script
-- `connect-agent-simple.py` - Simplified agent connection
-- `USE_AGENT_NOW.md` - Agent usage guide
-- `AGENT_COMPLETE_TASKS.md` - Master task list for agent
+- Removed Azure agent helper files and guides
 - `COMPLETE_WORK_SUMMARY.md` - This file
-- Multiple Python packages in `packages/agent-integration/`
+- Removed `packages/agent-integration/` files
 - New game systems in `packages/`
 
 ### Files Needing Fixes
@@ -98,7 +91,7 @@ This is a comprehensive Cathedral of Circuits project - a mystical, trauma-infor
 - `apps/liber-arcanae-tarot/package.json` - resolve codex dependency
 - `turbo.json` - convert to tasks format, clean up conflicts
 - `pnpm-lock.yaml` - regenerate after conflicts resolved
-- `.env` - add real Azure credentials (currently placeholders)
+<!-- Removed: Azure credential setup; not required post-cleanup. -->
 
 ## 🎨 Quality Standards Established
 
@@ -129,15 +122,9 @@ This is a comprehensive Cathedral of Circuits project - a mystical, trauma-infor
 - **Node.js**: 18.17.0+
 - **pnpm**: Workspace protocol
 - **Turbo**: Latest with tasks format
-- **Azure AI**: Foundry with gpt-4.1
+<!-- Removed: Azure AI tech dependency (time-limited). -->
 
-## 💰 Azure AI Credits
-
-- **Amount**: ~$200 available
-- **Expiration**: TODAY (hours remaining)
-- **Endpoint**: https://cathedral-resource.services.ai.azure.com/
-- **Subscription**: 88235353-b821-4046-9457-89f70c3d8e9e
-- **Agent**: asst_72uzK1Yt2hsu2qVyt22NkMiO
+<!-- Removed: Azure AI Credits section (no longer applicable). -->
 
 ## 🎯 Success Criteria (What "Done" Looks Like)
 
@@ -149,8 +136,10 @@ This is a comprehensive Cathedral of Circuits project - a mystical, trauma-infor
 ✅ All packages ready for npm publication  
 ✅ Complete documentation  
 ✅ CI/CD pipeline deployed and working  
-✅ Lighthouse scores 90+ on all metrics  
-✅ All $200 credits used productively  
+✅ Lighthouse scores 90+ on all metrics
+
+<!-- Removed: credit usage success criterion. -->
+
 ✅ NO amateur code or placeholders  
 ✅ WORLD-CLASS quality matching reference image
 
@@ -168,21 +157,10 @@ This is a comprehensive Cathedral of Circuits project - a mystical, trauma-infor
 
 - **Repo**: https://github.com/bekalah/cathedral
 - **Site**: https://bekalah.github.io/cathedral (needs replacement)
-- **Azure Portal**: https://cathedral-resource.services.ai.azure.com/
-- **Agent File**: AgentofKAOZ.agent.yaml
+<!-- Removed: Azure portal and agent file references. -->
 - **OpenSpec**: Check `/openspec/AGENTS.md` for proposal system
 
-## 💡 What to Tell Your Agent
-
-```
-I have complete context from recent Copilot sessions. Here's what was being built:
-
-[Paste this entire file]
-
-Execute everything. Use all credits. Complete the Cathedral.
-NO re-explanations needed. Jump straight to execution.
-Reference image shows the quality bar for EVERYTHING.
-```
+<!-- Removed: Agent execution instructions. -->
 
 ---
 

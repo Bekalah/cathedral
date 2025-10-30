@@ -9,16 +9,17 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 # Add cathedral packages to path
-sys.path.append(os.path.join('.', 'packages', 'museum-sources'))
-sys.path.append(os.path.join('.', 'packages', 'cathedral-style'))
-sys.path.append(os.path.join('.', 'packages', 'graphs'))
+sys.path.append(str(Path(__file__).parent.parent / 'packages' / 'museum-sources'))
+sys.path.append(str(Path(__file__).parent.parent / 'packages' / 'cathedral-style'))
+sys.path.append(str(Path(__file__).parent.parent / 'packages' / 'graphs'))
 
 try:
     from museum_sources_engine import MuseumSourcesEngine
     from cathedral_style_engine import CathedralStyleEngine, StyleTier
     from cathedral_graph_navigator import CathedralGraphNavigator
     CATHEDRAL_IMPORTS_AVAILABLE = True
-except ImportError:
+except ImportError as e:
+    print(f"Cathedral imports failed: {e}")
     CATHEDRAL_IMPORTS_AVAILABLE = False
 
 @dataclass

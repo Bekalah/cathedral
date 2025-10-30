@@ -109,3 +109,26 @@ __pycache__/
 # Project-generated assets
 design-suite/outputs/
 agent_responses/
+
+# Prevent root-level clutter
+/*.html
+/*.css
+/*.js
+!*.config.js
+/*.patch
+/_tmp_*
+/*.log
+/automation-log.txt
+
+# Agent outputs
+# Agent outputs (ignored)
+/agent_responses/
+/agent_loop.log
+
+# Archive (keep local, don't commit)
+/archive/
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
