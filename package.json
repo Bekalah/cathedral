@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "description": "Cathedral of Circuits - Living Grimoire Engine with 22 Tradition Masters & Fusion Kink Heaven",
   "type": "module",
+  "packageManager": "pnpm@8.15.0",
   "engines": {
     "node": ">=18.17.0",
     "pnpm": ">=8.0.0"
