@@ -36,7 +36,7 @@
     "react-dom": "^18.3.1",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.0",
-    "vite": "^5.4.62",
+    "vite": "^5.4.21",
     "@vitejs/plugin-react": "^4.3.1",
     "@cathedral/liber-arcanae": "workspace:*",
     "@cathedral/codex-144-99": "workspace:*",
@@ -134,8 +134,19 @@
       "fusion_system": "Kink-inclusive reading interpretations"
     },
     "user_experience": {
-      "difficulty_levels": ["Beginner", "Intermediate", "Advanced", "Master"],
-      "reading_types": ["Daily Guidance", "Relationship", "Career", "Spiritual", "Custom Spread"],
+      "difficulty_levels": [
+        "Beginner",
+        "Intermediate",
+        "Advanced",
+        "Master"
+      ],
+      "reading_types": [
+        "Daily Guidance",
+        "Relationship",
+        "Career",
+        "Spiritual",
+        "Custom Spread"
+      ],
       "accessibility": "Full keyboard navigation, screen reader support",
       "personalization": "User card preferences, journal, reading history"
     }
@@ -146,7 +157,9 @@
     "outDir": "dist",
     "sourcemap": true,
     "rollupOptions": {
-      "external": ["node:*"]
+      "external": [
+        "node:*"
+      ]
     }
   },
   "vite": {
@@ -161,7 +174,9 @@
     },
     "test": {
       "environment": "jsdom",
-      "setupFiles": ["./src/test-setup.ts"]
+      "setupFiles": [
+        "./src/test-setup.ts"
+      ]
     }
   }
 }
