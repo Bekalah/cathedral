@@ -1,7 +1,21 @@
 # 🏰✨ CATHEDRAL OF CIRCUITS - AI AGENT INSTRUCTIONS
 
 _OpenSpec System for Trauma-Safe, Overwrite-Proof Development_
-_Updated: October 24, 2025_
+_Updated: October 30, 2025_
+
+## 📚 **REQUIRED READING: MASTER INDEX**
+
+**ALWAYS CHECK FIRST**: `MASTER_INDEX.md` - Authoritative keyword reference
+
+- Contains ALL search terms mapped to actual code locations
+- Prevents scattered searches and wasted time
+- Links to real file paths and line numbers
+- Updated: October 30, 2025 (Master V1.0)
+
+**Version Control**: `MASTER_V1_CONTROL.md` - Single source of truth for Cathedral version
+**Quality Control**: `WASTE_BUCKET.md` - Archive of false claims (what NOT to reference)
+
+---
 
 ## 🚫 **ANTI-VIBE CODING PROTOCOLS**
 
@@ -269,7 +283,9 @@ New request?
 - Affected specs: [list capabilities]
 - Affected code: [key files/systems]
 ```
+
 3. **Create spec deltas:** `specs/[capability]/spec.md`
+
 ```markdown
 ## ADDED Requirements
 
@@ -295,6 +311,7 @@ The system SHALL provide...
 **Reason**: [Why removing]
 **Migration**: [How to handle]
 ```
+
 If multiple capabilities are affected, create multiple delta files under `changes/[change-id]/specs/<capability>/spec.md`—one per capability.
 
 4. **Create tasks.md:**

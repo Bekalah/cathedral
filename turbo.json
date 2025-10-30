@@ -5,6 +5,9 @@
     "**/*.md",
     "tsconfig.json",
     "CATHEDRAL_INTEGRATION_MAP.json",
+    "MASTER_INDEX.md",
+    "MASTER_V1_CONTROL.md",
+    "MASTER_V1_INTEGRATION.md",
     "openspec/**/*.json"
   ],
   "tasks": {
