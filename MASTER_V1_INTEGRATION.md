@@ -11,6 +11,139 @@
 
 ## 🎯 MASTER INTEGRATION COMPLETE
 
+### 🛠️ TECHNOLOGY STACK (Static Modular Architecture)
+
+#### **Vite 5.4.21** - Build System & Dev Server
+- **Role**: Module bundler, dev server, static site generation
+- **Powers**: All web apps (liber-arcanae-tarot, web, synth-lab, tarot-arena)
+- **Config**: `vite.config.ts` in each app with `@vitejs/plugin-react`
+- **Output**: Optimized static bundles → `apps/*/dist/` → GitHub Pages
+- **Integration**: Imports JSON from Python exports, bundles with TypeScript
+
+#### **React 18.3** - UI Framework
+- **Role**: Component-based UI library for all interactive experiences
+- **Powers**: Tarot reading interface, 3D scene controls, mystical UI components
+- **Packages**: react, react-dom, @types/react, @types/react-dom
+- **Patterns**: Hooks (useState, useEffect), Context API, Suspense
+- **Integration**: Renders data from CATHEDRAL_INTEGRATION_MAP.json, sacred geometry JSON
+
+#### **Three.js + React Three Fiber** - 3D Graphics
+- **Role**: WebGL 3D rendering for sacred geometry, mystical spaces
+- **Powers**: apps/web (main Cathedral 3D experience), rosslyn-explorer
+- **Packages**: @react-three/fiber ^8.16.8, @react-three/drei ^9.114.0
+- **Features**: Sacred geometry meshes, particle systems, shader materials
+- **Integration**: Loads geometry JSON from Python design-suite, renders in browser
+
+#### **Python 3.13** - Design Suite & Data Generation
+- **Role**: Sacred geometry generation, fractal rendering, JSON export
+- **Location**: `design-suite/`, `hall-of-mysteries/`
+- **Packages**: NumPy 2.3.4, Matplotlib 3.9+, Pillow
+- **Output**: JSON files → `design-suite/outputs/*.json`
+- **Runtime**: Build-time only (GitHub Actions), not in browser
+- **Integration**: Generates data consumed by TypeScript/Godot at build time
+
+#### **Node.js 20+** - Build Runtime & Tooling
+- **Role**: JavaScript runtime for build tools, dev servers, package management
+- **Powers**: Vite, TurboRepo, pnpm, all build scripts
+- **Scripts**: turbo.json pipeline, package.json scripts
+- **Integration**: Orchestrates Python → JSON → TypeScript → Static HTML build chain
+
+#### **TypeScript 5.6** - Type-Safe Development
+- **Role**: Static typing for all JavaScript code
+- **Coverage**: All packages/*, apps/*, shared types in packages/types/
+- **Config**: tsconfig.json per package (extends base config)
+- **Benefits**: Autocomplete, compile-time errors, better refactoring
+- **Integration**: Imports JSON schemas, validates against CATHEDRAL_INTEGRATION_MAP
+
+#### **TurboRepo 2.1** - Monorepo Build System
+- **Role**: Task orchestration, caching, parallel builds
+- **Config**: `turbo.json` - defines dependency graph
+- **Pipeline**: validate-python → export-json → build packages → build apps → deploy
+- **Caching**: Incremental builds (only rebuild changed packages)
+- **Integration**: Coordinates 44 workspace projects in single unified build
+
+#### **OpenSpec** - Specification & AI Collaboration
+- **Role**: Living documentation, change proposals, spec-driven development
+- **Location**: `openspec/` directory
+- **Files**: cathedral.spec.json (API specs), schema.json (validation), AGENTS.md (AI instructions)
+- **Patterns**: Trauma-safe protocols, anti-vibe-coding rules, proposal system
+- **Integration**: Guides all development, ensures consistency across systems
+
+#### **Godot 4.x** (Future/Optional) - Game Engine
+- **Role**: 3D mystical game experiences (alternative to Three.js)
+- **Packages**: godot-design-studio, godot-liber-arcanae, godot-vfx-library, godot-codex-14499
+- **Format**: GDScript scenes, resources, shaders
+- **Import**: Reads JSON from Python design-suite via res://data/ paths
+- **Status**: Prepared but not required for web deployment
+- **Integration**: Parallel platform (can use same JSON data as web apps)
+
+#### **Bevy** (Research/Future) - Rust Game Engine
+- **Status**: Not yet integrated (potential future addition)
+- **Use Case**: High-performance alternative to Godot for desktop builds
+- **Integration Path**: Would consume same JSON exports as Godot
+
+---
+
+### 🏗️ ARCHITECTURE: Static Modular Design
+
+#### Build-Time Stack (GitHub Actions)
+```
+1. Python 3.13 (.venv)
+   ↓ runs design-suite smoketests
+   ↓ generates sacred_geometry.json, fractal_patterns.json
+   ↓
+2. Node.js 20 + pnpm
+   ↓ pnpm install (1501 packages)
+   ↓ turbo run packages:build (TypeScript compilation)
+   ↓ turbo run cathedral:build (Vite bundles React apps)
+   ↓
+3. Static Output
+   → apps/web/dist/ (HTML + CSS + JS bundles)
+   → GitHub Pages deployment
+```
+
+#### Runtime Stack (Browser)
+```
+User visits bekalah.github.io/cathedral
+   ↓
+Static HTML/CSS/JS loads (no server needed)
+   ↓
+React app initializes
+   ↓
+Loads CATHEDRAL_INTEGRATION_MAP.json (static)
+   ↓
+Loads sacred_geometry.json (from Python build)
+   ↓
+Three.js renders 3D scenes
+   ↓
+Fully interactive static web app (no backend calls)
+```
+
+**Key Point**: Zero runtime dependencies on Python, Azure, or Node.js. Everything runs in browser as static files.
+
+---
+
+### 📦 PACKAGE TYPES
+
+#### **Libraries** (packages/*)
+- `codex-144-99/` - Sacred math system (TypeScript)
+- `liber-arcanae/` - 22 Arcana character library (TypeScript)
+- `types/` - Shared TypeScript types
+- `agent-integration/` - KAOZ + ORDER Python SDK (build-time only)
+
+#### **Apps** (apps/*)
+- `liber-arcanae-tarot/` - Tarot reading app (Vite + React)
+- `web/` - Main Cathedral interface (Vite + React + Three.js)
+- `rosslyn-explorer/` - 3D mystical exploration (Three.js)
+- `synth-lab/` - Audio synthesis (Vite + React + Web Audio)
+
+#### **Tools** (tools/)
+- Python validators: `validate/design_suite_smoketest.py`
+- Export scripts: `export/combined_export.py`
+- Build health checks: `health-check.js`, `validate-turbo-config.cjs`
+
+---
+
 ### What We Built (Human + AI Team)
 
 #### 1️⃣ PYTHON DESIGN SUITE
