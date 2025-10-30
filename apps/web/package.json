@@ -9,11 +9,11 @@
   },
   "scripts": {
     "dev": "next dev --turbo",
-    "build": "next build && next export",
+    "build": "next build",
     "build:analyze": "ANALYZE=true next build",
     "start": "next start",
     "start:prod": "NODE_ENV=production next start",
-    "export": "next build && next export",
+    "export": "next build",
     "serve:export": "npx serve out",
     "type-check": "tsc --noEmit",
     "type-check:watch": "tsc --noEmit --watch",
