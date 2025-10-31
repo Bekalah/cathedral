@@ -1,5 +1,3 @@
 #!/bin/bash
-echo "🎨 Cathedral Art - Unified Practices"
-echo "===================================="
-cd mystical-system/alpha-omega-arcanae && echo "🎨 Working on unified art and mystical practices"
-pwd
+echo "🎨 Cathedral Art - Work on unified art and practices"
+cd mystical-system/alpha-omega-arcanae
