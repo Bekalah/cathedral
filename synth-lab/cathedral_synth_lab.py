@@ -1,13 +1,10 @@
 # 🎹 Cathedral Synth Lab - Legendary Instruments Collection
 # World's most expensive synthesizers recreated with full functionality + magical integration
 
-import json
 import numpy as np
 import scipy.signal as signal
 from dataclasses import dataclass, field
-from typing import Dict, List, Any, Optional
-from pathlib import Path
-import math
+from typing import Dict, List, Any
 
 @dataclass
 class SynthEngine:
@@ -591,7 +588,7 @@ if __name__ == "__main__":
     lab = CathedralSynthLab()
     info = lab.get_synth_collection_info()
     
-    print(f"📊 Collection Overview:")
+    print("📊 Collection Overview:")
     print(f"   • Total Synthesizers: {info['total_synths']}")
     print(f"   • Combined Original Value: ${info['total_original_value']:,}")
     print()
