@@ -1,106 +1,70 @@
 {
-  "$schema": "https://turborepo.org/schema.json",
-  "globalDependencies": [
-    "**/*.json",
-    "**/*.md",
-    "tsconfig.json",
-    "CATHEDRAL_INTEGRATION_MAP.json",
-    "MASTER_INDEX.md",
-    "MASTER_V1_CONTROL.md",
-    "MASTER_V1_INTEGRATION.md",
-    "openspec/**/*.json"
-  ],
-  "tasks": {
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", "build/**", ".turbo/cache/**"],
-      "env": ["NODE_ENV"]
+      "outputs": [
+        "dist/**",
+        "build/**",
+        ".next/**",
+        "!.next/cache/**",
+        "public/build/**"
+      ]
     },
     "dev": {
       "cache": false,
       "persistent": true
     },
-    "type-check": {
-      "dependsOn": ["^build"],
-      "outputs": []
-    },
-    "lint": {
-      "outputs": [],
-      "env": ["NODE_ENV"]
-    },
     "test": {
       "dependsOn": ["build"],
-      "outputs": ["coverage/**", ".nyc_output/**"],
-      "env": ["NODE_ENV", "CI"]
+      "outputs": ["coverage/**"]
     },
-    "clean": {
-      "outputs": [],
-      "cache": false
-    },
-    "validate-python": {
-      "cache": false,
-      "outputs": [],
-      "inputs": ["design-suite/**/*.py", "hall-of-mysteries/**/*.py"]
-    },
-    "export-json": {
-      "dependsOn": ["validate-python"],
-      "outputs": [
-        "design-suite/outputs/**/*.json",
-        "hall-of-mysteries/outputs/**/*.json"
-      ],
-      "inputs": [
-        "design-suite/**/*.py",
-        "hall-of-mysteries/**/*.py",
-        "CATHEDRAL_INTEGRATION_MAP.json"
-      ]
-    },
-    "build-art": {
-      "dependsOn": ["^build", "export-json"],
-      "outputs": ["generated_art/**", "assets/art/**"],
-      "env": ["NODE_ENV"]
-    },
-    "build-synth": {
-      "dependsOn": ["build-art"],
-      "outputs": ["generated_synth/**", "assets/audio/**"],
-      "env": ["NODE_ENV"]
-    },
-    "generate-arcana": {
-      "dependsOn": ["build", "export-json"],
-      "outputs": ["data/arcana/**", "generated/arcana/**"],
-      "inputs": ["CATHEDRAL_INTEGRATION_MAP.json"]
-    },
-    "connect-modules": {
-      "dependsOn": ["build-art", "build-synth", "generate-arcana"],
-      "outputs": ["cathedral_manifest.json", "scripts/connections/**"],
-      "inputs": ["CATHEDRAL_INTEGRATION_MAP.json", "openspec/**/*.json"]
-    },
-    "architect-scribe": {
-      "dependsOn": ["connect-modules"],
-      "outputs": ["docs/grimoire/**", "generated/**"]
-    },
-    "deploy": {
-      "dependsOn": ["build", "test", "lint", "architect-scribe"],
-      "outputs": [],
-      "env": ["GITHUB_TOKEN", "VERCEL_TOKEN"]
-    },
-    "preview": {
-      "dependsOn": ["build"],
+    "lint": {
       "outputs": []
     },
-    "sync-integration-maps": {
-      "dependsOn": ["export-json"],
-      "outputs": [
-        "packages/*/integration-map.json",
-        "stone-grimoire/integration-map.json"
-      ],
-      "inputs": ["CATHEDRAL_INTEGRATION_MAP.json"]
+    "type-check": {
+      "dependsOn": ["^type-check"],
+      "outputs": []
+    },
+    "clean": {
+      "cache": false
+    },
+    "deploy": {
+      "dependsOn": ["build", "test", "lint"],
+      "outputs": ["dist/**", "build/**"]
+    },
+    "validate-openspec": {
+      "dependsOn": ["build"],
+      "outputs": ["openspec/validation/**"]
     }
   },
-  "globalEnv": [
-    "NODE_ENV",
-    "CI",
-    "GITHUB_TOKEN",
-    "AZURE_AI_STUDIO_ENDPOINT",
-    "AZURE_AI_STUDIO_KEY"
-  ]
+  "globalDependencies": [
+    "tsconfig.base.json",
+    ".eslintrc.cjs",
+    "prettier.config.cjs"
+  ],
+  "tasks": {
+    "build": {
+      "outputs": [
+        "dist/**",
+        "build/**",
+        ".next/**",
+        "public/build/**",
+        "dist/index.html"
+      ]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "test": {
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "outputs": []
+    },
+    "type-check": {
+      "outputs": []
+    }
+  }
 }

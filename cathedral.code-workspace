@@ -1,48 +1,20 @@
 {
-  "folders": [
-    {
-      "path": "."
-    },
-    {
-      "path": "../cathedral"
-    },
-    {
-      "path": "../Developer/cathedral-research"
-    },
-    {
-      "path": "../Library/Mobile Documents/com~apple~CloudDocs/CATHEDRAL-SORT THROUGH"
-    }
-  ],
-  "settings": {
-    "liveServer.settings.multiRootWorkspaceName": "cathedral",
-    "prettier.bracketSameLine": true,
-    "npm.packageManager": "pnpm",
-    "typescript.preferences.includePackageJsonAutoImports": "auto",
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
-    "files.associations": {
-      "*.md": "markdown",
-      "*.json": "jsonc"
-    },
-    "emmet.includeLanguages": {
-      "typescript": "typescriptreact",
-      "javascript": "javascriptreact"
-    },
-    "terminal.integrated.defaultProfile.osx": "zsh",
-    "terminal.integrated.scrollback": 10000
-  },
-  "extensions": {
-    "recommendations": [
-      "esbenp.prettier-vscode",
-      "ms-vscode.vscode-typescript-next",
-      "bradlc.vscode-tailwindcss",
-      "ms-vscode.vscode-json",
-      "yzhang.markdown-all-in-one",
-      "ms-vscode.powershell",
-      "ms-vscode-remote.remote-containers",
-      "ms-vscode.vscode-eslint",
-      "ms-vscode.vscode-css-peek",
-      "ms-vscode.vscode-chrome-debug-core"
-    ]
-  }
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../.."
+		},
+		{
+			"path": "connected-repos"
+		},
+		{
+			"path": "../../Library/Mobile Documents/com~apple~CloudDocs/cathedral-research"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "cathedral",
+		"prettier.bracketSameLine": true
+	}
 }

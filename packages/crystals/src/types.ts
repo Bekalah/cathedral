@@ -47,5 +47,4 @@ export interface ResonanceComputationResult {
   colorField: string[]; // emergent color set
   phiScore: number; // 0-1 how aligned to golden proportion structures
   stability: number; // 0-1 predicted coherence
-  aiLore?: string; // AI-generated metaphysical description
 }

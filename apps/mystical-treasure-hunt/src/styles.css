@@ -1,0 +1,408 @@
+/* 🎭 MYSTICAL TREASURE HUNT - Visionary Styles */
+
+/* Global styles */
+.mystical-game {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(ellipse at center, #0F172A 0%, #1E293B 50%, #0F172A 100%);
+  color: white;
+  font-family: 'Georgia', serif;
+  overflow: hidden;
+}
+
+.loading-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 100;
+}
+
+.loading-content h1 {
+  font-size: 3em;
+  background: linear-gradient(45deg, #60A5FA, #A855F7, #EC4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2em;
+}
+
+.loading-spinners {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid transparent;
+  border-top: 3px solid #60A5FA;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.spinner.vision { border-top-color: #A855F7; }
+.spinner.treasure { border-top-color: #EC4899; }
+.spinner.realm { border-top-color: #60A5FA; }
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.error-screen h1 {
+  font-size: 2.5em;
+  color: #FCA5A5;
+  margin-bottom: 1em;
+}
+
+.error-screen button {
+  padding: 15px 30px;
+  background: linear-gradient(45deg, #60A5FA, #A855F7);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.error-screen button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
+}
+
+/* Game UI */
+.game-ui {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.game-header {
+  background: rgba(15, 23, 42, 0.9);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.game-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  background: linear-gradient(45deg, #60A5FA, #A855F7, #EC4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.player-info {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.player-stat {
+  background: rgba(30, 41, 59, 0.8);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.9em;
+}
+
+.navigation-tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-tab {
+  padding: 10px 20px;
+  background: rgba(30, 41, 59, 0.8);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9em;
+}
+
+.nav-tab:hover,
+.nav-tab.active {
+  background: rgba(96, 165, 250, 0.5);
+  box-shadow: 0 0 15px rgba(96, 165, 250, 0.3);
+}
+
+/* Treasure Map */
+.treasure-map {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.map-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.map-button {
+  padding: 12px;
+  background: rgba(96, 165, 250, 0.8);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.map-button:hover {
+  background: rgba(96, 165, 250, 1);
+  transform: scale(1.05);
+}
+
+/* Visionary Realm */
+.visionary-realm {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.realm-overlays {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.fusionist-selector {
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.fusionist-button {
+  padding: 10px 15px;
+  background: rgba(168, 85, 247, 0.8);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.fusionist-button:hover,
+.fusionist-button.active {
+  background: rgba(168, 85, 247, 1);
+  transform: scale(1.05);
+}
+
+/* Grimoire Workshop */
+.grimoire-workshop {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+.workshop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.grimoire-card {
+  background: rgba(30, 41, 59, 0.9);
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.grimoire-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(96, 165, 250, 0.3);
+}
+
+.create-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 20px;
+  background: linear-gradient(45deg, #60A5FA, #A855F7);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 2em;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(96, 165, 250, 0.5);
+  transition: all 0.3s ease;
+}
+
+.create-button:hover {
+  transform: scale(1.1);
+}
+
+/* Notifications */
+.notifications-panel {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  max-width: 300px;
+  z-index: 200;
+}
+
+.notification {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(96, 165, 250, 0.4);
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.notification:hover {
+  transform: translateX(-5px);
+}
+
+.notification.unread {
+  border-color: #A855F7;
+}
+
+.notification-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.notification-message {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+.notification-timestamp {
+  font-size: 0.8em;
+  opacity: 0.6;
+  margin-top: 10px;
+}
+
+/* Debug overlay */
+.debug-overlay {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  border-radius: 8px;
+  font-family: monospace;
+  max-width: 400px;
+  max-height: 300px;
+  overflow: auto;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .game-ui {
+    flex-direction: column;
+    gap: 10px;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+  }
+
+  .navigation-tabs {
+    justify-content: center;
+  }
+
+  .fusionist-selector {
+    flex-wrap: wrap;
+    left: 10px;
+    right: 10px;
+    justify-content: center;
+  }
+
+  .notifications-panel {
+    left: 10px;
+    right: 10px;
+    max-width: none;
+  }
+}
+
+/* Visionary effects */
+.visionary-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.flowing-energy {
+  animation: flow 8s infinite linear;
+}
+
+@keyframes flow {
+  0% { transform: translateX(-100%) rotate(0deg); }
+  100% { transform: translateX(100vw) rotate(360deg); }
+}
+
+.pulsing-light {
+  animation: pulse 3s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+/* Sacred geometry patterns */
+.sacred-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(96,165,250,0.1)"/><circle cx="50" cy="50" r="10" fill="none" stroke="rgba(96,165,250,0.1)"/><circle cx="50" cy="50" r="20" fill="none" stroke="rgba(96,165,250,0.1)"/></svg>');
+  background-size: 50px 50px;
+  opacity: 0.2;
+}

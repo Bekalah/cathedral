@@ -1,1 +1,34 @@
 
+> @cathedral/test-ground@1.0.0 build /Users/rebeccalemke/cathedral/cathedral/apps/test-ground
+> vite build
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mDuplicate key "ingest:scan" in object literal[0m [duplicate-object-key]
+
+    ../../package.json:36:4:
+[37m      36 │     [32m"ingest:scan"[37m: "node scripts/cathedral-ingest-sc...
+         ╵     [32m~~~~~~~~~~~~~[0m
+
+  The original key "ingest:scan" is here:
+
+    ../../package.json:20:4:
+[37m      20 │     [32m"ingest:scan"[37m: "node scripts/cathedral-ingest-sc...
+         ╵     [32m~~~~~~~~~~~~~[0m
+
+[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+[36mvite v5.4.20 [32mbuilding for production...[36m[39m
+[2K[1Gtransforming (1) [2mindex.html[22m[2K[1Gtransforming (3) [2msrc/index.tsx[22m[2K[1G[2K[1G[32m✓[39m 3 modules transformed.
+[2K[1G[31mx[39m Build failed in 829ms
+[31merror during build:
+[31m[vite]: Rollup failed to resolve import "@cathedral/synth" from "/Users/rebeccalemke/cathedral/cathedral/apps/test-ground/src/index.tsx".
+This is most likely unintended because it can break your application at runtime.
+If you do want to externalize this module explicitly add it to
+`build.rollupOptions.external`[31m
+    at viteWarn (file:///Users/rebeccalemke/cathedral/cathedral/node_modules/.pnpm/vite@5.4.20_@types+node@20.19.17/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:65854:17)
+    at onwarn (/Users/rebeccalemke/cathedral/cathedral/node_modules/.pnpm/@vitejs+plugin-react@4.7.0_vite@5.4.20_@types+node@20.19.17_/node_modules/@vitejs/plugin-react/dist/index.cjs:112:7)
+    at onRollupWarning (file:///Users/rebeccalemke/cathedral/cathedral/node_modules/.pnpm/vite@5.4.20_@types+node@20.19.17/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:65884:5)
+    at onwarn (file:///Users/rebeccalemke/cathedral/cathedral/node_modules/.pnpm/vite@5.4.20_@types+node@20.19.17/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:65549:7)
+    at file:///Users/rebeccalemke/cathedral/cathedral/node_modules/.pnpm/rollup@4.52.3/node_modules/rollup/dist/es/shared/node-entry.js:20950:13
+    at Object.logger [as onLog] (file:///Users/rebeccalemke/cathedral/cathedral/node_modules/.pnpm/rollup@4.52.3/node_modules/rollup/dist/es/shared/node-entry.js:22822:9)
+    at ModuleLoader.handleInvalidResolvedId (file:///Users/rebeccalemke/cathedral/cathedral/node_modules/.pnpm/rollup@4.52.3/node_modules/rollup/dist/es/shared/node-entry.js:21566:26)
+    at file:///Users/rebeccalemke/cathedral/cathedral/node_modules/.pnpm/rollup@4.52.3/node_modules/rollup/dist/es/shared/node-entry.js:21524:26[39m
+[41m[30m ELIFECYCLE [39m[49m [31mCommand failed with exit code 1.[39m

@@ -1,7 +1,7 @@
 import { patchLibrary } from './patchLibrary';
 export class SynthEngine {
-    patches = new Map();
     constructor(seedPatches = patchLibrary) {
+        this.patches = new Map();
         seedPatches.forEach(p => this.patches.set(p.id, p));
     }
     listPatches() { return Array.from(this.patches.values()).map(p => ({ id: p.id, name: p.name })); }
@@ -28,3 +28,4 @@ export class SynthEngine {
         };
     }
 }
+//# sourceMappingURL=engine.js.map

@@ -1,0 +1,139 @@
+{
+  "metadata": {
+    "title": "Liber Arcanae ↔ Codex 144:99 Mirror System",
+    "version": "1.0.0",
+    "author": "Rebecca Susan Lemke (Rebecca Respawn)",
+    "description": "78-card tarot system perfectly mirrors 144-codex nodes with bidirectional integration",
+    "system": "Cathedral of Circuits Trinity Architecture"
+  },
+  "mirror_structure": {
+    "total_tarot_cards": 78,
+    "major_arcana": 22,
+    "minor_arcana": 56,
+    "codex_nodes": 144,
+    "mirror_ratio": "78:144 (simplified from sacred 144:99)"
+  },
+  "major_arcana_mappings": {
+    "0_fool": {
+      "codex_node": 0,
+      "character": "Rebecca Respawn",
+      "name": "The Fool",
+      "temple": "Aurora Gate",
+      "integration_function": "Master Portal - Central Hub",
+      "cross_connections": {
+        "circuitum99": "00_circuitum99_core",
+        "stone_grimoire": "fool_chapel",
+        "godot_studios": "geometry_studio"
+      },
+      "sacred_geometry": "Vesica Piscis",
+      "healing_frequency": "963 Hz",
+      "arcanum_type": "Major Arcana",
+      "provenance": "Liber Arcanae Codex Abyssiae"
+    },
+    "1_magician": {
+      "codex_node": 1,
+      "character": "John Dee",
+      "name": "The Magician", 
+      "temple": "Consciousness Laboratory",
+      "integration_function": "Skill & Will Manifestation",
+      "cross_connections": {
+        "circuitum99": "skill_manifestation",
+        "stone_grimoire": "magician_chapel",
+        "godot_studios": "synth_lab"
+      },
+      "sacred_geometry": "Hexagram",
+      "healing_frequency": "741 Hz",
+      "arcanum_type": "Major Arcana",
+      "provenance": "Liber Arcanae Codex Abyssiae"
+    },
+    "2_high_priestess": {
+      "codex_node": 2,
+      "character": "Cassandra",
+      "name": "The High Priestess",
+      "temple": "Sacred Library",
+      "integration_function": "Intuitive Wisdom",
+      "cross_connections": {
+        "circuitum99": "wisdom_gates",
+        "stone_grimoire": "library_chapel",
+        "godot_studios": "atelier_studio"
+      },
+      "sacred_geometry": "Pentagram",
+      "healing_frequency": "417 Hz",
+      "arcanum_type": "Major Arcana",
+      "provenance": "Liber Arcanae Codex Abyssiae"
+    },
+    "21_world": {
+      "codex_node": 21,
+      "character": "Leonora Carrington",
+      "name": "The World",
+      "temple": "Integration Chamber",
+      "integration_function": "Completion & Mastery",
+      "cross_connections": {
+        "circuitum99": "world_mastery",
+        "stone_grimoire": "world_chapel",
+        "godot_studios": "completion_studio"
+      },
+      "sacred_geometry": "Circle",
+      "healing_frequency": "396 Hz",
+      "arcanum_type": "Major Arcana",
+      "provenance": "Liber Arcanae Codex Abyssiae"
+    }
+  },
+  "minor_arcana_patterns": {
+    "cups": {
+      "element": "Water",
+      "emotion": "Feelings & Relationships",
+      "codex_connection": "Nodes 22-28 (water element)",
+      "character_type": "Emotional guides"
+    },
+    "pentacles": {
+      "element": "Earth", 
+      "emotion": "Material & Physical",
+      "codex_connection": "Nodes 29-35 (earth element)",
+      "character_type": "Practical teachers"
+    },
+    "swords": {
+      "element": "Air",
+      "emotion": "Intellect & Communication", 
+      "codex_connection": "Nodes 36-42 (air element)",
+      "character_type": "Mental guides"
+    },
+    "wands": {
+      "element": "Fire",
+      "emotion": "Creativity & Passion",
+      "codex_connection": "Nodes 43-49 (fire element)", 
+      "character_type": "Creative spirits"
+    }
+  },
+  "integration_protocols": {
+    "bidirectional_sync": {
+      "description": "Changes in either system update the mirror",
+      "validation": "OpenSpec compliance check",
+      "fallback": "Codex 144:99 is source of truth"
+    },
+    "character_consistency": {
+      "description": "Each tarot character maintains consistent persona across systems",
+      "mapping": "Tarot ID ↔ Codex Node ↔ Circuitum99 Character",
+      "provenance": "Single character definition per archetype"
+    },
+    "geometry_harmony": {
+      "description": "Sacred geometry corresponds across all systems",
+      "standards": "Golden ratio, vesica piscis, crystal formations",
+      "validation": "Mathematical precision requirements"
+    }
+  },
+  "quality_assurance": {
+    "cross_system_validation": [
+      "Character names match across all systems",
+      "Numerology remains consistent (11, 22, 33, 144, 99)",
+      "Sacred geometry calculations verified",
+      "Integration points properly mapped",
+      "No character duplication or conflicts"
+    ],
+    "provenance_tracking": {
+      "source_file": "data/liber-arcanae-mirror.json",
+      "last_validated": "2025-10-31T16:20:00Z",
+      "validation_method": "OpenSpec Cathedral System v1.0"
+    }
+  }
+}

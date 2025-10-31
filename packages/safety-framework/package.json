@@ -1,0 +1,53 @@
+{
+  "name": "@cathedral/safety-framework",
+  "version": "1.0.0",
+  "description": "Comprehensive safety framework for trauma-informed content delivery and user protection",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "jest",
+    "lint": "eslint src --ext .ts",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "safety",
+    "trauma-informed",
+    "content-filtering",
+    "user-protection",
+    "accessibility",
+    "mental-health"
+  ],
+  "author": "Cathedral Research",
+  "license": "MIT",
+  "dependencies": {
+    "@cathedral/types": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "jest": "^29.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0"
+  },
+  "peerDependencies": {
+    "@cathedral/synthesis-engine": "workspace:*",
+    "@cathedral/learning-engine": "workspace:*",
+    "@cathedral/three-engine": "workspace:*"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cathedral-research/safety-framework.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cathedral-research/safety-framework/issues"
+  },
+  "homepage": "https://github.com/cathedral-research/safety-framework#readme"
+}

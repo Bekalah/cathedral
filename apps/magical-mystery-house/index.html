@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magical Mystery House - Mystical Adventure Game</title>
+    <meta name="description" content="Explore the infinite magical mystery house with sacred geometry and mystical adventures">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Mystical Game Theme -->
+    <style>
+        :root {
+            /* Sacred Color Palette */
+            --color-mystical: #0a0a0f;
+            --color-ancient: #1a1a2e;
+            --color-parchment: #f4f1e8;
+            --color-ink: #2c1810;
+            --color-gold: #d4af37;
+            --color-silver: #c0c0c0;
+            --color-crimson: #8b0000;
+            --color-indigo: #4b0082;
+
+            /* Game Colors */
+            --primary-color: var(--color-gold);
+            --secondary-color: var(--color-crimson);
+            --background-color: var(--color-mystical);
+            --surface-color: var(--color-ancient);
+            --text-color: var(--color-parchment);
+            --text-secondary: var(--color-silver);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Mystical Background */
+        .mystical-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(ellipse at center, rgba(26, 26, 46, 0.8) 0%, var(--color-mystical) 100%),
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(212, 175, 55, 0.02) 10px,
+                    rgba(212, 175, 55, 0.02) 11px
+                );
+            z-index: -1;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Game World */
+        .game-world {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Main Game Area */
+        .game-main {
+            background: var(--surface-color);
+            border: 2px solid var(--primary-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .room-display {
+            width: 100%;
+            height: 400px;
+            background: radial-gradient(circle at center, rgba(80, 200, 120, 0.1) 0%, transparent 70%);
+            border-radius: 1rem;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .room-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .room-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .room-objects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .game-object {
+            background: rgba(75, 0, 130, 0.2);
+            border: 1px solid var(--color-indigo);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .game-object:hover {
+            background: var(--color-indigo);
+            color: var(--color-parchment);
+            transform: translateY(-2px);
+        }
+
+        .object-name {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .object-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .game-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .action-btn {
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--background-color);
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Side Panel */
+        .side-panel {
+            background: var(--surface-color);
+            border: 1px solid var(--text-secondary);
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+
+        .panel-section {
+            margin-bottom: 2rem;
+        }
+
+        .panel-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .inventory-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+        }
+
+        .inventory-item {
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid var(--primary-color);
+            border-radius: 0.25rem;
+            padding: 0.5rem;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        .stats-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem;
+            background: rgba(139, 0, 0, 0.2);
+            border-radius: 0.25rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+        }
+
+        .stat-value {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        /* Game Log */
+        .game-log {
+            background: var(--color-ancient);
+            border: 1px solid var(--text-secondary);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            height: 200px;
+            overflow-y: auto;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+        }
+
+        .log-entry {
+            margin-bottom: 0.5rem;
+            padding: 0.25rem;
+            border-radius: 0.25rem;
+        }
+
+        .log-entry.system {
+            color: var(--primary-color);
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .log-entry.action {
+            color: var(--text-color);
+            background: rgba(75, 0, 130, 0.1);
+        }
+
+        .log-entry.discovery {
+            color: var(--secondary-color);
+            background: rgba(139, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 3rem 0;
+            border-top: 1px solid var(--surface-color);
+        }
+
+        .footer p {
+            color: var(--text-secondary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .game-world {
+                grid-template-columns: 1fr;
+            }
+
+            .game-actions {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="mystical-bg"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🏰 Magical Mystery House</h1>
+            <p>Enter the infinite magical mystery house where every door leads to new adventures, mystical discoveries, and sacred revelations. Your journey through the house of wonders awaits.</p>
+        </header>
+
+        <!-- Game World -->
+        <div class="game-world">
+            <!-- Main Game Area -->
+            <main class="game-main">
+                <div class="room-display">
+                    <h2 class="room-title">The Grand Entrance Hall</h2>
+                    <p class="room-description">You stand in a magnificent entrance hall with walls adorned with glowing mystical symbols. Moonlight streams through stained glass windows depicting scenes from ancient myths. The air shimmers with an otherworldly energy.</p>
+
+                    <div class="room-objects">
+                        <div class="game-object" data-object="ancient-mirror">
+                            <div class="object-name">Ancient Mirror</div>
+                            <div class="object-description">A silver-framed mirror that seems to reflect more than just your appearance</div>
+                        </div>
+                        <div class="game-object" data-object="glowing-runes">
+                            <div class="object-name">Glowing Runes</div>
+                            <div class="object-description">Mysterious symbols etched into the stone walls, pulsing with inner light</div>
+                        </div>
+                        <div class="game-object" data-object="crystal-chandelier">
+                            <div class="object-name">Crystal Chandelier</div>
+                            <div class="object-description">A magnificent chandelier made of countless crystal shards that chime softly</div>
+                        </div>
+                        <div class="game-object" data-object="wooden-door">
+                            <div class="object-name">Wooden Door</div>
+                            <div class="object-description">An ornate wooden door carved with intricate geometric patterns</div>
+                        </div>
+                    </div>
+
+                    <div class="game-actions">
+                        <button class="action-btn">Examine Mirror</button>
+                        <button class="action-btn">Study Runes</button>
+                        <button class="action-btn">Touch Chandelier</button>
+                        <button class="action-btn">Open Door</button>
+                        <button class="action-btn">Meditate</button>
+                        <button class="action-btn">Use Magic</button>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Side Panel -->
+            <aside class="side-panel">
+                <div class="panel-section">
+                    <h3 class="panel-title">Your Inventory</h3>
+                    <div class="inventory-grid">
+                        <div class="inventory-item">Mystical Key</div>
+                        <div class="inventory-item">Crystal Shard</div>
+                        <div class="inventory-item">Ancient Coin</div>
+                        <div class="inventory-item">Empty</div>
+                        <div class="inventory-item">Empty</div>
+                        <div class="inventory-item">Empty</div>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3 class="panel-title">Character Stats</h3>
+                    <div class="stats-list">
+                        <div class="stat-item">
+                            <span class="stat-label">Level</span>
+                            <span class="stat-value">3</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Mystical Energy</span>
+                            <span class="stat-value">75%</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Wisdom</span>
+                            <span class="stat-value">12</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Courage</span>
+                            <span class="stat-value">8</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Mysteries Solved</span>
+                            <span class="stat-value">7</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3 class="panel-title">Game Log</h3>
+                    <div class="game-log" id="game-log">
+                        <div class="log-entry system">You enter the Magical Mystery House...</div>
+                        <div class="log-entry discovery">You discover a hidden mystical energy!</div>
+                        <div class="log-entry action">You examine the ancient runes carefully.</div>
+                        <div class="log-entry system">The runes begin to glow with sacred light.</div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Magical Mystery House. An infinite adventure of mystical discovery and sacred revelation.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Game state
+        let gameState = {
+            currentRoom: 'entrance-hall',
+            inventory: ['Mystical Key', 'Crystal Shard', 'Ancient Coin'],
+            stats: {
+                level: 3,
+                energy: 75,
+                wisdom: 12,
+                courage: 8,
+                mysteriesSolved: 7
+            },
+            discoveredObjects: new Set()
+        };
+
+        // Object interactions
+        document.querySelectorAll('.game-object').forEach(object => {
+            object.addEventListener('click', () => {
+                const objectId = object.dataset.object;
+                if (!gameState.discoveredObjects.has(objectId)) {
+                    gameState.discoveredObjects.add(objectId);
+                    addLogEntry(`You discover something new about the ${object.querySelector('.object-name').textContent}!`, 'discovery');
+                }
+
+                // Add interaction animation
+                object.style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                    object.style.transform = '';
+                }, 200);
+            });
+        });
+
+        // Action buttons
+        document.querySelectorAll('.action-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const action = button.textContent;
+                addLogEntry(`You ${action.toLowerCase()}...`, 'action');
+
+                // Add button animation
+                button.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    button.style.transform = '';
+                }, 150);
+
+                // Simulate game response
+                setTimeout(() => {
+                    const responses = [
+                        'You feel a mysterious energy responding to your action.',
+                        'The ancient magic begins to stir in response to your presence.',
+                        'You sense a subtle shift in the mystical energies around you.',
+                        'The sacred geometry of the room seems to resonate with your action.'
+                    ];
+                    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                    addLogEntry(randomResponse, 'system');
+                }, 1000);
+            });
+        });
+
+        function addLogEntry(message, type) {
+            const log = document.getElementById('game-log');
+            const entry = document.createElement('div');
+            entry.className = `log-entry ${type}`;
+            entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+
+            log.appendChild(entry);
+            log.scrollTop = log.scrollHeight;
+        }
+
+        // Add mystical ambient effects
+        function addAmbientEffects() {
+            // Floating particles
+            setInterval(() => {
+                if (Math.random() < 0.3) {
+                    const particle = document.createElement('div');
+                    particle.style.cssText = `
+                        position: absolute;
+                        width: 4px;
+                        height: 4px;
+                        background: ${Math.random() < 0.5 ? 'var(--primary-color)' : 'var(--secondary-color)'};
+                        border-radius: 50%;
+                        pointer-events: none;
+                        opacity: 0.6;
+                        animation: floatUp 3s linear forwards;
+                    `;
+
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.bottom = '0';
+
+                    document.querySelector('.room-display').appendChild(particle);
+
+                    setTimeout(() => {
+                        if (particle.parentNode) {
+                            particle.parentNode.removeChild(particle);
+                        }
+                    }, 3000);
+                }
+            }, 1000);
+        }
+
+        // Add CSS for floating animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes floatUp {
+                to {
+                    transform: translateY(-100px);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Initialize ambient effects
+        addAmbientEffects();
+
+        // Add mystical sound effect (placeholder)
+        function playMysticalSound() {
+            // In a real game, this would play ambient mystical sounds
+            console.log('🔊 Playing mystical ambient sound...');
+        }
+
+        // Play sound on interactions
+        document.addEventListener('click', () => {
+            playMysticalSound();
+        });
+    </script>
+</body>
+</html>

@@ -13,12 +13,13 @@
   },
   "dependencies": {
     "@cathedral/shared": "workspace:*",
-    "@cathedral/cathedral-game-engine": "workspace:*",
+    "@cathedral/cyoa-book-game": "workspace:*",
+    "@cathedral/shared": "workspace:*",
+    "@bekalah/cyoa-book-game": "workspace:*",
     "canvas": "^2.11.2",
     "d3": "^7.8.5",
     "ml-matrix": "^6.10.4",
-    "lodash": "^4.17.21",
-    "openai": "^4.28.0"
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@types/d3": "^7.4.0",

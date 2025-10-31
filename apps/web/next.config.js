@@ -4,14 +4,10 @@ const nextConfig = {
   swcMinify: true,
 
   // Enable static export for Cloudflare Pages and Azure Static Web Apps
-  output: "export",
+  output: 'export',
   trailingSlash: true,
-  // GitHub Pages project site served under /cathedral
-  // Ensures correct asset paths when hosted at https://bekalah.github.io/cathedral
-  basePath: "/cathedral",
-  assetPrefix: "/cathedral/",
   images: {
-    unoptimized: true,
+    unoptimized: true
   },
 
   // Webpack configuration for Three.js, Babylon.js, p5.js, and Tone.js
@@ -30,22 +26,22 @@ const nextConfig = {
     config.optimization = {
       ...config.optimization,
       splitChunks: {
-        chunks: "all",
+        chunks: 'all',
         cacheGroups: {
           three: {
             test: /[\\/]node_modules[\\/](three|@react-three)[\\/]/,
-            name: "three",
-            chunks: "all",
+            name: 'three',
+            chunks: 'all',
           },
           babylonjs: {
             test: /[\\/]node_modules[\\/]babylonjs[\\/]/,
-            name: "babylonjs",
-            chunks: "all",
+            name: 'babylonjs',
+            chunks: 'all',
           },
           tone: {
             test: /[\\/]node_modules[\\/]tone[\\/]/,
-            name: "tone",
-            chunks: "all",
+            name: 'tone',
+            chunks: 'all',
           },
         },
       },
@@ -57,7 +53,7 @@ const nextConfig = {
   // Experimental features for better performance
   experimental: {
     optimizeCss: true,
-    webVitalsAttribution: ["CLS", "LCP"],
+    webVitalsAttribution: ['CLS', 'LCP'],
   },
 };
 

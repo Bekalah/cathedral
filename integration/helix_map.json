@@ -1,0 +1,48 @@
+{
+  "MA_sequence": [
+    {
+      "id": "MA:00-Fool",
+      "helixIndex": 0,
+      "sphere": "Kether",
+      "realmTemplate": "FOOTSTEPS",
+      "musicKey": "G-phi",
+      "connectedApps": ["stone-grimoire", "cathedral-hub"],
+      "godotScenes": ["scenes/arcana/fool/Footsteps.tscn"],
+      "materialRecipes": [],
+      "shaderManifests": ["shaders/fool-beginning.glsl"]
+    },
+    {
+      "id": "MA:01-Magician",
+      "helixIndex": 1,
+      "sphere": "Chokmah",
+      "realmTemplate": "ATELIER",
+      "musicKey": "C#-phi",
+      "connectedApps": ["stone-grimoire", "cathedral-hub", "arcanae-lab"],
+      "godotScenes": ["scenes/arcana/magician/Atelier.tscn"],
+      "materialRecipes": ["tiffany/rosslyn-tiffany-v1/material_recipe.json"],
+      "shaderManifests": ["shaders/magician-focus.glsl"]
+    },
+    {
+      "id": "MA:02-High-Priestess",
+      "helixIndex": 2,
+      "sphere": "Binah",
+      "realmTemplate": "TEMPLE",
+      "musicKey": "F-phi",
+      "connectedApps": ["stone-grimoire", "cathedral-hub"],
+      "godotScenes": ["scenes/arcana/high-priestess/Temple.tscn"],
+      "materialRecipes": ["tiffany/priestess-tiffany-v1/material_recipe.json"],
+      "shaderManifests": ["shaders/priestess-intuition.glsl"]
+    }
+  ],
+  "LA_mapping_rules": {
+    "Wands": "branch_1",
+    "Cups": "branch_2",
+    "Swords": "branch_3",
+    "Pentacles": "branch_4"
+  },
+  "sphere_connections": {
+    "Kether": ["Chokmah", "Binah"],
+    "Chokmah": ["Kether", "Chesed", "Geburah"],
+    "Binah": ["Kether", "Chesed", "Geburah"]
+  }
+}

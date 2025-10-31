@@ -1,0 +1,34 @@
+{
+  "name": "cathedral-of-circuits",
+  "version": "1.0.0",
+  "description": "Lightweight sacred technology monorepo - runs entirely on free hosting",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "preview": "turbo run preview",
+    "clean": "turbo run clean && rm -rf node_modules .turbo dist",
+    "deploy": "turbo run deploy",
+    "gem-towers": "echo '🎭 Gem Tower System Active' && cd apps/gem-tower-explorer && npm run build",
+    "fusion-kink": "echo '💎 Fusion Kink Generator Active' && cd apps/fusion-kink-studio && npm run build",
+    "sacred-geometry": "echo '🔺 Sacred Geometry Engine Active' && cd packages/sacred-geometry-core && npm run build"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.0",
+    "vite": "^5.0.0",
+    "typescript": "^5.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*",
+    "edge-functions/*"
+  ]
+}

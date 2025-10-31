@@ -50,6 +50,5 @@ export interface ResonanceComputationResult {
     colorField: string[];
     phiScore: number;
     stability: number;
-    aiLore?: string;
 }
 //# sourceMappingURL=types.d.ts.map

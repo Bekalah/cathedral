@@ -1,0 +1,702 @@
+[
+  {
+    "id": "gate-001",
+    "gate_index": 1,
+    "name": "Gate of First Resonance",
+    "card": "Ann Abyss",
+    "family": "chapel",
+    "palette": ["#0F172A", "#1B9CFC", "#FFB3C1", "#F7E4B2", "#E6F7FF"],
+    "symmetry": 8,
+    "numerology": { "core": 7, "path": 1 },
+    "energy": 0.78,
+    "fractal_params": { "type": "IFS", "depth": 6, "scale": 0.83 },
+    "style": { "lora": "luxcrux_atelier_v1", "weight": 0.75 },
+    "tilebank": "stone_cathedral_v1",
+    "seed": 1001,
+    "gem_style": {
+      "ornament": "vintage-cut-opal",
+      "density": 0.12,
+      "palette_bias": ["#E6F7FF", "#D8C8FF", "#FFEEDD"],
+      "metal_setting": "antique_gold",
+      "wear": 0.15
+    },
+    "opal_params": {
+      "iridescence_strength": 0.82,
+      "microfacet_scale": 0.04,
+      "sheen_color_shift": 0.15
+    },
+    "prompt_template": "Atelier mandala/portal of {name} ({card}), palette {palette}, symmetry {symmetry}, numerology {numerology.core}, vintage gems {gem_style.ornament}, opalescent iridescence strength {opal_params.iridescence_strength}, no text, seed:{seed}, size:1024x1024"
+  },
+  {
+    "id": "gate-002",
+    "gate_index": 2,
+    "name": "Gate of Gemini Rivers",
+    "card": "Gemini Rivers",
+    "family": "pillar",
+    "palette": ["#081223", "#0F4B6B", "#92D7FF", "#F3C6D6", "#F7E4B2"],
+    "symmetry": 6,
+    "numerology": { "core": 4, "path": 7 },
+    "energy": 0.65,
+    "fractal_params": { "type": "IFS", "depth": 4, "scale": 0.75 },
+    "style": { "lora": "luxcrux_atelier_v1", "weight": 0.75 },
+    "tilebank": "stone_cathedral_v1",
+    "seed": 1002,
+    "gem_style": {
+      "ornament": "opalescent-inset",
+      "density": 0.08,
+      "palette_bias": ["#92D7FF", "#F3C6D6"],
+      "metal_setting": "oxidized_silver",
+      "wear": 0.08
+    },
+    "opal_params": {
+      "iridescence_strength": 0.6,
+      "microfacet_scale": 0.03,
+      "sheen_color_shift": 0.10
+    },
+    "prompt_template": "Atelier symmetric mandala of {name} ({card}), palette {palette}, symmetry {symmetry}, numerology core {numerology.core}, no text, high-detail"
+  },
+  {
+    "id": "gate-003",
+    "gate_index": 3,
+    "name": "Gate of Fractal Flora",
+    "card": "Fractal Bloom",
+    "family": "flora",
+    "palette": ["#102030", "#1B9CFC", "#BDEFF9", "#FFD7E6", "#FFF5DA"],
+    "symmetry": 3,
+    "numerology": { "core": 3, "path": 5 },
+    "energy": 0.55,
+    "fractal_params": { "type": "IFS", "depth": 5, "scale": 0.85 },
+    "style": { "lora": "luxcrux_atelier_v1", "weight": 0.75 },
+    "tilebank": "stone_cathedral_v1",
+    "seed": 1003,
+    "gem_style": {
+      "ornament": "opal-venation",
+      "density": 0.06,
+      "palette_bias": ["#BDEFF9", "#FFF5DA"],
+      "metal_setting": "antique_bronze",
+      "wear": 0.05
+    },
+    "opal_params": {
+      "iridescence_strength": 0.55,
+      "microfacet_scale": 0.035,
+      "sheen_color_shift": 0.12
+    },
+    "prompt_template": "Organic fractal organism of {name} ({card}), palette {palette}, symmetry {symmetry}, numerology {numerology.core}, fractal {fractal_params.type} depth {fractal_params.depth}, no text, high detail"
+  },
+  {
+    "id": "gate-004",
+    "gate_index": 4,
+    "name": "Gate of Temple Blueprint",
+    "card": "Temple Matrix",
+    "family": "building",
+    "palette": ["#0C1726", "#2A74A3", "#F7D6E0", "#FFE6C9", "#DDEEFF"],
+    "symmetry": 4,
+    "numerology": { "core": 5, "path": 4 },
+    "energy": 0.70,
+    "fractal_params": { "type": "LSYSTEM", "depth": 5, "scale": 0.80 },
+    "style": { "lora": "luxcrux_atelier_v1", "weight": 0.75 },
+    "tilebank": "stone_cathedral_v1",
+    "seed": 1004,
+    "gem_style": {
+      "ornament": "marquise-opal",
+      "density": 0.10,
+      "palette_bias": ["#FFE6C9", "#DDEEFF"],
+      "metal_setting": "antique_gold",
+      "wear": 0.10
+    },
+    "opal_params": {
+      "iridescence_strength": 0.7,
+      "microfacet_scale": 0.03,
+      "sheen_color_shift": 0.14
+    },
+    "prompt_template": "Visionary architecture temple of {name} ({card}), palette {palette}, symmetry {symmetry}, numerology {numerology.core}, no text, isometric, high detail"
+  },
+  {
+    "id": "gate-005",
+    "gate_index": 5,
+    "name": "Gate of Daimon Silhouette",
+    "card": "Daimon Echo",
+    "family": "daemon",
+    "palette": ["#0B0F1A", "#184E63", "#93E0FF", "#FFC4DD", "#FFF1DA"],
+    "symmetry": 2,
+    "numerology": { "core": 9, "path": 2 },
+    "energy": 0.88,
+    "fractal_params": { "type": "IFS", "depth": 7, "scale": 0.90 },
+    "style": { "lora": "luxcrux_atelier_v1", "weight": 0.75 },
+    "tilebank": "stone_cathedral_v1",
+    "seed": 1005,
+    "gem_style": {
+      "ornament": "filigree-opal",
+      "density": 0.18,
+      "palette_bias": ["#93E0FF", "#FFC4DD"],
+      "metal_setting": "oxidized_silver",
+      "wear": 0.18
+    },
+    "opal_params": {
+      "iridescence_strength": 0.88,
+      "microfacet_scale": 0.05,
+      "sheen_color_shift": 0.18
+    },
+    "prompt_template": "Archetypal daimon portrait of {name} ({card}), palette {palette}, symmetry {symmetry}, numerology core {numerology.core}, no text, visionary, high-detail"
+  },
+  {
+    "id": "gate-006",
+    "gate_index": 6,
+    "name": "Gate of Chromatic Ring",
+    "card": "Chromatic Ring",
+    "family": "building",
+    "palette": ["#071020", "#0FA3E3", "#FFC9E1", "#FFF0C6", "#EAF8FF"],
+    "symmetry": 12,
+    "numerology": { "core": 2, "path": 6 },
+    "energy": 0.90,
+    "fractal_params": { "type": "MANDELBROT", "depth": 6, "scale": 0.95 },
+    "style": { "lora": "luxcrux_atelier_v1", "weight": 0.75 },
+    "tilebank": "stone_cathedral_v1",
+    "seed": 1006,
+    "gem_style": {
+      "ornament": "cabochon-opal",
+      "density": 0.22,
+      "palette_bias": ["#EAF8FF", "#FFC9E1"],
+      "metal_setting": "brass_antique",
+      "wear": 0.09
+    },
+    "opal_params": {
+      "iridescence_strength": 0.9,
+      "microfacet_scale": 0.02,
+      "sheen_color_shift": 0.22
+    },
+    "prompt_template": "Chromatic ring mandala of {name} ({card}), palette {palette}, symmetry {symmetry}, numerology {numerology.core}, no text, high detail"
+  },
+  {
+    "id": "gate-007",
+    "gate_index": 7,
+    "name": "Gate of L-System Tendrils",
+    "card": "Tendril Matrix",
+    "family": "fauna",
+    "palette": ["#0E1722", "#1C9CE0", "#BEEAF8", "#FFD8EB", "#FFF2D8"],
+    "symmetry": 6,
+    "numerology": { "core": 6, "path": 3 },
+    "energy": 0.50,
+    "fractal_params": { "type": "LSYSTEM", "depth": 6, "scale": 0.80 },
+    "style": { "lora": "luxcrux_atelier_v1", "weight": 0.75 },
+    "tilebank": "stone_cathedral_v1",
+    "seed": 1007,
+    "gem_style": {
+      "ornament": "micro-opal",
+      "density": 0.04,
+      "palette_bias": ["#BEEAF8", "#FFD8EB"],
+      "metal_setting": "silver_patina",
+      "wear": 0.04
+    },
+    "opal_params": {
+      "iridescence_strength": 0.5,
+      "microfacet_scale": 0.03,
+      "sheen_color_shift": 0.09
+    },
+    "prompt_template": "L-system tendril organism of {name} ({card}), palette {palette}, symmetry {symmetry}, numerology {numerology.core}, fractal {fractal_params.type} depth {fractal_params.depth}, no text"
+  },
+  {
+    "id": "gate-008",
+    "gate_index": 8,
+    "name": "Gate of Atrium Mosaic",
+    "card": "Atrium Codex",
+    "family": "building",
+    "palette": ["#08111B", "#145B82", "#C6F0FF", "#FFDDEB", "#FFF8E0"],
+    "symmetry": 4,
+    "numerology": { "core": 5, "path": 8 },
+    "energy": 0.78,
+    "fractal_params": { "type": "IFS", "depth": 5, "scale": 0.82 },
+    "style": { "lora": "luxcrux_atelier_v1", "weight": 0.75 },
+    "tilebank": "stone_cathedral_v1",
+    "seed": 1008,
+    "gem_style": {
+      "ornament": "faceted-opal",
+      "density": 0.16,
+      "palette_bias": ["#C6F0FF", "#FFDDEB"],
+      "metal_setting": "antique_gold",
+      "wear": 0.14
+    },
+    "opal_params": {
+      "iridescence_strength": 0.78,
+      "microfacet_scale": 0.045,
+      "sheen_color_shift": 0.16
+    },
+    "prompt_template": "Atrium mosaic mandala of {name} ({card}), palette {palette}, symmetry {symmetry}, numerology {numerology.core}, no text, high detail"
+  },
+  {
+    "id": "gate-009",
+    "gate_index": 9,
+    "name": "Gate of Micro-Inlay Study",
+    "card": "Micro-Inlay",
+    "family": "building",
+    "palette": ["#0B1A25", "#1B8EDB", "#AEE9FF", "#FFD4E8", "#FFF7E6"],
+    "symmetry": 8,
+    "numerology": { "core": 1, "path": 2 },
+    "energy": 0.85,
+    "fractal_params": { "type": "IFS", "depth": 7, "scale": 0.88 },
+    "style": { "lora": "luxcrux_gems_v1", "weight": 0.75 },
+    "tilebank": "stone_cathedral_v1",
+    "seed": 1009,
+    "gem_style": {
+      "ornament": "vintage-gem-collection",
+      "density": 0.30,
+      "palette_bias": ["#AEE9FF", "#FFD4E8"],
+      "metal_setting": "mixed_antique",
+      "wear": 0.2
+    },
+    "opal_params": {
+      "iridescence_strength": 0.85,
+      "microfacet_scale": 0.02,
+      "sheen_color_shift": 0.2
+    },
+    "prompt_template": "Micro-inlay gem study of {name} ({card}), palette {palette}, symmetry {symmetry}, no text, high detail"
+  },
+  {
+    "id": "gate-010",
+    "gate_index": 10,
+    "name": "Gate of Mirror Cathedral",
+    "card": "Mirror Matrix",
+    "family": "building",
+    "palette": ["#08101B", "#0F6FA5", "#D6F3FF", "#FFDCE3", "#FFF1D4"],
+    "symmetry": 8,
+    "numerology": { "core": 8, "path": 4 },
+    "energy": 0.80,
+    "fractal_params": { "type": "IFS", "depth": 6, "scale": 0.83 },
+    "style": { "lora": "luxcrux_atelier_v1", "weight": 0.75 },
+    "tilebank": "stone_cathedral_v1",
+    "seed": 1010,
+    "gem_style": {
+      "ornament": "mirror-opal",
+      "density": 0.14,
+      "palette_bias": ["#D6F3FF", "#FFDCE3"],
+      "metal_setting": "antique_iron",
+      "wear": 0.11
+    },
+    "opal_params": {
+      "iridescence_strength": 0.8,
+      "microfacet_scale": 0.035,
+      "sheen_color_shift": 0.13
+    },
+    "prompt_template": "Mirror cathedral portal of {name} ({card}), palette {palette}, symmetry {symmetry}, numerology {numerology.core}, no text, high detail"
+  },
+  {
+    "id": "gate-011",
+    "gate_index": 11,
+    "name": "Gate of Quiet Liturgy",
+    "card": "Quiet Liturgy",
+    "family": "chapel",
+    "palette": ["#0D1220", "#2C8BBF", "#CFEFFB", "#FFDFE8", "#FFF6E3"],
+    "symmetry": 12,
+    "numerology": { "core": 2, "path": 9 },
+    "energy": 0.58,
+    "fractal_params": { "type": "IFS", "depth": 4, "scale": 0.70 },
+    "style": { "lora": "luxcrux_atelier_v1", "weight": 0.75 },
+    "tilebank": "stone_cathedral_v1",
+    "seed": 1011,
+    "gem_style": {
+      "ornament": "soft-cabochon",
+      "density": 0.05,
+      "palette_bias": ["#CFEFFB", "#FFDFE8"],
+      "metal_setting": "antique_silver",
+      "wear": 0.04
+    },
+    "opal_params": {
+      "iridescence_strength": 0.58,
+      "microfacet_scale": 0.02,
+      "sheen_color_shift": 0.08
+    },
+    "prompt_template": "Quiet liturgy mandala of {name} ({card}), palette {palette}, symmetry {symmetry}, numerology {numerology.core}, no text, soft"
+  },
+  {
+    "id": "gate-012",
+    "gate_index": 12,
+    "name": "Gate of Stern Altar",
+    "card": "Stern Altar",
+    "family": "building",
+    "palette": ["#0B1220", "#1A6C9F", "#BEE9FF", "#FFDADA", "#FFF6D9"],
+    "symmetry": 4,
+    "numerology": { "core": 6, "path": 5 },
+    "energy": 0.70,
+    "fractal_params": { "type": "IFS", "depth": 5, "scale": 0.78 },
+    "style": { "lora": "luxcrux_atelier_v1", "weight": 0.75 },
+    "tilebank": "stone_cathedral_v1",
+    "seed": 1012,
+    "gem_style": {
+      "ornament": "antique-opal-chips",
+      "density": 0.09,
+      "palette_bias": ["#BEE9FF", "#FFDADA"],
+      "metal_setting": "brass_dark",
+      "wear": 0.12
+    },
+    "opal_params": {
+      "iridescence_strength": 0.7,
+      "microfacet_scale": 0.04,
+      "sheen_color_shift": 0.11
+    },
+    "prompt_template": "Stern altar architecture of {name} ({card}), palette {palette}, symmetry {symmetry}, numerology {numerology.core}, no text"
+  },
+  {
+    "id": "gate-013",
+    "gate_index": 13,
+    "name": "Gate of Veiled Oracle",
+    "card": "Veiled Oracle",
+    "family": "daemon",
+    "palette": ["#071224", "#166F8C", "#AEE6F8", "#FFDCE1", "#FFF7E8"],
+    "symmetry": 2,
+    "numerology": { "core": 7, "path": 3 },
+    "energy": 0.86,
+    "fractal_params": { "type": "IFS", "depth": 7, "scale": 0.85 },
+    "style": { "lora": "luxcrux_atelier_v1", "weight": 0.75 },
+    "tilebank": "stone_cathedral_v1",
+    "seed": 1013,
+    "gem_style": {
+      "ornament": "veil-opal-lattice",
+      "density": 0.20,
+      "palette_bias": ["#AEE6F8", "#FFDCE1"],
+      "metal_setting": "etched_silver",
+      "wear": 0.16
+    },
+    "opal_params": {
+      "iridescence_strength": 0.86,
+      "microfacet_scale": 0.05,
+      "sheen_color_shift": 0.17
+    },
+    "prompt_template": "Veiled oracle daimon of {name} ({card}), palette {palette}, symmetry {symmetry}, numerology {numerology.core}, no text, visionary"
+  },
+  {
+    "id": "gate-014",
+    "gate_index": 14,
+    "name": "Gate of Spiral Crypt",
+    "card": "Spiral Crypt",
+    "family": "building",
+    "palette": ["#08121E", "#1A87B8", "#CFF3FF", "#FFD9E6", "#FFFBDD"],
+    "symmetry": 6,
+    "numerology": { "core": 5, "path": 6 },
+    "energy": 0.75,
+    "fractal_params": { "type": "LSYSTEM", "depth": 6, "scale": 0.82 },
+    "style": { "lora": "luxcrux_atelier_v1", "weight": 0.75 },
+    "tilebank": "stone_cathedral_v1",
+    "seed": 1014,
+    "gem_style": {
+      "ornament": "spiral-opal-nodes",
+      "density": 0.11,
+      "palette_bias": ["#CFF3FF", "#FFD9E6"],
+      "metal_setting": "antique_brass",
+      "wear": 0.10
+    },
+    "opal_params": {
+      "iridescence_strength": 0.75,
+      "microfacet_scale": 0.035,
+      "sheen_color_shift": 0.14
+    },
+    "prompt_template": "Spiral crypt architecture of {name} ({card}), palette {palette}, symmetry {symmetry}, numerology {numerology.core}, no text"
+  },
+  {
+    "id": "gate-015",
+    "gate_index": 15,
+    "name": "Gate of Luminous Atrium",
+    "card": "Luminous Atrium",
+    "family": "building",
+    "palette": ["#091426", "#1490C8", "#CFF8FF", "#FFE6F0", "#FFF9E6"],
+    "symmetry": 8,
+    "numerology": { "core": 8, "path": 1 },
+    "energy": 0.92,
+    "fractal_params": { "type": "IFS", "depth": 6, "scale": 0.88 },
+    "style": { "lora": "luxcrux_atelier_v1", "weight": 0.75 },
+    "tilebank": "stone_cathedral_v1",
+    "seed": 1015,
+    "gem_style": {
+      "ornament": "prismatic-opal",
+      "density": 0.18,
+      "palette_bias": ["#CFF8FF", "#FFE6F0"],
+      "metal_setting": "antique_gold",
+      "wear": 0.13
+    },
+    "opal_params": {
+      "iridescence_strength": 0.92,
+      "microfacet_scale": 0.03,
+      "sheen_color_shift": 0.21
+    },
+    "prompt_template": "Luminous atrium mandala of {name} ({card}), palette {palette}, symmetry {symmetry}, numerology {numerology.core}, no text, high detail"
+  },
+  {
+    "id": "gate-016",
+    "gate_index": 16,
+    "name": "Gate of Microtile Fauna",
+    "card": "Microtile Fauna",
+    "family": "fauna",
+    "palette": ["#08111B", "#1B9BE2", "#BEEBFF", "#FFDDE6", "#FFF8E0"],
+    "symmetry": 3,
+    "numerology": { "core": 3, "path": 7 },
+    "energy": 0.50,
+    "fractal_params": { "type": "LSYSTEM", "depth": 5, "scale": 0.75 },
+    "style": { "lora": "luxcrux_atelier_v1", "weight": 0.75 },
+    "tilebank": "stone_cathedral_v1",
+    "seed": 1016,
+    "gem_style": {
+      "ornament": "micro-opal-speck",
+      "density": 0.05,
+      "palette_bias": ["#BEEBFF", "#FFDDE6"],
+      "metal_setting": "copper_antique",
+      "wear": 0.06
+    },
+    "opal_params": {
+      "iridescence_strength": 0.5,
+      "microfacet_scale": 0.02,
+      "sheen_color_shift": 0.08
+    },
+    "prompt_template": "Microtile fauna organism of {name} ({card}), palette {palette}, symmetry {symmetry}, numerology {numerology.core}, no text"
+  },
+  {
+    "id": "gate-017",
+    "gate_index": 17,
+    "name": "Gate of Fractal Backplate",
+    "card": "Fractal Backplate",
+    "family": "building",
+    "palette": ["#0A1120", "#166D9F", "#CFF6FF", "#FFDCE6", "#FFFDE6"],
+    "symmetry": 4,
+    "numerology": { "core": 7, "path": 2 },
+    "energy": 0.77,
+    "fractal_params": { "type": "IFS", "depth": 7, "scale": 0.85 },
+    "style": { "lora": "luxcrux_atelier_v1", "weight": 0.75 },
+    "tilebank": "stone_cathedral_v1",
+    "seed": 1017,
+    "gem_style": {
+      "ornament": "filigree-opal-chips",
+      "density": 0.07,
+      "palette_bias": ["#CFF6FF", "#FFDCE6"],
+      "metal_setting": "dark_bronze",
+      "wear": 0.09
+    },
+    "opal_params": {
+      "iridescence_strength": 0.77,
+      "microfacet_scale": 0.04,
+      "sheen_color_shift": 0.13
+    },
+    "prompt_template": "Fractal backplate mandala of {name} ({card}), palette {palette}, symmetry {symmetry}, numerology {numerology.core}, no text"
+  },
+  {
+    "id": "gate-018",
+    "gate_index": 18,
+    "name": "Gate of Sacred Pavilion",
+    "card": "Sacred Pavilion",
+    "family": "building",
+    "palette": ["#06111A", "#1A8CCF", "#D8F4FF", "#FFD9EA", "#FFF6E1"],
+    "symmetry": 6,
+    "numerology": { "core": 6, "path": 8 },
+    "energy": 0.79,
+    "fractal_params": { "type": "IFS", "depth": 6, "scale": 0.83 },
+    "style": { "lora": "luxcrux_atelier_v1", "weight": 0.75 },
+    "tilebank": "stone_cathedral_v1",
+    "seed": 1018,
+    "gem_style": {
+      "ornament": "spiral-opal-brooch",
+      "density": 0.13,
+      "palette_bias": ["#D8F4FF", "#FFD9EA"],
+      "metal_setting": "antique_silver",
+      "wear": 0.10
+    },
+    "opal_params": {
+      "iridescence_strength": 0.79,
+      "microfacet_scale": 0.035,
+      "sheen_color_shift": 0.15
+    },
+    "prompt_template": "Sacred pavilion architecture of {name} ({card}), palette {palette}, symmetry {symmetry}, numerology {numerology.core}, no text"
+  },
+  {
+    "id": "gate-019",
+    "gate_index": 19,
+    "name": "Gate of Bioluminescent Grove",
+    "card": "Bioluminescent Grove",
+    "family": "flora",
+    "palette": ["#071321", "#15A5E6", "#CFFBFF", "#FFDDEB", "#FFF4D9"],
+    "symmetry": 3,
+    "numerology": { "core": 4, "path": 4 },
+    "energy": 0.62,
+    "fractal_params": { "type": "LSYSTEM", "depth": 5, "scale": 0.78 },
+    "style": { "lora": "luxcrux_atelier_v1", "weight": 0.75 },
+    "tilebank": "stone_cathedral_v1",
+    "seed": 1019,
+    "gem_style": {
+      "ornament": "vein-opal-specks",
+      "density": 0.07,
+      "palette_bias": ["#CFFBFF", "#FFDDEB"],
+      "metal_setting": "bronze_fine",
+      "wear": 0.06
+    },
+    "opal_params": {
+      "iridescence_strength": 0.62,
+      "microfacet_scale": 0.03,
+      "sheen_color_shift": 0.11
+    },
+    "prompt_template": "Bioluminescent grove organism of {name} ({card}), palette {palette}, symmetry {symmetry}, numerology {numerology.core}, no text"
+  },
+  {
+    "id": "gate-020",
+    "gate_index": 20,
+    "name": "Gate of Heraldic Mosaic",
+    "card": "Heraldic Mosaic",
+    "family": "building",
+    "palette": ["#08121D", "#1A7FB8", "#D6F7FF", "#FFD7E6", "#FFF8D9"],
+    "symmetry": 4,
+    "numerology": { "core": 5, "path": 5 },
+    "energy": 0.76,
+    "fractal_params": { "type": "IFS", "depth": 5, "scale": 0.80 },
+    "style": { "lora": "luxcrux_atelier_v1", "weight": 0.75 },
+    "tilebank": "stone_cathedral_v1",
+    "seed": 1020,
+    "gem_style": {
+      "ornament": "herald-opal-insets",
+      "density": 0.15,
+      "palette_bias": ["#D6F7FF", "#FFD7E6"],
+      "metal_setting": "antique_gold",
+      "wear": 0.11
+    },
+    "opal_params": {
+      "iridescence_strength": 0.76,
+      "microfacet_scale": 0.04,
+      "sheen_color_shift": 0.14
+    },
+    "prompt_template": "Heraldic mosaic mandala of {name} ({card}), palette {palette}, symmetry {symmetry}, numerology {numerology.core}, no text"
+  },
+  {
+    "id": "gate-021",
+    "gate_index": 21,
+    "name": "Gate of Quiet Altar",
+    "card": "Quiet Altar",
+    "family": "building",
+    "palette": ["#0B1722", "#19A2E6", "#BFEFFF", "#FFDCE6", "#FFF5D9"],
+    "symmetry": 4,
+    "numerology": { "core": 4, "path": 2 },
+    "energy": 0.60,
+    "fractal_params": { "type": "IFS", "depth": 4, "scale": 0.72 },
+    "style": { "lora": "luxcrux_atelier_v1", "weight": 0.75 },
+    "tilebank": "stone_cathedral_v1",
+    "seed": 1021,
+    "gem_style": {
+      "ornament": "soft-cabochon",
+      "density": 0.06,
+      "palette_bias": ["#BFEFFF", "#FFDCE6"],
+      "metal_setting": "antique_silver",
+      "wear": 0.07
+    },
+    "opal_params": {
+      "iridescence_strength": 0.6,
+      "microfacet_scale": 0.025,
+      "sheen_color_shift": 0.1
+    },
+    "prompt_template": "Quiet altar architecture of {name} ({card}), palette {palette}, symmetry {symmetry}, numerology {numerology.core}, no text"
+  },
+  {
+    "id": "gate-022",
+    "gate_index": 22,
+    "name": "Gate of Subterranean Vault",
+    "card": "Subterranean Vault",
+    "family": "building",
+    "palette": ["#061219", "#1A7DAF", "#CFF8FF", "#FFD6EA", "#FFF9E1"],
+    "symmetry": 6,
+    "numerology": { "core": 6, "path": 1 },
+    "energy": 0.74,
+    "fractal_params": { "type": "IFS", "depth": 6, "scale": 0.80 },
+    "style": { "lora": "luxcrux_atelier_v1", "weight": 0.75 },
+    "tilebank": "stone_cathedral_v1",
+    "seed": 1022,
+    "gem_style": {
+      "ornament": "vault-opal-studs",
+      "density": 0.12,
+      "palette_bias": ["#CFF8FF", "#FFD6EA"],
+      "metal_setting": "antique_iron",
+      "wear": 0.1
+    },
+    "opal_params": {
+      "iridescence_strength": 0.74,
+      "microfacet_scale": 0.04,
+      "sheen_color_shift": 0.12
+    },
+    "prompt_template": "Subterranean vault mandala of {name} ({card}), palette {palette}, symmetry {symmetry}, numerology {numerology.core}, no text"
+  },
+  {
+    "id": "gate-023",
+    "gate_index": 23,
+    "name": "Gate of Petal Mandala",
+    "card": "Petal Mandala",
+    "family": "flora",
+    "palette": ["#0B1422", "#18A7E0", "#CFF6FF", "#FFDCEB", "#FFF8E6"],
+    "symmetry": 8,
+    "numerology": { "core": 3, "path": 6 },
+    "energy": 0.70,
+    "fractal_params": { "type": "LSYSTEM", "depth": 5, "scale": 0.78 },
+    "style": { "lora": "luxcrux_atelier_v1", "weight": 0.75 },
+    "tilebank": "stone_cathedral_v1",
+    "seed": 1023,
+    "gem_style": {
+      "ornament": "petal-opal",
+      "density": 0.09,
+      "palette_bias": ["#CFF6FF", "#FFDCEB"],
+      "metal_setting": "silver_fine",
+      "wear": 0.07
+    },
+    "opal_params": {
+      "iridescence_strength": 0.7,
+      "microfacet_scale": 0.03,
+      "sheen_color_shift": 0.12
+    },
+    "prompt_template": "Petal mandala organism of {name} ({card}), palette {palette}, symmetry {symmetry}, numerology {numerology.core}, no text"
+  },
+  {
+    "id": "gate-024",
+    "gate_index": 24,
+    "name": "Gate of Threshold Mosaic",
+    "card": "Threshold Mosaic",
+    "family": "building",
+    "palette": ["#07111A", "#1491D9", "#DBF9FF", "#FFDCEA", "#FFF8E3"],
+    "symmetry": 6,
+    "numerology": { "core": 5, "path": 2 },
+    "energy": 0.78,
+    "fractal_params": { "type": "IFS", "depth": 5, "scale": 0.82 },
+    "style": { "lora": "luxcrux_atelier_v1", "weight": 0.75 },
+    "tilebank": "stone_cathedral_v1",
+    "seed": 1024,
+    "gem_style": {
+      "ornament": "threshold-opal",
+      "density": 0.12,
+      "palette_bias": ["#DBF9FF", "#FFDCEA"],
+      "metal_setting": "antique_gold",
+      "wear": 0.09
+    },
+    "opal_params": {
+      "iridescence_strength": 0.78,
+      "microfacet_scale": 0.035,
+      "sheen_color_shift": 0.14
+    },
+    "prompt_template": "Threshold mosaic mandala of {name} ({card}), palette {palette}, symmetry {symmetry}, numerology {numerology.core}, no text"
+  },
+  {
+    "id": "gate-025",
+    "gate_index": 25,
+    "name": "Gate of Final Reverie",
+    "card": "Final Reverie",
+    "family": "chapel",
+    "palette": ["#06111A", "#178FCF", "#E6FBFF", "#FFEDE7", "#FFFEE0"],
+    "symmetry": 12,
+    "numerology": { "core": 9, "path": 9 },
+    "energy": 0.95,
+    "fractal_params": { "type": "IFS", "depth": 9, "scale": 0.90 },
+    "style": { "lora": "luxcrux_atelier_v1", "weight": 0.75 },
+    "tilebank": "stone_cathedral_v1",
+    "seed": 1025,
+    "gem_style": {
+      "ornament": "crown-opal",
+      "density": 0.22,
+      "palette_bias": ["#E6FBFF", "#FFEDE7"],
+      "metal_setting": "antique_gold",
+      "wear": 0.18
+    },
+    "opal_params": {
+      "iridescence_strength": 0.95,
+      "microfacet_scale": 0.05,
+      "sheen_color_shift": 0.22
+    },
+    "prompt_template": "Final reverie mandala of {name} ({card}), palette {palette}, symmetry {symmetry}, numerology {numerology.core}, no text, ultra detail"
+  }
+]

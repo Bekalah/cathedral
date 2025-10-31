@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cathedral of Circuits</title>
+    <meta name="description" content="Unified sacred technology monorepo - where real science meets mystical principles">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Sacred Geometry Theme -->
+    <style>
+        :root {
+            /* Golden Ratio Based Spacing */
+            --phi: 1.6180339887;
+            --spacing-xs: 0.382rem;
+            --spacing-sm: 0.618rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.618rem;
+            --spacing-xl: 2.618rem;
+            --spacing-xxl: 4.236rem;
+
+            /* Sacred Color Palette */
+            --color-cosmic: #0a0a0f;
+            --color-void: #1a1a2e;
+            --color-mystical: #16213e;
+            --color-sacred: #533483;
+            --color-divine: #7c3aed;
+            --color-celestial: #a855f7;
+            --color-ether: #c084fc;
+            --color-spirit: #ddd6fe;
+            --color-light: #f3e8ff;
+
+            /* Chakra Colors for Interactive Elements */
+            --chakra-crown: #ffffff;
+            --chakra-thirdeye: #9966cc;
+            --chakra-throat: #4169e1;
+            --chakra-heart: #50c878;
+            --chakra-solar: #ffd700;
+            --chakra-sacral: #ff8c00;
+            --chakra-root: #e0115f;
+
+            /* Animation Variables */
+            --animation-sacred: cubic-bezier(0.618, 0, 0.382, 1);
+            --animation-float: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--color-cosmic);
+            color: var(--color-spirit);
+            line-height: var(--phi);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Sacred Geometry Background */
+        .sacred-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            z-index: -1;
+            background:
+                radial-gradient(circle at 20% 20%, var(--chakra-heart) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, var(--chakra-thirdeye) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, var(--chakra-crown) 0%, transparent 30%);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: var(--spacing-lg);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: var(--spacing-xxl) 0;
+            margin-bottom: var(--spacing-xxl);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(80, 200, 120, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 700;
+            margin-bottom: var(--spacing-lg);
+            background: linear-gradient(135deg,
+                var(--chakra-heart) 0%,
+                var(--chakra-thirdeye) 25%,
+                var(--chakra-crown) 50%,
+                var(--chakra-solar) 75%,
+                var(--chakra-root) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: sacred-glow 4s ease-in-out infinite alternate;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: var(--color-light);
+            max-width: 800px;
+            margin: 0 auto var(--spacing-xl);
+            line-height: 1.7;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: var(--spacing-lg);
+            background: rgba(26, 26, 46, 0.8);
+            border-radius: var(--spacing-md);
+            border: 1px solid rgba(80, 200, 120, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--chakra-heart);
+            font-family: 'Fira Code', monospace;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--color-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-card {
+            background: rgba(26, 26, 46, 0.9);
+            border: 1px solid rgba(80, 200, 120, 0.3);
+            border-radius: var(--spacing-md);
+            padding: var(--spacing-xl);
+            text-decoration: none;
+            color: var(--color-spirit);
+            transition: all 0.4s var(--animation-sacred);
+            position: relative;
+            overflow: hidden;
+            min-width: 280px;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                transparent,
+                rgba(80, 200, 120, 0.1),
+                transparent);
+            transition: left 0.6s ease;
+        }
+
+        .nav-card:hover::before {
+            left: 100%;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: var(--chakra-heart);
+            box-shadow: 0 20px 40px rgba(80, 200, 120, 0.2);
+        }
+
+        .nav-icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+            display: block;
+        }
+
+        .nav-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            color: var(--chakra-heart);
+        }
+
+        .nav-description {
+            font-size: 1rem;
+            color: var(--color-light);
+            line-height: 1.6;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .nav-tech {
+            display: flex;
+            gap: var(--spacing-sm);
+            flex-wrap: wrap;
+            margin-top: var(--spacing-md);
+        }
+
+        .tech-tag {
+            background: rgba(80, 200, 120, 0.2);
+            color: var(--chakra-heart);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--spacing-sm);
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Features Section */
+        .features {
+            padding: var(--spacing-xxl) 0;
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+        }
+
+        .feature-card {
+            background: rgba(26, 26, 46, 0.8);
+            border-radius: var(--spacing-md);
+            padding: var(--spacing-xl);
+            border: 1px solid rgba(153, 102, 204, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--chakra-thirdeye);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+            display: block;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+            color: var(--chakra-thirdeye);
+        }
+
+        .feature-description {
+            color: var(--color-light);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: var(--spacing-xxl) 0;
+            border-top: 1px solid rgba(26, 26, 46, 0.5);
+            margin-top: var(--spacing-xxl);
+        }
+
+        .footer p {
+            color: var(--color-light);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: var(--chakra-heart);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--chakra-thirdeye);
+        }
+
+        /* Animations */
+        @keyframes sacred-glow {
+            0% { filter: brightness(1) hue-rotate(0deg); }
+            100% { filter: brightness(1.1) hue-rotate(30deg); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: var(--spacing-md);
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Sacred Geometry Elements */
+        .sacred-element {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.1;
+        }
+
+        .sacred-circle {
+            border: 2px solid var(--chakra-heart);
+            border-radius: 50%;
+            position: absolute;
+            animation: sacred-rotate 20s linear infinite;
+        }
+
+        @keyframes sacred-rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="sacred-bg"></div>
+
+    <!-- Sacred Geometry Background Elements -->
+    <div class="sacred-element sacred-circle" style="width: 400px; height: 400px; top: 10%; right: 10%; border-color: var(--chakra-thirdeye);"></div>
+    <div class="sacred-element sacred-circle" style="width: 300px; height: 300px; bottom: 20%; left: 15%; border-color: var(--chakra-heart);"></div>
+    <div class="sacred-element sacred-circle" style="width: 200px; height: 200px; top: 60%; right: 20%; border-color: var(--chakra-solar);"></div>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="float">🏛️ Cathedral of Circuits</h1>
+            <p>Experience the fusion of real science and mystical principles in a unified sacred technology platform. Explore gem towers, sacred geometry, and the art of conscious connection.</p>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">Gem Types</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">φ</div>
+                    <div class="stat-label">Golden Ratio</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">Chakras</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Possibilities</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <a href="apps/gem-tower-explorer/index.html" class="nav-card">
+                <span class="nav-icon">🔮</span>
+                <h2 class="nav-title">Gem Tower Explorer</h2>
+                <p class="nav-description">Discover sacred gem towers where real mineral properties meet mystical architecture in beautiful, mathematically harmonious structures.</p>
+                <div class="nav-tech">
+                    <span class="tech-tag">Sacred Geometry</span>
+                    <span class="tech-tag">Real Science</span>
+                    <span class="tech-tag">3D Visualization</span>
+                </div>
+            </a>
+
+            <a href="apps/fusion-kink-studio/index.html" class="nav-card">
+                <span class="nav-icon">💎</span>
+                <h2 class="nav-title">Fusion Kink Studio</h2>
+                <p class="nav-description">Create sacred fusion kink patterns that blend intimate connection with mystical principles using real science and conscious intimacy.</p>
+                <div class="nav-tech">
+                    <span class="tech-tag">Sacred Intimacy</span>
+                    <span class="tech-tag">Pattern Generation</span>
+                    <span class="tech-tag">Chakra Alignment</span>
+                </div>
+            </a>
+
+            <a href="apps/sacred-geometry-viewer/index.html" class="nav-card">
+                <span class="nav-icon">🔺</span>
+                <h2 class="nav-title">Sacred Geometry Viewer</h2>
+                <p class="nav-description">Explore the universal mathematical principles that underlie reality through interactive visualizations of platonic solids and sacred patterns.</p>
+                <div class="nav-tech">
+                    <span class="tech-tag">Mathematics</span>
+                    <span class="tech-tag">Interactive SVG</span>
+                    <span class="tech-tag">Educational</span>
+                </div>
+            </a>
+        </nav>
+
+        <!-- Features Section -->
+        <section class="features">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: var(--spacing-xl); color: var(--chakra-crown);">Sacred Technology Features</h2>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🧬</span>
+                    <h3 class="feature-title">Real Science Integration</h3>
+                    <p class="feature-description">Authentic mineral properties, quantum mechanics principles, and actual frequency correspondences combine with mystical traditions.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">🎨</span>
+                    <h3 class="feature-title">Sacred Geometry Foundation</h3>
+                    <p class="feature-description">Every element follows universal mathematical principles - golden ratio layouts, fibonacci spacing, and platonic solid structures.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">🔮</span>
+                    <h3 class="feature-title">Mystical Computing</h3>
+                    <p class="feature-description">144:99 Codex integration with chakra correspondences, elemental alignments, and conscious technology principles.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">⚡</span>
+                    <h3 class="feature-title">Free Hosting Optimized</h3>
+                    <p class="feature-description">Runs entirely on GitHub Pages, Cloudflare, and Azure Functions - no server costs, global performance, unlimited possibilities.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">🎮</span>
+                    <h3 class="feature-title">Gaming Universe Ready</h3>
+                    <p class="feature-description">Foundation prepared for Skyrim/Fable/Hades-style RPG with smooth movement, intuitive settings, and seamless portal mechanics.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">📦</span>
+                    <h3 class="feature-title">Modern Monorepo</h3>
+                    <p class="feature-description">Professional Turborepo setup with pnpm optimization, TypeScript throughout, and enterprise-grade GitHub configuration.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Cathedral of Circuits. Built with sacred geometry, real science, and conscious technology.</p>
+            <div class="footer-links">
+                <a href="https://github.com/Bekalah/cathedral-of-circuits" class="footer-link">GitHub</a>
+                <a href="https://bekalah.github.io/cathedral-of-circuits/" class="footer-link">Live Site</a>
+                <a href="https://discord.gg/cathedral-research" class="footer-link">Community</a>
+                <a href="mailto:dev@cathedral-research.org" class="footer-link">Contact</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Add smooth scroll behavior for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for scroll animations
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.nav-card, .feature-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+
+        // Add mystical cursor trail effect
+        let cursorTrail = [];
+
+        document.addEventListener('mousemove', (e) => {
+            // Create trailing element
+            const trail = document.createElement('div');
+            trail.style.cssText = `
+                position: fixed;
+                left: ${e.clientX}px;
+                top: ${e.clientY}px;
+                width: 8px;
+                height: 8px;
+                background: radial-gradient(circle, var(--chakra-heart), transparent);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 9999;
+                animation: cursorFade 1s ease-out forwards;
+            `;
+
+            document.body.appendChild(trail);
+            cursorTrail.push(trail);
+
+            // Limit trail length
+            if (cursorTrail.length > 10) {
+                const oldTrail = cursorTrail.shift();
+                if (oldTrail) {
+                    oldTrail.remove();
+                }
+            }
+
+            // Clean up old trails
+            setTimeout(() => {
+                if (trail.parentNode) {
+                    trail.remove();
+                }
+                cursorTrail = cursorTrail.filter(t => t !== trail);
+            }, 1000);
+        });
+
+        // Add CSS for cursor animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes cursorFade {
+                to { opacity: 0; transform: scale(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

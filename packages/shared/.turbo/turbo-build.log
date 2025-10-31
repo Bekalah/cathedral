@@ -1,4 +1,5 @@
 
-> @cathedral/shared@1.0.0 build /Users/rebeccalemke/cathedral/packages/shared
+> @cathedral/shared@1.0.0 build /Users/rebeccalemke/cathedral/cathedral/packages/shared
 > tsc
 
+[41m[30m ELIFECYCLE [39m[49m [31mCommand failed.[39m

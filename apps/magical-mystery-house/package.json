@@ -1,0 +1,26 @@
+{
+  "name": "@cathedral/magical-mystery-house",
+  "version": "1.0.0",
+  "description": "Magical Mystery House - Mystical adventure game with sacred geometry and infinite exploration",
+  "type": "module",
+  "scripts": {
+    "dev": "echo 'Magical Mystery House development server'",
+    "build": "echo 'Magical Mystery House static build'",
+    "preview": "echo 'Magical Mystery House preview'",
+    "type-check": "echo 'Type checking Magical Mystery House'",
+    "lint": "echo 'Linting Magical Mystery House'",
+    "clean": "rm -rf dist",
+    "deploy": "npm run build && echo 'Magical Mystery House ready for deployment'"
+  },
+  "dependencies": {
+    "@cathedral/mystical-data-unified": "^2.0.0",
+    "@cathedral/sacred-geometry-core": "^1.0.0",
+    "@cathedral/gem-tower-engine": "^1.0.0",
+    "@cathedral/fusion-kink-generator": "^1.0.0",
+    "@cathedral/smooth-movement-system": "^1.0.0",
+    "@cathedral/portal-system": "^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "metadata": {
+    "title": "Codex 144:99 - Central Ledger",
+    "version": "1.0.0",
+    "author": "Rebecca Susan Lemke (Rebecca Respawn)",
+    "description": "Sacred mathematics with 144 nodes of consciousness expansion",
+    "system": "Cathedral of Circuits Trinity Architecture"
+  },
+  "structure": {
+    "total_nodes": 144,
+    "master_numbers": [11, 22, 33],
+    "sacred_ratio": "144:99 (manifestation:dissolution)",
+    "integration_points": {
+      "fool_node": 0,
+      "world_node": 21,
+      "central_hub": "Aurora Gate"
+    }
+  },
+  "nodes": {
+    "0": {
+      "name": "The Fool",
+      "character": "Rebecca Respawn",
+      "archetype": "Infinite Possibility",
+      "angel": "Vehuiah",
+      "demon": "Bael",
+      "planet": "Uranus",
+      "element": "Air",
+      "musical_key": "C#",
+      "chakra": "Crown",
+      "zodiac": "Uranus",
+      "temple": "Aurora Gate",
+      "function": "Master Portal - Central Hub",
+      "gate_connection": "circuitum99_core",
+      "arcanum_mapping": "0_fool",
+      "color": "Electric Violet",
+      "geometry": "Vesica Piscis",
+      "healing_frequency": "963 Hz",
+      "tags": ["origin", "portal", "infinity", "trust"],
+      "provenance": "Codex 144:99 primary source"
+    },
+    "1": {
+      "name": "The Magician",
+      "character": "John Dee",
+      "archetype": "Manifestation",
+      "angel": "Jeliel",
+      "demon": "Agares", 
+      "planet": "Mercury",
+      "element": "Air",
+      "musical_key": "G",
+      "chakra": "Throat",
+      "zodiac": "Gemini",
+      "temple": "Consciousness Laboratory",
+      "function": "Skill & Will Manifestation",
+      "gate_connection": "skill_development",
+      "arcanum_mapping": "1_magician",
+      "color": "Golden Yellow",
+      "geometry": "Hexagram",
+      "healing_frequency": "741 Hz",
+      "tags": ["manifestation", "skill", "will", "communication"],
+      "provenance": "Codex 144:99 primary source"
+    },
+    "21": {
+      "name": "The World",
+      "character": "Leonora Carrington",
+      "archetype": "Integration",
+      "angel": "Mumiah",
+      "demon": "Andromalius",
+      "planet": "Saturn",
+      "element": "Earth",
+      "musical_key": "C",
+      "chakra": "Root",
+      "zodiac": "Capricorn",
+      "temple": "Integration Chamber",
+      "function": "Completion & Mastery",
+      "gate_connection": "world_mastery",
+      "arcanum_mapping": "21_world",
+      "color": "Deep Green",
+      "geometry": "Circle",
+      "healing_frequency": "396 Hz",
+      "tags": ["completion", "integration", "mastery", "earth"],
+      "provenance": "Codex 144:99 primary source"
+    }
+  },
+  "cross_system_integration": {
+    "liber_arcanae": {
+      "mapping_type": "bidirectional",
+      "description": "78-card tarot system mirrors 144-codex nodes",
+      "integration_file": "data/liber-arcanae-mirror.json"
+    },
+    "circuitum99": {
+      "mapping_type": "gates_system",
+      "description": "99 dissolution gates connected to codex nodes",
+      "integration_file": "data/gates-mapping.json"
+    },
+    "stone_grimoire": {
+      "mapping_type": "temple_geometry",
+      "description": "8 sacred chapels correspond to major arcana positions",
+      "integration_file": "data/chapel-mapping.json"
+    },
+    "godot_studios": {
+      "mapping_type": "interactive_manifestation",
+      "description": "Game mechanics bring codex nodes to life",
+      "integration_file": "data/studio-mapping.json"
+    }
+  },
+  "numerology": {
+    "master_numbers": {
+      "11": "Intuition & Illumination",
+      "22": "Master Builder",
+      "33": "Master Healer"
+    },
+    "sacred_sequences": {
+      "fibonacci": "1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144",
+      "golden_ratio": "1.618033988749895",
+      "vesica_ratio": "1.732050807568877"
+    }
+  },
+  "validation": {
+    "last_updated": "2025-10-31T16:15:00Z",
+    "validation_source": "OpenSpec Cathedral System v1.0",
+    "cross_checked_with": [
+      "Liber Arcanae deck manifest",
+      "Circuitum99 gate system",
+      "Stone Grimoire chapel registry"
+    ]
+  }
+}

@@ -1,37 +1,18 @@
 {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"label": "g: develop",
-			"type": "shell",
-			"command": "${workspaceFolder}/tools/g",
-			"args": [
-				"develop"
-			],
-			"problemMatcher": [],
-			"isBackground": true,
-			"presentation": {
-				"reveal": "always",
-				"panel": "dedicated"
-			},
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			}
-		},
-		{
-			"label": "validate: design suite",
-			"type": "shell",
-			"command": "/Users/rebeccalemke/cathedral-real/.venv/bin/python",
-			"args": [
-				"/Users/rebeccalemke/cathedral-real/tools/validate/design_suite_smoketest.py",
-				"&&",
-				"/Users/rebeccalemke/cathedral-real/.venv/bin/python",
-				"/Users/rebeccalemke/cathedral-real/tools/validate/achad_integration_smoketest.py"
-			],
-			"isBackground": false,
-			"problemMatcher": [],
-			"group": "build"
-		}
-	]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "g: develop",
+      "type": "shell",
+      "command": "${workspaceFolder}/tools/g",
+      "args": ["develop"],
+      "problemMatcher": [],
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "group": { "kind": "build", "isDefault": true }
+    }
+  ]
 }

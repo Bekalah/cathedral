@@ -1,0 +1,1389 @@
+{
+  "metadata": {
+    "system": "72 Shem Angels & Demons Complete",
+    "version": "2.0",
+    "source": "Codex 144:99",
+    "immutable": true,
+    "generated": "2025-10-16T00:24:36.826Z",
+    "total_angels": 72,
+    "total_demons": 72
+  },
+  "shem_angels": [
+    {
+      "id": "shem-001",
+      "name": "Vehuiah",
+      "hebrew": "וה־יה",
+      "degree": "0-5",
+      "planet": "Sun",
+      "power": "Divine Will",
+      "rank": "Seraphim",
+      "frequency": 963,
+      "corresponding_demon": "demon-001"
+    },
+    {
+      "id": "shem-002",
+      "name": "Jeliel",
+      "hebrew": "יל־יה",
+      "degree": "5-10",
+      "planet": "Venus",
+      "power": "Divine Love",
+      "rank": "Seraphim",
+      "frequency": 852,
+      "corresponding_demon": "demon-002"
+    },
+    {
+      "id": "shem-003",
+      "name": "Sitael",
+      "hebrew": "סי־תא־ל",
+      "degree": "10-15",
+      "planet": "Mercury",
+      "power": "Building",
+      "rank": "Seraphim",
+      "frequency": 741,
+      "corresponding_demon": "demon-003"
+    },
+    {
+      "id": "shem-004",
+      "name": "Elemiah",
+      "hebrew": "אל־מ־יה",
+      "degree": "15-20",
+      "planet": "Moon",
+      "power": "Freedom",
+      "rank": "Seraphim",
+      "frequency": 639,
+      "corresponding_demon": "demon-004"
+    },
+    {
+      "id": "shem-005",
+      "name": "Mahasiah",
+      "hebrew": "מ־ה־ש־יה",
+      "degree": "20-25",
+      "planet": "Saturn",
+      "power": "Grace",
+      "rank": "Cherubim",
+      "frequency": 528,
+      "corresponding_demon": "demon-005"
+    },
+    {
+      "id": "shem-006",
+      "name": "Lelahel",
+      "hebrew": "ל־ה־ה־ל",
+      "degree": "25-30",
+      "planet": "Jupiter",
+      "power": "Illumination",
+      "rank": "Cherubim",
+      "frequency": 417,
+      "corresponding_demon": "demon-006"
+    },
+    {
+      "id": "shem-007",
+      "name": "Achaiah",
+      "hebrew": "א־כ־יה",
+      "degree": "30-35",
+      "planet": "Mars",
+      "power": "Patience",
+      "rank": "Cherubim",
+      "frequency": 396,
+      "corresponding_demon": "demon-007"
+    },
+    {
+      "id": "shem-008",
+      "name": "Cahetel",
+      "hebrew": "כ־ה־ת־ל",
+      "degree": "35-40",
+      "planet": "Sun",
+      "power": "Abundance",
+      "rank": "Cherubim",
+      "frequency": 432,
+      "corresponding_demon": "demon-008"
+    },
+    {
+      "id": "shem-009",
+      "name": "Raziel",
+      "hebrew": "ר־זי־אל",
+      "degree": "40-45",
+      "planet": "Venus",
+      "power": "Wisdom",
+      "rank": "Cherubim",
+      "frequency": 963,
+      "corresponding_demon": "demon-009"
+    },
+    {
+      "id": "shem-010",
+      "name": "Kamael",
+      "hebrew": "כ־מ־אל",
+      "degree": "45-50",
+      "planet": "Mars",
+      "power": "Strength",
+      "rank": "Cherubim",
+      "frequency": 852,
+      "corresponding_demon": "demon-010"
+    },
+    {
+      "id": "shem-011",
+      "name": "Labael",
+      "hebrew": "ל־ב־אל",
+      "degree": "50-55",
+      "planet": "Mercury",
+      "power": "Destiny",
+      "rank": "Cherubim",
+      "frequency": 741,
+      "corresponding_demon": "demon-011"
+    },
+    {
+      "id": "shem-012",
+      "name": "Hahaiah",
+      "hebrew": "ה־ה־אי־ה",
+      "degree": "55-60",
+      "planet": "Moon",
+      "power": "Refuge",
+      "rank": "Cherubim",
+      "frequency": 639,
+      "corresponding_demon": "demon-012"
+    },
+    {
+      "id": "shem-013",
+      "name": "Yezalel",
+      "hebrew": "יז־ל־ל",
+      "degree": "60-65",
+      "planet": "Saturn",
+      "power": "Memory",
+      "rank": "Cherubim",
+      "frequency": 528,
+      "corresponding_demon": "demon-013"
+    },
+    {
+      "id": "shem-014",
+      "name": "Mebahel",
+      "hebrew": "מב־ה־ל",
+      "degree": "65-70",
+      "planet": "Jupiter",
+      "power": "Justice",
+      "rank": "Cherubim",
+      "frequency": 417,
+      "corresponding_demon": "demon-014"
+    },
+    {
+      "id": "shem-015",
+      "name": "Hariel",
+      "hebrew": "ה־ר־יל",
+      "degree": "70-75",
+      "planet": "Mars",
+      "power": "Purity",
+      "rank": "Cherubim",
+      "frequency": 396,
+      "corresponding_demon": "demon-015"
+    },
+    {
+      "id": "shem-016",
+      "name": "Hekamiah",
+      "hebrew": "ה־ק־מ־יה",
+      "degree": "75-80",
+      "planet": "Sun",
+      "power": "Fidelity",
+      "rank": "Cherubim",
+      "frequency": 432,
+      "corresponding_demon": "demon-016"
+    },
+    {
+      "id": "shem-017",
+      "name": "Lauviah",
+      "hebrew": "ל־או־ויה",
+      "degree": "80-85",
+      "planet": "Venus",
+      "power": "Inspiration",
+      "rank": "Dominions",
+      "frequency": 963,
+      "corresponding_demon": "demon-017"
+    },
+    {
+      "id": "shem-018",
+      "name": "Caliel",
+      "hebrew": "כ־ל־יל",
+      "degree": "85-90",
+      "planet": "Mercury",
+      "power": "Truth",
+      "rank": "Dominions",
+      "frequency": 852,
+      "corresponding_demon": "demon-018"
+    },
+    {
+      "id": "shem-019",
+      "name": "Leuviah",
+      "hebrew": "ל־או־ויה",
+      "degree": "90-95",
+      "planet": "Moon",
+      "power": "Intelligence",
+      "rank": "Dominions",
+      "frequency": 741,
+      "corresponding_demon": "demon-019"
+    },
+    {
+      "id": "shem-020",
+      "name": "Pahaliah",
+      "hebrew": "פ־ה־ל־יה",
+      "degree": "95-100",
+      "planet": "Saturn",
+      "power": "Tolerance",
+      "rank": "Dominions",
+      "frequency": 639,
+      "corresponding_demon": "demon-020"
+    },
+    {
+      "id": "shem-021",
+      "name": "Nelkhael",
+      "hebrew": "נל־כ־אל",
+      "degree": "100-105",
+      "planet": "Jupiter",
+      "power": "Kindness",
+      "rank": "Dominions",
+      "frequency": 528,
+      "corresponding_demon": "demon-021"
+    },
+    {
+      "id": "shem-022",
+      "name": "Yeiyalel",
+      "hebrew": "יי־ל־ל",
+      "degree": "105-110",
+      "planet": "Mars",
+      "power": "Dexterity",
+      "rank": "Dominions",
+      "frequency": 417,
+      "corresponding_demon": "demon-022"
+    },
+    {
+      "id": "shem-023",
+      "name": "Melahel",
+      "hebrew": "מ־ל־ה־ל",
+      "degree": "110-115",
+      "planet": "Sun",
+      "power": "Travel",
+      "rank": "Dominions",
+      "frequency": 396,
+      "corresponding_demon": "demon-023"
+    },
+    {
+      "id": "shem-024",
+      "name": "Chahuhiah",
+      "hebrew": "ח־ה־או־יה",
+      "degree": "115-120",
+      "planet": "Venus",
+      "power": "Fertility",
+      "rank": "Dominions",
+      "frequency": 432,
+      "corresponding_demon": "demon-024"
+    },
+    {
+      "id": "shem-025",
+      "name": "Nithaiah",
+      "hebrew": "ני־תה־יה",
+      "degree": "120-125",
+      "planet": "Mercury",
+      "power": "Wisdom",
+      "rank": "Powers",
+      "frequency": 963,
+      "corresponding_demon": "demon-025"
+    },
+    {
+      "id": "shem-026",
+      "name": "Haaiah",
+      "hebrew": "ה־אה־יה",
+      "degree": "125-130",
+      "planet": "Moon",
+      "power": "Secrecy",
+      "rank": "Powers",
+      "frequency": 852,
+      "corresponding_demon": "demon-026"
+    },
+    {
+      "id": "shem-027",
+      "name": "Yerathel",
+      "hebrew": "יר־ת־אל",
+      "degree": "130-135",
+      "planet": "Saturn",
+      "power": "Exploration",
+      "rank": "Powers",
+      "frequency": 741,
+      "corresponding_demon": "demon-027"
+    },
+    {
+      "id": "shem-028",
+      "name": "Seheiah",
+      "hebrew": "ס־ה־יה",
+      "degree": "135-140",
+      "planet": "Jupiter",
+      "power": "Healing",
+      "rank": "Powers",
+      "frequency": 639,
+      "corresponding_demon": "demon-028"
+    },
+    {
+      "id": "shem-029",
+      "name": "Reyiel",
+      "hebrew": "ריי־ל",
+      "degree": "140-145",
+      "planet": "Mars",
+      "power": "Vision",
+      "rank": "Powers",
+      "frequency": 528,
+      "corresponding_demon": "demon-029"
+    },
+    {
+      "id": "shem-030",
+      "name": "Omael",
+      "hebrew": "אום־אל",
+      "degree": "145-150",
+      "planet": "Sun",
+      "power": "Growth",
+      "rank": "Powers",
+      "frequency": 417,
+      "corresponding_demon": "demon-030"
+    },
+    {
+      "id": "shem-031",
+      "name": "Lecabel",
+      "hebrew": "ל־ק־ב־ל",
+      "degree": "150-155",
+      "planet": "Venus",
+      "power": "Abundance",
+      "rank": "Powers",
+      "frequency": 396,
+      "corresponding_demon": "demon-031"
+    },
+    {
+      "id": "shem-032",
+      "name": "Vasariah",
+      "hebrew": "ו־ס־ר־יה",
+      "degree": "155-160",
+      "planet": "Mercury",
+      "power": "Justice",
+      "rank": "Powers",
+      "frequency": 432,
+      "corresponding_demon": "demon-032"
+    },
+    {
+      "id": "shem-033",
+      "name": "Yehuiah",
+      "hebrew": "יה־או־יה",
+      "degree": "160-165",
+      "planet": "Moon",
+      "power": "Victory",
+      "rank": "Virtues",
+      "frequency": 963,
+      "corresponding_demon": "demon-033"
+    },
+    {
+      "id": "shem-034",
+      "name": "Lehahiah",
+      "hebrew": "ל־ה־ה־יה",
+      "degree": "165-170",
+      "planet": "Saturn",
+      "power": "Obedience",
+      "rank": "Virtues",
+      "frequency": 852,
+      "corresponding_demon": "demon-034"
+    },
+    {
+      "id": "shem-035",
+      "name": "Chavakiah",
+      "hebrew": "ח־ו־ק־יה",
+      "degree": "170-175",
+      "planet": "Jupiter",
+      "power": "Harmony",
+      "rank": "Virtues",
+      "frequency": 741,
+      "corresponding_demon": "demon-035"
+    },
+    {
+      "id": "shem-036",
+      "name": "Menadel",
+      "hebrew": "מנ־ד־ל",
+      "degree": "175-180",
+      "planet": "Mars",
+      "power": "Career",
+      "rank": "Virtues",
+      "frequency": 639,
+      "corresponding_demon": "demon-036"
+    },
+    {
+      "id": "shem-037",
+      "name": "Aniel",
+      "hebrew": "אן־יל",
+      "degree": "180-185",
+      "planet": "Sun",
+      "power": "Divinity",
+      "rank": "Virtues",
+      "frequency": 528,
+      "corresponding_demon": "demon-037"
+    },
+    {
+      "id": "shem-038",
+      "name": "Haamiah",
+      "hebrew": "ה־אם־יה",
+      "degree": "185-190",
+      "planet": "Venus",
+      "power": "Loyalty",
+      "rank": "Virtues",
+      "frequency": 417,
+      "corresponding_demon": "demon-038"
+    },
+    {
+      "id": "shem-039",
+      "name": "Rehael",
+      "hebrew": "ר־ה־אל",
+      "degree": "190-195",
+      "planet": "Mercury",
+      "power": "Family",
+      "rank": "Virtues",
+      "frequency": 396,
+      "corresponding_demon": "demon-039"
+    },
+    {
+      "id": "shem-040",
+      "name": "Ieiazel",
+      "hebrew": "יי־א־זל",
+      "degree": "195-200",
+      "planet": "Moon",
+      "power": "Liberty",
+      "rank": "Virtues",
+      "frequency": 432,
+      "corresponding_demon": "demon-040"
+    },
+    {
+      "id": "shem-041",
+      "name": "Hahahel",
+      "hebrew": "ה־ה־ה־ל",
+      "degree": "200-205",
+      "planet": "Saturn",
+      "power": "Conscience",
+      "rank": "Principalities",
+      "frequency": 963,
+      "corresponding_demon": "demon-041"
+    },
+    {
+      "id": "shem-042",
+      "name": "Mikhael",
+      "hebrew": "מי־כ־אל",
+      "degree": "205-210",
+      "planet": "Jupiter",
+      "power": "Compassion",
+      "rank": "Principalities",
+      "frequency": 852,
+      "corresponding_demon": "demon-042"
+    },
+    {
+      "id": "shem-043",
+      "name": "Veuliah",
+      "hebrew": "ו־או־ל־יה",
+      "degree": "210-215",
+      "planet": "Mars",
+      "power": "Development",
+      "rank": "Principalities",
+      "frequency": 741,
+      "corresponding_demon": "demon-043"
+    },
+    {
+      "id": "shem-044",
+      "name": "Yelahiah",
+      "hebrew": "יל־ה־יה",
+      "degree": "215-220",
+      "planet": "Sun",
+      "power": "Courage",
+      "rank": "Principalities",
+      "frequency": 639,
+      "corresponding_demon": "demon-044"
+    },
+    {
+      "id": "shem-045",
+      "name": "Sealiah",
+      "hebrew": "ס־אל־יה",
+      "degree": "220-225",
+      "planet": "Venus",
+      "power": "Luck",
+      "rank": "Principalities",
+      "frequency": 528,
+      "corresponding_demon": "demon-045"
+    },
+    {
+      "id": "shem-046",
+      "name": "Ariel",
+      "hebrew": "אר־יל",
+      "degree": "225-230",
+      "planet": "Mercury",
+      "power": "Revelation",
+      "rank": "Principalities",
+      "frequency": 417,
+      "corresponding_demon": "demon-046"
+    },
+    {
+      "id": "shem-047",
+      "name": "Asaliah",
+      "hebrew": "אס־ל־יה",
+      "degree": "230-235",
+      "planet": "Moon",
+      "power": "Revelation",
+      "rank": "Principalities",
+      "frequency": 396,
+      "corresponding_demon": "demon-047"
+    },
+    {
+      "id": "shem-048",
+      "name": "Mihael",
+      "hebrew": "מי־ה־אל",
+      "degree": "235-240",
+      "planet": "Saturn",
+      "power": "Oath",
+      "rank": "Principalities",
+      "frequency": 432,
+      "corresponding_demon": "demon-048"
+    },
+    {
+      "id": "shem-049",
+      "name": "Vehuel",
+      "hebrew": "ו־ה־או־ל",
+      "degree": "240-245",
+      "planet": "Jupiter",
+      "power": "Pride",
+      "rank": "Archangels",
+      "frequency": 963,
+      "corresponding_demon": "demon-049"
+    },
+    {
+      "id": "shem-050",
+      "name": "Daniel",
+      "hebrew": "ד־ניא־ל",
+      "degree": "245-250",
+      "planet": "Mars",
+      "power": "Help",
+      "rank": "Archangels",
+      "frequency": 852,
+      "corresponding_demon": "demon-050"
+    },
+    {
+      "id": "shem-051",
+      "name": "Hahasiah",
+      "hebrew": "ה־ה־ס־יה",
+      "degree": "250-255",
+      "planet": "Sun",
+      "power": "Alchemy",
+      "rank": "Archangels",
+      "frequency": 741,
+      "corresponding_demon": "demon-051"
+    },
+    {
+      "id": "shem-052",
+      "name": "Imamiah",
+      "hebrew": "אי־מ־אם־יה",
+      "degree": "255-260",
+      "planet": "Venus",
+      "power": "Humility",
+      "rank": "Archangels",
+      "frequency": 639,
+      "corresponding_demon": "demon-052"
+    },
+    {
+      "id": "shem-053",
+      "name": "Nanael",
+      "hebrew": "נ־אן־אל",
+      "degree": "260-265",
+      "planet": "Mercury",
+      "power": "Understanding",
+      "rank": "Archangels",
+      "frequency": 528,
+      "corresponding_demon": "demon-053"
+    },
+    {
+      "id": "shem-054",
+      "name": "Nithael",
+      "hebrew": "ני־ת־אל",
+      "degree": "265-270",
+      "planet": "Moon",
+      "power": "Time",
+      "rank": "Archangels",
+      "frequency": 417,
+      "corresponding_demon": "demon-054"
+    },
+    {
+      "id": "shem-055",
+      "name": "Mebahiah",
+      "hebrew": "מב־ה־יה",
+      "degree": "270-275",
+      "planet": "Saturn",
+      "power": "Resurrection",
+      "rank": "Archangels",
+      "frequency": 396,
+      "corresponding_demon": "demon-055"
+    },
+    {
+      "id": "shem-056",
+      "name": "Poiel",
+      "hebrew": "פו־יל",
+      "degree": "275-280",
+      "planet": "Jupiter",
+      "power": "Immortality",
+      "rank": "Archangels",
+      "frequency": 432,
+      "corresponding_demon": "demon-056"
+    },
+    {
+      "id": "shem-057",
+      "name": "Nemamiah",
+      "hebrew": "נם־מ־יה",
+      "degree": "280-285",
+      "planet": "Mars",
+      "power": "Strategy",
+      "rank": "Angels",
+      "frequency": 963,
+      "corresponding_demon": "demon-057"
+    },
+    {
+      "id": "shem-058",
+      "name": "Yeialel",
+      "hebrew": "יי־אל־ל",
+      "degree": "285-290",
+      "planet": "Sun",
+      "power": "Contemplation",
+      "rank": "Angels",
+      "frequency": 852,
+      "corresponding_demon": "demon-058"
+    },
+    {
+      "id": "shem-059",
+      "name": "Harahel",
+      "hebrew": "ה־ר־ה־ל",
+      "degree": "290-295",
+      "planet": "Venus",
+      "power": "Commerce",
+      "rank": "Angels",
+      "frequency": 741,
+      "corresponding_demon": "demon-059"
+    },
+    {
+      "id": "shem-060",
+      "name": "Mitzrael",
+      "hebrew": "מי־צר־אל",
+      "degree": "295-300",
+      "planet": "Mercury",
+      "power": "Anxiety",
+      "rank": "Angels",
+      "frequency": 639,
+      "corresponding_demon": "demon-060"
+    },
+    {
+      "id": "shem-061",
+      "name": "Umabel",
+      "hebrew": "או־ם־ב־ל",
+      "degree": "300-305",
+      "planet": "Moon",
+      "power": "Physics",
+      "rank": "Angels",
+      "frequency": 528,
+      "corresponding_demon": "demon-061"
+    },
+    {
+      "id": "shem-062",
+      "name": "Iah-Hel",
+      "hebrew": "יה־ה־ל",
+      "degree": "305-310",
+      "planet": "Saturn",
+      "power": "Meditation",
+      "rank": "Angels",
+      "frequency": 417,
+      "corresponding_demon": "demon-062"
+    },
+    {
+      "id": "shem-063",
+      "name": "Anauel",
+      "hebrew": "אנ־או־אל",
+      "degree": "310-315",
+      "planet": "Jupiter",
+      "power": "Divinity",
+      "rank": "Angels",
+      "frequency": 396,
+      "corresponding_demon": "demon-063"
+    },
+    {
+      "id": "shem-064",
+      "name": "Mehiel",
+      "hebrew": "מה־יל",
+      "degree": "315-320",
+      "planet": "Mars",
+      "power": "Communication",
+      "rank": "Angels",
+      "frequency": 432,
+      "corresponding_demon": "demon-064"
+    },
+    {
+      "id": "shem-065",
+      "name": "Damabiah",
+      "hebrew": "ד־מ־ב־יה",
+      "degree": "320-325",
+      "planet": "Sun",
+      "power": "Navigation",
+      "rank": "Elohim",
+      "frequency": 963,
+      "corresponding_demon": "demon-065"
+    },
+    {
+      "id": "shem-066",
+      "name": "Manakel",
+      "hebrew": "מנ־כל",
+      "degree": "325-330",
+      "planet": "Venus",
+      "power": "Temperance",
+      "rank": "Elohim",
+      "frequency": 852,
+      "corresponding_demon": "demon-066"
+    },
+    {
+      "id": "shem-067",
+      "name": "Eyael",
+      "hebrew": "אי־ל",
+      "degree": "330-335",
+      "planet": "Mercury",
+      "power": "Liberation",
+      "rank": "Elohim",
+      "frequency": 741,
+      "corresponding_demon": "demon-067"
+    },
+    {
+      "id": "shem-068",
+      "name": "Habuhiah",
+      "hebrew": "ה־באו־יה",
+      "degree": "335-340",
+      "planet": "Moon",
+      "power": "Creativity",
+      "rank": "Elohim",
+      "frequency": 639,
+      "corresponding_demon": "demon-068"
+    },
+    {
+      "id": "shem-069",
+      "name": "Rochel",
+      "hebrew": "רו־כל",
+      "degree": "340-345",
+      "planet": "Saturn",
+      "power": "Inquiry",
+      "rank": "Elohim",
+      "frequency": 528,
+      "corresponding_demon": "demon-069"
+    },
+    {
+      "id": "shem-070",
+      "name": "Jabamiah",
+      "hebrew": "י־ב־מ־יה",
+      "degree": "345-350",
+      "planet": "Jupiter",
+      "power": "Alchemy",
+      "rank": "Elohim",
+      "frequency": 417,
+      "corresponding_demon": "demon-070"
+    },
+    {
+      "id": "shem-071",
+      "name": "Haiaiel",
+      "hebrew": "ה־אי־אל",
+      "degree": "350-355",
+      "planet": "Mars",
+      "power": "War",
+      "rank": "Elohim",
+      "frequency": 396,
+      "corresponding_demon": "demon-071"
+    },
+    {
+      "id": "shem-072",
+      "name": "Mumiah",
+      "hebrew": "מו־מ־יה",
+      "degree": "355-360",
+      "planet": "Sun",
+      "power": "Endings",
+      "rank": "Elohim",
+      "frequency": 432,
+      "corresponding_demon": "demon-072"
+    }
+  ],
+  "corresponding_demons": [
+    {
+      "id": "demon-001",
+      "name": "Vehuiah Shadow",
+      "hebrew": "וה־יה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-001"
+    },
+    {
+      "id": "demon-002",
+      "name": "Jeliel Shadow",
+      "hebrew": "יל־יה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-002"
+    },
+    {
+      "id": "demon-003",
+      "name": "Sitael Shadow",
+      "hebrew": "סי־תא־ל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-003"
+    },
+    {
+      "id": "demon-004",
+      "name": "Elemiah Shadow",
+      "hebrew": "אל־מ־יה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-004"
+    },
+    {
+      "id": "demon-005",
+      "name": "Mahasiah Shadow",
+      "hebrew": "מ־ה־ש־יה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-005"
+    },
+    {
+      "id": "demon-006",
+      "name": "Lelahel Shadow",
+      "hebrew": "ל־ה־ה־ל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-006"
+    },
+    {
+      "id": "demon-007",
+      "name": "Achaiah Shadow",
+      "hebrew": "א־כ־יה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-007"
+    },
+    {
+      "id": "demon-008",
+      "name": "Cahetel Shadow",
+      "hebrew": "כ־ה־ת־ל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-008"
+    },
+    {
+      "id": "demon-009",
+      "name": "Raziel Shadow",
+      "hebrew": "ר־זי־אל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-009"
+    },
+    {
+      "id": "demon-010",
+      "name": "Kamael Shadow",
+      "hebrew": "כ־מ־אל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-010"
+    },
+    {
+      "id": "demon-011",
+      "name": "Labael Shadow",
+      "hebrew": "ל־ב־אל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-011"
+    },
+    {
+      "id": "demon-012",
+      "name": "Hahaiah Shadow",
+      "hebrew": "ה־ה־אי־ה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-012"
+    },
+    {
+      "id": "demon-013",
+      "name": "Yezalel Shadow",
+      "hebrew": "יז־ל־ל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-013"
+    },
+    {
+      "id": "demon-014",
+      "name": "Mebahel Shadow",
+      "hebrew": "מב־ה־ל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-014"
+    },
+    {
+      "id": "demon-015",
+      "name": "Hariel Shadow",
+      "hebrew": "ה־ר־יל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-015"
+    },
+    {
+      "id": "demon-016",
+      "name": "Hekamiah Shadow",
+      "hebrew": "ה־ק־מ־יה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-016"
+    },
+    {
+      "id": "demon-017",
+      "name": "Lauviah Shadow",
+      "hebrew": "ל־או־ויה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-017"
+    },
+    {
+      "id": "demon-018",
+      "name": "Caliel Shadow",
+      "hebrew": "כ־ל־יל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-018"
+    },
+    {
+      "id": "demon-019",
+      "name": "Leuviah Shadow",
+      "hebrew": "ל־או־ויה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-019"
+    },
+    {
+      "id": "demon-020",
+      "name": "Pahaliah Shadow",
+      "hebrew": "פ־ה־ל־יה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-020"
+    },
+    {
+      "id": "demon-021",
+      "name": "Nelkhael Shadow",
+      "hebrew": "נל־כ־אל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-021"
+    },
+    {
+      "id": "demon-022",
+      "name": "Yeiyalel Shadow",
+      "hebrew": "יי־ל־ל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-022"
+    },
+    {
+      "id": "demon-023",
+      "name": "Melahel Shadow",
+      "hebrew": "מ־ל־ה־ל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-023"
+    },
+    {
+      "id": "demon-024",
+      "name": "Chahuhiah Shadow",
+      "hebrew": "ח־ה־או־יה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-024"
+    },
+    {
+      "id": "demon-025",
+      "name": "Nithaiah Shadow",
+      "hebrew": "ני־תה־יה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-025"
+    },
+    {
+      "id": "demon-026",
+      "name": "Haaiah Shadow",
+      "hebrew": "ה־אה־יה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-026"
+    },
+    {
+      "id": "demon-027",
+      "name": "Yerathel Shadow",
+      "hebrew": "יר־ת־אל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-027"
+    },
+    {
+      "id": "demon-028",
+      "name": "Seheiah Shadow",
+      "hebrew": "ס־ה־יה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-028"
+    },
+    {
+      "id": "demon-029",
+      "name": "Reyiel Shadow",
+      "hebrew": "ריי־ל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-029"
+    },
+    {
+      "id": "demon-030",
+      "name": "Omael Shadow",
+      "hebrew": "אום־אל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-030"
+    },
+    {
+      "id": "demon-031",
+      "name": "Lecabel Shadow",
+      "hebrew": "ל־ק־ב־ל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-031"
+    },
+    {
+      "id": "demon-032",
+      "name": "Vasariah Shadow",
+      "hebrew": "ו־ס־ר־יה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-032"
+    },
+    {
+      "id": "demon-033",
+      "name": "Yehuiah Shadow",
+      "hebrew": "יה־או־יה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-033"
+    },
+    {
+      "id": "demon-034",
+      "name": "Lehahiah Shadow",
+      "hebrew": "ל־ה־ה־יה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-034"
+    },
+    {
+      "id": "demon-035",
+      "name": "Chavakiah Shadow",
+      "hebrew": "ח־ו־ק־יה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-035"
+    },
+    {
+      "id": "demon-036",
+      "name": "Menadel Shadow",
+      "hebrew": "מנ־ד־ל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-036"
+    },
+    {
+      "id": "demon-037",
+      "name": "Aniel Shadow",
+      "hebrew": "אן־יל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-037"
+    },
+    {
+      "id": "demon-038",
+      "name": "Haamiah Shadow",
+      "hebrew": "ה־אם־יה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-038"
+    },
+    {
+      "id": "demon-039",
+      "name": "Rehael Shadow",
+      "hebrew": "ר־ה־אל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-039"
+    },
+    {
+      "id": "demon-040",
+      "name": "Ieiazel Shadow",
+      "hebrew": "יי־א־זל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-040"
+    },
+    {
+      "id": "demon-041",
+      "name": "Hahahel Shadow",
+      "hebrew": "ה־ה־ה־ל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-041"
+    },
+    {
+      "id": "demon-042",
+      "name": "Mikhael Shadow",
+      "hebrew": "מי־כ־אל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-042"
+    },
+    {
+      "id": "demon-043",
+      "name": "Veuliah Shadow",
+      "hebrew": "ו־או־ל־יה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-043"
+    },
+    {
+      "id": "demon-044",
+      "name": "Yelahiah Shadow",
+      "hebrew": "יל־ה־יה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-044"
+    },
+    {
+      "id": "demon-045",
+      "name": "Sealiah Shadow",
+      "hebrew": "ס־אל־יה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-045"
+    },
+    {
+      "id": "demon-046",
+      "name": "Ariel Shadow",
+      "hebrew": "אר־יל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-046"
+    },
+    {
+      "id": "demon-047",
+      "name": "Asaliah Shadow",
+      "hebrew": "אס־ל־יה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-047"
+    },
+    {
+      "id": "demon-048",
+      "name": "Mihael Shadow",
+      "hebrew": "מי־ה־אל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-048"
+    },
+    {
+      "id": "demon-049",
+      "name": "Vehuel Shadow",
+      "hebrew": "ו־ה־או־ל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-049"
+    },
+    {
+      "id": "demon-050",
+      "name": "Daniel Shadow",
+      "hebrew": "ד־ניא־ל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-050"
+    },
+    {
+      "id": "demon-051",
+      "name": "Hahasiah Shadow",
+      "hebrew": "ה־ה־ס־יה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-051"
+    },
+    {
+      "id": "demon-052",
+      "name": "Imamiah Shadow",
+      "hebrew": "אי־מ־אם־יה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-052"
+    },
+    {
+      "id": "demon-053",
+      "name": "Nanael Shadow",
+      "hebrew": "נ־אן־אל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-053"
+    },
+    {
+      "id": "demon-054",
+      "name": "Nithael Shadow",
+      "hebrew": "ני־ת־אל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-054"
+    },
+    {
+      "id": "demon-055",
+      "name": "Mebahiah Shadow",
+      "hebrew": "מב־ה־יה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-055"
+    },
+    {
+      "id": "demon-056",
+      "name": "Poiel Shadow",
+      "hebrew": "פו־יל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-056"
+    },
+    {
+      "id": "demon-057",
+      "name": "Nemamiah Shadow",
+      "hebrew": "נם־מ־יה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-057"
+    },
+    {
+      "id": "demon-058",
+      "name": "Yeialel Shadow",
+      "hebrew": "יי־אל־ל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-058"
+    },
+    {
+      "id": "demon-059",
+      "name": "Harahel Shadow",
+      "hebrew": "ה־ר־ה־ל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-059"
+    },
+    {
+      "id": "demon-060",
+      "name": "Mitzrael Shadow",
+      "hebrew": "מי־צר־אל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-060"
+    },
+    {
+      "id": "demon-061",
+      "name": "Umabel Shadow",
+      "hebrew": "או־ם־ב־ל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-061"
+    },
+    {
+      "id": "demon-062",
+      "name": "Iah-Hel Shadow",
+      "hebrew": "יה־ה־ל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-062"
+    },
+    {
+      "id": "demon-063",
+      "name": "Anauel Shadow",
+      "hebrew": "אנ־או־אל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-063"
+    },
+    {
+      "id": "demon-064",
+      "name": "Mehiel Shadow",
+      "hebrew": "מה־יל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-064"
+    },
+    {
+      "id": "demon-065",
+      "name": "Damabiah Shadow",
+      "hebrew": "ד־מ־ב־יה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-065"
+    },
+    {
+      "id": "demon-066",
+      "name": "Manakel Shadow",
+      "hebrew": "מנ־כל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-066"
+    },
+    {
+      "id": "demon-067",
+      "name": "Eyael Shadow",
+      "hebrew": "אי־ל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-067"
+    },
+    {
+      "id": "demon-068",
+      "name": "Habuhiah Shadow",
+      "hebrew": "ה־באו־יה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-068"
+    },
+    {
+      "id": "demon-069",
+      "name": "Rochel Shadow",
+      "hebrew": "רו־כל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-069"
+    },
+    {
+      "id": "demon-070",
+      "name": "Jabamiah Shadow",
+      "hebrew": "י־ב־מ־יה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-070"
+    },
+    {
+      "id": "demon-071",
+      "name": "Haiaiel Shadow",
+      "hebrew": "ה־אי־אל (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-071"
+    },
+    {
+      "id": "demon-072",
+      "name": "Mumiah Shadow",
+      "hebrew": "מו־מ־יה (shadow)",
+      "aspect": "Shadow/Challenge",
+      "lesson": "Integration",
+      "angel_id": "shem-072"
+    }
+  ],
+  "integration_summary": {
+    "total_nodes": 72,
+    "total_correspondences": 432,
+    "estimated_lineage_variations": "Crowley, Fortune, Achad, Skinner, Case, Respawn",
+    "database_status": "Foundation complete - ready for integration"
+  }
+}

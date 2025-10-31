@@ -1,0 +1,51 @@
+{
+  "name": "@cathedral/cathedral-engine",
+  "version": "1.0.0",
+  "description": "Unified Cathedral Engine - Main orchestrator for all cathedral systems",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "cathedral",
+    "engine",
+    "synthesis",
+    "learning",
+    "safety",
+    "three.js",
+    "unified",
+    "orchestrator"
+  ],
+  "author": "Cathedral Research",
+  "license": "MIT",
+  "dependencies": {
+    "@cathedral/safety-framework": "workspace:*",
+    "@cathedral/synthesis-engine": "workspace:*",
+    "@cathedral/three-engine": "workspace:*",
+    "@cathedral/learning-engine": "workspace:*",
+    "three": "^0.158.0",
+    "@types/three": "^0.158.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cathedral-research/cathedral-engine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cathedral-research/cathedral-engine/issues"
+  },
+  "homepage": "https://cathedral-research.github.io/cathedral-engine"
+}

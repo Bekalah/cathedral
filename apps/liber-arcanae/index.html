@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liber Arcanae - Sacred Mystical Library</title>
+    <meta name="description" content="Explore the mystical library of sacred knowledge and arcane wisdom">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Mystical Theme -->
+    <style>
+        :root {
+            /* Sacred Color Palette */
+            --color-mystical: #0f0f23;
+            --color-ancient: #1a1a2e;
+            --color-parchment: #f4f1e8;
+            --color-ink: #2c1810;
+            --color-gold: #d4af37;
+            --color-silver: #c0c0c0;
+            --color-crimson: #8b0000;
+            --color-indigo: #4b0082;
+
+            /* Typography */
+            --font-body: 'Inter', sans-serif;
+            --font-heading: 'Crimson Text', serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-mystical);
+            color: var(--color-parchment);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Ancient Library Background */
+        .library-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(ellipse at center, rgba(26, 26, 46, 0.8) 0%, var(--color-mystical) 100%),
+                linear-gradient(45deg, transparent 49%, rgba(212, 175, 55, 0.02) 50%, transparent 51%);
+            z-index: -1;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 3rem 0;
+            border-bottom: 2px solid var(--color-gold);
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 600;
+            color: var(--color-gold);
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: var(--color-silver);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+        .nav {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .nav-card {
+            background: rgba(26, 26, 46, 0.9);
+            border: 2px solid var(--color-gold);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-decoration: none;
+            color: var(--color-parchment);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                transparent,
+                rgba(212, 175, 55, 0.1),
+                transparent);
+            transition: left 0.6s ease;
+        }
+
+        .nav-card:hover::before {
+            left: 100%;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--color-silver);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .nav-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .nav-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--color-gold);
+        }
+
+        .nav-description {
+            color: var(--color-silver);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Arcana Sections */
+        .arcana-sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .arcana-section {
+            background: rgba(26, 26, 46, 0.8);
+            border: 1px solid var(--color-silver);
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--color-gold);
+        }
+
+        .arcana-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .arcana-item {
+            background: rgba(75, 0, 130, 0.2);
+            border: 1px solid var(--color-indigo);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .arcana-item:hover {
+            background: var(--color-indigo);
+            color: var(--color-parchment);
+            transform: translateY(-2px);
+        }
+
+        .arcana-name {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .arcana-type {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Codex 144:99 Section */
+        .codex-section {
+            background: linear-gradient(135deg, var(--color-ancient), var(--color-mystical));
+            border: 2px solid var(--color-crimson);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .codex-title {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--color-crimson);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .codex-description {
+            color: var(--color-silver);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .codex-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .codex-stat {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(139, 0, 0, 0.2);
+            border-radius: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-crimson);
+            font-family: 'Fira Code', monospace;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--color-silver);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 3rem 0;
+            border-top: 1px solid var(--color-ancient);
+        }
+
+        .footer p {
+            color: var(--color-silver);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .nav {
+                grid-template-columns: 1fr;
+            }
+
+            .arcana-sections {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="library-bg"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>📚 Liber Arcanae</h1>
+            <p>The sacred library of mystical knowledge, containing the complete Codex 144:99 and ancient arcane wisdom passed down through the ages.</p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <a href="#major-arcana" class="nav-card">
+                <span class="nav-icon">🎭</span>
+                <h2 class="nav-title">Major Arcana</h2>
+                <p class="nav-description">The 22 major arcana cards representing the soul's journey through spiritual transformation and cosmic understanding.</p>
+            </a>
+
+            <a href="#minor-arcana" class="nav-card">
+                <span class="nav-icon">🃏</span>
+                <h2 class="nav-title">Minor Arcana</h2>
+                <p class="nav-description">The 56 minor arcana cards divided into Wands, Cups, Swords, and Pentacles, representing everyday experiences and challenges.</p>
+            </a>
+
+            <a href="#codex-144" class="nav-card">
+                <span class="nav-icon">📖</span>
+                <h2 class="nav-title">Codex 144:99</h2>
+                <p class="nav-description">The complete 144:99 codex system with sacred geometry correspondences and mystical teachings.</p>
+            </a>
+        </nav>
+
+        <!-- Codex 144:99 Section -->
+        <section class="codex-section">
+            <h2 class="codex-title">Codex 144:99 - The Complete System</h2>
+            <p class="codex-description">A comprehensive mystical framework combining tarot, astrology, sacred geometry, and crystalline energies into 144 interconnected nodes of spiritual wisdom.</p>
+
+            <div class="codex-stats">
+                <div class="codex-stat">
+                    <div class="stat-value">144</div>
+                    <div class="stat-label">Sacred Nodes</div>
+                </div>
+                <div class="codex-stat">
+                    <div class="stat-value">99</div>
+                    <div class="stat-label">Fusion Kinks</div>
+                </div>
+                <div class="codex-stat">
+                    <div class="stat-value">7</div>
+                    <div class="stat-label">Chakras</div>
+                </div>
+                <div class="codex-stat">
+                    <div class="stat-value">∞</div>
+                    <div class="stat-label">Possibilities</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Arcana Sections -->
+        <div class="arcana-sections">
+            <!-- Major Arcana -->
+            <section class="arcana-section" id="major-arcana">
+                <div class="section-header">
+                    <span class="section-icon">🎭</span>
+                    <h2 class="section-title">Major Arcana (22 Cards)</h2>
+                </div>
+
+                <div class="arcana-grid">
+                    <div class="arcana-item">
+                        <div class="arcana-name">The Fool</div>
+                        <div class="arcana-type">Major • 0</div>
+                    </div>
+                    <div class="arcana-item">
+                        <div class="arcana-name">The Magician</div>
+                        <div class="arcana-type">Major • 1</div>
+                    </div>
+                    <div class="arcana-item">
+                        <div class="arcana-name">The High Priestess</div>
+                        <div class="arcana-type">Major • 2</div>
+                    </div>
+                    <div class="arcana-item">
+                        <div class="arcana-name">The Empress</div>
+                        <div class="arcana-type">Major • 3</div>
+                    </div>
+                    <div class="arcana-item">
+                        <div class="arcana-name">The Emperor</div>
+                        <div class="arcana-type">Major • 4</div>
+                    </div>
+                    <div class="arcana-item">
+                        <div class="arcana-name">The Hierophant</div>
+                        <div class="arcana-type">Major • 5</div>
+                    </div>
+                    <div class="arcana-item">
+                        <div class="arcana-name">The Lovers</div>
+                        <div class="arcana-type">Major • 6</div>
+                    </div>
+                    <div class="arcana-item">
+                        <div class="arcana-name">The Chariot</div>
+                        <div class="arcana-type">Major • 7</div>
+                    </div>
+                    <div class="arcana-item">
+                        <div class="arcana-name">Strength</div>
+                        <div class="arcana-type">Major • 8</div>
+                    </div>
+                    <div class="arcana-item">
+                        <div class="arcana-name">The Hermit</div>
+                        <div class="arcana-type">Major • 9</div>
+                    </div>
+                    <div class="arcana-item">
+                        <div class="arcana-name">Wheel of Fortune</div>
+                        <div class="arcana-type">Major • 10</div>
+                    </div>
+                    <div class="arcana-item">
+                        <div class="arcana-name">Justice</div>
+                        <div class="arcana-type">Major • 11</div>
+                    </div>
+                    <div class="arcana-item">
+                        <div class="arcana-name">The Hanged Man</div>
+                        <div class="arcana-type">Major • 12</div>
+                    </div>
+                    <div class="arcana-item">
+                        <div class="arcana-name">Death</div>
+                        <div class="arcana-type">Major • 13</div>
+                    </div>
+                    <div class="arcana-item">
+                        <div class="arcana-name">Temperance</div>
+                        <div class="arcana-type">Major • 14</div>
+                    </div>
+                    <div class="arcana-item">
+                        <div class="arcana-name">The Devil</div>
+                        <div class="arcana-type">Major • 15</div>
+                    </div>
+                    <div class="arcana-item">
+                        <div class="arcana-name">The Tower</div>
+                        <div class="arcana-type">Major • 16</div>
+                    </div>
+                    <div class="arcana-item">
+                        <div class="arcana-name">The Star</div>
+                        <div class="arcana-type">Major • 17</div>
+                    </div>
+                    <div class="arcana-item">
+                        <div class="arcana-name">The Moon</div>
+                        <div class="arcana-type">Major • 18</div>
+                    </div>
+                    <div class="arcana-item">
+                        <div class="arcana-name">The Sun</div>
+                        <div class="arcana-type">Major • 19</div>
+                    </div>
+                    <div class="arcana-item">
+                        <div class="arcana-name">Judgement</div>
+                        <div class="arcana-type">Major • 20</div>
+                    </div>
+                    <div class="arcana-item">
+                        <div class="arcana-name">The World</div>
+                        <div class="arcana-type">Major • 21</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Minor Arcana -->
+            <section class="arcana-section" id="minor-arcana">
+                <div class="section-header">
+                    <span class="section-icon">🃏</span>
+                    <h2 class="section-title">Minor Arcana (56 Cards)</h2>
+                </div>
+
+                <div class="arcana-grid">
+                    <div class="arcana-item">
+                        <div class="arcana-name">Wands</div>
+                        <div class="arcana-type">Fire • 14 Cards</div>
+                    </div>
+                    <div class="arcana-item">
+                        <div class="arcana-name">Cups</div>
+                        <div class="arcana-type">Water • 14 Cards</div>
+                    </div>
+                    <div class="arcana-item">
+                        <div class="arcana-name">Swords</div>
+                        <div class="arcana-type">Air • 14 Cards</div>
+                    </div>
+                    <div class="arcana-item">
+                        <div class="arcana-name">Pentacles</div>
+                        <div class="arcana-type">Earth • 14 Cards</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Liber Arcanae. Preserving sacred mystical knowledge for future generations.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Arcana item interactions
+        document.querySelectorAll('.arcana-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const name = item.querySelector('.arcana-name').textContent;
+                const type = item.querySelector('.arcana-type').textContent;
+
+                // Add selection animation
+                item.style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                    item.style.transform = '';
+                }, 200);
+
+                // In a real app, this would open the detailed arcana information
+                console.log(`Selected: ${name} (${type})`);
+            });
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

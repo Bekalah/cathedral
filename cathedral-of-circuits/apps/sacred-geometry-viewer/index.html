@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cathedral of Circuits - Sacred Geometry Viewer</title>
+    <meta name="description" content="Explore the universal mathematical principles that underlie reality">
+
+    <!-- Sacred Geometry Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Sacred Color Theme -->
+    <style>
+        :root {
+            /* Golden Ratio Based Spacing */
+            --phi: 1.6180339887;
+            --spacing-xs: 0.382rem;
+            --spacing-sm: 0.618rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.618rem;
+            --spacing-xl: 2.618rem;
+
+            /* Sacred Mathematical Colors */
+            --golden-ratio: #ffd700;
+            --fibonacci: #ff8c00;
+            --pi: #50c878;
+            --tau: #4169e1;
+            --euler: #9966cc;
+
+            /* Background */
+            --primary-bg: #0a0a0f;
+            --secondary-bg: #1a1a2e;
+            --surface-bg: #2d1b69;
+            --text-primary: #e6e6fa;
+            --text-secondary: #a0a0c0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: var(--phi);
+            overflow-x: hidden;
+        }
+
+        /* Mathematical Background */
+        .math-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            z-index: -1;
+            background-image:
+                radial-gradient(circle at 25% 25%, var(--golden-ratio) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, var(--fibonacci) 0%, transparent 50%),
+                linear-gradient(45deg, transparent 49%, var(--pi) 50%, transparent 51%);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: var(--spacing-lg);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: var(--spacing-xl) 0;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .header h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--golden-ratio), var(--fibonacci), var(--pi));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Main Viewer Layout */
+        .viewer-layout {
+            display: grid;
+            grid-template-columns: 300px 1fr 250px;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        /* Geometry Selection */
+        .geometry-selection {
+            background: var(--secondary-bg);
+            border-radius: var(--spacing-md);
+            padding: var(--spacing-lg);
+            border: 1px solid var(--surface-bg);
+        }
+
+        .geometry-section {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .geometry-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+            color: var(--golden-ratio);
+            display: flex;
+            align-items: center;
+        }
+
+        .geometry-title::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--golden-ratio);
+            border-radius: 50%;
+            margin-right: var(--spacing-sm);
+        }
+
+        .geometry-options {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+
+        .geometry-option {
+            padding: var(--spacing-sm) var(--spacing-md);
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: var(--spacing-sm);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .geometry-option:hover,
+        .geometry-option.selected {
+            background: var(--golden-ratio);
+            color: var(--primary-bg);
+            transform: translateX(4px);
+        }
+
+        /* Main Viewer */
+        .main-viewer {
+            background: var(--secondary-bg);
+            border-radius: var(--spacing-md);
+            padding: var(--spacing-lg);
+            border: 1px solid var(--surface-bg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .viewer-container {
+            width: 100%;
+            height: 500px;
+            position: relative;
+            background: radial-gradient(circle at center, rgba(80, 200, 120, 0.1) 0%, transparent 70%);
+        }
+
+        .geometry-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Properties Panel */
+        .properties-panel {
+            background: var(--secondary-bg);
+            border-radius: var(--spacing-md);
+            padding: var(--spacing-lg);
+            border: 1px solid var(--surface-bg);
+        }
+
+        .property-group {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .property-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+            color: var(--fibonacci);
+        }
+
+        .property-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+
+        .property-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-sm);
+            background: rgba(255, 140, 0, 0.1);
+            border-radius: var(--spacing-sm);
+        }
+
+        .property-name {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+        }
+
+        .property-value {
+            font-family: 'Fira Code', monospace;
+            font-weight: 600;
+            color: var(--fibonacci);
+        }
+
+        /* Mathematical Formula Display */
+        .formula-display {
+            background: var(--surface-bg);
+            border-radius: var(--spacing-sm);
+            padding: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+            border: 1px solid var(--pi);
+        }
+
+        .formula-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            color: var(--pi);
+        }
+
+        .formula {
+            font-family: 'Fira Code', monospace;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            text-align: center;
+            margin: var(--spacing-sm) 0;
+        }
+
+        /* Interactive Controls */
+        .controls-section {
+            background: var(--secondary-bg);
+            border-radius: var(--spacing-md);
+            padding: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+            border: 1px solid var(--tau);
+        }
+
+        .control-group {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .control-label {
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            color: var(--tau);
+        }
+
+        .control-slider {
+            width: 100%;
+            height: 6px;
+            background: rgba(65, 105, 225, 0.2);
+            border-radius: 3px;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .control-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            background: var(--tau);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .control-value {
+            text-align: right;
+            font-family: 'Fira Code', monospace;
+            font-weight: 600;
+            color: var(--tau);
+            margin-top: var(--spacing-xs);
+        }
+
+        /* Mathematical Constants Display */
+        .constants-display {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-lg);
+        }
+
+        .constant-item {
+            text-align: center;
+            padding: var(--spacing-sm);
+            background: rgba(153, 102, 204, 0.1);
+            border-radius: var(--spacing-sm);
+        }
+
+        .constant-symbol {
+            font-family: 'Fira Code', monospace;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--euler);
+        }
+
+        .constant-value {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: var(--spacing-xs);
+        }
+
+        .constant-name {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: var(--spacing-xl) 0;
+            border-top: 1px solid var(--secondary-bg);
+            margin-top: var(--spacing-xl);
+        }
+
+        .footer p {
+            color: var(--text-secondary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .viewer-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: var(--spacing-md);
+            }
+
+            .header h1 {
+                font-size: 2.4rem;
+            }
+
+            .constants-display {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="math-bg"></div>
+
+    <div class="container">
+        <header class="header">
+            <h1>🔺 Sacred Geometry Viewer</h1>
+            <p>Explore the universal mathematical principles that underlie reality. Discover the golden ratio, platonic solids, and fibonacci sequences that form the foundation of existence.</p>
+        </header>
+
+        <main class="viewer-layout">
+            <!-- Geometry Selection -->
+            <section class="geometry-selection">
+                <div class="geometry-section">
+                    <h3 class="geometry-title">Platonic Solids</h3>
+                    <div class="geometry-options">
+                        <div class="geometry-option" data-geometry="tetrahedron">Tetrahedron</div>
+                        <div class="geometry-option" data-geometry="cube">Cube</div>
+                        <div class="geometry-option" data-geometry="octahedron">Octahedron</div>
+                        <div class="geometry-option" data-geometry="dodecahedron">Dodecahedron</div>
+                        <div class="geometry-option" data-geometry="icosahedron">Icosahedron</div>
+                    </div>
+                </div>
+
+                <div class="geometry-section">
+                    <h3 class="geometry-title">Sacred Patterns</h3>
+                    <div class="geometry-options">
+                        <div class="geometry-option" data-geometry="flower-of-life">Flower of Life</div>
+                        <div class="geometry-option" data-geometry="metatron-cube">Metatron's Cube</div>
+                        <div class="geometry-option" data-geometry="sri-yantra">Sri Yantra</div>
+                        <div class="geometry-option" data-geometry="fibonacci-spiral">Fibonacci Spiral</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Viewer -->
+            <section class="main-viewer">
+                <h2 class="geometry-title" style="text-align: center; justify-content: center; margin-bottom: var(--spacing-lg);">Interactive Visualization</h2>
+                <div class="viewer-container">
+                    <svg class="geometry-canvas" viewBox="0 0 600 500">
+                        <!-- Default: Flower of Life -->
+                        <defs>
+                            <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,215,0,0.1)" stroke-width="1"/>
+                            </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#grid)" />
+
+                        <!-- Flower of Life Circles -->
+                        <g id="flower-of-life" style="display: none;">
+                            <circle cx="300" cy="250" r="50" fill="none" stroke="var(--golden-ratio)" stroke-width="2" opacity="0.6"/>
+                            <circle cx="300" cy="250" r="100" fill="none" stroke="var(--fibonacci)" stroke-width="2" opacity="0.4"/>
+                            <circle cx="300" cy="250" r="150" fill="none" stroke="var(--pi)" stroke-width="2" opacity="0.2"/>
+                        </g>
+
+                        <!-- Tetrahedron -->
+                        <g id="tetrahedron" style="display: none;">
+                            <polygon points="300,100 400,300 200,300" fill="rgba(255,215,0,0.3)" stroke="var(--golden-ratio)" stroke-width="2"/>
+                            <polygon points="300,100 400,200 300,300" fill="rgba(255,140,0,0.3)" stroke="var(--fibonacci)" stroke-width="2"/>
+                            <polygon points="300,100 200,200 300,300" fill="rgba(80,200,120,0.3)" stroke="var(--pi)" stroke-width="2"/>
+                            <polygon points="200,200 400,200 300,300" fill="rgba(65,105,225,0.3)" stroke="var(--tau)" stroke-width="2"/>
+                        </g>
+
+                        <!-- Cube -->
+                        <g id="cube" style="display: none;">
+                            <rect x="200" y="150" width="200" height="200" fill="rgba(255,215,0,0.3)" stroke="var(--golden-ratio)" stroke-width="2"/>
+                            <rect x="250" y="100" width="100" height="100" fill="rgba(255,140,0,0.3)" stroke="var(--fibonacci)" stroke-width="2"/>
+                            <rect x="250" y="300" width="100" height="100" fill="rgba(80,200,120,0.3)" stroke="var(--pi)" stroke-width="2"/>
+                        </g>
+
+                        <!-- Octahedron -->
+                        <g id="octahedron" style="display: none;">
+                            <polygon points="300,100 350,200 300,300 250,200" fill="rgba(255,215,0,0.3)" stroke="var(--golden-ratio)" stroke-width="2"/>
+                            <polygon points="300,100 400,250 300,300 200,250" fill="rgba(255,140,0,0.3)" stroke="var(--fibonacci)" stroke-width="2"/>
+                        </g>
+
+                        <!-- Dodecahedron (simplified) -->
+                        <g id="dodecahedron" style="display: none;">
+                            <circle cx="300" cy="250" r="80" fill="rgba(255,215,0,0.3)" stroke="var(--golden-ratio)" stroke-width="2"/>
+                            <polygon points="220,190 300,150 380,190 380,310 300,350 220,310" fill="rgba(255,140,0,0.3)" stroke="var(--fibonacci)" stroke-width="2"/>
+                        </g>
+
+                        <!-- Icosahedron (simplified) -->
+                        <g id="icosahedron" style="display: none;">
+                            <circle cx="300" cy="250" r="60" fill="rgba(255,215,0,0.3)" stroke="var(--golden-ratio)" stroke-width="2"/>
+                            <polygon points="240,200 300,140 360,200 360,300 300,360 240,300" fill="rgba(255,140,0,0.3)" stroke="var(--fibonacci)" stroke-width="2"/>
+                        </g>
+
+                        <!-- Metatron's Cube -->
+                        <g id="metatron-cube" style="display: none;">
+                            <circle cx="300" cy="250" r="40" fill="rgba(255,215,0,0.5)" stroke="var(--golden-ratio)" stroke-width="2"/>
+                            <circle cx="300" cy="150" r="40" fill="rgba(255,140,0,0.5)" stroke="var(--fibonacci)" stroke-width="2"/>
+                            <circle cx="300" cy="350" r="40" fill="rgba(80,200,120,0.5)" stroke="var(--pi)" stroke-width="2"/>
+                        </g>
+
+                        <!-- Sri Yantra -->
+                        <g id="sri-yantra" style="display: none;">
+                            <polygon points="300,150 350,250 250,250" fill="rgba(255,215,0,0.3)" stroke="var(--golden-ratio)" stroke-width="2"/>
+                            <polygon points="300,200 340,250 260,250" fill="rgba(255,140,0,0.3)" stroke="var(--fibonacci)" stroke-width="2"/>
+                            <polygon points="300,250 330,250 270,250" fill="rgba(80,200,120,0.3)" stroke="var(--pi)" stroke-width="2"/>
+                        </g>
+
+                        <!-- Fibonacci Spiral -->
+                        <g id="fibonacci-spiral" style="display: none;">
+                            <path d="M 300 250 Q 350 250 350 300 Q 350 350 300 350 Q 250 350 250 300 Q 250 250 300 250"
+                                  fill="rgba(255,215,0,0.3)" stroke="var(--golden-ratio)" stroke-width="3"/>
+                        </g>
+                    </svg>
+                </div>
+            </section>
+
+            <!-- Properties Panel -->
+            <section class="properties-panel">
+                <h2 class="geometry-title" style="margin-bottom: var(--spacing-lg);">Mathematical Properties</h2>
+
+                <div class="property-group">
+                    <h3 class="property-title">Sacred Ratios</h3>
+                    <div class="property-list">
+                        <div class="property-item">
+                            <span class="property-name">Golden Ratio (φ)</span>
+                            <span class="property-value">1.618034</span>
+                        </div>
+                        <div class="property-item">
+                            <span class="property-name">Fibonacci Ratio</span>
+                            <span class="property-value">1.618034</span>
+                        </div>
+                        <div class="property-item">
+                            <span class="property-name">Pi (π)</span>
+                            <span class="property-value">3.141593</span>
+                        </div>
+                        <div class="property-item">
+                            <span class="property-name">Euler's Number (e)</span>
+                            <span class="property-value">2.718282</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="formula-display">
+                    <h3 class="formula-title">Key Formulas</h3>
+                    <div class="formula">φ = (1 + √5) / 2</div>
+                    <div class="formula">F(n) = F(n-1) + F(n-2)</div>
+                    <div class="formula">A = πr²</div>
+                </div>
+
+                <div class="controls-section">
+                    <div class="control-group">
+                        <label class="control-label">Rotation Speed</label>
+                        <input type="range" class="control-slider" id="rotation-speed" min="0" max="2" step="0.1" value="1">
+                        <div class="control-value" id="rotation-value">1.0x</div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Scale</label>
+                        <input type="range" class="control-slider" id="scale" min="0.5" max="2" step="0.1" value="1">
+                        <div class="control-value" id="scale-value">1.0x</div>
+                    </div>
+                </div>
+
+                <div class="constants-display">
+                    <div class="constant-item">
+                        <div class="constant-symbol">φ</div>
+                        <div class="constant-value">1.618034</div>
+                        <div class="constant-name">Golden Ratio</div>
+                    </div>
+                    <div class="constant-item">
+                        <div class="constant-symbol">π</div>
+                        <div class="constant-value">3.141593</div>
+                        <div class="constant-name">Pi</div>
+                    </div>
+                    <div class="constant-item">
+                        <div class="constant-symbol">τ</div>
+                        <div class="constant-value">6.283185</div>
+                        <div class="constant-name">Tau</div>
+                    </div>
+                    <div class="constant-item">
+                        <div class="constant-symbol">e</div>
+                        <div class="constant-value">2.718282</div>
+                        <div class="constant-name">Euler's Number</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 Cathedral of Circuits. Exploring the mathematical beauty of existence.</p>
+        </footer>
+    </div>
+
+    <script>
+        let currentGeometry = 'flower-of-life';
+        let rotation = 0;
+        let scale = 1;
+
+        // Geometry selection
+        document.querySelectorAll('.geometry-option').forEach(option => {
+            option.addEventListener('click', () => {
+                document.querySelectorAll('.geometry-option').forEach(opt => opt.classList.remove('selected'));
+                option.classList.add('selected');
+                currentGeometry = option.dataset.geometry;
+
+                // Show selected geometry
+                showGeometry(currentGeometry);
+            });
+        });
+
+        function showGeometry(geometryType) {
+            // Hide all geometries
+            document.querySelectorAll('.geometry-canvas g').forEach(g => {
+                g.style.display = 'none';
+            });
+
+            // Show selected geometry
+            const targetGeometry = document.getElementById(geometryType);
+            if (targetGeometry) {
+                targetGeometry.style.display = 'block';
+            }
+        }
+
+        // Animation loop
+        function animate() {
+            rotation += 0.01;
+            const geometryElement = document.querySelector('.geometry-canvas');
+
+            if (geometryElement) {
+                geometryElement.style.transform = `rotate(${rotation * 180 / Math.PI}deg) scale(${scale})`;
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        // Controls
+        document.getElementById('rotation-speed').addEventListener('input', (e) => {
+            const speed = parseFloat(e.target.value);
+            document.getElementById('rotation-value').textContent = speed.toFixed(1) + 'x';
+            // Adjust animation speed
+        });
+
+        document.getElementById('scale').addEventListener('input', (e) => {
+            scale = parseFloat(e.target.value);
+            document.getElementById('scale-value').textContent = scale.toFixed(1) + 'x';
+        });
+
+        // Initialize
+        showGeometry('flower-of-life');
+        animate();
+
+        // Add some interactive effects
+        document.querySelector('.main-viewer').addEventListener('click', () => {
+            const container = document.querySelector('.viewer-container');
+            container.style.animation = 'pulse 0.5s ease-in-out';
+            setTimeout(() => {
+                container.style.animation = '';
+            }, 500);
+        });
+
+        // Add CSS animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.02); }
+                100% { transform: scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

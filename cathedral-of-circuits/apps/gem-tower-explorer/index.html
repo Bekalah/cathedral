@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cathedral of Circuits - Gem Tower Explorer</title>
+    <meta name="description" content="Explore sacred gem towers with real science and mystical principles">
+
+    <!-- Sacred Geometry Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Sacred Color Theme -->
+    <style>
+        :root {
+            /* Golden Ratio Based Spacing */
+            --phi: 1.6180339887;
+            --spacing-xs: 0.382rem;
+            --spacing-sm: 0.618rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.618rem;
+            --spacing-xl: 2.618rem;
+
+            /* Chakra-Based Colors */
+            --chakra-crown: #ffffff;
+            --chakra-thirdeye: #9966cc;
+            --chakra-throat: #4169e1;
+            --chakra-heart: #50c878;
+            --chakra-solar: #ffd700;
+            --chakra-sacral: #ff8c00;
+            --chakra-root: #e0115f;
+
+            /* Sacred Theme Colors */
+            --primary-color: var(--chakra-heart);
+            --secondary-color: var(--chakra-thirdeye);
+            --background-color: #0a0a0f;
+            --surface-color: #1a1a2e;
+            --text-color: #e6e6fa;
+            --text-secondary: #a0a0c0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--background-color);
+            color: var(--text-color);
+            line-height: var(--phi);
+            overflow-x: hidden;
+        }
+
+        /* Sacred Geometry Background */
+        .sacred-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            z-index: -1;
+            background-image:
+                radial-gradient(circle at 25% 25%, var(--chakra-heart) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, var(--chakra-thirdeye) 0%, transparent 50%);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-lg);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: var(--spacing-xl) 0;
+            border-bottom: 1px solid var(--surface-color);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .header h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--chakra-heart), var(--chakra-thirdeye));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Gem Tower Grid */
+        .gem-towers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        /* Gem Tower Card */
+        .gem-tower {
+            background: var(--surface-color);
+            border-radius: var(--spacing-md);
+            padding: var(--spacing-lg);
+            border: 1px solid rgba(80, 200, 120, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gem-tower:hover {
+            transform: translateY(-4px);
+            border-color: var(--chakra-heart);
+            box-shadow: 0 8px 32px rgba(80, 200, 120, 0.2);
+        }
+
+        .gem-tower-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .gem-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-right: var(--spacing-md);
+        }
+
+        .gem-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .gem-description {
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.6;
+        }
+
+        .gem-properties {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .property {
+            background: rgba(80, 200, 120, 0.1);
+            padding: var(--spacing-sm);
+            border-radius: var(--spacing-sm);
+            text-align: center;
+        }
+
+        .property-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .property-value {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .explore-btn {
+            width: 100%;
+            padding: var(--spacing-md);
+            background: var(--chakra-heart);
+            color: var(--background-color);
+            border: none;
+            border-radius: var(--spacing-sm);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .explore-btn:hover {
+            background: var(--chakra-thirdeye);
+            transform: translateY(-2px);
+        }
+
+        /* Tower Visualization */
+        .tower-viz {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(180deg, var(--surface-color), var(--background-color));
+            border-radius: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tower-structure {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 160px;
+        }
+
+        .tower-tier {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 20px;
+            background: currentColor;
+            border-radius: 2px;
+            opacity: 0.8;
+        }
+
+        .tower-tier:nth-child(1) { bottom: 0; width: 80px; color: var(--chakra-root); }
+        .tower-tier:nth-child(2) { bottom: 20px; width: 70px; color: var(--chakra-sacral); }
+        .tower-tier:nth-child(3) { bottom: 40px; width: 60px; color: var(--chakra-solar); }
+        .tower-tier:nth-child(4) { bottom: 60px; width: 50px; color: var(--chakra-heart); }
+        .tower-tier:nth-child(5) { bottom: 80px; width: 40px; color: var(--chakra-throat); }
+        .tower-tier:nth-child(6) { bottom: 100px; width: 30px; color: var(--chakra-thirdeye); }
+        .tower-tier:nth-child(7) { bottom: 120px; width: 20px; color: var(--chakra-crown); }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: var(--spacing-xl) 0;
+            border-top: 1px solid var(--surface-color);
+            margin-top: var(--spacing-xl);
+        }
+
+        .footer p {
+            color: var(--text-secondary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: var(--spacing-md);
+            }
+
+            .header h1 {
+                font-size: 2.4rem;
+            }
+
+            .gem-towers {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sacred-bg"></div>
+
+    <div class="container">
+        <header class="header">
+            <h1>🔮 Gem Tower Explorer</h1>
+            <p>Discover the sacred architecture of gem towers, where real mineral properties meet mystical principles in beautiful, mathematically harmonious structures.</p>
+        </header>
+
+        <main>
+            <div class="gem-towers">
+                <div class="gem-tower" data-gem="emerald">
+                    <div class="gem-tower-header">
+                        <div class="gem-icon" style="background: var(--chakra-heart);">💚</div>
+                        <h2 class="gem-name">Emerald City</h2>
+                    </div>
+
+                    <div class="tower-viz">
+                        <div class="tower-structure">
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                        </div>
+                    </div>
+
+                    <p class="gem-description">The legendary Emerald City represents the heart chakra, combining real emerald properties with sacred geometry to create a verdant paradise of crystal fountains and garden terraces.</p>
+
+                    <div class="gem-properties">
+                        <div class="property">
+                            <div class="property-label">Hardness</div>
+                            <div class="property-value">7.5</div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Frequency</div>
+                            <div class="property-value">528 Hz</div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Element</div>
+                            <div class="property-value">Earth</div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Rarity</div>
+                            <div class="property-value">Rare</div>
+                        </div>
+                    </div>
+
+                    <button class="explore-btn">Explore Emerald City</button>
+                </div>
+
+                <div class="gem-tower" data-gem="amethyst">
+                    <div class="gem-tower-header">
+                        <div class="gem-icon" style="background: var(--chakra-thirdeye);">🔮</div>
+                        <h2 class="gem-name">Amethyst Spire</h2>
+                    </div>
+
+                    <div class="tower-viz">
+                        <div class="tower-structure">
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                        </div>
+                    </div>
+
+                    <p class="gem-description">The mystical Amethyst Spire resonates with the third eye chakra, featuring step pyramid construction with mystical runes and violet energy patterns.</p>
+
+                    <div class="gem-properties">
+                        <div class="property">
+                            <div class="property-label">Hardness</div>
+                            <div class="property-value">7</div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Frequency</div>
+                            <div class="property-value">741 Hz</div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Element</div>
+                            <div class="property-value">Air</div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Rarity</div>
+                            <div class="property-value">Uncommon</div>
+                        </div>
+                    </div>
+
+                    <button class="explore-btn">Explore Amethyst Spire</button>
+                </div>
+
+                <div class="gem-tower" data-gem="rose-quartz">
+                    <div class="gem-tower-header">
+                        <div class="gem-icon" style="background: linear-gradient(135deg, #ff69b4, #ff99cc);">💖</div>
+                        <h2 class="gem-name">Rose Quartz Heart</h2>
+                    </div>
+
+                    <div class="tower-viz">
+                        <div class="tower-structure">
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                        </div>
+                    </div>
+
+                    <p class="gem-description">The beautiful Rose Quartz Heart Spire embodies the heart chakra's loving energy, with rose gardens, heart chambers, and gentle harmony resonance.</p>
+
+                    <div class="gem-properties">
+                        <div class="property">
+                            <div class="property-label">Hardness</div>
+                            <div class="property-value">7</div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Frequency</div>
+                            <div class="property-value">528 Hz</div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Element</div>
+                            <div class="property-value">Water</div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Rarity</div>
+                            <div class="property-value">Uncommon</div>
+                        </div>
+                    </div>
+
+                    <button class="explore-btn">Explore Rose Heart</button>
+                </div>
+
+                <div class="gem-tower" data-gem="diamond">
+                    <div class="gem-tower-header">
+                        <div class="gem-icon" style="background: var(--chakra-crown);">💎</div>
+                        <h2 class="gem-name">Diamond Palace</h2>
+                    </div>
+
+                    <div class="tower-viz">
+                        <div class="tower-structure">
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                        </div>
+                    </div>
+
+                    <p class="gem-description">The legendary Diamond Palace represents the crown chakra in its ultimate form, featuring prism galleries, rainbow halls, and celestial observatory.</p>
+
+                    <div class="gem-properties">
+                        <div class="property">
+                            <div class="property-label">Hardness</div>
+                            <div class="property-value">10</div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Frequency</div>
+                            <div class="property-value">963 Hz</div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Element</div>
+                            <div class="property-value">All</div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Rarity</div>
+                            <div class="property-value">Legendary</div>
+                        </div>
+                    </div>
+
+                    <button class="explore-btn">Explore Diamond Palace</button>
+                </div>
+
+                <div class="gem-tower" data-gem="ruby">
+                    <div class="gem-tower-header">
+                        <div class="gem-icon" style="background: var(--chakra-root);">🔴</div>
+                        <h2 class="gem-name">Crimson Citadel</h2>
+                    </div>
+
+                    <div class="tower-viz">
+                        <div class="tower-structure">
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                        </div>
+                    </div>
+
+                    <p class="gem-description">The mighty Crimson Citadel channels the root chakra's power, with flame altars, guardian statues, and crimson banners flying in eternal vigilance.</p>
+
+                    <div class="gem-properties">
+                        <div class="property">
+                            <div class="property-label">Hardness</div>
+                            <div class="property-value">9</div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Frequency</div>
+                            <div class="property-value">285 Hz</div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Element</div>
+                            <div class="property-value">Fire</div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Rarity</div>
+                            <div class="property-value">Rare</div>
+                        </div>
+                    </div>
+
+                    <button class="explore-btn">Explore Crimson Citadel</button>
+                </div>
+
+                <div class="gem-tower" data-gem="sapphire">
+                    <div class="gem-tower-header">
+                        <div class="gem-icon" style="background: var(--chakra-throat);">🔵</div>
+                        <h2 class="gem-name">Sapphire Spire</h2>
+                    </div>
+
+                    <div class="tower-viz">
+                        <div class="tower-structure">
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                            <div class="tower-tier"></div>
+                        </div>
+                    </div>
+
+                    <p class="gem-description">The ethereal Sapphire Spire resonates with the throat chakra, featuring wisdom libraries, star chambers, and celestial maps for cosmic navigation.</p>
+
+                    <div class="gem-properties">
+                        <div class="property">
+                            <div class="property-label">Hardness</div>
+                            <div class="property-value">9</div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Frequency</div>
+                            <div class="property-value">741 Hz</div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Element</div>
+                            <div class="property-value">Water</div>
+                        </div>
+                        <div class="property">
+                            <div class="property-label">Rarity</div>
+                            <div class="property-value">Rare</div>
+                        </div>
+                    </div>
+
+                    <button class="explore-btn">Explore Sapphire Spire</button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 Cathedral of Circuits. Built with sacred geometry and real science.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Gem tower interaction
+        document.querySelectorAll('.gem-tower').forEach(tower => {
+            const exploreBtn = tower.querySelector('.explore-btn');
+
+            exploreBtn.addEventListener('click', () => {
+                const gemType = tower.dataset.gem;
+                console.log(`Exploring ${gemType} tower...`);
+
+                // Add exploration animation
+                tower.style.transform = 'scale(1.02)';
+                setTimeout(() => {
+                    tower.style.transform = '';
+                }, 200);
+
+                // In a real app, this would navigate to the gem tower experience
+                alert(`Welcome to the ${gemType.charAt(0).toUpperCase() + gemType.slice(1)} Tower!\n\nThis would open an immersive 3D experience with:\n• Sacred geometry architecture\n• Real gem properties\n• Mystical correspondences\n• Interactive elements`);
+            });
+        });
+
+        // Add subtle animations
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animate towers on load
+            setTimeout(() => {
+                document.querySelectorAll('.gem-tower').forEach((tower, index) => {
+                    setTimeout(() => {
+                        tower.style.opacity = '1';
+                        tower.style.transform = 'translateY(0)';
+                    }, index * 100);
+                });
+            }, 100);
+        });
+    </script>
+</body>
+</html>
