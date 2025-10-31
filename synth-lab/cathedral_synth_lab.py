@@ -2,7 +2,8 @@
 # World's most expensive synthesizers recreated with full functionality + magical integration
 
 import json
-import numpy as np
+import brewbrew upgrade
+as np
 import scipy.signal as signal
 from dataclasses import dataclass, field
 from typing import Dict, List, Any, Optional
