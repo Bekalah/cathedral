@@ -1,0 +1,13 @@
+INFO:     Started server process [25104]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+🌟 Starting Agent of Kaoz Direct Service...
+INFO:     127.0.0.1:56240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56241 - "POST /invoke HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56323 - "POST /invoke HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56355 - "POST /invoke HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58118 - "POST /invoke HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65075 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:65107 - "GET /api/status HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52097 - "GET /api/status HTTP/1.1" 404 Not Found
