@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "⚡ Cathedral Mystical - Alpha Omega Arcanae"
+echo "==========================================="
+cd mystical-system/alpha-omega-arcanae && echo "⚡ Working on Alpha Omega arcanae system"
+pwd

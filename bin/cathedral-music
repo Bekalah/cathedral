@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "🎼 Cathedral Music - Mystical Sound Design"
+echo "=========================================="
+cd audio-system/vst3-strudel-integration && echo "🎵 Working on VST3/Strudel audio integration"
+pwd

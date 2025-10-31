@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "🏛️ Cathedral Sync - Rebecca's work to GitHub"
+cd "$(dirname "$0")/.." 
+./sync-all.sh

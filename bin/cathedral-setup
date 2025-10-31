@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "⚙️ Cathedral setup"
+cd "$(dirname "$0")/.." 
+./replit-auto-setup.sh

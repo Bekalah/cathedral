@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "🔄 Quick Cathedral sync"
+cd "$(dirname "$0")/.." 
+./quick-sync.sh

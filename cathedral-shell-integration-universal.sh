@@ -1,25 +1,31 @@
 #!/bin/bash
-# cathedral-shell-integration.sh
-# Integrate Cathedral commands into shell environment
-# Add aliases and PATH setup for easy command access
+# cathedral-shell-integration-universal.sh
+# Universal shell integration for both bash and zsh
 
-echo "🔧 Integrating Cathedral commands into shell..."
+echo "🔧 Integrating Cathedral commands into shell (Universal)..."
 
-# Add to shell profile for persistent integration
+# Detect shell and set profile appropriately
 SHELL_PROFILE=""
+SHELL_TYPE=""
 if [ -n "$BASH_VERSION" ]; then
+    SHELL_TYPE="bash"
     SHELL_PROFILE="$HOME/.bashrc"
     echo "📝 Adding to bash profile: ~/.bashrc"
 elif [ -n "$ZSH_VERSION" ]; then
+    SHELL_TYPE="zsh"
     SHELL_PROFILE="$HOME/.zshrc"
     echo "📝 Adding to zsh profile: ~/.zshrc"
+else
+    echo "⚠️  Unknown shell type"
+    SHELL_TYPE="bash"
+    SHELL_PROFILE="$HOME/.bashrc"
 fi
 
 if [ -n "$SHELL_PROFILE" ]; then
     # Add Cathedral integration to shell profile
-    cat >> "$SHELL_PROFILE" << 'EOF'
+    cat >> "$SHELL_PROFILE" << EOF
 
-# Cathedral System Integration - Rebecca's Unified Work
+# Cathedral System Integration - Rebecca's Unified Arts-Science Work
 export CATHEDRAL_ROOT="$(pwd)"
 export CATHEDRAL_SESSION_ID="cathedral-rust-magnus-opus-2025"
 export CATHEDRAL_GITHUB_REPO="https://github.com/bekalah/cathedral"
@@ -28,9 +34,9 @@ export CATHEDRAL_GITHUB_REPO="https://github.com/bekalah/cathedral"
 alias cathedral-sync='cd $(pwd) && ./sync-all.sh'
 alias cathedral-quick='cd $(pwd) && ./quick-sync.sh'
 alias cathedral-setup='cd $(pwd) && ./replit-auto-setup.sh'
-alias cathedral-status='echo "🏛️ Cathedral Status:" && echo "Session: $CATHEDRAL_SESSION_ID" && echo "Repo: $CATHEDRAL_GITHUB_REPO" && echo "Directory: $CATHEDRAL_ROOT"'
+alias cathedral-status='echo "🏛️ Cathedral Status:" && echo "Session: \$CATHEDRAL_SESSION_ID" && echo "Repo: \$CATHEDRAL_GITHUB_REPO" && echo "Directory: \$CATHEDRAL_ROOT"'
 
-# Cathedral Unified Arts - Music - Science - Design Commands
+# Cathedral Unified Arts-Science Commands
 alias cathedral-tarot='cd tarot-system/72-degrees-hermann-haindl && echo "🎴 Working on Hermann Haindl 72-degree ceremonial system"'
 alias cathedral-circuit='cd circuitum99/33-living-chapters && echo "🔄 Working on Circuitum99 33 living chapters"'
 alias cathedral-audio='cd audio-system/vst3-strudel-integration && echo "🎵 Working on VST3/Strudel audio integration"'
@@ -43,71 +49,57 @@ alias cathedral-design='cd design-system/affinity-designer-2 && echo "🎨 Worki
 alias cathedral-ritual='cd mystical-system/alpha-omega-arcanae && echo "✨ Working on ceremonial rituals and practices"'
 
 # Path integration
-export PATH="$(pwd)/bin:$(pwd):$PATH"
-
-# Cathedral completion function
-_cathedral_completion() {
-    local cur="${COMP_WORDS[COMP_CWORD]}"
-    local opts="sync quick setup status tarot circuit audio mystical art science music game design ritual"
-    COMPREPLY=( $(compgen -W "$opts" -- "$cur") )
-}
-
-if command -v complete &> /dev/null; then
-    complete -F _cathedral_completion cathedral-sync cathedral-quick cathedral-setup cathedral-status
-fi
+export PATH="$(pwd)/bin:$(pwd):\$PATH"
 
 EOF
     
     echo "✅ Shell profile updated with Cathedral integration"
-        echo "💡 Commands available: cathedral-sync, cathedral-quick, cathedral-setup"
-        echo "💡 Unified arts-science commands: cathedral-tarot, cathedral-circuit, cathedral-audio, cathedral-mystical, cathedral-art, cathedral-science, cathedral-music, cathedral-game, cathedral-design, cathedral-ritual"
-    else
-        echo "⚠️  Could not detect shell profile location"
-    fi
+else
+    echo "⚠️  Could not detect shell profile location"
+fi
 
 # Create bin directory for executables
 mkdir -p bin
 
-# Create convenient executable scripts
-cat > bin/cathedral-sync << 'EOF'
+# Create comprehensive bin scripts
+cat > bin/cathedral-music << 'EOF'
 #!/bin/bash
-echo "🏛️ Cathedral Sync - Rebecca's work to GitHub"
-cd "$(dirname "$0")/.." 
-./sync-all.sh
+echo "🎼 Cathedral Music - Mystical Sound Design"
+echo "=========================================="
+cd audio-system/vst3-strudel-integration && echo "🎵 Working on VST3/Strudel audio integration"
+pwd
 EOF
 
-cat > bin/cathedral-quick << 'EOF'
+cat > bin/cathedral-art << 'EOF'
 #!/bin/bash
-echo "🔄 Quick Cathedral sync"
-cd "$(dirname "$0")/.." 
-./quick-sync.sh
+echo "🎨 Cathedral Art - Unified Practices"
+echo "===================================="
+cd mystical-system/alpha-omega-arcanae && echo "🎨 Working on unified art and mystical practices"
+pwd
 EOF
 
-cat > bin/cathedral-setup << 'EOF'
+cat > bin/cathedral-science << 'EOF'
 #!/bin/bash
-echo "⚙️ Cathedral setup"
-cd "$(dirname "$0")/.." 
-./replit-auto-setup.sh
+echo "🔬 Cathedral Science - Sacred Patterns"
+echo "====================================="
+cd mystical-system/alpha-omega-arcanae && echo "🔬 Working on sacred science and patterns"
+pwd
 EOF
 
-cat > bin/cathedral-status << 'EOF'
+cat > bin/cathedral-ritual << 'EOF'
 #!/bin/bash
-echo "🏛️ Cathedral Status Report"
-echo "=========================="
-echo "Session ID: cathedral-rust-magnus-opus-2025"
-echo "GitHub Repo: https://github.com/bekalah/cathedral"
-echo "Current Dir: $(pwd)"
-echo "Shell: $SHELL"
-echo "User: $(whoami)"
-echo ""
-echo "📊 Work Categories:"
-for dir in tarot-system/* circuitum99 audio-system mystical-system business-system game-system design-system; do
-    if [ -d "$dir" ]; then
-        echo "   📁 $dir"
-        file_count=$(find "$dir" -type f | wc -l)
-        echo "      Files: $file_count"
-    fi
-done
+echo "✨ Cathedral Ritual - Ceremonial Practices"
+echo "========================================="
+cd mystical-system/alpha-omega-arcanae && echo "✨ Working on ceremonial rituals and practices"
+pwd
+EOF
+
+cat > bin/cathedral-mystical << 'EOF'
+#!/bin/bash
+echo "⚡ Cathedral Mystical - Alpha Omega Arcanae"
+echo "==========================================="
+cd mystical-system/alpha-omega-arcanae && echo "⚡ Working on Alpha Omega arcanae system"
+pwd
 EOF
 
 # Make all bin scripts executable
@@ -119,19 +111,16 @@ export PATH="$(pwd)/bin:$(pwd):$PATH"
 # Source the shell profile to load commands immediately
 if [ -n "$SHELL_PROFILE" ] && [ -f "$SHELL_PROFILE" ]; then
     echo "🔄 Loading shell configuration..."
-    # For bash
-    if [ -n "$BASH_VERSION" ]; then
+    if [ "$SHELL_TYPE" = "bash" ]; then
         source "$SHELL_PROFILE" 2>/dev/null || true
-    fi
-    # For zsh  
-    if [ -n "$ZSH_VERSION" ]; then
+    elif [ "$SHELL_TYPE" = "zsh" ]; then
         source "$SHELL_PROFILE" 2>/dev/null || true
     fi
 fi
 
 echo ""
-echo "🎉 SHELL INTEGRATION COMPLETE!"
-echo "=============================="
+echo "🎉 UNIVERSAL SHELL INTEGRATION COMPLETE!"
+echo "========================================="
 echo ""
 echo "✅ Cathedral commands now available:"
 echo "   🏛️ cathedral-sync        - Sync all work to GitHub"
@@ -154,3 +143,6 @@ echo ""
 echo "💡 Commands work from anywhere in your system!"
 echo "💡 Shell integration is permanent - survives reboots"
 echo "🔗 Connected to: https://github.com/bekalah/cathedral"
+echo ""
+echo "🔧 Shell type: $SHELL_TYPE"
+echo "📝 Profile: $SHELL_PROFILE"
