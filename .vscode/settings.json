@@ -13,5 +13,8 @@
       "envManager": "ms-python.python:system",
       "packageManager": "ms-python.python:pip"
     }
-  ]
+  ],
+  "python.testing.unittestArgs": ["-v", "-s", "./tests", "-p", "*test.py"],
+  "python.testing.pytestEnabled": false,
+  "python.testing.unittestEnabled": true
 }
