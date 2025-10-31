@@ -1,10 +1,11 @@
-# Replit configuration for Cathedral (quick static hosting)
-# Builds apps/web (Next.js) with static export and serves /apps/web/out
-language = "nodejs"
-run = "bash -lc 'pnpm -v || corepack enable && corepack prepare pnpm@8.15.0 --activate; pnpm -w install; pnpm --filter @bekalah/cathedral-web run export; npx --yes serve -s apps/web/out -l 3000'"
+run = "./sync-all.sh"
+modules = ["python-3.11", "nodejs-20", "rust-1.75"]
 
-[env]
-PORT = "3000"
+[deployment]
+run = ["./sync-all.sh"]
 
-#[git]
-#branch = "main"
+[nix]
+channel = "stable-23.11"
+
+[gitHubImport]
+requiredFiles = [".replit"]

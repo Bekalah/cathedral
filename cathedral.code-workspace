@@ -2,19 +2,13 @@
 	"folders": [
 		{
 			"path": "."
-		},
-		{
-			"path": "../.."
-		},
-		{
-			"path": "connected-repos"
-		},
-		{
-			"path": "../../Library/Mobile Documents/com~apple~CloudDocs/cathedral-research"
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "cathedral",
-		"prettier.bracketSameLine": true
+		"liveServer.settings.multiRootWorkspaceName": "cathedral-replit-ready",
+		"prettier.bracketSameLine": true,
+		"CATHEDRAL_ROOT": "${workspaceFolder}",
+		"CATHEDRAL_SESSION_ID": "cathedral-rust-magnus-opus-2025",
+		"CATHEDRAL_GITHUB_REPO": "https://github.com/bekalah/cathedral"
 	}
 }
