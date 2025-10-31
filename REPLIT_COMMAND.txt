@@ -1,0 +1,2 @@
+# Copy this command to Replit console for instant setup:
+cathedral-one-command-update.sh
