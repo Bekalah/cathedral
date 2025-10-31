@@ -1,0 +1,47 @@
+[package]
+name = "cathedral-session-manager"
+version = "0.1.0"
+edition = "2021"
+authors = ["Cathedral Development Team"]
+description = "Unified session management for Cathedral Magnum Opus v1.0"
+license = "MIT"
+
+[dependencies]
+tokio = { version = "1.0", features = ["full"] }
+axum = { version = "0.7", default-features = false, features = ["json"] }
+tower-http = { version = "0.5", features = ["cors", "trace"] }
+tower = { version = "0.5", default-features = false }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+uuid = { version = "1.0", features = ["v4"] }
+jsonwebtoken = "9.0"
+chrono = { version = "0.4", features = ["serde"] }
+anyhow = "1.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", default-features = false, features = ["env-filter", "fmt", "json"] }
+env_logger = "0.10"
+
+[dependencies.reqwest]
+version = "0.11"
+features = ["json"]
+
+[features]
+default = []
+replit-integration = []
+rust-platform-sync = []
+session-encryption = []
+
+[dev-dependencies]
+tempfile = "3.0"
+mockall = "0.12"
+
+[build-dependencies]
+cc = "1.0"
+
+[[bin]]
+name = "cathedral-session-server"
+path = "src/bin/server.rs"
+
+[[bin]]
+name = "cathedral-session-client"
+path = "src/bin/client.rs"

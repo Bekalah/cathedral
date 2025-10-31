@@ -1,0 +1,9 @@
+[package]
+name = "cathedral-rust-sync"
+version = "0.1.0"
+edition = "2021"
+authors = ["Rebecca Lemke"]
+description = "Rust-based GitHub sync system for Rebecca's unified Cathedral work"
+license = "MIT"
+
+[dependencies]
