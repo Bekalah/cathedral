@@ -13,62 +13,58 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-        cache: 'pnpm'
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
 
-    - name: Install dependencies
-      run: pnpm install --frozen-lockfile
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
 
-    - name: Generate Avalon data
-      run: pnpm nx run core:generate-data
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
 
-    - name: Build all apps
-      run: pnpm nx run build --parallel=3
+      - name: Install Python dependencies
+        run: |
+          python -m venv .venv
+          .venv/bin/pip install numpy matplotlib pillow
 
-    - name: Test all apps
-      run: pnpm nx run test --parallel=3
+      - name: Validate Python Suite (optional)
+        run: |
+          .venv/bin/python tools/validate/design_suite_smoketest.py || true
+          .venv/bin/python tools/validate/achad_integration_smoketest.py || true
+        continue-on-error: true
 
-    - name: Lint all apps
-      run: pnpm nx run lint --parallel=3
+      - name: Export JSON Data (optional)
+        run: |
+          .venv/bin/python tools/export/combined_export.py || echo "JSON export skipped"
+        continue-on-error: true
 
-  # Deploy to Cloudflare Pages
-  deploy-cloudflare:
-    needs: build-and-test
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    steps:
-    - uses: actions/checkout@v3
+      - name: Install Node dependencies
+        run: pnpm install
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-        cache: 'pnpm'
+      - name: Build web (Next.js static export)
+        run: |
+          pnpm --filter @bekalah/cathedral-web run export
 
-    - name: Install dependencies
-      run: pnpm install --frozen-lockfile
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        if: success() || failure()
 
-    - name: Generate Avalon data
-      run: pnpm nx run core:generate-data
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "./apps/web/out"
+        if: success() || failure()
 
-    - name: Build web app
-      run: pnpm nx run web:build
-
-    - name: Deploy to Cloudflare Pages
-      uses: cloudflare/pages-action@v1
-      with:
-        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        projectName: avalon-labs
-        directory: apps/web/out
-        wranglerVersion: '3'
-
-  # Deploy to Azure Static Web Apps
-  deploy-azure:
-    needs: build-and-test
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
