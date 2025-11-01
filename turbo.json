@@ -1,14 +1,14 @@
 {
-  "$schema": "https://turborepo.org/schema.json",
+  "$schema": "https://turbo.build/schema.json",
   "globalDependencies": [
     "**/*.json",
     "**/*.md",
+    "**/.env",
     "tsconfig.json",
     "CATHEDRAL_INTEGRATION_MAP.json",
     "MASTER_INDEX.md",
-    "MASTER_V1_CONTROL.md",
-    "MASTER_V1_INTEGRATION.md",
-    "openspec/**/*.json"
+    "openspec/**/*.json",
+    "openspec/**/*.md"
   ],
   "tasks": {
     "build": {
@@ -37,13 +37,23 @@
       "outputs": [],
       "cache": false
     },
+    "openspec-validate": {
+      "cache": false,
+      "outputs": [],
+      "inputs": ["openspec/**/*.json", "openspec/**/*.md"]
+    },
+    "openspec-sync": {
+      "dependsOn": ["openspec-validate"],
+      "outputs": ["openspec/changes/**"],
+      "inputs": ["openspec/**/*.json"]
+    },
     "validate-python": {
       "cache": false,
       "outputs": [],
       "inputs": ["design-suite/**/*.py", "hall-of-mysteries/**/*.py"]
     },
     "export-json": {
-      "dependsOn": ["validate-python"],
+      "dependsOn": ["validate-python", "openspec-sync"],
       "outputs": [
         "design-suite/outputs/**/*.json",
         "hall-of-mysteries/outputs/**/*.json"
@@ -94,13 +104,22 @@
         "stone-grimoire/integration-map.json"
       ],
       "inputs": ["CATHEDRAL_INTEGRATION_MAP.json"]
+    },
+    "pr-validate": {
+      "dependsOn": ["openspec-validate", "validate-python", "lint"],
+      "outputs": [],
+      "env": ["GITHUB_TOKEN", "GITHUB_HEAD_REF", "GITHUB_BASE_REF"]
     }
   },
   "globalEnv": [
     "NODE_ENV",
     "CI",
     "GITHUB_TOKEN",
+    "GITHUB_REPOSITORY",
+    "GITHUB_HEAD_REF",
+    "GITHUB_BASE_REF",
     "AZURE_AI_STUDIO_ENDPOINT",
-    "AZURE_AI_STUDIO_KEY"
+    "AZURE_AI_STUDIO_KEY",
+    "VERCEL_TOKEN"
   ]
 }
