@@ -1,17 +1,21 @@
 {
   "folders": [
     {
-      "path": "."
+      "path": ".",
     },
     {
-      "path": "../cathedral"
+      "path": "../cathedral",
     },
     {
-      "path": "../Developer/cathedral-research"
+      "path": "../Developer/cathedral-research",
     },
     {
-      "path": "../Library/Mobile Documents/com~apple~CloudDocs/CATHEDRAL-SORT THROUGH"
-    }
+      "path": "../Library/Mobile Documents/com~apple~CloudDocs/CATHEDRAL-SORT THROUGH",
+    },
+    {
+      "name": "cathedral-real: main",
+      "path": "../cathedral-real.worktrees/main",
+    },
   ],
   "settings": {
     "liveServer.settings.multiRootWorkspaceName": "cathedral",
@@ -22,14 +26,14 @@
     "editor.formatOnSave": true,
     "files.associations": {
       "*.md": "markdown",
-      "*.json": "jsonc"
+      "*.json": "jsonc",
     },
     "emmet.includeLanguages": {
       "typescript": "typescriptreact",
-      "javascript": "javascriptreact"
+      "javascript": "javascriptreact",
     },
     "terminal.integrated.defaultProfile.osx": "zsh",
-    "terminal.integrated.scrollback": 10000
+    "terminal.integrated.scrollback": 10000,
   },
   "extensions": {
     "recommendations": [
@@ -42,7 +46,7 @@
       "ms-vscode-remote.remote-containers",
       "ms-vscode.vscode-eslint",
       "ms-vscode.vscode-css-peek",
-      "ms-vscode.vscode-chrome-debug-core"
-    ]
-  }
+      "ms-vscode.vscode-chrome-debug-core",
+    ],
+  },
 }

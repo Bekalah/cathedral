@@ -1,5 +1,6 @@
 {
   "$schema": "https://turborepo.org/schema.json",
+<<<<<<< Updated upstream
   "globalDependencies": [
     "**/*.json",
     "**/*.md",
@@ -10,6 +11,9 @@
     "MASTER_V1_INTEGRATION.md",
     "openspec/**/*.json"
   ],
+=======
+  "globalDependencies": ["**/*.json", "**/*.md", "tsconfig.json"],
+>>>>>>> Stashed changes
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
