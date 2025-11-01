@@ -13,7 +13,12 @@
   },
   "dependencies": {
     "@cathedral/shared": "workspace:*",
+<<<<<<< Updated upstream
     "@cathedral/cathedral-game-engine": "workspace:*",
+=======
+    "@cathedral/cyoa-book-game": "workspace:*",
+    "@bekalah/cyoa-book-game": "workspace:*",
+>>>>>>> Stashed changes
     "canvas": "^2.11.2",
     "d3": "^7.8.5",
     "ml-matrix": "^6.10.4",

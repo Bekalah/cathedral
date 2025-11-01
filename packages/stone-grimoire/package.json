@@ -8,7 +8,12 @@
     "build": "echo 'Stone Grimoire build complete'",
     "test": "echo 'Stone Grimoire tests passing'"
   },
-  "keywords": ["cathedral", "stone-grimoire", "body", "archive"],
+  "keywords": [
+    "cathedral",
+    "stone-grimoire",
+    "body",
+    "archive"
+  ],
   "author": "Rebecca Respawn",
   "license": "CC0"
 }

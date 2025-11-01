@@ -16,6 +16,7 @@
     "fusion": "node dist/cli.js fusion",
     "report": "node dist/cli.js report"
   },
+<<<<<<< Updated upstream
   "dependencies": {
     "@cathedral/codex-144-99": "workspace:*",
     "@cathedral/shared": "workspace:*"
@@ -34,3 +35,14 @@
     "rebecca-respawn"
   ]
 }
+=======
+  "keywords": [
+    "cathedral",
+    "liber-arcanae",
+    "tarot",
+    "archetypes"
+  ],
+  "author": "Rebecca Respawn",
+  "license": "CC0"
+}
+>>>>>>> Stashed changes

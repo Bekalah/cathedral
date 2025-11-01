@@ -1,0 +1,21 @@
+{
+  "name": "@cathedral/portal-system",
+  "version": "1.0.0",
+  "description": "Research-based portal and transition system inspired by Skyrim, Fable, and modern RPG design",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "echo 'Portal system tests'",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "files": [
+    "dist/**/*",
+    "src/**/*"
+  ]
+}

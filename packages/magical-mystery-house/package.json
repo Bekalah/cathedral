@@ -8,7 +8,12 @@
     "build": "echo 'Magical Mystery House build complete'",
     "test": "echo 'Magical Mystery House tests passing'"
   },
-  "keywords": ["cathedral", "magical-mystery-house", "cultural", "archetypes"],
+  "keywords": [
+    "cathedral",
+    "magical-mystery-house",
+    "cultural",
+    "archetypes"
+  ],
   "author": "Rebecca Respawn",
   "license": "CC0"
 }

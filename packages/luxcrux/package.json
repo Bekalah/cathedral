@@ -8,7 +8,12 @@
     "build": "echo 'Luxcrux build complete'",
     "test": "echo 'Luxcrux tests passing'"
   },
-  "keywords": ["cathedral", "luxcrux", "elemental", "directions"],
+  "keywords": [
+    "cathedral",
+    "luxcrux",
+    "elemental",
+    "directions"
+  ],
   "author": "Rebecca Respawn",
   "license": "CC0"
 }

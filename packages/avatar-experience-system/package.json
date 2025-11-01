@@ -9,7 +9,12 @@
     "dev": "node src/index.js",
     "test": "node test.js"
   },
-  "keywords": ["avatar", "fractal", "tarot", "experiences"],
+  "keywords": [
+    "avatar",
+    "fractal",
+    "tarot",
+    "experiences"
+  ],
   "author": "Rebecca Respawn",
   "license": "MIT"
 }
