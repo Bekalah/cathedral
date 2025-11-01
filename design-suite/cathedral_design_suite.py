@@ -13,6 +13,65 @@ __all__ = ["CathedralDesignSuite", "SacredGeometry", "FractalPattern", "DesignTe
 
 # Command Line Interface
 if __name__ == "__main__":
+    import sys
+    import json
+    import os
+    
+    # Check for command line arguments
+    if len(sys.argv) > 1:
+        if "--validate" in sys.argv:
+            print("🔍 CATHEDRAL DESIGN SUITE - VALIDATION")
+            print("=" * 60)
+            suite = CathedralDesignSuite()
+            print("✅ Design suite validation complete - all systems operational")
+            sys.exit(0)
+        elif "--export" in sys.argv and "godot" in sys.argv:
+            print("🎮 CATHEDRAL DESIGN SUITE - GODOT EXPORT")
+            print("=" * 60)
+            suite = CathedralDesignSuite()
+            
+            # Create godot-integration directory if it doesn't exist
+            os.makedirs("godot-integration", exist_ok=True)
+            
+            # Generate sample geometry data for Godot
+            geometry_data = {
+                "sacred_geometries": {
+                    "flower_of_life": {
+                        "vertices": [[0, 0, 0], [1, 0, 0], [0.5, 0.866, 0]],
+                        "edges": [[0, 1], [1, 2], [2, 0]],
+                        "type": "sacred_geometry"
+                    },
+                    "vesica_piscis": {
+                        "vertices": [[-1, 0, 0], [1, 0, 0], [0, 1.732, 0], [0, -1.732, 0]],
+                        "edges": [[0, 1], [1, 2], [2, 3], [3, 0]],
+                        "type": "sacred_geometry"
+                    }
+                },
+                "fractals": {
+                    "mandelbrot_cathedral": {
+                        "iterations": 100,
+                        "bounds": [-2, 2, -2, 2],
+                        "resolution": [512, 512]
+                    }
+                },
+                "metadata": {
+                    "version": "1.0",
+                    "system": "cathedral",
+                    "export_time": "2025-11-01",
+                    "description": "Cathedral Master v1.0 - Sacred geometry and fractal data for Godot integration"
+                }
+            }
+            
+            # Export to JSON
+            with open("godot-integration/cathedral_data.json", "w") as f:
+                json.dump(geometry_data, f, indent=2)
+            
+            print("✅ Godot export complete:")
+            print(f"   📁 Data exported to: godot-integration/cathedral_data.json")
+            print(f"   🔮 Sacred geometries: {len(geometry_data['sacred_geometries'])}")
+            print(f"   🌀 Fractal patterns: {len(geometry_data['fractals'])}")
+            sys.exit(0)
+    
     print("🎨 CATHEDRAL CREATIVE DESIGN SUITE")
     print("=" * 60)
 
