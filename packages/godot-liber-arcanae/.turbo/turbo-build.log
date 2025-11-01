@@ -1,4 +1,6 @@
 
+
 > @cathedral/godot-liber-arcanae@1.0.0 build /Users/rebeccalemke/cathedral-real/packages/godot-liber-arcanae
 > echo 'Building Godot Liber Arcanae...' && mkdir -p dist && cp -r scenes scripts resources dist/
 
+Building Godot Liber Arcanae...
