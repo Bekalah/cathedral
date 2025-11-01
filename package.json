@@ -1,4 +1,52 @@
-{
+#!/bin/bash
+echo "🏰 Cathedral Master v1.0 - Deployment Verification"
+
+# Check if we're in the right directory
+if [[ ! -f "design-suite/cathedral_design_suite.py" ]]; then
+    echo "❌ Not in cathedral-real directory"
+    exit 1
+fi
+
+# Check GitHub remote
+REMOTE=$(git remote get-url origin 2>/dev/null)
+if [[ $REMOTE == *"bekalah/cathedral"* ]]; then
+    echo "✅ Connected to bekalah.github.io/cathedral"
+else
+    echo "⚠️  Remote: $REMOTE"
+    echo "   Expected: github.com/bekalah/cathedral"
+fi
+
+# Check GitHub Pages deployment
+echo "🔍 Checking deployment workflow..."
+if [[ -f ".github/workflows/deploy.yml" ]]; then
+    echo "✅ Deploy workflow exists"
+else
+    echo "⚠️  No deploy workflow found"
+fi
+
+echo "🎯 Ready for single-source updates"#!/bin/bash
+echo "🏰 Cathedral Git Status & Sync Check"
+
+cd /Users/rebeccalemke/cathedral-real
+
+echo "📊 Current Git Status:"
+git status --porcelain
+
+echo -e "\n🔄 Remote Status:"
+git fetch origin
+git status -uno
+
+echo -e "\n📋 Stash Status:"
+git stash list
+
+echo -e "\n🌿 Branch Status:"
+git branch -vv
+
+echo -e "\n🔗 Remote URLs:"
+git remote -v
+
+echo -e "\n⚡ Last 3 Commits:"
+git log --oneline -3{
   "name": "@bekalah/cathedral-monorepo",
   "version": "2.0.0",
   "description": "Cathedral of Circuits - Living Grimoire Engine with 22 Tradition Masters & Fusion Kink Heaven",
@@ -33,7 +81,8 @@
     "cathedral:audit": "pnpm audit && pnpm run validate:all",
     "docs:build": "turbo run build --filter=./docs",
     "docs:dev": "turbo run dev --filter=./docs",
-    "deploy:pages": "pnpm run build && pnpm run cathedral:deploy",
+    "deploy": "git add . && git commit -m '🚀 Master v1.0 Deploy' && git push origin main",
+    "verify": "bash scripts/deploy-check.sh",
     "trauma-check": "echo '🛡️ Trauma safety validated across all 22 tradition engines'",
     "fusion-check": "echo '⚗️ Fusion Kink Heaven 144:99 fully operational'",
     "integrity-check": "pnpm run validate:ownership && pnpm run validate:config",
@@ -132,4 +181,21 @@
       "canvas": "^3.0.1"
     }
   }
+}
+{
+  "name": "cathedral-design-suite",
+  "version": "1.0.0",
+  "description": "Sacred geometry and fractal design suite with Frater Achad integration",
+  "main": "design-suite/cathedral_design_suite.py",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bekalah/cathedral.git"
+  },
+  "scripts": {
+    "publish": "bash scripts/publish-source.sh",
+    "replit-setup": "pip install -r requirements.txt && python design-suite/cathedral_design_suite.py --help"
+  },
+  "keywords": ["sacred-geometry", "fractals", "design", "replit", "tools"],
+  "author": "Rebecca Lemke",
+  "license": "MIT"
 }

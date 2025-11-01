@@ -1,37 +1,63 @@
 {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"label": "g: develop",
-			"type": "shell",
-			"command": "${workspaceFolder}/tools/g",
-			"args": [
-				"develop"
-			],
-			"problemMatcher": [],
-			"isBackground": true,
-			"presentation": {
-				"reveal": "always",
-				"panel": "dedicated"
-			},
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			}
-		},
-		{
-			"label": "validate: design suite",
-			"type": "shell",
-			"command": "/Users/rebeccalemke/cathedral-real/.venv/bin/python",
-			"args": [
-				"/Users/rebeccalemke/cathedral-real/tools/validate/design_suite_smoketest.py",
-				"&&",
-				"/Users/rebeccalemke/cathedral-real/.venv/bin/python",
-				"/Users/rebeccalemke/cathedral-real/tools/validate/achad_integration_smoketest.py"
-			],
-			"isBackground": false,
-			"problemMatcher": [],
-			"group": "build"
-		}
-	]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "g: develop",
+      "type": "shell",
+      "command": "${workspaceFolder}/tools/g",
+      "args": ["develop"],
+      "problemMatcher": [],
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "validate: design suite",
+      "type": "shell",
+      "command": "python",
+      "args": ["design-suite/cathedral_design_suite.py", "--validate"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "git: status check",
+      "type": "shell",
+      "command": "bash",
+      "args": ["scripts/git-status-check.sh"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "new"
+      }
+    },
+    {
+      "label": "cathedral: quick deploy",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["run", "deploy"],
+      "group": "build",
+      "dependsOn": "validate: design suite"
+    },
+    {
+      "label": "cathedral: health check",
+      "type": "shell",
+      "command": "python",
+      "args": ["hall-of-mysteries/frater_achad_system.py", "--health"],
+      "group": "test"
+    }
+  ]
 }
