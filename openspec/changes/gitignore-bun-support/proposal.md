@@ -7,7 +7,21 @@
 
 ## Context
 
-User encountered issue with thousands of Bun cache files being staged for commit from `.bun/install/cache/` directory. This represents a common dependency management antipattern where package manager cache directories are tracked by version control.
+User encountered issue with thousands of Bun cache files being staged for commit from `.bun/install/cache/` directory, appearing in a massive commit message with ~10,000 files. Investigation revealed this occurred during agent work sessions running against Azure AI Foundry infrastructure.
+
+**Agent Activity Context:**
+
+- Agent ID: `asst_72uzK1Yt2hsu2qVyt22NkMiO` (Azure AI Foundry)
+- Execution period: October 30, 2025 (~4:20 AM)
+- Runs completed: 296/500 (parallel batches)
+- Working environment: Cathedral monorepo with pnpm package manager
+
+**Discovery Timeline:**
+
+- Original git commit message showed `.bun/_bun`, `.bun/bin/bun`, `.bun/bin/bunx` plus thousands of `.bun/install/cache/*.npm` files
+- Project normally uses pnpm package manager (defined in `package.json`)
+- Bun installation likely triggered by agent environment setup or dependency resolution
+- Cache files accumulated during agent batch processing sessions
 
 ## Problem
 
