@@ -1,31 +1,46 @@
-# tesseract-bridge
-Central connector for the Cathedral of Circuits. It now runs as a pure JSON API so other repos can stay synchronized without a front-end.
+# 🏛️ CATHEDRAL - Unified Arts-Science System
 
-## Service overview
-- `server.mjs` provides an Express application that exposes offline registry data at `/registry/*`.
-- `/registry` returns a directory listing, while `/registry/:path` streams JSON, CSV (converted to JSON), and NDJSON files directly from `./registry`.
-- `/sync` aggregates `registry/ids.json`, `registry/notes/bridge_manifest.json`, and the event queue for quick status polls.
-- Every response is JSON; there is no SPA or rendered HTML served by the process.
+## Quick Setup in Replit
 
-## Local usage
-1. Install dependencies: `npm install`.
-2. Start the API: `npm start` (defaults to port 3000).
-3. Example checks:
-   - `curl http://localhost:3000/registry` → list registry folders/files.
-   - `curl http://localhost:3000/registry/ids.json` → parsed registry IDs.
-   - `curl http://localhost:3000/sync` → combined manifest + queue snapshot.
+```bash
+./cathedral-simple-setup.sh
+```
 
-## Registry maintenance
-- Update `registry/ids.json` before introducing new IDs in downstream repos to keep `core/check_ids.py` happy.
-- `registry/notes/bridge_manifest.json` records status for liber-arcanae, liber-arcanae-game, circuitum99, cosmogenesis-learning-engine, and stone-cathedral.
-- Run `python3 core/check_ids.py --bridge .` to verify IDs remain consistent.
+## Your Simple Commands
 
-## Offline geometry renderer
-`index.html` and the related assets remain for offline study of the layered geometry (Vesica grid, Tree-of-Life nodes, Fibonacci curve, static helix). Open the file directly; it is not served by the API.
+```bash
+# Setup (one time only)
+./cathedral-simple-setup.sh
 
-## Fly.io notes
-- Deploy manually with `flyctl deploy --config fly.toml` when ready.
-- `fly.toml` builds the Docker image defined in `Dockerfile` and keeps autosuspend enabled (`auto_stop_machines = true`, `min_machines_running = 0`).
-- Update the Fly app name locally; never commit secrets or automation workflows.
+# Sync your work to GitHub
+./cathedral-sync.sh
 
-Keep all updates offline-first, trauma-informed, and layered—never flatten the Cathedral geometry.
+# Work on your unified arts-science projects
+./bin/cathedral-music      # Mystical sound design
+./bin/cathedral-art        # Unified art and practices
+```
+
+## What This Does
+
+1. **Cleans up the mess** - Removes all the confusing scripts
+2. **Sets up Rust** - Builds your Cathedral sync tool  
+3. **Simple sync** - One command to sync everything to GitHub
+4. **Clean commands** - Just the essential Cathedral commands you need
+
+## Replit Configuration
+
+✅ `.replit` file configured for Python, Node.js, and Rust
+✅ Auto-runs `./sync-all.sh` on startup
+✅ All your work categories organized:
+- `audio-system/vst3-strudel-integration/` - Music work
+- `mystical-system/alpha-omega-arcanae/` - Art and science
+- `circuitum99/33-living-chapters/` - Living systems
+- `game-system/fool-respawn-gate/` - The Fool game
+
+## Session ID
+`cathedral-rust-magnus-opus-2025`
+
+## GitHub Repository
+https://github.com/bekalah/cathedral
+
+That's it! Simple and clean Cathedral system ready for Replit.
