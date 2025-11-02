@@ -16,7 +16,6 @@
     "fusion": "node dist/cli.js fusion",
     "report": "node dist/cli.js report"
   },
-<<<<<<< Updated upstream
   "dependencies": {
     "@cathedral/codex-144-99": "workspace:*",
     "@cathedral/shared": "workspace:*"
@@ -26,23 +25,16 @@
     "typescript": "^5.3.0"
   },
   "keywords": [
-    "tarot",
+    "cathedral",
     "liber-arcanae",
+    "tarot",
+    "archetypes",
     "codex-abyssiae",
     "alchemy-deck",
     "sacred-wisdom",
     "fusion-kink",
     "rebecca-respawn"
-  ]
-}
-=======
-  "keywords": [
-    "cathedral",
-    "liber-arcanae",
-    "tarot",
-    "archetypes"
   ],
   "author": "Rebecca Respawn",
   "license": "CC0"
 }
->>>>>>> Stashed changes
