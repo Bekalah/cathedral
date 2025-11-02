@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const isGhPages = process.env.NEXT_PUBLIC_GH_PAGES === 'true' || process.env.GH_PAGES === 'true';
+const explicitBasePath = process.env.NEXT_PUBLIC_BASE_PATH || process.env.BASE_PATH;
 
 const nextConfig = {
   reactStrictMode: true,
@@ -10,7 +11,9 @@ const nextConfig = {
   trailingSlash: true,
   // GitHub Pages project site served under /cathedral (conditional)
   // When deploying to Vercel/Cloudflare root domains, leave basePath empty
-  ...(isGhPages
+  ...(explicitBasePath
+    ? { basePath: explicitBasePath, assetPrefix: explicitBasePath.endsWith('/') ? explicitBasePath : explicitBasePath + '/' }
+    : isGhPages
     ? { basePath: "/cathedral", assetPrefix: "/cathedral/" }
     : {}),
   images: {
