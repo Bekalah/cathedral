@@ -24,6 +24,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: vercel-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   deploy:
     if: ${{ secrets.VERCEL_TOKEN != '' && secrets.VERCEL_PROJECT_ID != '' && secrets.VERCEL_ORG_ID != '' }}
@@ -38,7 +42,16 @@ jobs:
           if [ -n "${{ secrets.VERCEL_PROJECT_NAME }}" ]; then
             NAME_ARG="--name ${{ secrets.VERCEL_PROJECT_NAME }}"
           fi
+          # Add scope arg if provided via secrets (some setups require explicit scope)
+          SCOPE_ARG=""
+          if [ -n "${{ secrets.VERCEL_SCOPE }}" ]; then
+            SCOPE_ARG="--scope ${{ secrets.VERCEL_SCOPE }}"
+          else
+            # Fallback to ORG_ID as scope when SCOPE not provided
+            SCOPE_ARG="--scope ${{ secrets.VERCEL_ORG_ID }}"
+          fi
           echo "NAME_ARG=$NAME_ARG" >> $GITHUB_ENV
+          echo "SCOPE_ARG=$SCOPE_ARG" >> $GITHUB_ENV
 
       - name: Use Node 20
         uses: actions/setup-node@v4
@@ -61,6 +74,7 @@ jobs:
 
       - name: Deploy with Vercel (Preview)
         if: github.event_name == 'pull_request'
+        id: vercel_preview
         uses: amondnet/vercel-action@v25
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
@@ -68,10 +82,25 @@ jobs:
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           working-directory: ./apps/web
           github-comment: true
-          vercel-args: "${{ env.NAME_ARG }} --build-env NEXT_PUBLIC_GH_PAGES=false --build-env GH_PAGES=false"
+          vercel-args: "${{ env.NAME_ARG }} ${{ env.SCOPE_ARG }} --build-env NEXT_PUBLIC_GH_PAGES=false --build-env GH_PAGES=false"
+
+      - name: Fallback deploy via Vercel CLI (Preview)
+        if: github.event_name == 'pull_request' && steps.vercel_preview.outcome == 'failure'
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          npm i -g vercel@latest
+          cd apps/web
+          # Create .vercel/project.json based on secrets
+          vercel pull --yes --environment=preview
+          # Trigger a Preview deployment (build in Vercel cloud)
+          vercel deploy --token "$VERCEL_TOKEN" --yes
 
       - name: Deploy with Vercel (Production)
         if: github.event_name == 'push'
+        id: vercel_prod
         uses: amondnet/vercel-action@v25
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
@@ -79,4 +108,18 @@ jobs:
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           working-directory: ./apps/web
           prod: true
-          vercel-args: "${{ env.NAME_ARG }} --build-env NEXT_PUBLIC_GH_PAGES=false --build-env GH_PAGES=false"
+          vercel-args: "${{ env.NAME_ARG }} ${{ env.SCOPE_ARG }} --build-env NEXT_PUBLIC_GH_PAGES=false --build-env GH_PAGES=false"
+
+      - name: Fallback deploy via Vercel CLI (Production)
+        if: github.event_name == 'push' && steps.vercel_prod.outcome == 'failure'
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          npm i -g vercel@latest
+          cd apps/web
+          # Create .vercel/project.json based on secrets
+          vercel pull --yes --environment=production
+          # Trigger a Production deployment
+          vercel deploy --prod --token "$VERCEL_TOKEN" --yes
