@@ -29,6 +29,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Prepare Vercel args
+        run: |
+          NAME_ARG=""
+          if [ -n "${{ secrets.VERCEL_PROJECT_NAME }}" ]; then
+            NAME_ARG="--name ${{ secrets.VERCEL_PROJECT_NAME }}"
+          fi
+          echo "NAME_ARG=$NAME_ARG" >> $GITHUB_ENV
+
       - name: Use Node 18
         uses: actions/setup-node@v4
         with:
@@ -56,7 +64,7 @@ jobs:
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           working-directory: ./apps/web
           github-comment: true
-          vercel-args: "--build-env NEXT_PUBLIC_GH_PAGES=false --build-env GH_PAGES=false"
+          vercel-args: "${{ env.NAME_ARG }} --build-env NEXT_PUBLIC_GH_PAGES=false --build-env GH_PAGES=false"
 
       - name: Deploy with Vercel (Production)
         if: github.event_name == 'push'
@@ -67,4 +75,4 @@ jobs:
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           working-directory: ./apps/web
           prod: true
-          vercel-args: "--build-env NEXT_PUBLIC_GH_PAGES=false --build-env GH_PAGES=false"
+          vercel-args: "${{ env.NAME_ARG }} --build-env NEXT_PUBLIC_GH_PAGES=false --build-env GH_PAGES=false"
