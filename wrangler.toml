@@ -1,45 +1,18 @@
 name = "cathedral-of-circuits"
 compatibility_date = "2024-09-28"
 
-[env.production]
-name = "cathedral-of-circuits"
-
-[env.staging]
-name = "cathedral-of-circuits-staging"
-
-# Static site configuration
+# Cloudflare Pages-style static site build from the monorepo web app
 [build]
-command = "npm run build"
-publish = "dist"
+command = "pnpm -w install && pnpm -C apps/web run build"
+publish = "apps/web/out"
 
-# Environment variables for lattice connections
+# Optional environment variables
 [vars]
 LATTICE_MODE = "production"
 CATHEDRAL_VERSION = "1.0.0"
 JEWEL_INDRA_ACTIVE = "true"
 
-# Custom domains and routing
-[[redirects]]
-from = "/circuitum99/*"
-to = "https://circuitum99.pages.dev/:splat"
-status = 200
-
-[[redirects]]
-from = "/liber-arcanae/*" 
-to = "https://liber-arcanae.pages.dev/:splat"
-status = 200
-
-[[redirects]]
-from = "/stone-grimoire/*"
-to = "https://stone-grimoire.pages.dev/:splat"
-status = 200
-
-[[redirects]]
-from = "/tesseract-bridge/*"
-to = "https://tesseract-bridge.pages.dev/:splat"
-status = 200
-
-# Headers for lattice interconnection
+# Optional headers for lattice interconnection
 [[headers]]
 for = "/*"
 [headers.values]
