@@ -1,7 +1,7 @@
 {
   "name": "@bekalah/cathedral-monorepo",
   "version": "2.0.0",
-  "description": "Cathedral of Circuits - Living Grimoire Engine with 22 Tradition Masters & Fusion Kink Heaven",
+  "description": "Cathedral of Circuits - Living Grimoire Engine with 22 Tradition Masters & 144:99 Alchemical Fusion",
   "type": "module",
   "packageManager": "pnpm@8.15.0",
   "engines": {
@@ -37,7 +37,7 @@
     "docs:dev": "turbo run dev --filter=./docs",
     "deploy:pages": "pnpm run build && pnpm run cathedral:deploy",
     "trauma-check": "echo '🛡️ Trauma safety validated across all 22 tradition engines'",
-    "fusion-check": "echo '⚗️ Fusion Kink Heaven 144:99 fully operational'",
+    "fusion-check": "echo '⚗️ 144:99 Alchemical Fusion fully operational'",
     "integrity-check": "pnpm run validate:ownership && pnpm run validate:config",
     "prebuild": "pnpm run validate:config",
     "predeploy": "pnpm run validate:all && pnpm run integrity-check"
