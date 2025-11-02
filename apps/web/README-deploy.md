@@ -65,3 +65,16 @@ Those are ideal for GitHub Pages project sites (served at `https://bekalah.githu
 - 404s for assets on Vercel: remove `basePath`/`assetPrefix` or condition them per environment.
 - Build succeeds, no site on Cloudflare: ensure Output Directory is `out` and Root Directory is `apps/web`.
 - Large repo warnings: avoid committing exports; the root `.gitignore` now ignores `BUILDING_CATHEDRALS_ARCHIVE/`.
+
+## GitHub Action for Vercel (optional)
+
+This repo includes `.github/workflows/vercel-deploy.yml` which deploys `apps/web` to Vercel on pushes and PRs when the following repository secrets are set:
+
+- `VERCEL_TOKEN` — Vercel personal token
+- `VERCEL_ORG_ID` — Organization ID
+- `VERCEL_PROJECT_ID` — Project ID
+
+Notes:
+
+- The workflow auto-skips if secrets are missing.
+- It sets `NEXT_PUBLIC_GH_PAGES=false` to avoid GitHub Pages basePath during Vercel builds.
