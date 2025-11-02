@@ -1,24 +1,8 @@
 name: Deploy to Vercel (apps/web)
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'apps/web/**'
-      - '.github/workflows/vercel-deploy.yml'
-      - 'package.json'
-      - 'pnpm-lock.yaml'
-      - 'turbo.json'
-      - 'packages/**'
-  pull_request:
-    branches: [main]
-    paths:
-      - 'apps/web/**'
-      - '.github/workflows/vercel-deploy.yml'
-      - 'package.json'
-      - 'pnpm-lock.yaml'
-      - 'turbo.json'
-      - 'packages/**'
+  # Teams-preferred: use Vercel Git Integration for automatic deploys on push/PR.
+  # Keep this workflow as a manual fallback only.
   workflow_dispatch:
 
 permissions:
