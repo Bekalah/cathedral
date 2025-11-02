@@ -1,7 +1,7 @@
 {
-  "name": "@cathedral/liber-arcanae",
+  "name": "liber-arcanae-app",
   "version": "2.0.0",
-  "description": "Liber Arcanae - Sacred mystical library with Codex 144:99 integration and fusion kink mechanics",
+  "description": "Liber Arcanae App - Sacred mystical library UI with Codex 144:99 integration and fusion kink mechanics",
   "type": "module",
   "scripts": {
     "dev": "echo 'Liber Arcanae development server'",

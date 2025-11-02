@@ -1,7 +1,7 @@
 {
   "name": "@cathedral/liber-arcanae",
-  "version": "1.0.0",
-  "description": "Liber Arcanae Codex Abyssiae - 78-card tarot system mirroring Codex 144:99",
+  "version": "2.0.0",
+  "description": "Liber Arcanae - Sacred mystical library with Codex 144:99 integration, fusion kink mechanics, and tarot CLI tools.",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -18,7 +18,9 @@
   },
   "dependencies": {
     "@cathedral/codex-144-99": "workspace:*",
-    "@cathedral/shared": "workspace:*"
+    "@cathedral/shared": "workspace:*",
+    "@cathedral/mystical-data-unified": "^2.0.0",
+    "@cathedral/sacred-geometry-core": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.10.0",
@@ -33,7 +35,10 @@
     "alchemy-deck",
     "sacred-wisdom",
     "fusion-kink",
-    "rebecca-respawn"
+    "rebecca-respawn",
+    "mystical-library",
+    "codex-144-99",
+    "fusion-mechanics"
   ],
   "author": "Rebecca Respawn",
   "license": "CC0"
