@@ -1,0 +1,51 @@
+.mode-selector {
+  position: fixed;
+  top: 6rem;
+  right: 2rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 100;
+  background: rgba(10, 22, 40, 0.95);
+  padding: 1rem;
+  border-radius: 12px;
+  border: 2px solid #B8860B;
+  box-shadow: 0 0 30px rgba(184, 134, 11, 0.3);
+}
+
+.mode-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: rgba(26, 77, 92, 0.3);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 80px;
+}
+
+.mode-btn:hover {
+  background: rgba(26, 77, 92, 0.6);
+  border-color: #FFB347;
+  transform: translateY(-2px);
+}
+
+.mode-btn.active {
+  background: rgba(255, 179, 71, 0.2);
+  border-color: #FFB347;
+  box-shadow: 0 0 20px rgba(255, 179, 71, 0.4);
+}
+
+.mode-icon {
+  font-size: 2rem;
+}
+
+.mode-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #FFB347;
+  font-family: 'Cinzel', serif;
+}

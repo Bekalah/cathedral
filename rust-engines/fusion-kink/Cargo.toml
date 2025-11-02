@@ -1,0 +1,10 @@
+[package]
+name = "fusion-kink"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+glam.workspace = true
+cathedral-types = { path = "../cathedral-types" }
