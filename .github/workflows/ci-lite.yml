@@ -2,9 +2,9 @@ name: CI Lite (Turbo + OpenSpec)
 
 on:
   push:
-    branches: [ main, backup-before-rebase, merge/cathedral-master-20251101 ]
+    branches: [main, backup-before-rebase, merge/cathedral-master-20251101]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 permissions:
   contents: read
@@ -21,8 +21,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'pnpm'
+          node-version: "20"
+          cache: "pnpm"
 
       - name: Setup PNPM
         run: |
