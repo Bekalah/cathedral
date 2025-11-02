@@ -13,6 +13,7 @@ CATHEDRAL_VERSION = "1.0.0"
 JEWEL_INDRA_ACTIVE = "true"
 
 # Optional headers for lattice interconnection
+
 [[headers]]
 for = "/*"
 [headers.values]

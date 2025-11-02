@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="GDExtension" path="res://extensions/cathedral_rust.gdextension" id="1_rust"]
+
+[node name="World" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.913545, -0.406737, 0, 0.331413, 0.744131, 0.579, -0.236, -0.529919, 0.814, 0, 4, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 6)
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+mesh = SubResource( 1 )
+
+'type' = 'PlaneMesh'
+
+[node name="Player" type="PlayerController" parent="."]

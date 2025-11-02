@@ -5,6 +5,7 @@ Central connector for the Cathedral of Circuits. It now runs as a pure JSON API 
 ## Web app (apps/web) – Deploy
 
 [![Deploy to Vercel (apps/web)](https://github.com/bekalah/cathedral/actions/workflows/vercel-deploy.yml/badge.svg?branch=main)](https://github.com/bekalah/cathedral/actions/workflows/vercel-deploy.yml)
+[![Pages build and deployment](https://github.com/bekalah/cathedral/actions/workflows/pages.yml/badge.svg?branch=main)](https://github.com/bekalah/cathedral/actions/workflows/pages.yml)
 
 Static Next.js site is located in `apps/web` and exports to `apps/web/out` for Vercel, Cloudflare Pages, or GitHub Pages.
 
@@ -16,6 +17,12 @@ Config notes:
 
 - `apps/web/next.config.js` is fully env-driven. On Vercel, no basePath; on GH Pages, set `GH_PAGES=true`.
 - Monorepo install/build is workspace-scoped (`pnpm -w install`, `pnpm -C apps/web run build`).
+
+### Live URLs
+
+- GitHub Pages: <https://bekalah.github.io/cathedral/>
+- Vercel (production): <https://cathedral-vercel.vercel.app/>
+- Cloudflare Pages: add after first deploy
 
 ## Service overview
 
