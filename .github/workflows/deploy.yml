@@ -15,6 +15,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      has_artifact: ${{ steps.outcheck.outputs.has_artifact }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -73,15 +75,25 @@ jobs:
         run: |
           pnpm --filter @bekalah/cathedral-web run export || pnpm --filter cathedral-web run export
 
+      - name: Check export output
+        id: outcheck
+        run: |
+          if [ -d "apps/web/out" ] && [ "$(ls -A apps/web/out)" ]; then
+            echo "has_artifact=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_artifact=false" >> "$GITHUB_OUTPUT"
+            echo "No static export found at apps/web/out; skipping Pages artifact upload."
+          fi
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
-        if: success() || failure()
+        if: steps.outcheck.outputs.has_artifact == 'true'
 
       - name: Upload artifact
+        if: steps.outcheck.outputs.has_artifact == 'true'
         uses: actions/upload-pages-artifact@v3
         with:
           path: "./apps/web/out"
-        if: success() || failure()
 
   deploy:
     environment:
@@ -89,7 +101,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
-    if: success() || failure()
+    if: needs.build.outputs.has_artifact == 'true'
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
