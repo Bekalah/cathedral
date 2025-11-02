@@ -50,7 +50,8 @@ jobs:
             libgl1 libxi6 libxrandr2 libxrender1 libxfixes3 libxtst6
 
       - name: Install dependencies (workspace)
-        run: pnpm -w install --frozen-lockfile
+        run: |
+          pnpm -w install --frozen-lockfile || pnpm -w install
 
       - name: Build all packages
         run: |

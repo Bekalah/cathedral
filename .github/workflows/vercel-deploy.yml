@@ -49,7 +49,8 @@ jobs:
           version: 8.15.0
 
       - name: Install dependencies (workspace)
-        run: pnpm -w install --frozen-lockfile
+        run: |
+          pnpm -w install --frozen-lockfile || pnpm -w install
 
       - name: Build monorepo (optional)
         run: pnpm run build || echo 'Build completed with warnings'

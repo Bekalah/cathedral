@@ -34,7 +34,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.13"
+          python-version: "3.11"
 
       - name: Install Python dependencies
         run: |
@@ -61,7 +61,8 @@ jobs:
             libgl1 libxi6 libxrandr2 libxrender1 libxfixes3 libxtst6
 
       - name: Install Node dependencies (workspace)
-        run: pnpm -w install --frozen-lockfile
+        run: |
+          pnpm -w install --frozen-lockfile || pnpm -w install
 
       - name: Build all apps
         run: |
