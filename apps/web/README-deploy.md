@@ -78,3 +78,7 @@ Notes:
 
 - The workflow auto-skips if secrets are missing.
 - It sets `NEXT_PUBLIC_GH_PAGES=false` to avoid GitHub Pages basePath during Vercel builds.
+
+---
+
+Deployment trigger note: documentation touch to kick off CI for apps/web on 2025-11-01.
