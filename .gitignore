@@ -132,6 +132,10 @@ agent_responses/
 # Archive (keep local, don't commit)
 /archive/
 
+# Large archives and exports (prevent >100MB blobs)
+BUILDING_CATHEDRALS_ARCHIVE/
+BUILDING_CATHEDRALS_ARCHIVE/**
+
 # Temporary files
 *.tmp
 *.temp
