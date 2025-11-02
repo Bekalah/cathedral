@@ -1,0 +1,47 @@
+name: CI Lite (Turbo + OpenSpec)
+
+on:
+  push:
+    branches: [ main, backup-before-rebase, merge/cathedral-master-20251101 ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Setup PNPM
+        run: |
+          corepack enable
+          corepack prepare pnpm@8.15.0 --activate
+
+      - name: Install dependencies (workspace)
+        run: pnpm -w install --frozen-lockfile=false
+
+      - name: Turbo type-check
+        run: pnpm run type-check
+
+      - name: Turbo lint
+        run: pnpm run lint
+
+      - name: OpenSpec validate (if configured)
+        run: npx turbo run openspec-validate || true
+
+      - name: Record Magnum Opus Version
+        run: |
+          echo "MAGNUM_OPUS_VERSION=$(cat MAGNUM_OPUS_VERSION)" >> $GITHUB_ENV
+          echo "Magnum Opus Version: $(cat MAGNUM_OPUS_VERSION)"
