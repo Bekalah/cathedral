@@ -20,6 +20,36 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Install Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          profile: minimal
+          override: true
+
+      - name: Install Bevy dependencies
+        run: |
+          rustup update
+          cargo install cargo-make || true
+
+      - name: Build Bevy project (if present)
+        run: |
+          if [ -f "Cargo.toml" ]; then
+            cargo build --release
+          fi
+
+      - name: Download Godot 4.5
+        run: |
+          wget https://downloads.tuxfamily.org/godotengine/4.5.0/Godot_v4.5.0-stable_linux.x86_64.zip -O godot.zip
+          unzip godot.zip -d godot-bin
+          chmod +x godot-bin/Godot_v4.5.0-stable_linux.x86_64
+
+      - name: Build Godot project (if present)
+        run: |
+          if [ -f "project.godot" ]; then
+            godot-bin/Godot_v4.5.0-stable_linux.x86_64 --headless --export-release "Web" ./export/web/index.html || echo "No Godot export"
+          fi
+
       - name: Prepare Vercel args
         run: |
           NAME_ARG=""
