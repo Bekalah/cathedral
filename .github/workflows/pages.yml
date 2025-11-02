@@ -31,7 +31,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "18"
           cache: "pnpm"
 
       - name: Setup pnpm
@@ -39,8 +39,16 @@ jobs:
         with:
           version: 8.15.0
 
+      - name: Install system packages for canvas/sharp
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential python3 make g++ \
+            libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev \
+            libgl1 libxi6 libxrandr2 libxrender1 libxfixes3 libxtst6
+
       - name: Install dependencies (workspace)
-        run: pnpm install --frozen-lockfile
+        run: pnpm -w install --frozen-lockfile
 
       - name: Build all packages
         run: |
@@ -48,9 +56,15 @@ jobs:
         continue-on-error: true
 
       - name: Build static export (apps/web)
+        env:
+          NEXT_PUBLIC_GH_PAGES: "true"
+          GH_PAGES: "true"
         run: |
           cd apps/web && pnpm run export
         continue-on-error: true
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
