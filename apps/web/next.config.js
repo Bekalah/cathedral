@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const isGhPages = process.env.NEXT_PUBLIC_GH_PAGES === 'true' || process.env.GH_PAGES === 'true';
+
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
@@ -6,10 +8,11 @@ const nextConfig = {
   // Enable static export for Cloudflare Pages and Azure Static Web Apps
   output: "export",
   trailingSlash: true,
-  // GitHub Pages project site served under /cathedral
-  // Ensures correct asset paths when hosted at https://bekalah.github.io/cathedral
-  basePath: "/cathedral",
-  assetPrefix: "/cathedral/",
+  // GitHub Pages project site served under /cathedral (conditional)
+  // When deploying to Vercel/Cloudflare root domains, leave basePath empty
+  ...(isGhPages
+    ? { basePath: "/cathedral", assetPrefix: "/cathedral/" }
+    : {}),
   images: {
     unoptimized: true,
   },
