@@ -82,3 +82,5 @@ Notes:
 ---
 
 Deployment trigger note: documentation touch to kick off CI for apps/web on 2025-11-01.
+
+Re-trigger: 2025-11-01T00:00:00Z — Vercel secrets set, kicking workflow again.
