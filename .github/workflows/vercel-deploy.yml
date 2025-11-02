@@ -21,6 +21,9 @@ on:
       - 'packages/**'
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   deploy:
     if: ${{ secrets.VERCEL_TOKEN != '' && secrets.VERCEL_PROJECT_ID != '' && secrets.VERCEL_ORG_ID != '' }}
@@ -37,10 +40,10 @@ jobs:
           fi
           echo "NAME_ARG=$NAME_ARG" >> $GITHUB_ENV
 
-      - name: Use Node 18
+      - name: Use Node 20
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
           cache: 'pnpm'
 
       - name: Setup pnpm
