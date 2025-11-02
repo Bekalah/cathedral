@@ -21,6 +21,7 @@
     "cathedral:dev": "turbo run dev --filter='./apps/*'",
     "cathedral:build": "turbo run build --filter='./apps/*'",
     "cathedral:deploy": "turbo run deploy",
+    "web:dev": "pnpm --filter './apps/web' run dev",
     "packages:build": "turbo run build --filter='./packages/*'",
     "packages:dev": "turbo run dev --filter='./packages/*'",
     "apps:trinity": "pnpm run dev --filter='./apps/web' --filter='./apps/cosmogenesis' --filter='./apps/magical-mystery-house'",
