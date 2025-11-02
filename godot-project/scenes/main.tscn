@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="GDExtension" path="res://extensions/cathedral_rust.gdextension" id="1_rust"]
+
+[node name="Main" type="Node"]
+
+[node name="CathedralCore" type="CathedralCore" parent="."]
