@@ -2,6 +2,21 @@
 
 Central connector for the Cathedral of Circuits. It now runs as a pure JSON API so other repos can stay synchronized without a front-end.
 
+## Web app (apps/web) – Deploy
+
+[![Deploy to Vercel (apps/web)](https://github.com/bekalah/cathedral/actions/workflows/vercel-deploy.yml/badge.svg?branch=main)](https://github.com/bekalah/cathedral/actions/workflows/vercel-deploy.yml)
+
+Static Next.js site is located in `apps/web` and exports to `apps/web/out` for Vercel, Cloudflare Pages, or GitHub Pages.
+
+- Vercel: Use the GitHub Action above (add repo secrets) or import via dashboard with Root Directory `apps/web`. See `apps/web/README-deploy.md` for exact steps.
+- GitHub Pages: Workflow builds with `GH_PAGES=true` so basePath is `/cathedral` automatically.
+- Cloudflare Pages: `wrangler.toml` builds `apps/web` and publishes `apps/web/out`.
+
+Config notes:
+
+- `apps/web/next.config.js` is fully env-driven. On Vercel, no basePath; on GH Pages, set `GH_PAGES=true`.
+- Monorepo install/build is workspace-scoped (`pnpm -w install`, `pnpm -C apps/web run build`).
+
 ## Service overview
 
 - `server.mjs` provides an Express application that exposes offline registry data at `/registry/*`.
