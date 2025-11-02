@@ -1,5 +1,21 @@
 # tesseract-bridge
+# Cathedral Magnum Opus — Unified Wisdom, Science, Art, and Design
 
+This project permanently unifies and embraces all traditions, wisdom schools, sciences, arts, and design disciplines:
+
+- Alchemy, Hermeticism, Kabbalah, Reiki, and esoteric wisdom
+- Academic research, anthropology, physics, mathematics, and architecture
+- Traditional and modern art, design, and the secret teachings of all ages
+- Integration of global libraries, sacred geometry, fractals, and Codex 144:99
+
+All code, data, and creative work are aligned in grace, beauty, and harmony, connecting every subject and school into a living, trauma-informed, open-source magnum opus.
+
+This scope is permanent and reflected in all turbo monorepo, OpenSpec, and master-cathedral version 1.0 documentation, including:
+- [bekalah.github.io/cathedral](https://bekalah.github.io/cathedral)
+- All master-cathedral repositories and deployment guides
+- Turbo.json and OpenSpec instructions
+
+Every update, integration, and deployment is designed to honor and connect these traditions, ensuring no duplicates, no empty data, and full alignment across all platforms.
 Central connector for the Cathedral of Circuits. It now runs as a pure JSON API so other repos can stay synchronized without a front-end.
 
 ## Web app (apps/web) – Deploy

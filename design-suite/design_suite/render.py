@@ -15,7 +15,7 @@ try:
     # Use headless backend for non-GUI environments
     matplotlib.use("Agg")
     
-    import numpy as np
+    import numpy as np  # type: ignore
     import math
     from matplotlib.patches import Polygon, Circle, FancyBboxPatch
     import matplotlib.pyplot as plt

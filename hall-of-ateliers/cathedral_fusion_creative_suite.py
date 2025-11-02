@@ -6,14 +6,16 @@
 # NO MODIFICATIONS AFTER THIS - FOLLOWS SPEC TO THE T
 
 # Import numpy - if not installed, run: pip install numpy
+# Add a type-ignore so static analyzers (pyright/mypy) don't error when numpy is not available in the environment.
 try:
-    import numpy as np
+    import numpy as np  # type: ignore[reportMissingImports]
 except ImportError:
     print("⚠️  NumPy not found. Installing...")
     import subprocess
     import sys
     subprocess.check_call([sys.executable, "-m", "pip", "install", "numpy"])
-    import numpy as np
+    # Re-import after installation; keep the type-ignore to silence static analysis in editors
+    import numpy as np  # type: ignore[reportMissingImports]
 import json
 from dataclasses import dataclass, field
 from typing import Dict, List, Any, Optional, Tuple, Set, Union

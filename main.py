@@ -2,7 +2,8 @@
 # Orchestrates the complete archetypal game system
 
 import asyncio
-import uvicorn
+# uvicorn is imported lazily in the __main__ block to avoid import-time errors
+# in environments where uvicorn is not installed (e.g. static analysis or certain test runners).
 from fastapi import FastAPI, HTTPException
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
@@ -445,15 +446,25 @@ async def test_chaos_event():
         }
     except Exception as e:
         return {"error": str(e)}
-
 if __name__ == "__main__":
     print("🌟 Starting Cathedral of Circuits...")
     print("🎭 Archetypal Game System Ready!")
     print("🌍 Connecting souls worldwide through divine/infernal harmony...")
-    uvicorn.run(
-        "main:app", 
-        host="0.0.0.0", 
-        port=8000, 
-        reload=True,
-        log_level="info"
+    try:
+        # import uvicorn lazily to avoid hard dependency at module import time
+        import uvicorn
+        uvicorn.run(
+            "main:app",
+            host="0.0.0.0",
+            port=8000,
+            reload=True,
+            log_level="info"
+        )
+    except Exception as e:
+        # Provide a clear fallback message if uvicorn is not available
+        print("Could not start uvicorn server:", str(e))
+        print("Install uvicorn with: pip install uvicorn[standard]")
+        print("Or run using the module: python -m uvicorn main:app --reload")
+        import sys
+        sys.exit(1)   log_level="info"
     )

@@ -37,6 +37,11 @@ from azure.identity import DefaultAzureCredential
 from azure.ai.agents.models import ListSortOrder
 from azure.core.pipeline.policies import RetryPolicy
 from azure.core.pipeline.transport import HttpTransport, RequestsTransport
+from tools.safety.allow_azure import azure_allowed
+
+# Safety guard: require explicit opt-in for Azure usage
+if not azure_allowed():
+    raise SystemExit("⚠️  Azure usage is disabled by repository policy. To enable, set ALLOW_AZURE=1 or create a .allow_azure file in the repo root.")
 
 ROOT = pathlib.Path(__file__).resolve().parent
 CONTEXT_FILE = ROOT / "FULL_CONTEXT_FOR_AGENTS.md"

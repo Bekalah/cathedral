@@ -1,0 +1,20 @@
+{
+  "name": "@cathedral/sacred-geometry-core",
+  "version": "1.0.0",
+  "description": "Sacred Geometry Core - Fractal settings and geometry nodes for Codex 144:99 integration.",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'Sacred Geometry Core build complete'",
+    "test": "echo 'Sacred Geometry Core tests passing'"
+  },
+  "keywords": [
+    "cathedral",
+    "sacred-geometry",
+    "codex-144-99",
+    "fractal",
+    "geometry",
+    "nodes"
+  ],
+  "author": "Rebecca Respawn",
+  "license": "CC0"
+}

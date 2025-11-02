@@ -7,6 +7,14 @@ This will use your Azure AI Foundry credits
 import requests
 import json
 import time
+import os
+from tools.safety.allow_azure import azure_allowed
+
+# Safety guard: require explicit ALLOW_AZURE opt-in
+if not azure_allowed():
+    print("⚠️  Azure usage is disabled by repository policy. To enable, set ALLOW_AZURE=1 or create a .allow_azure file in the repo root.")
+    raise SystemExit(1)
+
 from azure.identity import DefaultAzureCredential
 
 # Your Azure AI Foundry details

@@ -6,21 +6,25 @@ This app lives in a monorepo at `apps/web`. It’s a Next.js 14 project configur
 
 Use Vercel’s dashboard and set the Root Directory to `apps/web` so Vercel builds only the web app and ignores the repo root `vercel.json`.
 
-1) Import the repo
-- Create a project on https://vercel.com → Import `Bekalah/cathedral`.
+1. Import the repo
+
+- Create a project on [Vercel](https://vercel.com) → Import `Bekalah/cathedral`.
 - When prompted, set Root Directory to `apps/web`.
 
-2) Build settings
+2. Build settings
+
 - Framework: Next.js (auto-detected)
 - Install: auto (Vercel detects pnpm via `pnpm-lock.yaml` at repo root)
 - Build Command: `next build` (default; with `output: "export"`, this produces a static site in `apps/web/out`)
 - Output: auto (Next.js)
 - Node: 18+ (defaults are fine)
 
-3) Environment variables (optional)
+3. Environment variables (optional)
+
 - Add any keys your app needs under Project Settings → Environment Variables.
 
-4) Deploy
+4. Deploy
+
 - Click Deploy. You’ll get a preview URL and automatic deploys on pushes to `main`.
 
 CLI quickstart (optional):
