@@ -9,8 +9,12 @@ export default function LiberCodexDemo() {
   return (
     <div style={{ padding: 20, fontFamily: "serif" }}>
       <h2>Liber Arcanae + Codex 144:99 Demo</h2>
-      <p><strong>Engine:</strong> {engine.describe()}</p>
-      <p><strong>Generated node:</strong> {node.id} — {node.archetype}</p>
+      <p>
+        <strong>Engine:</strong> {engine.describe()}
+      </p>
+      <p>
+        <strong>Generated node:</strong> {node.id} — {node.archetype}
+      </p>
       <h3>Sample Major Arcana</h3>
       <ul>
         {MAJOR_ARCANA.slice(0, 6).map((c) => (
@@ -18,7 +22,8 @@ export default function LiberCodexDemo() {
         ))}
       </ul>
       <p style={{ fontSize: 12, opacity: 0.8 }}>
-        This is a safe, read-only demo component — extend it into the game UI as you please.
+        This is a safe, read-only demo component — extend it into the game UI as
+        you please.
       </p>
     </div>
   );
