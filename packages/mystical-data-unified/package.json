@@ -1,0 +1,9 @@
+{
+  "name": "@cathedral/mystical-data-unified",
+  "version": "2.0.0",
+  "description": "Unified mystical data bridge for archetypes and tarot systems (workspace local)",
+  "type": "commonjs",
+  "main": "index.js",
+  "license": "MIT",
+  "keywords": ["cathedral", "mystical", "tarot", "archetypes" ]
+}

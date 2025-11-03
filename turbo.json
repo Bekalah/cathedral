@@ -1,4 +1,5 @@
 // Cathedral Magnum Opus — Unified Wisdom, Science, Art, and Design
+// Master Cathedral Repository v1.0 — Turbo Monorepo
 // This project permanently unifies all traditions, wisdom schools, sciences, arts, and design disciplines.
 // All turbo monorepo, OpenSpec, and master-cathedral version 1.0 documentation is aligned in grace, beauty, and harmony.
 {
@@ -10,6 +11,7 @@
     "tsconfig.json",
     "CATHEDRAL_INTEGRATION_MAP.json",
     "MASTER_INDEX.md",
+    "MASTER_V1_CONTROL.md",
     "openspec/**/*.json",
     "openspec/**/*.md"
   ],
@@ -112,6 +114,22 @@
       "dependsOn": ["openspec-validate", "validate-python", "lint"],
       "outputs": [],
       "env": ["GITHUB_TOKEN", "GITHUB_HEAD_REF", "GITHUB_BASE_REF"]
+    },
+    "master-cathedral-sync": {
+      "dependsOn": ["openspec-sync"],
+      "outputs": ["master-cathedral-sync.json"],
+      "inputs": ["openspec/changes/**", "package.json"]
+    },
+    "replit-deploy": {
+      "dependsOn": ["build", "master-cathedral-sync"],
+      "outputs": ["deployment/replit/**"],
+      "env": ["REPLIT_SLUG"]
+    },
+    "version-1.0-validate": {
+      "dependsOn": ["validate:all"],
+      "outputs": [],
+      "env": ["NODE_ENV"],
+      "cache": false
     }
   },
   "globalEnv": [
@@ -123,6 +141,8 @@
     "GITHUB_BASE_REF",
     "AZURE_AI_STUDIO_ENDPOINT",
     "AZURE_AI_STUDIO_KEY",
-    "VERCEL_TOKEN"
+    "VERCEL_TOKEN",
+    "REPLIT_SLUG",
+    "MASTER_CATHEDRAL_V1"
   ]
 }

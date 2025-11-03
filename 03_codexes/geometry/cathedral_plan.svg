@@ -1,0 +1,41 @@
+<!-- Cathedral of Circuits: Top-Down and Side Elevation Diagrams -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <!-- Center: 21-petal rose -->
+  <ellipse cx="600" cy="400" rx="180" ry="180" fill="#f5e6ff" stroke="#a77fff" stroke-width="6" />
+  <!-- Rose petals -->
+  <g>
+    <!-- 21 petals, simplified -->
+    <ellipse cx="600" cy="220" rx="40" ry="80" fill="#e0c3fc" stroke="#a77fff" stroke-width="2" />
+    <ellipse cx="600" cy="580" rx="40" ry="80" fill="#e0c3fc" stroke="#a77fff" stroke-width="2" />
+    <!-- ...repeat for all petals in a circle... -->
+  </g>
+  <!-- Cross arms: elemental wings -->
+  <rect x="400" y="390" width="400" height="20" fill="#b3e6ff" />
+  <rect x="590" y="200" width="20" height="400" fill="#b3e6ff" />
+  <!-- Realms at compass points -->
+  <circle cx="1000" cy="400" r="60" fill="#ffe6e6" stroke="#ff7f7f" stroke-width="4" />
+  <circle cx="200" cy="400" r="60" fill="#e6ffe6" stroke="#7fff7f" stroke-width="4" />
+  <circle cx="600" cy="60" r="60" fill="#e6e6ff" stroke="#7f7fff" stroke-width="4" />
+  <circle cx="600" cy="740" r="60" fill="#fffbe6" stroke="#fff77f" stroke-width="4" />
+  <!-- Planetary ateliers as cloisters -->
+  <g>
+    <ellipse cx="900" cy="200" rx="30" ry="60" fill="#e6f7ff" />
+    <ellipse cx="300" cy="600" rx="30" ry="60" fill="#f7ffe6" />
+    <!-- ...repeat for all ateliers... -->
+  </g>
+  <!-- Soyga lattice floor (simplified grid) -->
+  <g>
+    <rect x="300" y="300" width="600" height="200" fill="none" stroke="#cccccc" stroke-width="1" />
+    <!-- ...add grid lines... -->
+  </g>
+  <!-- Side elevation: 33-spine tower -->
+  <rect x="1100" y="100" width="40" height="600" fill="#d1c4e9" stroke="#7e57c2" stroke-width="4" />
+  <!-- Vaulted triangle canopy -->
+  <polygon points="1120,100 1140,100 1130,40" fill="#fffde7" stroke="#ffd54f" stroke-width="3" />
+  <!-- Helix Tower (DNA twin spirals) -->
+  <g>
+    <path d="M 1120 700 Q 1130 600 1140 700" stroke="#7e57c2" stroke-width="3" fill="none" />
+    <path d="M 1120 700 Q 1130 500 1140 700" stroke="#7e57c2" stroke-width="3" fill="none" />
+    <!-- ...cross-bridges, fusion nodes... -->
+  </g>
+</svg>

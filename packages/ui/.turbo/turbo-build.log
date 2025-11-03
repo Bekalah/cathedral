@@ -1,5 +1,5 @@
 
 
-> @cathedral/ui@1.0.0 build /Users/rebeccalemke/cathedral-real/packages/ui
+> @cathedral/ui@1.0.0 build /Users/rebeccalemke/cathedral-real.worktrees/main/packages/ui
 > tsc
 

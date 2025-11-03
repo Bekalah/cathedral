@@ -3,6 +3,3 @@
 > @cathedral/test-ground@1.0.0 build /Users/rebeccalemke/cathedral-real.worktrees/main/apps/test-ground
 > vite build
 
-sh: vite: command not found
-[41m[30m ELIFECYCLE [39m[49m [31mCommand failed.[39m
-[43m[30m WARN [39m[49m  Local package.json exists, but node_modules missing, did you mean to install?

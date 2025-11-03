@@ -1,21 +1,23 @@
-name: Deploy to Vercel (apps/web)
+name: Deploy Master Cathedral to Vercel (apps/web)
 
 on:
   # Teams-preferred: use Vercel Git Integration for automatic deploys on push/PR.
-  # Keep this workflow as a manual fallback only.
+  # Keep this workflow as a manual fallback only for Master Cathedral v1.0.
   workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: vercel-${{ github.ref }}
+  group: vercel-master-cathedral-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   deploy:
     if: ${{ secrets.VERCEL_TOKEN != '' && secrets.VERCEL_PROJECT_ID != '' && secrets.VERCEL_ORG_ID != '' }}
     runs-on: ubuntu-latest
+    env:
+      MASTER_CATHEDRAL_V1: "true"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -50,11 +52,13 @@ jobs:
             godot-bin/Godot_v4.5.0-stable_linux.x86_64 --headless --export-release "Web" ./export/web/index.html || echo "No Godot export"
           fi
 
-      - name: Prepare Vercel args
+      - name: Prepare Master Cathedral Vercel args
         run: |
           NAME_ARG=""
           if [ -n "${{ secrets.VERCEL_PROJECT_NAME }}" ]; then
             NAME_ARG="--name ${{ secrets.VERCEL_PROJECT_NAME }}"
+          else
+            NAME_ARG="--name master-cathedral"
           fi
           # Add scope arg if provided via secrets (some setups require explicit scope)
           SCOPE_ARG=""
@@ -66,8 +70,6 @@ jobs:
           fi
           echo "NAME_ARG=$NAME_ARG" >> $GITHUB_ENV
           echo "SCOPE_ARG=$SCOPE_ARG" >> $GITHUB_ENV
-
-          # No Azure-specific environment variables or logic required. Safe for non-Azure use.
 
       - name: Use Node 20
         uses: actions/setup-node@v4
@@ -84,6 +86,11 @@ jobs:
         run: |
           pnpm -w install --frozen-lockfile || pnpm -w install
 
+      - name: Master Cathedral V1 Validation
+        run: |
+          pnpm run version-1.0-validate
+        continue-on-error: true
+
       - name: Build monorepo (optional)
         run: pnpm run build || echo 'Build completed with warnings'
         continue-on-error: true
@@ -98,7 +105,7 @@ jobs:
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           working-directory: ./apps/web
           github-comment: true
-          vercel-args: "${{ env.NAME_ARG }} ${{ env.SCOPE_ARG }} --build-env NEXT_PUBLIC_GH_PAGES=false --build-env GH_PAGES=false"
+          vercel-args: "${{ env.NAME_ARG }} ${{ env.SCOPE_ARG }} --build-env NEXT_PUBLIC_GH_PAGES=false --build-env GH_PAGES=false --build-env NEXT_PUBLIC_MASTER_CATHEDRAL=true"
 
       - name: Fallback deploy via Vercel CLI (Preview)
         if: github.event_name == 'pull_request' && steps.vercel_preview.outcome == 'failure'
@@ -124,7 +131,7 @@ jobs:
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           working-directory: ./apps/web
           prod: true
-          vercel-args: "${{ env.NAME_ARG }} ${{ env.SCOPE_ARG }} --build-env NEXT_PUBLIC_GH_PAGES=false --build-env GH_PAGES=false"
+          vercel-args: "${{ env.NAME_ARG }} ${{ env.SCOPE_ARG }} --build-env NEXT_PUBLIC_GH_PAGES=false --build-env GH_PAGES=false --build-env NEXT_PUBLIC_MASTER_CATHEDRAL=true"
 
       - name: Fallback deploy via Vercel CLI (Production)
         if: github.event_name == 'push' && steps.vercel_prod.outcome == 'failure'
