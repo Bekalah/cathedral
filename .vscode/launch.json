@@ -17,7 +17,7 @@
     },
     {
       "name": "Python: Design Suite Wrapper",
-      "type": "python",
+      "type": "debugpy",
       "request": "launch",
       "program": "${workspaceFolder}/design-suite/cathedral_design_suite.py",
       "console": "integratedTerminal",
@@ -25,7 +25,7 @@
     },
     {
       "name": "Python: Achad System Demo",
-      "type": "python",
+      "type": "debugpy",
       "request": "launch",
       "program": "${workspaceFolder}/hall-of-mysteries/frater_achad_system.py",
       "console": "integratedTerminal",
@@ -33,7 +33,7 @@
     },
     {
       "name": "Python: Combined Export",
-      "type": "python",
+      "type": "debugpy",
       "request": "launch",
       "program": "${workspaceFolder}/tools/export/combined_export.py",
       "console": "integratedTerminal",
