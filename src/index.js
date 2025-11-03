@@ -3,6 +3,8 @@ const helmet = require("helmet");
 const cors = require("cors");
 const compression = require("compression");
 const client = require("prom-client");
+const fs = require("fs");
+const path = require("path");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -62,32 +64,65 @@ app.get("/metrics", async (req, res) => {
   res.end(await client.register.metrics());
 });
 
+// Compute a lightweight sacred integrity score from local datasets
+function computeSacredIntegrity() {
+  const checks = [];
+  let score = 1.0;
+
+  try {
+    const codexPath = path.resolve(process.cwd(), "codex-144-expanded.json");
+    const raw = fs.readFileSync(codexPath, "utf-8");
+    const data = JSON.parse(raw);
+    const nodes = Array.isArray(data)
+      ? data
+      : Array.isArray(data.nodes)
+        ? data.nodes
+        : [];
+    const nodeCount = nodes.length;
+    const ok144 = nodeCount === 144;
+    checks.push({
+      check: "codex.nodes.count == 144",
+      actual: nodeCount,
+      passed: ok144,
+    });
+    if (!ok144) score -= 0.5;
+  } catch (err) {
+    checks.push({
+      check: "codex file readable",
+      error: String(err),
+      passed: false,
+    });
+    score -= 0.7;
+  }
+
+  // Bound score between 0 and 1
+  score = Math.max(0, Math.min(1, Number(score.toFixed(2))));
+  return { score, checks };
+}
+
 // Sacred integrity endpoint
 app.get("/api/sacred-integrity", (req, res) => {
-  // Import sacred math validator if available
-  const integrity_score = 0.98; // TODO: Connect to actual sacred-math-validator.ts
-  sacredMathIntegrity.set(integrity_score);
+  const { score, checks } = computeSacredIntegrity();
+  sacredMathIntegrity.set(score);
 
   res.json({
-    score: integrity_score,
-    status: integrity_score > 0.95 ? "intact" : "compromised",
+    score,
+    status: score > 0.95 ? "intact" : score > 0.7 ? "degraded" : "compromised",
+    checks,
     timestamp: new Date().toISOString(),
   });
 });
 
 // Sacred integrity restoration endpoint
 app.post("/api/restore-sacred-integrity", (req, res) => {
-  // Connect to sacred mathematics restoration system
+  // Recompute now (idempotent, cheap)
   console.log("🛡️ Restoring sacred mathematics integrity...");
-
-  // Real restoration process would validate all sacred constants
-  setTimeout(() => {
-    sacredMathIntegrity.set(0.98);
-    console.log("✅ Sacred integrity restored");
-  }, 1000);
+  const { score } = computeSacredIntegrity();
+  sacredMathIntegrity.set(score);
 
   res.json({
-    status: "restoration_initiated",
+    status: "restored",
+    score,
     timestamp: new Date().toISOString(),
   });
 });

@@ -1,6 +1,0 @@
-
-
-> @cathedral/godot-vfx-library@1.0.0 build /Users/rebeccalemke/cathedral-real.worktrees/main/packages/godot-vfx-library
-> echo 'Building Godot VFX Library...' && mkdir -p dist && cp -r effects materials shaders scenes dist/
-
-Building Godot VFX Library...

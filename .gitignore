@@ -105,6 +105,11 @@ logs
 # Godot
 .godot/
 
+# Rust
+/target
+**/target
+.cargo/
+
 # Python
 __pycache__/
 *.py[cod]

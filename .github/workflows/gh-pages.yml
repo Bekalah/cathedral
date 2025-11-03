@@ -1,0 +1,79 @@
+name: Deploy GitHub Pages (apps/web)
+
+on:
+  push:
+    branches: [main, backup-before-rebase, merge/cathedral-master-20251101]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "pnpm"
+
+      - name: Setup PNPM
+        run: |
+          corepack enable
+          corepack prepare pnpm@8.15.0 --activate
+
+      - name: Install dependencies (workspace)
+        run: pnpm -w install --frozen-lockfile=false
+
+      - name: Build web app
+        run: pnpm --filter @bekalah/cathedral-web run build
+
+      - name: Export static site
+        run: |
+          npx --yes next --version || true
+          pnpm --filter @bekalah/cathedral-web exec npx next export || true
+        env:
+          NEXT_TELEMETRY_DISABLED: "1"
+
+      - name: Prepare Pages artifact
+        run: |
+          if [ -d apps/web/out ]; then
+            echo "Using static export from apps/web/out"
+            echo "apps/web/out" > artifact_dir.txt
+          else
+            echo "Falling back to any static site in public/"
+            mkdir -p __site
+            cp -R public/* __site/ || true
+            echo "__site" > artifact_dir.txt
+          fi
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: $(cat artifact_dir.txt)
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,80 +1,56 @@
-name: CI (lightweight)
+name: CI
 
 on:
   push:
-    branches: [main, wip/**, feature/**]
+    branches: [main]
   pull_request:
     branches: [main]
-  workflow_dispatch:
-
-concurrency:
-  group: ci-${{ github.ref }}
-  cancel-in-progress: true
-
-permissions:
-  contents: read
 
 jobs:
-  node-ci:
+  build:
     runs-on: ubuntu-latest
-    env:
-      # Ensure no paid cloud integrations are attempted during CI
-      ALLOW_AZURE: "0"
-      PREFERRED_ASSISTANT: "coderabbit_free"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "pnpm"
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 8.15.0
+          version: 8
 
-      - name: Preflight
+      - name: Enable corepack
+        run: corepack enable
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
         run: |
-          node -v
-          pnpm -v
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
 
-      - name: Install dependencies (workspace)
-        run: |
-          pnpm -w install --frozen-lockfile || pnpm -w install
-
-      - name: Lint (if present)
-        run: pnpm -w -r run lint --if-present || echo "No lint script"
-
-      - name: Typecheck (if present)
-        run: pnpm -w -r run typecheck --if-present || echo "No typecheck script"
-
-      - name: Test (if present)
-        run: pnpm -w -r run test --if-present -- --passWithNoTests || echo "No tests"
-
-      - name: Build (non-blocking)
-        run: pnpm -w run build || echo "Build completed with warnings"
-
-  python-smoke:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - name: Cache pnpm store
+        uses: actions/cache@v4
         with:
-          python-version: "3.11"
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
 
-      - name: Install Python dependencies
-        run: |
-          python -m venv .venv
-          .venv/bin/pip install --upgrade pip
-          .venv/bin/pip install numpy matplotlib pillow
+      - name: Install
+        run: pnpm -w install --frozen-lockfile
 
-      - name: Validate Python Suite (non-blocking)
-        run: |
-          .venv/bin/python tools/validate/design_suite_smoketest.py || true
-          .venv/bin/python tools/validate/achad_integration_smoketest.py || true
+      - name: Type check
+        run: pnpm -w run type-check || true
+
+      - name: Lint
+        run: pnpm -w run lint || true
+
+      - name: Test
+        run: pnpm -w run test || true
+
+      - name: Build
+        run: pnpm -w run build

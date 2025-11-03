@@ -1,4 +1,58 @@
-name: Deploy Master Cathedral GitHub Pages (apps/web)
+name: Deploy Pages
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8
+
+      - name: Install
+        run: pnpm -w install --frozen-lockfile
+
+      - name: Build static export (apps/web)
+        run: |
+          pnpm --filter './apps/web' run export
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: apps/web/out
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+name: Deploy GitHub Pages (apps/web)
 
 on:
   push:
@@ -10,7 +64,6 @@ on:
       - "pnpm-lock.yaml"
       - "turbo.json"
       - "packages/**"
-      - "openspec/**"
   workflow_dispatch:
 
 permissions:
@@ -19,14 +72,12 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages-master-cathedral"
+  group: "pages"
   cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      MASTER_CATHEDRAL_V1: "true"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -42,22 +93,8 @@ jobs:
         with:
           version: 8.15.0
 
-      - name: Install system packages for canvas/sharp
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            build-essential python3 make g++ \
-            libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev \
-            libgl1 libxi6 libxrandr2 libxrender1 libxfixes3 libxtst6
-
       - name: Install dependencies (workspace)
-        run: |
-          pnpm -w install --frozen-lockfile || pnpm -w install
-
-      - name: Master Cathedral V1 Validation
-        run: |
-          pnpm run version-1.0-validate
-        continue-on-error: true
+        run: pnpm install --frozen-lockfile
 
       - name: Build all packages
         run: |
@@ -65,45 +102,9 @@ jobs:
         continue-on-error: true
 
       - name: Build static export (apps/web)
-        env:
-          NEXT_PUBLIC_GH_PAGES: "true"
-          GH_PAGES: "true"
-          NEXT_PUBLIC_MASTER_CATHEDRAL: "true"
         run: |
           cd apps/web && pnpm run export
         continue-on-error: true
-
-      - name: Check export output
-        id: outcheck
-        run: |
-          if [ -d "apps/web/out" ] && [ "$(ls -A apps/web/out)" ]; then
-            echo "has_artifact=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "has_artifact=false" >> "$GITHUB_OUTPUT"
-            echo "No static export found at apps/web/out; skipping Pages artifact upload."
-          fi
-
-      - name: Create fallback artifact (placeholder)
-        if: steps.outcheck.outputs.has_artifact == 'false'
-        run: |
-          mkdir -p apps/web/out
-          cat > apps/web/out/index.html << 'HTML'
-          <!doctype html>
-          <meta charset="utf-8"/>
-          <meta name="viewport" content="width=device-width, initial-scale=1"/>
-          <title>Master Cathedral v1.0 — Placeholder</title>
-          <style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto;display:grid;place-items:center;height:100dvh;margin:0;background:#0b1020;color:#e8ecff}main{max-width:720px;padding:24px;border:1px solid #334;border-radius:12px;background:rgba(255,255,255,0.02);backdrop-filter:blur(6px)}h1{margin:0 0 8px 0}code{background:#11192c;padding:2px 6px;border-radius:6px}</style>
-          <main>
-            <h1>Master Cathedral v1.0 deployment ready</h1>
-            <p>The web export wasn't produced in CI, so a minimal placeholder was published instead.</p>
-            <p>Once <code>apps/web</code> builds successfully, GitHub Pages will deploy the real Master Cathedral site.</p>
-            <p>🏰✨ Version 1.0 Turbo Monorepo ready for deployment</p>
-          </main>
-          HTML
-          echo "has_artifact=true" >> "$GITHUB_OUTPUT"
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
@@ -114,9 +115,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     environment:
-      name: github-pages-master-cathedral
+      name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy Master Cathedral to GitHub Pages
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

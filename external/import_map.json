@@ -1,0 +1,34 @@
+{
+  "online": {
+    "github_pages": {
+      "url": "https://bekalah.github.io/cathedral",
+      "enabled": true
+    },
+    "replit": {
+      "url": "",
+      "enabled": false
+    }
+  },
+  "offline": {
+    "paths": [
+      {
+        "source": "/Users/rebeccalemke/cathedral",
+        "include": ["**/*"],
+        "exclude": ["**/node_modules/**", "**/.git/**"],
+        "target": "external/offline/cathedral"
+      },
+      {
+        "source": "/Users/rebeccalemke/Developer/cathedral-research",
+        "include": ["**/*"],
+        "exclude": ["**/.git/**"],
+        "target": "external/offline/cathedral-research"
+      },
+      {
+        "source": "/Users/rebeccalemke/Library/Mobile Documents/com~apple~CloudDocs/CATHEDRAL-SORT THROUGH",
+        "include": ["**/*"],
+        "exclude": ["**/.git/**"],
+        "target": "external/offline/CATHEDRAL-SORT THROUGH"
+      }
+    ]
+  }
+}
