@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
-const isGhPages = process.env.NEXT_PUBLIC_GH_PAGES === 'true' || process.env.GH_PAGES === 'true';
+const isGhPages =
+  process.env.NEXT_PUBLIC_GH_PAGES === "true" ||
+  process.env.GH_PAGES === "true";
 
 const nextConfig = {
   reactStrictMode: true,
@@ -10,9 +12,7 @@ const nextConfig = {
   trailingSlash: true,
   // GitHub Pages project site served under /cathedral (conditional)
   // When deploying to Vercel/Cloudflare root domains, leave basePath empty
-  ...(isGhPages
-    ? { basePath: "/cathedral", assetPrefix: "/cathedral/" }
-    : {}),
+  ...(isGhPages ? { basePath: "/cathedral", assetPrefix: "/cathedral/" } : {}),
   images: {
     unoptimized: true,
   },
@@ -52,6 +52,19 @@ const nextConfig = {
           },
         },
       },
+    };
+
+    // Resolve local external modules used by the web app
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "liber-arcanae": require("path").resolve(
+        __dirname,
+        "../../external/liber-arcanae/src/index.ts"
+      ),
+      "codex-144-99/core": require("path").resolve(
+        __dirname,
+        "../../external/codex-144-99/src/core.ts"
+      ),
     };
 
     return config;

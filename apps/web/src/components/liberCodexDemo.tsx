@@ -1,6 +1,6 @@
 // apps/web/src/components/liberCodexDemo.tsx
 import React from "react";
-import { MajorArcana, getCardName } from "liber-arcanae";
+import { MAJOR_ARCANA, getCardName } from "liber-arcanae";
 import { SpiralEngine } from "codex-144-99/core";
 
 export default function LiberCodexDemo() {
@@ -13,8 +13,8 @@ export default function LiberCodexDemo() {
       <p><strong>Generated node:</strong> {node.id} — {node.archetype}</p>
       <h3>Sample Major Arcana</h3>
       <ul>
-        {MajorArcana.slice(0, 6).map((c) => (
-          <li key={c}>{getCardName(c)}</li>
+        {MAJOR_ARCANA.slice(0, 6).map((c) => (
+          <li key={c.number}>{getCardName(c.number)}</li>
         ))}
       </ul>
       <p style={{ fontSize: 12, opacity: 0.8 }}>

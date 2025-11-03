@@ -3,7 +3,7 @@
   "installCommand": "pnpm -w install",
   "buildCommand": "pnpm -C apps/web run build",
   "devCommand": "pnpm -C apps/web run dev",
-  "outputDirectory": "apps/web/.next",
+  "outputDirectory": "apps/web/out",
   "regions": ["all"],
   "redirects": [],
   "rewrites": [],
