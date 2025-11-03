@@ -1,5 +1,5 @@
 
 
-> @cathedral/shared@1.0.0 build /Users/rebeccalemke/cathedral-real/packages/shared
+> @cathedral/shared@1.0.0 build /Users/rebeccalemke/cathedral-real.worktrees/main/packages/shared
 > tsc
 

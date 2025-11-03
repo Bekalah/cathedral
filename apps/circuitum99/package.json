@@ -20,12 +20,7 @@
     "zustand": "^4.4.6",
     "framer-motion": "^10.16.5",
     "tone": "^14.7.77",
-    "@cathedral/sacred-geometry-core": "^1.0.0",
-    "@cathedral/mystical-data-unified": "^2.0.0",
-    "@cathedral/gem-tower-engine": "^1.0.0",
-    "@cathedral/fusion-kink-generator": "^1.0.0",
-    "@cathedral/smooth-movement-system": "^1.0.0",
-    "@cathedral/portal-system": "^1.0.0"
+    "@cathedral/sacred-geometry-core": "^1.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.37",

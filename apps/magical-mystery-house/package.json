@@ -12,12 +12,12 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@cathedral/mystical-data-unified": "^2.0.0",
+    
     "@cathedral/sacred-geometry-core": "^1.0.0",
-    "@cathedral/gem-tower-engine": "^1.0.0",
-    "@cathedral/fusion-kink-generator": "^1.0.0",
-    "@cathedral/smooth-movement-system": "^1.0.0",
-    "@cathedral/portal-system": "^1.0.0"
+    "@cathedral/gem-tower-engine": "file:../../packages/gem-tower-engine",
+    "@cathedral/fusion-kink-generator": "file:../../packages/fusion-kink-generator",
+    "@cathedral/smooth-movement-system": "file:../../packages/smooth-movement-system",
+    "@cathedral/portal-system": "file:../../packages/portal-system"
   },
   "devDependencies": {
     "typescript": "^5.0.0"

@@ -67,6 +67,8 @@ jobs:
           echo "NAME_ARG=$NAME_ARG" >> $GITHUB_ENV
           echo "SCOPE_ARG=$SCOPE_ARG" >> $GITHUB_ENV
 
+          # No Azure-specific environment variables or logic required. Safe for non-Azure use.
+
       - name: Use Node 20
         uses: actions/setup-node@v4
         with:

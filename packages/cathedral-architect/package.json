@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "three": "^0.158.0",
-    "@cathedral/three-engine": "workspace:*",
+    
     "@cathedral/codex-engine": "workspace:*"
   },
   "devDependencies": {
