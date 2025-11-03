@@ -4,6 +4,7 @@
     { "path": "packages/core" },
     { "path": "packages/stone-grimoire" },
     { "path": "packages/liber-arcanae" },
+    { "path": "packages/codex-engine" },
     { "path": "packages/tesseract-bridge" },
     { "path": "packages/luxcrux" }
   ],
@@ -28,6 +29,8 @@
       "@cathedral/core": ["packages/core/src"],
       "@cathedral/stone-grimoire": ["packages/stone-grimoire/src"],
       "@cathedral/liber-arcanae": ["packages/liber-arcanae/src"],
+      "@cathedral/codex-144-99": ["packages/codex-144-99/src"],
+      "@cathedral/codex-engine": ["packages/codex-engine/src"],
       "@cathedral/tesseract-bridge": ["packages/tesseract-bridge/src"],
       "@cathedral/luxcrux": ["packages/luxcrux/src"],
       "@cathedral/integration": ["integration"],

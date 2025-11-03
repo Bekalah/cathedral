@@ -3,3 +3,20 @@
 > @cathedral/test-ground@1.0.0 build /Users/rebeccalemke/cathedral-real.worktrees/main/apps/test-ground
 > vite build
 
+[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+[36mvite v5.4.21 [32mbuilding for production...[36m[39m
+[2K[1Gtransforming (1) [2mindex.html[22m[2K[1Gtransforming (3) [2msrc/index.tsx[22m[2K[1G[2K[1G[32m✓[39m 3 modules transformed.
+[2K[1G[31mx[39m Build failed in 1.17s
+[31merror during build:
+[31m[vite]: Rollup failed to resolve import "@cathedral/synth" from "/Users/rebeccalemke/cathedral-real.worktrees/main/apps/test-ground/src/index.tsx".
+This is most likely unintended because it can break your application at runtime.
+If you do want to externalize this module explicitly add it to
+`build.rollupOptions.external`[31m
+    at viteWarn (file:///Users/rebeccalemke/cathedral-real.worktrees/main/node_modules/.pnpm/vite@5.4.21_@types+node@20.19.24/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:65855:17)
+    at onwarn (/Users/rebeccalemke/cathedral-real.worktrees/main/node_modules/.pnpm/@vitejs+plugin-react@4.7.0_vite@4.5.14/node_modules/@vitejs/plugin-react/dist/index.cjs:112:7)
+    at onRollupWarning (file:///Users/rebeccalemke/cathedral-real.worktrees/main/node_modules/.pnpm/vite@5.4.21_@types+node@20.19.24/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:65885:5)
+    at onwarn (file:///Users/rebeccalemke/cathedral-real.worktrees/main/node_modules/.pnpm/vite@5.4.21_@types+node@20.19.24/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:65550:7)
+    at file:///Users/rebeccalemke/cathedral-real.worktrees/main/node_modules/.pnpm/rollup@4.52.5/node_modules/rollup/dist/es/shared/node-entry.js:20951:13
+    at Object.logger [as onLog] (file:///Users/rebeccalemke/cathedral-real.worktrees/main/node_modules/.pnpm/rollup@4.52.5/node_modules/rollup/dist/es/shared/node-entry.js:22823:9)
+    at ModuleLoader.handleInvalidResolvedId (file:///Users/rebeccalemke/cathedral-real.worktrees/main/node_modules/.pnpm/rollup@4.52.5/node_modules/rollup/dist/es/shared/node-entry.js:21567:26)
+    at file:///Users/rebeccalemke/cathedral-real.worktrees/main/node_modules/.pnpm/rollup@4.52.5/node_modules/rollup/dist/es/shared/node-entry.js:21525:26[39m
