@@ -8,21 +8,17 @@
     "build": "echo 'Tesseract Bridge build complete'",
     "test": "echo 'Tesseract Bridge tests passing'"
   },
-<<<<<<< Updated upstream
   "dependencies": {
     "@azure/openai": "^1.0.0-beta.12",
     "@azure/cognitiveservices-computervision": "^8.2.0",
     "three": "^0.168.0"
   },
-  "keywords": ["cathedral", "tesseract-bridge", "kabbalah", "geometry"],
-=======
   "keywords": [
     "cathedral",
     "tesseract-bridge",
     "kabbalah",
     "geometry"
   ],
->>>>>>> Stashed changes
   "author": "Rebecca Respawn",
   "license": "CC0"
 }
