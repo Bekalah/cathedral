@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+  "description": "Master Cathedral V1.0 - Character Definitions",
+  "source": "canonical",
+  "characters": [
+    {
+      "id": "rebecca_respawn",
+      "name": "Rebecca Respawn",
+      "archetype": "The Fool - Node 00",
+      "connection": "Codex 144:99 Node 00",
+      "description": "Central consciousness node, bridge between all traditions",
+      "traditions": ["alchemy", "hermetism", "kabbalah"],
+      "abilities": ["consciousness_bridge", "tradition_weaving"],
+      "trauma_safe": true,
+      "nd_accommodations": true
+    }
+  ],
+  "metadata": {
+    "total_characters": 144,
+    "living_arcanae": true,
+    "tradition_engines": true,
+    "fusion_kink_enabled": true,
+    "trauma_safe": "maximum",
+    "master_cathedral_v1": true
+  }
+}

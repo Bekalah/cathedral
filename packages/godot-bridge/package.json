@@ -1,0 +1,70 @@
+{
+  "name": "@cathedral/godot-bridge",
+  "version": "1.0.0",
+  "description": "🕹️ Godot 4.5 + Rust Bridge - Seamless game-web integration for Master Cathedral",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./types": {
+      "import": "./dist/types.js"
+    },
+    "./examples": {
+      "import": "./dist/examples.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "build:rust": "cd ../engine/godot-rust && cargo build --release",
+    "build:all": "npm run build:rust && npm run build",
+    "test": "vitest",
+    "lint": "eslint src --ext ts",
+    "format": "prettier --write src/**/*.{ts,js}",
+    "validate": "node dist/cli.js validate"
+  },
+  "dependencies": {
+    "@cathedral/codex-144-99": "workspace:*",
+    "@cathedral/liber-arcanae": "workspace:*",
+    "@cathedral/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.0",
+    "typescript": "^5.6.3",
+    "vitest": "^1.6.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.3",
+    "rimraf": "^5.0.10"
+  },
+  "author": "Rebecca Respawn <bekalah@users.noreply.github.com>",
+  "license": "MIT",
+  "keywords": [
+    "godot",
+    "rust",
+    "webassembly",
+    "game-engine",
+    "bridge",
+    "cathedral"
+  ],
+  "cathedral": {
+    "role": "godott_web_bridge",
+    "features": [
+      "godot-4.5-integration",
+      "rust-bindings",
+      "webassembly-export",
+      "real-time-communication",
+      "trauma-safe-ui",
+      "sacred-geometry-engine"
+    ],
+    "integrations": {
+      "game_engine": "Godot 4.5 with Rust GDExtension",
+      "web_interface": "TypeScript/JavaScript bridge",
+      "data_sync": "Real-time data synchronization",
+      "ui_integration": "Seamless UI between game and web"
+    }
+  }
+}

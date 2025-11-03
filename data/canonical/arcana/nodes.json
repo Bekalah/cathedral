@@ -1,0 +1,31 @@
+{
+  "version": "1.0.0",
+  "description": "Codex 144:99 Sacred Nodes - Master Cathedral V1.0",
+  "source": "canonical",
+  "total_nodes": 144,
+  "abyssal_nexus": 99,
+  "description": "Comprehensive mapping of consciousness levels and mystical knowledge nodes",
+  "nodes": [
+    {
+      "id": 1,
+      "name": "Genesis Node",
+      "level": "emergence",
+      "description": "Beginning of consciousness exploration",
+      "connections": [2, 72, 144]
+    },
+    {
+      "id": 72,
+      "name": "Angelic Bridge", 
+      "level": "transcendence",
+      "description": "Connection to higher dimensional beings",
+      "connections": [1, 99, 144]
+    }
+  ],
+  "metadata": {
+    "codex_144_99": true,
+    "abyssal_integration": true,
+    "trauma_safe": true,
+    "research_validated": true,
+    "master_cathedral_v1": true
+  }
+}

@@ -130,6 +130,32 @@
       "outputs": [],
       "env": ["NODE_ENV"],
       "cache": false
+    },
+    "godot:export": {
+      "dependsOn": ["build"],
+      "outputs": ["godot/web-export/**", "engine/godot-rust/pkg/**"],
+      "env": ["CARGO_TARGET_DIR"]
+    },
+    "web:export": {
+      "dependsOn": ["build"],
+      "outputs": ["apps/web/out/**"],
+      "inputs": ["apps/web/**", "data/canonical/**"]
+    },
+    "data:sync": {
+      "cache": false,
+      "outputs": ["packages/*/dist/data/**", "apps/web/public/data/**"],
+      "inputs": ["data/canonical/**"]
+    },
+    "deploy:all": {
+      "dependsOn": ["build", "godot:export", "web:export"],
+      "outputs": [],
+      "env": ["VERCEL_TOKEN", "CLOUDFLARE_API_TOKEN", "GITHUB_TOKEN"]
+    },
+    "consolidation:validate": {
+      "dependsOn": ["build", "validate:all"],
+      "outputs": [],
+      "env": ["NODE_ENV"],
+      "cache": false
     }
   },
   "globalEnv": [

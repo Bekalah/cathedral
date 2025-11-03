@@ -1,0 +1,40 @@
+{
+  "version": "1.0.0",
+  "description": "Master Cathedral V1.0 - Complete Major Arcana",
+  "source": "canonical",
+  "cards": [
+    {
+      "id": 0,
+      "name": "The Fool",
+      "number": 0,
+      "element": "Air",
+      "planet": "Uranus",
+      "description": "New beginnings, innocence, spontaneity, free spirit",
+      "cathedral_role": "beginning_node",
+      "tradition_masters": "Rebecca Respawn",
+      "trauma_safe": true,
+      "nd_accommodations": true
+    },
+    {
+      "id": 1,
+      "name": "The Magician",
+      "number": 1,
+      "element": "Mercury",
+      "planet": "Mercury",
+      "description": "Manifestation, resourcefulness, power, inspired action",
+      "cathedral_role": "manifestation_node",
+      "tradition_masters": "John Dee",
+      "trauma_safe": true,
+      "nd_accommodations": true
+    }
+  ],
+  "metadata": {
+    "total_cards": 22,
+    "tradition_engines": "Complete Major Arcana as living teachers",
+    "fusion_kink_enabled": true,
+    "trauma_safety": "maximum",
+    "nd_accommodations": true,
+    "research_based": "Public domain sources with full provenance",
+    "master_integration": "Codex 144:99 + Liber Arcanae Codex Abyssiae"
+  }
+}

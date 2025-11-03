@@ -1,0 +1,34 @@
+{
+  "version": "1.0.0",
+  "description": "Master Cathedral V1.0 - Complete Minor Arcana",
+  "source": "canonical",
+  "suits": {
+    "cups": {
+      "element": "Water",
+      "suit_cards": 14,
+      "tradition": "Emotional and intuitive aspects"
+    },
+    "wands": {
+      "element": "Fire", 
+      "suit_cards": 14,
+      "tradition": "Creative and passionate energy"
+    },
+    "swords": {
+      "element": "Air",
+      "suit_cards": 14, 
+      "tradition": "Mental clarity and communication"
+    },
+    "pentacles": {
+      "element": "Earth",
+      "suit_cards": 14,
+      "tradition": "Material and practical matters"
+    }
+  },
+  "metadata": {
+    "total_suits": 4,
+    "total_cards": 56,
+    "trauma_safe": true,
+    "nd_accommodations": true,
+    "research_based": "Public domain sources"
+  }
+}
