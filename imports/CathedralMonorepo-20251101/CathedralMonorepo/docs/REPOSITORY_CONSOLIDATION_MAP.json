@@ -1,0 +1,93 @@
+{
+  "BUILDING-CATHEDRALS": {
+    "full_name": "Bekalah/BUILDING-CATHEDRALS",
+    "branch": "main",
+    "description": null,
+    "updated_at": "2025-10-02T03:43:42Z",
+    "url": "https://github.com/Bekalah/BUILDING-CATHEDRALS"
+  },
+  "cathedral": {
+    "full_name": "Bekalah/cathedral",
+    "branch": "main",
+    "description": "The landing page for my monorepo which will host 3 apps that can connect art, sound and game with experimental modular design. ",
+    "updated_at": "2025-10-31T06:30:17Z",
+    "url": "https://github.com/Bekalah/cathedral"
+  },
+  "cathedral-connection-map": {
+    "full_name": "Bekalah/cathedral-connection-map",
+    "branch": "main",
+    "description": "Cathedral Connection Map - Soul Reclamation Piano Interface",
+    "updated_at": "2025-10-22T12:17:41Z",
+    "url": "https://github.com/Bekalah/cathedral-connection-map"
+  },
+  "cathedral-research": {
+    "full_name": "Bekalah/cathedral-research",
+    "branch": "master",
+    "description": null,
+    "updated_at": "2025-10-16T23:59:13Z",
+    "url": "https://github.com/Bekalah/cathedral-research"
+  },
+  "Cathedral-updates": {
+    "full_name": "Bekalah/Cathedral-updates",
+    "branch": "main",
+    "description": "updates I created for the game system and turbo repo",
+    "updated_at": "2025-10-12T01:09:40Z",
+    "url": "https://github.com/Bekalah/Cathedral-updates"
+  },
+  "cathedral-vercel": {
+    "full_name": "Bekalah/cathedral-vercel",
+    "branch": "main",
+    "description": null,
+    "updated_at": "2025-10-24T07:16:53Z",
+    "url": "https://github.com/Bekalah/cathedral-vercel"
+  },
+  "circuitum99": {
+    "full_name": "Bekalah/circuitum99",
+    "branch": "main",
+    "description": "Designing ecosystems that work like art: elegant, encrypted, alive.",
+    "updated_at": "2025-10-16T23:54:50Z",
+    "url": "https://github.com/Bekalah/circuitum99"
+  },
+  "codex-14499": {
+    "full_name": "Bekalah/codex-14499",
+    "branch": "main",
+    "description": "This is the board for Cathedral of Circuits. It carries seven ribbons (SCIENCE * CANNON * PSYCH * CRAFT * ESOTERIC * RESEARCH * FUSION) ",
+    "updated_at": "2025-10-27T23:17:15Z",
+    "url": "https://github.com/Bekalah/codex-14499"
+  },
+  "cosmogenesis-learning-engine": {
+    "full_name": "Bekalah/cosmogenesis-learning-engine",
+    "branch": "main",
+    "description": "Cosmogenesis Learning Engine – a browser‑native, spiral‑learning platform that turns any dataset into interactive plates. Built for artists, mystics, and neurodivergent minds, it merges alchemy‑inspired visuals, trauma‑aware design, and modular plugin “experiences” like Hypatia’s Library or Tesla’s Workshop.",
+    "updated_at": "2025-10-12T07:05:00Z",
+    "url": "https://github.com/Bekalah/cosmogenesis-learning-engine"
+  },
+  "liber-arcanae": {
+    "full_name": "Bekalah/liber-arcanae",
+    "branch": "main",
+    "description": "living tarot repo that connects to the other apps ",
+    "updated_at": "2025-10-12T15:34:43Z",
+    "url": "https://github.com/Bekalah/liber-arcanae"
+  },
+  "liber-arcanae-game": {
+    "full_name": "Bekalah/liber-arcanae-game",
+    "branch": "main",
+    "description": null,
+    "updated_at": "2025-10-12T07:26:17Z",
+    "url": "https://github.com/Bekalah/liber-arcanae-game"
+  },
+  "magical-mystery-house": {
+    "full_name": "Bekalah/magical-mystery-house",
+    "branch": "main",
+    "description": "This “Magical Mystery House” unites open-world exploration, spiral learning, and reverence for artistic mastery. By continually adding rooms, customizing experiences, and preserving every creative output, it becomes a living Codex that grows with its visitors—turning exploration into enlightenment and art into an ever-expanding celebration.",
+    "updated_at": "2025-10-12T07:29:58Z",
+    "url": "https://github.com/Bekalah/magical-mystery-house"
+  },
+  "stone-grimoire": {
+    "full_name": "Bekalah/stone-grimoire",
+    "branch": "main",
+    "description": "Stone Grimoire: a testbed for AI-driven esoteric design standards, inspired by living grimoires, alchemy, and cathedral codices.",
+    "updated_at": "2025-10-30T22:06:29Z",
+    "url": "https://github.com/Bekalah/stone-grimoire"
+  }
+}

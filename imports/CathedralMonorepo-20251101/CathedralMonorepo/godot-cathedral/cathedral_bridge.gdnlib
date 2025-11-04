@@ -1,0 +1,16 @@
+[general]
+
+singleton=false
+load_once=true
+
+[entry]
+
+X11.64="../rust-engines/cathedral-core/target/release/libcathedral_core.so"
+Windows.64="../rust-engines/cathedral-core/target/release/cathedral_core.dll"
+OSX.64="../rust-engines/cathedral-core/target/release/libcathedral_core.dylib"
+
+[dependencies]
+
+X11.64=[  ]
+Windows.64=[  ]
+OSX.64=[  ]

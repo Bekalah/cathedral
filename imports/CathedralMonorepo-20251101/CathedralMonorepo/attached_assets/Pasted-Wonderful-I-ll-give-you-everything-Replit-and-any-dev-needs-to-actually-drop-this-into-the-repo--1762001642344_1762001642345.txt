@@ -1,0 +1,64 @@
+Wonderful — I’ll give you everything Replit (and any dev) needs to actually drop this into the repo and run it, with maximal detail: files, scene prefab, shader, Rust/GDExtension wiring, audio bindings, HUD, particle suggestions, palette links, safety checks, provenance and testing steps. This answer is self-contained — copy/paste the blocks into your cathedral repo.
+
+I’ll structure it as:
+	1.	File map (what to add)
+	2.	Godot scene & resource files (full .tscn/.tres snippets)
+	3.	Rust crate & godot-rust glue (full example files)
+	4.	Shader, sound, particle, HUD
+	5.	JSON registry wiring (how to feed A and B, and audio map)
+	6.	Build + Replit-friendly run steps
+	7.	Safety / ND checks + QA steps
+	8.	Quick troubleshooting & provenance notes
+
+Keep this open — it’s long but complete. Paste files exactly where indicated.
+
+1) File map — copy these into your repo (suggested paths) /crates/fusion_kink_live/src/lib.rs             # main Rust GDExtension node (FusionKinkLive)
+/crates/fusion_kink_core/src/lib.rs             # fusion_kink operator (A×B=D)
+/crates/Cargo.toml                              # workspace crates
+/apps/cathedral_world/scenes/fusion_field.tscn  # Godot scene prefab (Fusion Field)
+/apps/cathedral_world/materials/fusion_kink.tres# ShaderMaterial resource
+/apps/cathedral_world/shaders/fusion_kink.gdshader
+/apps/cathedral_world/scenes/RitualHUD.tscn     # HUD ring + controls
+/apps/cathedral_world/particles/daimon.trail.tres
+/apps/cathedral_world/project.godot
+/apps/cathedral_world/registry/a_b_inputs.json  # example A,B vectors + provenance
+/registry/audio/sigil_tones.json                # already in repo (used) 2) Godot scene prefab — fusion_field.tscn
+
+Create file: /apps/cathedral_world/scenes/fusion_field.tscn [gd_scene load_steps=3 format=3 uid="!fusionfield"]
+[ext_resource path="res://materials/fusion_kink.tres" type="ShaderMaterial" id=1]
+[node name="FusionField" type="Node3D"]
+script = ExtResource( 2 ) # assigned at runtime by GDExtension registration
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="Plate" type="MeshInstance3D" parent="."]
+mesh = null
+material_override = ExtResource( 1 )
+translate = Vector3(0, 0.5, 0)
+scale = Vector3(1.2,1.2,1.2)
+
+[node name="Light" type="OmniLight3D" parent="."]
+light_energy = 1.2
+light_color = Color(0.6,0.4,0.9)
+translate = Vector3(0,1.6, -0.5)
+
+[node name="Particles" type="GPUParticles3D" parent="."]
+process_material = ExtResource( 3 ) # set later with daimon.trail.tres
+amount = 200
+emitting = true
+
+[node name="RitualHUD" parent="." instance=ExtResource(4)] Notes:
+	•	script will be linked at runtime by godot-rust when you register FusionKinkLive.
+	•	Mesh: replace with a plane/sigil mesh in Godot editor; or supply a sigil_plate.glb and set Plate.mesh = load("res://models/sigil_plate.glb").
+	•	Particles.process_material points to daimon.trail.tres (see particle file below).
+	•	RitualHUD is included as an instance (create the HUD scene below and save as RitualHUD.tscn and then reference here).
+
+⸻
+
+3) Material resource — fusion_kink.tres
+
+Create file: /apps/cathedral_world/materials/fusion_kink.tres [gd_resource type="ShaderMaterial" load_steps=2 format=3]
+shader = ExtResource( 1 )
+shader_param/albedo_color = Color(0.32, 0.12, 0.9, 1.0)
+shader_param/emission_power = 0.45 ExtResource(1) → points to res://shaders/fusion_kink.gdshader (see next).
+/apps/web/public/assets/palettes/abyssia.json   # palette used by shader + HUD
+/README-FUSIONFIELD.md                          # this doc (short)

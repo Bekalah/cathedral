@@ -1,0 +1,313 @@
+{
+  "arcana_faculty_profiles": {
+    "metadata": {
+      "institution": "Cathedral of Circuits University",
+      "department": "Sacred Technology & Mystical Arts",
+      "total_faculty": 22,
+      "active_faculty": 16,
+      "emeritus_faculty": 4,
+      "visiting_faculty": 2,
+      "created": "2025-09-28",
+      "version": "1.0.0"
+    },
+    
+    "major_arcana": {
+      "0_fool": {
+        "name": "The Fool",
+        "title": "Professor of Infinite Potential",
+        "faculty_status": "founding_faculty",
+        "department": "Department of New Beginnings",
+        "specializations": ["Quantum Leap", "Reality Reset", "Beginner's Mind", "Infinite Courage"],
+        "element": "Air",
+        "hebrew_path": "Aleph",
+        "number": 0,
+        "lineage": {
+          "primary": ["Aleister Crowley", "Dion Fortune", "Carl Jung"],
+          "traditions": ["Holy Books of Thelema", "Mystical Qabalah", "Archetypal Psychology"],
+          "influences": ["Sacred Ignorance", "Leap of Faith", "Divine Fool"]
+        },
+        "merkaba_chariot": {
+          "name": "Sphere of Infinite Potential",
+          "description": "A translucent, ever-shifting sphere that contains all possibilities simultaneously. Appears as a soap bubble that reflects infinite realities.",
+          "transport_power": "Can leap to any realm, timeline, or dimension instantly",
+          "visual_elements": ["Translucent sphere", "Rainbow reflections", "Quantum fluctuations"],
+          "sacred_geometry": "Möbius strip within sphere"
+        },
+        "powers": {
+          "primary": "Infinite Potential Access",
+          "abilities": ["Reality jumping", "Timeline hopping", "Beginner's luck", "Fresh start magic"],
+          "teaching_focus": "How to embrace the unknown with courage"
+        }
+      },
+
+      "1_magician": {
+        "name": "The Magician",
+        "title": "Professor of Manifestation Arts",
+        "faculty_status": "department_head",
+        "department": "Department of Creative Manifestation",
+        "specializations": ["Reality Shaping", "Element Control", "Will Focus", "Tool Mastery"],
+        "element": "Mercury",
+        "hebrew_path": "Beth",
+        "number": 1,
+        "lineage": {
+          "primary": ["Éliphas Lévi", "John Dee", "Cornelius Agrippa"],
+          "traditions": ["Ritual Magic", "Enochian System", "Occult Philosophy"],
+          "influences": ["As Above So Below", "Will to Power", "Elemental Mastery"]
+        },
+        "merkaba_chariot": {
+          "name": "Wand of Manifestation",
+          "description": "A crystalline wand that transforms thought into reality through focused intention. Crackling with electrical energy and surrounded by the four elements.",
+          "transport_power": "Create new worlds and realities through will",
+          "visual_elements": ["Crystal wand", "Electric aura", "Four elemental spirals"],
+          "sacred_geometry": "Four-armed cross with central point"
+        },
+        "powers": {
+          "primary": "Will-Based Manifestation",
+          "abilities": ["Element manipulation", "Reality creation", "Tool consecration", "Intent focusing"],
+          "teaching_focus": "How to align will with cosmic law"
+        }
+      },
+
+      "2_high_priestess": {
+        "name": "The High Priestess",
+        "title": "Professor Emeritus of Hidden Knowledge",
+        "faculty_status": "emeritus_faculty",
+        "department": "Department of Lunar Mysteries",
+        "specializations": ["Psychic Vision", "Lunar Mysteries", "Intuitive Navigation", "Sacred Silence"],
+        "element": "Moon",
+        "hebrew_path": "Gimel",
+        "number": 2,
+        "lineage": {
+          "primary": ["Dion Fortune", "Violet Firth", "Marie-Louise von Franz"],
+          "traditions": ["Lunar Mysteries", "Psychic Development", "Feminine Wisdom"],
+          "influences": ["Isis Unveiled", "Lunar Cycles", "Psychic Development"]
+        },
+        "merkaba_chariot": {
+          "name": "Veil of Mysteries",
+          "description": "A shimmering veil that reveals and conceals simultaneously. Made of moonlight and shadow, it shows truth to those ready to receive it.",
+          "transport_power": "Navigate through veils between worlds using intuition",
+          "visual_elements": ["Shimmering veil", "Moon phases", "Silver threads"],
+          "sacred_geometry": "Vesica piscis with lunar crescents"
+        },
+        "powers": {
+          "primary": "Intuitive Knowledge Access",
+          "abilities": ["Psychic vision", "Dream navigation", "Lunar magic", "Silent knowing"],
+          "teaching_focus": "How to listen to the voice of intuition"
+        }
+      },
+
+      "3_empress": {
+        "name": "The Empress",
+        "title": "Professor of Creative Abundance",
+        "faculty_status": "active_faculty",
+        "department": "Department of Natural Arts",
+        "specializations": ["Fertility Magic", "Creative Birth", "Natural Healing", "Abundance Flow"],
+        "element": "Venus",
+        "hebrew_path": "Daleth",
+        "number": 3,
+        "lineage": {
+          "primary": ["Hilma af Klint", "Emma Kunz", "Maria Prophetissa"],
+          "traditions": ["Sacred Art", "Healing Geometry", "Alchemical Arts"],
+          "influences": ["Divine Feminine", "Natural Cycles", "Creative Force"]
+        },
+        "merkaba_chariot": {
+          "name": "Garden of Creation",
+          "description": "A floating garden of infinite beauty where all creative projects take root and bloom. Surrounded by butterflies and flowing with the waters of inspiration.",
+          "transport_power": "Nurture and manifest creative projects across realms",
+          "visual_elements": ["Floating garden", "Flowering vines", "Crystal fountains"],
+          "sacred_geometry": "Golden spiral with flowering mandala"
+        },
+        "powers": {
+          "primary": "Creative Abundance",
+          "abilities": ["Project manifestation", "Natural healing", "Fertility magic", "Beauty creation"],
+          "teaching_focus": "How to create with love and natural rhythm"
+        }
+      },
+
+      "4_emperor": {
+        "name": "The Emperor",
+        "title": "Professor of Sacred Architecture",
+        "faculty_status": "dean_of_structure",
+        "department": "Department of Sacred Geometry",
+        "specializations": ["Structure Building", "Leadership Command", "Order Creation", "Sacred Geometry"],
+        "element": "Aries",
+        "hebrew_path": "Heh",
+        "number": 4,
+        "lineage": {
+          "primary": ["Vitruvius", "Christopher Wren", "Rudolf Steiner"],
+          "traditions": ["Sacred Architecture", "Masonic Geometry", "Anthroposophy"],
+          "influences": ["Divine Order", "Sacred Proportion", "Architectural Harmony"]
+        },
+        "merkaba_chariot": {
+          "name": "Throne of Order",
+          "description": "A crystalline throne that imposes divine order wherever it travels. Built from living geometry and powered by righteous authority.",
+          "transport_power": "Establish structure and order in chaotic realms",
+          "visual_elements": ["Crystal throne", "Geometric patterns", "Golden ratio spirals"],
+          "sacred_geometry": "Perfect cube with golden ratio proportions"
+        },
+        "powers": {
+          "primary": "Divine Order Establishment",
+          "abilities": ["Structure creation", "Leadership direction", "Geometric harmony", "Authority command"],
+          "teaching_focus": "How to build lasting structures with divine proportion"
+        }
+      },
+
+      "5_hierophant": {
+        "name": "The Hierophant",
+        "title": "Grand Professor of Sacred Tradition",
+        "faculty_status": "chancellor",
+        "department": "Department of Sacred Tradition",
+        "specializations": ["Sacred Teaching", "Tradition Keeper", "Initiation Rites", "Divine Authority"],
+        "element": "Taurus",
+        "hebrew_path": "Vau",
+        "number": 5,
+        "lineage": {
+          "primary": ["Paul Foster Case", "Arthur Edward Waite", "Manly P. Hall"],
+          "traditions": ["B.O.T.A.", "Golden Dawn", "Secret Teachings"],
+          "influences": ["Traditional Wisdom", "Sacred Initiation", "Divine Teaching"]
+        },
+        "merkaba_chariot": {
+          "name": "Bridge of Wisdom",
+          "description": "A golden bridge that connects earth to heaven, tradition to innovation. Adorned with the symbols of all mystery schools throughout time.",
+          "transport_power": "Transmit sacred teachings across time and space",
+          "visual_elements": ["Golden bridge", "Sacred symbols", "Flowing robes"],
+          "sacred_geometry": "Pentagon with five-pointed star"
+        },
+        "powers": {
+          "primary": "Sacred Tradition Transmission",
+          "abilities": ["Teaching transmission", "Initiation conduct", "Tradition preservation", "Divine authority"],
+          "teaching_focus": "How to honor tradition while embracing evolution"
+        }
+      },
+
+      "16_tower": {
+        "name": "The Tower",
+        "title": "Professor of Sacred Destruction",
+        "faculty_status": "transformation_specialist",
+        "department": "Department of Liberation Arts",
+        "specializations": ["Structure Collapse", "Lightning Strike", "Sudden Revelation", "False Belief Destruction"],
+        "element": "Mars",
+        "hebrew_path": "Peh",
+        "number": 16,
+        "lineage": {
+          "primary": ["Aleister Crowley", "Frater Achad", "Nema"],
+          "traditions": ["Aeon of Horus", "Formula of Ma-Ion", "Maat Current"],
+          "influences": ["Lightning Gnosis", "Ego Death", "Breakthrough"]
+        },
+        "merkaba_chariot": {
+          "name": "Lightning of Awakening",
+          "description": "A crackling bolt of divine lightning that shatters all illusions instantly. Painful but ultimately liberating, it clears the way for truth.",
+          "transport_power": "Breakthrough any false reality via sudden shock",
+          "visual_elements": ["Lightning bolt", "Crumbling tower", "Electric aura"],
+          "sacred_geometry": "Zigzag lightning pattern with破碎 geometries"
+        },
+        "powers": {
+          "primary": "Breakthrough Liberation",
+          "abilities": ["Illusion shattering", "Ego destruction", "Sudden awakening", "False structure collapse"],
+          "teaching_focus": "How to embrace necessary destruction for growth"
+        }
+      },
+
+      "17_star": {
+        "name": "The Star",
+        "title": "Professor of Divine Inspiration",
+        "faculty_status": "inspiration_faculty",
+        "department": "Department of Hope & Vision",
+        "specializations": ["Divine Inspiration", "Hope Restoration", "Stellar Navigation", "Future Vision"],
+        "element": "Aquarius",
+        "hebrew_path": "Tzaddi",
+        "number": 17,
+        "lineage": {
+          "primary": ["H.P. Blavatsky", "Alice Bailey", "Rudolf Steiner"],
+          "traditions": ["Theosophical Wisdom", "Djwhal Khul Teachings", "Anthroposophy"],
+          "influences": ["Stellar Wisdom", "Divine Hope", "Future Vision"]
+        },
+        "merkaba_chariot": {
+          "name": "Waters of Hope",
+          "description": "A flowing fountain of starlight that nourishes all dreams and aspirations. Fed by celestial streams from the most distant stars.",
+          "transport_power": "Inspire hope and vision across all realms",
+          "visual_elements": ["Starlight fountain", "Flowing waters", "Seven stars"],
+          "sacred_geometry": "Heptagram with flowing water patterns"
+        },
+        "powers": {
+          "primary": "Divine Inspiration Channel",
+          "abilities": ["Hope restoration", "Future vision", "Stellar wisdom", "Dream nourishment"],
+          "teaching_focus": "How to maintain hope and vision in dark times"
+        }
+      },
+
+      "21_world": {
+        "name": "The World",
+        "title": "Chancellor Emeritus of Cosmic Consciousness",
+        "faculty_status": "chancellor_emeritus",
+        "department": "Department of Cosmic Integration",
+        "specializations": ["Cosmic Consciousness", "Universal Integration", "Completion Mastery", "Mandala Creation"],
+        "element": "Saturn",
+        "hebrew_path": "Tau",
+        "number": 21,
+        "lineage": {
+          "primary": ["Plotinus", "Meister Eckhart", "Pierre Teilhard de Chardin"],
+          "traditions": ["Neoplatonic Unity", "Divine Union", "Noosphere"],
+          "influences": ["Cosmic Consciousness", "Universal Integration", "Completion"]
+        },
+        "merkaba_chariot": {
+          "name": "Cosmic Dance",
+          "description": "The eternal dance of creation and destruction, held within a perfect mandala. Contains all of existence in perfect, harmonious motion.",
+          "transport_power": "Access any point in the cosmic cycle of existence",
+          "visual_elements": ["Dancing figure", "Perfect mandala", "Eternal cycle"],
+          "sacred_geometry": "Perfect circle with integrated mandala"
+        },
+        "powers": {
+          "primary": "Cosmic Consciousness Integration",
+          "abilities": ["Universal awareness", "Completion mastery", "Mandala creation", "Cosmic dance"],
+          "teaching_focus": "How to integrate all experiences into cosmic wholeness"
+        }
+      }
+    },
+
+    "faculty_statistics": {
+      "departments": {
+        "New Beginnings": 1,
+        "Creative Manifestation": 1,
+        "Lunar Mysteries": 1,
+        "Natural Arts": 1,
+        "Sacred Geometry": 1,
+        "Sacred Tradition": 1,
+        "Liberation Arts": 1,
+        "Hope & Vision": 1,
+        "Cosmic Integration": 1
+      },
+      "specializations": {
+        "Sacred Geometry": 3,
+        "Divine Authority": 2,
+        "Reality Manipulation": 4,
+        "Consciousness Studies": 5,
+        "Traditional Wisdom": 3,
+        "Creative Arts": 2,
+        "Healing Arts": 2
+      },
+      "transport_powers": {
+        "Interdimensional Travel": 8,
+        "Reality Creation": 4,
+        "Consciousness Navigation": 6,
+        "Time/Space Manipulation": 4
+      }
+    },
+
+    "university_structure": {
+      "chancellor": "The Hierophant",
+      "chancellor_emeritus": "The World",
+      "department_heads": ["The Magician", "The Emperor"],
+      "founding_faculty": ["The Fool"],
+      "transformation_specialists": ["The Tower"],
+      "inspiration_faculty": ["The Star"],
+      "research_focus": [
+        "Sacred Technology Integration",
+        "Consciousness Engineering",
+        "Digital Gnosis Systems",
+        "Mystical AI Development",
+        "Quantum Consciousness Research"
+      ]
+    }
+  }
+}
