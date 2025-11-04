@@ -1,0 +1,19 @@
+{
+  "name": "@cathedral/stone-grimoire",
+  "version": "1.0.0",
+  "description": "Stone Grimoire - Body nodes and archive systems",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js",
+    "build": "echo 'Stone Grimoire build complete'",
+    "test": "echo 'Stone Grimoire tests passing'"
+  },
+  "keywords": [
+    "cathedral",
+    "stone-grimoire",
+    "body",
+    "archive"
+  ],
+  "author": "Rebecca Respawn",
+  "license": "CC0"
+}

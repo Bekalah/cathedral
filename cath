@@ -1,0 +1,144 @@
+#!/bin/bash
+
+# Cathedral Master Creative Work Reconnection System
+# Connects ALL your scattered creative work to the working cathedral-master
+# Uses bekalah.github.io/cathedral-master as the authoritative source
+
+set -e
+
+echo "🏛️ Cathedral Master Creative Work Reconnection v1.0"
+echo "=================================================="
+echo "Connecting your complete creative work to the working cathedral-master..."
+
+# Colors
+BLUE='\033[0;34m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+PURPLE='\033[0;35m'
+RED='\033[0;31m'
+NC='\033[0m'
+
+# Current working state
+CURRENT_COMMIT=$(git rev-parse HEAD)
+echo -e "${BLUE}📍 Current state: $CURRENT_COMMIT${NC}"
+
+echo ""
+echo -e "${GREEN}🎨 Phase 1: Finding ALL your creative work...${NC}"
+
+# Find your 3 codex
+echo ""
+echo -e "${PURPLE}📜 Your 3 Codex:${NC}"
+echo "Found:"
+find . -name "*codex*" -o -name "*arcana*" -o -name "*liber*" | grep -E "(codex|arcana|liber)" | head -10
+
+# Find music/audio work
+echo ""
+echo -e "${PURPLE}🎵 Your Music & Audio Work:${NC}"
+find . -name "*music*" -o -name "*audio*" -o -name "*synth*" -o -name "*sound*" | head -10
+
+# Find art/visual work
+echo ""
+echo -e "${PURPLE}🎨 Your Art & Visual Work:${NC}"
+find . -name "*art*" -o -name "*visual*" -o -name "*design*" | head -10
+
+# Find science/tech work
+echo ""
+echo -e "${PURPLE}🔬 Your Science & Tech Work:${NC}"
+find . -name "*rust*" -o -name "*godot*" -o -name "*engine*" | head -10
+
+# Find game content
+echo ""
+echo -e "${PURPLE}🎮 Your Game Content:${NC}"
+find . -name "*game*" -o -name "*tarot*" -o -name "*interactive*" | head -10
+
+echo ""
+echo -e "${GREEN}🔄 Phase 2: Checking external cathedral-master...${NC}"
+
+# Check external cathedral-master
+if [ -d "external/cathedral-master" ]; then
+    echo "✅ Found external cathedral-master directory"
+    echo "Contents:"
+    ls -la external/cathedral-master/ | head -10
+    
+    # Check if it has the working files
+    if [ -f "external/cathedral-master/README.md" ]; then
+        echo "✅ Working cathedral-master detected"
+        echo "This contains the live version at bekalah.github.io/cathedral-master"
+    fi
+else
+    echo "❌ No external cathedral-master found"
+    echo "Will need to fetch from GitHub..."
+fi
+
+echo ""
+echo -e "${GREEN}🌐 Phase 3: GitHub cathedral-master integration...${NC}"
+
+# Add/fetch cathedral-master remote
+if ! git remote | grep -q cathedral-master; then
+    echo "📡 Adding cathedral-master remote..."
+    git remote add cathedral-master https://github.com/bekalah/cathedral-master.git
+fi
+
+echo "🔄 Fetching latest cathedral-master..."
+git fetch cathedral-master
+
+echo ""
+echo "📊 Cathedral-master status:"
+git log cathedral-master/main --oneline -n 5
+
+echo ""
+echo -e "${GREEN}🔗 Phase 4: Creating reconnection strategy...${NC}"
+
+# Create the reconnection plan
+cat > cathedral-creative-work-reconnection-plan.md << 'EOF'
+# Cathedral Creative Work Reconnection Plan
+==========================================
+
+## Your Complete Creative Work Found:
+✅ **3 Codex**: codex/, config/, liber-arcanae/
+✅ **Music/Audio**: synth-lab/, hall-of-ateliers/, 
+✅ **Art/Visual**: design-suite/, art/, tools/render_arcana_textures.py
+✅ **Science/Tech**: rust-engines/, godot/, packages/ (massive collection)
+✅ **Game Content**: game-data/, tarot-system/, liber-arcanae/
+✅ **Living Systems**: cosmogenesis-learning-engine/, hall-of-mysteries/
+
+## Working Cathedral-Master:
+🌐 **Live URL**: https://bekalah.github.io/cathedral-master
+📁 **Source**: external/cathedral-master/ (or remote cathedral-master/main)
+🎯 **Status**: Complete consolidated system (255 engines, 1,511 data files)
+
+## Reconnection Strategy:
+1. **Preserve ALL your creative work** from this monorepo
+2. **Merge with working cathedral-master** (not delete!)
+3. **Update v1.0 specifications** in openspec/ and turbo.json
+4. **Maintain monorepo structure** (apps/, packages/, etc.)
+5. **Connect to online cathedral-master** for deployment
+
+## Next Steps:
+- [ ] Backup current state
+- [ ] Merge cathedral-master/main preserving your work
+- [ ] Update all tools and integrations  
+- [ ] Test that everything works
+- [ ] Deploy to bekalah.github.io/cathedral-master
+- [ ] Clean up obsolete branches
+
+## Key Principle:
+**Your creative work is 98% of the value** - cathedral-master is the framework.
+**Don't delete your work, enhance the framework with it!**
+
+EOF
+
+echo -e "${GREEN}✅ Reconnection plan created!${NC}"
+
+echo ""
+echo -e "${YELLOW}⚠️ CRITICAL DECISION POINT:${NC}"
+echo "Your creative work is SCATTERED but COMPLETE."
+echo "The cathedral-master is the WORKING FRAMEWORK."
+echo ""
+echo "🔄 What to do:"
+echo "1. Merge cathedral-master into current repo"
+echo "2. Your work becomes PART of the working system" 
+echo "3. Everything gets deployed to bekalah.github.io/cathedral-master"
+echo "4. All branches get cleaned up properly"
+echo ""
+echo -e "${GREEN}🚀 Ready to reconnect ALL your creative work!${NC}"

@@ -1,0 +1,22 @@
+name = "cathedral-of-circuits"
+compatibility_date = "2024-09-28"
+
+# Cloudflare Pages-style static site build from the monorepo web app
+[build]
+command = "pnpm -w install && pnpm -C apps/web run build"
+publish = "apps/web/out"
+
+# Optional environment variables
+[vars]
+LATTICE_MODE = "production"
+CATHEDRAL_VERSION = "1.0.0"
+JEWEL_INDRA_ACTIVE = "true"
+
+# Optional headers for lattice interconnection
+
+[[headers]]
+for = "/*"
+[headers.values]
+X-Cathedral-Lattice = "active"
+X-Jewel-Indra = "reflecting"
+Access-Control-Allow-Origin = "*"

@@ -1,0 +1,6 @@
+# One repo per line. Accepts either:
+#   owner/repo
+# or just repo (assumes the org passed to the script)
+# Examples:
+Bekalah/cathedral
+cathedral-master

@@ -1,0 +1,204 @@
+<<<<<<< HEAD
+name: Deploy Master Cathedral to Vercel (apps/web)
+
+on:
+  # Teams-preferred: use Vercel Git Integration for automatic deploys on push/PR.
+  # Keep this workflow as a manual fallback only for Master Cathedral v1.0.
+=======
+name: Deploy to Vercel (apps/web)
+
+on:
+  # Teams-preferred: use Vercel Git Integration for automatic deploys on push/PR.
+  # Keep this workflow as a manual fallback only.
+>>>>>>> 745d447282540bff8edd78e5c5bb2b966c93dce2
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+<<<<<<< HEAD
+  group: vercel-master-cathedral-${{ github.ref }}
+=======
+  group: vercel-${{ github.ref }}
+>>>>>>> 745d447282540bff8edd78e5c5bb2b966c93dce2
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+<<<<<<< HEAD
+    runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/main' && secrets.VERCEL_TOKEN != '' && secrets.VERCEL_PROJECT_ID != '' && secrets.VERCEL_ORG_ID != '' }}
+    env:
+      MASTER_CATHEDRAL_V1: "true"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          profile: minimal
+          override: true
+
+      - name: Install Bevy dependencies
+        run: |
+          rustup update
+          cargo install cargo-make || true
+
+      - name: Build Bevy project (if present)
+        run: |
+          if [ -f "Cargo.toml" ]; then
+            cargo build --release
+          fi
+
+      - name: Download Godot 4.5
+        run: |
+          wget https://downloads.tuxfamily.org/godotengine/4.5.0/Godot_v4.5.0-stable_linux.x86_64.zip -O godot.zip
+          unzip godot.zip -d godot-bin
+          chmod +x godot-bin/Godot_v4.5.0-stable_linux.x86_64
+
+      - name: Build Godot project (if present)
+        run: |
+          if [ -f "project.godot" ]; then
+            godot-bin/Godot_v4.5.0-stable_linux.x86_64 --headless --export-release "Web" ./export/web/index.html || echo "No Godot export"
+          fi
+
+      - name: Prepare Master Cathedral Vercel args
+=======
+    if: ${{ secrets.VERCEL_TOKEN != '' && secrets.VERCEL_PROJECT_ID != '' && secrets.VERCEL_ORG_ID != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare Vercel args
+>>>>>>> 745d447282540bff8edd78e5c5bb2b966c93dce2
+        run: |
+          NAME_ARG=""
+          if [ -n "${{ secrets.VERCEL_PROJECT_NAME }}" ]; then
+            NAME_ARG="--name ${{ secrets.VERCEL_PROJECT_NAME }}"
+<<<<<<< HEAD
+          else
+            NAME_ARG="--name master-cathedral"
+=======
+>>>>>>> 745d447282540bff8edd78e5c5bb2b966c93dce2
+          fi
+          # Add scope arg if provided via secrets (some setups require explicit scope)
+          SCOPE_ARG=""
+          if [ -n "${{ secrets.VERCEL_SCOPE }}" ]; then
+            SCOPE_ARG="--scope ${{ secrets.VERCEL_SCOPE }}"
+          else
+            # Fallback to ORG_ID as scope when SCOPE not provided
+            SCOPE_ARG="--scope ${{ secrets.VERCEL_ORG_ID }}"
+          fi
+          echo "NAME_ARG=$NAME_ARG" >> $GITHUB_ENV
+          echo "SCOPE_ARG=$SCOPE_ARG" >> $GITHUB_ENV
+
+      - name: Use Node 20
+<<<<<<< HEAD
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+          cache: "pnpm"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+=======
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+>>>>>>> 745d447282540bff8edd78e5c5bb2b966c93dce2
+        with:
+          version: 8.15.0
+
+      - name: Install dependencies (workspace)
+        run: |
+          pnpm -w install --frozen-lockfile || pnpm -w install
+
+<<<<<<< HEAD
+      - name: Master Cathedral V1 Validation
+        run: |
+          pnpm run version-1.0-validate
+        continue-on-error: true
+
+=======
+>>>>>>> 745d447282540bff8edd78e5c5bb2b966c93dce2
+      - name: Build monorepo (optional)
+        run: pnpm run build || echo 'Build completed with warnings'
+        continue-on-error: true
+
+      - name: Deploy with Vercel (Preview)
+        if: github.event_name == 'pull_request'
+<<<<<<< HEAD
+        uses: amondnet/vercel-action@v20
+        id: vercel_preview
+=======
+        id: vercel_preview
+        uses: amondnet/vercel-action@v25
+>>>>>>> 745d447282540bff8edd78e5c5bb2b966c93dce2
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          working-directory: ./apps/web
+          github-comment: true
+<<<<<<< HEAD
+          vercel-args: "${{ env.NAME_ARG }} ${{ env.SCOPE_ARG }} --build-env NEXT_PUBLIC_GH_PAGES=false --build-env GH_PAGES=false --build-env NEXT_PUBLIC_MASTER_CATHEDRAL=true"
+=======
+          vercel-args: "${{ env.NAME_ARG }} ${{ env.SCOPE_ARG }} --build-env NEXT_PUBLIC_GH_PAGES=false --build-env GH_PAGES=false"
+>>>>>>> 745d447282540bff8edd78e5c5bb2b966c93dce2
+
+      - name: Fallback deploy via Vercel CLI (Preview)
+        if: github.event_name == 'pull_request' && steps.vercel_preview.outcome == 'failure'
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          npm i -g vercel@latest
+          cd apps/web
+          # Create .vercel/project.json based on secrets
+          vercel pull --yes --environment=preview
+          # Trigger a Preview deployment (build in Vercel cloud)
+          vercel deploy --token "$VERCEL_TOKEN" --yes
+
+      - name: Deploy with Vercel (Production)
+        if: github.event_name == 'push'
+<<<<<<< HEAD
+        uses: amondnet/vercel-action@v20
+        id: vercel_prod
+=======
+        id: vercel_prod
+        uses: amondnet/vercel-action@v25
+>>>>>>> 745d447282540bff8edd78e5c5bb2b966c93dce2
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          working-directory: ./apps/web
+          prod: true
+<<<<<<< HEAD
+          vercel-args: "${{ env.NAME_ARG }} ${{ env.SCOPE_ARG }} --build-env NEXT_PUBLIC_GH_PAGES=false --build-env GH_PAGES=false --build-env NEXT_PUBLIC_MASTER_CATHEDRAL=true"
+=======
+          vercel-args: "${{ env.NAME_ARG }} ${{ env.SCOPE_ARG }} --build-env NEXT_PUBLIC_GH_PAGES=false --build-env GH_PAGES=false"
+>>>>>>> 745d447282540bff8edd78e5c5bb2b966c93dce2
+
+      - name: Fallback deploy via Vercel CLI (Production)
+        if: github.event_name == 'push' && steps.vercel_prod.outcome == 'failure'
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          npm i -g vercel@latest
+          cd apps/web
+          # Create .vercel/project.json based on secrets
+          vercel pull --yes --environment=production
+          # Trigger a Production deployment
+          vercel deploy --prod --token "$VERCEL_TOKEN" --yes

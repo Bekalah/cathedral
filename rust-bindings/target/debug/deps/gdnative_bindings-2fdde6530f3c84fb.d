@@ -1,0 +1,12 @@
+/Users/rebeccalemke/cathedral-real/rust-bindings/target/debug/deps/gdnative_bindings-2fdde6530f3c84fb.d: /Users/rebeccalemke/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/gdnative-bindings-0.11.3/src/lib.rs /Users/rebeccalemke/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/gdnative-bindings-0.11.3/src/generated.rs /Users/rebeccalemke/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/gdnative-bindings-0.11.3/src/utils.rs /Users/rebeccalemke/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/gdnative-bindings-0.11.3/src/icalls.rs /Users/rebeccalemke/cathedral-real/rust-bindings/target/debug/build/gdnative-bindings-0d0139f7fac2f37e/out/generated.rs /Users/rebeccalemke/cathedral-real/rust-bindings/target/debug/build/gdnative-bindings-0d0139f7fac2f37e/out/icalls.rs
+
+/Users/rebeccalemke/cathedral-real/rust-bindings/target/debug/deps/libgdnative_bindings-2fdde6530f3c84fb.rmeta: /Users/rebeccalemke/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/gdnative-bindings-0.11.3/src/lib.rs /Users/rebeccalemke/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/gdnative-bindings-0.11.3/src/generated.rs /Users/rebeccalemke/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/gdnative-bindings-0.11.3/src/utils.rs /Users/rebeccalemke/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/gdnative-bindings-0.11.3/src/icalls.rs /Users/rebeccalemke/cathedral-real/rust-bindings/target/debug/build/gdnative-bindings-0d0139f7fac2f37e/out/generated.rs /Users/rebeccalemke/cathedral-real/rust-bindings/target/debug/build/gdnative-bindings-0d0139f7fac2f37e/out/icalls.rs
+
+/Users/rebeccalemke/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/gdnative-bindings-0.11.3/src/lib.rs:
+/Users/rebeccalemke/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/gdnative-bindings-0.11.3/src/generated.rs:
+/Users/rebeccalemke/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/gdnative-bindings-0.11.3/src/utils.rs:
+/Users/rebeccalemke/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/gdnative-bindings-0.11.3/src/icalls.rs:
+/Users/rebeccalemke/cathedral-real/rust-bindings/target/debug/build/gdnative-bindings-0d0139f7fac2f37e/out/generated.rs:
+/Users/rebeccalemke/cathedral-real/rust-bindings/target/debug/build/gdnative-bindings-0d0139f7fac2f37e/out/icalls.rs:
+
+# env-dep:OUT_DIR=/Users/rebeccalemke/cathedral-real/rust-bindings/target/debug/build/gdnative-bindings-0d0139f7fac2f37e/out

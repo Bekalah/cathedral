@@ -1,0 +1,48 @@
+{
+<<<<<<< HEAD
+  "installCommand": "pnpm install",
+  "buildCommand": "pnpm run web:export",
+  "devCommand": "pnpm run web:dev",
+  "outputDirectory": "apps/web/out",
+  "framework": null,
+  "regions": ["all"],
+  "functions": {},
+  "redirects": [],
+  "rewrites": [],
+  "headers": [
+=======
+  "version": 2,
+  "name": "openspec-magnum-opus",
+  "buildCommand": "pnpm run build --filter=packages/web-platform",
+  "outputDirectory": "packages/web-platform/dist",
+  "framework": "vite",
+  "installCommand": "pnpm install --no-frozen-lockfile",
+  "devCommand": "pnpm run dev --filter=packages/web-platform",
+  "github": {
+    "silent": true
+  },
+  "rewrites": [
+>>>>>>> 745d447282540bff8edd78e5c5bb2b966c93dce2
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+<<<<<<< HEAD
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+=======
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+>>>>>>> 745d447282540bff8edd78e5c5bb2b966c93dce2
+      ]
+    }
+  ]
+}

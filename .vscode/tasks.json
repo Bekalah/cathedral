@@ -1,0 +1,102 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "g: develop",
+      "type": "shell",
+      "command": "${workspaceFolder}/tools/g",
+      "args": ["develop"],
+      "problemMatcher": [],
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "validate: design suite",
+      "type": "shell",
+      "command": "python",
+      "args": ["design-suite/cathedral_design_suite.py", "--validate"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": [],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "rust: build bindings",
+      "type": "shell",
+      "command": "cargo",
+      "args": ["build", "--release"],
+      "group": "build",
+      "dependsOn": "validate: design suite",
+      "problemMatcher": [],
+      "options": {
+        "cwd": "${workspaceFolder}/rust-bindings"
+      }
+    },
+    {
+      "label": "godot: export data",
+      "type": "shell",
+      "command": "python",
+      "args": ["design-suite/cathedral_design_suite.py", "--export", "godot"],
+      "group": "build",
+      "dependsOn": "rust: build bindings",
+      "problemMatcher": [],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "git: status check",
+      "type": "shell",
+      "command": "bash",
+      "args": ["${workspaceFolder}/scripts/git-status-check.sh"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "new"
+      },
+      "problemMatcher": [],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "cathedral: quick deploy",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["run", "deploy"],
+      "group": "build",
+      "dependsOn": "godot: export data",
+      "problemMatcher": [],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "cathedral: health check",
+      "type": "shell",
+      "command": "python",
+      "args": ["hall-of-mysteries/frater_achad_system.py", "--health"],
+      "group": "test",
+      "problemMatcher": [],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    }
+  ]
+}

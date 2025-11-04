@@ -1,0 +1,38 @@
+{
+  "id": "volcanic_fire",
+  "name": "Volcanic Fire",
+  "archetype": "Tower / Crowley",
+  "element": "fire",
+  "tags": ["eruption", "creative destruction", "energy"],
+  "parameters": {
+    "musical_mode": "Phrygian",
+    "color_palette": ["#ff4500", "#ffd700", "#ac2b00"],
+    "intensity": 0.8,
+    "duration": 45,
+    "particle_count": 2000,
+    "crater_radius": 15
+  },
+  "function": {
+    "transform": "destroy barriers, birth new terrain",
+    "modify_world": "change weather to storm/wildlight",
+    "npc_emotion": "awe, alarm, creative inspiration",
+    "terrain_effect": "volcanic_cracks_and_lava",
+    "audio_effect": "deep_rumbling_with_phrygian_overtones"
+  },
+  "oracle_sentence": "From the depths comes the fire that cracks the world and brings new life in its wake.",
+  "museum_sources": ["splendor_solis", "ripley_scrolls"],
+  "cathedral_style": "museum_grade",
+  "three_js_config": {
+    "camera_position": [0, 10, 20],
+    "lighting": "dramatic_fire",
+    "particle_system": "volcanic_eruption",
+    "terrain_morph": true,
+    "weather_effects": true
+  },
+  "safety": {
+    "max_intensity": 0.85,
+    "respawn_available": true,
+    "nd_safe": true,
+    "healing_mode": "violet_flame_integration"
+  }
+}

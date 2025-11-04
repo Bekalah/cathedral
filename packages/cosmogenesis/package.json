@@ -1,0 +1,20 @@
+{
+  "name": "@cathedral/cosmogenesis",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Cathedral of Circuits package",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "test": "vitest",
+    "lint": "eslint src/",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "cathedral",
+    "circuits"
+  ],
+  "author": "Rebecca Susan Lemke",
+  "license": "MIT"
+}

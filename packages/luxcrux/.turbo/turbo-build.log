@@ -1,0 +1,14 @@
+<<<<<<< HEAD
+
+
+> @cathedral/luxcrux@1.0.0 build /Users/rebeccalemke/cathedral-real/packages/luxcrux
+> echo 'Luxcrux build complete'
+
+Luxcrux build complete
+=======
+
+> @cathedral/luxcrux@1.0.0 build /Users/rebeccalemke/cathedral-real/packages/luxcrux
+> echo 'Luxcrux build complete'
+
+Luxcrux build complete
+>>>>>>> remotes/origin/master-version

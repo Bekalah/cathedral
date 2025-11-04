@@ -1,0 +1,17 @@
+{
+  "name": "@cathedral/circuitum99",
+  "version": "1.0.0",
+  "description": "99 Wisdom Gates & 144 Node Network - Soul System",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "three": "^0.181.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

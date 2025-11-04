@@ -1,0 +1,64 @@
+{
+<<<<<<< HEAD
+  "name": "cathedral-magnum-opus",
+  "version": "1.0.0",
+  "description": "🜏 Living codex-engine: Codex 144:99 · Fusion Kink (A×B=D) · Liber Arcanae - Complete consolidation of all 13 repos",
+=======
+  "name": "@openspec/magnum-opus",
+  "version": "1.0.0",
+  "description": "OpenSpec Magnum Opus v1.0 - Cathedral Master Monorepo | Hermetic RPG + Creative Workstation | Godot 4.4 + Rust + React + Three.js",
+>>>>>>> 745d447282540bff8edd78e5c5bb2b966c93dce2
+  "private": true,
+  "packageManager": "pnpm@8.15.0",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean",
+    "web:dev": "cd apps/web && npm run dev",
+    "web:build": "cd apps/web && npm run build",
+    "console": "npm run dev --workspace=packages/web-platform",
+    "cathedral": "cd godot-cathedral && godot --path .",
+    "rust:build": "cd rust-engines && cargo build --workspace --release",
+    "rust:test": "cd rust-engines && cargo test --workspace",
+    "fusion": "echo '🜏 A × B = D - Fusion Kink alive' && npm run rust:build && npm run cathedral",
+    "consolidate": "bash tools/sync/consolidate_repos.sh",
+    "sync": "bash tools/sync/cathedral_master_sync.sh"
+  },
+  "keywords": [
+    "fusion-kink",
+    "codex-14499",
+    "liber-arcanae",
+    "cathedral",
+    "hermetic-engine",
+    "sacred-geometry",
+    "tarot-system",
+    "godot",
+    "rust",
+    "alchemy",
+    "western-mystery-tradition"
+  ],
+  "author": "Rebecca Respawn <bekalah>",
+  "license": "MIT",
+  "dependencies": {
+    "@octokit/rest": "^22.0.1"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.0",
+    "typescript": "^5.0.0"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  }
+<<<<<<< HEAD
+}
+=======
+}
+>>>>>>> 745d447282540bff8edd78e5c5bb2b966c93dce2

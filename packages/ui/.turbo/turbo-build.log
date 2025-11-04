@@ -1,0 +1,12 @@
+<<<<<<< HEAD
+
+
+> @cathedral/ui@1.0.0 build /Users/rebeccalemke/cathedral-real/packages/ui
+> tsc
+
+=======
+
+> @cathedral/ui@1.0.0 build /Users/rebeccalemke/cathedral-real/packages/ui
+> tsc
+
+>>>>>>> remotes/origin/master-version

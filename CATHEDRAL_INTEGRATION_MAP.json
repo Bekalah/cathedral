@@ -1,0 +1,495 @@
+{
+  "$schema": "./openspec/schema.json",
+  "version": "1.0.0",
+  "name": "Cathedral of Circuits - Complete Integration Map",
+  "description": "Master connection map linking all 22 Arcana characters to their apps, tools, correspondences, and systems",
+  "tech_stack": {
+    "build_time": {
+      "python": {
+        "version": "3.13",
+        "packages": ["numpy==2.3.4", "matplotlib>=3.9", "pillow"],
+        "location": "design-suite/, hall-of-mysteries/",
+        "output": "design-suite/outputs/*.json",
+        "purpose": "Sacred geometry generation, fractal rendering, Achad system"
+      },
+      "node": {
+        "version": "20+",
+        "package_manager": "pnpm 8+",
+        "purpose": "Build orchestration, dev servers, package management"
+      },
+      "typescript": {
+        "version": "5.6.3",
+        "config": "tsconfig.json per package",
+        "purpose": "Type-safe development across all packages and apps"
+      },
+      "vite": {
+        "version": "5.4.21",
+        "role": "Module bundler, static site generator",
+        "output": "apps/*/dist/ → GitHub Pages"
+      },
+      "turbo": {
+        "version": "2.1.3",
+        "role": "Monorepo orchestration, incremental builds",
+        "config": "turbo.json"
+      }
+    },
+    "runtime_browser": {
+      "react": {
+        "version": "18.3.1",
+        "role": "UI framework for all web apps",
+        "apps": ["liber-arcanae-tarot", "web", "synth-lab", "tarot-arena"]
+      },
+      "three_js": {
+        "packages": ["@react-three/fiber@8.16.8", "@react-three/drei@9.114.0"],
+        "role": "WebGL 3D rendering for sacred geometry",
+        "apps": ["web", "rosslyn-explorer"]
+      },
+      "web_audio": {
+        "role": "Audio synthesis for mystical soundscapes",
+        "apps": ["synth-lab"]
+      }
+    },
+    "optional_platforms": {
+      "godot": {
+        "version": "4.x",
+        "packages": [
+          "godot-design-studio",
+          "godot-liber-arcanae",
+          "godot-vfx-library",
+          "godot-codex-14499"
+        ],
+        "integration": "Reads JSON from Python design-suite",
+        "status": "Prepared, not required for web deployment"
+      },
+      "bevy": {
+        "status": "Future research (Rust game engine)"
+      }
+    },
+    "governance": {
+      "openspec": {
+        "location": "openspec/",
+        "files": ["cathedral.spec.json", "schema.json", "AGENTS.md"],
+        "role": "Living documentation, spec-driven development, AI collaboration"
+      }
+    },
+    "deployment_model": "Static site generation (no server runtime, no cloud dependencies)",
+    "independence": "Runs entirely in browser after build - zero Azure/Python/Node runtime deps"
+  },
+  "characters": {
+    "00_the_fool": {
+      "historical": "Leonora Carrington",
+      "cathedral": "Rebecca Respawn",
+      "archetype": "Infinite Possibility",
+      "apps": ["circuitum99", "cosmogenesis-learning-engine"],
+      "tools": {
+        "design_suite": ["void_geometry", "spiral_fractals", "respawn_portal"],
+        "synthesis": ["0hz_void_tone", "silence_meditation"],
+        "game_mechanics": [
+          "infinite_respawn",
+          "new_beginning_gate",
+          "chaos_navigation"
+        ]
+      },
+      "correspondences": {
+        "frequency": 0,
+        "color": "#0B0E14",
+        "crystal": "obsidian",
+        "geometry": "perfect_circle",
+        "hebrew": "Aleph",
+        "tree_path": "Kether_to_Chokmah"
+      },
+      "research_base": [
+        "Tao Te Ching",
+        "Giordano Bruno Cosmology",
+        "Leonora Carrington Writings"
+      ],
+      "game_location": "Void Laboratory",
+      "godot_scene": "res://scenes/studios/void_lab.tscn",
+      "typescript_module": "packages/liber-arcanae/src/arcana/fool.ts"
+    },
+    "01_the_magician": {
+      "historical": "John Dee",
+      "cathedral": "Virelai Ezra Lux",
+      "archetype": "Manifestation",
+      "apps": ["liber-arcanae", "stone-grimoire"],
+      "tools": {
+        "design_suite": [
+          "enochian_geometry",
+          "sigil_generator",
+          "monas_hieroglyphica"
+        ],
+        "synthesis": ["437hz_mercury", "angelic_language_synth"],
+        "game_mechanics": [
+          "sigil_creation",
+          "elemental_command",
+          "will_manifestation"
+        ]
+      },
+      "correspondences": {
+        "frequency": 437.4,
+        "color": "#FF1600",
+        "crystal": "clear_quartz",
+        "geometry": "square",
+        "hebrew": "Beth",
+        "tree_path": "Kether_to_Binah"
+      },
+      "research_base": [
+        "Monas Hieroglyphica",
+        "Five Books of Mystery",
+        "Enochian Tables"
+      ],
+      "game_location": "Enochian Laboratory",
+      "godot_scene": "res://scenes/studios/enochian_lab.tscn",
+      "typescript_module": "packages/liber-arcanae/src/arcana/magician.ts"
+    },
+    "02_high_priestess": {
+      "historical": "Dion Fortune",
+      "cathedral": "Gemini Rivers",
+      "archetype": "Intuition",
+      "apps": ["liber-arcanae", "cosmogenesis-learning-engine"],
+      "tools": {
+        "design_suite": ["vesica_piscis", "lunar_spiral", "geometric_healing"],
+        "synthesis": ["442hz_moon", "intuition_frequencies"],
+        "game_mechanics": [
+          "psychic_defense",
+          "lunar_wisdom",
+          "twin_rivers_navigation"
+        ]
+      },
+      "correspondences": {
+        "frequency": 442.95,
+        "color": "#F8F8FF",
+        "crystal": "selenite",
+        "geometry": "vesica_piscis",
+        "hebrew": "Gimel",
+        "tree_path": "Kether_to_Tiphareth"
+      },
+      "research_base": [
+        "Mystical Qabalah",
+        "Psychic Self-Defence",
+        "Emma Kunz Geometric Healing"
+      ],
+      "game_location": "Sacred Geometry Healing Studio",
+      "godot_scene": "res://scenes/studios/geometry_studio.tscn",
+      "typescript_module": "packages/liber-arcanae/src/arcana/high_priestess.ts"
+    },
+    "12_hanged_man": {
+      "historical": "Frater Achad (Charles Stansfeld Jones)",
+      "cathedral": "Mirror Witch / Nadir Drift",
+      "archetype": "Perspective Inversion",
+      "apps": ["hall-of-mysteries", "stone-grimoire"],
+      "tools": {
+        "design_suite": [
+          "achad_tree",
+          "oath_abyss_sigil",
+          "qblh_cube",
+          "tree_inversion"
+        ],
+        "synthesis": ["963hz_crown", "abyss_crossing_tones"],
+        "game_mechanics": [
+          "perspective_inversion",
+          "paradox_navigation",
+          "surrender_power",
+          "daath_bridge"
+        ]
+      },
+      "correspondences": {
+        "frequency": 963,
+        "color": "#0C0F14",
+        "crystal": "smoky_quartz",
+        "geometry": "inverted_triangle",
+        "hebrew": "Mem",
+        "tree_path": "Geburah_to_Hod"
+      },
+      "research_base": [
+        "Q.B.L.",
+        "Liber 31",
+        "Egyptian Revival",
+        "Aeon of Maat"
+      ],
+      "game_location": "Daath Crypt - Paradox Hall",
+      "godot_scene": "res://scenes/chapels/daath_crypt.tscn",
+      "typescript_module": "packages/liber-arcanae/src/arcana/hanged_man.ts",
+      "python_module": "hall-of-mysteries/frater_achad_system.py",
+      "special_features": {
+        "tree_inversion": "Malkuth above, Kether below",
+        "22_pathways": "Individual True Will soul paths",
+        "aeon_of_maat": "Post-Horus consciousness",
+        "oath_of_abyss": "Choronzon crossing, Babalon gate"
+      }
+    },
+    "16_the_tower": {
+      "historical": "Aleister Crowley",
+      "cathedral": "Fenrix Thorne / Avaris Shatter",
+      "archetype": "Destruction & Renewal",
+      "apps": ["liber-arcanae", "circuitum99"],
+      "tools": {
+        "design_suite": [
+          "lightning_bolt",
+          "tower_collapse",
+          "thelemic_geometry"
+        ],
+        "synthesis": ["147hz_mars", "destruction_frequencies"],
+        "game_mechanics": [
+          "tower_destruction",
+          "will_awakening",
+          "shock_trials",
+          "aeon_breaking"
+        ]
+      },
+      "correspondences": {
+        "frequency": 147,
+        "color": "#FF4500",
+        "crystal": "moldavite",
+        "geometry": "lightning_bolt",
+        "hebrew": "Pe",
+        "tree_path": "Netzach_to_Hod"
+      },
+      "research_base": [
+        "Liber AL vel Legis",
+        "Book of Thoth",
+        "Vision and the Voice"
+      ],
+      "game_location": "Lightning Laboratory",
+      "godot_scene": "res://scenes/studios/tower_lab.tscn",
+      "typescript_module": "packages/liber-arcanae/src/arcana/tower.ts",
+      "relationships": {
+        "magical_child": "12_hanged_man",
+        "rival": "02_high_priestess",
+        "tradition": "Golden Dawn (expelled), A.'.A.'. (founder)"
+      }
+    }
+  },
+  "app_systems": {
+    "design_suite": {
+      "type": "python",
+      "location": "design-suite/",
+      "purpose": "Headless sacred geometry & fractal rendering",
+      "exports_to": ["godot", "typescript", "json"],
+      "modules": {
+        "geometry": "Sacred geometry patterns (flower of life, merkaba, achad_tree, etc.)",
+        "fractals": "L-system and recursive fractals",
+        "render": "Matplotlib headless rendering",
+        "palettes": "Color correspondence systems",
+        "integrations": "achad_bridge, pathway mappings"
+      }
+    },
+    "hall_of_mysteries": {
+      "type": "python",
+      "location": "hall-of-mysteries/",
+      "purpose": "Frater Achad system & 22 pathway mechanics",
+      "exports_to": ["design_suite", "godot", "json"],
+      "modules": {
+        "frater_achad_system": "Complete Achad tradition engine",
+        "pathway_generator": "22 Hebrew letter True Will paths",
+        "abyss_mechanics": "Oath of Abyss, Choronzon, Babalon gate"
+      }
+    },
+    "liber_arcanae": {
+      "type": "typescript",
+      "location": "packages/liber-arcanae/",
+      "purpose": "78-card tarot system with living archetypes",
+      "imports_from": ["design_suite_json", "hall_of_mysteries_json"],
+      "modules": {
+        "types": "ArcanaCard, Character, GameDesign interfaces",
+        "LiberArcanae": "Main tarot engine",
+        "arcana": "Individual card implementations"
+      }
+    },
+    "godot_liber_arcanae": {
+      "type": "gdscript",
+      "location": "godot/",
+      "purpose": "Visual novel + RPG game implementation",
+      "imports_from": ["design_suite_json", "liber_arcanae_json"],
+      "scenes": {
+        "studios": "Interactive labs for each tradition",
+        "chapels": "Sacred spaces (Daath Crypt, etc.)",
+        "characters": "Playable arcana beings"
+      }
+    },
+    "stone_grimoire": {
+      "type": "mixed",
+      "role": "BODY",
+      "location": "packages/stone-grimoire/",
+      "root_backup": "stone-grimoire/",
+      "purpose": "Cathedral architecture, chapel system, 8 octagram halls with 144 folios",
+      "connects": ["all_characters", "all_research", "all_geometry"],
+      "features": [
+        "Archive system with sacred geometry navigation",
+        "Chapel system (alchemy, angels, crypts)",
+        "Visionary plates and mystical color systems",
+        "Museum-grade esoteric artifact collection",
+        "Trauma-safe archetypal exploration"
+      ],
+      "external_deployment": {
+        "url": "https://bekalah.github.io/stone-grimoire",
+        "repo": "https://github.com/Bekalah/stone-grimoire",
+        "status": "SEPARATE_REPOSITORY_DEPLOYMENT"
+      },
+      "files": ["index.html", "chapels/*", "atelier_protocol.md"]
+    },
+    "cosmogenesis_learning_engine": {
+      "type": "typescript",
+      "role": "SPIRIT",
+      "location": "packages/cosmogenesis-learning-engine/",
+      "root_backup": "cosmogenesis-learning-engine/",
+      "purpose": "Educational pathways, spiral pedagogy, Four Worlds consciousness architecture",
+      "connects": [
+        "144_codex_nodes",
+        "99_dissolution_gates",
+        "22_arcana_teachers",
+        "8_circuit_brain_model"
+      ],
+      "features": [
+        "Four Worlds navigation (Assiah, Yetzirah, Beriah, Atziluth)",
+        "Sacred learning spiral with master artist consciousness expansion",
+        "8 circuit brain model expanded to 144 nodes",
+        "Trauma-informed healing through conscious creation",
+        "Interactive consciousness exploration platform"
+      ],
+      "tech_stack": {
+        "frontend": "React 18.x, TypeScript 5.x, Vite 5.x",
+        "3d": "Three.js with custom shaders",
+        "audio": "Tone.js for synthesis",
+        "state": "Zustand with persistence"
+      },
+      "external_deployment": {
+        "planned_url": "https://bekalah.github.io/cosmogenesis-learning-engine",
+        "status": "INTEGRATED_IN_CATHEDRAL_MONOREPO"
+      },
+      "files": ["docs/*"]
+    },
+    "circuitum99": {
+      "type": "typescript",
+      "role": "SOUL",
+      "location": "packages/circuitum99/",
+      "purpose": "Book/wisdom system with 99 gates, 33 spine nodes, 144 lattice",
+      "connects": [
+        "22_arcana_stories",
+        "historical_relationships",
+        "quest_systems",
+        "spine_33_vertebral_paths",
+        "gates_99_wisdom_portals"
+      ],
+      "features": [
+        "Living grimoire game system",
+        "Story branching based on real historical relationships",
+        "Spine pathways (33 vertebrae)",
+        "Gate system (99 wisdom portals)",
+        "Character narrative integration"
+      ],
+      "data": ["spine33.json", "gates99.json"]
+    },
+    "magical_mystery_house": {
+      "type": "typescript",
+      "role": "NAVIGATOR",
+      "location": "packages/magical-mystery-house/",
+      "purpose": "144 visionary minds navigation system connecting all Trinity systems",
+      "connects": [
+        "stone_grimoire_body",
+        "circuitum99_soul",
+        "cosmogenesis_spirit",
+        "144_master_builders"
+      ],
+      "features": [
+        "Intuitive navigation between all Cathedral systems",
+        "144 visionary minds (Einstein, Tesla, Agrippa, Solomon, John Dee, Hilma af Klint, etc.)",
+        "Portal system connecting Body-Soul-Spirit Trinity",
+        "Return navigation to preserve Cathedral session"
+      ]
+    },
+    "codex_144_99": {
+      "type": "typescript",
+      "role": "FOUNDATION",
+      "location": "packages/codex-144-99/",
+      "root_data": "codex/codex_14499.json",
+      "purpose": "Sacred mathematics core: 144:99 ratio, 72 angels + 72 demons, 33 spine",
+      "connects": ["all_systems"],
+      "features": [
+        "144 nodes (72 Shem angels + 72 Goetic demons)",
+        "99 dissolution gates",
+        "33 spine vertebral paths",
+        "Sacred ratio calculations",
+        "Complete numerology engine"
+      ],
+      "data_files": [
+        "packages/codex-144/angels-72.json",
+        "packages/codex-144/demons-72.json",
+        "packages/codex-144/spine-33.json",
+        "codex-144-expanded.json",
+        "codex-arcanae-mirror.json"
+      ]
+    }
+  },
+  "cross_system_bridges": {
+    "python_to_json": {
+      "tool": "tools/export/combined_export.py",
+      "generates": [
+        "suite_export.json",
+        "achad_export.json",
+        "integration_spec.json"
+      ]
+    },
+    "json_to_typescript": {
+      "loaders": [
+        "interop/web/achadLoader.ts",
+        "packages/liber-arcanae/src/loaders/"
+      ],
+      "imports": "JSON specs from design-suite/outputs/"
+    },
+    "json_to_godot": {
+      "loaders": [
+        "interop/godot/achad_loader.gd",
+        "godot/scripts/core/arcana_registry.gd"
+      ],
+      "imports": "JSON specs from design-suite/outputs/"
+    },
+    "research_gateway": {
+      "purpose": "Serve public domain texts and research",
+      "connects": ["all_historical_figures", "grimoires", "academic_sources"]
+    }
+  },
+  "turborepo_config": {
+    "packages": [
+      "packages/liber-arcanae",
+      "packages/circuitum99",
+      "packages/game-engine",
+      "packages/config",
+      "packages/characters"
+    ],
+    "apps": ["cosmogenesis-learning-engine", "stone-grimoire"],
+    "pipeline": {
+      "build": {
+        "dependsOn": ["^build"],
+        "outputs": ["dist/**", ".next/**"]
+      },
+      "test": {
+        "dependsOn": ["build"]
+      },
+      "lint": {},
+      "dev": {
+        "cache": false
+      }
+    }
+  },
+  "relationships": {
+    "crowley_achad_fortune_triangle": {
+      "crowley": "16_the_tower",
+      "achad": "12_hanged_man",
+      "fortune": "02_high_priestess",
+      "dynamics": "Teacher-student-rival, magical child rebellion, school rivalry"
+    },
+    "golden_dawn_lineage": {
+      "members": ["16_the_tower", "02_high_priestess", "05_hierophant"],
+      "splits": {
+        "crowley": "A.'.A.'.",
+        "fortune": "Society of Inner Light",
+        "case": "BOTA"
+      }
+    },
+    "renaissance_hermetic_chain": {
+      "members": ["04_emperor", "01_magician", "10_wheel", "19_sun"],
+      "connection": "Agrippa systematized, Dee cosmologized, Bruno martyred, Leonardo perfected"
+    }
+  }
+}

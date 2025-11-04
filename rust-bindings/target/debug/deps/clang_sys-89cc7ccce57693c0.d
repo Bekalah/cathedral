@@ -1,0 +1,14 @@
+/Users/rebeccalemke/cathedral-real/rust-bindings/target/debug/deps/clang_sys-89cc7ccce57693c0.d: /Users/rebeccalemke/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clang-sys-1.8.1/src/lib.rs /Users/rebeccalemke/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clang-sys-1.8.1/src/support.rs /Users/rebeccalemke/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clang-sys-1.8.1/src/link.rs /Users/rebeccalemke/cathedral-real/rust-bindings/target/debug/build/clang-sys-42b60e075e948d47/out/macros.rs /Users/rebeccalemke/cathedral-real/rust-bindings/target/debug/build/clang-sys-42b60e075e948d47/out/common.rs /Users/rebeccalemke/cathedral-real/rust-bindings/target/debug/build/clang-sys-42b60e075e948d47/out/dynamic.rs
+
+/Users/rebeccalemke/cathedral-real/rust-bindings/target/debug/deps/libclang_sys-89cc7ccce57693c0.rlib: /Users/rebeccalemke/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clang-sys-1.8.1/src/lib.rs /Users/rebeccalemke/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clang-sys-1.8.1/src/support.rs /Users/rebeccalemke/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clang-sys-1.8.1/src/link.rs /Users/rebeccalemke/cathedral-real/rust-bindings/target/debug/build/clang-sys-42b60e075e948d47/out/macros.rs /Users/rebeccalemke/cathedral-real/rust-bindings/target/debug/build/clang-sys-42b60e075e948d47/out/common.rs /Users/rebeccalemke/cathedral-real/rust-bindings/target/debug/build/clang-sys-42b60e075e948d47/out/dynamic.rs
+
+/Users/rebeccalemke/cathedral-real/rust-bindings/target/debug/deps/libclang_sys-89cc7ccce57693c0.rmeta: /Users/rebeccalemke/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clang-sys-1.8.1/src/lib.rs /Users/rebeccalemke/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clang-sys-1.8.1/src/support.rs /Users/rebeccalemke/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clang-sys-1.8.1/src/link.rs /Users/rebeccalemke/cathedral-real/rust-bindings/target/debug/build/clang-sys-42b60e075e948d47/out/macros.rs /Users/rebeccalemke/cathedral-real/rust-bindings/target/debug/build/clang-sys-42b60e075e948d47/out/common.rs /Users/rebeccalemke/cathedral-real/rust-bindings/target/debug/build/clang-sys-42b60e075e948d47/out/dynamic.rs
+
+/Users/rebeccalemke/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clang-sys-1.8.1/src/lib.rs:
+/Users/rebeccalemke/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clang-sys-1.8.1/src/support.rs:
+/Users/rebeccalemke/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clang-sys-1.8.1/src/link.rs:
+/Users/rebeccalemke/cathedral-real/rust-bindings/target/debug/build/clang-sys-42b60e075e948d47/out/macros.rs:
+/Users/rebeccalemke/cathedral-real/rust-bindings/target/debug/build/clang-sys-42b60e075e948d47/out/common.rs:
+/Users/rebeccalemke/cathedral-real/rust-bindings/target/debug/build/clang-sys-42b60e075e948d47/out/dynamic.rs:
+
+# env-dep:OUT_DIR=/Users/rebeccalemke/cathedral-real/rust-bindings/target/debug/build/clang-sys-42b60e075e948d47/out

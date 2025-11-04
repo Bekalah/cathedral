@@ -1,0 +1,70 @@
+{
+  "$schema": "./schema.json",
+  "version": "1.0.0",
+  "name": "Cathedral of Circuits",
+  "description": "Living tarot system with 22 Major Arcana as playable character classes",
+  "proposals": [],
+  "architecture": {
+    "layers": {
+      "core": {
+        "description": "Python rendering engine & Frater Achad system",
+        "components": ["design-suite", "hall-of-mysteries"]
+      },
+      "game": {
+        "description": "TypeScript game engines & Godot implementation",
+        "components": [
+          "packages/liber-arcanae",
+          "packages/circuitum99",
+          "packages/game-engine",
+          "godot"
+        ]
+      },
+      "integration": {
+        "description": "Cross-platform bridges and loaders",
+        "components": ["tools/export", "interop/web", "interop/godot"]
+      }
+    },
+    "data_flow": {
+      "python_render": "design-suite → JSON export",
+      "python_achad": "hall-of-mysteries → JSON export → integration bridge",
+      "typescript_import": "JSON → liber-arcanae types → game-engine",
+      "godot_import": "JSON → achad_loader.gd → arcana_registry",
+      "unified_export": "combined_export.py → all platforms"
+    }
+  },
+  "characters": {
+    "system": "22 Major Arcana",
+    "mapping": "Historical occultist + Cathedral character pairs",
+    "implementation": {
+      "python": "hall-of-mysteries/frater_achad_system.py",
+      "typescript": "packages/liber-arcanae/src/arcana/*.ts",
+      "godot": "godot/scripts/core/character_base.gd",
+      "documentation": "design-suite/COMPLETE_22_ARCANA_CHARACTER_MAPPING.md"
+    }
+  },
+  "systems": {
+    "codex_144_99": {
+      "manifestation_nodes": 144,
+      "dissolution_gates": 99,
+      "ratio": 1.454545,
+      "fibonacci_8th": true
+    },
+    "tree_of_life": {
+      "standard": "Kether above, Malkuth below",
+      "achad_inversion": "Malkuth above, Kether below (Aeon of Maat)",
+      "sephiroth": 10,
+      "paths": 22,
+      "hidden": "Daath (Abyss crossing)"
+    },
+    "22_pathways": {
+      "hebrew_letters": "Aleph through Tav",
+      "true_will": "Individual soul paths",
+      "achad_system": "Q.B.L., Liber 31"
+    }
+  },
+  "deployment": {
+    "github": "Bekalah/cathedral",
+    "web": "bekalah.github.io/cathedral",
+    "platforms": ["web", "godot", "standalone_python"]
+  }
+}

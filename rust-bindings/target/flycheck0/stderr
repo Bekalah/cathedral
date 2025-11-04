@@ -1,0 +1,110 @@
+   2.133543141s  INFO prepare_target{force=false package_id=cathedral-godot v1.0.0 (/Users/rebeccalemke/cathedral-real/rust-bindings) target="cathedral_godot"}: cargo::core::compiler::fingerprint: fingerprint error for cathedral-godot v1.0.0 (/Users/rebeccalemke/cathedral-real/rust-bindings)/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("cathedral_godot", ["cdylib"], "/Users/rebeccalemke/cathedral-real/rust-bindings/src/lib.rs", Edition2021) }
+   2.135046158s  INFO prepare_target{force=false package_id=cathedral-godot v1.0.0 (/Users/rebeccalemke/cathedral-real/rust-bindings) target="cathedral_godot"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/rebeccalemke/cathedral-real/rust-bindings/target/debug/.fingerprint/cathedral-godot-d6ee994ce3900572/lib-cathedral_godot`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::cli::main
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: std::rt::lang_start_internal
+  17: _main
+  18: <unknown>
+   2.392530278s  INFO prepare_target{force=false package_id=cathedral-godot v1.0.0 (/Users/rebeccalemke/cathedral-real/rust-bindings) target="cathedral_godot"}: cargo::core::compiler::fingerprint: fingerprint error for cathedral-godot v1.0.0 (/Users/rebeccalemke/cathedral-real/rust-bindings)/Check { test: true }/TargetInner { name_inferred: true, ..: lib_target("cathedral_godot", ["cdylib"], "/Users/rebeccalemke/cathedral-real/rust-bindings/src/lib.rs", Edition2021) }
+   2.392573426s  INFO prepare_target{force=false package_id=cathedral-godot v1.0.0 (/Users/rebeccalemke/cathedral-real/rust-bindings) target="cathedral_godot"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/rebeccalemke/cathedral-real/rust-bindings/target/debug/.fingerprint/cathedral-godot-9d3d1d56152f11b6/test-lib-cathedral_godot`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::cli::main
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: std::rt::lang_start_internal
+  17: _main
+  18: <unknown>
+   2.394520937s  INFO prepare_target{force=false package_id=cathedral-godot v1.0.0 (/Users/rebeccalemke/cathedral-real/rust-bindings) target="cathedral_cli"}: cargo::core::compiler::fingerprint: fingerprint error for cathedral-godot v1.0.0 (/Users/rebeccalemke/cathedral-real/rust-bindings)/Check { test: false }/TargetInner { name: "cathedral_cli", doc: true, ..: with_path("/Users/rebeccalemke/cathedral-real/rust-bindings/src/bin/main.rs", Edition2021) }
+   2.394548231s  INFO prepare_target{force=false package_id=cathedral-godot v1.0.0 (/Users/rebeccalemke/cathedral-real/rust-bindings) target="cathedral_cli"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/rebeccalemke/cathedral-real/rust-bindings/target/debug/.fingerprint/cathedral-godot-28c718bfc8ddd7bf/bin-cathedral_cli`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::cli::main
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: std::rt::lang_start_internal
+  17: _main
+  18: <unknown>
+   2.395979967s  INFO prepare_target{force=false package_id=cathedral-godot v1.0.0 (/Users/rebeccalemke/cathedral-real/rust-bindings) target="cathedral_cli"}: cargo::core::compiler::fingerprint: fingerprint error for cathedral-godot v1.0.0 (/Users/rebeccalemke/cathedral-real/rust-bindings)/Check { test: true }/TargetInner { name: "cathedral_cli", doc: true, ..: with_path("/Users/rebeccalemke/cathedral-real/rust-bindings/src/bin/main.rs", Edition2021) }
+   2.396020723s  INFO prepare_target{force=false package_id=cathedral-godot v1.0.0 (/Users/rebeccalemke/cathedral-real/rust-bindings) target="cathedral_cli"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/rebeccalemke/cathedral-real/rust-bindings/target/debug/.fingerprint/cathedral-godot-0a8971ca12b3480a/test-bin-cathedral_cli`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::cli::main
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: std::rt::lang_start_internal
+  17: _main
+  18: <unknown>
+    Checking cathedral-godot v1.0.0 (/Users/rebeccalemke/cathedral-real/rust-bindings)
+error: could not compile `cathedral-godot` (bin "cathedral_cli") due to 1 previous error
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `cathedral-godot` (bin "cathedral_cli" test) due to 1 previous error
+error: could not compile `cathedral-godot` (lib test) due to 8 previous errors; 3 warnings emitted
+error: could not compile `cathedral-godot` (lib) due to 8 previous errors; 3 warnings emitted

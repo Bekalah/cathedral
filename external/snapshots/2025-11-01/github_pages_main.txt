@@ -1,0 +1,7 @@
+Source: https://bekalah.github.io/cathedral
+Fetched: 2025-11-01T00:00:00Z (approx)
+
+Cosmic Helix Renderer - layered sacred geometry (offline, ND-safe) Loading palette...
+This static renderer encodes Vesica, Tree-of-Life, Fibonacci, and a static
+double-helix lattice. No animation, no autoplay, no external libs. Open this file
+directly.

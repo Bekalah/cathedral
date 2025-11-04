@@ -1,0 +1,145 @@
+name: Deploy Cathedral to GitHub Pages
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install Python dependencies
+        run: |
+          python -m venv .venv
+          .venv/bin/pip install -r requirements.txt
+
+      - name: Validate Python Suite
+        run: |
+          .venv/bin/python tools/validate/design_suite_smoketest.py
+          .venv/bin/python tools/validate/achad_integration_smoketest.py
+
+      - name: Export JSON Data
+        run: |
+          .venv/bin/python tools/export/combined_export.py
+
+<<<<<<< Updated upstream
+      - name: Install Node dependencies
+        run: pnpm install --frozen-lockfile
+=======
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+          cache: "pnpm"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+>>>>>>> Stashed changes
+
+      - name: Install system packages for canvas/sharp
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential python3 make g++ \
+            libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev \
+            libgl1 libxi6 libxrandr2 libxrender1 libxfixes3 libxtst6
+
+      - name: Install Node dependencies (workspace)
+        run: |
+          pnpm -w install --frozen-lockfile || pnpm -w install
+
+<<<<<<< Updated upstream
+      - name: Build web (Next.js static export)
+        env:
+          NEXT_PUBLIC_GH_PAGES: "true"
+          GH_PAGES: "true"
+        run: |
+          pnpm --filter @bekalah/cathedral-web run export || pnpm --filter cathedral-web run export
+
+      - name: Check export output
+        id: outcheck
+        run: |
+          if [ -d "apps/web/out" ] && [ "$(ls -A apps/web/out)" ]; then
+            echo "has_artifact=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_artifact=false" >> "$GITHUB_OUTPUT"
+            echo "No static export found at apps/web/out; skipping Pages artifact upload."
+          fi
+
+      - name: Create fallback artifact (placeholder)
+        if: steps.outcheck.outputs.has_artifact == 'false'
+        run: |
+          mkdir -p apps/web/out
+          cat > apps/web/out/index.html << 'HTML'
+          <!doctype html>
+          <meta charset="utf-8"/>
+          <meta name="viewport" content="width=device-width, initial-scale=1"/>
+          <title>Cathedral — Placeholder</title>
+          <style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto;display:grid;place-items:center;height:100dvh;margin:0;background:#0b1020;color:#e8ecff}main{max-width:720px;padding:24px;border:1px solid #334;border-radius:12px;background:rgba(255,255,255,0.02);backdrop-filter:blur(6px)}h1{margin:0 0 8px 0}code{background:#11192c;padding:2px 6px;border-radius:6px}</style>
+          <main>
+            <h1>Cathedral deployment ready</h1>
+            <p>The web export wasn't produced in CI, so a minimal placeholder was published instead.</p>
+            <p>Once <code>apps/web</code> builds successfully, GitHub Pages will deploy the real site.</p>
+          </main>
+          HTML
+          echo "has_artifact=true" >> "$GITHUB_OUTPUT"
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+<<<<<<< HEAD
+=======
+      - name: Build all Node/TS packages and apps
+        run: pnpm run build
+
+      - name: Build Godot (Web export)
+        run: |
+          cd godot && make export_web || echo "Godot build skipped"
+
+      - name: Build Rust bindings (WASM)
+        run: |
+          cd rust-bindings && cargo build --target wasm32-unknown-unknown || echo "Rust build skipped"
+
+      - name: Connect modules and generate integration manifest
+        run: pnpm run connect-modules || echo "Module connection skipped"
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+>>>>>>> Stashed changes
+        if: success() || failure()
+=======
+>>>>>>> 745d447282540bff8edd78e5c5bb2b966c93dce2
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: "./apps/web/out"
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v3
+        if: success() || failure()

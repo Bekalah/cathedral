@@ -1,0 +1,20 @@
+{
+  "name": "@cathedral/avatar-experience-system",
+  "version": "1.0.0",
+  "description": "Avatar Experience System - Multi-modal fractal avatar experiences with Liber Arcanae integration",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node src/index.js",
+    "test": "node test.js"
+  },
+  "keywords": [
+    "avatar",
+    "fractal",
+    "tarot",
+    "experiences"
+  ],
+  "author": "Rebecca Respawn",
+  "license": "MIT"
+}

@@ -1,0 +1,6 @@
+# Agent of Kaoz Integration Requirements (Azure removed by policy)
+fastapi
+uvicorn
+pydantic
+python-multipart
+aiofiles

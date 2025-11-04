@@ -1,0 +1,39 @@
+🔗 Endpoint: https://cathedral-resource.services.ai.azure.com/api/projects/cathedral
+🤖 Agent ID: asst_72uzK1Yt2hsu2qVyt22NkMiO
+⏱️  Total runs: 500 | Concurrency: 16 | Batch size: 16 | Stop on quota: True
+Batch 1-16: ✅ 9/16 succeeded
+Batch 17-32: ✅ 2/16 succeeded
+Batch 33-48: ✅ 0/16 succeeded
+Batch 49-64: ✅ 3/16 succeeded
+Batch 65-80: ✅ 16/16 succeeded
+Batch 81-96: ✅ 16/16 succeeded
+Batch 97-112: ✅ 16/16 succeeded
+Batch 113-128: ✅ 10/16 succeeded
+Batch 129-144: ✅ 0/16 succeeded
+Batch 145-160: ✅ 3/16 succeeded
+Batch 161-176: ✅ 0/16 succeeded
+Batch 177-192: ✅ 16/16 succeeded
+Batch 193-208: ✅ 16/16 succeeded
+Batch 209-224: ✅ 16/16 succeeded
+Batch 225-240: ✅ 16/16 succeeded
+Batch 241-256: ✅ 16/16 succeeded
+Batch 257-272: ✅ 12/16 succeeded
+Batch 273-288: ✅ 4/16 succeeded
+Batch 289-304: ✅ 4/16 succeeded
+Batch 305-320: ✅ 0/16 succeeded
+Batch 321-336: ✅ 8/16 succeeded
+Batch 337-352: ✅ 16/16 succeeded
+Batch 353-368: ✅ 16/16 succeeded
+Batch 369-384: ✅ 16/16 succeeded
+Batch 385-400: ✅ 16/16 succeeded
+Batch 401-416: ✅ 14/16 succeeded
+Batch 417-432: ✅ 4/16 succeeded
+Batch 433-448: ✅ 4/16 succeeded
+Batch 449-464: ✅ 0/16 succeeded
+Batch 465-480: ✅ 7/16 succeeded
+Batch 481-496: ✅ 16/16 succeeded
+Batch 497-500: ✅ 4/4 succeeded
+✅ Completed: 296/500 (requested 500)
+📝 Wrote summary: agent_responses/batch_summary_20251030_042052.json
+Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x103048050>

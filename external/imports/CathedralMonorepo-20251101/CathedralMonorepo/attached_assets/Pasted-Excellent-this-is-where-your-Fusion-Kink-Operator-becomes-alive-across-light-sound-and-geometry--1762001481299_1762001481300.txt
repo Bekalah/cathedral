@@ -1,0 +1,139 @@
+Excellent — this is where your Fusion Kink Operator becomes alive across light, sound, and geometry, the way Codex 144:99 intends it: the moment will (A) meets imagination (B), the derivative (D) radiates as hue, harmonic, and motion.
+
+Below is a single self-contained module you can slot into your Rust + Godot workspace.
+It joins the earlier fusion_kink.rs with a shader-bound material and a sound oscillator, creating a visible and audible alchemical field.
+
+⸻
+
+🜏 fusion_kink_live.rs — Light × Sound × Geometry Operator //! ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//! 🜏  FUSION-KINK  LIVE  —  Codex 144:99  |  Magnum Opus v1.0
+//! ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//! Rust module for Godot 4.x + godot-rust bindings.
+//! Couples the symbolic operator  A × B = D  into dynamic light + sound.
+//!
+//! Dependencies:
+//!   godot = "0.12"
+//!   kira = "0.9"           // for sound synthesis (ND-safe volume)
+//!   glam = "0.27"          // vector math
+//!
+//! Copy this file into  crates/fusion_kink_live/src/lib.rs
+//! Register via  godot::register_classes().
+//! ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+use godot::prelude::*;
+use glam::{Vec3};
+use kira::{manager::AudioManager, sound::SoundSettings, tween::Tween, sound::static_sound::StaticSoundData};
+use std::f32::consts::PI;
+
+#[derive(GodotClass)]
+#[class(base=Node3D)]
+pub struct FusionKinkLive {
+    #[base]
+    base: Base<Node3D>,
+
+    #[export]
+    phase_speed: f32,
+
+    #[export]
+    color_amp: f32,
+
+    a: Vec3,
+    b: Vec3,
+    phase: f32,
+    audio: Option<AudioManager>,
+}
+
+#[godot_api]
+impl Node3DVirtual for FusionKinkLive {
+    fn _ready(&mut self) {
+        self.a = Vec3::new(0.3, 1.0, 0.0);
+        self.b = Vec3::new(0.0, 0.5, 1.0);
+        self.phase = 0.0;
+        self.phase_speed = 1.2;
+        self.color_amp = 1.0;
+        self.audio = AudioManager::new(kira::manager::backend::DefaultBackend::new().unwrap()).ok();
+    }
+
+    fn _process(&mut self, delta: f64) {
+        self.phase += self.phase_speed * delta as f32;
+
+        // compute fusion
+        let d = fusion_kink(self.a, self.b, self.phase);
+        self.apply_color(&d);
+        self.apply_rotation(&d);
+        self.emit_tone(&d);
+    }
+}
+
+impl FusionKinkLive {
+    fn apply_color(&mut self, d: &Vec3) {
+        if let Some(mat) = self.base.get_surface_material(0) {
+            if let Ok(shader_mat) = mat.cast::<ShaderMaterial>() {
+                let hue = (d.x * 0.5 + 0.5) * self.color_amp;
+                let color = Color::from_hsv(hue, 0.8, 0.9);
+                shader_mat.set_shader_parameter("albedo_color", color);
+            }
+        }
+    }
+
+    fn apply_rotation(&mut self, d: &Vec3) {
+        self.base.rotate_y(d.y * 0.02);
+        self.base.rotate_x(d.x * 0.01);
+    }
+
+    fn emit_tone(&mut self, d: &Vec3) {
+        if let Some(mgr) = &mut self.audio {
+            let freq = 220.0 + (d.z * 220.0); // 220–440 Hz range
+            let wave = kira::sound::static_sound::StaticSoundData::from_sine(freq, 0.15, Tween::linear(0.3));
+            let _ = mgr.play(wave);
+        }
+    }
+}
+
+/// Quaternionic blend (from previous module)
+fn fusion_kink(a: Vec3, b: Vec3, phase: f32) -> Vec3 {
+    let na = a.normalize();
+    let nb = b.normalize();
+    let cross = na.cross(nb);
+    let scalar = phase.sin();
+    (na + nb + cross * scalar).normalize()
+} 🜹 Companion Shader (fusion_kink.gdshader)  shader_type spatial;
+uniform vec3 albedo_color : hint_color;
+
+void fragment() {
+    ALBEDO = albedo_color.rgb;
+    EMISSION = albedo_color.rgb * 0.4;
+    ROUGHNESS = 0.3;
+} Attach this material to any mesh (a sphere or sigil plate).
+When you run the scene, the mesh will breathe color and hum softly in real time —
+the literal manifestation of the A × B = D fusion.
+
+⸻
+
+🜔 Integration Notes 🜔 Integration Note Layer
+Function
+Godot Scene
+Place a FusionKinkLive node under your Cathedral root; assign shader.
+Light
+Driven by the D-vector hue.
+Sound
+Generated via kira sine wave (ND-safe amplitude).
+Geometry
+Rotation expresses polarity dance; you can feed D to particle emitters for daimon trails.
+
+🜍 Codex Documentation Snippet ### ⚗️ Fusion Kink — Live Operator (Magnum Opus 1.0)
+
+`FusionKinkLive` unites the three alchemical bodies:
+
+| Principle | Element | System Vector | Manifestation |
+|:--|:--|:--|:--|
+| **A** | Fire / Will | Input Vector 1 | rotation impulse |
+| **B** | Water / Imagination | Input Vector 2 | color morph |
+| **×** | The Kink / Tension | phase field | frequency oscillation |
+| **D** | Stone / Manifest | emergent vector | light + sound synthesis |
+
+When compiled inside Godot, the node becomes a *living grimoire cell*:  
+every frame resolves the marriage of opposites into a visible, audible harmonic.
+
+> “The kink is the moment of difference that creates motion.  
+>  Where A meets B, D becomes the world.” — Codex 144 § 99

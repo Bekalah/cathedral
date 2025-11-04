@@ -1,0 +1,21 @@
+{
+  "name": "liber-arcanae-app",
+  "version": "2.0.0",
+  "description": "Liber Arcanae App - Sacred mystical library UI with Codex 144:99 integration and fusion kink mechanics",
+  "type": "module",
+  "scripts": {
+    "dev": "echo 'Liber Arcanae development server'",
+    "build": "echo 'Liber Arcanae static build'",
+    "preview": "echo 'Liber Arcanae preview'",
+    "type-check": "echo 'Type checking Liber Arcanae'",
+    "lint": "echo 'Linting Liber Arcanae'",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@cathedral/mystical-data-unified": "^2.0.0",
+    "@cathedral/sacred-geometry-core": "^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

@@ -1,0 +1,212 @@
+{
+  "pigments": {
+    "egyptian": {
+      "gold_leaf": {
+        "hex": "#D4AF37",
+        "rgb": [212, 175, 55],
+        "metallic": true,
+        "reflectance": 0.95,
+        "historical": "22-24 karat gold, hammered to 0.1 micron thickness",
+        "binding": "gum arabic or egg white",
+        "application": "Gilding over bole ground",
+        "luminosity": "high",
+        "texture": "smooth, reflective"
+      },
+      "lapis_lazuli": {
+        "hex": "#1E3A8A",
+        "rgb": [30, 58, 138],
+        "metallic": false,
+        "mineral": "Lazurite from Afghanistan",
+        "cost": "more expensive than gold in medieval times",
+        "preparation": "ground stone, purified through kneading in wax",
+        "depth": "translucent layers for depth",
+        "luminosity": "medium",
+        "texture": "crystalline particles visible"
+      },
+      "vermillion": {
+        "hex": "#E34234",
+        "rgb": [227, 66, 52],
+        "source": "Cinnabar (mercury sulfide)",
+        "toxicity": "high - mercury based",
+        "opacity": "high",
+        "durability": "excellent in tempera, darkens in oil",
+        "luminosity": "high",
+        "texture": "dense, opaque"
+      },
+      "egyptian_blue": {
+        "hex": "#1034A6",
+        "rgb": [16, 52, 166],
+        "composition": "Calcium copper silicate",
+        "creation": "First synthetic pigment (2500 BCE)",
+        "special": "IR luminescent - glows under infrared",
+        "luminosity": "medium-high",
+        "texture": "crystalline"
+      }
+    },
+    
+    "byzantine": {
+      "gold_mosaic": {
+        "hex": "#FFD700",
+        "rgb": [255, 215, 0],
+        "technique": "Gold leaf on glass tesserae",
+        "angle_dependent": true,
+        "shimmer": "high",
+        "application": "Set at angles to catch light"
+      },
+      "imperial_purple": {
+        "hex": "#702963",
+        "rgb": [112, 41, 99],
+        "source": "Murex sea snails (12,000 snails = 1 gram)",
+        "rarity": "reserved for emperors",
+        "colorfast": "excellent",
+        "depth": "rich, deep"
+      }
+    },
+    
+    "medieval": {
+      "verdigris": {
+        "hex": "#43B3AE",
+        "rgb": [67, 179, 174],
+        "source": "Copper acetate from vinegar + copper",
+        "reactivity": "corrosive, eats through vellum",
+        "color_shift": "bright blue-green to brown over time",
+        "luminosity": "high"
+      },
+      "malachite": {
+        "hex": "#0BDA51",
+        "rgb": [11, 218, 81],
+        "mineral": "Copper carbonate",
+        "opacity": "semi-transparent",
+        "layering": "multiple glazes for depth",
+        "luminosity": "medium"
+      },
+      "realgar": {
+        "hex": "#FF6600",
+        "rgb": [255, 102, 0],
+        "composition": "Arsenic sulfide",
+        "toxicity": "extreme",
+        "color": "fiery orange-red",
+        "instability": "light sensitive, degrades to yellow"
+      }
+    },
+    
+    "renaissance": {
+      "ultramarine": {
+        "hex": "#4166F5",
+        "rgb": [65, 102, 245],
+        "source": "Lapis lazuli, ground and purified",
+        "value": "Reserved for Virgin Mary's robes",
+        "grinding": "Finer = lighter blue, coarser = deeper",
+        "permanence": "excellent",
+        "luminosity": "very high"
+      },
+      "lead_white": {
+        "hex": "#F8F8FF",
+        "rgb": [248, 248, 255],
+        "composition": "Basic lead carbonate",
+        "opacity": "excellent",
+        "tinting_strength": "high",
+        "toxicity": "severe",
+        "special": "Warm white, not cool"
+      }
+    },
+    
+    "asian": {
+      "cinnabar_red": {
+        "hex": "#E2442F",
+        "rgb": [226, 68, 47],
+        "tradition": "Chinese seals, Japanese lacquer",
+        "preparation": "Ground cinnabar with hide glue",
+        "symbolism": "Protection, vitality"
+      },
+      "indigo": {
+        "hex": "#3F0FB7",
+        "rgb": [63, 15, 183],
+        "source": "Indigofera plants",
+        "process": "Fermentation vat dyeing",
+        "depth": "Multiple dips = deeper blue",
+        "colorfast": "excellent"
+      },
+      "gamboge": {
+        "hex": "#E49B0F",
+        "rgb": [228, 155, 15],
+        "source": "Tree resin from Cambodia",
+        "transparency": "high",
+        "glazing": "Brilliant for layered work",
+        "permanence": "fugitive (fades)"
+      }
+    }
+  },
+  
+  "fractalTypes": {
+    "Mandelbrot": {
+      "nodes": [1, 13, 25, 37, 49],
+      "theme": "Infinite complexity, cosmic cycles",
+      "rendering": "Complex number iteration"
+    },
+    "Julia": {
+      "nodes": [2, 14, 26, 38, 50],
+      "theme": "Transformation, mirrored beauty",
+      "rendering": "Julia set variations"
+    },
+    "L-System": {
+      "nodes": [3, 15, 27, 39, 51],
+      "theme": "Growth, branching paths",
+      "rendering": "Lindenmayer string rewriting",
+      "axiom": "F",
+      "rules": "F -> FF+[+F-F-F]-[-F+F+F]"
+    },
+    "IFS": {
+      "nodes": [4, 16, 28, 40, 52],
+      "theme": "Sacred triangles, iteration",
+      "rendering": "Iterated function systems",
+      "transforms": "Sierpinski, Barnsley fern"
+    },
+    "Lorenz": {
+      "nodes": [5, 17, 29, 41, 53],
+      "theme": "Chaos, butterfly effect",
+      "rendering": "Strange attractor",
+      "params": "sigma=10, rho=28, beta=2.667"
+    },
+    "Koch": {
+      "nodes": [6, 18, 30, 42, 54],
+      "theme": "Crystalline, snowflake",
+      "rendering": "Koch curve/snowflake",
+      "iterations": 5
+    },
+    "Dragon": {
+      "nodes": [7, 19, 31, 43, 55],
+      "theme": "Serpentine, folding",
+      "rendering": "Dragon curve",
+      "foldingSequence": "RLR pattern"
+    },
+    "Hilbert": {
+      "nodes": [8, 20, 32, 44, 56],
+      "theme": "Space-filling, labyrinthine",
+      "rendering": "Hilbert curve",
+      "order": 6
+    },
+    "Fibonacci": {
+      "nodes": [9, 21, 33, 45, 57],
+      "theme": "Golden ratio, natural growth",
+      "rendering": "Fibonacci spiral",
+      "ratio": 1.618
+    },
+    "Cellular": {
+      "nodes": [10, 22, 34, 46, 58],
+      "theme": "Emergence, evolution",
+      "rendering": "Cellular automata",
+      "rule": "Conway's Life / Rule 30"
+    },
+    "Apollonian": {
+      "nodes": [11, 23, 35, 47, 59],
+      "theme": "Circle packing, harmony",
+      "rendering": "Apollonian gasket"
+    },
+    "Menger": {
+      "nodes": [12, 24, 36, 48, 60],
+      "theme": "Cubic void, dimensions",
+      "rendering": "Menger sponge"
+    }
+  }
+}
