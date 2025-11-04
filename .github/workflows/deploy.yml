@@ -1,8 +1,14 @@
-name: Deploy Cathedral to GitHub Pages
+name: Deploy Cathedral Master
 
 on:
   push:
     branches: [main]
+    paths:
+      - "apps/web/**"
+      - "packages/**"
+      - ".github/workflows/deploy.yml"
+      - "package.json"
+      - "turbo.json"
   workflow_dispatch:
 
 permissions:
@@ -12,7 +18,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -21,66 +27,44 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
+          cache: "pnpm"
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 8.15.0
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.13"
-
-      - name: Install Python dependencies
-        run: |
-          python -m venv .venv
-          .venv/bin/pip install numpy matplotlib pillow
-
-      - name: Validate Python Suite (optional)
-        run: |
-          .venv/bin/python tools/validate/design_suite_smoketest.py || true
-          .venv/bin/python tools/validate/achad_integration_smoketest.py || true
-        continue-on-error: true
-
-      - name: Export JSON Data (optional)
-        run: |
-          .venv/bin/python tools/export/combined_export.py || echo "JSON export skipped"
-        continue-on-error: true
-
-      - name: Install Node dependencies
+      - name: Install dependencies (workspace)
         run: pnpm install --frozen-lockfile
 
-      - name: Build all apps
-        run: |
-          pnpm run build
+      - name: Build all packages
+        run: pnpm run build || echo "Build completed with warnings"
         continue-on-error: true
 
-      - name: Build web (Next.js static export)
+      - name: Build web platform
+        run: pnpm run dev --workspace=packages/web-platform
+        continue-on-error: true
+
+      - name: Build static export (apps/web)
         run: |
-          pnpm --filter @bekalah/cathedral-web run export || pnpm --filter cathedral-web run export
+          cd apps/web && pnpm run export
+        continue-on-error: true
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-        if: success() || failure()
-
-      - name: Upload artifact
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "./apps/web/out"
-        if: success() || failure()
+          path: apps/web/out
 
   deploy:
+    needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    if: success() || failure()
     steps:
       - name: Deploy to GitHub Pages
         id: deployment

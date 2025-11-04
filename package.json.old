@@ -1,7 +1,7 @@
 {
   "name": "cathedral-magnum-opus",
   "version": "1.0.0",
-  "description": "🜏 Living codex-engine: Codex 144:99 · Fusion Kink (A×B=D) · Liber Arcanae - Complete consolidation of all 13 repos",
+  "description": "🜏 Living codex-engine: Codex 144:99 · Fusion Kink (A×B=D) · Liber Arcanae - Replacing all 13 bekalah GitHub repos",
   "private": true,
   "workspaces": [
     "packages/*",
@@ -13,15 +13,11 @@
     "test": "turbo run test",
     "lint": "turbo run lint",
     "clean": "turbo run clean",
-    "web:dev": "cd apps/web && npm run dev",
-    "web:build": "cd apps/web && npm run build",
     "console": "npm run dev --workspace=packages/web-platform",
     "cathedral": "cd godot-cathedral && godot --path .",
     "rust:build": "cd rust-engines && cargo build --workspace --release",
     "rust:test": "cd rust-engines && cargo test --workspace",
-    "fusion": "echo '🜏 A × B = D - Fusion Kink alive' && npm run rust:build && npm run cathedral",
-    "consolidate": "bash tools/sync/consolidate_repos.sh",
-    "sync": "bash tools/sync/cathedral_master_sync.sh"
+    "fusion": "echo '🜏 A × B = D - Fusion Kink alive' && npm run rust:build && npm run cathedral"
   },
   "keywords": [
     "fusion-kink",
