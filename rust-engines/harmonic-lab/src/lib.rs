@@ -9,8 +9,10 @@ use kira::{
     manager::{AudioManager, AudioManagerSettings, backend::DefaultBackend},
     sound::static_sound::{StaticSoundData, StaticSoundSettings},
     tween::Tween,
+    sound::static_sound::cursor::Cursor,
 };
 use fusion_kink::DerivativeD;
+use std::time::Duration;
 
 /// Solfeggio sacred frequencies (Hz)
 pub const SOLFEGGIO_FREQUENCIES: [f32; 9] = [
@@ -66,16 +68,24 @@ impl HarmonicSynth {
 
     /// Emit a pure tone with ND-safe controls
     fn emit_tone(&mut self, frequency: f32, amplitude: f32, fade_duration: f64) -> Result<(), Box<dyn std::error::Error>> {
-        let sound_data = StaticSoundData::from_sine_wave(
-            frequency as f64,
-            fade_duration,
-        );
+        use std::time::Duration;
+        
+        // Create a basic sine wave using a simple tone generation
+        let samples = (fade_duration * 44100.0) as usize;
+        let mut data = vec![0f32; samples];
+        
+        for i in 0..samples {
+            let t = i as f32 / 44100.0;
+            data[i] = (2.0 * std::f32::consts::PI * frequency * t).sin() * amplitude;
+        }
+        
+        let sound_data = StaticSoundData::from_cursor(data, 44100.0, 1)?;
         
         self.manager.play(sound_data.with_settings(
             StaticSoundSettings::new()
                 .volume(amplitude as f64)
                 .fade_in_tween(Tween {
-                    duration: fade_duration,
+                    duration: Duration::from_secs_f64(fade_duration),
                     ..Default::default()
                 })
         ))?;
