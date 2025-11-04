@@ -13,7 +13,7 @@
     "build:analyze": "ANALYZE=true next build",
     "start": "next start",
     "start:prod": "NODE_ENV=production next start",
-    "export": "next build",
+    "export": "next build && next export",
     "serve:export": "npx serve out",
     "type-check": "tsc --noEmit",
     "type-check:watch": "tsc --noEmit --watch",
