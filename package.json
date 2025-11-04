@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "🜏 Living codex-engine: Codex 144:99 · Fusion Kink (A×B=D) · Liber Arcanae - Complete consolidation of all 13 repos",
   "private": true,
+  "packageManager": "pnpm@8.15.0",
   "workspaces": [
     "packages/*",
     "apps/*"
