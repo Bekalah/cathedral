@@ -38,11 +38,11 @@
     "@typescript-eslint/parser": "^8.15.0"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.18.0"
   },
   "keywords": [
     "game-development",
-    "web-applications", 
+    "web-applications",
     "react",
     "typescript",
     "three.js",

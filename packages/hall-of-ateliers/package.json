@@ -18,7 +18,7 @@
   "author": "Rebecca Respawn",
   "license": "UNLICENSED",
   "engines": {
-    "node": ">=25.0.0"
+    "node": ">=20.18.0"
   },
   "dependencies": {
     "three": "^0.165.0",

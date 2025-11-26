@@ -62,7 +62,7 @@
     "url": "https://github.com/Bekalah/cathedral.git"
   },
   "homepage": "https://bekalah.github.io/cathedral",
-  "packageManager": "pnpm@8.14.0",
+  "packageManager": "pnpm@8.15.0",
   "cathedral": {
     "living_arcanae": {
       "total_cards": 22,
