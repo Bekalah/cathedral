@@ -51,9 +51,12 @@ run_improvement_cycle() {
   
   mkdir -p "$MONOREPO_ROOT/packages/shared/src/tools"
   
+  # Capitalize first letter of AREA
+  AREA_CAP=$(echo "$AREA" | awk '{print toupper(substr($0,1,1)) tolower(substr($0,2))}')
+  
   cat > "$TOOL_PATH" << EOF
 /**
- * Sophisticated ${AREA^} Enhancer
+ * Sophisticated ${AREA_CAP} Enhancer
  * 
  * Generated from doubt moment: $TIMESTAMP
  * Improvement: Enhanced $AREA with sophisticated styling
@@ -67,14 +70,14 @@ run_improvement_cycle() {
  * It represents a perfect improvement with sophisticated styling.
  */
 
-export class SophisticatedEnhancer {
+export class Sophisticated${AREA_CAP}Enhancer {
   enhance(): void {
-    // Sophisticated enhancement
+    // Sophisticated enhancement of $AREA
     // Applied: $(date)
   }
 }
 
-export const sophisticatedEnhancer = new SophisticatedEnhancer();
+export const sophisticated${AREA_CAP}Enhancer = new Sophisticated${AREA_CAP}Enhancer();
 EOF
 
   echo "  ✅ Tool created: $TOOL_NAME"
