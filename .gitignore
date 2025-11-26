@@ -173,3 +173,15 @@ agent_responses/
 *.temp
 .DS_Store
 build
+
+# Security - Never commit these
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+*.p12
+*.pfx
+secrets/
+*.secret
+credentials.json

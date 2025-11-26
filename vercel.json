@@ -1,72 +1,42 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "version": 2,
-  "name": "cathedral",
-  "buildCommand": "pnpm run build",
-  "installCommand": "pnpm install",
-  "outputDirectory": "apps/web/out",
-  "framework": "nextjs",
-  "regions": ["iad1"],
-  "builds": [
-    {
-      "src": "apps/web/package.json",
-      "use": "@vercel/next"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/apps/web/api/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/apps/web/$1"
-    }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  },
+  "buildCommand": "pnpm build",
+  "outputDirectory": "apps/web/dist",
+  "framework": null,
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
         {
-          "key": "X-Cathedral-Version",
-          "value": "2.0.0"
+          "key": "X-Frame-Options",
+          "value": "DENY"
         },
         {
-          "key": "X-Codex-Version",
-          "value": "144:99"
-        }
-      ]
-    },
-    {
-      "source": "/assets/(.*)",
-      "headers": [
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
         {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "geolocation=(), microphone=(), camera=()"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; frame-ancestors 'none';"
         }
       ]
     }
   ],
   "rewrites": [
     {
-      "source": "/synth-lab",
-      "destination": "/apps/synth-lab/index.html"
-    },
-    {
-      "source": "/tarot-arena",
-      "destination": "/apps/tarot-arena/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
-  ],
-  "trailingSlash": true,
-  "cleanUrls": true,
-  "functions": {
-    "apps/web/api/**/*.ts": {
-      "runtime": "nodejs20.x",
-      "maxDuration": 10
-    }
-  }
+  ]
 }
-
