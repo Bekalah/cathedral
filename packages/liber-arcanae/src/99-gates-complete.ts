@@ -2,6 +2,7 @@
  * 99 Gates Complete - With Fractal Sound Art Mechanics
  * 
  * @package @cathedral/liber-arcanae
+ * @license CC0-1.0 - Public Domain
  * 
  * Enhanced with sophisticated improvements - Cycle Active
  * Perfect quality with ornate fractal sound art throughout
