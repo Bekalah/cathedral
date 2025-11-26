@@ -28,8 +28,12 @@ export * from './sophisticated-components';
 export * from './tools/creative-sacred-geometry-generator';
 export * from './tools/creative-frequency-synthesizer';
 export * from './tools/creative-color-harmony-generator';
+export * from './tools/creative-fusion-visualizer';
+export * from './tools/creative-pattern-generator';
 export {
   creativeSacredGeometryGenerator,
   creativeFrequencySynthesizer,
-  creativeColorHarmonyGenerator
+  creativeColorHarmonyGenerator,
+  creativeFusionVisualizer,
+  creativePatternGenerator
 } from './tools/creative-sacred-geometry-generator';
