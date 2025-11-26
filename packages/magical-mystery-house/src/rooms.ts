@@ -2,6 +2,12 @@
  * rooms
  * 
  * @package @cathedral/magical-mystery-house
+ * @license CC0-1.0 - Public Domain
+ * 
+ * Enhanced with sophisticated improvements - Cycle Active
+ * Perfect quality with ornate room details
+ * 
+ * Creative use: Game apps, exploration apps, visual apps, interactive apps
  */
 /**
  * Magical Mystery House - 99 Rooms System

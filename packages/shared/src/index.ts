@@ -37,5 +37,7 @@ export {
   creativeFusionVisualizer,
   creativePatternGenerator,
   creativeArcanaVisualizer,
-  creativeCodexMapper
+  creativeCodexMapper,
+  creativeGrimoireGenerator,
+  creativeGateActivator
 } from './tools/creative-sacred-geometry-generator';
