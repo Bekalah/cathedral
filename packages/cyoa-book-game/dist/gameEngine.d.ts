@@ -1,3 +1,8 @@
+/**
+ * gameEngine.d
+ * 
+ * @package @cathedral/cyoa-book-game
+ */
 import { GameState, GameScene, PlayerStats, GameObject, RealObject } from './types';
 export declare class CathedralGameEngine {
     private gameState;

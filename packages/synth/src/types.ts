@@ -1,3 +1,8 @@
+/**
+ * types
+ * 
+ * @package @cathedral/synth
+ */
 // types.ts - audio engine types
 export interface OscillatorSpec {
   id: string;

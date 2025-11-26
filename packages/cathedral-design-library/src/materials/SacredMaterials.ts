@@ -1,4 +1,9 @@
 /**
+ * SacredMaterials
+ * 
+ * @package @cathedral/src
+ */
+/**
  * Sacred Materials Library
  * Traditional artistic materials and techniques for sacred art creation
  * Inspired by Ernst Fuchs, medieval grimoires, and visionary artists
@@ -1090,16 +1095,20 @@ export class SacredMaterialsLibrary {
 - **Alchemical Stage**: ${material.correspondences.alchemicalStage}
 
 ## 🛠️ Traditional Techniques
-${material.usage.traditionalTechniques.map(technique => `- ${technique}`).join('\n')}
+${material.usage.traditionalTechniques.map(technique => `- ${technique}`).join('
+')}
 
 ## ✨ Sacred Applications
-${material.usage.sacredApplications.map(app => `- ${app}`).join('\n')}
+${material.usage.sacredApplications.map(app => `- ${app}`).join('
+')}
 
 ## 🧪 Preparation Methods
-${material.usage.preparationMethods.map(method => `- ${method}`).join('\n')}
+${material.usage.preparationMethods.map(method => `- ${method}`).join('
+')}
 
 ## ⚠️ Safety Considerations
-${material.usage.safetyConsiderations.map(safety => `- ${safety}`).join('\n')}
+${material.usage.safetyConsiderations.map(safety => `- ${safety}`).join('
+')}
 
 ## 📖 Historical Context
 **Origin**: ${material.history.origin}

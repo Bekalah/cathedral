@@ -488,11 +488,11 @@ export {
 };
 
 // 📚 INITIALIZATION
-console.log('🌌 CODEX 144:99 × LIVING ARCANAE INTEGRATION LOADED');
-console.log('🎭 22 Archetypal Node Programs Ready');
-console.log('🛡️ Trauma Safety Protocols Active');
-console.log('⚗️ Authentic Magic Database Connected');
-console.log('🏛️ Trinity Architecture Integration Ready');
+// console.log('🌌 CODEX 144:99 × LIVING ARCANAE INTEGRATION LOADED');
+// console.log('🎭 22 Archetypal Node Programs Ready');
+// console.log('🛡️ Trauma Safety Protocols Active');
+// console.log('⚗️ Authentic Magic Database Connected');
+// console.log('🏛️ Trinity Architecture Integration Ready');
 
 /**
  * USAGE EXAMPLE:

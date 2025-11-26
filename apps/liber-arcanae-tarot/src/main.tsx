@@ -11,7 +11,7 @@ import './index.css';
 
 // Initialize the sacred systems
 const initializeCathedral = async () => {
-  console.log('🌟 Initializing Liber Arcanae Tarot App...');
+// console.log('🌟 Initializing Liber Arcanae Tarot App...');
 
   try {
     // Initialize the plugin system with all sacred systems
@@ -24,15 +24,15 @@ const initializeCathedral = async () => {
     // Get the modular system interface
     const cathedral = pluginManager.getModularSystem();
 
-    console.log('✅ Sacred systems initialized successfully');
-    console.log('📚 Codex 144:99:', cathedral.codex144.getAllNodes().length, 'nodes');
-    console.log('🃏 Liber Arcanae:', cathedral.liberArcanae.getAllCards().length, 'cards');
-    console.log('⚗️ Fusion Kink: Ready for sacred sessions');
+// console.log('✅ Sacred systems initialized successfully');
+// console.log('📚 Codex 144:99:', cathedral.codex144.getAllNodes().length, 'nodes');
+// console.log('🃏 Liber Arcanae:', cathedral.liberArcanae.getAllCards().length, 'cards');
+// console.log('⚗️ Fusion Kink: Ready for sacred sessions');
 
     return cathedral;
 
   } catch (error) {
-    console.error('❌ Error initializing sacred systems:', error);
+// console.error('❌ Error initializing sacred systems:', error);
     throw error;
   }
 };
@@ -49,7 +49,7 @@ initializeCathedral().then((cathedral) => {
     </React.StrictMode>
   );
 }).catch((error) => {
-  console.error('Failed to start Liber Arcanae Tarot App:', error);
+// console.error('Failed to start Liber Arcanae Tarot App:', error);
 
   // Render error state
   const root = ReactDOM.createRoot(

@@ -1,3 +1,8 @@
+/**
+ * colorScience.d
+ * 
+ * @package @cathedral/brain
+ */
 export declare class ColorScience {
     constructor();
     wavelengthToRGB(wavelength: number): {

@@ -1,9 +1,13 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "ui": "tui",
+  "globalDependencies": [
+    "tsconfig.json"
+  ],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", "build/**", ".turbo/cache/**"],
+      "outputs": ["dist/**", "build/**", ".next/**", "*.tsbuildinfo"],
       "env": ["NODE_ENV"]
     },
     "dev": {
@@ -11,7 +15,7 @@
       "persistent": true
     },
     "type-check": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^type-check"],
       "outputs": []
     },
     "lint": {
@@ -20,21 +24,15 @@
     },
     "test": {
       "dependsOn": ["build"],
-      "outputs": ["coverage/**", ".nyc_output/**"],
+      "outputs": ["coverage/**"],
       "env": ["NODE_ENV", "CI"]
     },
     "clean": {
-      "outputs": [],
       "cache": false
-    },
-    "web:dev": {
-      "cache": false,
-      "dependsOn": ["build"]
-    },
-    "web:build": {
-      "dependsOn": ["build"],
-      "outputs": ["apps/web/out/**"],
-      "cache": true
     }
+  },
+  "globalEnv": ["NODE_ENV", "CI"],
+  "remoteCache": {
+    "enabled": false
   }
 }

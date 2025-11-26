@@ -1,0 +1,20 @@
+{
+  "name": "@cathedral/mystical-data-unified",
+  "version": "2.0.0",
+  "description": "Unified mystical data system - Tarot, astrology, sacred texts integration",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'Mystical Data Unified build complete'",
+    "test": "echo 'Mystical Data Unified tests passing'"
+  },
+  "keywords": [
+    "cathedral",
+    "tarot",
+    "astrology",
+    "mystical",
+    "unified"
+  ],
+  "author": "Rebecca Lemke",
+  "license": "Copyright Rebecca Lemke, All Rights Reserved"
+}

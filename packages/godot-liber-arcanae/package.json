@@ -5,9 +5,9 @@
   "main": "liber_arcanae.gd",
   "type": "module",
   "scripts": {
-    "build": "echo 'Building Godot Liber Arcanae...' && mkdir -p dist && cp -r scenes scripts resources dist/",
+    "build": "tsc",
     "validate": "echo 'Validating tarot correspondences...' && node validate-tarot.js",
-    "export": "echo 'Exporting tarot system...' && pnpm run build",
+    "export": "echo 'Exporting tarot system...' && ppnpm run build",
     "test": "echo 'Testing card interactions...' && node test-cards.js"
   },
   "keywords": [
@@ -84,5 +84,11 @@
   ],
   "devDependencies": {
     "@types/node": "^20.10.0"
+  },
+  "types": "dist/index.d.ts",
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
   }
 }

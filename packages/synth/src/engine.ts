@@ -1,3 +1,8 @@
+/**
+ * engine
+ * 
+ * @package @cathedral/synth
+ */
 // engine.ts - lightweight synthesis graph planner (placeholder Web Audio binding)
 import { PatchDefinition, ChainGraphNode, RenderRequest } from './types';
 import { patchLibrary } from './patchLibrary';

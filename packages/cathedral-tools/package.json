@@ -1,0 +1,45 @@
+{
+  "name": "@cathedral/tools",
+  "version": "1.0.0",
+  "description": "Cathedral Tools - Utility functions and helpers for Cathedral systems",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "node dist/test.js"
+  },
+  "dependencies": {
+    "@cathedral/codex-144-99": "workspace:*",
+    "@cathedral/liber-arcanae": "workspace:*",
+    "@cathedral/shared": "workspace:*",
+    "@cathedral/art-generation-node": "workspace:*",
+    "@cathedral/synth": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0"
+  },
+  "keywords": [
+    "cathedral",
+    "tools",
+    "utilities",
+    "helpers",
+    "codex-144-99",
+    "liber-arcanae"
+  ],
+  "author": "Rebecca Respawn",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/cathedral-tools"
+  },
+  "homepage": "https://bekalah.github.io/cathedral/packages/cathedral-tools",
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
+  }
+}

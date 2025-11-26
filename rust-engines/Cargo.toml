@@ -6,6 +6,9 @@ members = [
     "fusion-kink",
     "harmonic-lab",
     "codex-registry",
+    "bevy-cathedral",
+    "dioxus-cathedral",
+    "cathedral-rust-core",
 ]
 
 [workspace.package]
@@ -28,6 +31,16 @@ kira = "0.9"
 
 # Database
 rusqlite = { version = "0.31", features = ["bundled"] }
+
+# Bevy game engine (FREE, open-source)
+bevy = "0.14"
+bevy_egui = "0.27"
+bevy_rapier2d = "0.25"
+bevy_asset_loader = "0.17"
+
+# Dioxus (FREE, Rust frontend)
+dioxus = "0.5"
+dioxus-web = "0.5"
 
 [profile.release]
 opt-level = 3

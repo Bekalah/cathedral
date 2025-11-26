@@ -1,3 +1,8 @@
+/**
+ * soundScience.d
+ * 
+ * @package @cathedral/brain
+ */
 export declare class SoundScience {
     harmonicSeries(fundamental: number, numHarmonics?: number): {
         frequency: number;

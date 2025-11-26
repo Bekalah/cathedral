@@ -1,5 +1,5 @@
 {
-  "name": "@bekalah/cathedral-data",
+  "name": "@cathedral/data",
   "version": "1.0.0",
   "description": "Cathedral of Circuits - Data Package with Codex 144:99 and Living Arcanae",
   "type": "module",
@@ -11,7 +11,7 @@
     "./arcana": "./arcana/majors.json"
   },
   "scripts": {
-    "build": "echo '📊 Cathedral data package validated'",
+    "build": "tsc",
     "validate": "echo '🛡️ Data validation complete'",
     "test": "echo '✅ All data integrity checks passed'"
   },
@@ -24,5 +24,18 @@
     "fusion_combinations": 231,
     "trauma_safety": "maximum",
     "data_integrity": "validated"
+  },
+  "author": "Rebecca Respawn",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/data"
+  },
+  "homepage": "https://bekalah.github.io/cathedral/packages/data",
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
   }
 }

@@ -1031,6 +1031,6 @@ class LivingBooksSystem {
 export { LIVING_BOOKS, LivingBooksSystem };
 
 // Initialize the living books system
-console.log('📚 Living Books System initialized with 22 character guides');
-console.log('🃏 Each book embodies a Major Arcana archetype with unique wisdom');
-console.log('🔮 Ready for integration with 99 Gates and 144 Lattice navigation');
+// console.log('📚 Living Books System initialized with 22 character guides');
+// console.log('🃏 Each book embodies a Major Arcana archetype with unique wisdom');
+// console.log('🔮 Ready for integration with 99 Gates and 144 Lattice navigation');

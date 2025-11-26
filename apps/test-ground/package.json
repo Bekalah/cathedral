@@ -17,5 +17,18 @@
     "@types/react-dom": "^19.1.9",
     "typescript": "^5.3.3",
     "vite": "^6.0.1"
+  },
+  "author": "Rebecca Respawn",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "apps/test-ground"
+  },
+  "homepage": "https://bekalah.github.io/cathedral/apps/test-ground",
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
   }
 }

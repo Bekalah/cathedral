@@ -1,4 +1,9 @@
 /**
+ * arcana
+ * 
+ * @package @cathedral/types
+ */
+/**
  * Living Arcana Types
  */
 

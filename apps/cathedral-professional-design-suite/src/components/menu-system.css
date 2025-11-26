@@ -1,0 +1,364 @@
+/**
+ * menu-system.css - Trinity Architecture Menu System Styles
+ * Cathedral Professional Design Suite
+ * 
+ * Advanced menu styling with Trinity Architecture integration
+ * Brain (Cosmogenesis) + Soul (Circuitum99) + Body (Stone Grimoire) theming
+ */
+
+/* Trinity Architecture Color Scheme */
+:root {
+    --cathedral-primary: #1a1a2e;
+    --cathedral-secondary: #16213e;
+    --cathedral-accent: #0f3460;
+    --cathedral-gold: #ffd700;
+    --cathedral-silver: #c0c0c0;
+    --cathedral-cosmic: #4a90e2;
+    --cathedral-mystical: #e24a90;
+    --cathedral-terrestrial: #90e24a;
+    
+    /* Trinity Component Colors */
+    --brain-color: #4a90e2;
+    --soul-color: #e24a90;
+    --body-color: #90e24a;
+    
+    /* Golden Ratio Spacing */
+    --phi: 1.618;
+    --phi-small: 0.618;
+    --phi-large: 2.618;
+}
+
+/* Main Menu Container */
+.main-menu {
+    background: linear-gradient(135deg, var(--cathedral-primary) 0%, var(--cathedral-secondary) 100%);
+    border: 2px solid var(--cathedral-gold);
+    border-radius: calc(var(--phi-small) * 10px);
+    padding: calc(var(--phi-small) * 20px);
+    margin: calc(var(--phi-small) * 10px) 0;
+    box-shadow: 0 4px calc(var(--phi) * 8px) rgba(255, 215, 0, 0.2);
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--phi) * 15px);
+    min-height: 120px;
+}
+
+/* Menu Sections */
+.menu-section {
+    flex: 1;
+    min-width: 200px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: calc(var(--phi-small) * 8px);
+    padding: calc(var(--phi-small) * 15px);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.menu-section:hover {
+    background: rgba(255, 215, 0, 0.1);
+    border-color: var(--cathedral-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 6px calc(var(--phi) * 6px) rgba(255, 215, 0, 0.15);
+}
+
+/* Trinity Active State */
+.menu-section.trinity-active {
+    background: linear-gradient(135deg, 
+        var(--cathedral-cosmic) 0%, 
+        var(--cathedral-mystical) 50%, 
+        var(--cathedral-terrestrial) 100%);
+    border-color: var(--cathedral-gold);
+    animation: trinityPulse 2s infinite;
+}
+
+@keyframes trinityPulse {
+    0%, 100% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); }
+}
+
+/* Menu Section Headers */
+.menu-section h3 {
+    color: var(--cathedral-gold);
+    font-size: calc(var(--phi) * 12px);
+    font-weight: bold;
+    margin: 0 0 calc(var(--phi-small) * 10px) 0;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.menu-section h3::after {
+    content: '▼';
+    position: absolute;
+    right: 0;
+    transition: transform 0.3s ease;
+}
+
+.menu-section h3:hover::after {
+    transform: translateY(2px);
+}
+
+/* Menu Items Container */
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--phi-small) * 8px);
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Menu Items */
+.menu-item {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: calc(var(--phi-small) * 6px);
+    padding: calc(var(--phi-small) * 10px);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 215, 0, 0.2), 
+        transparent);
+    transition: left 0.6s ease;
+}
+
+.menu-item:hover::before {
+    left: 100%;
+}
+
+.menu-item:hover {
+    background: rgba(255, 215, 0, 0.15);
+    border-color: var(--cathedral-gold);
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+}
+
+/* Menu Item Text */
+.menu-text {
+    color: var(--cathedral-silver);
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 1;
+    position: relative;
+}
+
+/* Menu Item Shortcuts */
+.menu-shortcut {
+    color: var(--cathedral-gold);
+    font-size: 12px;
+    font-family: monospace;
+    background: rgba(255, 215, 0, 0.2);
+    padding: 2px 6px;
+    border-radius: 3px;
+    z-index: 1;
+    position: relative;
+}
+
+/* Trinity Component Specific Styling */
+.menu-item.trinity-brain {
+    border-left: 4px solid var(--brain-color);
+}
+
+.menu-item.trinity-brain:hover {
+    background: rgba(74, 144, 226, 0.15);
+}
+
+.menu-item.trinity-soul {
+    border-left: 4px solid var(--soul-color);
+}
+
+.menu-item.trinity-soul:hover {
+    background: rgba(226, 74, 144, 0.15);
+}
+
+.menu-item.trinity-body {
+    border-left: 4px solid var(--body-color);
+}
+
+.menu-item.trinity-body:hover {
+    background: rgba(144, 226, 74, 0.15);
+}
+
+/* Sacred Geometry Menu Items */
+.menu-item[data-geometry="golden_ratio"],
+.menu-item[data-geometry="fibonacci"],
+.menu-item[data-geometry="flower_of_life"],
+.menu-item[data-geometry="metatron_cube"] {
+    background: linear-gradient(135deg, 
+        rgba(255, 215, 0, 0.1) 0%, 
+        rgba(192, 192, 192, 0.1) 100%);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.menu-item[data-geometry="golden_ratio"]::before {
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 215, 0, 0.3), 
+        transparent);
+}
+
+/* Scrollbar Styling */
+.menu-items::-webkit-scrollbar {
+    width: 6px;
+}
+
+.menu-items::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.menu-items::-webkit-scrollbar-thumb {
+    background: var(--cathedral-gold);
+    border-radius: 3px;
+}
+
+.menu-items::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 215, 0, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-menu {
+        flex-direction: column;
+        gap: calc(var(--phi-small) * 10px);
+    }
+    
+    .menu-section {
+        min-width: unset;
+    }
+    
+    .menu-section h3 {
+        font-size: calc(var(--phi) * 14px);
+    }
+}
+
+@media (max-width: 480px) {
+    .main-menu {
+        padding: calc(var(--phi-small) * 10px);
+    }
+    
+    .menu-section {
+        padding: calc(var(--phi-small) * 8px);
+    }
+    
+    .menu-item {
+        padding: calc(var(--phi-small) * 6px);
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-in {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Loading States */
+.menu-item.loading {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.menu-item.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    width: 12px;
+    height: 12px;
+    border: 2px solid var(--cathedral-gold);
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .menu-section,
+    .menu-item,
+    .trinity-active {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .menu-section {
+        border: 2px solid var(--cathedral-gold);
+        background: var(--cathedral-primary);
+    }
+    
+    .menu-item {
+        border: 2px solid var(--cathedral-silver);
+        background: var(--cathedral-secondary);
+    }
+}
+
+/* Focus Styles for Accessibility */
+.menu-item:focus,
+.menu-section h3:focus {
+    outline: 2px solid var(--cathedral-gold);
+    outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+    .main-menu {
+        background: white;
+        border: 1px solid black;
+        box-shadow: none;
+    }
+    
+    .menu-item:hover {
+        background: #f0f0f0;
+        transform: none;
+        box-shadow: none;
+    }
+}

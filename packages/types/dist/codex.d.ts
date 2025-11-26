@@ -1,4 +1,9 @@
 /**
+ * codex.d
+ * 
+ * @package @cathedral/types
+ */
+/**
  * Codex 144:99 Types
  */
 export interface Codex144Node {

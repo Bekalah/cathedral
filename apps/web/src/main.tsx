@@ -13,13 +13,15 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 import './index.css'
+// Japanese design system - enhances existing themes, doesn't replace them
+import './styles/japanese-design.css'
 
 // Cathedral initialization
-console.log('🏛️ Initializing Cathedral of Circuits Web Interface');
-console.log(`📊 Codex Version: ${__CODEX_VERSION__}`);
-console.log(`🌟 Cathedral Version: ${__CATHEDRAL_VERSION__}`);
-console.log(`🃏 Living Arcanae: ${__LIVING_ARCANAE_COUNT__} tradition engines`);
-console.log(`⚗️ Fusion Combinations: ${__FUSION_COMBINATIONS__} possible syntheses`);
+// console.log('🏛️ Initializing Cathedral of Circuits Web Interface');
+// console.log(`📊 Codex Version: ${__CODEX_VERSION__}`);
+// console.log(`🌟 Cathedral Version: ${__CATHEDRAL_VERSION__}`);
+// console.log(`🃏 Living Arcanae: ${__LIVING_ARCANAE_COUNT__} tradition engines`);
+// console.log(`⚗️ Fusion Combinations: ${__FUSION_COMBINATIONS__} possible syntheses`);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

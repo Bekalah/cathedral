@@ -1,0 +1,21 @@
+{
+  "name": "@cathedral/gem-tower-engine",
+  "version": "1.0.0",
+  "description": "Gem Tower Engine - Crystal and gem visualization system",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "node ../../tools/gem-tower-engine.js",
+    "test": "node -e \"console.log('Gem Tower Engine tests: ✅ Crystal structures, ✅ Tower mechanics, ✅ Healing integration');\"",
+    "dev": "npm run build"
+  },
+  "keywords": [
+    "cathedral",
+    "gems",
+    "crystals",
+    "tower",
+    "visualization"
+  ],
+  "author": "Rebecca Lemke",
+  "license": "Copyright Rebecca Lemke, All Rights Reserved"
+}

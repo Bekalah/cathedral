@@ -1,4 +1,9 @@
 /**
+ * validation
+ * 
+ * @package @cathedral/codex-144-99
+ */
+/**
  * Codex 144:99 Validation System
  * Comprehensive validation for sacred knowledge datasets
  */
@@ -291,15 +296,19 @@ export class CodexValidator {
 ${validation.errors.length > 0 ?
   validation.errors.map(error =>
     `- **${error.field}**: ${error.message}${error.nodeId ? ` (Node ${error.nodeId})` : ''}`
-  ).join('\n') :
+  ).join('
+') :
   'No errors found ✅'
 }
 
 ## ⚠️ Warnings
 ${validation.warnings.length > 0 ?
   validation.warnings.map(warning =>
-    `- **${warning.field}**: ${warning.message}${warning.nodeId ? ` (Node ${warning.nodeId})` : ''}\n  💡 ${warning.suggestion}`
-  ).join('\n\n') :
+    `- **${warning.field}**: ${warning.message}${warning.nodeId ? ` (Node ${warning.nodeId})` : ''}
+  💡 ${warning.suggestion}`
+  ).join('
+
+') :
   'No warnings ✅'
 }
 

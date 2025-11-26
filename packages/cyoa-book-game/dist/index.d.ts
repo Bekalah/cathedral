@@ -1,3 +1,8 @@
+/**
+ * index.d
+ * 
+ * @package @cathedral/cyoa-book-game
+ */
 export { CathedralGameEngine } from './gameEngine';
 export * from './types';
 export { GAME_SCENES } from './scenes';

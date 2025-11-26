@@ -242,7 +242,7 @@ class ArcanaArtSynthesisLabs {
     // Start render loop
     this.startRenderLoop();
 
-    console.log("🎮 Three.js environment initialized for Arcana Labs");
+// console.log("🎮 Three.js environment initialized for Arcana Labs");
   }
 
   // ✨ Setup post-processing effects
@@ -265,7 +265,7 @@ class ArcanaArtSynthesisLabs {
   async enterArcanaLab(arcanaKey) {
     const labConfig = this.labConfigurations[arcanaKey];
     if (!labConfig) {
-      console.error(`❌ Lab configuration for "${arcanaKey}" not found`);
+// console.error(`❌ Lab configuration for "${arcanaKey}" not found`);
       return false;
     }
 
@@ -274,7 +274,7 @@ class ArcanaArtSynthesisLabs {
       this.exitCurrentLab();
     }
 
-    console.log(`🎨 Entering ${labConfig.name}`);
+// console.log(`🎨 Entering ${labConfig.name}`);
     this.currentLab = arcanaKey;
 
     // Clear scene
@@ -1350,7 +1350,7 @@ class ArcanaArtSynthesisLabs {
   exitCurrentLab() {
     if (!this.currentLab) return;
 
-    console.log(`🚪 Exiting ${this.currentLab} lab`);
+// console.log(`🚪 Exiting ${this.currentLab} lab`);
 
     // Clear scene
     this.clearScene();
@@ -1470,12 +1470,12 @@ class ArcanaArtSynthesisLabs {
 
     switch (object.userData.interactionType) {
       case "portal_step":
-        console.log(`Stepped through portal ring ${object.userData.ringIndex}`);
+// console.log(`Stepped through portal ring ${object.userData.ringIndex}`);
         this.triggerPortalEffect(object.userData.ringIndex);
         break;
 
       case "symbol_manipulation":
-        console.log(`Manipulating ${object.userData.symbol}`);
+// console.log(`Manipulating ${object.userData.symbol}`);
         this.triggerSymbolEffect(object);
         break;
 
@@ -1525,7 +1525,7 @@ const arcanaArtLabs = new ArcanaArtSynthesisLabs();
 
 // Auto-initialize on DOM load
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("🎨🎵 Arcana Art + Synthesis Labs initialized");
+// console.log("🎨🎵 Arcana Art + Synthesis Labs initialized");
 
   // Expose global API
   window.ArcanaArtSynthesisLabs = arcanaArtLabs;

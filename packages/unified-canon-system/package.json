@@ -1,0 +1,46 @@
+{
+  "name": "@cathedral/unified-canon-system",
+  "version": "1.0.0",
+  "description": "Unified Canon System - Perfects Codex 144:99, Liber Arcanae, and Circuitum99 with real canon and creative aspects",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "node dist/test.js"
+  },
+  "dependencies": {
+    "@cathedral/shared": "workspace:*",
+    "@cathedral/codex-144-99": "workspace:*",
+    "@cathedral/liber-arcanae": "workspace:*",
+    "@cathedral/circuitum99": "workspace:*",
+    "@cathedral/fable-rpg-mechanics": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0"
+  },
+  "keywords": [
+    "cathedral",
+    "unified-canon",
+    "codex-144-99",
+    "liber-arcanae",
+    "circuitum99",
+    "fable-rpg",
+    "real-canon"
+  ],
+  "author": "Rebecca Respawn",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/unified-canon-system"
+  },
+  "homepage": "https://bekalah.github.io/cathedral/packages/unified-canon-system",
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
+  }
+}

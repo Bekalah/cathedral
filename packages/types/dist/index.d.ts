@@ -1,4 +1,9 @@
 /**
+ * index.d
+ * 
+ * @package @cathedral/types
+ */
+/**
  * @cathedral/types
  * Shared TypeScript type definitions for Cathedral monorepo
  */

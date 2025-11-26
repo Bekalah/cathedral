@@ -1,4 +1,9 @@
 /**
+ * types.d
+ * 
+ * @package @cathedral/game-engine
+ */
+/**
  * 🏛️✨ CATHEDRAL GAME ENGINE - TYPE DECLARATIONS
  *
  * TypeScript declarations for the native ES game engine

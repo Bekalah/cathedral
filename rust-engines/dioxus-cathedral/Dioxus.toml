@@ -1,0 +1,15 @@
+[application]
+name = "Cathedral Dioxus App"
+default_platform = "web"
+out_dir = "dist"
+
+[web.app]
+title = "Cathedral - Dioxus"
+base_path = "/"
+
+[web.watcher]
+watch_path = ["src", "assets"]
+
+[web.resource]
+style = []
+script = []

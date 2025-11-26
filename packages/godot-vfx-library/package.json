@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "echo 'Building Godot VFX Library...' && mkdir -p dist && cp -r effects materials shaders scenes dist/",
+    "build": "tsc",
     "validate": "echo 'Validating sacred mathematics in VFX...' && node validate-sacred-math.js",
-    "export": "echo 'Exporting VFX assets for Godot...' && pnpm run build",
+    "export": "echo 'Exporting VFX assets for Godot...' && ppnpm run build",
     "preview": "echo 'Preview VFX effects...' && open preview/index.html"
   },
   "keywords": [
@@ -81,5 +81,11 @@
   ],
   "devDependencies": {
     "@types/node": "^20.10.0"
+  },
+  "types": "dist/index.d.ts",
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
   }
 }

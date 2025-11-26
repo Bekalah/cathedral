@@ -1,0 +1,37 @@
+#!/usr/bin/env sh
+# =====================================================
+# PRE-COMMIT HOOK - PERMANENT PROTECTION
+# 
+# This hook BLOCKS commits that would flatten the project.
+# It cannot be bypassed without explicitly removing it.
+# =====================================================
+
+echo "🛡️ Cathedral Protection Check..."
+
+# Check for emoji in UI components (design quality)
+if git diff --cached --name-only | grep -E '\.(tsx|jsx)$' | xargs grep -l '🎮\|⚗️\|🃏\|🎵\|🎨\|📊\|🛡️\|✨' 2>/dev/null; then
+  echo "❌ BLOCKED: Emoji found in UI components"
+  echo "   See: openspec/DESIGN_QUALITY_BOUNDARY.md"
+  exit 1
+fi
+
+# Check for console injection spam
+if git diff --cached --name-only | grep -E '\.(ts|tsx|js|jsx)$' | xargs grep -l 'oo_cm\|oo_tr\|2184609590' 2>/dev/null; then
+  echo "❌ BLOCKED: Console injection spam detected"
+  exit 1
+fi
+
+# Check for echo scripts in package.json
+if git diff --cached --name-only | grep 'package.json' | xargs grep -l '"build": "echo' 2>/dev/null; then
+  echo "❌ BLOCKED: Echo script detected in package.json"
+  echo "   Use real build commands, not placeholders"
+  exit 1
+fi
+
+# Check for npm (we only use pnpm)
+if git diff --cached --name-only | grep -E '\.(sh|json)$' | xargs grep -l 'npm install\|npm run\|npm ci' 2>/dev/null; then
+  echo "⚠️ WARNING: npm command detected. Use pnpm instead."
+fi
+
+echo "✅ Protection check passed"
+

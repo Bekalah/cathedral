@@ -44,10 +44,10 @@ class LivingDarkAcademiaUniverse {
         this.storyGenerator = new InteractiveStoryGenerator();
         this.worldBuilder = new LivingWorldBuilder();
 
-        console.log('🏛️ Living Dark Academia Universe Initialized');
-        console.log('🧠 Brain-Protecting Game Systems Active');
-        console.log('🔮 Real Esoteric Knowledge Integration Complete');
-        console.log('🎨 Personal Vision Protection Enforced');
+// console.log('🏛️ Living Dark Academia Universe Initialized');
+// console.log('🧠 Brain-Protecting Game Systems Active');
+// console.log('🔮 Real Esoteric Knowledge Integration Complete');
+// console.log('🎨 Personal Vision Protection Enforced');
     }
 
     // Initialize the 22 esoteric masters as living characters
@@ -644,8 +644,8 @@ export {
 };
 
 // 🎯 INITIALIZE THE COMPLETE UNIVERSE
-console.log('🏛️ Living Dark Academia Universe: Complete Integration');
-console.log('🧠 Brain-Protecting Game Systems: Active');
-console.log('🔮 Real Esoteric Knowledge: Integrated');
-console.log('🎨 Personal Vision: Protected and Enforced');
-console.log('📚 Educational Mission: Ready to Transform Lives');
+// console.log('🏛️ Living Dark Academia Universe: Complete Integration');
+// console.log('🧠 Brain-Protecting Game Systems: Active');
+// console.log('🔮 Real Esoteric Knowledge: Integrated');
+// console.log('🎨 Personal Vision: Protected and Enforced');
+// console.log('📚 Educational Mission: Ready to Transform Lives');

@@ -594,21 +594,21 @@ class Circuitum99AlphaOmega {
     
     // Auto reading mode - AI picks cards for you
     getAutoTarotReading(readingType = 'three-card', intent = null) {
-        console.log(`🎯 Starting auto ${readingType} reading...`);
+// console.log(`🎯 Starting auto ${readingType} reading...`);
         const reading = this.tarotSystem.getAutoReading(readingType, intent);
         return this.integrateWithCurrentEmbodiment(reading);
     }
     
     // Manual mode - you choose specific cards
     getManualTarotReading(cardIds, spreadType, question = null) {
-        console.log('🎲 Manual card selection reading...');
+// console.log('🎲 Manual card selection reading...');
         const reading = this.tarotSystem.selectCards(cardIds, spreadType, question);
         return this.integrateWithCurrentEmbodiment(reading);
     }
     
     // Special healing reading (trauma-safe)
     getHealingTarotReading() {
-        console.log('🌱 Generating trauma-safe healing reading...');
+// console.log('🌱 Generating trauma-safe healing reading...');
         const reading = this.tarotSystem.getAutoReading('healing');
         return {
             ...reading,
@@ -671,8 +671,8 @@ class Circuitum99AlphaOmega {
             pathworkingDepth: 0
         };
         
-        console.log(`🎭 Now embodying: ${archetype.name}`);
-        console.log(`✨ Perspective: ${archetype.storyPerspective || archetype.wisdom}`);
+// console.log(`🎭 Now embodying: ${archetype.name}`);
+// console.log(`✨ Perspective: ${archetype.storyPerspective || archetype.wisdom}`);
         
         return {
             message: `You are now embodying ${archetype.name}`,
@@ -863,6 +863,6 @@ class Circuitum99AlphaOmega {
 export { Circuitum99AlphaOmega };
 
 // Initialize system
-console.log('📚 CIRCUITUM99 ALPHA ET OMEGA: Book game system ready');
-console.log('🌉 99 Gates and 144 Lattice integrated with Trinity Architecture');
-console.log('🛡️ Trauma-informed wisdom navigation active');
+// console.log('📚 CIRCUITUM99 ALPHA ET OMEGA: Book game system ready');
+// console.log('🌉 99 Gates and 144 Lattice integrated with Trinity Architecture');
+// console.log('🛡️ Trauma-informed wisdom navigation active');

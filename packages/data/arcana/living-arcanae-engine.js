@@ -26,7 +26,7 @@ class LivingArcanae {
       this.cards.set(cardInfo.id, card);
     });
 
-    console.log('🃏 22 Living Arcanae initialized as Tradition Engines');
+// console.log('🃏 22 Living Arcanae initialized as Tradition Engines');
   }
 
   // 🔬 Initialize Laboratory Environments
@@ -36,7 +36,7 @@ class LivingArcanae {
       this.laboratories.set(id, lab);
     });
 
-    console.log('🧪 All Laboratory Environments prepared');
+// console.log('🧪 All Laboratory Environments prepared');
   }
 
   // ⚡ Fusion Kink Engine Setup
@@ -48,7 +48,7 @@ class LivingArcanae {
       professional_backup: true
     });
 
-    console.log('✨ Fusion Kink Engine active - Sacred ratio 144:99');
+// console.log('✨ Fusion Kink Engine active - Sacred ratio 144:99');
   }
 
   // 🎭 Get Living Archetype
@@ -393,10 +393,10 @@ class CathedralOfCircuits {
     this.fusion_kink_heaven.connectToBrain(this.brain_system);
     this.trauma_safety.validateAllSystems();
     
-    console.log('🌟✨ Cathedral of Circuits - Living Grimoire Engine Active');
-    console.log('🃏 22 Tradition Engines ready for sacred work');
-    console.log('⚗️ Fusion Kink Heaven 144:99 operational');
-    console.log('🛡️ Maximum trauma safety validated');
+// console.log('🌟✨ Cathedral of Circuits - Living Grimoire Engine Active');
+// console.log('🃏 22 Tradition Engines ready for sacred work');
+// console.log('⚗️ Fusion Kink Heaven 144:99 operational');
+// console.log('🛡️ Maximum trauma safety validated');
   }
 
   // 🎭 Get Archetype for User Interaction
@@ -429,4 +429,4 @@ export {
 };
 
 // 🌟 Ready for VS Code + GitHub + Cloudflare deployment
-console.log('✨ Living Arcanae Tradition Engine System Ready for Deployment');
+// console.log('✨ Living Arcanae Tradition Engine System Ready for Deployment');

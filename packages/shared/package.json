@@ -1,11 +1,25 @@
 {
   "name": "@cathedral/shared",
   "version": "1.0.0",
+  "description": "Shared utilities and integration systems for Cathedral",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "dev": "tsc --watch",
     "build": "tsc",
     "clean": "rm -rf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/shared"
+  },
+  "homepage": "https://bekalah.github.io/cathedral/packages/shared",
+  "author": "Rebecca Respawn",
+  "license": "CC0-1.0",
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
   }
 }

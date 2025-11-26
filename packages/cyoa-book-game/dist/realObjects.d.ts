@@ -1,3 +1,8 @@
+/**
+ * realObjects.d
+ * 
+ * @package @cathedral/cyoa-book-game
+ */
 import { RealObject, BookData } from './types';
 export declare const REAL_BOOKS: Record<string, BookData>;
 export declare const REAL_ARTWORKS: Record<string, RealObject>;

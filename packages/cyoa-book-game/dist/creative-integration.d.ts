@@ -1,4 +1,9 @@
 /**
+ * creative-integration.d
+ * 
+ * @package @cathedral/cyoa-book-game
+ */
+/**
  * Creative Engine Integration for CYOA Book Game
  * Adds harmonic generation capabilities to the interactive story system
  */

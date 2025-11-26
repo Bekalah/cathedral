@@ -1,14 +1,39 @@
 {
   "name": "@cathedral/magical-mystery-house",
   "version": "1.0.0",
-  "description": "Magical Mystery House - Cultural archetypes and runic mysteries",
-  "main": "index.js",
+  "description": "Magical Mystery House - 99 rooms with cultural archetypes, master art principles",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "dev": "node index.js",
-    "build": "echo 'Magical Mystery House build complete'",
-    "test": "echo 'Magical Mystery House tests passing'"
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist"
   },
-  "keywords": ["cathedral", "magical-mystery-house", "cultural", "archetypes"],
-  "author": "Rebecca Respawn",
-  "license": "CC0"
+  "keywords": [
+    "cathedral",
+    "magical-mystery-house",
+    "cultural",
+    "archetypes"
+  ],
+  "author": "Rebecca Respawn <bekalah>",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/magical-mystery-house"
+  },
+  "homepage": "https://bekalah.github.io/cathedral",
+  "dependencies": {
+    "@cathedral/master-art-principles": "workspace:*",
+    "@cathedral/codex-144-99": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "@types/node": "^20.17.0"
+  },
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
+  }
 }

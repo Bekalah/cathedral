@@ -1,3 +1,8 @@
+/**
+ * realDataSources.d
+ * 
+ * @package @cathedral/art-generation-node
+ */
 import { RealWorldSource, PatternData } from './types';
 export declare const SACRED_BOOKS_DATA: Record<string, RealWorldSource>;
 export declare const FAMOUS_ARTWORKS_DATA: Record<string, RealWorldSource>;

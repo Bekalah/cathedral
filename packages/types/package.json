@@ -12,7 +12,8 @@
     }
   },
   "engines": {
-    "node": ">=18.17.0"
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
   },
   "scripts": {
     "build": "tsc",
@@ -27,10 +28,12 @@
     "typescript": "^5.6.3"
   },
   "author": "Rebecca Respawn <bekalah@users.noreply.github.com>",
-  "license": "MIT",
+  "license": "CC0-1.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/Bekalah/cathedral.git",
     "directory": "packages/types"
-  }
+  },
+  "homepage": "https://bekalah.github.io/cathedral/packages/types",
+  "packageManager": "pnpm@8.15.0"
 }

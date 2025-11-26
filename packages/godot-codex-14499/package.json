@@ -5,9 +5,9 @@
   "main": "codex_14499.gd",
   "type": "module",
   "scripts": {
-    "build": "echo 'Building Godot Codex 144:99...' && mkdir -p dist && cp -r scenes scripts resources dist/",
+    "build": "tsc",
     "validate": "echo 'Validating sacred mathematics...' && node validate-sacred-math.js",
-    "export": "echo 'Exporting for Godot...' && pnpm run build",
+    "export": "echo 'Exporting for Godot...' && ppnpm run build",
     "test": "echo 'Testing lattice connections...' && node test-connections.js"
   },
   "keywords": [
@@ -76,5 +76,11 @@
   ],
   "devDependencies": {
     "@types/node": "^20.10.0"
+  },
+  "types": "dist/index.d.ts",
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
   }
 }

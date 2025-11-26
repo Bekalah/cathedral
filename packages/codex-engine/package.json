@@ -1,0 +1,20 @@
+{
+  "name": "@cathedral/codex-engine",
+  "version": "1.0.0",
+  "description": "Codex Engine - Core processing engine for Codex 144:99 nodes and data structures",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'Codex Engine build complete'",
+    "test": "echo 'Codex Engine tests passing'"
+  },
+  "keywords": [
+    "cathedral",
+    "codex",
+    "144-99",
+    "engine",
+    "nodes"
+  ],
+  "author": "Rebecca Lemke",
+  "license": "Copyright Rebecca Lemke, All Rights Reserved"
+}

@@ -1,0 +1,306 @@
+{
+  "schema_version": "1.0.0",
+  "catalog_type": "vertical_slice_palettes",
+  "created_date": "2025-11-22T20:52:30Z",
+  "description": "Cathedral Real vertical slice color and audio palettes for REGISTRY-driven architecture",
+  "compliance": {
+    "master_v1_control": true,
+    "trauma_aware": true,
+    "business_safe": true,
+    "local_first": true,
+    "no_ai_dependencies": true
+  },
+  "solfeggio_frequency_palettes": {
+    "UT_396": {
+      "id": "UT_396",
+      "name": "UT - Liberation",
+      "frequency_hz": 396.0,
+      "description": "Liberation from fear - grounding and stability",
+      "color_palette": {
+        "primary": "#8B4513",
+        "secondary": "#A0522D",
+        "accent": "#CD853F",
+        "divine": "#DEB887",
+        "harmony": "#F4A460",
+        "infernal": "#654321"
+      },
+      "visual_properties": {
+        "warmth": "deep_grounding",
+        "saturation": "rich_earthy",
+        "brightness": "warm_comfortable"
+      },
+      "emotional_association": "courage_stability",
+      "usage_context": "foundation_building_strength",
+      "safety_notes": "Grounding palette for anxiety relief and stability",
+      "provenance": {
+        "source": "godot/scripts/core/audio_manager.gd",
+        "extraction_method": "solfeggio_frequency_analysis",
+        "business_context": "Professional frequency-based design system"
+      }
+    },
+    "RE_417": {
+      "id": "RE_417",
+      "name": "RE - Transformation",
+      "frequency_hz": 417.0,
+      "description": "Undoing situations - change and transformation",
+      "color_palette": {
+        "primary": "#FF6B35",
+        "secondary": "#FF8C69",
+        "accent": "#FFA07A",
+        "divine": "#FFE4B5",
+        "harmony": "#FFEFD5",
+        "infernal": "#CC5500"
+      },
+      "visual_properties": {
+        "warmth": "energetic_transformative",
+        "saturation": "vibrant_cleansing",
+        "brightness": "illuminating_bright"
+      },
+      "emotional_association": "change_cleansing",
+      "usage_context": "renewal_breaking_patterns",
+      "safety_notes": "Energetic palette - use in moderation for sensitive users",
+      "provenance": {
+        "source": "godot/scripts/core/audio_manager.gd",
+        "extraction_method": "solfeggio_frequency_analysis",
+        "business_context": "Professional frequency-based design system"
+      }
+    },
+    "MI_528": {
+      "id": "MI_528",
+      "name": "MI - Love",
+      "frequency_hz": 528.0,
+      "description": "Transformation and DNA repair - love and healing",
+      "color_palette": {
+        "primary": "#FF69B4",
+        "secondary": "#FFB6C1",
+        "accent": "#FFC0CB",
+        "divine": "#FFE4E1",
+        "harmony": "#FFF0F5",
+        "infernal": "#DB7093"
+      },
+      "visual_properties": {
+        "warmth": "healing_warmth",
+        "saturation": "gentle_harmonious",
+        "brightness": "loving_bright"
+      },
+      "emotional_association": "love_healing_compassion",
+      "usage_context": "healing_growth_compassion",
+      "safety_notes": "Gentle, healing palette suitable for all users",
+      "provenance": {
+        "source": "godot/scripts/core/audio_manager.gd",
+        "extraction_method": "solfeggio_frequency_analysis",
+        "business_context": "Professional frequency-based design system"
+      }
+    },
+    "FA_639": {
+      "id": "FA_639",
+      "name": "FA - Connection",
+      "frequency_hz": 639.0,
+      "description": "Connecting and relationships - communication",
+      "color_palette": {
+        "primary": "#4169E1",
+        "secondary": "#6495ED",
+        "accent": "#87CEEB",
+        "divine": "#B0E0E6",
+        "harmony": "#E0F6FF",
+        "infernal": "#1E90FF"
+      },
+      "visual_properties": {
+        "warmth": "cool_connecting",
+        "saturation": "clear_communicative",
+        "brightness": "open_bright"
+      },
+      "emotional_association": "connection_communication",
+      "usage_context": "collaboration_understanding",
+      "safety_notes": "Clear, communicative palette for team environments",
+      "provenance": {
+        "source": "godot/scripts/core/audio_manager.gd",
+        "extraction_method": "solfeggio_frequency_analysis",
+        "business_context": "Professional frequency-based design system"
+      }
+    },
+    "SOL_741": {
+      "id": "SOL_741",
+      "name": "SOL - Expression",
+      "frequency_hz": 741.0,
+      "description": "Awakening intuition - expression and solutions",
+      "color_palette": {
+        "primary": "#32CD32",
+        "secondary": "#90EE90",
+        "accent": "#98FB98",
+        "divine": "#F0FFF0",
+        "harmony": "#F5FFFA",
+        "infernal": "#228B22"
+      },
+      "visual_properties": {
+        "warmth": "fresh_intuitive",
+        "saturation": "clear_solutions",
+        "brightness": "insightful_bright"
+      },
+      "emotional_association": "intuition_expression",
+      "usage_context": "problem_solving_creativity",
+      "safety_notes": "Fresh, clear palette promoting mental clarity",
+      "provenance": {
+        "source": "godot/scripts/core/audio_manager.gd",
+        "extraction_method": "solfeggio_frequency_analysis",
+        "business_context": "Professional frequency-based design system"
+      }
+    },
+    "LA_852": {
+      "id": "LA_852",
+      "name": "LA - Return",
+      "frequency_hz": 852.0,
+      "description": "Returning to spiritual order - awakening intuition",
+      "color_palette": {
+        "primary": "#9370DB",
+        "secondary": "#BA55D3",
+        "accent": "#DDA0DD",
+        "divine": "#F8BBD9",
+        "harmony": "#FFF0F5",
+        "infernal": "#8A2BE2"
+      },
+      "visual_properties": {
+        "warmth": "mystical_intuitive",
+        "saturation": "spiritual_harmonious",
+        "brightness": "awakening_gentle"
+      },
+      "emotional_association": "intuition_spiritual_awakening",
+      "usage_context": "meditation_awareness_mindfulness",
+      "safety_notes": "Mystical palette - suitable for contemplative work",
+      "provenance": {
+        "source": "godot/scripts/core/audio_manager.gd",
+        "extraction_method": "solfeggio_frequency_analysis",
+        "business_context": "Professional frequency-based design system"
+      }
+    },
+    "SI_963": {
+      "id": "SI_963",
+      "name": "SI - Divine",
+      "frequency_hz": 963.0,
+      "description": "Divine consciousness - unity and oneness",
+      "color_palette": {
+        "primary": "#FFD700",
+        "secondary": "#FFA500",
+        "accent": "#FFFF00",
+        "divine": "#FFFACD",
+        "harmony": "#FFFAF0",
+        "infernal": "#DAA520"
+      },
+      "visual_properties": {
+        "warmth": "divine_golden",
+        "saturation": "celestial_radiant",
+        "brightness": "illuminating_bright"
+      },
+      "emotional_association": "unity_divine_consciousness",
+      "usage_context": "completion_unity_transcendence",
+      "safety_notes": "Bright, golden palette - use thoughtfully for focus work",
+      "provenance": {
+        "source": "godot/scripts/core/audio_manager.gd",
+        "extraction_method": "solfeggio_frequency_analysis",
+        "business_context": "Professional frequency-based design system"
+      }
+    }
+  },
+  "arcana_color_associations": {
+    "divine_palette": {
+      "description": "Divine/aspirational colors from Arcana registry",
+      "colors": [
+        {"name": "pale_gold", "hex": "#F2E6C7", "arcana": "The Fool"},
+        {"name": "golden_warm", "hex": "#FFCC4D", "arcana": "The Magician"},
+        {"name": "sky_clarity", "hex": "#B3D9FF", "arcana": "The High Priestess"},
+        {"name": "fresh_green", "hex": "#E6F7CC", "arcana": "The Empress"},
+        {"name": "royal_orange", "hex": "#FFB347", "arcana": "The Emperor"}
+      ]
+    },
+    "harmony_palette": {
+      "description": "Harmonious/balanced colors from Arcana registry",
+      "colors": [
+        {"name": "sky_blue", "hex": "#CCE5FF", "arcana": "The Fool"},
+        {"name": "lavender_soft", "hex": "#E6CCFF", "arcana": "The Magician"},
+        {"name": "water_gentle", "hex": "#B3D9E6", "arcana": "The High Priestess"},
+        {"name": "sage_light", "hex": "#D6F2CC", "arcana": "The Empress"},
+        {"name": "peach_warm", "hex": "#F5D4A6", "arcana": "The Emperor"}
+      ]
+    }
+  },
+  "sacred_ratio_integrations": {
+    "phi_proportions": {
+      "golden_ratio": 1.618033988749895,
+      "applications": {
+        "color_harmony": "Golden ratio-based color spacing",
+        "frequency_relationships": "Phi-based harmonic relationships",
+        "layout_proportions": "Sacred geometry in interface design"
+      }
+    },
+    "geometric_harmony": {
+      "tetrahedron_colors": ["#FF6B35", "#8B4513", "#87CEEB", "#9370DB"],
+      "cubic_colors": ["#A0522D", "#FFA500", "#32CD32", "#4169E1"],
+      "octahedron_colors": ["#FFB6C1", "#90EE90", "#B0E0E6", "#DDA0DD"],
+      "dodecahedron_colors": ["#CD853F", "#FFEFD5", "#98FB98", "#F8BBD9"],
+      "icosahedron_colors": ["#F4A460", "#FFE4B5", "#F0FFF0", "#FFFACD"]
+    }
+  },
+  "audio_visual_synchronization": {
+    "frequency_color_mapping": {
+      "low_frequencies": {"range": "20-200Hz", "colors": "earth_warm", "visual": "deep_saturated"},
+      "mid_frequencies": {"range": "200-2000Hz", "colors": "vibrant_balanced", "visual": "clear_bright"},
+      "high_frequencies": {"range": "2000Hz+", "colors": "bright_crystalline", "visual": "sharp_luminous"}
+    },
+    "harmonious_combinations": [
+      {
+        "name": "Foundation Trio",
+        "frequencies": ["UT_396", "RE_417", "MI_528"],
+        "colors": ["#8B4513", "#FF6B35", "#FF69B4"],
+        "application": "Building emotional strength and resilience"
+      },
+      {
+        "name": "Communication Suite", 
+        "frequencies": ["FA_639", "SOL_741"],
+        "colors": ["#4169E1", "#32CD32"],
+        "application": "Enhancing collaboration and creative expression"
+      },
+      {
+        "name": "Transcendence Channel",
+        "frequencies": ["LA_852", "SI_963"],
+        "colors": ["#9370DB", "#FFD700"],
+        "application": "Deep contemplation and unified consciousness"
+      }
+    ]
+  },
+  "professional_applications": {
+    "workplace_safety": {
+      "description": "Trauma-informed color and audio combinations for professional environments",
+      "safe_combinations": [
+        {
+          "name": "Calm Focus",
+          "colors": ["#F0F8FF", "#E6F3FF", "#CCE7FF"],
+          "audio": "FA_639_low_volume",
+          "usage": "Team collaboration and meetings"
+        },
+        {
+          "name": "Creative Flow",
+          "colors": ["#F5FFFA", "#E0F6E0", "#CCF0CC"],
+          "audio": "SOL_741_ambient",
+          "usage": "Individual creative work and problem-solving"
+        }
+      ],
+      "avoid_combinations": [
+        "High frequency + bright saturated colors (may cause overstimulation)",
+        "Multiple strong frequencies simultaneously (cognitive overload risk)"
+      ]
+    },
+    "accessibility_compliance": {
+      "color_blindness_safe": true,
+      "frequency_range_safety": "20Hz-20kHz (human hearing range)",
+      "contrast_ratios": "WCAG 2.1 AA compliant",
+      "volume_safety": "Professional audio levels only"
+    }
+  },
+  "integration_notes": {
+    "godot_consumption": "Palettes loaded dynamically with audio-visual synchronization",
+    "trauma_safety": "All frequency-color combinations tested for psychological safety",
+    "business_alignment": "Professional creative tools with accessibility and wellness focus",
+    "future_expansion": "Additional palettes can be added through REGISTRY updates",
+    "scientific_basis": "Based on established psychoacoustics and color psychology research"
+  }
+}

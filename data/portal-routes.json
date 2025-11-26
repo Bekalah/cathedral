@@ -1,0 +1,39 @@
+{
+  "portals": {
+    "design-mode": {
+      "target": "cathedral-design-studio",
+      "ribbon": "craft",
+      "arcana": "the-magician"
+    },
+    "architect-mode": {
+      "target": "cathedral-immersive-creative-studio",
+      "ribbon": "esoteric",
+      "arcana": "the-high-priestess"
+    },
+    "open-world": {
+      "target": "web",
+      "ribbon": "game",
+      "arcana": "the-fool"
+    },
+    "tarot-reading": {
+      "target": "tarot-arena",
+      "ribbon": "psych",
+      "arcana": "the-high-priestess"
+    },
+    "synth-lab": {
+      "target": "synth-lab",
+      "ribbon": "craft",
+      "arcana": "the-magician"
+    },
+    "stone-grimoire": {
+      "target": "stone-grimoire",
+      "ribbon": "esoteric",
+      "arcana": "the-hierophant"
+    },
+    "living-library": {
+      "target": "living-library",
+      "ribbon": "research",
+      "arcana": "the-hermit"
+    }
+  }
+}

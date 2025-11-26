@@ -1,3 +1,8 @@
+/**
+ * styleFusion
+ * 
+ * @package @cathedral/brain
+ */
 // StyleFusion: fourier analysis, golden ratio, fractal generation
 export class StyleFusion {
   async fourierAnalysis(imageData: Float32Array) {

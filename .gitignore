@@ -6,6 +6,10 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+# pnpm only - ignore npm artifacts
+.npm/
+.npmrc
+npm-shrinkwrap.json
 
 # Runtime data
 pids
@@ -38,11 +42,35 @@ jspm_packages/
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variables file
+# dotenv environment variables file (NEVER commit secrets!)
+.env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+.env.*.local
+# Allow templates
+!.env.template
+!.env.example
+
+# Database files (NEVER commit - may contain sensitive data!)
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-shm
+*.db-wal
+/data/*.db
+cathedral.db
+avalon-nodes.db
+codex-registry.db
+
+# SQL dumps (may contain sensitive data)
+*.sql.gz
+*.sql.bak
+dump.sql
+backup.sql
+*.dump
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -108,8 +136,15 @@ logs
 # Python
 __pycache__/
 *.py[cod]
+*.pyc
 *.pyo
 .venv/
+
+# VSCode Extensions
+*.vsix
+
+# Imports (old snapshots)
+imports/CathedralMonorepo-*/
 
 # Project-generated assets
 design-suite/outputs/
@@ -137,3 +172,4 @@ agent_responses/
 *.tmp
 *.temp
 .DS_Store
+build

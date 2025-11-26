@@ -11,7 +11,13 @@
     "test": "node test.js",
     "minecraft-mode": "node src/minecraft-compatibility.js"
   },
-  "keywords": ["game", "creative", "construction", "non-linear", "creative"],
+  "keywords": [
+    "game",
+    "creative",
+    "construction",
+    "non-linear",
+    "creative"
+  ],
   "author": "Rebecca Respawn",
   "license": "MIT"
 }

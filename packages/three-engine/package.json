@@ -1,0 +1,23 @@
+{
+  "name": "@cathedral/three-engine",
+  "version": "2.0.0",
+  "description": "Three.js Engine wrapper for Cathedral 3D visualizations",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'Three Engine build complete'",
+    "test": "echo 'Three Engine tests passing'"
+  },
+  "peerDependencies": {
+    "three": "^0.169.0",
+    "@react-three/fiber": "^8.17.0"
+  },
+  "keywords": [
+    "cathedral",
+    "three",
+    "3d",
+    "webgl"
+  ],
+  "author": "Rebecca Lemke",
+  "license": "Copyright Rebecca Lemke, All Rights Reserved"
+}

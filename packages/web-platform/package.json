@@ -1,5 +1,5 @@
 {
-  "name": "@openspec/web-platform",
+  "name": "@cathedral/web-platform",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
@@ -22,5 +22,18 @@
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^5.1.0",
     "vite": "^6.0.1"
+  },
+  "author": "Rebecca Respawn",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/web-platform"
+  },
+  "homepage": "https://bekalah.github.io/cathedral/packages/web-platform",
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
   }
 }

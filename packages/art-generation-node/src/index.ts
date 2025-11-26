@@ -1,3 +1,8 @@
+/**
+ * index
+ * 
+ * @package @cathedral/art-generation-node
+ */
 export { PatternGenerator } from './generators/patternGenerator';
 export { AzureAIFoundry } from './azureAIFoundry';
 export * from './types';

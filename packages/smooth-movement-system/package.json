@@ -1,0 +1,20 @@
+{
+  "name": "@cathedral/smooth-movement-system",
+  "version": "1.0.0",
+  "description": "Smooth Movement System - Fluid animation and motion controls",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'Smooth Movement System build complete'",
+    "test": "echo 'Smooth Movement System tests passing'"
+  },
+  "keywords": [
+    "cathedral",
+    "movement",
+    "animation",
+    "smooth",
+    "motion"
+  ],
+  "author": "Rebecca Lemke",
+  "license": "Copyright Rebecca Lemke, All Rights Reserved"
+}

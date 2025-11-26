@@ -1,0 +1,39 @@
+{
+  "name": "@cathedral/master-art-principles",
+  "version": "1.0.0",
+  "description": "Master art principles for 3D environments - Golden ratio, sacred geometry, museum-quality design",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "sacred-geometry",
+    "golden-ratio",
+    "master-art",
+    "3d-design",
+    "cathedral"
+  ],
+  "author": "Rebecca Respawn <bekalah>",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/master-art-principles"
+  },
+  "homepage": "https://bekalah.github.io/cathedral",
+  "dependencies": {
+    "three": "^0.169.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "@types/three": "^0.169.0"
+  },
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
+  }
+}

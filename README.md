@@ -1,362 +1,228 @@
-# 🏰 Cathedral Master - OpenSpec Master Opus v1.0
+<p align="center">
+  <img src="docs/assets/cathedral-mark.svg" alt="Cathedral" width="120" height="120" />
+</p>
 
-**The complete consolidation of 13 Cathedral repositories into one unified system**
+<h1 align="center">Cathedral of Circuits</h1>
 
-> Hermetic RPG + Creative Workstation | Codex 144:99 | 22 Major Arcana Faculty | 10 Legendary Synthesizers
+<p align="center">
+  <em>A playground for the weird and wonderful</em>
+</p>
 
-Live Demo: https://replit.com/@yourusername/cathedral-master *(update after deployment)*
+<p align="center">
+  For those who see sound like Adam Jones sees music.<br/>
+  For those who hear visuals like Richard D. James hears silence.<br/>
+  For anyone who ever wanted to live inside their own grimoire.
+</p>
 
----
-
-## 📊 What This Consolidates
-
-This **single repository** replaces 13 scattered repos with a unified architecture:
-
-### Previously Scattered (13 repos):
-1. ✅ **BUILDING-CATHEDRALS** - 6 engines, 37 data files
-2. ✅ **cathedral** - 33 engines, 100 data files, 4 shaders
-3. ✅ **cathedral-research** - 101 engines, 191 data files, 2 shaders
-4. ✅ **cathedral-vercel** - 32 engines, 76 data files
-5. ✅ **circuitum99** - 9 engines, 36 data files
-6. ✅ **codex-14499** - 2 engines, 22 data files
-7. ✅ **cosmogenesis-learning-engine** - 35 engines, 906 data files
-8. ✅ **liber-arcanae** - 6 engines, 15 data files
-9. ✅ **liber-arcanae-game** - 5 engines, 27 data files
-10. ✅ **magical-mystery-house** - 20 data files
-11. ✅ **stone-grimoire** - 26 engines, 81 data files, 4 shaders
-12. ✅ **Cathedral-updates** - archived
-13. ✅ **cathedral-connection-map** - archived
-
-### Now Unified (1 repo):
-- **255 working engines** all consolidated
-- **1,511 data files** organized
-- **10 shader programs** integrated
-- **Complete architecture** documented
-
-**Total consolidation:** All assets from 13 repositories → cathedral-master
+<p align="center">
+  <a href="https://bekalah.github.io/cathedral">Enter the Cathedral</a>
+</p>
 
 ---
 
-## 🎯 The Vision
+## What Is This?
 
-**OpenSpec Master Opus** is an interactive experience continuing the Western Mystery Tradition (John Dee → Crowley → Jung → Carrington). Play as 22 Major Arcana characters teaching real occult systems through gameplay. Seamlessly switch between:
+Cathedral is a **living archive of real creative lineages**.
 
-- 🎮 **Game Mode** - RPG pathworking through 33 chapters (Thelemic alignment)
-- 🎨 **Design Mode** - Paint with hermetic symbols (sacred geometry canvas)
-- 🎵 **Music Mode** - Compose with angel frequencies (Web Audio synthesizers)
+Every arcana connects to real artists who walked these paths. Every node links to actual historical sources. Every technique comes from documented traditions. When you play as The Magician, you're studying the same Hermetic texts that Giordano Bruno studied before they burned him for it.
 
-**Quality Standard:** Jung's Red Book + Matrix + American Gods + Witcher + Fable  
-Museum-quality visionary art (da Vinci, Ernst Fuchs, Max Ernst, Emma Kuntz level)
+**This is about access.**
+
+I built this because I have chronic PTSD and needed creative tools that wouldn't hurt me. Tools that understand when you need to stop. Tools that let you switch from making music to researching medieval manuscripts to walking a pathworking—all in the same breath.
+
+I designed myself into the work as **Rebecca Respawn**—because sometimes you need to die and come back, and that's okay.
+
+**This is also about lineage.**
+
+The Visionary Art path connects to Hildegard of Bingen, William Blake, Hilma af Klint, Remedios Varo, Leonora Carrington. The Sound path connects to Pythagoras, Robert Fludd, Stockhausen, Pauline Oliveros. The correspondences are real. The sources are cited. This is scholarship you can play.
 
 ---
 
-## 🏗️ Architecture
+## The Vibe
 
-### Multi-Platform System
+Imagine:
+
+- **The Matrix** meets **American Gods** meets **real scholarship**
+- Neoplatonism but make it playable
+- 22 living arcana characters based on real esoteric traditions
+- A full tarot system with documented correspondences
+- A grimoire that connects to actual historical sources
+- Sound synthesis using real sacred mathematics
+- Visual art techniques from Hilma af Klint to Adam Jones
+
+It's weird. It's fun. It's deeply researched. It's canon to real pathworking.
+
+**Real creatives. Real traditions. Real access.**
+
+---
+
+## What's Inside
+
+### 🏛️ The Cathedral
+
+A 3D explorable space with:
+- **8 Chapels** (Stone Grimoire) — Each a complete alchemical environment
+- **144 Nodes** (Codex 144:99) — Agrippan correspondences made navigable
+- **99 Gates** — Transformation portals, each an alchemical operation
+
+### 🏠 The Magical Mystery House
+
+8 rooms, each with specific lineage tools:
+- **Athanor Chamber** — Transformation, the alchemical furnace
+- **Color Laboratory** — Case/Steiner color consciousness
+- **Geometry Studio** — Kunz/Dee mathematical magic
+- **Dream Archive** — Fortune's inner plane work
+- **Kitchen Alchemy** — Carrington's domestic magic
+
+### 🃏 The 22 Living Arcana
+
+Playable characters based on the Major Arcana, each with:
+- Their own tradition engine (Taoist, Hermetic, Kabbalistic, etc.)
+- Their own music (frequencies from 174Hz to 963Hz)
+- Their own visual style
+- Their own story path
+
+Rebecca Respawn is The Fool — the one who walks off the cliff and keeps going.
+
+### 📖 The Living Grimoire
+
+A book that grows as you play:
+- Records your discoveries
+- Generates new pages based on your choices
+- Connects real research (medieval manuscripts, rare pigments, sacred geometry)
+- Exports as actual printable grimoire pages
+
+### 🎹 The Sound Lab
+
+10 legendary synthesizers recreated:
+- Frequencies aligned to the Codex
+- Visual feedback through sacred geometry
+- Trauma-safe design (no sudden sounds, smooth transitions)
+
+### 🎨 The Art Studio
+
+Tools for creating:
+- Sacred geometry patterns
+- Master art techniques digitally recreated
+- Rare pigment simulations
+- Museum-quality 3D rendering
+
+---
+
+## Who This Is For
+
+- **People who think Adam Jones and Richard D. James are onto something**
+- **Experimental artists** who want tools, not templates
+- **Sound designers** who think in geometry
+- **Writers** who want to live inside their worldbuilding
+- **Researchers** who want to connect everything
+- **Practitioners** who want digital tools for real pathworking
+- **Anyone with PTSD** who needs creative tools that feel safe
+- **Neurodivergent creators** who need flexibility
+- **Anyone who ever wanted to study with Hilma af Klint**
+
+---
+
+## The Direct Lineage
+
+Cathedral continues the work of specific practitioners:
+
+- **Aleister Crowley** — Thoth system, *Moon Child* reimagined (Hierophant as Max Ernst)
+- **Dion Fortune** — Avalon realms fully realized, Sea Priestess current
+- **Paul Foster Case** — B.O.T.A. color scales, Cube of Space as 3D environment
+- **Rudolf Steiner** — Anthroposophical color theory, eurythmic animation
+- **Agrippa** — *Three Books* encyclopedic correspondence system
+- **John Dee** — Monas Hieroglyphica, mathematics as mystical practice
+- **Leonora Carrington** — Feminine grotesque, Celtic-Mexican synthesis
+- **Emma Kunz** — Geometric drawings as healing instruments
+
+This is not inspired by. This is **continuing**.
+
+See: [The Direct Lineage](docs/THE_DIRECT_LINEAGE.md) | [Real Correspondences](docs/REAL_CORRESPONDENCES.md)
+
+---
+
+## The Tech
 
 ```
-┌─────────────────────────────────────────┐
-│     GODOT GAME ENGINE (Primary)         │
-│   Cathedral Explorer • 22 Arcana        │
-│   33 Chapter Pathworking                │
-└──────────────┬──────────────────────────┘
-               │ GDNative API
-┌──────────────▼──────────────────────────┐
-│   RUST CATHEDRAL-CORE (Bridge)          │
-│   Codex 144:99 • Fusion Kink Math       │
-│   Angel/Demon Pairs • Sacred Geometry   │
-└──────────────┬──────────────────────────┘
-               │ JSON Data
-┌──────────────▼──────────────────────────┐
-│      CANONICAL DATA SOURCES              │
-│   TAROT_MASTER_DATASET.json (22 Arcana) │
-│   circuitum99-nodes.json (144 Nodes)    │
-│   openspec-palette.json (Colors)        │
-└──────────────┬──────────────────────────┘
-               │ WebSocket
-┌──────────────▼──────────────────────────┐
-│   REACT WEB CONSOLE (Control)           │
-│   Orchestration • Analytics • Modes     │
-└─────────────────────────────────────────┘
+67 packages · 12 apps · 1 vision
 ```
 
-### Tech Stack
-- **Godot 4.4** - Game engine with Forward+ renderer
-- **Rust** - High-performance bridge library (GDNative)
-- **React + Vite** - Web control console
-- **React Three Fiber** - 3D visualization
-- **Web Audio API** - 10 legendary synthesizers
+| System | What It Does |
+|--------|--------------|
+| **Codex 144:99** | Sacred mathematics engine |
+| **Liber Arcanae** | Full 78-card tarot with art |
+| **Circuitum99** | 33-chapter narrative engine |
+| **Stone Grimoire** | 8-chapel grimoire system |
+| **Tesseract Bridge** | Connects everything |
+| **Synth Lab** | Sound synthesis |
+| **Art Generation** | Visual creation |
+| **Spiral Dynamics** | Learning pathways |
+
+Built with:
+- TypeScript, React, Vite
+- Three.js, Babylon.js (3D)
+- Tone.js, Web Audio (sound)
+- Bevy, Rust (game engine)
+- pnpm, Turborepo (build)
 
 ---
 
-## 🎹 Features
+## Getting Started
 
-### 10 Legendary Synthesizers (Web Audio)
-Free implementations of history's most expensive synthesizers:
-
-1. **Moog System 55** - Legendary modular ($35,000)
-2. **Buchla 200e Skylab** - West Coast synthesis ($50,000)
-3. **Fairlight CMI III** - Digital sampling pioneer ($150,000)
-4. **Yamaha GX-1** - Polyphonic monster ($60,000)
-5. **EMS Synthi-100** - Matrix modular ($45,000)
-6. **Synclavier** - Digital powerhouse ($200,000)
-7. **Oberheim 8-Voice** - Polyphonic classic ($25,000)
-8. **Yamaha CS-80** - Expressive legend ($30,000)
-9. **Roland Jupiter-8** - Analog icon ($20,000)
-10. **Moog One** - Modern flagship ($8,000)
-
-### 22 Major Arcana (Playable Characters)
-Cathedral University faculty members teaching real courses:
-
-Each character has:
-- **Merkaba Chariot** - Sacred geometry vehicle
-- **Resonant Frequency** - Specific Hz (256, 288, 528, etc.)
-- **Angel & Demon Pair** - Light/shadow integration
-- **Powers & Spells** - Real grimoire systems
-- **Department** - Sacred Technology, Mystery, Life Sciences, etc.
-
-Examples:
-- **The Fool (0):** Raphael/Alomiel, 256 Hz, "Crystalline Sphere of Pure Possibility"
-- **The Magician (I):** Michael/Samael, 288 Hz, "Golden Tetrahedron of Focused Will"
-- **The Star (XVII):** Tzadkiel/Qulielfi, 528 Hz, "Seven-Pointed Star of Eternal Hope"
-
-### Codex 144:99 System
-- **144 Manifestation Nodes** (Light/Angel/Emanation)
-- **99 Dissolution Gates** (Shadow/Demon/Return)
-- **Fusion Kink Ratio:** 144 ÷ 99 = 1.454545 (sacred constant)
-- **33 Chapters** - Jacob's Ladder pathworking
-- **72 Shem Angels** - Complete angel/demon correspondence
-
-### Seven Ribbons (Knowledge Streams)
-1. **SCIENCE** - Empirical knowledge, sacred geometry math
-2. **CANNON** - Traditional grimoire systems
-3. **PSYCH** - Consciousness exploration
-4. **CRAFT** - Ritual implementation
-5. **ESOTERIC** - Hidden teachings
-6. **RESEARCH** - Experimental pathworking
-7. **FUSION** - Integration of all streams
-
----
-
-## 🚀 Quick Start
-
-### Prerequisites
-- Node.js 20+
-- Rust 1.70+ (for Godot bridge compilation)
-- Godot 4.4+ (for game engine)
-
-### Install & Run
 ```bash
-# Clone repository
-git clone https://github.com/Bekalah/cathedral-master.git
-cd cathedral-master
+# Clone
+git clone https://github.com/Bekalah/cathedral.git
+cd cathedral
 
-# Install dependencies
-npm install
+# Install
+pnpm install
 
-# Run web platform
-npm run dev
-```
-
-Visit http://localhost:5000 to explore the Cathedral
-
-### Compile Rust Bridge (Optional)
-```bash
-cd rust-engines/cathedral-core
-cargo build --release
-
-# Copy compiled library to Godot
-cp target/release/libcathedral_core.so ../../godot-cathedral/bin/
+# Enter
+pnpm dev
 ```
 
 ---
 
-## 📁 Repository Structure
+## Safety First
 
-```
-cathedral-master/
-├── TAROT_MASTER_DATASET.json      # 22 Major Arcana specifications
-├── circuitum99-nodes.json         # 144 Manifestation Nodes
-├── liber-arcanae-nodes.json       # Character art & labs
-├── packages/
-│   ├── web-platform/              # React + Three.js console
-│   ├── godot-projects/            # Game experiences
-│   ├── bevy-apps/                 # Rust high-performance apps
-│   └── shared-rust-core/          # Shared Rust libraries
-├── rust-engines/
-│   ├── cathedral-core/            # GDNative bridge
-│   ├── cathedral-types/           # Type definitions
-│   ├── fusion-kink/               # Sacred ratio calculations
-│   ├── harmonic-lab/              # Frequency synthesis
-│   └── codex-registry/            # Node management
-├── godot-cathedral/               # Main game environment
-│   ├── scenes/                    # Cathedral scenes
-│   ├── scripts/                   # GDScript logic
-│   ├── materials/                 # PBR materials
-│   ├── shaders/                   # Custom shaders
-│   └── data/                      # JSON datasets
-└── docs/                          # Documentation
-```
+This project has trauma-safe design built in:
+
+- **Emergency exit** on every screen
+- **Grounding exercises** accessible anytime
+- **No sudden sounds** — everything fades
+- **No flashing visuals** — reduced motion respected
+- **Save anywhere** — your progress is yours
+- **Pause anytime** — no penalties
 
 ---
 
-## 🎨 Visual Design Language
+## The Name
 
-### Photorealistic Renaissance/Baroque Style
-- **NOT** flat, cartoony, or square UI
-- Gothic cathedral architecture (Rosslyn Chapel inspiration)
-- Vaulted arches, stone pillars, stained glass
-- 3D physical sacred geometry with depth and glow
+**Cathedral** — because medieval cathedrals were the original multimedia experiences. Light through colored glass, music resonating through stone, stories told in every surface. They were playgrounds for the soul.
 
-### OpenSpec Master Palette
-- **Obsidian Night** - #0d0b12 (deep volcanic glass)
-- **Alchemical Gold** - #f4d03f (da Vinci golden ratio)
-- **Rose Quartz** - #ff9fbe (mystical femininity)
-- **Teal Phosphorescence** - #6de0e0 (angelic frequencies)
-- **Vesica** - #8a7fff (sacred marriage violet)
-
-### Sacred Geometry
-- Merkaba stars (luminous golden wireframe)
-- Double helix DNA (rainbow energy ribbons)
-- Metatron's Cube (bronze 3D sculpture)
-- All with volumetric bloom and atmospheric lighting
+**Of Circuits** — because we're doing it with electricity now, but the goal is the same.
 
 ---
 
-## 📚 Key Datasets
+## License
 
-### TAROT_MASTER_DATASET.json
-Complete specifications for 22 Major Arcana:
-```json
-{
-  "tarot_master_dataset": {
-    "major_arcana": [
-      {
-        "number": 0,
-        "name": "The Fool",
-        "merkaba_chariot": "Crystalline Sphere of Pure Possibility",
-        "frequency_hz": 256,
-        "angel": "Raphael",
-        "demon": "Alomiel",
-        "faculty_role": "Dean of Quantum Possibilities",
-        "department": "Mystery & Inner Knowing"
-      }
-    ]
-  }
-}
-```
+CC0-1.0 — Public Domain
 
-### circuitum99-nodes.json
-144 Manifestation Nodes with Shem angel/demon pairs
-
-### openspec-palette.json
-Visionary art color palette (not mock colors)
+Take it. Use it. Change it. Make it yours. That's the point.
 
 ---
 
-## 🔮 Gameplay Mechanics
+## Credits
 
-### Fable-like Progression
-- **Thelemic pathworking** - Follow your True Will through alignment choices
-- **Double Tree of Life** - Navigate Qliphothic and Sephirothic paths
-- **Merkaba chariot builders** - Physics-based sacred geometry vehicles
-- **Interactive grimoire** - Learn real spells through experience
-- **33 Chapter narrative** - Jacob's Ladder ascent/descent
+Created by **Rebecca Respawn** ([@bekalah](https://github.com/Bekalah))
 
-### Three Seamless Modes
-- **Game Mode:** Explore cathedral, interact with 22 Arcana faculty
-- **Design Mode:** Paint with hermetic symbols on sacred geometry canvas
-- **Music Mode:** Compose with angel frequencies using legendary synths
+Inspired by everyone who ever made weird things because they had to.
+
+Built with love, spite, and chronic pain.
 
 ---
 
-## 📖 Documentation
-
-See `/docs` for:
-- Complete API documentation
-- Codex 144:99 system guide
-- Fusion Kink mathematics
-- Sacred geometry specifications
-- Character builds and spell systems
-
----
-
-## 🛠️ Development
-
-### Master Version 1.0 Status (Nov 1, 2025)
-✅ **ARCHITECT-VERIFIED**
-
-**Completed:**
-- ✓ Monorepo consolidation (13 repos → 1)
-- ✓ React web platform with OpenSpec palette
-- ✓ Rust cathedral-core bridge library
-- ✓ GDNative resources configured
-- ✓ Godot main cathedral scene with 22 Arcana selector
-- ✓ Complete Codex 144:99 architecture documented
-
-**Next Steps:**
-- Compile Rust cathedral-core for all platforms (Linux, Windows, macOS)
-- Place compiled libraries in godot-cathedral/bin/
-- Test Godot bridge loading JSON datasets
-- Begin 33-chapter pathworking implementation
-- Add character portrait gallery
-- Implement interactive labs for each Arcana
-- Build Web Audio synthesizer UI
-
----
-
-## 🌟 Credits
-
-**Created by:** Rebecca Respawn (Bekalah)  
-**Role:** Architect-Scribe, Creative Visionary  
-**Tradition:** Western Mystery Tradition continuation
-
-**Artistic Influences:**
-- Leonardo da Vinci (sacred geometry)
-- Ernst Fuchs (visionary realism)
-- Max Ernst (surrealist technique)
-- Emma Kuntz (healing geometry)
-- Leonora Carrington (mystical narrative)
-- Jung's Red Book (active imagination)
-
-**Game Design Influences:**
-- The Matrix (reality layers)
-- American Gods (mythology interface)
-- The Witcher (environmental storytelling)
-- Fable (moral alignment mechanics)
-
----
-
-## 📜 License
-
-MIT License - Built with love for the fusion of art, science, and mysticism
-
----
-
-## 🔗 Links
-
-- **GitHub:** https://github.com/Bekalah/cathedral-master
-- **Live Demo:** *(Coming soon)*
-- **Author:** https://github.com/Bekalah
-- **Documentation:** `/docs`
-
----
-
-## ⚡ The Fusion Kink Formula
-
-```
-A × B = D
-
-A = Active Principle (Fire, Logos, Will)
-B = Receptive Principle (Water, Sophia, Imagination)
-× = Kink (Sacred Friction, Creative Charge)
-D = Derivative (Divine Child, Manifestation)
-
-144 / 99 = 1.454545 (The Fusion Constant)
-```
-
-**Not AI-driven. Code-driven ritual architecture.**
-
----
-
-*Cathedral Master v1.0 - The complete unified system - November 2025*
+<p align="center">
+  <em>The cathedral is open.<br/>Come inside.</em>
+</p>

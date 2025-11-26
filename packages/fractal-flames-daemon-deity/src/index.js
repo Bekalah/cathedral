@@ -22,7 +22,7 @@ export class FractalFlamesDaemonDeity {
 
   // Initialize the eternal flame system
   async initialize() {
-    console.log('🔥🌊🗲 Initializing Fractal Flames Daemon Deity System...');
+// console.log('🔥🌊🗲 Initializing Fractal Flames Daemon Deity System...');
 
     // Generate elemental fractals
     this.generateElementalFractals();
@@ -37,7 +37,7 @@ export class FractalFlamesDaemonDeity {
     this.createFractalMappings();
 
     this.initialized = true;
-    console.log('✅ Fractal Flames system initialized - eternal flame burns');
+// console.log('✅ Fractal Flames system initialized - eternal flame burns');
   }
 
   // Generate elemental fractals (Fire, Water, Earth, Air, Aether)

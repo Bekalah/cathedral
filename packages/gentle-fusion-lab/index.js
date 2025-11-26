@@ -214,6 +214,6 @@ class GentleFusionLab {
 // Export for integration
 export { GentleFusionLab };
 
-console.log('🌱 GENTLE FUSION LAB: Supporting curiosity without perfectionism pressure');
-console.log('💚 CPTSD-safe learning paths for art-science fusion');
-console.log('✨ Beautiful work emerges from supported exploration, not exhausting pressure');
+// console.log('🌱 GENTLE FUSION LAB: Supporting curiosity without perfectionism pressure');
+// console.log('💚 CPTSD-safe learning paths for art-science fusion');
+// console.log('✨ Beautiful work emerges from supported exploration, not exhausting pressure');

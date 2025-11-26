@@ -7,19 +7,19 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
 
 # Check for trauma safety compliance
 echo "🛡️ Validating trauma safety across all systems..."
-pnpm run trauma-check
+ppnpm run trauma-check
 
 # Check Living Arcanae system
 echo "🃏 Verifying 22 Living Tradition Engines..."  
-pnpm run living-arcanae
+ppnpm run living-arcanae
 
 # Check Fusion Kink system
 echo "⚗️ Validating Fusion Kink Heaven 144:99 system..."
-pnpm run fusion-kink
+ppnpm run fusion-kink
 
 # Build the complete Cathedral
 echo "🏗️ Building Cathedral with all components..."
-pnpm run build
+ppnpm run build
 
 # Check if build was successful
 if [ $? -ne 0 ]; then

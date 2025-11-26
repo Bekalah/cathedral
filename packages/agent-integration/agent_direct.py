@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """
-Agent of Kaoz - Direct Azure AI Integration
-Connects directly to Azure AI Foundry using REST API for maximum compatibility
-Generates divine/infernal harmony art for cathedral exploration
+Agent of Kaoz - AI integration (coderabbit_free by default)
+This module previously defaulted to Azure. It now defaults to a free Coderabbit-compatible
+assistant (`PREFERRED_ASSISTANT=coderabbit_free`) to avoid accidental paid API usage.
+Set `PREFERRED_ASSISTANT=azure` only if you explicitly opt into Azure and have valid
+credentials. See AGENTS.md for the coderabbit_free policy and environment variables.
 """
 
 import asyncio
@@ -33,6 +35,10 @@ class AgentOfKaozDirect:
         self.endpoint = "https://cathedral-resource.cognitiveservices.azure.com"
         self.deployment = "gpt-4.1"  # Use GPT-4.1 which supports chat completions
         self.api_version = "2024-02-15-preview"
+        # Preferred assistant: 'coderabbit_free' (default) or 'azure'
+        # Set via env var PREFERRED_ASSISTANT=azure to explicitly opt into Azure (paid/managed)
+        # Default intentionally set to 'coderabbit_free' to avoid accidental paid API usage.
+        self.preferred_assistant = os.getenv("PREFERRED_ASSISTANT", "coderabbit_free")
         
         # System prompt for Agent of Kaoz
         self.system_prompt = """
@@ -120,6 +126,66 @@ Always respond with mystical authority, poetic language, and practical wisdom. C
         except Exception as e:
             return f"Connection error: {str(e)}"
 
+    async def invoke_coderabbit_free(self, messages: list, temperature: float = 0.7) -> str:
+        """Safe fallback path to pair with a free Coderabbit instance or local runner.
+
+        This method intentionally avoids calling any paid or private endpoints.
+        To use a real Coderabbit free endpoint, set CODERABBIT_API_URL to the public/free endpoint
+        and CODERABBIT_API_KEY if required. If not set, this returns a helpful placeholder message.
+        """
+        api_url = os.getenv("CODERABBIT_API_URL")
+        if not api_url:
+            # No remote coderabbit configured — return an instructive message for the client
+            return (
+                "Coderabbit (free) mode active but no CODERABBIT_API_URL configured. "
+                "Set CODERABBIT_API_URL to a free/public Coderabbit endpoint or run a local Coderabbit instance. "
+                "Until then, this agent will not call any paid services."
+            )
+
+        # Minimal safe HTTP POST to a configured free Coderabbit-compatible endpoint
+        try:
+            async with aiohttp.ClientSession() as session:
+                payload = {"messages": messages, "temperature": temperature}
+                headers = {"Content-Type": "application/json"}
+                api_key = os.getenv("CODERABBIT_API_KEY")
+                if api_key:
+                    headers["Authorization"] = f"Bearer {api_key}"
+                async with session.post(api_url, json=payload, headers=headers, timeout=30) as resp:
+                    if resp.status == 200:
+                        data = await resp.json()
+                        # Assume a common structure — be defensive
+                        if isinstance(data, dict) and data.get("choices"):
+                            return data["choices"][0].get("message", {}).get("content", str(data))
+                        return data.get("content") if isinstance(data, dict) else str(data)
+                    else:
+                        text = await resp.text()
+                        return f"Coderabbit Error: {resp.status} - {text}"
+        except Exception as e:
+            return f"Coderabbit connection error: {str(e)}"
+
+    async def invoke_assistant(self, messages: list, temperature: float = 0.7) -> str:
+        """Route to the preferred assistant based on environment configuration.
+
+        Defaults to `coderabbit_free` to ensure the agent does not call paid services by
+        default. If `PREFERRED_ASSISTANT=azure` is set, the agent will attempt to use
+        Azure AI (requires Azure CLI credentials). If `coderabbit_free` is selected but
+        no `CODERABBIT_API_URL` is configured, the method will return an instructive
+        message and will not call any paid endpoints.
+        """
+        if self.preferred_assistant == "coderabbit_free":
+            return await self.invoke_coderabbit_free(messages, temperature=temperature)
+
+        # Explicit opt-in to Azure required
+        if self.preferred_assistant == "azure":
+            return await self.invoke_azure_ai(messages, temperature=temperature)
+
+        # Unknown assistant selection — be defensive and avoid paid calls
+        return (
+            f"Unknown PREFERRED_ASSISTANT='{self.preferred_assistant}'. "
+            "Set PREFERRED_ASSISTANT=coderabbit_free to use a free Coderabbit endpoint, "
+            "or PREFERRED_ASSISTANT=azure to explicitly opt into Azure AI."
+        )
+
     async def generate_harmony_art(self, context: str, angel_aspect: str = "", demon_aspect: str = "") -> str:
         """Generate divine/infernal harmony art descriptions"""
         
@@ -146,7 +212,7 @@ Format as a detailed art generation prompt suitable for AI image creation.
 """}
         ]
         
-        return await self.invoke_azure_ai(messages)
+        return await self.invoke_assistant(messages)
 
     async def channel_character(self, character: str, context: str) -> str:
         """Channel character archetypes"""
@@ -175,7 +241,7 @@ Provide:
 """}
         ]
         
-        return await self.invoke_azure_ai(messages)
+        return await self.invoke_assistant(messages)
 
     async def weave_narrative(self, theme: str, elements: str) -> str:
         """Weave mystical narratives"""
@@ -196,7 +262,7 @@ Make it both beautiful and practical for the seeker's journey.
 """}
         ]
         
-        return await self.invoke_azure_ai(messages)
+        return await self.invoke_assistant(messages)
 
     async def create_spell(self, spell_name: str, purpose: str) -> str:
         """Create mystical spells and rituals"""
@@ -218,7 +284,7 @@ Make it both mystical and applicable to the cathedral exploration system.
 """}
         ]
         
-        return await self.invoke_azure_ai(messages)
+        return await self.invoke_assistant(messages)
 
 # Initialize Agent of Kaoz
 agent = AgentOfKaozDirect()
@@ -290,13 +356,14 @@ async def invoke_agent(request: AgentRequest):
             )
             
         else:
-            # General mystical guidance
+            # General mystical guidance — route through invoke_assistant so the
+            # PREFERRED_ASSISTANT setting is respected (defaults to coderabbit_free).
             messages = [
                 {"role": "system", "content": agent.system_prompt},
                 {"role": "user", "content": request.query}
             ]
-            response = await agent.invoke_azure_ai(messages)
-            
+            response = await agent.invoke_assistant(messages)
+
             return AgentResponse(
                 response=response,
                 success=True

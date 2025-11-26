@@ -16,5 +16,18 @@
     "wrangler": "^3.78.0",
     "typescript": "^5.3.0",
     "vitest": "^1.0.0"
+  },
+  "author": "Rebecca Respawn",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "apps/worker"
+  },
+  "homepage": "https://bekalah.github.io/cathedral/apps/worker",
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
   }
 }

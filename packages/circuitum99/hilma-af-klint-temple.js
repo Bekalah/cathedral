@@ -35,9 +35,9 @@ class HilmaAfKlintTemple {
         // 📖 Living Documentation (updates as you learn)
         this.livingDocumentation = new LivingDocumentation();
 
-        console.log('🏛️ Hilma af Klint Temple initialized');
-        console.log('🎨 Therapeutic art education platform ready');
-        console.log('🛡️ Trauma-safe learning environment active');
+// console.log('🏛️ Hilma af Klint Temple initialized');
+// console.log('🎨 Therapeutic art education platform ready');
+// console.log('🛡️ Trauma-safe learning environment active');
     }
 
     // Initialize the 22 character teachers
@@ -805,11 +805,11 @@ class LivingDocumentation {
 export { HilmaAfKlintTemple, GnosisCircle, AtelierCircle, TherapeuticNodeSystem, ProfessionalWorkflow, LivingDocumentation };
 
 // Initialize the temple
-console.log('🏛️ Hilma af Klint Temple: Therapeutic Art Education Platform');
-console.log('🌀 Gnosis Circle: Wisdom & Mystical Arts');
-console.log('🖌️ Atelier Circle: Practical Art Skills');
-console.log('👥 22 Character Teachers: Unique art tradition expertise');
-console.log('📚 3D Curriculum: Trauma-safe structured learning');
-console.log('🔧 Modular Nodes: Art-Science-Psychology integration');
-console.log('💼 Professional Workflow: Save for business, use in game');
-console.log('🛡️ Maximum Trauma Safety: All systems PTSD-informed');
+// console.log('🏛️ Hilma af Klint Temple: Therapeutic Art Education Platform');
+// console.log('🌀 Gnosis Circle: Wisdom & Mystical Arts');
+// console.log('🖌️ Atelier Circle: Practical Art Skills');
+// console.log('👥 22 Character Teachers: Unique art tradition expertise');
+// console.log('📚 3D Curriculum: Trauma-safe structured learning');
+// console.log('🔧 Modular Nodes: Art-Science-Psychology integration');
+// console.log('💼 Professional Workflow: Save for business, use in game');
+// console.log('🛡️ Maximum Trauma Safety: All systems PTSD-informed');

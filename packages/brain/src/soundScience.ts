@@ -1,3 +1,8 @@
+/**
+ * soundScience
+ * 
+ * @package @cathedral/brain
+ */
 // SoundScience: harmonic series, binaural beats, pythagorean intervals
 export class SoundScience {
   harmonicSeries(fundamental: number, numHarmonics = 8) {

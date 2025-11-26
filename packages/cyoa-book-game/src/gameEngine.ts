@@ -1,3 +1,8 @@
+/**
+ * gameEngine
+ * 
+ * @package @cathedral/cyoa-book-game
+ */
 import { GameState, GameScene, PlayerStats, GameObject, RealObject } from './types';
 import { GAME_SCENES } from './scenes';
 import { REAL_OBJECTS, REAL_BOOKS } from './realObjects';
@@ -181,7 +186,7 @@ export class CathedralGameEngine {
       this.notifyListeners();
       return true;
     } catch (error) {
-      console.error('Failed to load game:', error);
+// console.error('Failed to load game:', error);
       return false;
     }
   }

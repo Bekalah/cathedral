@@ -107,6 +107,6 @@ class CosmogenesisLearningEngine {
 export { CosmogenesisLearningEngine };
 
 // Brain system ready
-console.log('COSMOGENESIS LEARNING ENGINE - THE BRAIN: Fully integrated into Cathedral of Circuits');
-console.log('Four Worlds architecture active, 144:99 Fusion Kink Technology connected');
-console.log('All trauma safety protocols verified and active');
+// console.log('COSMOGENESIS LEARNING ENGINE - THE BRAIN: Fully integrated into Cathedral of Circuits');
+// console.log('Four Worlds architecture active, 144:99 Fusion Kink Technology connected');
+// console.log('All trauma safety protocols verified and active');

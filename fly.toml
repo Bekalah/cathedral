@@ -1,10 +1,17 @@
-app = "tesseract-bridge"
+# 🏰 Cathedral - Fly.io Configuration (FREE TIER)
+# 3 shared VMs free, global deployment
+
+app = "cathedral"
+primary_region = "iad"
 
 [build]
   dockerfile = "Dockerfile"
 
 [env]
   NODE_ENV = "production"
+  PORT = "3000"
+  CATHEDRAL_VERSION = "2.0.0"
+  CODEX_VERSION = "144:99"
 
 [http_service]
   internal_port = 3000
@@ -12,3 +19,43 @@ app = "tesseract-bridge"
   auto_stop_machines = true
   auto_start_machines = true
   min_machines_running = 0
+  processes = ["app"]
+
+[[services]]
+  protocol = "tcp"
+  internal_port = 3000
+  processes = ["app"]
+
+  [[services.ports]]
+    port = 80
+    handlers = ["http"]
+    force_https = true
+
+  [[services.ports]]
+    port = 443
+    handlers = ["tls", "http"]
+
+  [services.concurrency]
+    type = "connections"
+    hard_limit = 25
+    soft_limit = 20
+
+  [[services.tcp_checks]]
+    interval = "15s"
+    timeout = "2s"
+    grace_period = "5s"
+
+# Health check
+[[services.http_checks]]
+  interval = "10s"
+  timeout = "2s"
+  grace_period = "5s"
+  method = "get"
+  path = "/"
+  protocol = "http"
+
+# Free tier machine config
+[[vm]]
+  memory = "256mb"
+  cpu_kind = "shared"
+  cpus = 1

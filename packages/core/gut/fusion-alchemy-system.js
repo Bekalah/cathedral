@@ -155,10 +155,10 @@ class FusionAlchemySystem {
       morgan_le_fay_blessing = true
     } = fusionConfig;
 
-    console.log(`🔥 Beginning alchemical fusion...`);
-    console.log(`✨ Essence A: ${essenceA.type} - ${essenceA.name}`);
-    console.log(`✨ Essence B: ${essenceB.type} - ${essenceB.name}`);
-    console.log(`🎭 Pattern: ${fusion_pattern}`);
+// console.log(`🔥 Beginning alchemical fusion...`);
+// console.log(`✨ Essence A: ${essenceA.type} - ${essenceA.name}`);
+// console.log(`✨ Essence B: ${essenceB.type} - ${essenceB.name}`);
+// console.log(`🎭 Pattern: ${fusion_pattern}`);
 
     // Step 1: Analyze essence compatibility
     const compatibility = await this.analyzeCompatibility(essenceA, essenceB);

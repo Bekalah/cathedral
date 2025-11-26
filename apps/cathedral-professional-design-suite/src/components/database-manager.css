@@ -1,0 +1,465 @@
+/**
+ * database-manager.css - Trinity Architecture Database Manager Styles
+ * Cathedral Professional Design Suite
+ * 
+ * Database interface styling with Trinity Architecture integration
+ * Brain (Cosmogenesis) + Soul (Circuitum99) + Body (Stone Grimoire) data visualization
+ */
+
+/* Trinity Architecture Color Scheme */
+:root {
+    --cathedral-primary: #1a1a2e;
+    --cathedral-secondary: #16213e;
+    --cathedral-accent: #0f3460;
+    --cathedral-gold: #ffd700;
+    --cathedral-silver: #c0c0c0;
+    --cathedral-cosmic: #4a90e2;
+    --cathedral-mystical: #e24a90;
+    --cathedral-terrestrial: #90e24a;
+    --cathedral-data: #00d4aa;
+    --cathedral-warning: #ff6b35;
+    --cathedral-success: #00ff88;
+    
+    /* Golden Ratio Spacing */
+    --phi: 1.618;
+    --phi-small: 0.618;
+    --phi-large: 2.618;
+}
+
+/* Database Panel */
+.panel#database-panel {
+    background: linear-gradient(135deg, 
+        var(--cathedral-primary) 0%, 
+        var(--cathedral-secondary) 100%);
+    border: 2px solid var(--cathedral-data);
+    border-radius: calc(var(--phi-small) * 8px);
+    padding: calc(var(--phi-small) * 15px);
+    margin: calc(var(--phi-small) * 10px) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.panel#database-panel::before {
+    content: '🗄️';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    opacity: 0.6;
+}
+
+/* Database Panel Header */
+.panel#database-panel h3 {
+    color: var(--cathedral-data);
+    font-size: calc(var(--phi) * 14px);
+    font-weight: bold;
+    margin: 0 0 calc(var(--phi-small) * 10px) 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: calc(var(--phi-small) * 8px);
+}
+
+.panel#database-panel h3::before {
+    content: '🗄️';
+    font-size: 18px;
+}
+
+/* Database Info Container */
+.database-info {
+    background: rgba(0, 212, 170, 0.1);
+    border: 1px solid rgba(0, 212, 170, 0.3);
+    border-radius: calc(var(--phi-small) * 6px);
+    padding: calc(var(--phi-small) * 12px);
+    margin: calc(var(--phi-small) * 10px) 0;
+    min-height: 100px;
+    position: relative;
+}
+
+/* Database Status Indicators */
+.database-status {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--phi-small) * 8px);
+    padding: calc(var(--phi-small) * 8px);
+    margin: calc(var(--phi-small) * 5px) 0;
+    border-radius: calc(var(--phi-small) * 4px);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.database-status.connected {
+    background: rgba(0, 255, 136, 0.2);
+    border: 1px solid var(--cathedral-success);
+    color: var(--cathedral-success);
+}
+
+.database-status.disconnected {
+    background: rgba(255, 107, 53, 0.2);
+    border: 1px solid var(--cathedral-warning);
+    color: var(--cathedral-warning);
+}
+
+.database-status.syncing {
+    background: rgba(74, 144, 226, 0.2);
+    border: 1px solid var(--cathedral-cosmic);
+    color: var(--cathedral-cosmic);
+    animation: pulse 2s infinite;
+}
+
+/* Database Metrics */
+.database-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: calc(var(--phi-small) * 8px);
+    margin: calc(var(--phi-small) * 10px) 0;
+}
+
+.database-metric {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: calc(var(--phi-small) * 4px);
+    padding: calc(var(--phi-small) * 8px);
+    text-align: center;
+}
+
+.database-metric-label {
+    font-size: 12px;
+    color: var(--cathedral-silver);
+    margin-bottom: calc(var(--phi-small) * 4px);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.database-metric-value {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--cathedral-data);
+    font-family: 'Courier New', monospace;
+}
+
+/* Trinity Database Integration */
+.trinity-database-brain {
+    border-left: 4px solid var(--cathedral-cosmic);
+}
+
+.trinity-database-soul {
+    border-left: 4px solid var(--cathedral-mystical);
+}
+
+.trinity-database-body {
+    border-left: 4px solid var(--cathedral-terrestrial);
+}
+
+/* Database Actions */
+.database-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--phi-small) * 8px);
+    margin: calc(var(--phi-small) * 10px) 0;
+}
+
+/* Database Buttons */
+.btn.database-primary,
+.btn.database-secondary {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn.database-primary {
+    background: linear-gradient(135deg, var(--cathedral-data) 0%, #00b894 100%);
+    border: 1px solid var(--cathedral-data);
+    color: white;
+}
+
+.btn.database-secondary {
+    background: rgba(0, 212, 170, 0.1);
+    border: 1px solid var(--cathedral-data);
+    color: var(--cathedral-data);
+}
+
+.btn.database-primary:hover,
+.btn.database-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 212, 170, 0.3);
+}
+
+/* SQLite Specific Styling */
+.sqlite-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: calc(var(--phi-small) * 4px);
+    background: rgba(0, 212, 170, 0.2);
+    border: 1px solid var(--cathedral-data);
+    border-radius: calc(var(--phi-small) * 4px);
+    padding: calc(var(--phi-small) * 4px) calc(var(--phi-small) * 8px);
+    font-size: 12px;
+    color: var(--cathedral-data);
+    font-weight: 600;
+}
+
+.sqlite-indicator::before {
+    content: '🗃️';
+}
+
+/* Codex 144:99 Integration */
+.codex-integration {
+    background: linear-gradient(135deg, 
+        rgba(255, 215, 0, 0.1) 0%, 
+        rgba(255, 165, 0, 0.1) 100%);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: calc(var(--phi-small) * 6px);
+    padding: calc(var(--phi-small) * 10px);
+    margin: calc(var(--phi-small) * 10px) 0;
+}
+
+.codex-integration h4 {
+    color: var(--cathedral-gold);
+    font-size: 14px;
+    margin: 0 0 calc(var(--phi-small) * 8px) 0;
+    display: flex;
+    align-items: center;
+    gap: calc(var(--phi-small) * 6px);
+}
+
+.codex-integration h4::before {
+    content: '📜';
+}
+
+/* Arcana Registry Sync */
+.arcana-sync-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: calc(var(--phi-small) * 8px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: calc(var(--phi-small) * 4px);
+    margin: calc(var(--phi-small) * 6px) 0;
+}
+
+.arcana-sync-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--cathedral-warning);
+    animation: syncPulse 1.5s infinite;
+}
+
+.arcana-sync-indicator.synced {
+    background: var(--cathedral-success);
+    animation: none;
+}
+
+@keyframes syncPulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+/* Database Connection Status */
+.database-connection-status {
+    position: absolute;
+    top: calc(var(--phi-small) * 10px);
+    right: calc(var(--phi-small) * 10px);
+    display: flex;
+    align-items: center;
+    gap: calc(var(--phi-small) * 4px);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.connection-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--cathedral-warning);
+}
+
+.connection-indicator.connected {
+    background: var(--cathedral-success);
+    box-shadow: 0 0 6px var(--cathedral-success);
+}
+
+/* Sacred Geometry Database Patterns */
+.sacred-geometry-database {
+    background: rgba(255, 215, 0, 0.05);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: calc(var(--phi-small) * 6px);
+    padding: calc(var(--phi-small) * 10px);
+    margin: calc(var(--phi-small) * 8px) 0;
+    position: relative;
+}
+
+.sacred-geometry-database::before {
+    content: '⚗️';
+    position: absolute;
+    top: calc(var(--phi-small) * 6px);
+    right: calc(var(--phi-small) * 6px);
+    font-size: 16px;
+    opacity: 0.7;
+}
+
+/* Database Tables */
+.database-tables {
+    max-height: 200px;
+    overflow-y: auto;
+    margin: calc(var(--phi-small) * 8px) 0;
+}
+
+.database-table {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: calc(var(--phi-small) * 4px);
+    padding: calc(var(--phi-small) * 8px);
+    margin: calc(var(--phi-small) * 4px) 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.database-table:hover {
+    background: rgba(0, 212, 170, 0.1);
+    border-color: var(--cathedral-data);
+}
+
+.database-table-name {
+    font-weight: 600;
+    color: var(--cathedral-silver);
+    font-size: 13px;
+}
+
+.database-table-count {
+    font-size: 11px;
+    color: var(--cathedral-silver);
+    opacity: 0.8;
+}
+
+/* Loading States */
+.database-loading {
+    position: relative;
+}
+
+.database-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--cathedral-data);
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Export/Import Indicators */
+.database-export-progress,
+.database-import-progress {
+    background: rgba(0, 212, 170, 0.1);
+    border: 1px solid var(--cathedral-data);
+    border-radius: calc(var(--phi-small) * 4px);
+    padding: calc(var(--phi-small) * 8px);
+    margin: calc(var(--phi-small) * 8px) 0;
+}
+
+.progress-bar {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    overflow: hidden;
+    margin: calc(var(--phi-small) * 6px) 0;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--cathedral-data), #00b894);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+    animation: progressShimmer 2s infinite;
+}
+
+@keyframes progressShimmer {
+    0% { background-position: -200px 0; }
+    100% { background-position: 200px 0; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .database-actions {
+        flex-direction: column;
+    }
+    
+    .database-metrics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .arcana-sync-status {
+        flex-direction: column;
+        gap: calc(var(--phi-small) * 6px);
+    }
+}
+
+@media (max-width: 480px) {
+    .database-info {
+        padding: calc(var(--phi-small) * 8px);
+    }
+    
+    .database-actions {
+        gap: calc(var(--phi-small) * 6px);
+    }
+    
+    .database-metrics {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .database-status.syncing,
+    .arcana-sync-indicator,
+    .progress-fill {
+        animation: none;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .panel#database-panel {
+        border: 2px solid var(--cathedral-data);
+        background: var(--cathedral-primary);
+    }
+    
+    .database-info {
+        border: 2px solid var(--cathedral-data);
+        background: var(--cathedral-secondary);
+    }
+}
+
+/* Print Styles */
+@media print {
+    .database-actions,
+    .connection-indicator {
+        display: none;
+    }
+    
+    .database-info {
+        background: white;
+        border: 1px solid black;
+    }
+}
+
+/* Focus Styles for Accessibility */
+.database-table:focus,
+.btn.database-primary:focus,
+.btn.database-secondary:focus {
+    outline: 2px solid var(--cathedral-data);
+    outline-offset: 2px;
+}

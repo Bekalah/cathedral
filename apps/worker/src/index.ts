@@ -240,7 +240,7 @@ app.notFound((c) => {
 });
 
 app.onError((err: any, c: any) => {
-  console.error("Cathedral API Error:", err);
+// console.error("Cathedral API Error:", err);
   return c.json(
     {
       error: "Internal Cathedral error",

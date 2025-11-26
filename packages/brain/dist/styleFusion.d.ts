@@ -1,3 +1,8 @@
+/**
+ * styleFusion.d
+ * 
+ * @package @cathedral/brain
+ */
 export declare class StyleFusion {
     fourierAnalysis(imageData: Float32Array): Promise<{
         dominant: never[];

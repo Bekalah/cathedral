@@ -1,3 +1,8 @@
+/**
+ * index
+ * 
+ * @package @cathedral/packages
+ */
 // Cathedral Alchemy Layers Index
 // Export all alchemical layers for use in Cathedral apps
 

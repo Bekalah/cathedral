@@ -1,0 +1,43 @@
+{
+  "name": "@cathedral/japanese-design-system",
+  "version": "1.0.0",
+  "description": "Luxury minimalist design system - Dior/Chanel/Apple aesthetic that makes complex work feel simple and fluid",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "luxury-design",
+    "minimalist",
+    "apple-design",
+    "glass-morphism",
+    "high-end",
+    "fluid-ui",
+    "design-system",
+    "cathedral"
+  ],
+  "author": "Rebecca Respawn <bekalah>",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/japanese-design-system"
+  },
+  "homepage": "https://bekalah.github.io/cathedral",
+  "dependencies": {
+    "framer-motion": "^11.11.17",
+    "@cathedral/master-art-principles": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "@types/node": "^20.17.0"
+  },
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
+  }
+}

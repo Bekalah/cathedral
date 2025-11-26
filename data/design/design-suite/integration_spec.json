@@ -1,0 +1,29 @@
+{
+  "individual": {
+    "name": "Export Star",
+    "motto": "Ordo in Anima",
+    "star": "⭐ 205°",
+    "aeon": "maat",
+    "will": "To bring balanced truth and beauty into form",
+    "grade": "Probationer (0=0)"
+  },
+  "design": {
+    "palette": "crystal_clarity",
+    "geometries": [
+      "golden_spiral",
+      "tree_of_life",
+      "flower_of_life"
+    ],
+    "fractal": "achad_reversal",
+    "template": "tarot_card_template"
+  },
+  "oath": {
+    "available": true,
+    "ordeals": [
+      "ordeal_of_water",
+      "ordeal_of_choronzon",
+      "ordeal_of_silence",
+      "ordeal_of_truth"
+    ]
+  }
+}

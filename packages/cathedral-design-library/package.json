@@ -19,6 +19,7 @@
     "@cathedral/liber-arcanae": "workspace:*",
     "@cathedral/plugin-system": "workspace:*",
     "@cathedral/shared": "workspace:*",
+    "@cathedral/master-art-principles": "workspace:*",
     "canvas": "^2.11.2"
   },
   "devDependencies": {
@@ -34,5 +35,18 @@
     "fusion-kink",
     "sacred-geometry",
     "design-system"
-  ]
+  ],
+  "author": "Rebecca Respawn",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/cathedral-design-library"
+  },
+  "homepage": "https://bekalah.github.io/cathedral/packages/cathedral-design-library",
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
+  }
 }

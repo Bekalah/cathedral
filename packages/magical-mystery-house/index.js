@@ -394,8 +394,8 @@ class MagicalMysteryHouse {
 export { MagicalMysteryHouse };
 
 // Navigation system ready
-console.log("🏠 MAGICAL MYSTERY HOUSE: Navigation system fully integrated");
-console.log(
+// console.log("🏠 MAGICAL MYSTERY HOUSE: Navigation system fully integrated");
+// console.log(
   "🌉 All rooms connected to Trinity Architecture and 144:99 Fusion Kink Technology system"
 );
-console.log("🛡️ Safe exploration protocols active throughout");
+// console.log("🛡️ Safe exploration protocols active throughout");

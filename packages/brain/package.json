@@ -1,13 +1,26 @@
 {
   "name": "@cathedral/brain",
   "version": "0.1.0",
+  "description": "Cosmogenesis Learning Engine - Brain expansion with real physics, consciousness tech, and sacred geometry",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/brain"
+  },
   "scripts": {
     "dev": "tsc --watch",
     "build": "tsc",
     "clean": "rm -rf dist"
   },
-  "dependencies": {
+  "dependencies": {},
+  "author": "Rebecca Respawn",
+  "license": "CC0-1.0",
+  "homepage": "https://bekalah.github.io/cathedral/packages/brain",
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
   }
 }

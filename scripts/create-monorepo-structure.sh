@@ -48,7 +48,7 @@ cat > package.json << 'EOF'
     "validate": "pnpm -C packages/data validate",
     "trauma-check": "echo '🛡️ Trauma safety validated across all systems'",
     "clean": "rm -rf apps/*/dist apps/*/node_modules packages/*/node_modules node_modules",
-    "reset": "pnpm clean && pnpm install"
+    "reset": "pnpm clean && ppnpm install"
   },
   "devDependencies": {
     "@types/node": "^20.10.0",
@@ -105,13 +105,13 @@ jobs:
           version: 8
           
       - name: Install dependencies
-        run: pnpm install
+        run: ppnpm install
         
       - name: Validate data integrity
-        run: pnpm run validate
+        run: ppnpm run validate
         
       - name: Build Cathedral
-        run: pnpm run build
+        run: ppnpm run build
         
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -132,6 +132,6 @@ echo "✅ Cathedral Monorepo structure complete!"
 echo "📍 Next steps:"
 echo "1. Run this script to create the structure"
 echo "2. Move existing content into proper locations" 
-echo "3. Install dependencies: pnpm install"
+echo "3. Install dependencies: ppnpm install"
 echo "4. Start development: pnpm dev"
-echo "5. Deploy: pnpm run deploy:pages"
+echo "5. Deploy: ppnpm run deploy:pages"

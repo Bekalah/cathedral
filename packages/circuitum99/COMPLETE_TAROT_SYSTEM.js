@@ -506,7 +506,7 @@ class TarotReadingGame {
     
     // 🎯 AUTO MODE - AI picks perfect cards for user's current energy
     autoReading(readingType = 'daily', userIntent = null) {
-        console.log(`🔮 Starting auto ${readingType} reading...`);
+// console.log(`🔮 Starting auto ${readingType} reading...`);
         
         const spreads = {
             daily: () => this.dailyGuidanceReading(),
@@ -840,9 +840,9 @@ export {
 };
 
 // 🌟 Initialize the system
-console.log('🃏 Complete 78-Card Living Tarot System Loaded!');
-console.log('🎯 Features: Auto readings, manual selection, trauma-safe interpretation');
-console.log('🎮 Ready for integration with Circuitum99 × Living Arcanae!');
+// console.log('🃏 Complete 78-Card Living Tarot System Loaded!');
+// console.log('🎯 Features: Auto readings, manual selection, trauma-safe interpretation');
+// console.log('🎮 Ready for integration with Circuitum99 × Living Arcanae!');
 
 /**
  * USAGE EXAMPLES:

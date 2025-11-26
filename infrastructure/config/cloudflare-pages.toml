@@ -1,0 +1,74 @@
+# 🏰 Cathedral - Cloudflare Pages Configuration (FREE TIER)
+# Unlimited bandwidth, global CDN
+
+[build]
+command = "pnpm install && pnpm run build && cd apps/web && pnpm run export"
+publish = "apps/web/out"
+
+[build.environment]
+NODE_VERSION = "20"
+PNPM_HOME = "/opt/buildhome/.local/share/pnpm"
+
+# Production environment
+[context.production]
+environment = { NODE_ENV = "production", NEXT_PUBLIC_BASE_PATH = "" }
+
+# Preview/staging environment
+[context.preview]
+environment = { NODE_ENV = "preview", NEXT_PUBLIC_BASE_PATH = "" }
+
+# Branch-specific deployments
+[context.branch-deploy]
+environment = { NODE_ENV = "staging" }
+
+# Headers for all routes
+[[headers]]
+for = "/*"
+[headers.values]
+X-Cathedral-Version = "2.0.0"
+X-Codex-Version = "144:99"
+X-Frame-Options = "SAMEORIGIN"
+X-Content-Type-Options = "nosniff"
+X-XSS-Protection = "1; mode=block"
+Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Cache static assets
+[[headers]]
+for = "/assets/*"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache images
+[[headers]]
+for = "/*.{png,jpg,jpeg,gif,webp,svg,ico}"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache fonts
+[[headers]]
+for = "/*.{woff,woff2,ttf,eot}"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+# Redirects
+[[redirects]]
+from = "/synth"
+to = "/synth-lab"
+status = 301
+
+[[redirects]]
+from = "/tarot"
+to = "/tarot-arena"
+status = 301
+
+[[redirects]]
+from = "/codex"
+to = "/library"
+status = 301
+
+# SPA fallback
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+

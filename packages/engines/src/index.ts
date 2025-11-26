@@ -1,4 +1,9 @@
 /**
+ * index
+ * 
+ * @package @cathedral/engines
+ */
+/**
  * 🃏✨ LIVING TRADITION ENGINES
  * Core functionality for the 22 Major Arcana as living beings
  */

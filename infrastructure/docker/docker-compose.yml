@@ -1,3 +1,13 @@
+# 🏰 Cathedral Docker Compose
+# 
+# ⚠️  SECURITY: Use docker-compose.secure.yml for production!
+# This file is for quick local development only.
+# 
+# For secure deployment:
+#   1. cp ../../.env.template ../../.env
+#   2. Edit .env with secure passwords
+#   3. docker-compose -f docker-compose.secure.yml up
+
 version: '3.8'
 
 services:
@@ -6,10 +16,11 @@ services:
       context: ../..
       dockerfile: infrastructure/docker/Dockerfile.cathedral
     ports:
-      - "3000:3000"
+      - "${APP_PORT:-3000}:3000"
     environment:
-      - NODE_ENV=development
-      - CATHEDRAL_ENV=development
+      - NODE_ENV=${NODE_ENV:-development}
+      - CATHEDRAL_ENV=${CATHEDRAL_ENV:-development}
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-cathedral}:${POSTGRES_PASSWORD:-dev_only_change_me}@postgres:5432/${POSTGRES_DB:-cathedral}
     volumes:
       - ../../:/app
       - /app/node_modules
@@ -19,31 +30,40 @@ services:
     restart: unless-stopped
 
   redis:
-    image: redis:alpine
+    image: redis:7-alpine
     ports:
-      - "6379:6379"
+      - "${REDIS_PORT:-6379}:6379"
     volumes:
       - redis_data:/data
     restart: unless-stopped
 
   postgres:
-    image: postgres:14-alpine
+    image: postgres:16-alpine
     environment:
-      - POSTGRES_DB=cathedral
-      - POSTGRES_USER=cathedral
-      - POSTGRES_PASSWORD=sacred_geometry_144
+      # ⚠️ CHANGE THESE IN PRODUCTION - use .env file
+      POSTGRES_DB: ${POSTGRES_DB:-cathedral}
+      POSTGRES_USER: ${POSTGRES_USER:-cathedral}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-dev_only_change_me}
     ports:
-      - "5432:5432"
+      - "${POSTGRES_PORT:-5432}:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      - ./init-scripts:/docker-entrypoint-initdb.d:ro
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-cathedral}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   monitoring:
     image: prom/prometheus:latest
+    profiles:
+      - monitoring
     ports:
-      - "9090:9090"
+      - "${PROMETHEUS_PORT:-9090}:9090"
     volumes:
-      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ../monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
     restart: unless-stopped
 
 volumes:

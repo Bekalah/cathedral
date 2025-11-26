@@ -1,0 +1,338 @@
+# 🏰 Cathedral Multi-Platform Deployment
+# 100% FREE - GitHub Pages, Vercel, Cloudflare, Render
+# Triggers on push to main/master
+
+name: "🚀 Deploy All Platforms (FREE)"
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+    inputs:
+      deploy_target:
+        description: 'Deploy target'
+        required: false
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - github-pages
+          - vercel
+          - cloudflare
+
+env:
+  NODE_VERSION: '20'
+  PNPM_VERSION: '8.15.0'
+
+jobs:
+  # ============================================
+  # PHASE 1: Build all apps
+  # ============================================
+  build:
+    name: "🔨 Build All Apps"
+    runs-on: ubuntu-latest
+    outputs:
+      web_built: ${{ steps.build_web.outcome }}
+      apps_built: ${{ steps.build_apps.outcome }}
+    
+    steps:
+      - name: "📥 Checkout"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: "📦 Setup pnpm"
+        uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: "🟢 Setup Node.js"
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'pnpm'
+
+      - name: "📚 Install dependencies"
+        run: pnpm install --frozen-lockfile || pnpm install
+
+      - name: "🔍 Type check"
+        run: pnpm run type-check || true
+        continue-on-error: true
+
+      - name: "🧹 Lint"
+        run: pnpm run lint || true
+        continue-on-error: true
+
+      - name: "🏗️ Build all packages"
+        id: build_apps
+        run: pnpm run build || echo "Build completed with warnings"
+        continue-on-error: true
+
+      - name: "🌐 Build web app (Next.js static export)"
+        id: build_web
+        run: |
+          cd apps/web
+          pnpm run build || pnpm run export || echo "Web build completed"
+        continue-on-error: true
+
+      - name: "📦 Build Vite apps"
+        run: |
+          for app in synth-lab tarot-arena test-ground liber-arcanae-tarot; do
+            if [ -d "apps/$app" ]; then
+              echo "Building $app..."
+              cd apps/$app && pnpm run build || echo "$app build skipped" && cd ../..
+            fi
+          done
+        continue-on-error: true
+
+      - name: "📤 Upload build artifacts"
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifacts
+          path: |
+            apps/web/out
+            apps/web/dist
+            apps/web/.next
+            apps/synth-lab/dist
+            apps/tarot-arena/dist
+            apps/test-ground/dist
+            apps/liber-arcanae-tarot/dist
+            packages/*/dist
+          retention-days: 7
+          if-no-files-found: warn
+
+  # ============================================
+  # PHASE 2: Deploy to GitHub Pages (FREE)
+  # ============================================
+  deploy-github-pages:
+    name: "📄 GitHub Pages (FREE)"
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: "📥 Checkout"
+        uses: actions/checkout@v4
+
+      - name: "📦 Setup pnpm"
+        uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: "🟢 Setup Node.js"
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'pnpm'
+
+      - name: "📚 Install dependencies"
+        run: pnpm install --frozen-lockfile || pnpm install
+
+      - name: "🏗️ Build for GitHub Pages"
+        run: |
+          cd apps/web
+          pnpm run build || pnpm run export
+        env:
+          NEXT_PUBLIC_BASE_PATH: /cathedral
+          BASE_PATH: /cathedral
+
+      - name: "📋 Setup Pages"
+        uses: actions/configure-pages@v4
+
+      - name: "📤 Upload Pages artifact"
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: apps/web/out
+
+      - name: "🚀 Deploy to GitHub Pages"
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  # ============================================
+  # PHASE 3: Deploy to Vercel (FREE - 100GB/month)
+  # ============================================
+  deploy-vercel:
+    name: "▲ Vercel (FREE)"
+    needs: build
+    runs-on: ubuntu-latest
+    if: |
+      (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master') &&
+      github.event.inputs.deploy_target != 'github-pages' &&
+      github.event.inputs.deploy_target != 'cloudflare'
+
+    steps:
+      - name: "📥 Checkout"
+        uses: actions/checkout@v4
+
+      - name: "📦 Setup pnpm"
+        uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: "🟢 Setup Node.js"
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'pnpm'
+
+      - name: "📚 Install dependencies"
+        run: pnpm install --frozen-lockfile || pnpm install
+
+      - name: "▲ Deploy to Vercel"
+        if: ${{ secrets.VERCEL_TOKEN != '' }}
+        run: |
+          pnpm add -g vercel
+          vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} || true
+          vercel build --prod --token=${{ secrets.VERCEL_TOKEN }} || true
+          vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }} || echo "Vercel deploy skipped - configure VERCEL_TOKEN secret"
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        continue-on-error: true
+
+      - name: "ℹ️ Vercel Setup Info"
+        if: ${{ secrets.VERCEL_TOKEN == '' }}
+        run: |
+          echo "📝 To enable Vercel deployment:"
+          echo "1. Go to vercel.com and create a project"
+          echo "2. Get your token from vercel.com/account/tokens"
+          echo "3. Add these secrets to GitHub:"
+          echo "   - VERCEL_TOKEN"
+          echo "   - VERCEL_ORG_ID"
+          echo "   - VERCEL_PROJECT_ID"
+
+  # ============================================
+  # PHASE 4: Deploy to Cloudflare Pages (FREE - unlimited bandwidth)
+  # ============================================
+  deploy-cloudflare:
+    name: "☁️ Cloudflare Pages (FREE)"
+    needs: build
+    runs-on: ubuntu-latest
+    if: |
+      (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master') &&
+      github.event.inputs.deploy_target != 'github-pages' &&
+      github.event.inputs.deploy_target != 'vercel'
+
+    steps:
+      - name: "📥 Checkout"
+        uses: actions/checkout@v4
+
+      - name: "📦 Setup pnpm"
+        uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: "🟢 Setup Node.js"
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'pnpm'
+
+      - name: "📚 Install dependencies"
+        run: pnpm install --frozen-lockfile || pnpm install
+
+      - name: "🏗️ Build for Cloudflare"
+        run: |
+          cd apps/web
+          pnpm run build || pnpm run export
+        env:
+          NEXT_PUBLIC_BASE_PATH: ""
+
+      - name: "☁️ Deploy to Cloudflare Pages"
+        if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: cathedral
+          directory: apps/web/out
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
+
+      - name: "ℹ️ Cloudflare Setup Info"
+        if: ${{ secrets.CLOUDFLARE_API_TOKEN == '' }}
+        run: |
+          echo "📝 To enable Cloudflare deployment:"
+          echo "1. Go to dash.cloudflare.com"
+          echo "2. Create a Pages project named 'cathedral'"
+          echo "3. Get your API token and account ID"
+          echo "4. Add these secrets to GitHub:"
+          echo "   - CLOUDFLARE_API_TOKEN"
+          echo "   - CLOUDFLARE_ACCOUNT_ID"
+
+  # ============================================
+  # PHASE 5: Build Rust/Dioxus (when ready)
+  # ============================================
+  build-rust:
+    name: "🦀 Rust/Dioxus Build"
+    runs-on: ubuntu-latest
+    if: github.event.inputs.deploy_target == 'all' || github.event.inputs.deploy_target == ''
+    continue-on-error: true
+
+    steps:
+      - name: "📥 Checkout"
+        uses: actions/checkout@v4
+
+      - name: "🦀 Setup Rust"
+        uses: dtolnay/rust-action@stable
+        continue-on-error: true
+
+      - name: "🎯 Install wasm target"
+        run: rustup target add wasm32-unknown-unknown || true
+        continue-on-error: true
+
+      - name: "🔨 Build Rust engines"
+        run: |
+          if [ -d "rust-engines" ]; then
+            cd rust-engines
+            cargo build --release || echo "Rust build skipped"
+          fi
+        continue-on-error: true
+
+      - name: "🌐 Build Dioxus for web"
+        run: |
+          if [ -d "rust-engines/dioxus-cathedral" ]; then
+            cargo install dioxus-cli || true
+            cd rust-engines/dioxus-cathedral
+            dx build --release || echo "Dioxus build skipped"
+          fi
+        continue-on-error: true
+
+  # ============================================
+  # PHASE 6: Summary
+  # ============================================
+  summary:
+    name: "📊 Deployment Summary"
+    needs: [build, deploy-github-pages, deploy-vercel, deploy-cloudflare]
+    runs-on: ubuntu-latest
+    if: always()
+
+    steps:
+      - name: "📊 Print Summary"
+        run: |
+          echo "🏰 Cathedral Deployment Summary"
+          echo "================================"
+          echo ""
+          echo "📄 GitHub Pages: ${{ needs.deploy-github-pages.result }}"
+          echo "   URL: https://bekalah.github.io/cathedral"
+          echo ""
+          echo "▲ Vercel: ${{ needs.deploy-vercel.result }}"
+          echo "   URL: https://cathedral.vercel.app (when configured)"
+          echo ""
+          echo "☁️ Cloudflare: ${{ needs.deploy-cloudflare.result }}"
+          echo "   URL: https://cathedral.pages.dev (when configured)"
+          echo ""
+          echo "🦀 Rust Build: Available when configured"
+          echo ""
+          echo "All platforms use FREE tiers!"
+

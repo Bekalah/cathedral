@@ -1,4 +1,9 @@
 /**
+ * index
+ * 
+ * @package @cathedral/data
+ */
+/**
  * 📊✨ CATHEDRAL DATA - CENTRAL EXPORTS
  * 
  * Unified access to Codex 144:99 and Living Arcanae systems

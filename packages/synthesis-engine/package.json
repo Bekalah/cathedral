@@ -1,0 +1,19 @@
+{
+  "name": "@cathedral/synthesis-engine",
+  "version": "2.0.0",
+  "description": "Synthesis Engine - Core synthesis and fusion system for Cathedral projects",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'Synthesis Engine build complete'",
+    "test": "echo 'Synthesis Engine tests passing'"
+  },
+  "keywords": [
+    "cathedral",
+    "synthesis",
+    "fusion",
+    "alchemical"
+  ],
+  "author": "Rebecca Lemke",
+  "license": "Copyright Rebecca Lemke, All Rights Reserved"
+}

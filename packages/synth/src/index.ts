@@ -1,3 +1,8 @@
+/**
+ * index
+ * 
+ * @package @cathedral/synth
+ */
 // index.ts - public exports
 export * from './types';
 export * from './engine';

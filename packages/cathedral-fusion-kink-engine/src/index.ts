@@ -1,3 +1,8 @@
+/**
+ * index
+ * 
+ * @package @cathedral/cathedral-fusion-kink-engine
+ */
 // Cathedral Fusion Kink Engine
 // Advanced fusion mechanics connecting Liber Arcanae and Codex 144:99
 // Perfect integration of 78-card Tarot system with 144 sacred nodes

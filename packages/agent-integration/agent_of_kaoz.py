@@ -13,6 +13,25 @@ from datetime import datetime
 from agent_framework import ChatAgent
 from agent_framework_azure_ai import AzureAIAgentClient
 from azure.identity.aio import DefaultAzureCredential
+from tools.safety.allow_azure import azure_allowed
+
+
+# Small no-op agent used when Azure is intentionally disabled by policy
+class _NoAzureAgent:
+    async def run(self, *args, **kwargs):
+        class R:
+            pass
+        r = R()
+        r.text = (
+            "Azure usage is disabled by repository policy. "
+            "Set ALLOW_AZURE=1 or create a .allow_azure file in the repo root to enable."
+        )
+        return r
+
+    async def run_stream(self, *args, **kwargs):
+        # Provide a small helpful stream for callers
+        yield type("Chunk", (), {"text": "Azure usage is disabled by repository policy."})()
+
 
 class AgentOfKaoz:
     """
@@ -68,6 +87,13 @@ class AgentOfKaoz:
     async def initialize_agent(self) -> None:
         """Initialize the Azure AI Agent connection"""
         try:
+            # Respect repository policy: require explicit opt-in for Azure
+            if not azure_allowed():
+                print("⚠️  Azure usage is disabled by repository policy. Using a safe no-op agent.")
+                self.agent = _NoAzureAgent()
+                self.thread = None
+                return
+
             self.agent_client = AzureAIAgentClient(
                 project_endpoint=self.project_endpoint,
                 model_deployment_name=self.model_deployment,

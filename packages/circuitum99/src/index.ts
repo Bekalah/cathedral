@@ -1,4 +1,9 @@
 /**
+ * index
+ * 
+ * @package @cathedral/circuitum99
+ */
+/**
  * Circuitum99: Alpha et Omega - SOUL Layer Implementation
  * Book/Wisdom System with 99 Gates and 144 Lattice
  */

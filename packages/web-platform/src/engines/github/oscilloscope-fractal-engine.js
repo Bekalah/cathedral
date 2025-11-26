@@ -274,12 +274,12 @@ class OscilloscopeFractalEngine {
   async initializeForArcana(arcanaKey) {
     const arcanaData = this.arcanaFractalMath[arcanaKey];
     if (!arcanaData) {
-      console.error(`❌ Fractal math for "${arcanaKey}" not found`);
+// console.error(`❌ Fractal math for "${arcanaKey}" not found`);
       return false;
     }
 
     this.currentArcana = arcanaKey;
-    console.log(
+// console.log(
       `🌀 Initializing oscilloscope fractal engine for ${arcanaData.name}`
     );
 
@@ -336,7 +336,7 @@ class OscilloscopeFractalEngine {
     // Setup oscilloscope parameters based on Arcana
     this.setupOscilloscopeParameters(arcanaData);
 
-    console.log(`🔊 Oscilloscope audio initialized for ${arcanaData.name}`);
+// console.log(`🔊 Oscilloscope audio initialized for ${arcanaData.name}`);
   }
 
   // 🎛️ Setup oscilloscope parameters
@@ -438,7 +438,7 @@ class OscilloscopeFractalEngine {
       arcanaData: arcanaData,
     };
 
-    console.log(
+// console.log(
       `🖼️ Fractal renderer initialized for ${arcanaData.fractalType}`
     );
   }
@@ -465,7 +465,7 @@ class OscilloscopeFractalEngine {
   async loadDataset(datasetName) {
     const dataset = this.datasetLibrary[datasetName];
     if (!dataset) {
-      console.warn(
+// console.warn(
         `⚠️ Dataset "${datasetName}" not found, using synthetic data`
       );
       return this.generateSyntheticData(datasetName);
@@ -477,10 +477,10 @@ class OscilloscopeFractalEngine {
       const data = await this.generateDatasetData(dataset);
       this.currentDataset = data;
 
-      console.log(`📊 Loaded dataset: ${dataset.description}`);
+// console.log(`📊 Loaded dataset: ${dataset.description}`);
       return data;
     } catch (error) {
-      console.error(`❌ Failed to load dataset: ${error.message}`);
+// console.error(`❌ Failed to load dataset: ${error.message}`);
       return this.generateSyntheticData(datasetName);
     }
   }
@@ -588,7 +588,7 @@ class OscilloscopeFractalEngine {
       mathematicalModifiers: this.calculateMathematicalModifiers(arcanaData),
     };
 
-    console.log(
+// console.log(
       `🎯 Gear generation system initialized for ${arcanaData.gearGeneration.type}`
     );
   }
@@ -763,7 +763,7 @@ class OscilloscopeFractalEngine {
     // Start gear generation updates
     this.startGearGenerationUpdates();
 
-    console.log(`🎬 Mathematical visualization started for ${arcanaData.name}`);
+// console.log(`🎬 Mathematical visualization started for ${arcanaData.name}`);
   }
 
   // 🌀 Start fractal generation
@@ -1036,7 +1036,7 @@ class OscilloscopeFractalEngine {
       })
     );
 
-    console.log(`⚔️ Generated new gear: ${newGear.name}`);
+// console.log(`⚔️ Generated new gear: ${newGear.name}`);
     return newGear;
   }
 
@@ -1059,7 +1059,7 @@ class OscilloscopeFractalEngine {
   toggleDatasetVisualization(datasetName) {
     if (this.datasetLibrary[datasetName]) {
       this.loadDataset(datasetName);
-      console.log(`📊 Switched to dataset: ${datasetName}`);
+// console.log(`📊 Switched to dataset: ${datasetName}`);
     }
   }
 
@@ -1067,7 +1067,7 @@ class OscilloscopeFractalEngine {
   toggleFractalType(fractalType) {
     if (this.currentArcana) {
       this.arcanaFractalMath[this.currentArcana].fractalType = fractalType;
-      console.log(`🎨 Switched to fractal: ${fractalType}`);
+// console.log(`🎨 Switched to fractal: ${fractalType}`);
     }
   }
 
@@ -1077,7 +1077,7 @@ class OscilloscopeFractalEngine {
       const volume = enabled ? 0.3 : 0.0;
       this.leftGain.gain.value = volume;
       this.rightGain.gain.value = volume;
-      console.log(`🔊 Audio generation ${enabled ? "enabled" : "disabled"}`);
+// console.log(`🔊 Audio generation ${enabled ? "enabled" : "disabled"}`);
     }
   }
 
@@ -1193,7 +1193,7 @@ const oscilloscopeFractalEngine = new OscilloscopeFractalEngine();
 
 // Auto-initialize on DOM load
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("🌀📊 Oscilloscope Fractal Science Engine initialized");
+// console.log("🌀📊 Oscilloscope Fractal Science Engine initialized");
 
   // Expose global API
   window.OscilloscopeFractalEngine = oscilloscopeFractalEngine;

@@ -1,3 +1,8 @@
+/**
+ * resonance.d
+ * 
+ * @package @cathedral/crystals
+ */
 import { ResonanceComputationResult } from './types';
 export declare function computeFusionResonance(fusionId: string): Promise<ResonanceComputationResult | null>;
 export declare function listCrystalIds(): string[];

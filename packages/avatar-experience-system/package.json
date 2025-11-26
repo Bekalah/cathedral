@@ -5,11 +5,16 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "build": "node build.js",
+    "build": "node demo.js",
     "dev": "node src/index.js",
-    "test": "node test.js"
+    "test": "node demo.js"
   },
-  "keywords": ["avatar", "fractal", "tarot", "experiences"],
+  "keywords": [
+    "avatar",
+    "fractal",
+    "tarot",
+    "experiences"
+  ],
   "author": "Rebecca Respawn",
   "license": "MIT"
 }

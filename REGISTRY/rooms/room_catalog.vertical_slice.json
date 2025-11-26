@@ -1,0 +1,139 @@
+{
+  "schema_version": "1.0.0",
+  "catalog_type": "vertical_slice_rooms",
+  "created_date": "2025-11-22T20:52:30Z",
+  "description": "Cathedral Real vertical slice room archetypes for REGISTRY-driven architecture",
+  "compliance": {
+    "master_v1_control": true,
+    "trauma_aware": true,
+    "business_safe": true,
+    "local_first": true,
+    "no_ai_dependencies": true
+  },
+  "structural_archetypes": {
+    "atelier_studio": {
+      "id": "atelier_studio",
+      "name": "The Atelier - Art Studio",
+      "description": "Creative workspace for artistic expression and design exploration",
+      "category": "studio",
+      "function": "creative_workspace",
+      "accessibility_features": [
+        "trauma_safe_environment",
+        "non_clinical_framing",
+        "creative_focus_support"
+      ],
+      "visual_parameters": {
+        "lighting": "warm_creative",
+        "layout": "flexible_workspace",
+        "color_scheme": "harmonious_creative"
+      },
+      "safety_protocols": {
+        "no_grind_loops": true,
+        "no_exploitative_mechanics": true,
+        "positive_creative_energy": true
+      },
+      "provenance": {
+        "source": "godot/scenes/studios/atelier_studio.tscn",
+        "extraction_method": "hardcoded_scene_analysis",
+        "business_context": "Professional creative workspace"
+      }
+    },
+    "geometry_studio": {
+      "id": "geometry_studio",
+      "name": "Geometry Studio - Sacred Mathematics",
+      "description": "Structured space for mathematical and geometric exploration",
+      "category": "studio",
+      "function": "mathematical_workspace",
+      "accessibility_features": [
+        "sacred_geometry_focus",
+        "mathematical_precision",
+        "structured_learning_environment"
+      ],
+      "visual_parameters": {
+        "lighting": "clear_analytical",
+        "layout": "geometric_organized",
+        "color_scheme": "sacred_mathematical"
+      },
+      "safety_protocols": {
+        "no_grind_loops": true,
+        "educational_focused": true,
+        "precision_support": true
+      },
+      "provenance": {
+        "source": "godot/scenes/studios/geometry_studio.tscn",
+        "extraction_method": "hardcoded_scene_analysis",
+        "business_context": "Mathematical and geometric learning space"
+      }
+    },
+    "synth_lab": {
+      "id": "synth_lab",
+      "name": "Synth Lab - Music Studio",
+      "description": "Professional audio synthesis and music creation environment",
+      "category": "studio",
+      "function": "audio_workspace",
+      "accessibility_features": [
+        "professional_audio_tools",
+        "frequency_based_learning",
+        "creative_sound_exploration"
+      ],
+      "visual_parameters": {
+        "lighting": "studio_professional",
+        "layout": "audio_optimized",
+        "color_scheme": "audio_visual_harmony"
+      },
+      "safety_protocols": {
+        "no_grind_loops": true,
+        "professional_audio_quality": true,
+        "creative_sound_focus": true
+      },
+      "provenance": {
+        "source": "godot/scenes/studios/synth_lab.tscn",
+        "extraction_method": "hardcoded_scene_analysis",
+        "business_context": "Professional audio synthesis workspace"
+      }
+    }
+  },
+  "sacred_geometry_levels": {
+    "tier_1": {
+      "shape": "tetrahedron",
+      "description": "Foundation of all geometry - four-element balance",
+      "structural_strength": "foundation"
+    },
+    "tier_2": {
+      "shape": "cube",
+      "description": "Material realm stability and order",
+      "structural_strength": "stability"
+    },
+    "tier_3": {
+      "shape": "octahedron", 
+      "description": "Air element balance and harmony",
+      "structural_strength": "balance"
+    },
+    "tier_4": {
+      "shape": "dodecahedron",
+      "description": "Ether element and spiritual connection",
+      "structural_strength": "connection"
+    },
+    "tier_5": {
+      "shape": "icosahedron",
+      "description": "Water element flow and creative expression",
+      "structural_strength": "expression"
+    }
+  },
+  "room_relationships": {
+    "creative_flow": {
+      "atelier_studio": ["geometry_studio", "synth_lab"],
+      "geometry_studio": ["atelier_studio", "synth_lab"],
+      "synth_lab": ["atelier_studio", "geometry_studio"]
+    },
+    "complementary_functions": {
+      "visual_math_audio": ["atelier_studio", "geometry_studio", "synth_lab"]
+    }
+  },
+  "integration_notes": {
+    "godot_consumption": "All rooms loaded dynamically from REGISTRY",
+    "trauma_safety": "All room definitions follow non-clinical, creative-focused approach",
+    "business_alignment": "Professional creative workspace archetypes only",
+    "future_expansion": "Additional room types can be added through REGISTRY updates"
+  }
+}

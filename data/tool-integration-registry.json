@@ -1,0 +1,60 @@
+{
+  "version": "1.0.0",
+  "integrationPoints": {
+    "tesseractBridge": {
+      "endpoints": [
+        "circuitum99",
+        "stone-grimoire",
+        "cosmogenesis-learning-engine",
+        "magical-mystery-house",
+        "liber-arcanae",
+        "codex-144-99",
+        "tarot-reader",
+        "tarot-engine",
+        "daimon-gear",
+        "living-canon-engine"
+      ],
+      "ribbons": [
+        "research",
+        "game",
+        "fusion-kink",
+        "psych",
+        "craft",
+        "esoteric",
+        "science"
+      ]
+    },
+    "trinityArchitecture": {
+      "soul": "circuitum99",
+      "body": "stone-grimoire",
+      "spirit": "cosmogenesis-learning-engine"
+    },
+    "portalSystem": {
+      "apps": [
+        "web",
+        "tarot-arena",
+        "liber-arcanae-tarot",
+        "synth-lab",
+        "cathedral-design-studio",
+        "cathedral-immersive-creative-studio",
+        "cosmogenesis-visualizer",
+        "stone-grimoire",
+        "magical-mystery-house",
+        "living-library",
+        "master-catalog-browser",
+        "rosslyn-explorer"
+      ]
+    },
+    "interAppCommunicator": {
+      "channels": [
+        "codex-events",
+        "arcana-events",
+        "tarot-events",
+        "game-events",
+        "design-events",
+        "audio-events",
+        "bridge-events"
+      ]
+    }
+  }
+}

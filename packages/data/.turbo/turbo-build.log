@@ -1,6 +1,4 @@
 
-
-> @bekalah/cathedral-data@1.0.0 build /Users/rebeccalemke/cathedral-real/packages/data
-> echo '📊 Cathedral data package validated'
+> @cathedral/data@1.0.0 build /Users/rebeccalemke/cathedral-fixed-clean/packages/data
+> tsc
 
-📊 Cathedral data package validated

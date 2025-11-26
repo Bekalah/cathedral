@@ -1,3 +1,8 @@
+/**
+ * engine
+ *
+ * @package @cathedral/synth
+ */
 import { PatchDefinition, ChainGraphNode, RenderRequest } from './types';
 export declare class SynthEngine {
     private patches;

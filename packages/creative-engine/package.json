@@ -1,5 +1,5 @@
 {
-  "name": "@bekalah/creative-engine",
+  "name": "@cathedral/creative-engine",
   "version": "1.0.0",
   "description": "Cathedral Creative Engine - Harmonic generation system for narratives, games, architecture, and symbols",
   "main": "dist/index.js",
@@ -24,5 +24,18 @@
     "architecture-generation",
     "symbol-fusion",
     "cathedral-of-circuits"
-  ]
+  ],
+  "author": "Rebecca Respawn",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/creative-engine"
+  },
+  "homepage": "https://bekalah.github.io/cathedral/packages/creative-engine",
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
+  }
 }

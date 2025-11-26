@@ -1,4 +1,9 @@
 /**
+ * index.d
+ * 
+ * @package @cathedral/config
+ */
+/**
  * @cathedral/config
  * Shared configuration constants for Cathedral monorepo
  */

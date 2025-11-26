@@ -1,3 +1,8 @@
+/**
+ * integration.d
+ * 
+ * @package @cathedral/synth
+ */
 export interface FusionHelpers {
     listFusionSets: () => Array<{
         id: string;

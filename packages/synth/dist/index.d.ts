@@ -1,3 +1,8 @@
+/**
+ * index
+ *
+ * @package @cathedral/synth
+ */
 export * from './types';
 export * from './engine';
 export * from './patchLibrary';

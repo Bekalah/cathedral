@@ -39,7 +39,7 @@ jobs:
         run: pnpm run lint
 
       - name: OpenSpec validate (if configured)
-        run: npx turbo run openspec-validate || true
+        run: pnpm exec turbo run openspec-validate || true
 
       - name: Record Magnum Opus Version
         run: |

@@ -1,4 +1,9 @@
 /**
+ * index
+ * 
+ * @package @cathedral/creative-engine
+ */
+/**
  * Cathedral Creative Engine - TypeScript Implementation
  * Unified creative generation system for all Cathedral repositories
  */
@@ -502,7 +507,13 @@ export class NarrativeGenerator {
   }
 
   private assembleStory(opening: string, development: string, climax: string, resolution: string): string {
-    return `${opening}\n\n${development}\n\n${climax}\n\n${resolution}`;
+    return `${opening}
+
+${development}
+
+${climax}
+
+${resolution}`;
   }
 }
 
@@ -876,7 +887,8 @@ export class SymbolFusion {
     return `<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <radialGradient id="fusion-gradient">
-      ${colors.map((c, i) => `<stop offset="${i / colors.length * 100}%" stop-color="${c}" />`).join('\n      ')}
+      ${colors.map((c, i) => `<stop offset="${i / colors.length * 100}%" stop-color="${c}" />`).join('
+      ')}
     </radialGradient>
   </defs>
   <circle cx="100" cy="100" r="80" fill="url(#fusion-gradient)" opacity="0.8"/>
@@ -903,7 +915,7 @@ export async function loadCodexData(): Promise<CodexNode[]> {
     const data = await response.json();
     return data.nodes || [];
   } catch (error) {
-    console.error('Failed to load codex data:', error);
+// console.error('Failed to load codex data:', error);
     return [];
   }
 }

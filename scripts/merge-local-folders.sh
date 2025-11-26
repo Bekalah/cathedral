@@ -163,7 +163,7 @@ echo
 echo "Finished."
 echo
 echo "NEXT STEPS:"
-echo "1) Run 'pnpm install' at repo root"
+echo "1) Run 'ppnpm install' at repo root"
 echo "2) Inspect moved packages for broken relative imports and update to @cathedral/* aliases or fix paths"
 echo "3) Update Storybook main.js if necessary to include new paths"
 echo "4) Run 'pnpm -w -r lint' and 'pnpm -w -r test' and fix issues"

@@ -1,3 +1,8 @@
+/**
+ * core
+ * 
+ * @package @cathedral/codex-144-99
+ */
 // Pure algorithmic SpiralEngine — research and exploration using only algorithmic and data-driven approaches
 export type SpiralConfig = {
   seed?: string;

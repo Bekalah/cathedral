@@ -1,3 +1,8 @@
+/**
+ * types
+ *
+ * @package @cathedral/synth
+ */
 export interface OscillatorSpec {
     id: string;
     type: OscillatorType | 'supersaw' | 'granular-cloud' | 'noise-pink' | 'noise-brown';

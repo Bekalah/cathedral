@@ -1,12 +1,12 @@
 {
-  "name": "@bekalah/gentle-fusion-lab",
+  "name": "@cathedral/gentle-fusion-lab",
   "version": "1.0.0",
   "description": "CPTSD-safe exploration system for art-science fusion without perfectionism burnout",
   "main": "index.js",
   "type": "module",
   "keywords": [
     "gentle-learning",
-    "art-science-fusion", 
+    "art-science-fusion",
     "cptsd-safe",
     "curiosity-driven",
     "sustainable-creativity",
@@ -22,6 +22,17 @@
     "fusion": "echo '✨ Art + Science + Beauty - without the exhaustion'"
   },
   "dependencies": {},
-  "author": "Bekalah Cathedral Systems - CPTSD Recovery Through Creation",
-  "license": "CURIOSITY-PROTECTION-LICENSE"
+  "author": "Rebecca Respawn",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/gentle-fusion-lab"
+  },
+  "homepage": "https://bekalah.github.io/cathedral/packages/gentle-fusion-lab",
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
+  }
 }

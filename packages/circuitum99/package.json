@@ -1,14 +1,39 @@
 {
   "name": "@cathedral/circuitum99",
   "version": "1.0.0",
-  "description": "Circuitum99 - Soul nodes and gate systems",
-  "main": "index.js",
-  "scripts": {
-    "dev": "node index.js",
-    "build": "echo 'Circuitum99 build complete'",
-    "test": "echo 'Circuitum99 tests passing'"
+  "description": "Circuitum99 - Soul nodes and gate systems with 99 Gates, RPG mechanics, and story pathworking",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/circuitum99"
   },
-  "keywords": ["cathedral", "circuitum99", "soul", "gates"],
-  "author": "Rebecca Respawn",
-  "license": "CC0"
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "cathedral",
+    "circuitum99",
+    "soul",
+    "gates"
+  ],
+  "author": "Rebecca Respawn <bekalah>",
+  "license": "CC0-1.0",
+  "homepage": "https://bekalah.github.io/cathedral",
+  "dependencies": {
+    "@cathedral/master-art-principles": "workspace:*",
+    "@cathedral/codex-144-99": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "@types/node": "^20.17.0"
+  },
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
+  }
 }

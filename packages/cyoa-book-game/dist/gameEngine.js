@@ -145,7 +145,7 @@ export class CathedralGameEngine {
             return true;
         }
         catch (error) {
-            console.error('Failed to load game:', error);
+// console.error('Failed to load game:', error);
             return false;
         }
     }

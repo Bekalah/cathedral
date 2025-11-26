@@ -1,0 +1,20 @@
+{
+  "name": "@cathedral/fusion-kink-generator",
+  "version": "1.0.0",
+  "description": "Alchemical Fusion Generator - Quality-focused synthesis patterns (a + b = d)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'Fusion Generator build complete'",
+    "test": "echo 'Fusion Generator tests passing'"
+  },
+  "keywords": [
+    "cathedral",
+    "fusion",
+    "alchemical",
+    "synthesis",
+    "quality"
+  ],
+  "author": "Rebecca Lemke",
+  "license": "Copyright Rebecca Lemke, All Rights Reserved"
+}

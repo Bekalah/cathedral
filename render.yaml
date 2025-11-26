@@ -1,0 +1,87 @@
+# 🏰 Cathedral Render Deployment (FREE TIER)
+# render.com - 750 free hours/month
+
+services:
+  # Main Web App (FREE)
+  - type: web
+    name: cathedral-web
+    runtime: node
+    region: oregon
+    plan: free
+    buildCommand: |
+      corepack enable
+      corepack prepare pnpm@8.15.0 --activate
+      pnpm install
+      pnpm run build
+    startCommand: pnpm run start:prod || pnpm run start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: NODE_ENV
+        value: production
+      - key: PNPM_HOME
+        value: /opt/render/.local/share/pnpm
+    rootDir: apps/web
+    autoDeploy: true
+
+  # Synth Lab (FREE - Static Site)
+  - type: web
+    name: cathedral-synth-lab
+    runtime: static
+    region: oregon
+    plan: free
+    buildCommand: |
+      corepack enable
+      corepack prepare pnpm@8.15.0 --activate
+      pnpm install
+      cd apps/synth-lab && pnpm run build
+    staticPublishPath: apps/synth-lab/dist
+    headers:
+      - path: /*
+        name: X-Cathedral-App
+        value: synth-lab
+    autoDeploy: true
+
+  # Tarot Arena (FREE - Static Site)
+  - type: web
+    name: cathedral-tarot-arena
+    runtime: static
+    region: oregon
+    plan: free
+    buildCommand: |
+      corepack enable
+      corepack prepare pnpm@8.15.0 --activate
+      pnpm install
+      cd apps/tarot-arena && pnpm run build
+    staticPublishPath: apps/tarot-arena/dist
+    headers:
+      - path: /*
+        name: X-Cathedral-App
+        value: tarot-arena
+    autoDeploy: true
+
+  # Worker Service (FREE - Background Jobs)
+  - type: worker
+    name: cathedral-worker
+    runtime: node
+    region: oregon
+    plan: free
+    buildCommand: |
+      corepack enable
+      corepack prepare pnpm@8.15.0 --activate
+      pnpm install
+      cd apps/worker && pnpm run build
+    startCommand: cd apps/worker && node dist/index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+    autoDeploy: true
+
+# Cron Jobs (FREE)
+# Note: Render free tier includes basic cron
+# cronjobs:
+#   - name: cathedral-sync
+#     schedule: "0 0 * * *"
+#     command: pnpm run sync
+

@@ -24,7 +24,7 @@ function CathedralMasterSystem() {
         e.preventDefault()
         setPaused(prev => {
           const newState = !prev
-          console.log('🛡️ PTSD Emergency pause:', newState ? 'PAUSED' : 'RESUMED')
+// console.log('🛡️ PTSD Emergency pause:', newState ? 'PAUSED' : 'RESUMED')
           return newState
         })
       }
@@ -44,9 +44,9 @@ function CathedralMasterSystem() {
       const engines = await engineLoader.loadModeEngines(modeName)
       setLoadedEngines(engines)
       setIsReady(true)
-      console.log(`✨ Cathedral mode ready: ${modeName}`)
+// console.log(`✨ Cathedral mode ready: ${modeName}`)
     } catch (err) {
-      console.error('Failed to load cathedral engines:', err)
+// console.error('Failed to load cathedral engines:', err)
       setIsReady(false)
     }
   }
@@ -225,7 +225,7 @@ function CosmogenesisController({ paused, loadedEngines }) {
     cosmo.render()
     
     cosmoRef.current = cosmo
-    console.log('✨ REAL Cosmogenesis engine rendered:', cosmo.config.mode, 'nodes')
+// console.log('✨ REAL Cosmogenesis engine rendered:', cosmo.config.mode, 'nodes')
     
     // Animate phase rotation (if not paused)
     function animate() {

@@ -5,7 +5,8 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=18.17.0"
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
   },
   "scripts": {
     "dev": "vite dev --port 3001",
@@ -86,7 +87,7 @@
     "postcss": "^8.4.47"
   },
   "author": "Rebecca Respawn <bekalah@users.noreply.github.com>",
-  "license": "MIT",
+  "license": "CC0-1.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/Bekalah/cathedral.git",
@@ -178,5 +179,6 @@
         "./src/test-setup.ts"
       ]
     }
-  }
+  },
+  "packageManager": "pnpm@8.15.0"
 }

@@ -34,10 +34,10 @@ export class CreativeGameEngine {
             this.creativeEngine = createCreativeEngine(codexData);
             // Initialize scenes with creative content
             this.initializeCreativeScenes();
-            console.log('✅ Creative Game Engine initialized with', codexData.length, 'nodes');
+// console.log('✅ Creative Game Engine initialized with', codexData.length, 'nodes');
         }
         catch (error) {
-            console.error('❌ Failed to initialize creative game engine:', error);
+// console.error('❌ Failed to initialize creative game engine:', error);
             throw error;
         }
     }

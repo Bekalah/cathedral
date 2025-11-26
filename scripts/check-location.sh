@@ -29,9 +29,9 @@ if [[ "$CURRENT_DIR" == *"cathedral-research"* ]]; then
         ls packages/ 2>/dev/null || echo "   No packages directory found"
         echo ""
         echo "🔧 Quick start commands:"
-        echo "   npm install       # Install dependencies"
-        echo "   npm run dev       # Start development"
-        echo "   npm run build     # Build all packages"
+        echo "   pnpm install       # Install dependencies"
+        echo "   pnpm run dev       # Start development"
+        echo "   pnpm run build     # Build all packages"
     else
         echo "⚠️  Remember: This is the research archive"
         echo "📖 See REDIRECT_TO_MAIN.md for full instructions"
@@ -73,9 +73,9 @@ elif [[ "$CURRENT_DIR" == *"cathedral"* ]] && [[ "$CURRENT_DIR" != *"cathedral-r
     
     echo ""
     echo "🔧 Development commands:"
-    echo "   npm run dev       # Start development"
-    echo "   npm run build     # Build all packages"
-    echo "   npm run test      # Run tests"
+    echo "   pnpm run dev       # Start development"
+    echo "   pnpm run build     # Build all packages"
+    echo "   pnpm run test      # Run tests"
     
 else
     echo "❓ Unknown location: $CURRENT_DIR"

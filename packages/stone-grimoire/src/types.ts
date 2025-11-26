@@ -1,3 +1,8 @@
+/**
+ * types
+ * 
+ * @package @cathedral/stone-grimoire
+ */
 export interface GameState {
   currentScene: string;
   inventory: GameObject[];

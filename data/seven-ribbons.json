@@ -1,0 +1,97 @@
+{
+  "ribbons": {
+    "research": {
+      "color": "#4A90E2",
+      "packages": [
+        "alexandria-library",
+        "living-libraries",
+        "museum-sources",
+        "research-sources"
+      ],
+      "apps": [
+        "living-library",
+        "master-catalog-browser"
+      ]
+    },
+    "game": {
+      "color": "#E24A4A",
+      "packages": [
+        "circuitum99",
+        "cyoa-book-game",
+        "fable-rpg-mechanics",
+        "game-engine",
+        "daimon-gear",
+        "tarot-engine"
+      ],
+      "apps": [
+        "web",
+        "tarot-arena",
+        "liber-arcanae-tarot",
+        "mystical-treasure-hunt"
+      ]
+    },
+    "fusion-kink": {
+      "color": "#E24AE2",
+      "packages": [
+        "cathedral-fusion-kink-engine",
+        "fusion-kink-generator",
+        "fusionkink-engine",
+        "gentle-fusion-lab"
+      ],
+      "apps": []
+    },
+    "psych": {
+      "color": "#E2E24A",
+      "packages": [
+        "liber-arcanae",
+        "tarot-reader",
+        "tarot-engine",
+        "characters"
+      ],
+      "apps": [
+        "tarot-arena",
+        "liber-arcanae-tarot"
+      ]
+    },
+    "craft": {
+      "color": "#4AE24A",
+      "packages": [
+        "cathedral-design-library",
+        "art-generation-node",
+        "synth",
+        "synth-labs",
+        "professional-design-suite"
+      ],
+      "apps": [
+        "cathedral-design-studio",
+        "synth-lab"
+      ]
+    },
+    "esoteric": {
+      "color": "#E2A04A",
+      "packages": [
+        "stone-grimoire",
+        "codex-144-99",
+        "cosmogenesis-learning-engine",
+        "sacred-geometry-core"
+      ],
+      "apps": [
+        "stone-grimoire",
+        "cosmogenesis-visualizer",
+        "rosslyn-explorer"
+      ]
+    },
+    "science": {
+      "color": "#4A4AE2",
+      "packages": [
+        "brain",
+        "soul",
+        "trinity-architecture",
+        "physics-cannon-core"
+      ],
+      "apps": [
+        "cosmogenesis-engine"
+      ]
+    }
+  }
+}

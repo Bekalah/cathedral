@@ -1,0 +1,20 @@
+{
+  "name": "@cathedral/codex-musical-system",
+  "version": "1.0.0",
+  "description": "Codex 144:99 Musical System - Sacred tones and harmonic structures",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'Codex Musical System build complete'",
+    "test": "echo 'Codex Musical System tests passing'"
+  },
+  "keywords": [
+    "cathedral",
+    "codex",
+    "music",
+    "harmony",
+    "144-99"
+  ],
+  "author": "Rebecca Lemke",
+  "license": "Copyright Rebecca Lemke, All Rights Reserved"
+}

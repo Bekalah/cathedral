@@ -1,14 +1,43 @@
 {
   "name": "@cathedral/stone-grimoire",
   "version": "1.0.0",
-  "description": "Stone Grimoire - Body nodes and archive systems",
-  "main": "index.js",
+  "description": "Stone Grimoire - Body system with 8 octagram halls and 144 folios, master art principles",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "dev": "node index.js",
-    "build": "echo 'Stone Grimoire build complete'",
-    "test": "echo 'Stone Grimoire tests passing'"
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "test": "vitest"
   },
-  "keywords": ["cathedral", "stone-grimoire", "body", "archive"],
-  "author": "Rebecca Respawn",
-  "license": "CC0"
+  "keywords": [
+    "cathedral",
+    "stone-grimoire",
+    "body",
+    "archive",
+    "octagram",
+    "folios"
+  ],
+  "author": "Rebecca Respawn <bekalah>",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/stone-grimoire"
+  },
+  "homepage": "https://bekalah.github.io/cathedral",
+  "dependencies": {
+    "@cathedral/codex-144-99": "workspace:*",
+    "@cathedral/master-art-principles": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "@types/node": "^20.17.0",
+    "vitest": "^1.6.0"
+  },
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
+  }
 }

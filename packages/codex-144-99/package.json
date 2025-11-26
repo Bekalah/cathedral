@@ -19,7 +19,8 @@
     }
   },
   "engines": {
-    "node": ">=18.17.0"
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
   },
   "scripts": {
     "build": "tsc",
@@ -42,7 +43,10 @@
     "generate-codex": "node scripts/generate-codex-data.js",
     "update-sources": "node scripts/update-research-sources.js",
     "validate-sources": "node scripts/validate-sources.js",
-    "benchmark": "node scripts/benchmark-search.js"
+    "benchmark": "node scripts/benchmark-search.js",
+    "map": "ts-node scripts/map-codex.ts",
+    "fix": "ts-node -e \"import('./src/fix-codex').then(m => { const f = new m.CodexFixer(); console.log(f.generateReport()); })\"",
+    "codex": "ts-node src/accessible-cli.ts"
   },
   "files": [
     "dist",
@@ -57,8 +61,6 @@
     "cheerio": "^1.0.0-rc.12",
     "fuse.js": "^7.0.0",
     "leven": "^4.0.0",
-    "@azure-rest/ai-inference": "^1.0.0-beta.6",
-    "@azure/identity": "^4.13.0",
     "dotenv": "^17.2.3"
   },
   "devDependencies": {
@@ -74,7 +76,7 @@
     "rimraf": "^5.0.10"
   },
   "author": "Rebecca Respawn <bekalah@users.noreply.github.com>",
-  "license": "MIT",
+  "license": "CC0-1.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/Bekalah/cathedral.git",
@@ -105,7 +107,7 @@
       "144-sacred-nodes",
       "global-library-integration",
       "real-research-sources",
-      "azure-ai-enhanced",
+      "algorithmic-only",
       "sacred-geometry-mapping",
       "consciousness-levels",
       "fusion-kink-integration",
@@ -130,5 +132,6 @@
   "volta": {
     "node": "18.19.1",
     "pnpm": "8.15.7"
-  }
+  },
+  "packageManager": "pnpm@8.15.0"
 }

@@ -16,7 +16,7 @@ export class ArcanaeCharacterSystem {
 
   async loadArcanaeData() {
     try {
-      console.log('🃏 Loading your 22 Living Tradition Engines...');
+// console.log('🃏 Loading your 22 Living Tradition Engines...');
 
       // Load your authentic Living Arcanae data
       const response = await fetch('/data/complete-arcana-profiles.json');
@@ -28,10 +28,10 @@ export class ArcanaeCharacterSystem {
       });
 
       this.isLoaded = true;
-      console.log(`✅ Loaded ${this.arcanae.size} living tradition engines`);
+// console.log(`✅ Loaded ${this.arcanae.size} living tradition engines`);
 
     } catch (error) {
-      console.error('❌ Failed to load Living Arcanae data:', error);
+// console.error('❌ Failed to load Living Arcanae data:', error);
       throw error;
     }
   }
@@ -82,8 +82,8 @@ export class ArcanaeCharacterSystem {
       }
     };
 
-    console.log('👤 Created Royal Initiate character');
-    console.log('🛡️ Trauma-safe character creation complete');
+// console.log('👤 Created Royal Initiate character');
+// console.log('🛡️ Trauma-safe character creation complete');
 
     return character;
   }
@@ -103,7 +103,7 @@ export class ArcanaeCharacterSystem {
       traumaSafety: 'MAXIMUM - CPTSD-safe protocols active'
     };
 
-    console.log(`📊 Character stats calculated for ${selectedArcanae.name}`);
+// console.log(`📊 Character stats calculated for ${selectedArcanae.name}`);
 
     return stats;
   }

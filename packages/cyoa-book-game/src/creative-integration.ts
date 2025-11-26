@@ -1,4 +1,9 @@
 /**
+ * creative-integration
+ * 
+ * @package @cathedral/cyoa-book-game
+ */
+/**
  * Creative Engine Integration for CYOA Book Game
  * Adds harmonic generation capabilities to the interactive story system
  */
@@ -140,9 +145,9 @@ export class CreativeGameEngine {
       // Initialize scenes with creative content
       this.initializeCreativeScenes();
 
-      console.log('✅ Creative Game Engine initialized with', codexData.length, 'nodes');
+// console.log('✅ Creative Game Engine initialized with', codexData.length, 'nodes');
     } catch (error) {
-      console.error('❌ Failed to initialize creative game engine:', error);
+// console.error('❌ Failed to initialize creative game engine:', error);
       throw error;
     }
   }
@@ -445,7 +450,9 @@ export class GameEngineIntegration {
 
     const creativeIntro = `This space resonates with ${creative.harmony.relationship.toLowerCase()} energy, where ${creative.narrative.themes.join(' and ').toLowerCase()} guide the seeker.`;
 
-    return `${original}\n\n${creativeIntro}`;
+    return `${original}
+
+${creativeIntro}`;
   }
 
   /**

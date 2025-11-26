@@ -1,3 +1,8 @@
+/**
+ * types
+ * 
+ * @package @cathedral/cyoa-book-game
+ */
 export interface GameState {
   currentScene: string;
   inventory: GameObject[];

@@ -1,3 +1,8 @@
+/**
+ * scenes
+ * 
+ * @package @cathedral/cyoa-book-game
+ */
 import { GameScene } from './types';
 
 export const GAME_SCENES: Record<string, GameScene> = {

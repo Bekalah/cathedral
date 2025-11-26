@@ -1,3 +1,8 @@
+/**
+ * baseCrystals
+ * 
+ * @package @cathedral/src
+ */
 // data/baseCrystals.ts - foundational crystal dataset (seed subset)
 import { Crystal } from '../types';
 

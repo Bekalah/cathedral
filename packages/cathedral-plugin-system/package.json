@@ -28,5 +28,18 @@
     "fusion-kink",
     "modular-architecture",
     "sacred-technology"
-  ]
+  ],
+  "author": "Rebecca Respawn",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/cathedral-plugin-system"
+  },
+  "homepage": "https://bekalah.github.io/cathedral/packages/cathedral-plugin-system",
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
+  }
 }

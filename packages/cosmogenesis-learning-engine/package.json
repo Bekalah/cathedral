@@ -1,14 +1,38 @@
 {
   "name": "@cathedral/cosmogenesis-learning-engine",
   "version": "1.0.0",
-  "description": "Cosmogenesis Learning Engine - Planetary consciousness and psychological structures",
-  "main": "index.js",
+  "description": "Cosmogenesis Learning Engine - Planetary consciousness and psychological structures with master art principles",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "dev": "node index.js",
-    "build": "echo 'Cosmogenesis build complete'",
-    "test": "echo 'Cosmogenesis tests passing'"
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist"
   },
-  "keywords": ["cathedral", "cosmogenesis", "planetary", "consciousness"],
-  "author": "Rebecca Respawn",
-  "license": "CC0"
+  "keywords": [
+    "cathedral",
+    "cosmogenesis",
+    "planetary",
+    "consciousness"
+  ],
+  "author": "Rebecca Respawn <bekalah>",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/cosmogenesis-learning-engine"
+  },
+  "homepage": "https://bekalah.github.io/cathedral",
+  "dependencies": {
+    "@cathedral/master-art-principles": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "@types/node": "^20.17.0"
+  },
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
+  }
 }

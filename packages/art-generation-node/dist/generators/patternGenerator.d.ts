@@ -1,3 +1,8 @@
+/**
+ * patternGenerator.d
+ * 
+ * @package @cathedral/dist
+ */
 import { ArtGenerationRequest, GeneratedArtwork } from '../types';
 export declare class PatternGenerator {
     private width;

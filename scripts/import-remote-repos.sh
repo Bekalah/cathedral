@@ -98,4 +98,4 @@ for item in $items; do
   echo
 done
 
-echo "All done. Remember to run 'pnpm install' and adjust workspaces/pkgs."
+echo "All done. Remember to run 'ppnpm install' and adjust workspaces/pkgs."

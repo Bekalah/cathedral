@@ -135,8 +135,8 @@ class Ellen3 {
     this.job_queue.push(job);
     this.job_queue.sort((a, b) => b.priority - a.priority); // Higher priority first
 
-    console.log(`🔮 Ellen 3 enqueued job: ${jobId} with priority ${job.priority}`);
-    console.log(`📋 Assigned Shem agents: ${job.assigned_shem_agents.join(", ")}`);
+// console.log(`🔮 Ellen 3 enqueued job: ${jobId} with priority ${job.priority}`);
+// console.log(`📋 Assigned Shem agents: ${job.assigned_shem_agents.join(", ")}`);
 
     // Process queue immediately if agents are available
     await this.processQueue();
@@ -148,7 +148,7 @@ class Ellen3 {
    * Process the job queue and assign work to available Shem agents
    */
   async processQueue() {
-    console.log(`🔄 Ellen 3 processing queue with ${this.job_queue.length} jobs...`);
+// console.log(`🔄 Ellen 3 processing queue with ${this.job_queue.length} jobs...`);
 
     // Get available agents
     const availableAgents = this.getAvailableAgents();
@@ -180,7 +180,7 @@ class Ellen3 {
       : availableAgents.slice(0, 3); // Default to 3 agents if none specified
 
     if (requiredAgents.length === 0) {
-      console.log(`⚠️ No available agents for job ${job.id}`);
+// console.log(`⚠️ No available agents for job ${job.id}`);
       return;
     }
 
@@ -198,7 +198,7 @@ class Ellen3 {
 
     this.active_jobs.set(job.id, job);
 
-    console.log(`✅ Assigned job ${job.id} to agents: ${requiredAgents.join(", ")}`);
+// console.log(`✅ Assigned job ${job.id} to agents: ${requiredAgents.join(", ")}`);
 
     // Start job processing
     await this.processJob(job);
@@ -222,7 +222,7 @@ class Ellen3 {
       job.current_stage = stage;
       job.progress = Math.round((i / stages.length) * 100);
 
-      console.log(`🔄 Job ${job.id} - Stage: ${stage} (${job.progress}%)`);
+// console.log(`🔄 Job ${job.id} - Stage: ${stage} (${job.progress}%)`);
 
       // Simulate stage processing time
       await this.simulateProcessingDelay(1000 + Math.random() * 2000);
@@ -245,14 +245,14 @@ class Ellen3 {
    * Apply mystical enhancement to job
    */
   async applyMysticalEnhancement(job) {
-    console.log(`✨ Applying Morgan Le Fay's mystical enhancement to job ${job.id}...`);
+// console.log(`✨ Applying Morgan Le Fay's mystical enhancement to job ${job.id}...`);
 
     // Add mystical properties to the manifest
     if (job.manifest.output && job.manifest.output.manifestPath) {
       // In a real implementation, this would modify the actual manifest file
-      console.log(`🔮 Enhanced manifest with consciousness-responsive properties`);
-      console.log(`🌙 Applied trauma-safe mystical artistry`);
-      console.log(`🏰 Integrated authentic British mystical symbolism`);
+// console.log(`🔮 Enhanced manifest with consciousness-responsive properties`);
+// console.log(`🌙 Applied trauma-safe mystical artistry`);
+// console.log(`🏰 Integrated authentic British mystical symbolism`);
     }
   }
 
@@ -260,7 +260,7 @@ class Ellen3 {
    * Perform quality assurance on completed job
    */
   async performQualityAssurance(job) {
-    console.log(`🔍 Performing mystical quality assurance on job ${job.id}...`);
+// console.log(`🔍 Performing mystical quality assurance on job ${job.id}...`);
 
     const quality_checks = [
       "Consciousness responsiveness verified",
@@ -271,7 +271,7 @@ class Ellen3 {
     ];
 
     quality_checks.forEach(check => {
-      console.log(`✅ ${check}`);
+// console.log(`✅ ${check}`);
     });
 
     job.quality_score = 0.95 + Math.random() * 0.05; // 95-100% quality
@@ -304,8 +304,8 @@ class Ellen3 {
     // Update statistics
     this.updateProcessingStats(job);
 
-    console.log(`🎉 Job ${job.id} completed successfully!`);
-    console.log(`📊 Quality Score: ${(job.quality_score * 100).toFixed(1)}%`);
+// console.log(`🎉 Job ${job.id} completed successfully!`);
+// console.log(`📊 Quality Score: ${(job.quality_score * 100).toFixed(1)}%`);
   }
 
   /**
@@ -327,7 +327,7 @@ class Ellen3 {
     this.processing_stats.success_rate =
       (this.processing_stats.success_rate * (totalJobs - 1) + jobSuccess) / totalJobs;
 
-    console.log(`📈 Updated stats: ${totalJobs} jobs, ${(this.processing_stats.average_processing_time / 1000).toFixed(1)}s avg time`);
+// console.log(`📈 Updated stats: ${totalJobs} jobs, ${(this.processing_stats.average_processing_time / 1000).toFixed(1)}s avg time`);
   }
 
   /**
@@ -384,7 +384,7 @@ class Ellen3 {
    * Emergency stop for all processing
    */
   async emergencyStop() {
-    console.log(`🚨 Ellen 3 initiating emergency stop...`);
+// console.log(`🚨 Ellen 3 initiating emergency stop...`);
 
     // Stop all active jobs
     for (const job of this.active_jobs.values()) {
@@ -401,7 +401,7 @@ class Ellen3 {
 
     this.job_queue = [];
 
-    console.log(`✅ Emergency stop completed. All systems safe.`);
+// console.log(`✅ Emergency stop completed. All systems safe.`);
   }
 
   /**

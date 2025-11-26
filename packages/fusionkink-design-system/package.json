@@ -1,0 +1,43 @@
+{
+  "name": "@cathedral/fusionkink-design-system",
+  "version": "1.0.0",
+  "description": "FusionKink Design System - A×B=D design system for GitHub and platforms",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "node dist/test.js"
+  },
+  "dependencies": {
+    "@cathedral/shared": "workspace:*",
+    "@cathedral/visionary-art-colors": "workspace:*",
+    "@cathedral/visionary-art-textures": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0"
+  },
+  "keywords": [
+    "cathedral",
+    "fusionkink",
+    "design-system",
+    "a×b=d",
+    "alchemical",
+    "sacred-union"
+  ],
+  "author": "Rebecca Respawn",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/fusionkink-design-system"
+  },
+  "homepage": "https://bekalah.github.io/cathedral/packages/fusionkink-design-system",
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
+  }
+}

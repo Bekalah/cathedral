@@ -22,9 +22,9 @@ class ImaginationSafeDebugger {
         // 🛡️ Safety Guards for Common Artist Mistakes
         this.safetyGuards = this.initializeSafetyGuards();
 
-        console.log('🛡️ Imagination-Safe Debugging System Activated');
-        console.log('🎨 Technical errors translated to artistic guidance');
-        console.log('🔄 Cross-repo safety awareness enabled');
+// console.log('🛡️ Imagination-Safe Debugging System Activated');
+// console.log('🎨 Technical errors translated to artistic guidance');
+// console.log('🔄 Cross-repo safety awareness enabled');
     }
 
     // Initialize artistic error translations
@@ -343,7 +343,7 @@ class CrossRepoSafetyMonitor {
         };
 
         // In a real system, this would broadcast to all connected repositories
-        console.log('📡 Broadcasting safety awareness:', broadcast);
+// console.log('📡 Broadcasting safety awareness:', broadcast);
     }
 
     // Analyze safety patterns for proactive protection
@@ -354,8 +354,8 @@ class CrossRepoSafetyMonitor {
         const safetyPatterns = recentEvents.filter(e => e.type === 'safety_activated');
 
         if (errorPatterns.length > 3) {
-            console.log('🎯 Pattern detected: Similar artistic explorations causing technical challenges');
-            console.log('💡 Proactive suggestion: Consider trying a different creative approach');
+// console.log('🎯 Pattern detected: Similar artistic explorations causing technical challenges');
+// console.log('💡 Proactive suggestion: Consider trying a different creative approach');
         }
     }
 
@@ -459,8 +459,8 @@ class ArtisticDebugInterface {
 
     // Main debugging interface for artists
     debugArtisticProcess(error, sessionContext) {
-        console.log('🎨 Artistic Debugging Session Started');
-        console.log('🛡️ Translating technical issues to creative guidance...');
+// console.log('🎨 Artistic Debugging Session Started');
+// console.log('🛡️ Translating technical issues to creative guidance...');
 
         const debugResult = this.debugSystem.debug(error, sessionContext);
 
@@ -522,11 +522,11 @@ function safeArtisticExecution(artisticFunction, context = 'creative_exploration
     try {
         return artisticFunction();
     } catch (error) {
-        console.log('🛡️ Artistic Safety System Activated');
+// console.log('🛡️ Artistic Safety System Activated');
         const debugResult = globalSafety.debugArtisticProcess(error, context);
 
         // Show artist-friendly error message
-        console.log('🎨 Artistic Guidance:', debugResult.artistic_guidance);
+// console.log('🎨 Artistic Guidance:', debugResult.artistic_guidance);
 
         // Offer recovery
         if (confirm('Would you like to attempt recovery to your last creative state?')) {
@@ -572,8 +572,8 @@ export {
 };
 
 // 🎨 INITIALIZE ARTIST-FRIENDLY DEBUGGING
-console.log('🎨 Artistic Imagination Protection System Online');
-console.log('🛡️ Technical errors translated to creative guidance');
-console.log('🔄 Cross-repository safety awareness active');
-console.log('🌟 One-click recovery preserves artistic flow');
-console.log('💡 Ready to protect your imagination while you create');
+// console.log('🎨 Artistic Imagination Protection System Online');
+// console.log('🛡️ Technical errors translated to creative guidance');
+// console.log('🔄 Cross-repository safety awareness active');
+// console.log('🌟 One-click recovery preserves artistic flow');
+// console.log('💡 Ready to protect your imagination while you create');

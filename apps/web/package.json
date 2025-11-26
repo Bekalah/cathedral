@@ -5,7 +5,8 @@
   "private": true,
   "main": "index.js",
   "engines": {
-    "node": ">=18.17.0"
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
   },
   "scripts": {
     "dev": "next dev --turbo",
@@ -14,7 +15,7 @@
     "start": "next start",
     "start:prod": "NODE_ENV=production next start",
     "export": "next build && next export",
-    "serve:export": "npx serve out",
+    "serve:export": "pnpm exec serve out",
     "type-check": "tsc --noEmit",
     "type-check:watch": "tsc --noEmit --watch",
     "lint": "next lint",
@@ -54,9 +55,10 @@
     "@cathedral/brain": "workspace:*",
     "@cathedral/art-generation-node": "workspace:*",
     "@cathedral/magical-mystery-house": "workspace:*",
-    "@cathedral/circuitum99-arcanae-cyoa": "workspace:*",
+    "@cathedral/circuitum99": "workspace:*",
     "@cathedral/cosmogenesis-learning-engine": "workspace:*",
     "@cathedral/fractal-flames-daemon-deity": "workspace:*",
+    "@cathedral/japanese-design-system": "workspace:*",
     "canvas": "^3.1.0",
     "sharp": "^0.33.5",
     "@azure-rest/ai-inference": "^1.0.0-beta.6",
@@ -99,7 +101,7 @@
     "vite-bundle-analyzer": "^0.11.1"
   },
   "author": "Rebecca Respawn <bekalah@users.noreply.github.com>",
-  "license": "MIT",
+  "license": "CC0-1.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/Bekalah/cathedral.git",
@@ -161,5 +163,6 @@
       "enabled": false,
       "openAnalyzer": false
     }
-  }
+  },
+  "packageManager": "pnpm@8.15.0"
 }

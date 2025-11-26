@@ -1,3 +1,8 @@
+/**
+ * archetypes
+ * 
+ * @package @cathedral/soul
+ */
 // Archetype frequency signatures and interference
 export const archetypes = {
   creator: {

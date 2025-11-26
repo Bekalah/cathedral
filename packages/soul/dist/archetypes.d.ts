@@ -1,3 +1,8 @@
+/**
+ * archetypes.d
+ * 
+ * @package @cathedral/soul
+ */
 export declare const archetypes: {
     creator: {
         colorWavelength: number;

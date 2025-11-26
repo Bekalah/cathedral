@@ -1,9 +1,14 @@
 {
   "name": "@cathedral/art-generation-node",
   "version": "1.0.0",
-  "description": "High-end art generation and pattern science node connected to real data",
+  "description": "High-end art generation and pattern science node connected to real data - Replicating ancient art traditions and master painting techniques with real physics and canon",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/art-generation-node"
+  },
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
@@ -13,16 +18,22 @@
   },
   "dependencies": {
     "@cathedral/shared": "workspace:*",
-    "@cathedral/cathedral-game-engine": "workspace:*",
     "canvas": "^2.11.2",
     "d3": "^7.8.5",
     "ml-matrix": "^6.10.4",
-    "lodash": "^4.17.21",
-    "openai": "^4.28.0"
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@types/d3": "^7.4.0",
     "@types/lodash": "^4.14.202",
     "typescript": "^5.3.0"
+  },
+  "author": "Rebecca Respawn",
+  "license": "CC0-1.0",
+  "homepage": "https://bekalah.github.io/cathedral/packages/art-generation-node",
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
   }
 }

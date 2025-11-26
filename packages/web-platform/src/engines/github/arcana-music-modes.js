@@ -367,10 +367,10 @@ class ArcanaMusicModes {
         analyzer: this.analyzer,
       };
 
-      console.log("🎵 Arcana Music Synthesis Engine initialized");
+// console.log("🎵 Arcana Music Synthesis Engine initialized");
       return true;
     } catch (error) {
-      console.error("❌ Failed to initialize audio:", error);
+// console.error("❌ Failed to initialize audio:", error);
       return false;
     }
   }
@@ -383,7 +383,7 @@ class ArcanaMusicModes {
 
     const arcanaData = this.arcanaFrequencies[arcanaKey];
     if (!arcanaData) {
-      console.error(`❌ Arcana mode "${arcanaKey}" not found`);
+// console.error(`❌ Arcana mode "${arcanaKey}" not found`);
       return false;
     }
 
@@ -393,7 +393,7 @@ class ArcanaMusicModes {
     }
 
     this.currentMode = arcanaKey;
-    console.log(`🎵 Entering ${arcanaKey} synthesis mode`);
+// console.log(`🎵 Entering ${arcanaKey} synthesis mode`);
 
     // Set up synthesis parameters
     this.synthParameters = this.calculateSynthParameters(arcanaData);
@@ -446,7 +446,7 @@ class ArcanaMusicModes {
   async createSynthesisChain(arcanaData) {
     const template = this.synthesisTemplates[arcanaData.synthesis_type];
     if (!template) {
-      console.warn(
+// console.warn(
         `⚠️ Synthesis template "${arcanaData.synthesis_type}" not found, using default`
       );
       return;
@@ -521,7 +521,7 @@ class ArcanaMusicModes {
       case "distortion":
         return this.createDistortion();
       default:
-        console.warn(`⚠️ Effect type "${effectType}" not implemented`);
+// console.warn(`⚠️ Effect type "${effectType}" not implemented`);
         return null;
     }
   }
@@ -670,7 +670,7 @@ class ArcanaMusicModes {
       this.applySacredModulation(oscNode);
     }
 
-    console.log(`🎵 Started synthesis for ${this.currentMode}`);
+// console.log(`🎵 Started synthesis for ${this.currentMode}`);
   }
 
   // 🌀 Apply sacred ratio modulation to oscillators
@@ -725,7 +725,7 @@ class ArcanaMusicModes {
       })
     );
 
-    console.log(`🎨 Initialized art environment: ${arcanaData.art_style}`);
+// console.log(`🎨 Initialized art environment: ${arcanaData.art_style}`);
   }
 
   // 🌈 Get color palette for Arcana
@@ -831,7 +831,7 @@ class ArcanaMusicModes {
   exitCurrentMode() {
     if (!this.currentMode) return;
 
-    console.log(`🛑 Exiting ${this.currentMode} synthesis mode`);
+// console.log(`🛑 Exiting ${this.currentMode} synthesis mode`);
 
     // Stop all oscillators
     for (const oscNode of this.nodes.oscillators) {
@@ -1074,7 +1074,7 @@ const arcanaMusic = new ArcanaMusicModes();
 
 // Auto-initialize on DOM load
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("🎵 Arcana Music Modes system ready");
+// console.log("🎵 Arcana Music Modes system ready");
 
   // Expose global API
   window.ArcanaMusicModes = arcanaMusic;

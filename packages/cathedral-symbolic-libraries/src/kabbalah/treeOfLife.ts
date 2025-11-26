@@ -1,3 +1,8 @@
+/**
+ * treeOfLife
+ * 
+ * @package @cathedral/src
+ */
 // 🧙‍♀️ KABBALISTIC TREE OF LIFE
 // Professional-grade Kabbalah integration with full correspondences
 

@@ -5,8 +5,8 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "build": "echo 'Fractal flames - permanent technology'",
-    "dev": "echo 'Fractal flames - eternal flame'",
+    "build": "tsc",
+    "dev": "tsc --watch",
     "generate": "node src/generators/fractal-flame-generator.js"
   },
   "keywords": [
@@ -18,5 +18,16 @@
     "permanent-flame"
   ],
   "author": "Rebecca Respawn <bekalah@users.noreply.github.com>",
-  "license": "MIT"
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/fractal-flames-daemon-deity"
+  },
+  "homepage": "https://bekalah.github.io/cathedral/packages/fractal-flames-daemon-deity",
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
+  }
 }

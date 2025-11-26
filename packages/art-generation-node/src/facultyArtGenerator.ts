@@ -1,4 +1,9 @@
 /**
+ * facultyArtGenerator
+ * 
+ * @package @cathedral/art-generation-node
+ */
+/**
  * Faculty Art Generator for Cathedral
  * Generates museum-quality character art for the 22 faculty members
  * Uses Azure AI Foundry with Rebecca's authentic research data
@@ -76,7 +81,7 @@ export class FacultyArtGenerator {
         }
       };
     } catch (error) {
-      console.error(`Failed to generate art for ${faculty.name}:`, error);
+// console.error(`Failed to generate art for ${faculty.name}:`, error);
       throw error;
     }
   }
@@ -94,11 +99,11 @@ export class FacultyArtGenerator {
     const results: FacultyArtResult[] = [];
     const batchSize = options?.batchSize || 5;
 
-    console.log(`🎨 Starting generation of art for ${facultyMembers.length} faculty members...`);
+// console.log(`🎨 Starting generation of art for ${facultyMembers.length} faculty members...`);
 
     for (let i = 0; i < facultyMembers.length; i += batchSize) {
       const batch = facultyMembers.slice(i, i + batchSize);
-      console.log(`📦 Processing batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(facultyMembers.length / batchSize)}`);
+// console.log(`📦 Processing batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(facultyMembers.length / batchSize)}`);
 
       const batchPromises = batch.map(member =>
         this.generateFacultyArt({
@@ -114,9 +119,9 @@ export class FacultyArtGenerator {
       batchResults.forEach((result, index) => {
         if (result.status === 'fulfilled') {
           results.push(result.value);
-          console.log(`✅ Generated art for ${batch[index]}: ${result.value.artUrl}`);
+// console.log(`✅ Generated art for ${batch[index]}: ${result.value.artUrl}`);
         } else {
-          console.error(`❌ Failed to generate art for ${batch[index]}:`, result.reason);
+// console.error(`❌ Failed to generate art for ${batch[index]}:`, result.reason);
         }
       });
 
@@ -126,7 +131,7 @@ export class FacultyArtGenerator {
       }
     }
 
-    console.log(`🎉 Completed generation of ${results.length}/${facultyMembers.length} faculty art pieces`);
+// console.log(`🎉 Completed generation of ${results.length}/${facultyMembers.length} faculty art pieces`);
     return results;
   }
 

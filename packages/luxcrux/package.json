@@ -1,14 +1,38 @@
 {
   "name": "@cathedral/luxcrux",
   "version": "1.0.0",
-  "description": "Luxcrux - Elemental directions and spatial consciousness",
-  "main": "index.js",
+  "description": "Luxcrux - Elemental directions and spatial consciousness with master art principles",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "dev": "node index.js",
-    "build": "echo 'Luxcrux build complete'",
-    "test": "echo 'Luxcrux tests passing'"
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist"
   },
-  "keywords": ["cathedral", "luxcrux", "elemental", "directions"],
-  "author": "Rebecca Respawn",
-  "license": "CC0"
+  "keywords": [
+    "cathedral",
+    "luxcrux",
+    "elemental",
+    "directions"
+  ],
+  "author": "Rebecca Respawn <bekalah>",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/luxcrux"
+  },
+  "homepage": "https://bekalah.github.io/cathedral",
+  "dependencies": {
+    "@cathedral/master-art-principles": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "@types/node": "^20.17.0"
+  },
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
+  }
 }

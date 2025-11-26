@@ -40,7 +40,9 @@ api:
   runtime: node:18
 
 # Optional: Database connections
+# ⚠️ SECURITY: Connection strings should come from environment variables
+# Configure in Azure Portal > Configuration > Application Settings
 data:
   provider: "sqlite"
   database: "avalon-nodes.db"
-  connectionString: "Data Source=avalon-nodes.db"
+  # connectionString loaded from AZURE_SQLITE_CONNECTION environment variable

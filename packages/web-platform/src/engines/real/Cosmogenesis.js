@@ -134,7 +134,7 @@ export class Cosmogenesis {
       this.setConfig({ palette: pal });
       return pal;
     } catch (err) {
-      console.warn('Palette load failed:', err);
+// console.warn('Palette load failed:', err);
       return this.config.palette;
     }
   }

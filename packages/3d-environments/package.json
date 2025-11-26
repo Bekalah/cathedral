@@ -1,0 +1,44 @@
+{
+  "name": "@cathedral/3d-environments",
+  "version": "1.0.0",
+  "description": "3D environments and animations with master art principles - Three.js, Babylon.js, sacred geometry",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "3d",
+    "threejs",
+    "babylonjs",
+    "sacred-geometry",
+    "master-art",
+    "cathedral"
+  ],
+  "author": "Rebecca Respawn <bekalah>",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/3d-environments"
+  },
+  "homepage": "https://bekalah.github.io/cathedral",
+  "dependencies": {
+    "three": "^0.169.0",
+    "babylonjs": "^7.40.0",
+    "@cathedral/master-art-principles": "workspace:*",
+    "@cathedral/stone-grimoire": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "@types/three": "^0.169.0",
+    "@types/node": "^20.17.0"
+  },
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
+  }
+}

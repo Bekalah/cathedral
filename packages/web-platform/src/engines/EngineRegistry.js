@@ -127,10 +127,10 @@ export class EngineLoader {
     
     try {
       await Promise.all(promises)
-      console.log(`✨ Loaded ${engineIds.length} engines for mode: ${mode}`)
+// console.log(`✨ Loaded ${engineIds.length} engines for mode: ${mode}`)
       return this.loadedEngines
     } catch (err) {
-      console.error(`Failed to load engines for mode ${mode}:`, err)
+// console.error(`Failed to load engines for mode ${mode}:`, err)
       throw err
     }
   }
@@ -161,12 +161,12 @@ export class EngineLoader {
         const module = await manifest.loader()
         this.loadedEngines.set(engineId, module)
         this.loadingPromises.delete(engineId)
-        console.log(`✓ Loaded engine: ${manifest.name}`)
+// console.log(`✓ Loaded engine: ${manifest.name}`)
         return module
       } catch (err) {
         this.errors.set(engineId, err)
         this.loadingPromises.delete(engineId)
-        console.error(`✗ Failed to load ${manifest.name}:`, err)
+// console.error(`✗ Failed to load ${manifest.name}:`, err)
         throw err
       }
     })()

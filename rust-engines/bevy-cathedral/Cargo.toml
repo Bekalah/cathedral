@@ -1,0 +1,50 @@
+[package]
+name = "bevy-cathedral"
+version = "1.0.0"
+edition = "2021"
+authors = ["Rebecca Respawn"]
+license = "MIT"
+description = "Cathedral Game Engine powered by Bevy - FREE, cross-platform game development"
+
+[dependencies]
+# Bevy Game Engine (FREE, open-source)
+bevy = { version = "0.14", features = ["wayland"] }
+
+# UI System (FREE)
+bevy_egui = "0.27"
+
+# 2D Physics (FREE)
+bevy_rapier2d = "0.25"
+
+# Asset Loading (FREE)
+bevy_asset_loader = "0.17"
+
+# Serialization (FREE)
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Math (FREE)
+glam = "0.27"
+
+# Random (FREE)
+rand = "0.8"
+
+[dev-dependencies]
+bevy_dev_tools = "0.14"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+
+[profile.dev]
+opt-level = 1
+
+# Web build configuration (FREE - compiles to WASM)
+[target.wasm32-unknown-unknown]
+runner = "wasm-server-runner"
+
+[features]
+default = ["bevy/default"]
+web = ["bevy/webgl2"]
+

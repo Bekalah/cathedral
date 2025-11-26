@@ -1,3 +1,8 @@
+/**
+ * integration
+ *
+ * @package @cathedral/synth
+ */
 // integration.ts - future hooks bridging crystals & archetypes to synth parameters
 import { patchLibrary } from './patchLibrary';
 export function mapFusionToPatchModifiers(fusionId, helpers) {
@@ -15,3 +20,4 @@ export function mapFusionToPatchModifiers(fusionId, helpers) {
         patchCandidates: patchLibrary.slice(0, 3).map(p => p.id)
     };
 }
+//# sourceMappingURL=integration.js.map

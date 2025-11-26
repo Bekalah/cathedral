@@ -1,3 +1,8 @@
+/**
+ * integration
+ * 
+ * @package @cathedral/synth
+ */
 // integration.ts - future hooks bridging crystals & archetypes to synth parameters
 import { patchLibrary } from './patchLibrary';
 

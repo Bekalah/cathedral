@@ -282,7 +282,7 @@ class MagicalMysteryHouseCodexMirror {
     });
 
     this.activeSyncChannels.add(channel);
-    console.log(`🔗 Sync channel "${channelName}" established`);
+// console.log(`🔗 Sync channel "${channelName}" established`);
   }
 
   // 🏠 Handle Mystery House events and mirror to Codex
@@ -305,7 +305,7 @@ class MagicalMysteryHouseCodexMirror {
     channel.syncCount++;
     channel.lastSync = Date.now();
 
-    console.log(
+// console.log(
       `🏠→📜 Mystery House "${eventData}" → Codex "${transformedData}"`
     );
   }
@@ -327,7 +327,7 @@ class MagicalMysteryHouseCodexMirror {
     // Send to Mystery House system
     this.sendToMysteryHouse(channel.config.source, transformedData);
 
-    console.log(
+// console.log(
       `📜→🏠 Codex "${eventData}" → Mystery House "${transformedData}"`
     );
   }
@@ -815,7 +815,7 @@ class MagicalMysteryHouseCodexMirror {
       channel.active = true;
     }
 
-    console.log(
+// console.log(
       `⚡ All ${this.activeSyncChannels.size} sync channels activated`
     );
 
@@ -848,7 +848,7 @@ class MagicalMysteryHouseCodexMirror {
     document.body.removeChild(link);
     URL.revokeObjectURL(downloadUrl);
 
-    console.log("📤 Mirror system exported for immediate publication");
+// console.log("📤 Mirror system exported for immediate publication");
     return publicationPackage;
   }
 }
@@ -858,7 +858,7 @@ const mysteryHouseCodexMirror = new MagicalMysteryHouseCodexMirror();
 
 // Auto-initialize on DOM load
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("🏠✨ Magical Mystery House ↔ Codex 144:99 Mirror System ready");
+// console.log("🏠✨ Magical Mystery House ↔ Codex 144:99 Mirror System ready");
 
   // Expose global API
   window.MagicalMysteryHouseCodexMirror = mysteryHouseCodexMirror;

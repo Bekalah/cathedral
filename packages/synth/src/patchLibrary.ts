@@ -1,3 +1,8 @@
+/**
+ * patchLibrary
+ * 
+ * @package @cathedral/synth
+ */
 // patchLibrary.ts - archetype + crystal influenced patches
 import { PatchDefinition } from './types';
 

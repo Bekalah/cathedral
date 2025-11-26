@@ -1,5 +1,4 @@
 
-> @cathedral/godot-liber-arcanae@1.0.0 build /Users/rebeccalemke/cathedral-real/packages/godot-liber-arcanae
-> echo 'Building Godot Liber Arcanae...' && mkdir -p dist && cp -r scenes scripts resources dist/
+> @cathedral/godot-liber-arcanae@1.0.0 build /Users/rebeccalemke/cathedral-fixed-clean/packages/godot-liber-arcanae
+> tsc
 
-Building Godot Liber Arcanae...

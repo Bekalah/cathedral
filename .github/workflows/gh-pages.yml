@@ -42,8 +42,7 @@ jobs:
 
       - name: Export static site
         run: |
-          npx --yes next --version || true
-          pnpm --filter @bekalah/cathedral-web exec npx next export || true
+          pnpm --filter @bekalah/cathedral-web exec pnpm exec next export || true
         env:
           NEXT_TELEMETRY_DISABLED: "1"
 

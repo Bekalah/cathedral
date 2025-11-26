@@ -1,3 +1,8 @@
+/**
+ * index
+ * 
+ * @package @cathedral/packages
+ */
 // Cathedral Characters Index
 // Export all character profiles for use in Cathedral apps
 

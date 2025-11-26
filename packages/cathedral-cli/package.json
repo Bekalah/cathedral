@@ -1,0 +1,52 @@
+{
+  "name": "@cathedral/cli",
+  "version": "1.0.0",
+  "description": "Cathedral CLI - Command-line tools for managing and interacting with Cathedral systems",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "cathedral": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "cli": "node dist/cli.js",
+    "test": "node dist/test.js"
+  },
+  "dependencies": {
+    "@cathedral/codex-144-99": "workspace:*",
+    "@cathedral/liber-arcanae": "workspace:*",
+    "@cathedral/shared": "workspace:*",
+    "commander": "^11.1.0",
+    "chalk": "^5.3.0",
+    "inquirer": "^9.2.12",
+    "ora": "^7.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/inquirer": "^9.0.7",
+    "typescript": "^5.3.0"
+  },
+  "keywords": [
+    "cathedral",
+    "cli",
+    "command-line",
+    "tools",
+    "codex-144-99",
+    "liber-arcanae",
+    "fusion-kink"
+  ],
+  "author": "Rebecca Respawn",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/cathedral-cli"
+  },
+  "homepage": "https://bekalah.github.io/cathedral/packages/cathedral-cli",
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
+  }
+}
