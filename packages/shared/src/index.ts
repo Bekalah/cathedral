@@ -39,5 +39,7 @@ export {
   creativeArcanaVisualizer,
   creativeCodexMapper,
   creativeGrimoireGenerator,
-  creativeGateActivator
+  creativeGateActivator,
+  creativeDaimonConnector,
+  creativeChariotGenerator
 } from './tools/creative-sacred-geometry-generator';
