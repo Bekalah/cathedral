@@ -67,14 +67,14 @@ run_improvement_cycle() {
  * It represents a perfect improvement with sophisticated styling.
  */
 
-export class Sophisticated${AREA^}Enhancer {
+export class SophisticatedEnhancer {
   enhance(): void {
-    // Sophisticated enhancement of $AREA
+    // Sophisticated enhancement
     // Applied: $(date)
   }
 }
 
-export const sophisticated${AREA^}Enhancer = new Sophisticated${AREA^}Enhancer();
+export const sophisticatedEnhancer = new SophisticatedEnhancer();
 EOF
 
   echo "  ✅ Tool created: $TOOL_NAME"
