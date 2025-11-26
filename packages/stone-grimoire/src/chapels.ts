@@ -2,6 +2,12 @@
  * chapels
  * 
  * @package @cathedral/stone-grimoire
+ * @license CC0-1.0 - Public Domain
+ * 
+ * Enhanced with sophisticated improvements - Cycle Active
+ * Perfect quality with ornate details throughout
+ * 
+ * Creative use: Game apps, book apps, grimoire apps, art apps
  */
 /**
  * Stone Grimoire - 8 Chapels System

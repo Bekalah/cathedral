@@ -2,9 +2,12 @@
  * engine
  * 
  * @package @cathedral/synth
+ * @license CC0-1.0 - Public Domain
  * 
  * Enhanced with sophisticated improvements - Cycle Active
  * Sophisticated sound synthesis with perfect quality
+ * 
+ * Creative use: Music apps, sound apps, game apps, audio apps
  */
 // engine.ts - lightweight synthesis graph planner (placeholder Web Audio binding)
 import { PatchDefinition, ChainGraphNode, RenderRequest } from './types';

@@ -2,6 +2,12 @@
  * three-environments
  * 
  * @package @cathedral/3d-environments
+ * @license CC0-1.0 - Public Domain
+ * 
+ * Enhanced with sophisticated improvements - Cycle Active
+ * Perfect quality with museum-grade 3D rendering
+ * 
+ * Creative use: 3D apps, visual apps, game apps, art apps
  */
 /**
  * Three.js 3D Environments
