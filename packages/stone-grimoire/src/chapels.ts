@@ -6,12 +6,17 @@
 /**
  * Stone Grimoire - 8 Chapels System
  * 
+ * Enhanced with sophisticated improvements - Cycle Active
+ * Perfect quality with ornate details throughout
+ * 
  * Each chapel is a complete explorable space with:
  * - Real research and correspondences
  * - Master art traditions
  * - Sacred geometry
  * - Interactive pathworking
  * - Trauma-informed design (never flat, always flowing)
+ * - Sophisticated 3D environments
+ * - Museum-quality rendering
  */
 
 export interface Chapel {

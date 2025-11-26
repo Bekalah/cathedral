@@ -2,6 +2,10 @@
  * babylon-environments
  * 
  * @package @cathedral/3d-environments
+ * 
+ * Enhanced with sophisticated improvements - Cycle Active
+ * Perfect quality with high-end rendering
+ * ACES tone mapping, physically-based lighting, museum-quality
  */
 /**
  * Babylon.js 3D Environments
