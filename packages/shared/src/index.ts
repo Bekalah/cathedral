@@ -41,5 +41,7 @@ export {
   creativeGrimoireGenerator,
   creativeGateActivator,
   creativeDaimonConnector,
-  creativeChariotGenerator
+  creativeChariotGenerator,
+  creativePathworkingGenerator,
+  creativeWillMechanics
 } from './tools/creative-sacred-geometry-generator';
