@@ -2,6 +2,12 @@
  * tiffany-materials
  * 
  * @package @cathedral/luxury-metallics-shaders
+ * @license CC0-1.0 - Public Domain
+ * 
+ * Enhanced with sophisticated improvements - Cycle Active
+ * Perfect quality with high-end Tiffany & Co. materials
+ * 
+ * Creative use: 3D apps, visual apps, game apps, design apps
  */
 /**
  * Tiffany & Co Style Materials

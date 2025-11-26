@@ -35,5 +35,7 @@ export {
   creativeFrequencySynthesizer,
   creativeColorHarmonyGenerator,
   creativeFusionVisualizer,
-  creativePatternGenerator
+  creativePatternGenerator,
+  creativeArcanaVisualizer,
+  creativeCodexMapper
 } from './tools/creative-sacred-geometry-generator';
