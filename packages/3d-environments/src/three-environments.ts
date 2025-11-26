@@ -48,6 +48,12 @@ export function createStoneGrimoireEnvironment(
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Museum quality
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap; // Soft shadows
+  
+  // Enhanced rendering with sophisticated quality
+  renderer.toneMapping = THREE.ACESFilmicToneMapping; // High-end tone mapping
+  renderer.toneMappingExposure = 1.2; // Perfect exposure
+  renderer.outputColorSpace = THREE.SRGBColorSpace; // Accurate colors
+  renderer.physicallyCorrectLights = true; // Physically-based lighting
   container.appendChild(renderer.domElement);
 
   // Create golden scene
