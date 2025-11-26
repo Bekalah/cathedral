@@ -2,10 +2,13 @@
  * babylon-environments
  * 
  * @package @cathedral/3d-environments
+ * @license CC0-1.0 - Public Domain
  * 
  * Enhanced with sophisticated improvements - Cycle Active
  * Perfect quality with high-end rendering
  * ACES tone mapping, physically-based lighting, museum-quality
+ * 
+ * Creative use: 3D apps, visual apps, game apps, art apps
  */
 /**
  * Babylon.js 3D Environments
