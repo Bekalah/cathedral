@@ -23,3 +23,13 @@ export {
 
 // Sophisticated Components
 export * from './sophisticated-components';
+
+// Creative Tools (CC0-1.0 - Public Domain)
+export * from './tools/creative-sacred-geometry-generator';
+export * from './tools/creative-frequency-synthesizer';
+export * from './tools/creative-color-harmony-generator';
+export {
+  creativeSacredGeometryGenerator,
+  creativeFrequencySynthesizer,
+  creativeColorHarmonyGenerator
+} from './tools/creative-sacred-geometry-generator';
