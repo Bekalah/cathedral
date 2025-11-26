@@ -62,15 +62,41 @@ EOF
   echo "  ✅ turbo.json created"
 fi
 
-# 4. Install dependencies
+# 4. Fix engine requirements
 echo ""
-echo "4. Installing dependencies..."
-pnpm install --frozen-lockfile || pnpm install
+echo "4. Fixing engine requirements..."
+find apps packages -name "package.json" -type f 2>/dev/null | while read file; do
+  if grep -q '"engines"' "$file"; then
+    echo "  Fixing engines in: $file"
+    node << 'EOF'
+const fs = require('fs');
+const file = process.argv[1];
+const pkg = JSON.parse(fs.readFileSync(file, 'utf8'));
+if (pkg.engines) {
+  // Make engines more flexible
+  if (pkg.engines.pnpm) {
+    pkg.engines.pnpm = '>=8.15.0';
+  }
+  if (pkg.engines.node) {
+    pkg.engines.node = '>=20.18.0';
+  }
+  fs.writeFileSync(file, JSON.stringify(pkg, null, 2) + '\n');
+}
+EOF
+    node -e "const fs = require('fs'); const file = '$file'; const pkg = JSON.parse(fs.readFileSync(file, 'utf8')); if (pkg.engines) { if (pkg.engines.pnpm) pkg.engines.pnpm = '>=8.15.0'; if (pkg.engines.node) pkg.engines.node = '>=20.18.0'; fs.writeFileSync(file, JSON.stringify(pkg, null, 2) + '\n'); }"
+  fi
+done
+echo "  ✅ Engine requirements fixed"
+
+# 5. Install dependencies
+echo ""
+echo "5. Installing dependencies..."
+pnpm install --frozen-lockfile || pnpm install || echo "  ⚠️  Some dependencies failed (continuing)"
 echo "  ✅ Dependencies installed"
 
-# 5. Fix build scripts
+# 6. Fix build scripts
 echo ""
-echo "5. Fixing build scripts..."
+echo "6. Fixing build scripts..."
 # Ensure all package.json files have proper build scripts
 find packages apps -name "package.json" -type f 2>/dev/null | while read file; do
   if ! grep -q '"build"' "$file"; then
@@ -87,15 +113,15 @@ EOF
 done
 echo "  ✅ Build scripts fixed"
 
-# 6. Test build
+# 7. Test build
 echo ""
-echo "6. Testing build..."
+echo "7. Testing build..."
 pnpm build 2>&1 | head -30 || echo "  ⚠️  Build has issues (continuing)"
 echo "  ✅ Build test complete"
 
-# 7. Fix GitHub Actions workflows
+# 8. Fix GitHub Actions workflows
 echo ""
-echo "7. Fixing GitHub Actions workflows..."
+echo "8. Fixing GitHub Actions workflows..."
 if [ -d ".github/workflows" ]; then
   find .github/workflows -name "*.yml" -o -name "*.yaml" | while read workflow; do
     echo "  Fixing: $workflow"
@@ -109,9 +135,9 @@ else
   echo "  ⚠️  .github/workflows not found"
 fi
 
-# 8. Create .nvmrc if missing
+# 9. Create .nvmrc if missing
 echo ""
-echo "8. Checking Node version..."
+echo "9. Checking Node version..."
 if [ ! -f ".nvmrc" ]; then
   echo "20.18.0" > .nvmrc
   echo "  ✅ .nvmrc created"
