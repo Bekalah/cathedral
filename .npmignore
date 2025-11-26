@@ -1,0 +1,51 @@
+# Cathedral Monorepo - NPM Ignore
+
+# Development files
+*.log
+*.tsbuildinfo
+.DS_Store
+.vscode/
+.idea/
+
+# Source files (only dist should be published)
+src/
+*.ts
+!*.d.ts
+
+# Test files
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx
+tests/
+__tests__/
+
+# Build artifacts
+*.map
+*.tsbuildinfo
+
+# Documentation (keep README)
+docs/
+*.md
+!README.md
+
+# Config files
+tsconfig.json
+.eslintrc*
+.prettierrc*
+jest.config.*
+vitest.config.*
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# CI/CD
+.github/
+.husky/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/

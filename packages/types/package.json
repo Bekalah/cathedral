@@ -35,5 +35,9 @@
     "directory": "packages/types"
   },
   "homepage": "https://bekalah.github.io/cathedral/packages/types",
-  "packageManager": "pnpm@8.15.0"
+  "packageManager": "pnpm@8.15.0",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
 }

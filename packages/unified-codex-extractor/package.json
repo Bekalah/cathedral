@@ -51,5 +51,17 @@
     "./processor": "./dist/processor/index.js",
     "./validator": "./dist/validator/index.js",
     "./types": "./dist/types/index.js"
-  }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/unified-codex-extractor"
+  },
+  "homepage": "https://github.com/Bekalah/cathedral/tree/main/packages/unified-codex-extractor",
+  "license": "CC0-1.0",
+  "author": "Rebecca Respawn <bekalah>"
 }

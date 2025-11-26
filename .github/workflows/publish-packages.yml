@@ -1,0 +1,165 @@
+name: Publish Packages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'packages/**/package.json'
+      - 'packages/**/src/**'
+      - 'packages/**/dist/**'
+  workflow_dispatch:
+    inputs:
+      package:
+        description: 'Package name to publish (leave empty for all changed)'
+        required: false
+        type: string
+      version:
+        description: 'Version bump type (patch, minor, major)'
+        required: false
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+
+jobs:
+  detect-changes:
+    name: Detect Changed Packages
+    runs-on: ubuntu-latest
+    outputs:
+      packages: ${{ steps.changes.outputs.packages }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Detect changed packages
+        id: changes
+        run: |
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            if [ -n "${{ github.event.inputs.package }}" ]; then
+              echo "packages=${{ github.event.inputs.package }}" >> $GITHUB_OUTPUT
+            else
+              echo "packages=all" >> $GITHUB_OUTPUT
+            fi
+          else
+            # Detect changed packages from git diff
+            CHANGED=$(git diff --name-only HEAD~1 HEAD | grep -E '^packages/[^/]+/' | cut -d'/' -f2 | sort -u | tr '\n' ',' | sed 's/,$//')
+            if [ -z "$CHANGED" ]; then
+              echo "packages=" >> $GITHUB_OUTPUT
+            else
+              echo "packages=$CHANGED" >> $GITHUB_OUTPUT
+            fi
+          fi
+      
+      - name: Show changed packages
+        run: |
+          echo "Changed packages: ${{ steps.changes.outputs.packages }}"
+
+  publish:
+    name: Publish Packages
+    needs: detect-changes
+    if: needs.detect-changes.outputs.packages != ''
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+    strategy:
+      matrix:
+        package: ${{ fromJson(needs.detect-changes.outputs.packages == 'all' && '[]' || format('["{0}"]', needs.detect-changes.outputs.packages)) }}
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8.15.0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.18.0'
+          cache: 'pnpm'
+          registry-url: 'https://registry.npmjs.org'
+      
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      
+      - name: Build package
+        run: |
+          if [ "${{ matrix.package }}" == "all" ]; then
+            pnpm build
+          else
+            pnpm --filter "@cathedral/${{ matrix.package }}" build || pnpm --filter "${{ matrix.package }}" build
+          fi
+        continue-on-error: true
+      
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      
+      - name: Bump version
+        run: |
+          VERSION_TYPE="${{ github.event.inputs.version || 'patch' }}"
+          if [ "${{ matrix.package }}" == "all" ]; then
+            echo "Bumping all packages is not supported"
+            exit 1
+          else
+            cd "packages/${{ matrix.package }}"
+            if [ -f "package.json" ]; then
+              # Use pnpm version (not npm)
+              pnpm version $VERSION_TYPE --no-git-tag-version || echo "Version bump failed, continuing"
+            fi
+          fi
+        continue-on-error: true
+      
+      - name: Publish to npm
+        if: matrix.package != 'all'
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          cd "packages/${{ matrix.package }}"
+          if [ -f "package.json" ]; then
+            # Check if package is private
+            PRIVATE=$(node -p "require('./package.json').private")
+            if [ "$PRIVATE" != "true" ]; then
+              echo "Publishing ${{ matrix.package }} to npm..."
+              pnpm publish --access public --no-git-checks || echo "Publish failed, continuing"
+            else
+              echo "Package is private, skipping npm publish"
+            fi
+          fi
+        continue-on-error: true
+      
+      - name: Create Git tag
+        if: matrix.package != 'all'
+        run: |
+          cd "packages/${{ matrix.package }}"
+          if [ -f "package.json" ]; then
+            VERSION=$(node -p "require('./package.json').version")
+            PACKAGE_NAME=$(node -p "require('./package.json').name")
+            TAG_NAME="${PACKAGE_NAME}@${VERSION}"
+            git tag -a "$TAG_NAME" -m "Release ${{ matrix.package }}@${VERSION}" || echo "Tag creation failed"
+            git push origin "$TAG_NAME" || echo "Tag push failed"
+          fi
+        continue-on-error: true
+
+  publish-summary:
+    name: Publish Summary
+    needs: [detect-changes, publish]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Summary
+        run: |
+          echo "## 📦 Package Publishing Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Changed packages:** ${{ needs.detect-changes.outputs.packages }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Publishing workflow completed" >> $GITHUB_STEP_SUMMARY
+

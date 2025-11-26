@@ -15,5 +15,15 @@
     "alchemical"
   ],
   "author": "Rebecca Lemke",
-  "license": "Copyright Rebecca Lemke, All Rights Reserved"
+  "license": "Copyright Rebecca Lemke, All Rights Reserved",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/synthesis-engine"
+  },
+  "homepage": "https://github.com/Bekalah/cathedral/tree/main/packages/synthesis-engine"
 }

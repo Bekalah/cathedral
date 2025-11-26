@@ -1,5 +1,5 @@
 {
-  "name": "liber-arcanae-app",
+  "name": "@cathedral/liber-arcanae-app",
   "version": "2.0.0",
   "description": "Liber Arcanae App - Sacred mystical library UI with Codex 144:99 integration and fusion kink mechanics",
   "type": "module",
@@ -17,5 +17,17 @@
   },
   "devDependencies": {
     "typescript": "^5.0.0"
-  }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/liber-arcanae-app"
+  },
+  "homepage": "https://github.com/Bekalah/cathedral/tree/main/packages/liber-arcanae-app",
+  "license": "CC0-1.0",
+  "author": "Rebecca Respawn <bekalah>"
 }

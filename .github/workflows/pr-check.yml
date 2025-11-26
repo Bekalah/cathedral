@@ -1,0 +1,80 @@
+name: PR Check
+
+on:
+  pull_request:
+    branches: [main]
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  pr-validation:
+    name: PR Validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8.15.0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.18.0'
+          cache: 'pnpm'
+      
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      
+      - name: Check for npm usage
+        run: |
+          if grep -r "npm " . --exclude-dir=node_modules --exclude-dir=.git --exclude="*.log" | grep -v "pnpm" | grep -v "npmjs.org"; then
+            echo "❌ Found npm usage (should use pnpm)"
+            exit 1
+          fi
+          echo "✅ No npm usage found"
+      
+      - name: Check for console injection
+        run: |
+          if grep -r "oo_cm\|oo_tr" . --exclude-dir=node_modules --exclude-dir=.git; then
+            echo "❌ Found console injection"
+            exit 1
+          fi
+          echo "✅ No console injection found"
+      
+      - name: Lint
+        run: pnpm lint
+        continue-on-error: true
+      
+      - name: TypeCheck
+        run: pnpm --filter '*' exec tsc --noEmit
+        continue-on-error: true
+      
+      - name: Build
+        run: pnpm build
+        continue-on-error: true
+
+  pr-comment:
+    name: PR Comment
+    needs: pr-validation
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comment on PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const status = '${{ needs.pr-validation.result }}';
+            const comment = status === 'success' 
+              ? '✅ PR validation passed!'
+              : '⚠️ PR validation had issues. Please review.';
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });

@@ -33,5 +33,17 @@
     "para-theatre",
     "sacred-storytelling",
     "rebecca-respawn"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/circuitum99-arcanae-cyoa"
+  },
+  "homepage": "https://github.com/Bekalah/cathedral/tree/main/packages/circuitum99-arcanae-cyoa",
+  "license": "CC0-1.0",
+  "author": "Rebecca Respawn <bekalah>"
 }

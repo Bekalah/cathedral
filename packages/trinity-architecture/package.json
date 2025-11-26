@@ -34,5 +34,15 @@
     "144:99"
   ],
   "author": "Rebecca Respawn",
-  "license": "CC0"
+  "license": "CC0",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/trinity-architecture"
+  },
+  "homepage": "https://github.com/Bekalah/cathedral/tree/main/packages/trinity-architecture"
 }

@@ -27,5 +27,17 @@
     "three.js",
     "exploration",
     "mystical-computing"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/cathedral-architect"
+  },
+  "homepage": "https://github.com/Bekalah/cathedral/tree/main/packages/cathedral-architect",
+  "license": "CC0-1.0",
+  "author": "Rebecca Respawn <bekalah>"
 }

@@ -36,5 +36,9 @@
     "url": "https://github.com/Bekalah/cathedral.git",
     "directory": "packages/cyoa-book-game"
   },
-  "homepage": "https://bekalah.github.io/cathedral"
+  "homepage": "https://bekalah.github.io/cathedral",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
 }

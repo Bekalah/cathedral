@@ -49,5 +49,15 @@
     "symbol-detection"
   ],
   "author": "Cathedral of Circuits",
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/cataract-book-scanner"
+  },
+  "homepage": "https://github.com/Bekalah/cathedral/tree/main/packages/cataract-book-scanner"
 }

@@ -1,5 +1,5 @@
 {
-  "name": "codex-14499",
+  "name": "@cathedral/codex-14499",
   "version": "1.0.0",
   "description": "Cathedral Codex 144:99 - Complete lattice system connecting all Trinity apps",
   "type": "module",
@@ -42,5 +42,17 @@
       "spine_33": "../data/spine-33.json",
       "codex_nodes": "../data/codex_nodes.json"
     }
-  }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/codex-14499"
+  },
+  "homepage": "https://github.com/Bekalah/cathedral/tree/main/packages/codex-14499",
+  "license": "CC0-1.0",
+  "author": "Rebecca Respawn <bekalah>"
 }

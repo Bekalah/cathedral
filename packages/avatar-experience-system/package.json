@@ -16,5 +16,15 @@
     "experiences"
   ],
   "author": "Rebecca Respawn",
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/avatar-experience-system"
+  },
+  "homepage": "https://github.com/Bekalah/cathedral/tree/main/packages/avatar-experience-system"
 }
