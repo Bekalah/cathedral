@@ -2,22 +2,3 @@
 > @cathedral/synth-lab@0.1.0 build /Users/rebeccalemke/cathedral-fixed-clean/apps/synth-lab
 > vite build
 
-node:internal/modules/cjs/loader:1423
-  throw err;
-  ^
-
-Error: Cannot find module '/Users/rebeccalemke/cathedral-fixed-clean/node_modules/.pnpm/vite@6.4.1/node_modules/vite/bin/vite.js'
-    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
-    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
-    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
-    at Module._load (node:internal/modules/cjs/loader:1226:37)
-    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
-    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
-    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
-    at node:internal/main/run_main_module:33:47 {
-  code: 'MODULE_NOT_FOUND',
-  requireStack: []
-}
-
-Node.js v25.2.1
- ELIFECYCLE  Command failed with exit code 1.
