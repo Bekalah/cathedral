@@ -28,6 +28,14 @@ export * from './sophisticated-components';
 export * from './executive-function-support';
 export { ExecutiveFunctionSupport } from './executive-function-support';
 
+// Improved TODO System (CC0-1.0 - Public Domain)
+export * from './improved-todo-system';
+export { ImprovedTODO, improvedTODOStyles } from './improved-todo-system';
+
+// Better Data Visualization (CC0-1.0 - Public Domain)
+export * from './better-data-visualization';
+export { BetterDataVisualization } from './better-data-visualization';
+
 // Creative Tools (CC0-1.0 - Public Domain)
 export * from './tools/creative-sacred-geometry-generator';
 export * from './tools/creative-frequency-synthesizer';
