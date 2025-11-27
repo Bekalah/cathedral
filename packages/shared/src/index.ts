@@ -36,12 +36,36 @@ export { ImprovedTODO, improvedTODOStyles } from './improved-todo-system';
 export * from './better-data-visualization';
 export { BetterDataVisualization } from './better-data-visualization';
 
+// World-Class Design System (CC0-1.0 - Public Domain)
+export * from './world-class-design-system';
+export { WorldClassDesignSystem } from './world-class-design-system';
+
+// Human, Fun, Interesting Interactions (CC0-1.0 - Public Domain)
+export * from './human-fun-interactions';
+export { HumanFunInteraction, PlayfulButton, EncouragingInput, CelebratorySuccess } from './human-fun-interactions';
+
 // Creative Tools (CC0-1.0 - Public Domain)
 export * from './tools/creative-sacred-geometry-generator';
 export * from './tools/creative-frequency-synthesizer';
 export * from './tools/creative-color-harmony-generator';
 export * from './tools/creative-fusion-visualizer';
 export * from './tools/creative-pattern-generator';
+export {
+  creativeSacredGeometryGenerator,
+  creativeFrequencySynthesizer,
+  creativeColorHarmonyGenerator,
+  creativeFusionVisualizer,
+  creativePatternGenerator,
+  creativeArcanaVisualizer,
+  creativeCodexMapper,
+  creativeGrimoireGenerator,
+  creativeGateActivator,
+  creativeDaimonConnector,
+  creativeChariotGenerator,
+  creativePathworkingGenerator,
+  creativeWillMechanics
+} from './tools/creative-sacred-geometry-generator';
+
 export {
   creativeSacredGeometryGenerator,
   creativeFrequencySynthesizer,
