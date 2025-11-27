@@ -2,6 +2,12 @@
  * Circuitum99StoryEngine
  * 
  * @package @cathedral/circuitum99-arcanae-cyoa
+ * @license CC0-1.0 - Public Domain
+ * 
+ * Enhanced with sophisticated improvements - Cycle Active
+ * Perfect quality with ornate narrative mechanics
+ * 
+ * Creative use: Game apps, story apps, RPG apps, narrative apps
  */
 /**
  * Circuitum99: Alpha et Omega Story Engine

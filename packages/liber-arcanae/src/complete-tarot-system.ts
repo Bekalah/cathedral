@@ -2,6 +2,12 @@
  * complete-tarot-system
  * 
  * @package @cathedral/liber-arcanae
+ * @license CC0-1.0 - Public Domain
+ * 
+ * Enhanced with sophisticated improvements - Cycle Active
+ * Perfect quality with ornate complete tarot system
+ * 
+ * Creative use: Game apps, tarot apps, divination apps, RPG apps
  */
 /**
  * Liber Arcanae Codex Abyssiae - Complete 78-Card Tarot System

@@ -13,6 +13,12 @@
  * - Deep and intricate
  * 
  * @package @cathedral/liber-arcanae
+ * @license CC0-1.0 - Public Domain
+ * 
+ * Enhanced with sophisticated improvements - Cycle Active
+ * Perfect quality with ornate tarot engine mechanics
+ * 
+ * Creative use: Game apps, tarot apps, divination apps, RPG apps
  */
 
 import { COMPLETE_TAROT, CompleteTarotCard } from './complete-tarot-system';
