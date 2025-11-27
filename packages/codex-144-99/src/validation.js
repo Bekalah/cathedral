@@ -261,22 +261,70 @@ ${validation.errors.length > 0 ?
 ## ⚠️ Warnings
 ${validation.warnings.length > 0 ?
             validation.warnings.map(warning => `- **${warning.field}**: ${warning.message}${warning.nodeId ? ` (Node ${warning.nodeId})` : ''}
-  💡 ${warning.suggestion}`).join(', '), '), ') :, 'No warnings ✅')
+  💡 ${warning.suggestion}`).join('\n')
             :
-        }
-
-## 📊 Sacred Constants Compliance
-- **Total Nodes**: ${this.sacredConstants.totalNodes} (Expected: 12)
-- **Sacred Ratio**: ${this.sacredConstants.sacredRatio} (144:99)
-- **Elements**: ${this.sacredConstants.elements.join(', ')}
-- **Chakras**: ${this.sacredConstants.chakras.join(', ')}
-- **Planets**: ${this.sacredConstants.planets.join(', ')}
-- **Solfeggio Frequencies**: ${this.sacredConstants.solfeggioFrequencies.join(', ')}Hz
-
----
-*Validation completed by Codex 144:99 Library System*
-*${new Date().toISOString()}*
-    `;
+        ;
+        'No warnings ✅';
     }
+    #;
+    #;
+    Sacred;
+    Constants;
+    Compliance;
 }
+- ** Total;
+Nodes ** ;
+$;
+{
+    this.sacredConstants.totalNodes;
+}
+(Expected) => ;
+- ** Sacred;
+Ratio ** ;
+$;
+{
+    this.sacredConstants.sacredRatio;
+}
+(144);
+99;
+- ** Elements ** ;
+$;
+{
+    this.sacredConstants.elements.join(', ');
+}
+- ** Chakras ** ;
+$;
+{
+    this.sacredConstants.chakras.join(', ');
+}
+- ** Planets ** ;
+$;
+{
+    this.sacredConstants.planets.join(', ');
+}
+- ** Solfeggio;
+Frequencies ** ;
+$;
+{
+    this.sacredConstants.solfeggioFrequencies.join(', ');
+}
+Hz;
+-- -
+        * Validation;
+completed;
+by;
+Codex;
+144;
+99;
+Library;
+System *
+    * $;
+{
+    new Date().toISOString();
+}
+ *
+    `;
+  }
+}
+;
 //# sourceMappingURL=validation.js.map

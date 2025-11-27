@@ -305,11 +305,11 @@ ${validation.warnings.length > 0 ?
   validation.warnings.map(warning =>
     `- **${warning.field}**: ${warning.message}${warning.nodeId ? ` (Node ${warning.nodeId})` : ''}
   💡 ${warning.suggestion}`
-  ).join('
-')
-')
+  ).join('\n')
+)
+)
 
-') :
+) :
   'No warnings ✅'
 }
 
