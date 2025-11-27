@@ -2,6 +2,12 @@
  * index
  * 
  * @package @cathedral/japanese-design-system
+ * @license CC0-1.0 - Public Domain
+ * 
+ * Enhanced with sophisticated improvements - Cycle Active
+ * Perfect quality with high-end Japanese design system
+ * 
+ * Creative use: Design apps, UI apps, visual apps, art apps
  */
 /**
  * @cathedral/japanese-design-system

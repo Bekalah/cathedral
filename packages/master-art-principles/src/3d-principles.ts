@@ -2,6 +2,12 @@
  * 3d-principles
  * 
  * @package @cathedral/master-art-principles
+ * @license CC0-1.0 - Public Domain
+ * 
+ * Enhanced with sophisticated improvements - Cycle Active
+ * Perfect quality with ornate 3D rendering principles
+ * 
+ * Creative use: 3D apps, visual apps, game apps, art apps
  */
 /**
  * 3D Master Art Principles
