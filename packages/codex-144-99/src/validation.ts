@@ -296,10 +296,7 @@ export class CodexValidator {
 ${validation.errors.length > 0 ?
   validation.errors.map(error =>
     `- **${error.field}**: ${error.message}${error.nodeId ? ` (Node ${error.nodeId})` : ''}`
-  ).join('
-')
-')
-') :
+  ).join('\n') :
   'No errors found ✅'
 }
 

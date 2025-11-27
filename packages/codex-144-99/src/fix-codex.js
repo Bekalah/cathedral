@@ -193,8 +193,7 @@ export class CodexFixer {
         const fixReport = this.fix();
         const validation = this.validateConnections();
         const mapping = this.mapper.generateMappingJSON();
-        let report = '# Codex 144:99 Fix Report;
-        ';;
+        let report = '# Codex 144:99 Fix Report\n\n';
         report += `## Nodes
 `;
         report += `- Total: ${fixReport.nodes.total}/144

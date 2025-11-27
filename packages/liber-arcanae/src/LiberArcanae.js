@@ -732,7 +732,7 @@ ${this.getMinorArcanaDistribution()}
         });
         return Object.entries(suits)
             .map(([suit, count]) => `- ${suit.charAt(0).toUpperCase() + suit.slice(1)}: ${count} cards`)
-            .join(', '), '););
+            .join('\n');
     }
 }
 //# sourceMappingURL=LiberArcanae.js.map

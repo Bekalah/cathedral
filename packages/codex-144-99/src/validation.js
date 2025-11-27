@@ -255,9 +255,8 @@ export class CodexValidator {
 
 ## ❌ Errors Found
 ${validation.errors.length > 0 ?
-            validation.errors.map(error => `- **${error.field}**: ${error.message}${error.nodeId ? ` (Node ${error.nodeId})` : ''}`).join(', '), '), ') :, 'No errors found ✅')
-            :
-        }
+            validation.errors.map(error => `- **${error.field}**: ${error.message}${error.nodeId ? ` (Node ${error.nodeId})` : ''}`).join('\n') :
+            'No errors found ✅'}
 
 ## ⚠️ Warnings
 ${validation.warnings.length > 0 ?
