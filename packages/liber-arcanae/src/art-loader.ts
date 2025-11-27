@@ -2,6 +2,12 @@
  * art-loader
  * 
  * @package @cathedral/liber-arcanae
+ * @license CC0-1.0 - Public Domain
+ * 
+ * Enhanced with sophisticated improvements - Cycle Active
+ * Perfect quality with ornate art loading
+ * 
+ * Creative use: Game apps, art apps, visual apps, tarot apps
  */
 /**
  * Liber Arcanae Codex Abyssiae Art Loader

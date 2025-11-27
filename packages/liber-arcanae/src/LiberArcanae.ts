@@ -2,6 +2,12 @@
  * LiberArcanae
  * 
  * @package @cathedral/liber-arcanae
+ * @license CC0-1.0 - Public Domain
+ * 
+ * Enhanced with sophisticated improvements - Cycle Active
+ * Perfect quality with ornate Liber Arcanae system
+ * 
+ * Creative use: Game apps, tarot apps, divination apps, RPG apps
  */
 /**
  * Liber Arcanae Codex Abyssiae System - Clean Version
