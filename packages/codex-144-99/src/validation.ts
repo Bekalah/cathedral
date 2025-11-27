@@ -297,6 +297,8 @@ ${validation.errors.length > 0 ?
   validation.errors.map(error =>
     `- **${error.field}**: ${error.message}${error.nodeId ? ` (Node ${error.nodeId})` : ''}`
   ).join('
+')
+')
 ') :
   'No errors found ✅'
 }
@@ -307,6 +309,8 @@ ${validation.warnings.length > 0 ?
     `- **${warning.field}**: ${warning.message}${warning.nodeId ? ` (Node ${warning.nodeId})` : ''}
   💡 ${warning.suggestion}`
   ).join('
+')
+')
 
 ') :
   'No warnings ✅'

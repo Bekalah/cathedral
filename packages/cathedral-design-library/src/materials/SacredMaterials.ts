@@ -1096,18 +1096,22 @@ export class SacredMaterialsLibrary {
 
 ## 🛠️ Traditional Techniques
 ${material.usage.traditionalTechniques.map(technique => `- ${technique}`).join('
+')
 ')}
 
 ## ✨ Sacred Applications
 ${material.usage.sacredApplications.map(app => `- ${app}`).join('
+')
 ')}
 
 ## 🧪 Preparation Methods
 ${material.usage.preparationMethods.map(method => `- ${method}`).join('
+')
 ')}
 
 ## ⚠️ Safety Considerations
 ${material.usage.safetyConsiderations.map(safety => `- ${safety}`).join('
+')
 ')}
 
 ## 📖 Historical Context

@@ -1233,6 +1233,7 @@ ${categories.map(category => {
   const categoryComponents = this.getComponentsByCategory(category);
   return `- **${category.charAt(0).toUpperCase() + category.slice(1)}**: ${categoryComponents.length} components`;
 }).join('
+')
 ')}
 
 ## 🔗 Integration Status
@@ -1246,6 +1247,7 @@ ${components.slice(0, 5).map(component =>
   Type: ${component.type}
   Sacred: ${component.codexNode ? 'Node ' + component.codexNode : 'Independent'}`
 ).join('
+')
 
 ')}
 

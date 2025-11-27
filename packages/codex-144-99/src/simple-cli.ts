@@ -134,6 +134,7 @@ class SimpleCodexLibrary {
 ${Object.entries(elementCounts)
   .map(([element, count]) => `- ${element}: ${count} nodes`)
   .join('
+')
 ')}
 
 ## 🌟 Featured Nodes
@@ -142,6 +143,7 @@ ${nodes.slice(0, 5).map(node =>
    "${node.narrative.theme}"
    Archetype: ${node.narrative.archetype}`
 ).join('
+')
 
 ')}
 

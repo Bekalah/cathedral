@@ -571,8 +571,7 @@ export class CodexLibrary {
 ## 🔗 External Library Connections
 ${this.libraryConnections.map(lib =>
   `- **${lib.name}** (${lib.type}): ${lib.description}`
-).join('
-')}
+).join('\n')}
 
 ## ✅ Validation Results
 - **Valid**: ${validation.isValid}
@@ -604,7 +603,6 @@ ${this.getElementDistribution()}
 
     return Object.entries(distribution)
       .map(([element, count]) => `- ${element}: ${count} nodes`)
-      .join('
-');
+      .join('\n');
   }
 }

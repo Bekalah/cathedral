@@ -68,5 +68,6 @@ export declare class CodexLibrary {
      * Generate comprehensive report
      */
     generateReport(): string;
+    private getElementDistribution;
 }
 //# sourceMappingURL=CodexLibrary.d.ts.map

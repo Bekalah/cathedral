@@ -826,7 +826,7 @@ ${this.getMinorArcanaDistribution()}
     const majorCards = this.getMajorArcana();
     return majorCards.slice(0, 10).map(card =>
       `${card.number}: ${card.name} (${card.element})`
-    ).join('
+    ).join('\n')
 ');
   }
 
@@ -847,6 +847,7 @@ ${this.getMinorArcanaDistribution()}
     return Object.entries(suits)
       .map(([suit, count]) => `- ${suit.charAt(0).toUpperCase() + suit.slice(1)}: ${count} cards`)
       .join('
+')
 ');
   }
 }

@@ -715,7 +715,8 @@ ${this.getMinorArcanaDistribution()}
     }
     getMajorArcanaDistribution() {
         const majorCards = this.getMajorArcana();
-        return majorCards.slice(0, 10).map(card => `${card.number}: ${card.name} (${card.element})`).join(', '););
+        return majorCards.slice(0, 10).map(card => `${card.number}: ${card.name} (${card.element})`).join('\n');
+        ');;
     }
     getMinorArcanaDistribution() {
         const suits = {
@@ -731,7 +732,7 @@ ${this.getMinorArcanaDistribution()}
         });
         return Object.entries(suits)
             .map(([suit, count]) => `- ${suit.charAt(0).toUpperCase() + suit.slice(1)}: ${count} cards`)
-            .join(', '););
+            .join(', '), '););
     }
 }
 //# sourceMappingURL=LiberArcanae.js.map

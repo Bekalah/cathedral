@@ -438,48 +438,59 @@ export class FusionKinkEngine {
 
 ## 🛡️ Safety Protocols
 ${session.safetyProtocols.map(protocol => `- ${protocol}`).join('
+')
 ')}
 
 ## ✨ Transformation
 ### Physical
 ${session.transformation.physical.map(t => `- ${t}`).join('
+')
 ')}
 
 ### Emotional
 ${session.transformation.emotional.map(t => `- ${t}`).join('
+')
 ')}
 
 ### Spiritual
 ${session.transformation.spiritual.map(t => `- ${t}`).join('
+')
 ')}
 
 ### Energetic
 ${session.transformation.energetic.map(t => `- ${t}`).join('
+')
 ')}
 
 ### Consciousness
 ${session.transformation.consciousness.map(t => `- ${t}`).join('
+')
 ')}
 
 ## 🎯 Outcomes
 ### New Abilities
 ${session.results.newAbilities.map(ability => `- ${ability}`).join('
+')
 ')}
 
 ### Story Development
 ${session.results.storyDevelopment.map(story => `- ${story}`).join('
+')
 ')}
 
 ### Character Growth
 ${session.results.characterGrowth.map(growth => `- ${growth}`).join('
+')
 ')}
 
 ### World Changes
 ${session.results.worldChanges.map(change => `- ${change}`).join('
+')
 ')}
 
 ## 💝 Aftercare
 ${session.aftercare.map(care => `- ${care}`).join('
+')
 ')}
 
 ---
