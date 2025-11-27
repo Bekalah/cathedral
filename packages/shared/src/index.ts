@@ -52,6 +52,10 @@ export { FreeOpenSourceSecuritySystem, CC0_LICENSE_HEADER, SECURITY_CHECKLIST } 
 export * from './mystical-tree-art-system';
 export { MysticalTreeArt } from './mystical-tree-art-system';
 
+// Duality Arcana Art System (CC0-1.0 - Public Domain)
+export * from './duality-arcana-art-system';
+export { DualityArcanaArt } from './duality-arcana-art-system';
+
 // Creative Tools (CC0-1.0 - Public Domain)
 export * from './tools/creative-sacred-geometry-generator';
 export * from './tools/creative-frequency-synthesizer';
@@ -89,6 +93,3 @@ export {
   creativePathworkingGenerator,
   creativeWillMechanics
 } from './tools/creative-sacred-geometry-generator';
-// Duality Arcana Art System (CC0-1.0 - Public Domain)
-export * from './duality-arcana-art-system';
-export { DualityArcanaArt } from './duality-arcana-art-system';
