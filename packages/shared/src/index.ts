@@ -44,6 +44,10 @@ export { WorldClassDesignSystem } from './world-class-design-system';
 export * from './human-fun-interactions';
 export { HumanFunInteraction, PlayfulButton, EncouragingInput, CelebratorySuccess } from './human-fun-interactions';
 
+// Free, Open Source, and Secure (CC0-1.0 - Public Domain)
+export * from './free-open-source-security';
+export { FreeOpenSourceSecuritySystem, CC0_LICENSE_HEADER, SECURITY_CHECKLIST } from './free-open-source-security';
+
 // Creative Tools (CC0-1.0 - Public Domain)
 export * from './tools/creative-sacred-geometry-generator';
 export * from './tools/creative-frequency-synthesizer';
