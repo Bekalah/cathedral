@@ -57,6 +57,51 @@ EOF
   fi
 fi
 
+# Fix magical-mystery-house conflict
+if [ -d "packages/magical-mystery-house" ] && [ -d "apps/magical-mystery-house" ]; then
+  echo "4. Fixing magical-mystery-house conflict..."
+  if [ -f "apps/magical-mystery-house/package.json" ]; then
+    node << 'EOF'
+const fs = require('fs');
+const file = 'apps/magical-mystery-house/package.json';
+const pkg = JSON.parse(fs.readFileSync(file, 'utf8'));
+pkg.name = '@cathedral/magical-mystery-house-app';
+fs.writeFileSync(file, JSON.stringify(pkg, null, 2) + '\n');
+EOF
+    echo "  ✅ Renamed app package name"
+  fi
+fi
+
+# Fix liber-arcanae conflict
+if [ -d "packages/liber-arcanae" ] && [ -d "apps/liber-arcanae" ]; then
+  echo "5. Fixing liber-arcanae conflict..."
+  if [ -f "apps/liber-arcanae/package.json" ]; then
+    node << 'EOF'
+const fs = require('fs');
+const file = 'apps/liber-arcanae/package.json';
+const pkg = JSON.parse(fs.readFileSync(file, 'utf8'));
+pkg.name = '@cathedral/liber-arcanae-app';
+fs.writeFileSync(file, JSON.stringify(pkg, null, 2) + '\n');
+EOF
+    echo "  ✅ Renamed app package name"
+  fi
+fi
+
+# Fix liber-arcanae-app in packages
+if [ -d "packages/liber-arcanae-app" ] && [ -d "apps/liber-arcanae" ]; then
+  echo "6. Fixing liber-arcanae-app in packages conflict..."
+  if [ -f "packages/liber-arcanae-app/package.json" ]; then
+    node << 'EOF'
+const fs = require('fs');
+const file = 'packages/liber-arcanae-app/package.json';
+const pkg = JSON.parse(fs.readFileSync(file, 'utf8'));
+pkg.name = '@cathedral/liber-arcanae-package';
+fs.writeFileSync(file, JSON.stringify(pkg, null, 2) + '\n');
+EOF
+    echo "  ✅ Renamed package name"
+  fi
+fi
+
 echo ""
 echo "✅ WORKSPACE CONFLICTS FIXED"
 echo "============================="
