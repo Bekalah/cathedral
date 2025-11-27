@@ -1,5 +1,5 @@
 /**
- * tool-build-4
+ * toolbuild4
  * 
  * Cycle: 4 | Area: build | Quality: perfect
  * Improvement: deepened
@@ -8,7 +8,7 @@
  * Generated: Wed Nov 26 16:13:49 CST 2025
  */
 
-export const tool-build-4 = () => {
+export const toolbuild4 = () => {
   // deepened of build
   return { area: 'build', improvement: 'deepened', quality: 'perfect' };
 };

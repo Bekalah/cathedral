@@ -9,7 +9,6 @@
  */
 import { CodexNode, CodexValidationResult, ValidationError, ValidationWarning } from './types';
 export declare class CodexValidator {
-    #private;
     private validationRules;
     private sacredConstants;
     /**
@@ -30,8 +29,5 @@ export declare class CodexValidator {
      * Generate validation report
      */
     generateValidationReport(validation: CodexValidationResult): string;
-    Sacred: any;
-    Constants: any;
-    Compliance: any;
 }
 //# sourceMappingURL=validation.d.ts.map
