@@ -1,14 +1,14 @@
 /**
- * tool-sound-quality-5
+ * tool-soundQuality-5
  * 
- * Cycle: 5 | Area: sound-quality | Quality: much-better
+ * Cycle: 5 | Area: soundQuality | Quality: much-better
  * Improvement: refined
  * 
  * @package @cathedral/shared
  * Generated: Wed Nov 26 16:16:23 CST 2025
  */
 
-export const tool-sound-quality-5 = () => {
-  // refined of sound-quality
-  return { area: 'sound-quality', improvement: 'refined', quality: 'much-better' };
+export const tool-soundQuality-5 = () => {
+  // refined of soundQuality
+  return { area: 'soundQuality', improvement: 'refined', quality: 'much-better' };
 };

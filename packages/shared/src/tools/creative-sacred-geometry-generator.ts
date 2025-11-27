@@ -11,7 +11,7 @@
  * Perfect quality with ornate details
  */
 
-import { goldenRatio, fibonacci, vesicaPiscis, pentagram, octagon } from '@cathedral/master-art-principles/geometry';
+import { goldenRatio, fibonacci, vesicaPiscis, pentagram, octagon } from '@cathedral/master-artPrinciples/geometry';
 
 export interface SacredGeometryPattern {
   type: 'vesica-piscis' | 'pentagram' | 'octagon' | 'flower-of-life' | 'metatron-cube' | 'golden-spiral';

@@ -11,7 +11,7 @@
  * Perfect quality with master art principles
  */
 
-import { ColorHarmony } from '@cathedral/master-art-principles/color-harmony';
+import { ColorHarmony } from '@cathedral/master-artPrinciples/color-harmony';
 
 export interface CreativeColorPalette {
   primary: string;

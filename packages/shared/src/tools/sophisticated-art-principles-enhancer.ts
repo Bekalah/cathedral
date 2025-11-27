@@ -1,5 +1,5 @@
 /**
- * Sophisticated Art-principles Enhancer
+ * Sophisticated ArtPrinciples Enhancer
  * 
  * Generated from doubt moment: 20251126_203939
  * Improvement: Enhanced ArtPrinciples with sophisticated styling
@@ -13,11 +13,11 @@
  * It represents a perfect improvement with sophisticated styling.
  */
 
-export class SophisticatedArt-principlesEnhancer {
+export class SophisticatedArtPrinciplesEnhancer {
   enhance(): void {
     // Sophisticated enhancement of ArtPrinciples
     // Applied: Wed Nov 26 20:39:39 CST 2025
   }
 }
 
-export const sophisticatedArt-principlesEnhancer = new SophisticatedArt-principlesEnhancer();
+export const sophisticatedArtPrinciplesEnhancer = new SophisticatedArtPrinciplesEnhancer();
