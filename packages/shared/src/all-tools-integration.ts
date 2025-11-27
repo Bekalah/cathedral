@@ -8,7 +8,8 @@
  */
 
 // Import all tools
-import { codexEngine } from '@cathedral/codex-144-99/functional-codex-engine';
+// Note: Import directly from @cathedral/codex-144-99 when needed
+// import { codexEngine } from '@cathedral/codex-144-99/functional-codex-engine';
 import { tarotEngine } from '@cathedral/liber-arcanae/functional-tarot-engine';
 import { darkAcademiaLibrary } from '@cathedral/alexandria-library/living-dark-academia-library';
 import { grimoireMaker } from '@cathedral/stone-grimoire/grimoire-maker';
