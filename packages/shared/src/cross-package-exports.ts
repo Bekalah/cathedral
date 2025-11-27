@@ -11,42 +11,44 @@
  */
 
 // Core Trinity
-export * from '@cathedral/circuitum99';
-export * from '@cathedral/stone-grimoire';
-export * from '@cathedral/cosmogenesis-learning-engine';
+// Note: Re-exports removed to avoid TypeScript compilation errors
+// Import directly from packages when needed:
+// import { ... } from '@cathedral/circuitum99';
+// import { ... } from '@cathedral/stone-grimoire';
+// import { ... } from '@cathedral/cosmogenesis-learning-engine';
 
 // Sacred Knowledge
-export * from '@cathedral/codex-144-99';
-export * from '@cathedral/liber-arcanae';
-export * from '@cathedral/tesseract-bridge';
+// import { ... } from '@cathedral/codex-144-99';
+// import { ... } from '@cathedral/liber-arcanae';
+// import { ... } from '@cathedral/tesseract-bridge';
 
 // Creative Systems
-export * from '@cathedral/violet-flame-transmutation';
-export * from '@cathedral/game-music-integration';
-export * from '@cathedral/fractal-sound-game-bridge';
-export * from '@cathedral/professional-design-suite';
+// import { ... } from '@cathedral/violet-flame-transmutation';
+// import { ... } from '@cathedral/game-music-integration';
+// import { ... } from '@cathedral/fractal-sound-game-bridge';
+// import { ... } from '@cathedral/professional-design-suite';
 
 // Visionary Art
-export * from '@cathedral/visionary-art-colors';
-export * from '@cathedral/visionary-art-textures';
-export * from '@cathedral/fusionkink-design-system';
+// import { ... } from '@cathedral/visionary-art-colors';
+// import { ... } from '@cathedral/visionary-art-textures';
+// import { ... } from '@cathedral/fusionkink-design-system';
 
 // RPG & Game
-export * from '@cathedral/fable-rpg-mechanics';
-export * from '@cathedral/unified-canon-system';
+// import { ... } from '@cathedral/fable-rpg-mechanics';
+// import { ... } from '@cathedral/unified-canon-system';
 
 // Tools
-export * from '@cathedral/cathedral-cli';
-export * from '@cathedral/cathedral-tools';
-export * from '@cathedral/cathedral-analytics';
+// import { ... } from '@cathedral/cathedral-cli';
+// import { ... } from '@cathedral/cathedral-tools';
+// import { ... } from '@cathedral/cathedral-analytics';
 
 // Navigation
-export * from '@cathedral/magical-mystery-house';
+// import { ... } from '@cathedral/magical-mystery-house';
 
 // Core Intelligence
-export * from '@cathedral/brain';
-export * from '@cathedral/synth';
-export * from '@cathedral/art-generation-node';
+// import { ... } from '@cathedral/brain';
+// import { ... } from '@cathedral/synth';
+// import { ... } from '@cathedral/art-generation-node';
 
 /**
  * Cross-Package Connection Map
