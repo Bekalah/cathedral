@@ -89,3 +89,6 @@ export {
   creativePathworkingGenerator,
   creativeWillMechanics
 } from './tools/creative-sacred-geometry-generator';
+// Duality Arcana Art System (CC0-1.0 - Public Domain)
+export * from './duality-arcana-art-system';
+export { DualityArcanaArt } from './duality-arcana-art-system';
