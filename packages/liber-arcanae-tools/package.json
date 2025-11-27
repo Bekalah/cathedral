@@ -11,7 +11,7 @@
     "lint": "eslint src --ext .ts"
   },
   "dependencies": {
-    "@cathedral-real/trinity-architecture": "workspace:*",
+    "@cathedral/trinity-architecture": "workspace:*",
     "fabric": "^5.3.0",
     "tone": "^14.7.77",
     "yjs": "^13.6.7",

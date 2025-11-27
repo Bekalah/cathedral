@@ -24,6 +24,10 @@ export {
 // Sophisticated Components
 export * from './sophisticated-components';
 
+// Executive Function Support (CC0-1.0 - Public Domain)
+export * from './executive-function-support';
+export { ExecutiveFunctionSupport } from './executive-function-support';
+
 // Creative Tools (CC0-1.0 - Public Domain)
 export * from './tools/creative-sacred-geometry-generator';
 export * from './tools/creative-frequency-synthesizer';

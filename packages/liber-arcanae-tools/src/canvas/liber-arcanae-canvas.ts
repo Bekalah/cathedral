@@ -16,7 +16,7 @@ import {
   ConsciousnessLevel, 
   MajorArcana, 
   TrinityArchitecture 
-} from '@cathedral-real/trinity-architecture';
+} from '@cathedral/trinity-architecture';
 import { 
   ArchetypeMentor, 
   CodexLoggingSystem, 
