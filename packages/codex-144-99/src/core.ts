@@ -2,6 +2,12 @@
  * core
  * 
  * @package @cathedral/codex-144-99
+ * @license CC0-1.0 - Public Domain
+ * 
+ * Enhanced with sophisticated improvements - Cycle Active
+ * Perfect quality with ornate codex node generation
+ * 
+ * Creative use: Game apps, codex apps, knowledge apps, visual apps
  */
 // Pure algorithmic SpiralEngine — research and exploration using only algorithmic and data-driven approaches
 export type SpiralConfig = {
