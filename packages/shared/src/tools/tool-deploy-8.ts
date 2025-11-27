@@ -1,14 +1,14 @@
 /**
- * tool-deploy-8
+ * tool-Deploy-8
  * 
- * Cycle: 8 | Area: deploy | Quality: better
+ * Cycle: 8 | Area: Deploy | Quality: better
  * Improvement: deepened
  * 
  * @package @cathedral/shared
  * Generated: Wed Nov 26 16:23:54 CST 2025
  */
 
-export const tool-deploy-8 = () => {
-  // deepened of deploy
-  return { area: 'deploy', improvement: 'deepened', quality: 'better' };
+export const tool-Deploy-8 = () => {
+  // deepened of Deploy
+  return { area: 'Deploy', improvement: 'deepened', quality: 'better' };
 };

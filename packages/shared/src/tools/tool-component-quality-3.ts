@@ -1,14 +1,14 @@
 /**
- * tool-componentQuality-3
+ * tool-ComponentQuality-3
  * 
- * Cycle: 3 | Area: componentQuality | Quality: perfect
+ * Cycle: 3 | Area: ComponentQuality | Quality: perfect
  * Improvement: elevated
  * 
  * @package @cathedral/shared
  * Generated: Wed Nov 26 16:11:19 CST 2025
  */
 
-export const tool-componentQuality-3 = () => {
-  // elevated of componentQuality
-  return { area: 'componentQuality', improvement: 'elevated', quality: 'perfect' };
+export const tool-ComponentQuality-3 = () => {
+  // elevated of ComponentQuality
+  return { area: 'ComponentQuality', improvement: 'elevated', quality: 'perfect' };
 };
