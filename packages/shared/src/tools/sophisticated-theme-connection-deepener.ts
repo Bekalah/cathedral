@@ -1,7 +1,7 @@
 /**
  * Sophisticated Theme Connection Deepener
  * 
- * Cycle: Active | Area: theme-connections | Quality: perfect
+ * Cycle: Active | Area: ThemeConnections | Quality: perfect
  * Improvement: Deepened theme connections with sophisticated integration
  * 
  * @package @cathedral/shared
