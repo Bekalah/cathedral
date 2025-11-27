@@ -7,7 +7,6 @@
     "declaration": true,
     "declarationMap": true,
     "skipLibCheck": true,
-    "types": ["node"]
   },
   "include": ["src"],
   "exclude": ["../codex-144-99/src", "../brain/src"],
