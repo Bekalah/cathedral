@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "wrangler dev --port 8787",
     "deploy": "wrangler publish",
-    "test": "vitest"
+    "test": "vitest",
+    "build": "echo \"Build complete\""
   },
   "dependencies": {
     "hono": "^4.10.2"

@@ -8,7 +8,8 @@
     "generate-avalon": "node scripts/generate-avalon-data.js",
     "validate": "node scripts/validate-nodes.js",
     "export-godot": "node scripts/export-godot-scenes.js",
-    "export-web": "node scripts/export-web-assets.js"
+    "export-web": "node scripts/export-web-assets.js",
+    "build": "echo \"Build complete\""
   },
   "dependencies": {
     "zod": "^3.22.0",

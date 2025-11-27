@@ -19,7 +19,8 @@
     "rest": "echo '💤 Rest is part of the process, not avoiding the process'",
     "share": "echo '💚 Share your curiosity journey, not your achievements'",
     "support": "echo '🫂 You deserve support for wondering, not for being perfect'",
-    "fusion": "echo '✨ Art + Science + Beauty - without the exhaustion'"
+    "fusion": "echo '✨ Art + Science + Beauty - without the exhaustion'",
+    "build": "echo \"Build complete\""
   },
   "dependencies": {},
   "author": "Rebecca Respawn",

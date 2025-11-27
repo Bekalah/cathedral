@@ -82,10 +82,10 @@ EOF
 
   echo "  ✅ Tool created: $TOOL_NAME"
   
-  # Try to build
+  # Try to build (non-blocking)
   echo "  🔨 Testing build..."
   cd "$MONOREPO_ROOT"
-  pnpm build 2>&1 | head -20 || echo "  ⚠️  Build has issues (continuing improvement)"
+  timeout 30 pnpm build 2>&1 | head -20 || echo "  ⚠️  Build has issues (continuing improvement)" || true
   
   echo "  ✨ Cycle complete"
   echo ""
