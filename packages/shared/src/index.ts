@@ -48,6 +48,10 @@ export { HumanFunInteraction, PlayfulButton, EncouragingInput, CelebratorySucces
 export * from './free-open-source-security';
 export { FreeOpenSourceSecuritySystem, CC0_LICENSE_HEADER, SECURITY_CHECKLIST } from './free-open-source-security';
 
+// Mystical Tree Art System (CC0-1.0 - Public Domain)
+export * from './mystical-tree-art-system';
+export { MysticalTreeArt } from './mystical-tree-art-system';
+
 // Creative Tools (CC0-1.0 - Public Domain)
 export * from './tools/creative-sacred-geometry-generator';
 export * from './tools/creative-frequency-synthesizer';
