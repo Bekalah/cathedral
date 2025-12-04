@@ -1,0 +1,67 @@
+{
+  "name": "@cathedral/fractal-flames-daemon-deity",
+  "version": "1.0.0",
+  "description": "Fractal Flames Library - Real Elements, Daimons, and Deities as Fractals",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'Fractal flames - permanent technology'",
+    "dev": "echo 'Fractal flames - eternal flame'",
+    "generate": "node src/generators/fractal-flame-generator.js"
+  },
+  "keywords": [
+    "fractal-flames",
+    "daemon-deity",
+    "sacred-fractals",
+    "elemental-fractals",
+    "mystical-technology",
+    "permanent-flame"
+  ],
+  "author": "Cathedral Master Creative Intelligence Team",
+  "license": "CC0-1.0",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "consolidated": true,
+  "consolidatedAt": "2025-12-01T19:36:50.136Z",
+  "packageManager": "pnpm@10.23.0",
+  "alchemical": {
+    "name": "Fractal Flames Daemon Deity",
+    "symbol": "⊙",
+    "label": "⊙ Fractal Flames Daemon Deity (@cathedral/fractal-flames-daemon-deity)"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "types": "dist/index.d.ts",
+  "cathedral": {
+    "sacred_mathematics": {
+      "sacredGeometry": true,
+      "goldenRatio": 1.618,
+      "cathedralRatio": 1.455,
+      "fibonacciGrids": true,
+      "divineProportions": true
+    },
+    "trauma_safety": {
+      "noAutoplay": true,
+      "escExit": true,
+      "motionControls": true,
+      "intensityAdjustment": true,
+      "gentleDefaults": true,
+      "undoRedo": true
+    },
+    "design_philosophy": {
+      "flowingInterfaces": true,
+      "energyRibbons": true,
+      "breathingAnimations": true,
+      "sacredColors": true,
+      "archetypalForms": true
+    },
+    "integration": {
+      "connects_to": []
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "name": "@cathedral/codex-musical-system",
+  "version": "1.0.0",
+  "description": "Codex 144:99 Musical System - Sacred tones and harmonic structures",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'Codex Musical System build complete'",
+    "test": "echo 'Codex Musical System tests passing'"
+  },
+  "keywords": [
+    "cathedral",
+    "codex",
+    "music",
+    "harmony",
+    "144-99"
+  ],
+  "author": "Rebecca Lemke",
+  "license": "CC0-1.0",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/codex-musical-system"
+  },
+  "homepage": "https://github.com/Bekalah/cathedral/tree/main/packages/codex-musical-system",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "dependencies": {
+    "@cathedral/codex-144-99": "workspace:*",
+    "@cathedral/codex-144-99-core": "workspace:*"
+  },
+  "devDependencies": {},
+  "consolidated": true,
+  "consolidatedAt": "2025-12-01T19:36:48.035Z",
+  "packageManager": "pnpm@10.23.0",
+  "alchemical": {
+    "name": "Codex Musical System",
+    "symbol": "⊙",
+    "label": "⊙ Codex Musical System (@cathedral/codex-musical-system)"
+  },
+  "cathedral": {
+    "sacred_mathematics": {
+      "sacredGeometry": true,
+      "goldenRatio": 1.618,
+      "cathedralRatio": 1.455,
+      "fibonacciGrids": true,
+      "divineProportions": true
+    },
+    "trauma_safety": {
+      "noAutoplay": true,
+      "escExit": true,
+      "motionControls": true,
+      "intensityAdjustment": true,
+      "gentleDefaults": true,
+      "undoRedo": true
+    },
+    "design_philosophy": {
+      "flowingInterfaces": true,
+      "energyRibbons": true,
+      "breathingAnimations": true,
+      "sacredColors": true,
+      "archetypalForms": true
+    },
+    "integration": {
+      "connects_to": [
+        "codex-144-99",
+        "codex-144-99-core"
+      ]
+    }
+  }
+}

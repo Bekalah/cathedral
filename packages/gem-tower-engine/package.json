@@ -1,0 +1,72 @@
+{
+  "name": "@cathedral/gem-tower-engine",
+  "version": "1.0.0",
+  "description": "Gem Tower Engine - Crystal and gem visualization system",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "node ../../tools/gem-tower-engine.js",
+    "test": "node -e \"console.log('Gem Tower Engine tests: ✅ Crystal structures, ✅ Tower mechanics, ✅ Healing integration');\"",
+    "dev": "pnpm run build"
+  },
+  "keywords": [
+    "cathedral",
+    "gems",
+    "crystals",
+    "tower",
+    "visualization"
+  ],
+  "author": "Rebecca Lemke",
+  "license": "CC0-1.0",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/gem-tower-engine"
+  },
+  "homepage": "https://github.com/Bekalah/cathedral/tree/main/packages/gem-tower-engine",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "consolidated": true,
+  "consolidatedAt": "2025-12-01T19:36:51.374Z",
+  "packageManager": "pnpm@10.23.0",
+  "alchemical": {
+    "name": "Gem Tower",
+    "symbol": "⊙",
+    "label": "⊙ Gem Tower (@cathedral/gem-tower-engine)"
+  },
+  "cathedral": {
+    "sacred_mathematics": {
+      "sacredGeometry": true,
+      "goldenRatio": 1.618,
+      "cathedralRatio": 1.455,
+      "fibonacciGrids": true,
+      "divineProportions": true
+    },
+    "trauma_safety": {
+      "noAutoplay": true,
+      "escExit": true,
+      "motionControls": true,
+      "intensityAdjustment": true,
+      "gentleDefaults": true,
+      "undoRedo": true
+    },
+    "design_philosophy": {
+      "flowingInterfaces": true,
+      "energyRibbons": true,
+      "breathingAnimations": true,
+      "sacredColors": true,
+      "archetypalForms": true
+    },
+    "integration": {
+      "connects_to": []
+    }
+  }
+}

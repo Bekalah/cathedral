@@ -1,0 +1,130 @@
+{
+  "name": "@cathedral-trinity/accessibility",
+  "version": "1.0.0",
+  "description": "Cathedral v1.0 Universal Accessibility Engine - ND Support, Cognitive Load Optimization, Trauma-Safe Environments",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./nd-support": {
+      "import": "./dist/NDSupport.js",
+      "require": "./dist/NDSupport.cjs",
+      "types": "./dist/NDSupport.d.ts"
+    },
+    "/trauma-safe": {
+      "import": "./dist/TraumaSafe.js",
+      "require": "./dist/TraumaSafe.cjs",
+      "types": "./dist/TraumaSafe.d.ts"
+    },
+    "/cognitive-optimization": {
+      "import": "./dist/CognitiveOptimization.js",
+      "require": "./dist/CognitiveOptimization.cjs",
+      "types": "./dist/CognitiveOptimization.d.ts"
+    }
+  },
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc && node scripts/build.js",
+    "dev": "tsx watch src/index.ts",
+    "test": "vitest run src/**/*.test.ts",
+    "test:watch": "vitest src/**/*.test.ts",
+    "test:coverage": "vitest run --coverage src/**/*.test.ts",
+    "test:accessibility": "vitest run src/**/accessibility*.test.ts",
+    "test:trauma-safe": "vitest run src/**/trauma*.test.ts",
+    "lint": "eslint src/**/*.ts --fix",
+    "format": "prettier --write src/**/*.ts",
+    "clean": "rm -rf dist",
+    "setup": "tsc --declaration",
+    "status": "node scripts/status.js",
+    "validate": "npm run test && npm run lint"
+  },
+  "keywords": [
+    "cathedral",
+    "accessibility",
+    "neurodivergent",
+    "trauma-safe",
+    "cognitive-load",
+    "nd-support",
+    "universal-design",
+    "adhd-support",
+    "autism-support",
+    "dyslexia-support",
+    "attention-regulation",
+    "trauma-informed",
+    "creative-accessibility",
+    "cognitive-accessibility"
+  ],
+  "author": "Rebecca Lemke (Cathedral Trinity Architecture)",
+  "license": "CC0-1.0",
+  "engines": {
+    "node": ">=20.18.0",
+    "pnpm": "*"
+  },
+  "dependencies": {
+    "@cathedral-trinity/core": "workspace:*",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "eslint": "^9.16.0",
+    "prettier": "^3.4.2",
+    "@cathedral/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "vitest": "^1.6.0",
+    "@vitest/coverage-v8": "^1.6.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/universal-accessibility"
+  },
+  "homepage": "https://github.com/Bekalah/cathedral/tree/main/packages/universal-accessibility",
+  "packageManager": "pnpm@10.23.0",
+  "alchemical": {
+    "name": "@cathedral Trinity/accessibility",
+    "symbol": "⊙",
+    "label": "⊙ @cathedral Trinity/accessibility (@cathedral-trinity/accessibility)"
+  },
+  "consolidated": true,
+  "consolidatedAt": "2025-12-01T19:37:08.753Z",
+  "cathedral": {
+    "sacred_mathematics": {
+      "sacredGeometry": true,
+      "goldenRatio": 1.618,
+      "cathedralRatio": 1.455,
+      "fibonacciGrids": true,
+      "divineProportions": true
+    },
+    "trauma_safety": {
+      "noAutoplay": true,
+      "escExit": true,
+      "motionControls": true,
+      "intensityAdjustment": true,
+      "gentleDefaults": true,
+      "undoRedo": true
+    },
+    "design_philosophy": {
+      "flowingInterfaces": true,
+      "energyRibbons": true,
+      "breathingAnimations": true,
+      "sacredColors": true,
+      "archetypalForms": true
+    },
+    "integration": {
+      "connects_to": []
+    }
+  }
+}

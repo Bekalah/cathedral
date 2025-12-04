@@ -1,0 +1,80 @@
+{
+  "name": "@cathedral/debug-system-core",
+  "version": "1.0.0",
+  "description": "Enterprise Debug System - Comprehensive error tracking and diagnostics for Cathedral ecosystem",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "CC0-1.0",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"No tests yet\""
+  },
+  "dependencies": {
+    "@cathedral/health-map-core": "workspace:*",
+    "typescript": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0"
+  },
+  "engines": {
+    "node": "*",
+    "pnpm": "*"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rebeccalemke/cathedral-master-deployment.git",
+    "directory": "packages/debug-system-core"
+  },
+  "homepage": "https://github.com/rebeccalemke/cathedral-master-deployment/tree/main/packages/debug-system-core",
+  "bugs": {
+    "url": "https://github.com/rebeccalemke/cathedral-master-deployment/issues"
+  },
+  "keywords": [
+    "cathedral",
+    "sacred-geometry",
+    "144-99",
+    "codex",
+    "consciousness",
+    "trauma-aware",
+    "open-source",
+    "free"
+  ],
+  "packageManager": "pnpm@10.23.0",
+  "consolidated": true,
+  "consolidatedAt": "2025-12-01T19:36:49.930Z",
+  "alchemical": {
+    "name": "Debug System",
+    "symbol": "⊙",
+    "label": "⊙ Debug System (@cathedral/debug-system-core)"
+  },
+  "cathedral": {
+    "sacred_mathematics": {
+      "sacredGeometry": true,
+      "goldenRatio": 1.618,
+      "cathedralRatio": 1.455,
+      "fibonacciGrids": true,
+      "divineProportions": true
+    },
+    "trauma_safety": {
+      "noAutoplay": true,
+      "escExit": true,
+      "motionControls": true,
+      "intensityAdjustment": true,
+      "gentleDefaults": true,
+      "undoRedo": true
+    },
+    "design_philosophy": {
+      "flowingInterfaces": true,
+      "energyRibbons": true,
+      "breathingAnimations": true,
+      "sacredColors": true,
+      "archetypalForms": true
+    },
+    "integration": {
+      "connects_to": []
+    }
+  }
+}

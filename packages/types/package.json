@@ -1,0 +1,82 @@
+{
+  "name": "@cathedral/types",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts",
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint src --ext=ts --max-warnings=0",
+    "check-types": "tsc --noEmit",
+    "test": "vitest run",
+    "build": "tsup",
+    "build:watch": "tsup --watch --outDir npm/dist --onSuccess 'echo ✅ Types rebuilt to npm/dist'",
+    "npm:publish": "node scripts/publish-npm.cjs",
+    "clean": "rimraf dist .turbo"
+  },
+  "dependencies": {
+    "zod": "^3.25.61",
+    "@cathedral/config-eslint": "workspace:^",
+    "@cathedral/config-typescript": "workspace:^",
+    "globals": "^16.3.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.1.0",
+    "vitest": "^3.2.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "license": "CC0-1.0",
+  "consolidated": true,
+  "consolidatedAt": "2025-12-01T19:37:07.884Z",
+  "packageManager": "pnpm@10.23.0",
+  "alchemical": {
+    "name": "Types",
+    "symbol": "⊙",
+    "label": "⊙ Types (@cathedral/types)"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "types": "dist/index.d.ts",
+  "cathedral": {
+    "sacred_mathematics": {
+      "sacredGeometry": true,
+      "goldenRatio": 1.618,
+      "cathedralRatio": 1.455,
+      "fibonacciGrids": true,
+      "divineProportions": true
+    },
+    "trauma_safety": {
+      "noAutoplay": true,
+      "escExit": true,
+      "motionControls": true,
+      "intensityAdjustment": true,
+      "gentleDefaults": true,
+      "undoRedo": true
+    },
+    "design_philosophy": {
+      "flowingInterfaces": true,
+      "energyRibbons": true,
+      "breathingAnimations": true,
+      "sacredColors": true,
+      "archetypalForms": true
+    },
+    "integration": {
+      "connects_to": []
+    }
+  },
+  "description": "Types - Part of the Cathedral of Circuits mystical ecosystem"
+}

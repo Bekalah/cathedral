@@ -1,0 +1,4 @@
+/**
+ * Living Arcana Types
+ */
+export {};

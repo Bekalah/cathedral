@@ -1,0 +1,71 @@
+{
+  "name": "@cathedral/avatar-experience-system",
+  "version": "1.0.0",
+  "description": "Avatar Experience System - Multi-modal fractal avatar experiences with Liber Arcanae integration",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "node demo.js",
+    "dev": "node src/index.js",
+    "test": "node demo.js"
+  },
+  "keywords": [
+    "avatar",
+    "fractal",
+    "tarot",
+    "experiences"
+  ],
+  "author": "Rebecca Respawn",
+  "license": "CC0-1.0",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bekalah/cathedral.git",
+    "directory": "packages/avatar-experience-system"
+  },
+  "homepage": "https://github.com/Bekalah/cathedral/tree/main/packages/avatar-experience-system",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "consolidated": true,
+  "consolidatedAt": "2025-12-01T19:36:40.458Z",
+  "packageManager": "pnpm@10.23.0",
+  "alchemical": {
+    "name": "Avatar Experience System",
+    "symbol": "⊙",
+    "label": "⊙ Avatar Experience System (@cathedral/avatar-experience-system)"
+  },
+  "cathedral": {
+    "sacred_mathematics": {
+      "sacredGeometry": true,
+      "goldenRatio": 1.618,
+      "cathedralRatio": 1.455,
+      "fibonacciGrids": true,
+      "divineProportions": true
+    },
+    "trauma_safety": {
+      "noAutoplay": true,
+      "escExit": true,
+      "motionControls": true,
+      "intensityAdjustment": true,
+      "gentleDefaults": true,
+      "undoRedo": true
+    },
+    "design_philosophy": {
+      "flowingInterfaces": true,
+      "energyRibbons": true,
+      "breathingAnimations": true,
+      "sacredColors": true,
+      "archetypalForms": true
+    },
+    "integration": {
+      "connects_to": []
+    }
+  }
+}
