@@ -1,0 +1,73 @@
+# Cathedral Real - Render Deployment Configuration
+# $0/month deployment strategy for web applications
+# Vite-optimized build system with Turbo integration
+
+services:
+  # Cataract Book Scanner - Web Service with Static Files (Vite + React)
+  - type: web
+    name: cataract-book-scanner
+    runtime: node
+    plan: free
+    buildCommand: |
+      npm install -g pnpm && 
+      pnpm install && 
+      cd packages/cataract-book-scanner && 
+      pnpm install && 
+      pnpm run build
+    startCommand: |
+      cd packages/cataract-book-scanner && 
+      npx http-server dist -p 10000
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: NODE_VERSION
+        value: '20.18.0'
+
+  # Hall of Ateliers - Web Service (React + Three.js)
+  - type: web
+    name: hall-of-ateliers
+    runtime: node
+    plan: free
+    buildCommand: |
+      npm install -g pnpm && 
+      pnpm install && 
+      cd packages/hall-of-ateliers && 
+      pnpm install && 
+      pnpm run build
+    startCommand: |
+      cd packages/hall-of-ateliers && 
+      npx http-server dist -p 10001
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10001
+      - key: NODE_VERSION
+        value: '20.18.0'
+
+  # Cathedral Logo System - Web Service (Three.js + React)
+  - type: web
+    name: cathedral-logo-system
+    runtime: node
+    plan: free
+    buildCommand: |
+      npm install -g pnpm && 
+      pnpm install && 
+      cd packages/cathedral-logo-system && 
+      pnpm install && 
+      pnpm run build
+    startCommand: |
+      cd packages/cathedral-logo-system && 
+      npx http-server dist -p 10002
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10002
+      - key: NODE_VERSION
+        value: '20.18.0'

@@ -24,8 +24,8 @@
     "validate:integration": "node scripts/validate-integration.js",
     "validate:ownership": "node scripts/validate-ownership.js"
   },
-  "engines": {
-    "node": ">=18.0.0",
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
     "pnpm": ">=8.0.0"
   },
   "license": "CC0-1.0",

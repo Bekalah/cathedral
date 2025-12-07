@@ -1,0 +1,79 @@
+version: '3.8'
+
+services:
+  # Coolify Self-Hosted Platform
+  coolify:
+    image: coolify/coolify:latest
+    container_name: coolify
+    restart: unless-stopped
+    ports:
+      - "3000:3000"  # Coolify UI
+      - "8080:8080"  # Backend API
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=postgresql://postgres:password@postgres:5432/coolify
+      - REDIS_URL=redis://redis:6379
+      - JWT_SECRET=your-super-secret-jwt-key-here
+      - MAIL_SMTP_HOST=smtp.example.com
+      - MAIL_SMTP_PORT=587
+      - MAIL_SMTP_USER=your-email@example.com
+      - MAIL_SMTP_PASSWORD=your-password
+      - GITHUB_CLIENT_ID=your-github-client-id
+      - GITHUB_CLIENT_SECRET=your-github-client-secret
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./data:/app/data
+      - ./logs:/app/logs
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - coolify-network
+
+  # PostgreSQL Database for Coolify
+  postgres:
+    image: postgres:15-alpine
+    container_name: coolify-postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=coolify
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - coolify-network
+
+  # Redis for Caching
+  redis:
+    image: redis:7-alpine
+    container_name: coolify-redis
+    restart: unless-stopped
+    volumes:
+      - redis-data:/data
+    networks:
+      - coolify-network
+
+  # Nginx Reverse Proxy for Cathedral Apps
+  cathedral-nginx:
+    image: nginx:alpine
+    container_name: cathedral-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./ssl:/etc/nginx/ssl
+    depends_on:
+      - coolify
+    networks:
+      - coolify-network
+
+volumes:
+  postgres-data:
+  redis-data:
+
+networks:
+  coolify-network:
+    driver: bridge

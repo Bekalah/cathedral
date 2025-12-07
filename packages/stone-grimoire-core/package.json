@@ -23,8 +23,7 @@
   },
   "consolidated": true,
   "consolidatedAt": "2025-12-01T19:37:02.401Z",
-  "engines": {
-    "pnpm": ">=8.0.0"
+    "pnpm": ">=8.15.0"
   },
   "packageManager": "pnpm@10.23.0",
   "alchemical": {

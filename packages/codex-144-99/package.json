@@ -18,8 +18,8 @@
       "import": "./dist/validation.js"
     }
   },
-  "engines": {
-    "node": "22.0.0",
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
     "pnpm": "*"
   },
   "scripts": {

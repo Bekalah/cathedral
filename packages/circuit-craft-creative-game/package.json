@@ -46,8 +46,8 @@
     "directory": "packages/circuit-craft-creative-game"
   },
   "homepage": "https://github.com/Bekalah/cathedral/tree/main/packages/circuit-craft-creative-game",
-  "engines": {
-    "node": ">=18.0.0",
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
     "pnpm": ">=8.0.0"
   },
   "dependencies": {

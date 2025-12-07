@@ -44,8 +44,8 @@
     "directory": "packages/mystical-data-unified"
   },
   "homepage": "https://github.com/Bekalah/cathedral/tree/main/packages/mystical-data-unified",
-  "engines": {
-    "node": ">=18.0.0",
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
     "pnpm": ">=8.0.0"
   },
   "dependencies": {},

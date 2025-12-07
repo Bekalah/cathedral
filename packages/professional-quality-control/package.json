@@ -40,8 +40,8 @@
   },
   "consolidated": true,
   "consolidatedAt": "2025-12-01T19:36:58.689Z",
-  "engines": {
-    "node": "*",
+    "node": ">=20.18.0",
+    "pnpm": ">=8.15.0"
     "pnpm": ">=8.0.0"
   },
   "packageManager": "pnpm@10.23.0",
