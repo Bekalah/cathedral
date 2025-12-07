@@ -1,0 +1,419 @@
+name: Documentation Pipeline
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - 'packages/**/src/**'
+      - 'packages/**/README.md'
+      - 'docs/**'
+      - 'package.json'
+      - 'tsconfig.json'
+  workflow_dispatch:
+    inputs:
+      force_rebuild:
+        description: 'Force complete documentation rebuild'
+        required: false
+        default: false
+        type: boolean
+
+env:
+  NODE_VERSION: '20'
+  PNPM_VERSION: '8'
+
+jobs:
+  # TypeDoc generation for all packages
+  generate-docs:
+    name: Generate API Documentation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Install TypeDoc globally
+        run: npm install -g typedoc@latest
+
+      - name: Generate documentation for each package
+        run: |
+          # Create docs directory structure
+          mkdir -p docs/api
+          
+          # Get all package directories
+          PACKAGES=$(find packages -name "package.json" -type f | xargs dirname | sort)
+          
+          for package_dir in $PACKAGES; do
+            package_name=$(basename "$package_dir")
+            echo "Generating docs for package: $package_name"
+            
+            # Check if package has TypeScript source
+            if [ -d "$package_dir/src" ]; then
+              # Create typedoc config for this package
+              cat > "typedoc.$package_name.json" << EOF
+              {
+                "entryPoints": ["$package_dir/src"],
+                "out": "docs/api/$package_name",
+                "plugin": [],
+                "excludeExternals": true,
+                "excludePrivate": true,
+                "excludeProtected": true,
+                "readme": "$package_dir/README.md",
+                "name": "Cathedral Real - $package_name",
+                "tsconfig": "$package_dir/tsconfig.json"
+              }
+              EOF
+              
+              # Generate docs
+              typedoc --options "typedoc.$package_name.json"
+              
+              # Clean up config
+              rm "typedoc.$package_name.json"
+            fi
+          done
+
+      - name: Generate Cathedral-specific documentation
+        run: |
+          # Create main API index
+          cat > docs/api/README.md << 'EOF'
+          # Cathedral Real API Documentation
+          
+          ## Architecture Overview
+          
+          Cathedral Real is built as a comprehensive Cosmos Builder with the following core systems:
+          
+          - **Cosmos Genesis**: Local cosmos-topology and sacred geometry lab
+          - **Stone Grimoire**: Body/land/architecture design system
+          - **Art Engine Core**: Creative content generation and composition
+          - **Atelier Constitution**: Workshop and tool management
+          - **Professional Quality Control**: Code quality and validation
+          
+          ## Package Structure
+          
+          Each package is designed to be a standalone, composable unit that contributes to the overall Cathedral ecosystem.
+          
+          ## API Reference
+          
+          Browse the API documentation for each package:
+          
+          EOF
+          
+          # Add package links
+          for package_dir in packages/*/; do
+            package_name=$(basename "$package_dir")
+            if [ -d "docs/api/$package_name" ]; then
+              echo "- [$package_name](./$package_name/)" >> docs/api/README.md
+            fi
+          done
+
+      - name: Validate documentation structure
+        run: |
+          # Check that all expected documentation exists
+          echo "Documentation structure validation:"
+          
+          # Count generated files
+          DOC_FILES=$(find docs/api -name "*.html" | wc -l)
+          echo "Generated HTML files: $DOC_FILES"
+          
+          # Validate package structure
+          PACKAGE_COUNT=$(find packages -name "src" -type d | wc -l)
+          echo "Packages with source code: $PACKAGE_COUNT"
+          
+          # Check for critical files
+          CRITICAL_FILES=("docs/index.md" "docs/api/README.md" "README.md")
+          for file in "${CRITICAL_FILES[@]}"; do
+            if [ -f "$file" ]; then
+              echo "✓ $file exists"
+            else
+              echo "✗ $file missing"
+            fi
+          done
+
+      - name: Upload documentation artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-docs
+          path: |
+            docs/
+          retention-days: 30
+
+      - name: Upload documentation zip
+        run: |
+          cd docs
+          zip -r ../cathedral-docs-${{ github.sha }}.zip .
+          cd ..
+          
+      - name: Upload documentation zip
+        uses: actions/upload-artifact@v4
+        with:
+          name: docs-zip
+          path: cathedral-docs-${{ github.sha }}.zip
+          retention-days: 90
+
+  # Deploy documentation to GitHub Pages
+  deploy-docs:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: [generate-docs]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download documentation artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: generated-docs
+          path: docs/
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload to GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  # Documentation quality checks
+  docs-quality:
+    name: Documentation Quality
+    runs-on: ubuntu-latest
+    needs: [generate-docs]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install documentation quality tools
+        run: |
+          npm install -g markdownlint-cli@latest
+          pnpm install
+
+      - name: Run markdown quality checks
+        run: |
+          echo "Running markdown quality checks..."
+          
+          # Check markdown files
+          find docs/ packages/ -name "*.md" -type f | xargs markdownlint --fix
+          
+          # Check for broken links (basic check)
+          echo "Checking for basic markdown link issues..."
+          find docs/ packages/ -name "*.md" -type f -exec grep -l "\[.*\](" {} \; | while read file; do
+            echo "Checking links in: $file"
+            # Basic regex check for common issues
+            if grep -E "\[.*\]\(\s*\)" "$file"; then
+              echo "⚠️  Empty link found in $file"
+            fi
+            if grep -E "\[.*\]\([^#)]*\.md[^)]*\)" "$file"; then
+              echo "ℹ️  Internal .md link found in $file (may need updating)"
+            fi
+          done
+
+      - name: Check README coverage
+        run: |
+          echo "Checking README coverage..."
+          
+          # Check for README files in packages
+          PACKAGES_WITHOUT_README=()
+          for package_dir in packages/*/; do
+            package_name=$(basename "$package_dir")
+            if [ ! -f "$package_dir/README.md" ]; then
+              PACKAGES_WITHOUT_README+=("$package_name")
+            fi
+          done
+          
+          if [ ${#PACKAGES_WITHOUT_README[@]} -gt 0 ]; then
+            echo "⚠️  Packages without README:"
+            printf '%s\n' "${PACKAGES_WITHOUT_README[@]}"
+          else
+            echo "✓ All packages have README files"
+          fi
+
+      - name: API documentation completeness
+        run: |
+          echo "Checking API documentation completeness..."
+          
+          # Check for JSDoc coverage in TypeScript files
+          TSFILES=$(find packages/ -name "*.ts" -type f | wc -l)
+          echo "TypeScript files: $TSFILES"
+          
+          # Basic check for JSDoc comments
+          FILES_WITH_JSDOC=$(find packages/ -name "*.ts" -type f -exec grep -l "/\*\*" {} \; | wc -l)
+          echo "Files with JSDoc: $FILES_WITH_JSDOC"
+          
+          if [ $TSFILES -gt 0 ]; then
+            COMPLETION_RATE=$((FILES_WITH_JSDOC * 100 / TSFILES))
+            echo "JSDoc coverage: $COMPLETION_RATE%"
+            
+            if [ $COMPLETION_RATE -lt 50 ]; then
+              echo "⚠️  Low JSDoc coverage - consider adding more documentation"
+            else
+              echo "✓ Good JSDoc coverage"
+            fi
+          fi
+
+  # Generate documentation statistics
+  docs-stats:
+    name: Documentation Statistics
+    runs-on: ubuntu-latest
+    needs: [generate-docs]
+    if: always()
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Generate documentation statistics
+        run: |
+          node -e "
+            const fs = require('fs');
+            const path = require('path');
+            
+            function getStats(dir) {
+              let stats = { files: 0, dirs: 0, size: 0 };
+              
+              try {
+                const entries = fs.readdirSync(dir);
+                
+                for (const entry of entries) {
+                  const fullPath = path.join(dir, entry);
+                  const stat = fs.statSync(fullPath);
+                  
+                  if (stat.isDirectory()) {
+                    stats.dirs++;
+                    const subStats = getStats(fullPath);
+                    stats.files += subStats.files;
+                    stats.dirs += subStats.dirs;
+                    stats.size += subStats.size;
+                  } else {
+                    stats.files++;
+                    stats.size += stat.size;
+                  }
+                }
+              } catch (err) {
+                // Directory doesn't exist or can't be read
+              }
+              
+              return stats;
+            }
+            
+            const docsStats = getStats('docs');
+            const apiStats = getStats('docs/api');
+            
+            const report = {
+              timestamp: new Date().toISOString(),
+              documentation: {
+                totalFiles: docsStats.files,
+                totalDirectories: docsStats.dirs,
+                totalSizeBytes: docsStats.size,
+                totalSizeMB: (docsStats.size / 1024 / 1024).toFixed(2)
+              },
+              apiDocumentation: {
+                totalFiles: apiStats.files,
+                totalDirectories: apiStats.dirs,
+                totalSizeBytes: apiStats.size,
+                totalSizeMB: (apiStats.size / 1024 / 1024).toFixed(2)
+              },
+              repository: {
+                commit: process.env.GITHUB_SHA,
+                branch: process.env.GITHUB_REF_NAME,
+                runId: process.env.GITHUB_RUN_ID
+              }
+            };
+            
+            console.log('Documentation Statistics:');
+            console.log(JSON.stringify(report, null, 2));
+            
+            fs.writeFileSync('docs-stats.json', JSON.stringify(report, null, 2));
+          "
+        env:
+          GITHUB_SHA: ${{ github.sha }}
+          GITHUB_REF_NAME: ${{ github.ref_name }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+
+      - name: Upload documentation statistics
+        uses: actions/upload-artifact@v4
+        with:
+          name: docs-stats
+          path: docs-stats.json
+          retention-days: 90
+
+      - name: Comment statistics on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            
+            try {
+              const stats = JSON.parse(fs.readFileSync('docs-stats.json', 'utf8'));
+              
+              const comment = \`
+              📊 **Documentation Update**
+              
+              **Statistics:**
+              - Total documentation files: \${stats.documentation.totalFiles}
+              - API documentation files: \${stats.apiDocumentation.totalFiles}
+              - Documentation size: \${stats.documentation.totalSizeMB}MB
+              - API documentation size: \${stats.apiDocumentation.totalSizeMB}MB
+              
+              **Generated at:** \${stats.timestamp}
+              \`;
+              
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: comment
+              });
+            } catch (error) {
+              console.log('Could not post documentation stats:', error.message);
+            }

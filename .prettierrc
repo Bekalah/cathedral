@@ -1,0 +1,53 @@
+{
+  "semi": true,
+  "trailingComma": "es5",
+  "singleQuote": true,
+  "printWidth": 100,
+  "tabWidth": 2,
+  "useTabs": false,
+  "quoteProps": "as-needed",
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "arrowParens": "avoid",
+  "endOfLine": "lf",
+  "embeddedLanguageFormatting": "auto",
+  "overrides": [
+    {
+      "files": "*.{js,jsx,ts,tsx}",
+      "options": {
+        "parser": "typescript"
+      }
+    },
+    {
+      "files": "*.{json,jsonc}",
+      "options": {
+        "parser": "json"
+      }
+    },
+    {
+      "files": "*.{md,mdx}",
+      "options": {
+        "parser": "markdown",
+        "proseWrap": "preserve"
+      }
+    },
+    {
+      "files": "*.{css,scss,less}",
+      "options": {
+        "parser": "css"
+      }
+    },
+    {
+      "files": "*.{html,htm}",
+      "options": {
+        "parser": "html"
+      }
+    },
+    {
+      "files": "*.{yml,yaml}",
+      "options": {
+        "parser": "yaml"
+      }
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow_instructions>
+  <mode_overview>
+    The Phase 10 Build Optimizer mode implements enterprise-grade build system optimizations for the cathedral-real monorepo, focusing on free, local-first, open source development principles. This mode handles advanced development environments, performance optimization, testing automation, security compliance, monitoring, deployment strategies, and developer experience improvements.
+  </mode_overview>
+
+  <initialization_steps>
+    <step number="1">
+      <action>Analyze current build system state</action>
+      <details>
+        Examine existing infrastructure:
+        - Review Turbo configuration and current build performance
+        - Assess package dependencies and build bottlenecks
+        - Identify existing CI/CD pipelines and monitoring
+        - Evaluate current security and compliance measures
+        - Check development environment setup
+      </details>
+      <validation>Current state documented with performance baselines</validation>
+    </step>
+    
+    <step number="2">
+      <action>Plan Phase 10 optimization strategy</action>
+      <tools>
+        <tool>read_file - Examine package.json, turbo.json, and existing scripts</tool>
+        <tool>list_files - Review current build system files and configurations</tool>
+        <tool>search_files - Find existing optimization patterns</tool>
+      </tools>
+      <validation>Comprehensive optimization plan created with priorities</validation>
+    </step>
+
+    <step number="3">
+      <action>Establish Cathedral business constraints</action>
+      <details>
+        Ensure all implementations follow:
+        - Trauma-aware, non-clinical framing
+        - No therapy/BDSM/AI-guru/cultic positioning
+        - Free, local-first, open source principles
+        - Privacy-conscious design
+        - Production-ready enterprise capabilities
+      </details>
+      <validation>Business constraints documented and validated</validation>
+    </step>
+  </initialization_steps>
+
+  <main_workflow>
+    <phase name="development_environment">
+      <description>Enhanced development environment with Docker containers and hot reload</description>
+      <steps>
+        <step>Create Docker development containers for consistent environments</step>
+        <step>Implement enhanced dev server setup with TypeScript hot reload</step>
+        <step>Configure VSCode extensions and debugging configurations</step>
+        <step>Set up local environment simulation with Docker Compose</step>
+        <step>Automate database setup for development and testing</step>
+        <step>Implement environment configuration management across stages</step>
+      </steps>
+    </phase>
+
+    <phase name="performance_optimization">
+      <description>Advanced performance optimization and bundle analysis</description>
+      <steps>
+        <step>Implement bundle size analysis and optimization tools</step>
+        <step>Set up dependency tree analysis with unused dependency detection</step>
+        <step>Create advanced cache strategies with intelligent invalidation</step>
+        <step>Optimize build parallelization beyond current 12 concurrent builds</step>
+        <step>Implement memory usage optimization for large package builds</step>
+        <step>Set up performance monitoring and benchmarking</step>
+      </steps>
+    </phase>
+
+    <phase name="testing_automation">
+      <description>Comprehensive testing automation across all dimensions</description>
+      <steps>
+        <step>Set up end-to-end testing framework (Playwright/Cypress)</step>
+        <step>Implement performance testing automation with Lighthouse</step>
+        <step>Configure accessibility testing automation (axe-core)</option>
+        <step>Set up cross-browser testing automation</option>
+        <step>Implement visual regression testing</option>
+        <step>Create comprehensive test coverage reporting</option>
+      </steps>
+    </phase>
+
+    <phase name="security_compliance">
+      <description>Enterprise security scanning and compliance framework</description>
+      <steps>
+        <step>Implement automated security scanning with OWASP</option>
+        <option>Set up license compliance checking across all dependencies</option>
+        <option>Configure container security scanning for Docker development</option>
+        <option>Implement secrets scanning and management automation</option>
+        <option>Set up GDPR/privacy compliance validation tools</option>
+        <option>Create security reporting and alerting systems</option>
+      </steps>
+    </phase>
+
+    <phase name="monitoring_observability">
+      <description>Real-time monitoring and observability systems</description>
+      <steps>
+        <option>Implement real-time build monitoring with detailed metrics</option>
+        <option>Set up application performance monitoring for built applications</option>
+        <option>Configure error tracking integration (Sentry) across packages</option>
+        <option>Set up log aggregation and analysis</option>
+        <option>Create custom dashboards for build and performance metrics</option>
+        <option>Implement alerting and notification systems</option>
+      </steps>
+    </phase>
+
+    <phase name="deployment_enhancement">
+      <description>Advanced deployment strategies with zero-downtime capabilities</description>
+      <steps>
+        <option>Implement blue-green deployment automation</option>
+        <option>Set up canary deployment strategies</option>
+        <option>Configure multi-environment deployment (dev, staging, production)</option>
+        <option>Create Infrastructure as Code (Terraform/CloudFormation) setup</option>
+        <option>Implement container orchestration (Kubernetes) configuration</option>
+        <option>Set up deployment rollback and recovery mechanisms</option>
+      </steps>
+    </phase>
+
+    <phase name="developer_experience">
+      <description>Superior developer experience with automated onboarding</description>
+      <steps>
+        <option>Create interactive setup wizards for new developers</option>
+        <option>Implement automated code generation templates and scaffolding</option>
+        <option>Set up Git hooks integration for pre-commit quality checks</option>
+        <option>Create interactive documentation with live examples</option>
+        <option>Implement developer onboarding automation with step-by-step guides</option>
+        <option>Set up developer productivity metrics and feedback systems</option>
+      </steps>
+    </phase>
+  </main_workflow>
+
+  <completion_criteria>
+    <criterion>Enhanced development environment operational with Docker containers</criterion>
+    <criterion>Advanced performance optimization reducing build times by >30%</criterion>
+    <criterion>Comprehensive testing automation covering E2E, performance, and accessibility</criterion>
+    <criterion>Enterprise security scanning and compliance framework operational</criterion>
+    <criterion>Real-time monitoring and observability systems deployed</criterion>
+    <criterion>Advanced deployment strategies with zero-downtime capabilities implemented</criterion>
+    <criterion>Superior developer experience with automated onboarding operational</criterion>
+    <criterion>All implementations follow Cathedral free source principles</criterion>
+  </completion_criteria>
+
+  <validation_workflow>
+    <step>Verify all Phase 10 components are operational</step>
+    <step>Test performance improvements against baseline metrics</step>
+    <step>Validate security and compliance measures</step>
+    <step>Confirm developer experience enhancements</step>
+    <step>Document implementation and provide usage guides</step>
+  </validation_workflow>
+</workflow_instructions>

@@ -1,0 +1,98 @@
+# Build outputs
+dist/
+build/
+out/
+lib/
+coverage/
+*.tsbuildinfo
+
+# Runtime directories
+node_modules/
+.pnpm-store/
+.pnp
+.pnp.*
+
+# Cache directories
+.turbo/
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.vuepress/dist
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Generated files
+generated/
+*.gen.ts
+*.generated.*
+
+# Log files
+*.log
+logs/
+
+# Dependency lock files (we use pnpm)
+yarn.lock
+package-lock.json
+
+# Git database
+.git/
+
+# Test files (don't format test snapshots)
+**/__snapshots__/
+**/*.test.ts.snap
+**/*.spec.ts.snap
+
+# Minified files
+*.min.js
+*.min.css
+*.min.html
+
+# Binary files
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ico
+*.svg
+*.woff
+*.woff2
+*.ttf
+*.eot
+*.mp4
+*.webm
+*.ogg
+*.mp3
+*.wav
+*.flac
+*.aac
+*.pdf
+*.doc
+*.docx
+*.xls
+*.xlsx
+*.ppt
+*.pptx
+
+# Temporary files
+*.tmp
+*.temp

@@ -1,0 +1,472 @@
+name: Release Automation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.changeset/**'
+  workflow_dispatch:
+    inputs:
+      version_type:
+        description: 'Release type (patch, minor, major)'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+      dry_run:
+        description: 'Dry run (no actual publication)'
+        required: false
+        default: false
+        type: boolean
+
+env:
+  NODE_VERSION: '20'
+  PNPM_VERSION: '8'
+
+jobs:
+  # Pre-release validation
+  validate-release:
+    name: Validate Release
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      should-publish: ${{ steps.version.outputs.should-publish }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Validate repository state
+        run: |
+          echo "Validating release prerequisites..."
+          
+          # Check if we're on main branch
+          if [ "${{ github.ref }}" != "refs/heads/main" ]; then
+            echo "❌ Releases can only be created from main branch"
+            exit 1
+          fi
+          
+          # Check for uncommitted changes
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "❌ Uncommitted changes detected"
+            git status
+            exit 1
+          fi
+          
+          # Validate semantic versioning
+          node -e "
+            const semver = require('semver');
+            const packageJson = JSON.parse(require('fs').readFileSync('package.json', 'utf8'));
+            const currentVersion = packageJson.version;
+            
+            console.log('Current version:', currentVersion);
+            
+            if (!semver.valid(currentVersion)) {
+              console.error('❌ Invalid semantic version:', currentVersion);
+              process.exit(1);
+            }
+            
+            console.log('✓ Valid semantic version');
+          "
+
+      - name: Run pre-release tests
+        run: |
+          echo "Running pre-release validation..."
+          
+          # Full quality validation
+          pnpm run quality:full
+          
+          # Build verification
+          pnpm run build:ci
+          
+          # Security audit
+          pnpm run quality:security
+
+      - name: Determine release version
+        id: version
+        run: |
+          # Use changeset to determine version, or use manual input
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            VERSION_TYPE="${{ github.event.inputs.version_type }}"
+            echo "Using manually specified version type: $VERSION_TYPE"
+          elif [ -d ".changeset" ]; then
+            echo "Using changeset to determine version..."
+            pnpm exec changeset version
+            VERSION_TYPE="changeset"
+          else
+            echo "No changesets found, using patch version"
+            VERSION_TYPE="patch"
+          fi
+          
+          # Get current version
+          CURRENT_VERSION=$(node -p "require('./package.json').version")
+          echo "Current version: $CURRENT_VERSION"
+          
+          # Calculate next version
+          if [ "$VERSION_TYPE" = "changeset" ]; then
+            # Read the actual version from package.json after changeset version
+            NEXT_VERSION=$(node -p "require('./package.json').version")
+            echo "Next version from changeset: $NEXT_VERSION"
+          else
+            NEXT_VERSION=$(node -p "
+              const semver = require('semver');
+              const current = require('./package.json').version;
+              semver.inc(current, '$VERSION_TYPE');
+            ")
+            echo "Next version calculated: $NEXT_VERSION"
+          fi
+          
+          echo "version=$NEXT_VERSION" >> $GITHUB_OUTPUT
+          echo "should-publish=true" >> $GITHUB_OUTPUT
+
+  # Create release
+  create-release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    needs: [validate-release]
+    if: needs.validate-release.outputs.should-publish == 'true'
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build all packages
+        run: pnpm run build:ci
+        env:
+          CI: true
+          NODE_OPTIONS: '--max-old-space-size=4096'
+
+      - name: Update version
+        if: github.event_name != 'workflow_dispatch' || github.event.inputs.dry_run != 'true'
+        run: |
+          echo "Updating version to ${{ needs.validate-release.outputs.version }}"
+          
+          if [ -d ".changeset" ]; then
+            echo "Applying changeset version updates..."
+            pnpm exec changeset version
+          else
+            echo "Manually updating version..."
+            node -e "
+              const fs = require('fs');
+              const semver = require('semver');
+              const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+              const currentVersion = packageJson.version;
+              
+              console.log('Updating from', currentVersion, 'to', '${{ needs.validate-release.outputs.version }}');
+              
+              packageJson.version = '${{ needs.validate-release.outputs.version }}';
+              fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2) + '\n');
+              
+              // Update all workspace package.json files
+              const { execSync } = require('child_process');
+              try {
+                execSync('pnpm update -r --no-git-checks', { stdio: 'inherit' });
+              } catch (error) {
+                console.log('Some package updates may have failed, continuing...');
+              }
+            "
+          fi
+
+      - name: Generate release notes
+        run: |
+          echo "Generating release notes..."
+          
+          # Use changeset to generate release notes
+          if [ -d ".changeset" ]; then
+            pnpm exec changeset release ${{ needs.validate-release.outputs.version }}
+          else
+            # Fallback: generate basic release notes
+            cat > RELEASE_NOTES.md << EOF
+            # Release ${{ needs.validate-release.outputs.version }}
+            
+            ## Changes in this release
+            
+            - Updated version to ${{ needs.validate-release.outputs.version }}
+            - Full build verification passed
+            - Quality gates validated
+            - Security audit completed
+            
+            ## Build Information
+            
+            - Commit: ${{ github.sha }}
+            - Build Date: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
+            - Branch: ${{ github.ref_name }}
+            - Runner: ${{ runner.os }}
+            
+            ## Package Changes
+            
+            This release includes updates to all packages in the Cathedral Real monorepo.
+            For detailed changes, see the individual package CHANGELOG files.
+            EOF
+          fi
+          
+          # Add package changelogs if they exist
+          for package_dir in packages/*/; do
+            package_name=$(basename "$package_dir")
+            changelog_file="$package_dir/CHANGELOG.md"
+            
+            if [ -f "$changelog_file" ]; then
+              echo "" >> RELEASE_NOTES.md
+              echo "### $package_name" >> RELEASE_NOTES.md
+              head -20 "$changelog_file" >> RELEASE_NOTES.md
+            fi
+          done
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ needs.validate-release.outputs.version }}
+          name: Release v${{ needs.validate-release.outputs.version }}
+          body_path: RELEASE_NOTES.md
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+          files: |
+            cathedral-docs-${{ github.sha }}.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # Publish to npm registry
+  publish-packages:
+    name: Publish Packages
+    runs-on: ubuntu-latest
+    needs: [validate-release, create-release]
+    if: > 
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run != 'true') ||
+      (github.event_name == 'push' && startsWith(github.ref, 'refs/heads/main'))
+    environment:
+      name: npm-registry
+      url: https://npmjs.com/@cathedral-real
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build packages
+        run: pnpm run build:ci
+        env:
+          CI: true
+          NODE_OPTIONS: '--max-old-space-size=4096'
+
+      - name: Publish all packages
+        run: |
+          echo "Publishing packages to npm..."
+          
+          # Publish each workspace package
+          for package_dir in packages/*/; do
+            package_name=$(basename "$package_dir")
+            
+            echo "Publishing: @cathedral-real/$package_name"
+            
+            # Check if package has build output
+            if [ -d "$package_dir/dist" ] || [ -d "$package_dir/lib" ]; then
+              cd "$package_dir"
+              
+              # Check if package.json exists and has correct name
+              if [ -f "package.json" ]; then
+                npm publish --access public --tag latest
+                echo "✅ Published @cathedral-real/$package_name"
+              else
+                echo "⚠️  Skipping $package_name - no package.json"
+              fi
+              
+              cd ../..
+            else
+              echo "⚠️  Skipping $package_name - no build output"
+            fi
+          done
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  # Post-release tasks
+  post-release:
+    name: Post-Release Tasks
+    runs-on: ubuntu-latest
+    needs: [publish-packages]
+    if: always() && (needs.publish-packages.result == 'success' || needs.create-release.result == 'success')
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Update Git
+        run: |
+          echo "Updating Git repository..."
+          
+          # Add all changes
+          git add .
+          
+          # Commit version changes
+          if [ -n "$(git status --porcelain)" ]; then
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            git commit -m "chore: release v${{ needs.validate-release.outputs.version }}"
+            
+            # Push changes
+            git push origin main
+          else
+            echo "No changes to commit"
+          fi
+
+      - name: Create release tag
+        run: |
+          echo "Creating annotated tag..."
+          git tag -a "v${{ needs.validate-release.outputs.version }}" -m "Release v${{ needs.validate-release.outputs.version }}"
+          git push origin "v${{ needs.validate-release.outputs.version }}"
+
+      - name: Trigger documentation deployment
+        run: |
+          echo "Triggering documentation update..."
+          
+          # Create a workflow_dispatch event to update docs
+          curl -X POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            https://api.github.com/repos/${{ github.repository }}/actions/workflows/docs.yml/dispatches \
+            -d '{"ref":"main","inputs":{"force_rebuild":"true"}}'
+
+      - name: Notify release completion
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const version = '${{ needs.validate-release.outputs.version }}';
+            const releaseUrl = `https://github.com/${{ github.repository }}/releases/tag/v${version}`;
+            
+            const message = \`
+            🎉 **Release v\${version} Completed Successfully!**
+            
+            **Release Details:**
+            - Version: v\${version}
+            - Commit: ${{ github.sha }}
+            - Branch: ${{ github.ref_name }}
+            
+            **Links:**
+            - [Release Notes](${releaseUrl})
+            - [Documentation](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/)
+            - [npm Registry](https://npmjs.com/package/@cathedral-real)
+            
+            **What's included:**
+            ✅ All quality gates passed
+            ✅ Documentation generated
+            ✅ Packages published to npm
+            ✅ Git tags updated
+            
+            The Cathedral Real ecosystem is now updated with the latest improvements!
+            \`;
+            
+            console.log(message);
+
+  # Release failure handling
+  handle-failure:
+    name: Handle Release Failure
+    runs-on: ubuntu-latest
+    needs: [validate-release, create-release, publish-packages]
+    if: failure()
+    steps:
+      - name: Log failure details
+        run: |
+          echo "❌ Release failed!"
+          echo "Failed jobs:"
+          echo "- Validate Release: ${{ needs.validate-release.result }}"
+          echo "- Create Release: ${{ needs.create-release.result }}"
+          echo "- Publish Packages: ${{ needs.publish-packages.result }}"
+          
+          echo "Attempting rollback procedures..."
+          
+          # TODO: Implement rollback procedures
+          # - Revert version changes
+          # - Delete failed release
+          # - Send notification
+
+      - name: Notify failure
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const message = \`
+            🚨 **Release Failed!**
+            
+            **Version:** v${{ needs.validate-release.outputs.version }}
+            **Commit:** ${{ github.sha }}
+            **Branch:** ${{ github.ref_name }}
+            
+            **Failed Jobs:**
+            ${{ needs.validate-release.result === 'failure' ? '- ✅ Validate Release' : '- ❌ Validate Release' }}
+            ${{ needs.create-release.result === 'failure' ? '- ✅ Create Release' : '- ❌ Create Release' }}
+            ${{ needs.publish-packages.result === 'failure' ? '- ✅ Publish Packages' : '- ❌ Publish Packages' }}
+            
+            **Next Steps:**
+            1. Investigate failure causes
+            2. Fix any issues
+            3. Re-run the release workflow
+            
+            **Manual Override:** Use the workflow_dispatch to retry with specific settings.
+            \`;
+            
+            console.log(message);

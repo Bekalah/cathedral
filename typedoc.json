@@ -1,0 +1,69 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": [
+    "packages/*/src"
+  ],
+  "entryPointStrategy": "packages",
+  "out": "docs/api",
+  "plugin": [
+    "typedoc-plugin-markdown"
+  ],
+  "readme": "none",
+  "includeVersion": true,
+  "excludeExternals": true,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "excludeInternal": true,
+  "categorizeByGroup": true,
+  "categoryOrder": [
+    "Core",
+    "Engine",
+    "System",
+    "Utility",
+    "API",
+    "*"
+  ],
+  "kindSortOrder": [
+    "Reference",
+    "Project",
+    "Module",
+    "Namespace",
+    "Enum",
+    "EnumMember",
+    "Class",
+    "Interface",
+    "TypeAlias",
+    "Constructor",
+    "Property",
+    "Variable",
+    "Function",
+    "Accessor",
+    "Method"
+  ],
+  "hideGenerator": false,
+  "cleanOutputDir": true,
+  "name": "Cathedral Real - API Documentation",
+  "navigationLinks": {
+    "Home": "..",
+    "GitHub": "https://github.com/cathedral-real/cathedral-real"
+  },
+  "searchCategoryBoosts": {
+    "Core": 10,
+    "Engine": 9,
+    "System": 8
+  },
+  "excludeTags": [
+    "@internal",
+    "@private",
+    "@ignore"
+  ],
+  "tsconfig": "./tsconfig.json",
+  "sourceLinkTemplate": "https://github.com/cathedral-real/cathedral-real/blob/main/{path}#L{line}",
+  "packageOptions": {
+    "includeDirectory": true,
+    "includePackageDirectory": true
+  },
+  "frontmatter": {
+    "title": "Cathedral Real API Reference"
+  }
+}
