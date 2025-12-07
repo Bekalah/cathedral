@@ -28,8 +28,8 @@
     "@azure/openai": "^1.0.0-beta.12",
     "@azure/cognitiveservices-computervision": "^8.2.0",
     "three": "^0.168.0",
-    "@cathedral/master-art-principles": "workspace:*",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "@cathedral/art-standards-core": "workspace:*"
   },
   "keywords": [
     "cathedral",
@@ -39,9 +39,9 @@
   ],
   "author": "Rebecca Respawn",
   "license": "CC0-1.0",
+  "engines": {
     "node": ">=20.18.0",
     "pnpm": ">=8.15.0"
-    "pnpm": "*"
   },
   "packageManager": "pnpm@10.23.0",
   "publishConfig": {
@@ -50,8 +50,8 @@
   "types": "dist/index.d.ts",
   "alchemical": {
     "name": "Tesseract Bridge",
-    "symbol": "⊙",
-    "label": "⊙ Tesseract Bridge (@cathedral/tesseract-bridge)"
+    "symbol": "\u2299",
+    "label": "\u2299 Tesseract Bridge (@cathedral/tesseract-bridge)"
   },
   "devDependencies": {
     "@types/three": "^0.169.0",

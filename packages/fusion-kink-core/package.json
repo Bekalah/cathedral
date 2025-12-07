@@ -1,5 +1,5 @@
 {
-  "name": "fusion-kink-core",
+  "name": "@cathedral/fusion-kink-core",
   "version": "1.0.0",
   "license": "CC0-1.0",
   "description": "Rebis - Part of the Cathedral of Circuits mystical ecosystem",
@@ -19,13 +19,14 @@
   },
   "consolidated": true,
   "consolidatedAt": "2025-12-01T19:36:50.310Z",
+  "engines": {
     "pnpm": ">=8.15.0"
   },
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Rebis",
-    "symbol": "⚥",
-    "label": "⚥ Rebis (fusion-kink-core)"
+    "symbol": "\u26a5",
+    "label": "\u26a5 Rebis (fusion-kink-core)"
   },
   "cathedral": {
     "sacred_mathematics": {

@@ -1,5 +1,5 @@
 {
-  "name": "cathedral-audio-synthesis",
+  "name": "@cathedral/cathedral-audio-synthesis",
   "version": "1.0.0",
   "license": "CC0-1.0",
   "description": "Cathedral Audio Synthesis - Part of the Cathedral of Circuits mystical ecosystem",
@@ -40,15 +40,15 @@
   },
   "consolidated": true,
   "consolidatedAt": "2025-12-01T19:36:41.270Z",
+  "engines": {
     "node": ">=20.18.0",
     "pnpm": ">=8.15.0"
-    "pnpm": ">=8.0.0"
   },
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Cathedral Audio Synthesis",
-    "symbol": "⊙",
-    "label": "⊙ Cathedral Audio Synthesis (cathedral-audio-synthesis)"
+    "symbol": "\u2299",
+    "label": "\u2299 Cathedral Audio Synthesis (cathedral-audio-synthesis)"
   },
   "publishConfig": {
     "access": "public"

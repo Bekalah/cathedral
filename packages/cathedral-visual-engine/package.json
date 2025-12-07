@@ -1,5 +1,5 @@
 {
-  "name": "cathedral-visual-engine",
+  "name": "@cathedral/cathedral-visual-engine",
   "version": "1.0.0",
   "license": "CC0-1.0",
   "description": "Cathedral Visual - Part of the Cathedral of Circuits mystical ecosystem",
@@ -52,13 +52,14 @@
   },
   "consolidated": true,
   "consolidatedAt": "2025-12-01T19:36:44.133Z",
+  "engines": {
     "pnpm": ">=8.15.0"
   },
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Cathedral Visual",
-    "symbol": "⊙",
-    "label": "⊙ Cathedral Visual (cathedral-visual-engine)"
+    "symbol": "\u2299",
+    "label": "\u2299 Cathedral Visual (cathedral-visual-engine)"
   },
   "cathedral": {
     "sacred_mathematics": {

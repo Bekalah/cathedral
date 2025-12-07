@@ -39,7 +39,6 @@
     "@cathedral/mystical-data-unified": "workspace:*",
     "@cathedral/sacred-geometry-core": "workspace:*",
     "typescript": "^5.3.0",
-    "@cathedral/codex-library": "workspace:*",
     "@cathedral/liber-arcanae": "workspace:*",
     "@cathedral/liber-arcanae-core": "workspace:*",
     "@cathedral/liber-arcanae-tools": "workspace:*"
@@ -74,9 +73,9 @@
   "license": "CC0-1.0",
   "consolidated": true,
   "consolidatedAt": "2025-12-01T19:36:55.429Z",
+  "engines": {
     "node": ">=20.18.0",
     "pnpm": ">=8.15.0"
-    "pnpm": "*"
   },
   "packageManager": "pnpm@10.23.0",
   "publishConfig": {
@@ -84,8 +83,8 @@
   },
   "alchemical": {
     "name": "Liber Arcanae",
-    "symbol": "⊙",
-    "label": "⊙ Liber Arcanae (@cathedral/liber-arcanae)"
+    "symbol": "\u2299",
+    "label": "\u2299 Liber Arcanae (@cathedral/liber-arcanae)"
   },
   "cathedral": {
     "sacred_mathematics": {

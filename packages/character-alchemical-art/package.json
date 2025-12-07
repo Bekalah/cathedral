@@ -1,5 +1,5 @@
 {
-  "name": "character-alchemical-art",
+  "name": "@cathedral/character-alchemical-art",
   "version": "1.0.0",
   "license": "CC0-1.0",
   "description": "Character Alchemical Art - Part of the Cathedral of Circuits mystical ecosystem",
@@ -44,15 +44,15 @@
   },
   "consolidated": true,
   "consolidatedAt": "2025-12-01T19:36:44.199Z",
+  "engines": {
     "node": ">=20.18.0",
     "pnpm": ">=8.15.0"
-    "pnpm": ">=8.0.0"
   },
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Character Alchemical Art",
-    "symbol": "⊙",
-    "label": "⊙ Character Alchemical Art (character-alchemical-art)"
+    "symbol": "\u2299",
+    "label": "\u2299 Character Alchemical Art (character-alchemical-art)"
   },
   "publishConfig": {
     "access": "public"

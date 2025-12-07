@@ -1,5 +1,5 @@
 {
-  "name": "cathedral-liber-arcanae-bridge",
+  "name": "@cathedral/cathedral-liber-arcanae-bridge",
   "version": "1.0.0",
   "license": "CC0-1.0",
   "description": "Cathedral Liber Arcanae Bridge - Part of the Cathedral of Circuits mystical ecosystem",
@@ -44,15 +44,15 @@
   },
   "consolidated": true,
   "consolidatedAt": "2025-12-01T19:36:42.567Z",
+  "engines": {
     "node": ">=20.18.0",
     "pnpm": ">=8.15.0"
-    "pnpm": ">=8.0.0"
   },
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Cathedral Liber Arcanae Bridge",
-    "symbol": "⊙",
-    "label": "⊙ Cathedral Liber Arcanae Bridge (cathedral-liber-arcanae-bridge)"
+    "symbol": "\u2299",
+    "label": "\u2299 Cathedral Liber Arcanae Bridge (cathedral-liber-arcanae-bridge)"
   },
   "publishConfig": {
     "access": "public"

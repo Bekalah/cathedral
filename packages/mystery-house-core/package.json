@@ -1,13 +1,11 @@
 {
-  "name": "mystery-house-core",
+  "name": "@cathedral/mystery-house-core",
   "version": "1.0.0",
   "license": "CC0-1.0",
   "description": "Mystery House - Part of the Cathedral of Circuits mystical ecosystem",
   "main": "src/index.ts",
   "types": "src/index.ts",
-  "dependencies": {
-    "@cathedral/mystery-house-core": "workspace:*"
-  },
+  "dependencies": {},
   "devDependencies": {
     "typescript": "^5.6.2",
     "tsx": "^4.19.1",
@@ -21,13 +19,14 @@
   },
   "consolidated": true,
   "consolidatedAt": "2025-12-01T19:36:57.411Z",
+  "engines": {
     "pnpm": ">=8.15.0"
   },
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Mystery House",
-    "symbol": "⊙",
-    "label": "⊙ Mystery House (mystery-house-core)"
+    "symbol": "\u2299",
+    "label": "\u2299 Mystery House (mystery-house-core)"
   },
   "cathedral": {
     "sacred_mathematics": {

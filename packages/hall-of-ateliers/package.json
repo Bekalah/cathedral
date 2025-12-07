@@ -17,9 +17,9 @@
   ],
   "author": "Rebecca Respawn",
   "license": "CC0-1.0",
+  "engines": {
     "node": ">=20.18.0",
     "pnpm": ">=8.15.0"
-    "pnpm": ">=8.0.0"
   },
   "dependencies": {
     "three": "^0.165.0",

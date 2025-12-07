@@ -41,9 +41,9 @@
     "directory": "packages/cosmogenesis"
   },
   "homepage": "https://github.com/Bekalah/cathedral/tree/main/packages/cosmogenesis",
+  "engines": {
     "node": ">=20.18.0",
     "pnpm": ">=8.15.0"
-    "pnpm": ">=8.0.0"
   },
   "dependencies": {},
   "devDependencies": {

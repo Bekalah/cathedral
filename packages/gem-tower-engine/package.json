@@ -44,9 +44,9 @@
     "directory": "packages/gem-tower-engine"
   },
   "homepage": "https://github.com/Bekalah/cathedral/tree/main/packages/gem-tower-engine",
+  "engines": {
     "node": ">=20.18.0",
     "pnpm": ">=8.15.0"
-    "pnpm": ">=8.0.0"
   },
   "dependencies": {},
   "devDependencies": {

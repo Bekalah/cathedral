@@ -39,6 +39,7 @@
     "@cathedral/game-design-core": "workspace:*",
     "@cathedral/codex-144-99": "workspace:*"
   },
+  "engines": {
     "pnpm": ">=8.15.0"
   },
   "publishConfig": {

@@ -1,5 +1,5 @@
 {
-  "name": "@cathedral/circuitum99-arcanae-cyoa",
+  "name": "@cathedral/circuitum99-core",
   "version": "1.0.0",
   "description": "Circuitum99: Alpha et Omega CYOA Story System for Liber Arcanae",
   "type": "module",
@@ -37,7 +37,6 @@
     "@cathedral/plugin-system": "workspace:*",
     "@cathedral/shared": "workspace:*",
     "typescript": "^5.3.0",
-    "@cathedral/codex-library": "workspace:*",
     "@cathedral/circuitum99-core": "workspace:*",
     "@cathedral/circuitum99-arcanae-cyoa": "workspace:*"
   },
@@ -63,9 +62,9 @@
     "sacred-storytelling",
     "rebecca-respawn"
   ],
+  "engines": {
     "node": ">=20.18.0",
     "pnpm": ">=8.15.0"
-    "pnpm": ">=8.0.0"
   },
   "license": "CC0-1.0",
   "consolidated": true,
@@ -73,8 +72,8 @@
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Circuitum99 Arcanae Cyoa",
-    "symbol": "⊙",
-    "label": "⊙ Circuitum99 Arcanae Cyoa (@cathedral/circuitum99-arcanae-cyoa)"
+    "symbol": "\u2299",
+    "label": "\u2299 Circuitum99 Arcanae Cyoa (@cathedral/circuitum99-arcanae-cyoa)"
   },
   "publishConfig": {
     "access": "public"

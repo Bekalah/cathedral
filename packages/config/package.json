@@ -13,9 +13,9 @@
     "./eslint": "./eslint.config.js",
     "./tsconfig": "./tsconfig.base.json"
   },
+  "engines": {
     "node": ">=20.18.0",
     "pnpm": ">=8.15.0"
-    "pnpm": "*"
   },
   "scripts": {
     "build": "tsc",

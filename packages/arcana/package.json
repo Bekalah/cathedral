@@ -1,5 +1,5 @@
 {
-  "name": "arcana",
+  "name": "@cathedral/arcana",
   "version": "1.0.0",
   "license": "CC0-1.0",
   "description": "Arcana - Part of the Cathedral of Circuits mystical ecosystem",
@@ -40,12 +40,14 @@
   },
   "consolidated": true,
   "consolidatedAt": "2025-12-01T19:36:39.661Z",
-  "node": ">=20.18.0",
+  "engines": {
+    "node": ">=20.18.0"
+  },
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Arcana",
-    "symbol": "⊙",
-    "label": "⊙ Arcana (arcana)"
+    "symbol": "\u2299",
+    "label": "\u2299 Arcana (arcana)"
   },
   "publishConfig": {
     "access": "public"

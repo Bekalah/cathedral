@@ -1,5 +1,5 @@
 {
-  "name": "spells",
+  "name": "@cathedral/spells",
   "version": "1.0.0",
   "license": "CC0-1.0",
   "description": "Spells - Part of the Cathedral of Circuits mystical ecosystem",
@@ -40,15 +40,15 @@
   },
   "consolidated": true,
   "consolidatedAt": "2025-12-01T19:37:01.648Z",
+  "engines": {
     "node": ">=20.18.0",
     "pnpm": ">=8.15.0"
-    "pnpm": ">=8.0.0"
   },
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Spells",
-    "symbol": "⊙",
-    "label": "⊙ Spells (spells)"
+    "symbol": "\u2299",
+    "label": "\u2299 Spells (spells)"
   },
   "publishConfig": {
     "access": "public"

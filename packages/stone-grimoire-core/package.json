@@ -1,5 +1,5 @@
 {
-  "name": "stone-grimoire-core",
+  "name": "@cathedral/stone-grimoire-core",
   "version": "1.0.0",
   "license": "CC0-1.0",
   "description": "Stone Grimoire - Part of the Cathedral of Circuits mystical ecosystem",
@@ -7,7 +7,6 @@
   "types": "src/index.ts",
   "dependencies": {
     "@cathedral/stone-grimoire": "workspace:*",
-    "@cathedral/stone-grimoire-core": "workspace:*",
     "@cathedral/stone-grimoire-library-engine": "workspace:*"
   },
   "devDependencies": {
@@ -23,13 +22,14 @@
   },
   "consolidated": true,
   "consolidatedAt": "2025-12-01T19:37:02.401Z",
+  "engines": {
     "pnpm": ">=8.15.0"
   },
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Stone Grimoire",
-    "symbol": "⊙",
-    "label": "⊙ Stone Grimoire (stone-grimoire-core)"
+    "symbol": "\u2299",
+    "label": "\u2299 Stone Grimoire (stone-grimoire-core)"
   },
   "cathedral": {
     "sacred_mathematics": {

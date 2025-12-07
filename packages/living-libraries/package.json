@@ -1,5 +1,5 @@
 {
-  "name": "living-libraries",
+  "name": "@cathedral/living-libraries",
   "version": "1.0.0",
   "license": "CC0-1.0",
   "description": "Living Libraries - Part of the Cathedral of Circuits mystical ecosystem",
@@ -40,15 +40,15 @@
   },
   "consolidated": true,
   "consolidatedAt": "2025-12-01T19:36:56.187Z",
+  "engines": {
     "node": ">=20.18.0",
     "pnpm": ">=8.15.0"
-    "pnpm": ">=8.0.0"
   },
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Living Libraries",
-    "symbol": "⊙",
-    "label": "⊙ Living Libraries (living-libraries)"
+    "symbol": "\u2299",
+    "label": "\u2299 Living Libraries (living-libraries)"
   },
   "publishConfig": {
     "access": "public"

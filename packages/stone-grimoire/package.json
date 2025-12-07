@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node index.js",
     "build": "mkdir -p dist && echo 'Stone Grimoire: Building body nodes and archive systems'",
-    "test": "node -e \"console.log('Stone Grimoire tests: ✅ Body integration, ✅ Archive systems, ✅ Stone mechanics');\"",
+    "test": "node -e \"console.log('Stone Grimoire tests: \u2705 Body integration, \u2705 Archive systems, \u2705 Stone mechanics');\"",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "lint": "eslint src/**/*.{ts,tsx,js,jsx} --max-warnings=0",
@@ -32,17 +32,17 @@
   ],
   "author": "Cathedral Master Creative Intelligence Team",
   "license": "CC0-1.0",
+  "engines": {
     "node": ">=20.18.0",
     "pnpm": ">=8.15.0"
-    "pnpm": ">=8.0.0"
   },
   "dependencies": {
     "@cathedral/codex-144-99": "workspace:*",
-    "@cathedral/master-art-principles": "workspace:*",
     "typescript": "^5.6.3",
     "@cathedral/stone-grimoire": "workspace:*",
     "@cathedral/stone-grimoire-core": "workspace:*",
-    "@cathedral/stone-grimoire-library-engine": "workspace:*"
+    "@cathedral/stone-grimoire-library-engine": "workspace:*",
+    "@cathedral/art-standards-core": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^20.17.0",
@@ -61,8 +61,8 @@
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Stone Grimoire",
-    "symbol": "⊙",
-    "label": "⊙ Stone Grimoire (@cathedral/stone-grimoire)"
+    "symbol": "\u2299",
+    "label": "\u2299 Stone Grimoire (@cathedral/stone-grimoire)"
   },
   "cathedral": {
     "sacred_mathematics": {

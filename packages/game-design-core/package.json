@@ -44,9 +44,9 @@
     "@typescript-eslint/parser": "^8.6.0",
     "eslint-config-prettier": "^9.1.0"
   },
+  "engines": {
     "node": ">=20.18.0",
     "pnpm": ">=8.15.0"
-    "pnpm": "*"
   },
   "publishConfig": {
     "access": "public"

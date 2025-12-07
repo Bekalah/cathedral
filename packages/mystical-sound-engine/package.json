@@ -86,9 +86,9 @@
     "directory": "packages/mystical-sound-engine"
   },
   "homepage": "https://github.com/Bekalah/cathedral/tree/main/packages/mystical-sound-engine",
+  "engines": {
     "node": ">=20.18.0",
     "pnpm": ">=8.15.0"
-    "pnpm": ">=8.0.0"
   },
   "devDependencies": {
     "typescript": "^5.6.2",

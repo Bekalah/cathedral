@@ -1,5 +1,5 @@
 {
-  "name": "game-world",
+  "name": "@cathedral/game-world",
   "version": "1.0.0",
   "license": "CC0-1.0",
   "description": "Game World - Part of the Cathedral of Circuits mystical ecosystem",
@@ -43,15 +43,15 @@
   },
   "consolidated": true,
   "consolidatedAt": "2025-12-01T19:36:51.339Z",
+  "engines": {
     "node": ">=20.18.0",
     "pnpm": ">=8.15.0"
-    "pnpm": ">=8.0.0"
   },
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Game World",
-    "symbol": "⊙",
-    "label": "⊙ Game World (game-world)"
+    "symbol": "\u2299",
+    "label": "\u2299 Game World (game-world)"
   },
   "publishConfig": {
     "access": "public"

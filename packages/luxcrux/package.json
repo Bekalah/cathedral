@@ -32,13 +32,13 @@
   ],
   "author": "Cathedral Master Creative Intelligence Team",
   "license": "CC0-1.0",
+  "engines": {
     "node": ">=20.18.0",
     "pnpm": ">=8.15.0"
-    "pnpm": ">=8.0.0"
   },
   "dependencies": {
-    "@cathedral/master-art-principles": "workspace:*",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "@cathedral/art-standards-core": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^20.17.0",
@@ -57,8 +57,8 @@
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Luxcrux",
-    "symbol": "⊙",
-    "label": "⊙ Luxcrux (@cathedral/luxcrux)"
+    "symbol": "\u2299",
+    "label": "\u2299 Luxcrux (@cathedral/luxcrux)"
   },
   "publishConfig": {
     "access": "public"

@@ -1,5 +1,5 @@
 {
-  "name": "trinity-v1-1-core",
+  "name": "@cathedral/trinity-v1-1-core",
   "version": "1.0.0",
   "license": "CC0-1.0",
   "description": "Trinity V1 1 - Part of the Cathedral of Circuits mystical ecosystem",
@@ -19,13 +19,14 @@
   },
   "consolidated": true,
   "consolidatedAt": "2025-12-01T19:37:07.044Z",
+  "engines": {
     "pnpm": ">=8.15.0"
   },
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Trinity V1 1",
-    "symbol": "⊙",
-    "label": "⊙ Trinity V1 1 (trinity-v1-1-core)"
+    "symbol": "\u2299",
+    "label": "\u2299 Trinity V1 1 (trinity-v1-1-core)"
   },
   "cathedral": {
     "sacred_mathematics": {

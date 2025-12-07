@@ -30,7 +30,6 @@
   },
   "dependencies": {
     "@cathedral/shared": "workspace:*",
-    "@cathedral/cathedral-game-engine": "workspace:*",
     "canvas": "^2.11.2",
     "d3": "^7.8.5",
     "ml-matrix": "^6.10.4",
@@ -50,7 +49,8 @@
     "@cathedral/liber-arcanae-core": "workspace:*",
     "@cathedral/liber-arcanae-tools": "workspace:*",
     "@cathedral/codex-144-99": "workspace:*",
-    "@cathedral/codex-144-99-core": "workspace:*"
+    "@cathedral/codex-144-99-core": "workspace:*",
+    "@cathedral/game-engine": "workspace:*"
   },
   "devDependencies": {
     "@types/d3": "^7.4.0",
@@ -65,9 +65,9 @@
     "@typescript-eslint/parser": "^8.6.0",
     "eslint-config-prettier": "^9.1.0"
   },
+  "engines": {
     "node": ">=20.18.0",
     "pnpm": ">=8.15.0"
-    "pnpm": "*"
   },
   "license": "CC0-1.0",
   "packageManager": "pnpm@10.23.0",
@@ -76,8 +76,8 @@
   },
   "alchemical": {
     "name": "Art Generation Node",
-    "symbol": "⊙",
-    "label": "⊙ Art Generation Node (@cathedral/art-generation-node)"
+    "symbol": "\u2299",
+    "label": "\u2299 Art Generation Node (@cathedral/art-generation-node)"
   },
   "consolidated": true,
   "consolidatedAt": "2025-12-01T19:36:40.075Z",

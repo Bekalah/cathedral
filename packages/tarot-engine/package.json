@@ -1,5 +1,5 @@
 {
-  "name": "tarot-engine",
+  "name": "@cathedral/tarot-engine",
   "version": "1.0.0",
   "license": "CC0-1.0",
   "description": "Tarot - Part of the Cathedral of Circuits mystical ecosystem",
@@ -44,13 +44,14 @@
   },
   "consolidated": true,
   "consolidatedAt": "2025-12-01T19:37:03.845Z",
+  "engines": {
     "pnpm": ">=8.15.0"
   },
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Tarot",
-    "symbol": "⊙",
-    "label": "⊙ Tarot (tarot-engine)"
+    "symbol": "\u2299",
+    "label": "\u2299 Tarot (tarot-engine)"
   },
   "cathedral": {
     "sacred_mathematics": {

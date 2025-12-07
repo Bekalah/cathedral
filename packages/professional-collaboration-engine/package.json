@@ -1,5 +1,5 @@
 {
-  "name": "professional-collaboration-engine",
+  "name": "@cathedral/professional-collaboration-engine",
   "version": "1.0.0",
   "license": "CC0-1.0",
   "description": "Professional Collaboration - Part of the Cathedral of Circuits mystical ecosystem",
@@ -40,13 +40,14 @@
   },
   "consolidated": true,
   "consolidatedAt": "2025-12-01T19:36:58.241Z",
+  "engines": {
     "pnpm": ">=8.15.0"
   },
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Professional Collaboration",
-    "symbol": "⊙",
-    "label": "⊙ Professional Collaboration (professional-collaboration-engine)"
+    "symbol": "\u2299",
+    "label": "\u2299 Professional Collaboration (professional-collaboration-engine)"
   },
   "cathedral": {
     "sacred_mathematics": {

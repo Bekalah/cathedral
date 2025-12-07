@@ -1,7 +1,7 @@
 {
   "name": "@cathedral/codex-144-99",
   "version": "1.0.0",
-  "description": "📚 Codex 144:99 Sacred Library - 144 Nodes of Mystical Knowledge with Global Research Integration",
+  "description": "\ud83d\udcda Codex 144:99 Sacred Library - 144 Nodes of Mystical Knowledge with Global Research Integration",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -18,9 +18,9 @@
       "import": "./dist/validation.js"
     }
   },
+  "engines": {
     "node": ">=20.18.0",
     "pnpm": ">=8.15.0"
-    "pnpm": "*"
   },
   "scripts": {
     "build": "tsc",
@@ -81,7 +81,6 @@
     "@types/node": "^20.17.0",
     "@types/cheerio": "^0.22.35",
     "vitest": "^1.6.0",
-    "@types/fuse": "^7.0.0",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "typescript": "^5.6.2",
@@ -185,7 +184,7 @@
   },
   "alchemical": {
     "name": "Codex 144 99",
-    "symbol": "⊙",
-    "label": "⊙ Codex 144 99 (@cathedral/codex-144-99)"
+    "symbol": "\u2299",
+    "label": "\u2299 Codex 144 99 (@cathedral/codex-144-99)"
   }
 }

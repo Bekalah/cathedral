@@ -1,5 +1,5 @@
 {
-  "name": "@cathedral-real/liber-arcanae-tools",
+  "name": "@cathedral/liber-arcanae-tools",
   "version": "1.0.0",
   "description": "Liber Arcanae Tools - Professional Creative Canvas for Circuitum 99",
   "main": "src/index.ts",
@@ -26,7 +26,6 @@
     "validate:ownership": "node scripts/validate-ownership.js"
   },
   "dependencies": {
-    "@cathedral-real/trinity-architecture": "workspace:*",
     "fabric": "^5.3.0",
     "tone": "^14.7.77",
     "yjs": "^13.6.7",
@@ -63,17 +62,17 @@
   ],
   "author": "Cathedral Master Creative Intelligence Team",
   "license": "CC0-1.0",
+  "engines": {
     "node": ">=20.18.0",
     "pnpm": ">=8.15.0"
-    "pnpm": ">=8.0.0"
   },
   "consolidated": true,
   "consolidatedAt": "2025-12-01T19:36:55.935Z",
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "@Cathedral Real/Liber Arcanae Tools",
-    "symbol": "⊙",
-    "label": "⊙ @Cathedral Real/Liber Arcanae Tools (@cathedral-real/liber-arcanae-tools)"
+    "symbol": "\u2299",
+    "label": "\u2299 @Cathedral Real/Liber Arcanae Tools (@cathedral-real/liber-arcanae-tools)"
   },
   "publishConfig": {
     "access": "public"

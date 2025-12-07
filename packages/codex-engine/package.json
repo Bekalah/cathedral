@@ -44,9 +44,9 @@
     "directory": "packages/codex-engine"
   },
   "homepage": "https://github.com/Bekalah/cathedral/tree/main/packages/codex-engine",
+  "engines": {
     "node": ">=20.18.0",
     "pnpm": ">=8.15.0"
-    "pnpm": ">=8.0.0"
   },
   "dependencies": {
     "@cathedral/codex-144-99": "workspace:*",

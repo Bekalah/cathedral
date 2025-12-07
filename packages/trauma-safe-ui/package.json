@@ -1,5 +1,5 @@
 {
-  "name": "trauma-safe-ui",
+  "name": "@cathedral/trauma-safe-ui",
   "version": "1.0.0",
   "license": "CC0-1.0",
   "description": "Trauma Safe Ui - Part of the Cathedral of Circuits mystical ecosystem",
@@ -40,15 +40,15 @@
   },
   "consolidated": true,
   "consolidatedAt": "2025-12-01T19:37:05.127Z",
+  "engines": {
     "node": ">=20.18.0",
     "pnpm": ">=8.15.0"
-    "pnpm": ">=8.0.0"
   },
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Trauma Safe Ui",
-    "symbol": "⊙",
-    "label": "⊙ Trauma Safe Ui (trauma-safe-ui)"
+    "symbol": "\u2299",
+    "label": "\u2299 Trauma Safe Ui (trauma-safe-ui)"
   },
   "publishConfig": {
     "access": "public"

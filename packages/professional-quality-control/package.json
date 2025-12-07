@@ -1,5 +1,5 @@
 {
-  "name": "professional-quality-control",
+  "name": "@cathedral/professional-quality-control",
   "version": "1.0.0",
   "license": "CC0-1.0",
   "description": "Professional Quality Control - Part of the Cathedral of Circuits mystical ecosystem",
@@ -40,15 +40,15 @@
   },
   "consolidated": true,
   "consolidatedAt": "2025-12-01T19:36:58.689Z",
+  "engines": {
     "node": ">=20.18.0",
     "pnpm": ">=8.15.0"
-    "pnpm": ">=8.0.0"
   },
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Professional Quality Control",
-    "symbol": "⊙",
-    "label": "⊙ Professional Quality Control (professional-quality-control)"
+    "symbol": "\u2299",
+    "label": "\u2299 Professional Quality Control (professional-quality-control)"
   },
   "publishConfig": {
     "access": "public"
