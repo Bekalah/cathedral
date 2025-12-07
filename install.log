@@ -1,29 +1,28 @@
 Scope: all 133 workspace projects
  WARN  There are cyclic workspace dependencies: /Users/rebeccalemke/cathedral-real/packages/art-standards-core, /Users/rebeccalemke/cathedral-real/packages/stone-grimoire; /Users/rebeccalemke/cathedral-real/packages/circuitum99-arcanae-cyoa, /Users/rebeccalemke/cathedral-real/packages/circuitum99-core; /Users/rebeccalemke/cathedral-real/packages/codex-144-99, /Users/rebeccalemke/cathedral-real/packages/codex-144-99-core; /Users/rebeccalemke/cathedral-real/packages/liber-arcanae, /Users/rebeccalemke/cathedral-real/packages/liber-arcanae-core; /Users/rebeccalemke/cathedral-real/packages/stone-grimoire-core, /Users/rebeccalemke/cathedral-real/packages/stone-grimoire-library-engine
 Progress: resolved 1, reused 0, downloaded 0, added 0
-Progress: resolved 10, reused 8, downloaded 0, added 0
-Progress: resolved 13, reused 12, downloaded 0, added 0
+Progress: resolved 12, reused 12, downloaded 0, added 0
+Progress: resolved 16, reused 16, downloaded 0, added 0
 Progress: resolved 20, reused 20, downloaded 0, added 0
 packages/cataract-book-scanner           |  WARN  deprecated eslint@8.57.1
 packages/art-generation-node             |  WARN  deprecated @azure/openai@1.0.0-beta.13
-Progress: resolved 27, reused 27, downloaded 0, added 0
 Progress: resolved 29, reused 29, downloaded 0, added 0
-Progress: resolved 32, reused 32, downloaded 0, added 0
 packages/cataract-book-scanner           |  WARN  deprecated crypto@1.0.1
-Progress: resolved 35, reused 35, downloaded 0, added 0
-Progress: resolved 38, reused 38, downloaded 0, added 0
-Progress: resolved 41, reused 41, downloaded 0, added 0
-Progress: resolved 49, reused 48, downloaded 0, added 0
+Progress: resolved 31, reused 31, downloaded 0, added 0
+Progress: resolved 36, reused 36, downloaded 0, added 0
+Progress: resolved 40, reused 39, downloaded 0, added 0
+Progress: resolved 48, reused 48, downloaded 0, added 0
 Progress: resolved 53, reused 53, downloaded 0, added 0
 Progress: resolved 54, reused 54, downloaded 0, added 0
-Progress: resolved 56, reused 56, downloaded 0, added 0
-Progress: resolved 61, reused 59, downloaded 0, added 0
-Progress: resolved 65, reused 64, downloaded 0, added 0
+Progress: resolved 57, reused 57, downloaded 0, added 0
+Progress: resolved 63, reused 61, downloaded 0, added 0
+Progress: resolved 69, reused 68, downloaded 0, added 0
 /Users/rebeccalemke/cathedral-real/packages/hall-of-ateliers:
- ERR_PNPM_FETCH_404  GET https://registry.npmjs.org/@types%2Fcanvas: Not Found - 404
+ ERR_PNPM_NO_MATCHING_VERSION  No matching version found for color-thief@^2.4.0
 
 This error happened while installing a direct dependency of /Users/rebeccalemke/cathedral-real/packages/hall-of-ateliers
 
-@types/canvas is not in the npm registry, or you have no permission to fetch it.
+The latest release of color-thief is "2.2.5".
 
-No authorization header was set for the request.
+If you need the full list of all 8 published versions run "$ pnpm view color-thief versions".
+Progress: resolved 73, reused 73, downloaded 0, added 0
