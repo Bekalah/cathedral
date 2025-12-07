@@ -1,28 +1,31 @@
 Scope: all 133 workspace projects
  WARN  There are cyclic workspace dependencies: /Users/rebeccalemke/cathedral-real/packages/art-standards-core, /Users/rebeccalemke/cathedral-real/packages/stone-grimoire; /Users/rebeccalemke/cathedral-real/packages/circuitum99-arcanae-cyoa, /Users/rebeccalemke/cathedral-real/packages/circuitum99-core; /Users/rebeccalemke/cathedral-real/packages/codex-144-99, /Users/rebeccalemke/cathedral-real/packages/codex-144-99-core; /Users/rebeccalemke/cathedral-real/packages/liber-arcanae, /Users/rebeccalemke/cathedral-real/packages/liber-arcanae-core; /Users/rebeccalemke/cathedral-real/packages/stone-grimoire-core, /Users/rebeccalemke/cathedral-real/packages/stone-grimoire-library-engine
 Progress: resolved 1, reused 0, downloaded 0, added 0
-Progress: resolved 12, reused 12, downloaded 0, added 0
-Progress: resolved 16, reused 16, downloaded 0, added 0
-Progress: resolved 20, reused 20, downloaded 0, added 0
+Progress: resolved 10, reused 10, downloaded 0, added 0
+Progress: resolved 15, reused 14, downloaded 0, added 0
+Progress: resolved 19, reused 19, downloaded 0, added 0
+Progress: resolved 21, reused 21, downloaded 0, added 0
 packages/cataract-book-scanner           |  WARN  deprecated eslint@8.57.1
 packages/art-generation-node             |  WARN  deprecated @azure/openai@1.0.0-beta.13
-Progress: resolved 29, reused 29, downloaded 0, added 0
+Progress: resolved 27, reused 26, downloaded 0, added 0
+Progress: resolved 32, reused 31, downloaded 0, added 0
 packages/cataract-book-scanner           |  WARN  deprecated crypto@1.0.1
-Progress: resolved 31, reused 31, downloaded 0, added 0
-Progress: resolved 36, reused 36, downloaded 0, added 0
-Progress: resolved 40, reused 39, downloaded 0, added 0
-Progress: resolved 48, reused 48, downloaded 0, added 0
+Progress: resolved 35, reused 35, downloaded 0, added 0
+Progress: resolved 38, reused 38, downloaded 0, added 0
+Progress: resolved 40, reused 40, downloaded 0, added 0
 Progress: resolved 53, reused 53, downloaded 0, added 0
 Progress: resolved 54, reused 54, downloaded 0, added 0
-Progress: resolved 57, reused 57, downloaded 0, added 0
-Progress: resolved 63, reused 61, downloaded 0, added 0
-Progress: resolved 69, reused 68, downloaded 0, added 0
-/Users/rebeccalemke/cathedral-real/packages/hall-of-ateliers:
- ERR_PNPM_NO_MATCHING_VERSION  No matching version found for color-thief@^2.4.0
+Progress: resolved 56, reused 56, downloaded 0, added 0
+Progress: resolved 61, reused 60, downloaded 0, added 0
+ WARN  GET https://registry.npmjs.org/@testing-library%2Fjest-dom error (EPIPE). Will retry in 10 seconds. 2 retries left.
+Progress: resolved 64, reused 63, downloaded 0, added 0
+Progress: resolved 69, reused 69, downloaded 0, added 0
+Progress: resolved 74, reused 74, downloaded 0, added 0
+Progress: resolved 86, reused 85, downloaded 0, added 0
+/Users/rebeccalemke/cathedral-real/packages/types:
+ ERR_PNPM_WORKSPACE_PKG_NOT_FOUND  In packages/types: "@cathedral/config-eslint@workspace:^" is in the dependencies but no package named "@cathedral/config-eslint" is present in the workspace
 
-This error happened while installing a direct dependency of /Users/rebeccalemke/cathedral-real/packages/hall-of-ateliers
+This error happened while installing a direct dependency of /Users/rebeccalemke/cathedral-real/packages/types
 
-The latest release of color-thief is "2.2.5".
-
-If you need the full list of all 8 published versions run "$ pnpm view color-thief versions".
-Progress: resolved 73, reused 73, downloaded 0, added 0
+Packages found in the workspace: cathedral-real-monorepo, @cathedral/agent-integration, @cathedral/arcana, @cathedral/archetypal-engine, @cathedral/art-engine-core, @cathedral/art-generation-node, @cathedral/art-standards-core, @cathedral/art-systems, @cathedral/atelier-constitution, @cathedral/avatar-experience-system, @cathedral/brain, @cathedral/cataract-book-scanner, @cathedral/cathedral-144, @cathedral/cathedral-architect, @cathedral/cathedral-audio-synthesis, @cathedral/cathedral-data-core, @cathedral/design-library, @cathedral/fusion-kink-engine, @cathedral/cathedral-integration-bridge, @cathedral/cathedral-liber-arcanae-bridge, @cathedral/lightweight-library, @cathedral/logo-system, @cathedral/plugin-system, @cathedral/cathedral-rpg-inventory-system, @cathedral/sqlite-persistence, @cathedral/cathedral-style, @cathedral/cathedral-synthesis-core, @cathedral/cathedral-visual-engine, @cathedral/character-alchemical-art, @cathedral/circuit-craft-creative-game, @cathedral/circuitum99-arcanae-cyoa, @cathedral/circuitum99-core, @cathedral/codex-144, @cathedral/codex-144-99, @cathedral/codex-144-99-core, @cathedral/codex-engine, @cathedral/codex-game-bridge, @cathedral/codex-musical-system, @cathedral/config, @cathedral/connections, @cathedral/consciousness-aware-creative, @cathedral/core, @cathedral/cosmogenesis, @cathedral/crystals, @cathedral/daimon-gear, @cathedral/debug-system-core, @cathedral/design-mathematics-core, @cathedral/fractal-flames-daemon-deity, @cathedral/fusion-creative-suite, @cathedral/fusion-kink-core, @cathedral/fusion-kink-generator, @cathedral/fusionkink-engine, @cathedral/game-design-core, @cathedral/game-engine, @cathedral/game-mathematics-core, @cathedral/game-world, @cathedral/gem-tower-engine, @cathedral/godot-codex-14499, @cathedral/godot-design-studio, @cathedral/godot-liber-arcanae, @cathedral/godot-vfx-library, @cathedral/graphs, @cathedral/hall-of-ateliers, @cathedral/health-map-core, @cathedral/holographic-interface, @cathedral/inter-app-communicator, @cathedral/kira-audio-engine, @cathedral/labs, @cathedral/liber-arcanae, @cathedral/liber-arcanae-core, @cathedral/liber-arcanae-tools, @cathedral/living-canon-engine, @cathedral/living-libraries, @cathedral/luxcrux, @cathedral/magnum-opus, @cathedral/mobile-optimization, @cathedral/moonchild-scanner, @cathedral/museum-sources, @cathedral/music-engine-core, @cathedral/mystery-house-core, @cathedral/mystical-data-unified, @cathedral/mystical-sound-engine, @cathedral/node-tree-engine, @cathedral/physics-cannon-core, @cathedral/portal-system, @cathedral/professional-collaboration-engine, @cathedral/professional-export-integration, @cathedral/professional-quality-control, @cathedral/professional-suite, @cathedral/professional-typography-engine, @cathedral/professional-vector-engine, @cathedral/registry-learning-validation, @cathedral/sacred-geometry-core, @cathedral/sacred-geometry-math, @cathedral/sacred-geometry-simd, @cathedral/sacred-mathematics-core, @cathedral/scanner, @cathedral/science-engine-core, @cathedral/shared, @cathedral/simple-learning-validation, @cathedral/smooth-movement-system, @cathedral/sonic-physics-engine, @cathedral/soul, @cathedral/sound-mathematics-core, @cathedral/spells, @cathedral/spiral-learning-engine, @cathedral/stone-grimoire, @cathedral/stone-grimoire-core, @cathedral/stone-grimoire-library-engine, @cathedral/story-engine, @cathedral/synth, @cathedral/synth-design-math-core, @cathedral/synth-labs, @cathedral/synth-spells, @cathedral/synthesis-engine, @cathedral/tarot-art, @cathedral/tarot-engine, @cathedral/tarot-reader, @cathedral/tesseract-bridge, @cathedral/tesseract-bridge-core, @cathedral/tesseract-bridge-hub, @cathedral/three-engine, @cathedral/trauma-safe-ui, @cathedral/trinity-architecture, @cathedral/trinity-v1-1-core, @cathedral/types, @cathedral/ui, @cathedral/unified-codex-core, @cathedral/unified-codex-extractor, @cathedral/unified-creative-system, @cathedral-trinity/accessibility, @cathedral/visionary-design-system
+Progress: resolved 99, reused 91, downloaded 0, added 0
