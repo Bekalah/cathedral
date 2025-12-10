@@ -1,0 +1,367 @@
+{
+  "timestamp": "2025-12-10T00:00:44.451Z",
+  "local_branches": [
+    {
+      "name": "backup-cathedral-v1.0-20251028-0103",
+      "type": "local",
+      "current": false,
+      "last_commit": {
+        "hash": "094c6bb571ea2533f20246dfcb767cb4216e2f2d",
+        "subject": "feat: update pnpm workspace config and add turbo config for monorepo management",
+        "author": "Rebecca",
+        "date": "Mon Oct 27 23:51:35 2025 -0500"
+      },
+      "commit_count": 2240,
+      "status": "stale",
+      "size": 225623382
+    },
+    {
+      "name": "cathedral-cleanup-20251025",
+      "type": "local",
+      "current": false,
+      "last_commit": {
+        "hash": "1add9ea069c5381121a1f38468477e9195ba3e00",
+        "subject": "Magnum Consolidation: Implement historical precision templates",
+        "author": "Rebecca",
+        "date": "Tue Oct 28 20:50:02 2025 -0500"
+      },
+      "commit_count": 2319,
+      "status": "stale",
+      "size": 372298395
+    },
+    {
+      "name": "clean-main",
+      "type": "local",
+      "current": false,
+      "last_commit": {
+        "hash": "cd99ff367afa2537732fbc4fa812d77a9c09a3b1",
+        "subject": "🚀 CLEAN CATHEDRAL MAIN: Complete creative portfolio without large files",
+        "author": "Rebecca",
+        "date": "Tue Nov 4 13:05:51 2025 -0600"
+      },
+      "commit_count": 1,
+      "status": "stale",
+      "size": 0
+    },
+    {
+      "name": "develop",
+      "type": "local",
+      "current": false,
+      "last_commit": {
+        "hash": "25e670d741959dc2086a65d73ce921d169a32881",
+        "subject": "🔄 Offline changes updated to fill Replit's expert structure",
+        "author": "Rebecca",
+        "date": "Sat Nov 1 15:36:23 2025 -0500"
+      },
+      "commit_count": 408,
+      "status": "merged",
+      "size": 60876897
+    },
+    {
+      "name": "main",
+      "type": "local",
+      "current": false,
+      "last_commit": {
+        "hash": "4d71e3507e549ef6e52f1e9fab8278c98420f5e3",
+        "subject": "Fix package import/export and workspace dependencies",
+        "author": "Rebecca",
+        "date": "Thu Oct 23 11:06:14 2025 -0500"
+      },
+      "commit_count": 2233,
+      "status": "stale",
+      "size": 12653731
+    },
+    {
+      "name": "massive-cathedral-merge",
+      "type": "local",
+      "current": false,
+      "last_commit": {
+        "hash": "4d71e3507e549ef6e52f1e9fab8278c98420f5e3",
+        "subject": "Fix package import/export and workspace dependencies",
+        "author": "Rebecca",
+        "date": "Thu Oct 23 11:06:14 2025 -0500"
+      },
+      "commit_count": 2233,
+      "status": "stale",
+      "size": 12653731
+    }
+  ],
+  "remote_branches": [
+    {
+      "name": "HEAD -> circuitum99/main",
+      "full_name": "remotes/circuitum99/HEAD -> circuitum99/main",
+      "type": "remote",
+      "remote": "circuitum99",
+      "last_commit": null,
+      "status": "remote"
+    },
+    {
+      "name": "main",
+      "full_name": "remotes/circuitum99/main",
+      "type": "remote",
+      "remote": "circuitum99",
+      "last_commit": {
+        "hash": "011c48dd5f84d085559433e85c21e11262b98a43",
+        "subject": "Merge branch 'main-upstream' of https://github.com/bekalah/circuitum99.git",
+        "author": "Rebecca Lemke",
+        "date": "Sun Oct 12 02:33:30 2025 -0500"
+      },
+      "status": "remote"
+    },
+    {
+      "name": "main-upstream",
+      "full_name": "remotes/circuitum99/main-upstream",
+      "type": "remote",
+      "remote": "circuitum99",
+      "last_commit": {
+        "hash": "babc5171e0e1234d1640816dca536f92585d88bf",
+        "subject": "Merge branch 'main-upstream' of https://github.com/bekalah/circuitum99.git",
+        "author": "Rebecca Lemke",
+        "date": "Thu Oct 16 18:56:17 2025 -0500"
+      },
+      "status": "remote"
+    },
+    {
+      "name": "HEAD -> origin/main",
+      "full_name": "remotes/origin/HEAD -> origin/main",
+      "type": "remote",
+      "remote": "origin",
+      "last_commit": null,
+      "status": "remote"
+    },
+    {
+      "name": "clean-main",
+      "full_name": "remotes/origin/clean-main",
+      "type": "remote",
+      "remote": "origin",
+      "last_commit": {
+        "hash": "cd99ff367afa2537732fbc4fa812d77a9c09a3b1",
+        "subject": "🚀 CLEAN CATHEDRAL MAIN: Complete creative portfolio without large files",
+        "author": "Rebecca",
+        "date": "Tue Nov 4 13:05:51 2025 -0600"
+      },
+      "status": "remote"
+    },
+    {
+      "name": "clean-pr-branch",
+      "full_name": "remotes/origin/clean-pr-branch",
+      "type": "remote",
+      "remote": "origin",
+      "last_commit": {
+        "hash": "90d6cae584947aefa2145321b63a1e41b8782993",
+        "subject": "🔄 Consolidate offline package updates",
+        "author": "Rebecca",
+        "date": "Sat Nov 1 18:50:27 2025 -0500"
+      },
+      "status": "remote"
+    },
+    {
+      "name": "develop",
+      "full_name": "remotes/origin/develop",
+      "type": "remote",
+      "remote": "origin",
+      "last_commit": {
+        "hash": "25e670d741959dc2086a65d73ce921d169a32881",
+        "subject": "🔄 Offline changes updated to fill Replit's expert structure",
+        "author": "Rebecca",
+        "date": "Sat Nov 1 15:36:23 2025 -0500"
+      },
+      "status": "remote"
+    },
+    {
+      "name": "fix/vercel-cloudflare-build-monorepo",
+      "full_name": "remotes/origin/fix/vercel-cloudflare-build-monorepo",
+      "type": "remote",
+      "remote": "origin",
+      "last_commit": {
+        "hash": "73b53ac9a97d8625be26f6d0d86fd2ebe1561424",
+        "subject": "chore: resolve merge conflicts in package.json files",
+        "author": "Rebecca",
+        "date": "Sun Nov 2 20:55:20 2025 -0600"
+      },
+      "status": "remote"
+    },
+    {
+      "name": "liber-arcanae-game",
+      "full_name": "remotes/origin/liber-arcanae-game",
+      "type": "remote",
+      "remote": "origin",
+      "last_commit": {
+        "hash": "a1eac908d1c46e58c81ae4c26aaa52ed19a65979",
+        "subject": "new file: .vscode/settings.json new file: agent_fast.log new file: agent_loop.log new file: agent_responses/batch_0002.txt new file: agent_responses/batch_0004.txt new file: agent_responses/batch_0005.txt new file: agent_responses/batch_0006.txt new file: agent_responses/batch_0007.txt new file: agent_responses/batch_0011.txt new file: agent_responses/batch_0012.txt new file: agent_responses/batch_0014.txt new file: agent_responses/batch_0016.txt new file: agent_responses/batch_0021.txt new file: agent_responses/batch_0024.txt new file: agent_responses/batch_0033.txt new file: agent_responses/batch_0034.txt new file: agent_responses/batch_0039.txt",
+        "author": "Rebecca",
+        "date": "Thu Oct 30 18:48:22 2025 -0500"
+      },
+      "status": "remote"
+    },
+    {
+      "name": "main",
+      "full_name": "remotes/origin/main",
+      "type": "remote",
+      "remote": "origin",
+      "last_commit": {
+        "hash": "070cae4a2609c4385711aac0646ef80e1c2c4e71",
+        "subject": "modififed cathedral",
+        "author": "Bekalah",
+        "date": "Sun Oct 12 11:00:47 2025 -0500"
+      },
+      "status": "remote"
+    },
+    {
+      "name": "main_gold_standard",
+      "full_name": "remotes/origin/main_gold_standard",
+      "type": "remote",
+      "remote": "origin",
+      "last_commit": {
+        "hash": "238560e80e8a371b7ddac79f30ccbecd9fca80b0",
+        "subject": "modified .consolidation-backups/@cathedral",
+        "author": "Rebecca",
+        "date": "Sun Dec 7 05:24:15 2025 -0600"
+      },
+      "status": "remote"
+    },
+    {
+      "name": "master-version",
+      "full_name": "remotes/origin/master-version",
+      "type": "remote",
+      "remote": "origin",
+      "last_commit": {
+        "hash": "83c59b8453f749b2d7c4467bc805406e7439105d",
+        "subject": "docs: CATHEDRAL_CONSOLIDATION_COMPLETE - final documentation",
+        "author": "Rebecca",
+        "date": "Mon Nov 3 20:52:50 2025 -0600"
+      },
+      "status": "remote"
+    },
+    {
+      "name": "wip/local-20251101",
+      "full_name": "remotes/origin/wip/local-20251101",
+      "type": "remote",
+      "remote": "origin",
+      "last_commit": {
+        "hash": "ed9ad5c38ae4d465f677d814f07c1ec7becccfc7",
+        "subject": "Revamp README and Replit setup command for simplified unified system",
+        "author": "Rebecca",
+        "date": "Fri Oct 31 19:04:08 2025 -0500"
+      },
+      "status": "remote"
+    },
+    {
+      "name": "HEAD -> stone-grimoire/main",
+      "full_name": "remotes/stone-grimoire/HEAD -> stone-grimoire/main",
+      "type": "remote",
+      "remote": "stone-grimoire",
+      "last_commit": null,
+      "status": "remote"
+    },
+    {
+      "name": "main",
+      "full_name": "remotes/stone-grimoire/main",
+      "type": "remote",
+      "remote": "stone-grimoire",
+      "last_commit": {
+        "hash": "0a801a729c5d6a2da15c887beb1549db9ac6f362",
+        "subject": "feat: Comprehensive MARKDOWN-FIXER with 15+ rule support",
+        "author": "Rebecca",
+        "date": "Sat Oct 25 23:11:44 2025 -0500"
+      },
+      "status": "remote"
+    }
+  ],
+  "branch_status": {
+    "stale": 5,
+    "merged": 1
+  },
+  "duplicates": [
+    {
+      "commit_hash": "cd99ff367afa2537732fbc4fa812d77a9c09a3b1",
+      "branches": [
+        "clean-main",
+        "clean-main"
+      ],
+      "count": 2
+    },
+    {
+      "commit_hash": "25e670d741959dc2086a65d73ce921d169a32881",
+      "branches": [
+        "develop",
+        "develop"
+      ],
+      "count": 2
+    },
+    {
+      "commit_hash": "4d71e3507e549ef6e52f1e9fab8278c98420f5e3",
+      "branches": [
+        "main",
+        "massive-cathedral-merge"
+      ],
+      "count": 2
+    }
+  ],
+  "orphaned": [
+    {
+      "name": "backup-cathedral-v1.0-20251028-0103",
+      "reason": "No remote tracking and stale",
+      "last_commit": {
+        "hash": "094c6bb571ea2533f20246dfcb767cb4216e2f2d",
+        "subject": "feat: update pnpm workspace config and add turbo config for monorepo management",
+        "author": "Rebecca",
+        "date": "Mon Oct 27 23:51:35 2025 -0500"
+      }
+    },
+    {
+      "name": "cathedral-cleanup-20251025",
+      "reason": "No remote tracking and stale",
+      "last_commit": {
+        "hash": "1add9ea069c5381121a1f38468477e9195ba3e00",
+        "subject": "Magnum Consolidation: Implement historical precision templates",
+        "author": "Rebecca",
+        "date": "Tue Oct 28 20:50:02 2025 -0500"
+      }
+    },
+    {
+      "name": "massive-cathedral-merge",
+      "reason": "No remote tracking and stale",
+      "last_commit": {
+        "hash": "4d71e3507e549ef6e52f1e9fab8278c98420f5e3",
+        "subject": "Fix package import/export and workspace dependencies",
+        "author": "Rebecca",
+        "date": "Thu Oct 23 11:06:14 2025 -0500"
+      }
+    }
+  ],
+  "spam": [
+    {
+      "name": "main_gold_standard",
+      "type": "remote",
+      "reason": "Matches spam pattern"
+    }
+  ],
+  "recommendations": [
+    {
+      "action": "delete_merged",
+      "branches": [
+        "develop"
+      ],
+      "reason": "Already merged into main"
+    },
+    {
+      "action": "delete_stale",
+      "branches": [
+        "backup-cathedral-v1.0-20251028-0103",
+        "cathedral-cleanup-20251025",
+        "clean-main",
+        "main",
+        "massive-cathedral-merge"
+      ],
+      "reason": "No activity for 30+ days"
+    },
+    {
+      "action": "delete_spam",
+      "branches": [
+        "main_gold_standard"
+      ],
+      "reason": "Matches spam patterns"
+    }
+  ]
+}

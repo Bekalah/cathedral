@@ -1,0 +1,962 @@
+{
+  "timestamp": "2025-12-09T22:57:08.338Z",
+  "total_repos": 2,
+  "repositories": {
+    "cathedral": {
+      "name": "cathedral",
+      "path": "/Users/rebeccalemke/Documents/cathedral",
+      "type": "git_repository",
+      "git_status": "7 modified, 25 untracked",
+      "branches": [
+        "backup-cathedral-v1.0-20251028-0103",
+        "cathedral-cleanup-20251025",
+        "clean-main",
+        "develop",
+        "main",
+        "massive-cathedral-merge",
+        "remotes/circuitum99/HEAD -> circuitum99/main",
+        "remotes/circuitum99/main",
+        "remotes/circuitum99/main-upstream",
+        "remotes/origin/HEAD -> origin/main",
+        "remotes/origin/clean-main",
+        "remotes/origin/clean-pr-branch",
+        "remotes/origin/develop",
+        "remotes/origin/fix/vercel-cloudflare-build-monorepo",
+        "remotes/origin/liber-arcanae-game",
+        "remotes/origin/main",
+        "remotes/origin/main_gold_standard",
+        "remotes/origin/master-version",
+        "remotes/origin/wip/local-20251101",
+        "remotes/stone-grimoire/HEAD -> stone-grimoire/main",
+        "remotes/stone-grimoire/main"
+      ],
+      "remotes": [
+        {
+          "name": "origin",
+          "url": "https://github.com/Bekalah/cathedral.git"
+        },
+        {
+          "name": "origin",
+          "url": "https://github.com/Bekalah/cathedral.git"
+        }
+      ],
+      "size": 282936826,
+      "files": 1141,
+      "packages": [
+        {
+          "name": "agent-integration",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/agent-integration",
+          "has_package_json": false
+        },
+        {
+          "name": "alchemy",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/alchemy",
+          "has_package_json": false
+        },
+        {
+          "name": "alexandria-library",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/alexandria-library",
+          "has_package_json": false
+        },
+        {
+          "name": "arcana",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/arcana",
+          "has_package_json": false
+        },
+        {
+          "name": "archetypal-engine",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/archetypal-engine",
+          "has_package_json": false
+        },
+        {
+          "name": "art-generation-node",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/art-generation-node",
+          "has_package_json": true
+        },
+        {
+          "name": "art-systems",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/art-systems",
+          "has_package_json": false
+        },
+        {
+          "name": "atelier-constitution",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/atelier-constitution",
+          "has_package_json": false
+        },
+        {
+          "name": "avatar-experience-system",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/avatar-experience-system",
+          "has_package_json": true
+        },
+        {
+          "name": "brain",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/brain",
+          "has_package_json": true
+        },
+        {
+          "name": "cathedral-144",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/cathedral-144",
+          "has_package_json": false
+        },
+        {
+          "name": "cathedral-design-library",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/cathedral-design-library",
+          "has_package_json": true
+        },
+        {
+          "name": "cathedral-fusion-kink-engine",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/cathedral-fusion-kink-engine",
+          "has_package_json": true
+        },
+        {
+          "name": "cathedral-lightweight-library",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/cathedral-lightweight-library",
+          "has_package_json": true
+        },
+        {
+          "name": "cathedral-plugin-system",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/cathedral-plugin-system",
+          "has_package_json": true
+        },
+        {
+          "name": "cathedral-style",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/cathedral-style",
+          "has_package_json": false
+        },
+        {
+          "name": "cathedral-symbolic-libraries",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/cathedral-symbolic-libraries",
+          "has_package_json": false
+        },
+        {
+          "name": "characters",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/characters",
+          "has_package_json": false
+        },
+        {
+          "name": "circuit-craft-creative-game",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/circuit-craft-creative-game",
+          "has_package_json": true
+        },
+        {
+          "name": "circuitum99",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/circuitum99",
+          "has_package_json": true
+        },
+        {
+          "name": "circuitum99-arcanae-cyoa",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/circuitum99-arcanae-cyoa",
+          "has_package_json": true
+        },
+        {
+          "name": "codex-144",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/codex-144",
+          "has_package_json": false
+        },
+        {
+          "name": "codex-144-99",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/codex-144-99",
+          "has_package_json": true
+        },
+        {
+          "name": "config",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/config",
+          "has_package_json": true
+        },
+        {
+          "name": "connections",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/connections",
+          "has_package_json": false
+        },
+        {
+          "name": "core",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/core",
+          "has_package_json": true
+        },
+        {
+          "name": "cosmogenesis-learning-engine",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/cosmogenesis-learning-engine",
+          "has_package_json": true
+        },
+        {
+          "name": "creative-engine",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/creative-engine",
+          "has_package_json": true
+        },
+        {
+          "name": "crystals",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/crystals",
+          "has_package_json": true
+        },
+        {
+          "name": "cyoa-book-game",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/cyoa-book-game",
+          "has_package_json": true
+        },
+        {
+          "name": "daimon-gear",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/daimon-gear",
+          "has_package_json": false
+        },
+        {
+          "name": "data",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/data",
+          "has_package_json": true
+        },
+        {
+          "name": "engines",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/engines",
+          "has_package_json": true
+        },
+        {
+          "name": "fractal-flames-daemon-deity",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/fractal-flames-daemon-deity",
+          "has_package_json": true
+        },
+        {
+          "name": "game-engine",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/game-engine",
+          "has_package_json": true
+        },
+        {
+          "name": "game-world",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/game-world",
+          "has_package_json": false
+        },
+        {
+          "name": "gentle-fusion-lab",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/gentle-fusion-lab",
+          "has_package_json": true
+        },
+        {
+          "name": "godot-codex-14499",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/godot-codex-14499",
+          "has_package_json": true
+        },
+        {
+          "name": "godot-design-studio",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/godot-design-studio",
+          "has_package_json": true
+        },
+        {
+          "name": "godot-liber-arcanae",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/godot-liber-arcanae",
+          "has_package_json": true
+        },
+        {
+          "name": "godot-vfx-library",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/godot-vfx-library",
+          "has_package_json": true
+        },
+        {
+          "name": "graphs",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/graphs",
+          "has_package_json": false
+        },
+        {
+          "name": "holographic-interface",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/holographic-interface",
+          "has_package_json": false
+        },
+        {
+          "name": "labs",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/labs",
+          "has_package_json": true
+        },
+        {
+          "name": "liber-arcanae",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/liber-arcanae",
+          "has_package_json": true
+        },
+        {
+          "name": "living-libraries",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/living-libraries",
+          "has_package_json": false
+        },
+        {
+          "name": "luxcrux",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/luxcrux",
+          "has_package_json": true
+        },
+        {
+          "name": "magical-mystery-house",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/magical-mystery-house",
+          "has_package_json": true
+        },
+        {
+          "name": "magnum-opus",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/magnum-opus",
+          "has_package_json": false
+        },
+        {
+          "name": "museum-sources",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/museum-sources",
+          "has_package_json": false
+        },
+        {
+          "name": "professional-suite",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/professional-suite",
+          "has_package_json": false
+        },
+        {
+          "name": "shared",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/shared",
+          "has_package_json": true
+        },
+        {
+          "name": "soul",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/soul",
+          "has_package_json": true
+        },
+        {
+          "name": "spells",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/spells",
+          "has_package_json": false
+        },
+        {
+          "name": "stone-grimoire",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/stone-grimoire",
+          "has_package_json": true
+        },
+        {
+          "name": "synth",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/synth",
+          "has_package_json": true
+        },
+        {
+          "name": "synth-labs",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/synth-labs",
+          "has_package_json": false
+        },
+        {
+          "name": "synth-spells",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/synth-spells",
+          "has_package_json": false
+        },
+        {
+          "name": "tarot-art",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/tarot-art",
+          "has_package_json": false
+        },
+        {
+          "name": "tarot-reader",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/tarot-reader",
+          "has_package_json": false
+        },
+        {
+          "name": "tesseract-bridge",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/tesseract-bridge",
+          "has_package_json": true
+        },
+        {
+          "name": "types",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/types",
+          "has_package_json": true
+        },
+        {
+          "name": "ui",
+          "path": "/Users/rebeccalemke/Documents/cathedral/packages/ui",
+          "has_package_json": true
+        }
+      ],
+      "apps": [
+        {
+          "name": "cathedral-connection-map",
+          "path": "/Users/rebeccalemke/Documents/cathedral/apps/cathedral-connection-map",
+          "directory": "apps",
+          "has_index": true
+        },
+        {
+          "name": "cathedral-design-studio",
+          "path": "/Users/rebeccalemke/Documents/cathedral/apps/cathedral-design-studio",
+          "directory": "apps",
+          "has_index": true
+        },
+        {
+          "name": "cathedral-immersive-creative-studio",
+          "path": "/Users/rebeccalemke/Documents/cathedral/apps/cathedral-immersive-creative-studio",
+          "directory": "apps",
+          "has_index": true
+        },
+        {
+          "name": "cosmogenesis-visualizer",
+          "path": "/Users/rebeccalemke/Documents/cathedral/apps/cosmogenesis-visualizer",
+          "directory": "apps",
+          "has_index": true
+        },
+        {
+          "name": "liber-arcanae-tarot",
+          "path": "/Users/rebeccalemke/Documents/cathedral/apps/liber-arcanae-tarot",
+          "directory": "apps",
+          "has_index": true
+        },
+        {
+          "name": "master-catalog-browser",
+          "path": "/Users/rebeccalemke/Documents/cathedral/apps/master-catalog-browser",
+          "directory": "apps",
+          "has_index": true
+        },
+        {
+          "name": "rosslyn-explorer",
+          "path": "/Users/rebeccalemke/Documents/cathedral/apps/rosslyn-explorer",
+          "directory": "apps",
+          "has_index": true
+        },
+        {
+          "name": "synth-lab",
+          "path": "/Users/rebeccalemke/Documents/cathedral/apps/synth-lab",
+          "directory": "apps",
+          "has_index": true
+        },
+        {
+          "name": "tarot-arena",
+          "path": "/Users/rebeccalemke/Documents/cathedral/apps/tarot-arena",
+          "directory": "apps",
+          "has_index": true
+        },
+        {
+          "name": "test-ground",
+          "path": "/Users/rebeccalemke/Documents/cathedral/apps/test-ground",
+          "directory": "apps",
+          "has_index": true
+        },
+        {
+          "name": "web",
+          "path": "/Users/rebeccalemke/Documents/cathedral/apps/web",
+          "directory": "apps",
+          "has_index": true
+        },
+        {
+          "name": "worker",
+          "path": "/Users/rebeccalemke/Documents/cathedral/apps/worker",
+          "directory": "apps",
+          "has_index": false
+        },
+        {
+          "name": "liber-arcanae-tarot",
+          "path": "/Users/rebeccalemke/Documents/cathedral/apps-clean/liber-arcanae-tarot",
+          "directory": "apps-clean",
+          "has_index": false
+        },
+        {
+          "name": "synth-lab",
+          "path": "/Users/rebeccalemke/Documents/cathedral/apps-clean/synth-lab",
+          "directory": "apps-clean",
+          "has_index": false
+        },
+        {
+          "name": "web",
+          "path": "/Users/rebeccalemke/Documents/cathedral/apps-clean/web",
+          "directory": "apps-clean",
+          "has_index": false
+        },
+        {
+          "name": "worker",
+          "path": "/Users/rebeccalemke/Documents/cathedral/apps-clean/worker",
+          "directory": "apps-clean",
+          "has_index": false
+        },
+        {
+          "name": "worker-egregores",
+          "path": "/Users/rebeccalemke/Documents/cathedral/apps-clean/worker-egregores",
+          "directory": "apps-clean",
+          "has_index": false
+        }
+      ],
+      "tools": [
+        {
+          "name": "AUTOMATE_EVERYTHING.sh",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/automation/AUTOMATE_EVERYTHING.sh",
+          "category": "automation",
+          "executable": true
+        },
+        {
+          "name": "GENERATE_ART.sh",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/automation/GENERATE_ART.sh",
+          "category": "automation",
+          "executable": true
+        },
+        {
+          "name": "QUICK_START_ENHANCED_AGENTS.sh",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/automation/QUICK_START_ENHANCED_AGENTS.sh",
+          "category": "automation",
+          "executable": true
+        },
+        {
+          "name": "RUN_AGENTS_NOW.sh",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/automation/RUN_AGENTS_NOW.sh",
+          "category": "automation",
+          "executable": true
+        },
+        {
+          "name": "RUN_EVERYTHING.sh",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/automation/RUN_EVERYTHING.sh",
+          "category": "automation",
+          "executable": true
+        },
+        {
+          "name": "add_codebot_guardrails.sh",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/automation/add_codebot_guardrails.sh",
+          "category": "automation",
+          "executable": true
+        },
+        {
+          "name": "add_tesseract_module.sh",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/automation/add_tesseract_module.sh",
+          "category": "automation",
+          "executable": true
+        },
+        {
+          "name": "agent_status.sh",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/automation/agent_status.sh",
+          "category": "automation",
+          "executable": true
+        },
+        {
+          "name": "run_agent_batch.py",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/automation/run_agent_batch.py",
+          "category": "automation",
+          "executable": false
+        },
+        {
+          "name": "run_agents_fast.py",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/automation/run_agents_fast.py",
+          "category": "automation",
+          "executable": true
+        },
+        {
+          "name": "run_single_agent.py",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/automation/run_single_agent.py",
+          "category": "automation",
+          "executable": false
+        },
+        {
+          "name": "update_agent_context_500x.py",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/automation/update_agent_context_500x.py",
+          "category": "automation",
+          "executable": false
+        },
+        {
+          "name": "cathedral-cli.js",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/cathedral-cli.js",
+          "category": "",
+          "executable": false
+        },
+        {
+          "name": "cathedral-cron-setup.sh",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/cathedral-cron-setup.sh",
+          "category": "",
+          "executable": true
+        },
+        {
+          "name": "cathedral-update-system.sh",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/cathedral-update-system.sh",
+          "category": "",
+          "executable": true
+        },
+        {
+          "name": "free-system-validator.js",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/cleanup/free-system-validator.js",
+          "category": "cleanup",
+          "executable": false
+        },
+        {
+          "name": "git-cleanup.cjs",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/cleanup/git-cleanup.cjs",
+          "category": "cleanup",
+          "executable": false
+        },
+        {
+          "name": "git-cleanup.js",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/cleanup/git-cleanup.js",
+          "category": "cleanup",
+          "executable": false
+        },
+        {
+          "name": "remove-paid-services.cjs",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/cleanup/remove-paid-services.cjs",
+          "category": "cleanup",
+          "executable": false
+        },
+        {
+          "name": "remove-paid-services.js",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/cleanup/remove-paid-services.js",
+          "category": "cleanup",
+          "executable": false
+        },
+        {
+          "name": "dedupe.mjs",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/dedupe.mjs",
+          "category": "",
+          "executable": false
+        },
+        {
+          "name": "combined_export.py",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/export/combined_export.py",
+          "category": "export",
+          "executable": false
+        },
+        {
+          "name": "png_export.py",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/export/png_export.py",
+          "category": "export",
+          "executable": false
+        },
+        {
+          "name": "g",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/g",
+          "category": "",
+          "executable": true
+        },
+        {
+          "name": "health-check.cjs",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/health-check.cjs",
+          "category": "",
+          "executable": false
+        },
+        {
+          "name": "health-check.js",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/health-check.js",
+          "category": "",
+          "executable": false
+        },
+        {
+          "name": "install-g.js",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/install-g.js",
+          "category": "",
+          "executable": false
+        },
+        {
+          "name": "modular-safety-system.py",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/modular-safety-system.py",
+          "category": "",
+          "executable": false
+        },
+        {
+          "name": "render_arcana_textures.py",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/render_arcana_textures.py",
+          "category": "",
+          "executable": false
+        },
+        {
+          "name": "scan_mirrors.py",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/sync/scan_mirrors.py",
+          "category": "sync",
+          "executable": false
+        },
+        {
+          "name": "achad_geometry_test.py",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/validate/achad_geometry_test.py",
+          "category": "validate",
+          "executable": false
+        },
+        {
+          "name": "achad_integration_smoketest.py",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/validate/achad_integration_smoketest.py",
+          "category": "validate",
+          "executable": false
+        },
+        {
+          "name": "design_suite_smoketest.py",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/validate/design_suite_smoketest.py",
+          "category": "validate",
+          "executable": false
+        },
+        {
+          "name": "python_smoketest.py",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/validate/python_smoketest.py",
+          "category": "validate",
+          "executable": false
+        },
+        {
+          "name": "validate-ownership.js",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/validate-ownership.js",
+          "category": "",
+          "executable": false
+        },
+        {
+          "name": "validate-turbo-config.cjs",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/validate-turbo-config.cjs",
+          "category": "",
+          "executable": false
+        },
+        {
+          "name": "validate-turbo-config.js",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/validate-turbo-config.js",
+          "category": "",
+          "executable": false
+        },
+        {
+          "name": "vault.py",
+          "path": "/Users/rebeccalemke/Documents/cathedral/tools/vault.py",
+          "category": "",
+          "executable": true
+        }
+      ],
+      "issues": []
+    },
+    "cathedral-backup-20251115": {
+      "name": "cathedral-backup-20251115",
+      "path": "/Users/rebeccalemke/Documents/cathedral-backup-20251115",
+      "type": "git_repository",
+      "git_status": "error",
+      "branches": [
+        "backup-cathedral-v1.0-20251028-0103",
+        "cathedral-cleanup-20251025",
+        "main",
+        "massive-cathedral-merge",
+        "remotes/circuitum99/HEAD -> circuitum99/main",
+        "remotes/circuitum99/main",
+        "remotes/circuitum99/main-upstream",
+        "remotes/origin/HEAD -> origin/main",
+        "remotes/origin/clean-main",
+        "remotes/origin/clean-pr-branch",
+        "remotes/origin/develop",
+        "remotes/origin/fix/vercel-cloudflare-build-monorepo",
+        "remotes/origin/liber-arcanae-game",
+        "remotes/origin/main",
+        "remotes/origin/master-version",
+        "remotes/origin/wip/local-20251101",
+        "remotes/stone-grimoire/HEAD -> stone-grimoire/main",
+        "remotes/stone-grimoire/main"
+      ],
+      "remotes": [
+        {
+          "name": "origin",
+          "url": "https://github.com/Bekalah/cathedral.git"
+        },
+        {
+          "name": "origin",
+          "url": "https://github.com/Bekalah/cathedral.git"
+        }
+      ],
+      "size": 603973004,
+      "files": 1137,
+      "packages": [],
+      "apps": [
+        {
+          "name": "cathedral-design-studio",
+          "path": "/Users/rebeccalemke/Documents/cathedral-backup-20251115/apps/cathedral-design-studio",
+          "directory": "apps",
+          "has_index": true
+        },
+        {
+          "name": "cathedral-immersive-creative-studio",
+          "path": "/Users/rebeccalemke/Documents/cathedral-backup-20251115/apps/cathedral-immersive-creative-studio",
+          "directory": "apps",
+          "has_index": true
+        },
+        {
+          "name": "tarot-arena",
+          "path": "/Users/rebeccalemke/Documents/cathedral-backup-20251115/apps/tarot-arena",
+          "directory": "apps",
+          "has_index": false
+        },
+        {
+          "name": "test-ground",
+          "path": "/Users/rebeccalemke/Documents/cathedral-backup-20251115/apps/test-ground",
+          "directory": "apps",
+          "has_index": false
+        },
+        {
+          "name": "liber-arcanae-tarot",
+          "path": "/Users/rebeccalemke/Documents/cathedral-backup-20251115/apps-clean/liber-arcanae-tarot",
+          "directory": "apps-clean",
+          "has_index": true
+        },
+        {
+          "name": "synth-lab",
+          "path": "/Users/rebeccalemke/Documents/cathedral-backup-20251115/apps-clean/synth-lab",
+          "directory": "apps-clean",
+          "has_index": false
+        },
+        {
+          "name": "web",
+          "path": "/Users/rebeccalemke/Documents/cathedral-backup-20251115/apps-clean/web",
+          "directory": "apps-clean",
+          "has_index": true
+        },
+        {
+          "name": "worker",
+          "path": "/Users/rebeccalemke/Documents/cathedral-backup-20251115/apps-clean/worker",
+          "directory": "apps-clean",
+          "has_index": false
+        },
+        {
+          "name": "worker-egregores",
+          "path": "/Users/rebeccalemke/Documents/cathedral-backup-20251115/apps-clean/worker-egregores",
+          "directory": "apps-clean",
+          "has_index": false
+        }
+      ],
+      "tools": [
+        {
+          "name": "AI_VOICE_THEFT_DAMAGE_REPORT.md",
+          "path": "/Users/rebeccalemke/Documents/cathedral-backup-20251115/tools/AI_VOICE_THEFT_DAMAGE_REPORT.md",
+          "category": "",
+          "executable": false
+        },
+        {
+          "name": "README.md",
+          "path": "/Users/rebeccalemke/Documents/cathedral-backup-20251115/tools/README.md",
+          "category": "",
+          "executable": false
+        },
+        {
+          "name": "backup.txt",
+          "path": "/Users/rebeccalemke/Documents/cathedral-backup-20251115/tools/backup.txt",
+          "category": "",
+          "executable": false
+        },
+        {
+          "name": "data-integrity-check.mjs",
+          "path": "/Users/rebeccalemke/Documents/cathedral-backup-20251115/tools/data-integrity-check.mjs",
+          "category": "",
+          "executable": false
+        },
+        {
+          "name": "debug-launcher.js",
+          "path": "/Users/rebeccalemke/Documents/cathedral-backup-20251115/tools/debug-launcher.js",
+          "category": "",
+          "executable": false
+        },
+        {
+          "name": "index.cjs",
+          "path": "/Users/rebeccalemke/Documents/cathedral-backup-20251115/tools/index.cjs",
+          "category": "",
+          "executable": true
+        },
+        {
+          "name": "install-g.js",
+          "path": "/Users/rebeccalemke/Documents/cathedral-backup-20251115/tools/install-g.js",
+          "category": "",
+          "executable": false
+        },
+        {
+          "name": "lint-prettier-friendly.cjs",
+          "path": "/Users/rebeccalemke/Documents/cathedral-backup-20251115/tools/lint-prettier-friendly.cjs",
+          "category": "",
+          "executable": true
+        },
+        {
+          "name": "prognosticationreport-full.json",
+          "path": "/Users/rebeccalemke/Documents/cathedral-backup-20251115/tools/prognosticationreport-full.json",
+          "category": "",
+          "executable": false
+        },
+        {
+          "name": "quality-assurance.mjs",
+          "path": "/Users/rebeccalemke/Documents/cathedral-backup-20251115/tools/quality-assurance.mjs",
+          "category": "",
+          "executable": false
+        },
+        {
+          "name": "validate-ownership.js",
+          "path": "/Users/rebeccalemke/Documents/cathedral-backup-20251115/tools/validate-ownership.js",
+          "category": "",
+          "executable": false
+        },
+        {
+          "name": "validate-turbo-config.cjs",
+          "path": "/Users/rebeccalemke/Documents/cathedral-backup-20251115/tools/validate-turbo-config.cjs",
+          "category": "",
+          "executable": false
+        },
+        {
+          "name": "validate-turbo-config.js",
+          "path": "/Users/rebeccalemke/Documents/cathedral-backup-20251115/tools/validate-turbo-config.js",
+          "category": "",
+          "executable": false
+        }
+      ],
+      "issues": []
+    }
+  },
+  "connections": [
+    {
+      "from": "cathedral",
+      "to": "cathedral",
+      "type": "git_remote",
+      "url": "https://github.com/Bekalah/cathedral.git"
+    },
+    {
+      "from": "cathedral",
+      "to": "cathedral",
+      "type": "git_remote",
+      "url": "https://github.com/Bekalah/cathedral.git"
+    },
+    {
+      "from": "cathedral-backup-20251115",
+      "to": "cathedral",
+      "type": "git_remote",
+      "url": "https://github.com/Bekalah/cathedral.git"
+    },
+    {
+      "from": "cathedral-backup-20251115",
+      "to": "cathedral",
+      "type": "git_remote",
+      "url": "https://github.com/Bekalah/cathedral.git"
+    }
+  ],
+  "duplicates": [
+    {
+      "file": "package.json",
+      "locations": [
+        {
+          "repo": "cathedral",
+          "path": "/Users/rebeccalemke/Documents/cathedral/package.json"
+        },
+        {
+          "repo": "cathedral-backup-20251115",
+          "path": "/Users/rebeccalemke/Documents/cathedral-backup-20251115/package.json"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "file": "README.md",
+      "locations": [
+        {
+          "repo": "cathedral",
+          "path": "/Users/rebeccalemke/Documents/cathedral/README.md"
+        },
+        {
+          "repo": "cathedral-backup-20251115",
+          "path": "/Users/rebeccalemke/Documents/cathedral-backup-20251115/README.md"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "file": ".gitignore",
+      "locations": [
+        {
+          "repo": "cathedral",
+          "path": "/Users/rebeccalemke/Documents/cathedral/.gitignore"
+        },
+        {
+          "repo": "cathedral-backup-20251115",
+          "path": "/Users/rebeccalemke/Documents/cathedral-backup-20251115/.gitignore"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "file": "turbo.json",
+      "locations": [
+        {
+          "repo": "cathedral",
+          "path": "/Users/rebeccalemke/Documents/cathedral/turbo.json"
+        },
+        {
+          "repo": "cathedral-backup-20251115",
+          "path": "/Users/rebeccalemke/Documents/cathedral-backup-20251115/turbo.json"
+        }
+      ],
+      "count": 2
+    }
+  ],
+  "status_summary": {
+    "git_repository": 2
+  }
+}

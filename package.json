@@ -15,8 +15,8 @@
     "build": "python -m compileall design-suite/ hall-of-mysteries/",
     "build:rust": "cd rust-bindings && cargo build --release",
     "build:godot": "python design-suite/cathedral_design_suite.py --export godot",
-    "build:all": "npm run validate && npm run build:rust && npm run build:godot",
-    "deploy": "npm run build:all && git add . && git commit -m '🚀 Cathedral Master v1.0 Deploy' && git push origin develop",
+    "build:all": "pnpm validate && pnpm build",
+    "deploy": "pnpm build:all && git add . && git commit -m '🚀 Cathedral Master v1.0 Deploy' && git push origin develop",
     "verify": "bash scripts/git-status-check.sh"
   },
   "replit": {

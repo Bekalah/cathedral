@@ -1,0 +1,10 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="realmGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#228B22;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#32CD32;stop-opacity:0.3" />
+    </radialGradient>
+  </defs>
+  <circle cx="100" cy="100" r="80" fill="url(#realmGradient)" />
+  <text x="100" y="105" text-anchor="middle" fill="#228B22" font-family="Cinzel" font-size="12">Emerald Tablet</text>
+</svg>

@@ -1,0 +1,3774 @@
+{
+  "timestamp": "2025-12-09T20:05:38.297Z",
+  "analysis_results": {
+    "analyze-all-tools.mjs": {
+      "status": "completed",
+      "timestamp": "2025-12-09T20:05:39.560Z"
+    },
+    "analyze-all-apps.mjs": {
+      "status": "completed",
+      "timestamp": "2025-12-09T20:05:40.507Z"
+    },
+    "analyze-branches.mjs": {
+      "status": "completed",
+      "timestamp": "2025-12-09T20:12:32.169Z"
+    },
+    "detect-spam-duplicates.mjs": {
+      "status": "completed",
+      "timestamp": "2025-12-09T20:21:39.691Z"
+    },
+    "tools-comprehensive-report.json": {
+      "timestamp": "2025-12-09T20:05:39.301Z",
+      "total_tools": 24,
+      "categories": {
+        "automation": [
+          {
+            "name": "AUTOMATE_EVERYTHING.sh",
+            "category": "automation",
+            "path": "tools/automation/AUTOMATE_EVERYTHING.sh",
+            "extension": ".sh",
+            "size": 11437,
+            "executable": true,
+            "language": "Shell Script",
+            "dependencies": [],
+            "description": "No description found",
+            "status": "library",
+            "last_modified": "2025-11-21T05:50:12.567Z"
+          },
+          {
+            "name": "GENERATE_ART.sh",
+            "category": "automation",
+            "path": "tools/automation/GENERATE_ART.sh",
+            "extension": ".sh",
+            "size": 2584,
+            "executable": true,
+            "language": "Shell Script",
+            "dependencies": [],
+            "description": "No description found",
+            "status": "library",
+            "last_modified": "2025-11-21T05:50:12.567Z"
+          },
+          {
+            "name": "QUICK_START_ENHANCED_AGENTS.sh",
+            "category": "automation",
+            "path": "tools/automation/QUICK_START_ENHANCED_AGENTS.sh",
+            "extension": ".sh",
+            "size": 3368,
+            "executable": true,
+            "language": "Shell Script",
+            "dependencies": [],
+            "description": "No description found",
+            "status": "library",
+            "last_modified": "2025-11-21T05:50:12.568Z"
+          },
+          {
+            "name": "RUN_AGENTS_NOW.sh",
+            "category": "automation",
+            "path": "tools/automation/RUN_AGENTS_NOW.sh",
+            "extension": ".sh",
+            "size": 1468,
+            "executable": true,
+            "language": "Shell Script",
+            "dependencies": [],
+            "description": "No description found",
+            "status": "library",
+            "last_modified": "2025-11-21T05:50:12.569Z"
+          },
+          {
+            "name": "RUN_EVERYTHING.sh",
+            "category": "automation",
+            "path": "tools/automation/RUN_EVERYTHING.sh",
+            "extension": ".sh",
+            "size": 2833,
+            "executable": true,
+            "language": "Shell Script",
+            "dependencies": [],
+            "description": "No description found",
+            "status": "library",
+            "last_modified": "2025-11-21T05:50:12.569Z"
+          },
+          {
+            "name": "add_codebot_guardrails.sh",
+            "category": "automation",
+            "path": "tools/automation/add_codebot_guardrails.sh",
+            "extension": ".sh",
+            "size": 5733,
+            "executable": true,
+            "language": "Shell Script",
+            "dependencies": [],
+            "description": "No description found",
+            "status": "library",
+            "last_modified": "2025-11-21T05:50:12.572Z"
+          },
+          {
+            "name": "add_tesseract_module.sh",
+            "category": "automation",
+            "path": "tools/automation/add_tesseract_module.sh",
+            "extension": ".sh",
+            "size": 15516,
+            "executable": true,
+            "language": "Shell Script",
+            "dependencies": [],
+            "description": "No description found",
+            "status": "library",
+            "last_modified": "2025-11-21T05:50:12.573Z"
+          },
+          {
+            "name": "agent_status.sh",
+            "category": "automation",
+            "path": "tools/automation/agent_status.sh",
+            "extension": ".sh",
+            "size": 2821,
+            "executable": true,
+            "language": "Shell Script",
+            "dependencies": [],
+            "description": "No description found",
+            "status": "library",
+            "last_modified": "2025-11-21T05:50:12.575Z"
+          },
+          {
+            "name": "run_agent_batch.py",
+            "category": "automation",
+            "path": "tools/automation/run_agent_batch.py",
+            "extension": ".py",
+            "size": 5786,
+            "executable": false,
+            "language": "Python",
+            "dependencies": [],
+            "description": "No description found",
+            "status": "not_executable",
+            "last_modified": "2025-11-21T05:50:12.581Z"
+          },
+          {
+            "name": "run_agents_fast.py",
+            "category": "automation",
+            "path": "tools/automation/run_agents_fast.py",
+            "extension": ".py",
+            "size": 4120,
+            "executable": true,
+            "language": "Python",
+            "dependencies": [],
+            "description": "No description found",
+            "status": "library",
+            "last_modified": "2025-11-21T05:50:12.583Z"
+          },
+          {
+            "name": "run_single_agent.py",
+            "category": "automation",
+            "path": "tools/automation/run_single_agent.py",
+            "extension": ".py",
+            "size": 2354,
+            "executable": false,
+            "language": "Python",
+            "dependencies": [],
+            "description": "No description found",
+            "status": "not_executable",
+            "last_modified": "2025-11-21T05:50:12.585Z"
+          },
+          {
+            "name": "update_agent_context_500x.py",
+            "category": "automation",
+            "path": "tools/automation/update_agent_context_500x.py",
+            "extension": ".py",
+            "size": 16435,
+            "executable": false,
+            "language": "Python",
+            "dependencies": [],
+            "description": "No description found",
+            "status": "not_executable",
+            "last_modified": "2025-11-21T05:50:12.600Z"
+          }
+        ],
+        "cleanup": [
+          {
+            "name": "free-system-validator.js",
+            "category": "cleanup",
+            "path": "tools/cleanup/free-system-validator.js",
+            "extension": ".js",
+            "size": 8041,
+            "executable": false,
+            "language": "JavaScript",
+            "dependencies": [
+              "fs",
+              "path"
+            ],
+            "description": "No description found",
+            "status": "not_executable",
+            "last_modified": "2025-12-09T20:00:46.394Z"
+          },
+          {
+            "name": "git-cleanup.cjs",
+            "category": "cleanup",
+            "path": "tools/cleanup/git-cleanup.cjs",
+            "extension": ".cjs",
+            "size": 3364,
+            "executable": false,
+            "language": "JavaScript (CommonJS)",
+            "dependencies": [
+              "child_process",
+              "fs",
+              "path"
+            ],
+            "description": "GIT CLEANUP TOOL",
+            "status": "not_executable",
+            "last_modified": "2025-12-09T20:02:03.303Z"
+          },
+          {
+            "name": "git-cleanup.js",
+            "category": "cleanup",
+            "path": "tools/cleanup/git-cleanup.js",
+            "extension": ".js",
+            "size": 6042,
+            "executable": false,
+            "language": "JavaScript",
+            "dependencies": [
+              "child_process",
+              "fs",
+              "path"
+            ],
+            "description": "GIT CLEANUP TOOL",
+            "status": "not_executable",
+            "last_modified": "2025-12-09T20:00:18.596Z"
+          },
+          {
+            "name": "remove-paid-services.cjs",
+            "category": "cleanup",
+            "path": "tools/cleanup/remove-paid-services.cjs",
+            "extension": ".cjs",
+            "size": 3886,
+            "executable": false,
+            "language": "JavaScript (CommonJS)",
+            "dependencies": [
+              "fs",
+              "path"
+            ],
+            "description": "REMOVE PAID SERVICES CLEANUP TOOL",
+            "status": "not_executable",
+            "last_modified": "2025-12-09T20:01:07.914Z"
+          },
+          {
+            "name": "remove-paid-services.js",
+            "category": "cleanup",
+            "path": "tools/cleanup/remove-paid-services.js",
+            "extension": ".js",
+            "size": 3886,
+            "executable": false,
+            "language": "JavaScript",
+            "dependencies": [
+              "fs",
+              "path"
+            ],
+            "description": "REMOVE PAID SERVICES CLEANUP TOOL",
+            "status": "not_executable",
+            "last_modified": "2025-12-09T19:59:54.257Z"
+          }
+        ],
+        "export": [
+          {
+            "name": "combined_export.py",
+            "category": "export",
+            "path": "tools/export/combined_export.py",
+            "extension": ".py",
+            "size": 3190,
+            "executable": false,
+            "language": "Python",
+            "dependencies": [],
+            "description": "No description found",
+            "status": "not_executable",
+            "last_modified": "2025-11-21T05:50:12.610Z"
+          },
+          {
+            "name": "png_export.py",
+            "category": "export",
+            "path": "tools/export/png_export.py",
+            "extension": ".py",
+            "size": 1278,
+            "executable": false,
+            "language": "Python",
+            "dependencies": [],
+            "description": "No description found",
+            "status": "not_executable",
+            "last_modified": "2025-11-21T05:50:12.611Z"
+          }
+        ],
+        "sync": [
+          {
+            "name": "scan_mirrors.py",
+            "category": "sync",
+            "path": "tools/sync/scan_mirrors.py",
+            "extension": ".py",
+            "size": 3555,
+            "executable": false,
+            "language": "Python",
+            "dependencies": [],
+            "description": "No description found",
+            "status": "not_executable",
+            "last_modified": "2025-11-21T05:50:12.637Z"
+          }
+        ],
+        "validate": [
+          {
+            "name": "achad_geometry_test.py",
+            "category": "validate",
+            "path": "tools/validate/achad_geometry_test.py",
+            "extension": ".py",
+            "size": 1260,
+            "executable": false,
+            "language": "Python",
+            "dependencies": [],
+            "description": "No description found",
+            "status": "not_executable",
+            "last_modified": "2025-11-21T05:50:12.641Z"
+          },
+          {
+            "name": "achad_integration_smoketest.py",
+            "category": "validate",
+            "path": "tools/validate/achad_integration_smoketest.py",
+            "extension": ".py",
+            "size": 1641,
+            "executable": false,
+            "language": "Python",
+            "dependencies": [],
+            "description": "No description found",
+            "status": "not_executable",
+            "last_modified": "2025-11-21T05:50:12.642Z"
+          },
+          {
+            "name": "design_suite_smoketest.py",
+            "category": "validate",
+            "path": "tools/validate/design_suite_smoketest.py",
+            "extension": ".py",
+            "size": 802,
+            "executable": false,
+            "language": "Python",
+            "dependencies": [],
+            "description": "No description found",
+            "status": "not_executable",
+            "last_modified": "2025-11-21T05:50:12.643Z"
+          },
+          {
+            "name": "python_smoketest.py",
+            "category": "validate",
+            "path": "tools/validate/python_smoketest.py",
+            "extension": ".py",
+            "size": 1125,
+            "executable": false,
+            "language": "Python",
+            "dependencies": [],
+            "description": "No description found",
+            "status": "not_executable",
+            "last_modified": "2025-11-21T05:50:12.645Z"
+          }
+        ]
+      },
+      "status": {
+        "library": 9,
+        "not_executable": 15
+      },
+      "dependencies": {
+        "unique_dependencies": [
+          "fs",
+          "path",
+          "child_process"
+        ],
+        "dependency_graph": {
+          "free-system-validator.js": [
+            "fs",
+            "path"
+          ],
+          "git-cleanup.cjs": [
+            "child_process",
+            "fs",
+            "path"
+          ],
+          "git-cleanup.js": [
+            "child_process",
+            "fs",
+            "path"
+          ],
+          "remove-paid-services.cjs": [
+            "fs",
+            "path"
+          ],
+          "remove-paid-services.js": [
+            "fs",
+            "path"
+          ]
+        },
+        "most_used": [
+          {
+            "dependency": "fs",
+            "usage_count": 5
+          },
+          {
+            "dependency": "path",
+            "usage_count": 5
+          },
+          {
+            "dependency": "child_process",
+            "usage_count": 2
+          }
+        ]
+      },
+      "issues": []
+    },
+    "apps-comprehensive-report.json": {
+      "timestamp": "2025-12-09T20:05:40.478Z",
+      "total_apps": 5,
+      "apps": {
+        "liber-arcanae-tarot": {
+          "name": "liber-arcanae-tarot",
+          "path": "apps-clean/liber-arcanae-tarot",
+          "type": "static_files",
+          "technologies": [],
+          "files": [],
+          "dependencies": [],
+          "status": "incomplete",
+          "size": 0,
+          "entry_points": [],
+          "assets": [],
+          "issues": []
+        },
+        "synth-lab": {
+          "name": "synth-lab",
+          "path": "apps-clean/synth-lab",
+          "type": "static_files",
+          "technologies": [],
+          "files": [],
+          "dependencies": [],
+          "status": "incomplete",
+          "size": 0,
+          "entry_points": [],
+          "assets": [],
+          "issues": []
+        },
+        "web": {
+          "name": "web",
+          "path": "apps-clean/web",
+          "type": "static_files",
+          "technologies": [],
+          "files": [],
+          "dependencies": [],
+          "status": "incomplete",
+          "size": 0,
+          "entry_points": [],
+          "assets": [],
+          "issues": []
+        },
+        "worker": {
+          "name": "worker",
+          "path": "apps-clean/worker",
+          "type": "static_files",
+          "technologies": [],
+          "files": [],
+          "dependencies": [],
+          "status": "incomplete",
+          "size": 0,
+          "entry_points": [],
+          "assets": [],
+          "issues": []
+        },
+        "worker-egregores": {
+          "name": "worker-egregores",
+          "path": "apps-clean/worker-egregores",
+          "type": "static_files",
+          "technologies": [],
+          "files": [],
+          "dependencies": [],
+          "status": "incomplete",
+          "size": 0,
+          "entry_points": [],
+          "assets": [],
+          "issues": []
+        }
+      },
+      "technologies": {},
+      "status": {
+        "incomplete": 5
+      },
+      "dependencies": [],
+      "issues": [],
+      "total_size": 0
+    },
+    "branches-comprehensive-report.json": {
+      "timestamp": "2025-12-09T20:05:40.866Z",
+      "local_branches": [
+        {
+          "name": "backup-cathedral-v1.0-20251028-0103",
+          "type": "local",
+          "current": false,
+          "last_commit": {
+            "hash": "094c6bb571ea2533f20246dfcb767cb4216e2f2d",
+            "subject": "feat: update pnpm workspace config and add turbo config for monorepo management",
+            "author": "Rebecca",
+            "date": "Mon Oct 27 23:51:35 2025 -0500"
+          },
+          "commit_count": 2240,
+          "status": "stale",
+          "size": 225623382
+        },
+        {
+          "name": "cathedral-cleanup-20251025",
+          "type": "local",
+          "current": false,
+          "last_commit": {
+            "hash": "1add9ea069c5381121a1f38468477e9195ba3e00",
+            "subject": "Magnum Consolidation: Implement historical precision templates",
+            "author": "Rebecca",
+            "date": "Tue Oct 28 20:50:02 2025 -0500"
+          },
+          "commit_count": 2319,
+          "status": "stale",
+          "size": 372298395
+        },
+        {
+          "name": "clean-main",
+          "type": "local",
+          "current": false,
+          "last_commit": {
+            "hash": "cd99ff367afa2537732fbc4fa812d77a9c09a3b1",
+            "subject": "🚀 CLEAN CATHEDRAL MAIN: Complete creative portfolio without large files",
+            "author": "Rebecca",
+            "date": "Tue Nov 4 13:05:51 2025 -0600"
+          },
+          "commit_count": 1,
+          "status": "stale",
+          "size": 0
+        },
+        {
+          "name": "develop",
+          "type": "local",
+          "current": false,
+          "last_commit": {
+            "hash": "25e670d741959dc2086a65d73ce921d169a32881",
+            "subject": "🔄 Offline changes updated to fill Replit's expert structure",
+            "author": "Rebecca",
+            "date": "Sat Nov 1 15:36:23 2025 -0500"
+          },
+          "commit_count": 408,
+          "status": "merged",
+          "size": 60876897
+        },
+        {
+          "name": "main",
+          "type": "local",
+          "current": false,
+          "last_commit": {
+            "hash": "4d71e3507e549ef6e52f1e9fab8278c98420f5e3",
+            "subject": "Fix package import/export and workspace dependencies",
+            "author": "Rebecca",
+            "date": "Thu Oct 23 11:06:14 2025 -0500"
+          },
+          "commit_count": 2233,
+          "status": "stale",
+          "size": 12653731
+        },
+        {
+          "name": "massive-cathedral-merge",
+          "type": "local",
+          "current": false,
+          "last_commit": {
+            "hash": "4d71e3507e549ef6e52f1e9fab8278c98420f5e3",
+            "subject": "Fix package import/export and workspace dependencies",
+            "author": "Rebecca",
+            "date": "Thu Oct 23 11:06:14 2025 -0500"
+          },
+          "commit_count": 2233,
+          "status": "stale",
+          "size": 12653731
+        }
+      ],
+      "remote_branches": [
+        {
+          "name": "HEAD -> circuitum99/main",
+          "full_name": "remotes/circuitum99/HEAD -> circuitum99/main",
+          "type": "remote",
+          "remote": "circuitum99",
+          "last_commit": null,
+          "status": "remote"
+        },
+        {
+          "name": "main",
+          "full_name": "remotes/circuitum99/main",
+          "type": "remote",
+          "remote": "circuitum99",
+          "last_commit": {
+            "hash": "011c48dd5f84d085559433e85c21e11262b98a43",
+            "subject": "Merge branch 'main-upstream' of https://github.com/bekalah/circuitum99.git",
+            "author": "Rebecca Lemke",
+            "date": "Sun Oct 12 02:33:30 2025 -0500"
+          },
+          "status": "remote"
+        },
+        {
+          "name": "main-upstream",
+          "full_name": "remotes/circuitum99/main-upstream",
+          "type": "remote",
+          "remote": "circuitum99",
+          "last_commit": {
+            "hash": "babc5171e0e1234d1640816dca536f92585d88bf",
+            "subject": "Merge branch 'main-upstream' of https://github.com/bekalah/circuitum99.git",
+            "author": "Rebecca Lemke",
+            "date": "Thu Oct 16 18:56:17 2025 -0500"
+          },
+          "status": "remote"
+        },
+        {
+          "name": "HEAD -> origin/main",
+          "full_name": "remotes/origin/HEAD -> origin/main",
+          "type": "remote",
+          "remote": "origin",
+          "last_commit": null,
+          "status": "remote"
+        },
+        {
+          "name": "clean-main",
+          "full_name": "remotes/origin/clean-main",
+          "type": "remote",
+          "remote": "origin",
+          "last_commit": {
+            "hash": "cd99ff367afa2537732fbc4fa812d77a9c09a3b1",
+            "subject": "🚀 CLEAN CATHEDRAL MAIN: Complete creative portfolio without large files",
+            "author": "Rebecca",
+            "date": "Tue Nov 4 13:05:51 2025 -0600"
+          },
+          "status": "remote"
+        },
+        {
+          "name": "clean-pr-branch",
+          "full_name": "remotes/origin/clean-pr-branch",
+          "type": "remote",
+          "remote": "origin",
+          "last_commit": {
+            "hash": "90d6cae584947aefa2145321b63a1e41b8782993",
+            "subject": "🔄 Consolidate offline package updates",
+            "author": "Rebecca",
+            "date": "Sat Nov 1 18:50:27 2025 -0500"
+          },
+          "status": "remote"
+        },
+        {
+          "name": "develop",
+          "full_name": "remotes/origin/develop",
+          "type": "remote",
+          "remote": "origin",
+          "last_commit": {
+            "hash": "25e670d741959dc2086a65d73ce921d169a32881",
+            "subject": "🔄 Offline changes updated to fill Replit's expert structure",
+            "author": "Rebecca",
+            "date": "Sat Nov 1 15:36:23 2025 -0500"
+          },
+          "status": "remote"
+        },
+        {
+          "name": "fix/vercel-cloudflare-build-monorepo",
+          "full_name": "remotes/origin/fix/vercel-cloudflare-build-monorepo",
+          "type": "remote",
+          "remote": "origin",
+          "last_commit": {
+            "hash": "73b53ac9a97d8625be26f6d0d86fd2ebe1561424",
+            "subject": "chore: resolve merge conflicts in package.json files",
+            "author": "Rebecca",
+            "date": "Sun Nov 2 20:55:20 2025 -0600"
+          },
+          "status": "remote"
+        },
+        {
+          "name": "liber-arcanae-game",
+          "full_name": "remotes/origin/liber-arcanae-game",
+          "type": "remote",
+          "remote": "origin",
+          "last_commit": {
+            "hash": "a1eac908d1c46e58c81ae4c26aaa52ed19a65979",
+            "subject": "new file: .vscode/settings.json new file: agent_fast.log new file: agent_loop.log new file: agent_responses/batch_0002.txt new file: agent_responses/batch_0004.txt new file: agent_responses/batch_0005.txt new file: agent_responses/batch_0006.txt new file: agent_responses/batch_0007.txt new file: agent_responses/batch_0011.txt new file: agent_responses/batch_0012.txt new file: agent_responses/batch_0014.txt new file: agent_responses/batch_0016.txt new file: agent_responses/batch_0021.txt new file: agent_responses/batch_0024.txt new file: agent_responses/batch_0033.txt new file: agent_responses/batch_0034.txt new file: agent_responses/batch_0039.txt",
+            "author": "Rebecca",
+            "date": "Thu Oct 30 18:48:22 2025 -0500"
+          },
+          "status": "remote"
+        },
+        {
+          "name": "main",
+          "full_name": "remotes/origin/main",
+          "type": "remote",
+          "remote": "origin",
+          "last_commit": {
+            "hash": "070cae4a2609c4385711aac0646ef80e1c2c4e71",
+            "subject": "modififed cathedral",
+            "author": "Bekalah",
+            "date": "Sun Oct 12 11:00:47 2025 -0500"
+          },
+          "status": "remote"
+        },
+        {
+          "name": "main_gold_standard",
+          "full_name": "remotes/origin/main_gold_standard",
+          "type": "remote",
+          "remote": "origin",
+          "last_commit": {
+            "hash": "238560e80e8a371b7ddac79f30ccbecd9fca80b0",
+            "subject": "modified .consolidation-backups/@cathedral",
+            "author": "Rebecca",
+            "date": "Sun Dec 7 05:24:15 2025 -0600"
+          },
+          "status": "remote"
+        },
+        {
+          "name": "master-version",
+          "full_name": "remotes/origin/master-version",
+          "type": "remote",
+          "remote": "origin",
+          "last_commit": {
+            "hash": "83c59b8453f749b2d7c4467bc805406e7439105d",
+            "subject": "docs: CATHEDRAL_CONSOLIDATION_COMPLETE - final documentation",
+            "author": "Rebecca",
+            "date": "Mon Nov 3 20:52:50 2025 -0600"
+          },
+          "status": "remote"
+        },
+        {
+          "name": "wip/local-20251101",
+          "full_name": "remotes/origin/wip/local-20251101",
+          "type": "remote",
+          "remote": "origin",
+          "last_commit": {
+            "hash": "ed9ad5c38ae4d465f677d814f07c1ec7becccfc7",
+            "subject": "Revamp README and Replit setup command for simplified unified system",
+            "author": "Rebecca",
+            "date": "Fri Oct 31 19:04:08 2025 -0500"
+          },
+          "status": "remote"
+        },
+        {
+          "name": "HEAD -> stone-grimoire/main",
+          "full_name": "remotes/stone-grimoire/HEAD -> stone-grimoire/main",
+          "type": "remote",
+          "remote": "stone-grimoire",
+          "last_commit": null,
+          "status": "remote"
+        },
+        {
+          "name": "main",
+          "full_name": "remotes/stone-grimoire/main",
+          "type": "remote",
+          "remote": "stone-grimoire",
+          "last_commit": {
+            "hash": "0a801a729c5d6a2da15c887beb1549db9ac6f362",
+            "subject": "feat: Comprehensive MARKDOWN-FIXER with 15+ rule support",
+            "author": "Rebecca",
+            "date": "Sat Oct 25 23:11:44 2025 -0500"
+          },
+          "status": "remote"
+        }
+      ],
+      "branch_status": {
+        "stale": 5,
+        "merged": 1
+      },
+      "duplicates": [
+        {
+          "commit_hash": "cd99ff367afa2537732fbc4fa812d77a9c09a3b1",
+          "branches": [
+            "clean-main",
+            "clean-main"
+          ],
+          "count": 2
+        },
+        {
+          "commit_hash": "25e670d741959dc2086a65d73ce921d169a32881",
+          "branches": [
+            "develop",
+            "develop"
+          ],
+          "count": 2
+        },
+        {
+          "commit_hash": "4d71e3507e549ef6e52f1e9fab8278c98420f5e3",
+          "branches": [
+            "main",
+            "massive-cathedral-merge"
+          ],
+          "count": 2
+        }
+      ],
+      "orphaned": [
+        {
+          "name": "backup-cathedral-v1.0-20251028-0103",
+          "reason": "No remote tracking and stale",
+          "last_commit": {
+            "hash": "094c6bb571ea2533f20246dfcb767cb4216e2f2d",
+            "subject": "feat: update pnpm workspace config and add turbo config for monorepo management",
+            "author": "Rebecca",
+            "date": "Mon Oct 27 23:51:35 2025 -0500"
+          }
+        },
+        {
+          "name": "cathedral-cleanup-20251025",
+          "reason": "No remote tracking and stale",
+          "last_commit": {
+            "hash": "1add9ea069c5381121a1f38468477e9195ba3e00",
+            "subject": "Magnum Consolidation: Implement historical precision templates",
+            "author": "Rebecca",
+            "date": "Tue Oct 28 20:50:02 2025 -0500"
+          }
+        },
+        {
+          "name": "massive-cathedral-merge",
+          "reason": "No remote tracking and stale",
+          "last_commit": {
+            "hash": "4d71e3507e549ef6e52f1e9fab8278c98420f5e3",
+            "subject": "Fix package import/export and workspace dependencies",
+            "author": "Rebecca",
+            "date": "Thu Oct 23 11:06:14 2025 -0500"
+          }
+        }
+      ],
+      "spam": [
+        {
+          "name": "main_gold_standard",
+          "type": "remote",
+          "reason": "Matches spam pattern"
+        }
+      ],
+      "recommendations": [
+        {
+          "action": "delete_merged",
+          "branches": [
+            "develop"
+          ],
+          "reason": "Already merged into main"
+        },
+        {
+          "action": "delete_stale",
+          "branches": [
+            "backup-cathedral-v1.0-20251028-0103",
+            "cathedral-cleanup-20251025",
+            "clean-main",
+            "main",
+            "massive-cathedral-merge"
+          ],
+          "reason": "No activity for 30+ days"
+        },
+        {
+          "action": "delete_spam",
+          "branches": [
+            "main_gold_standard"
+          ],
+          "reason": "Matches spam patterns"
+        }
+      ]
+    },
+    "duplicates-and-spam.json": {
+      "timestamp": "2025-12-09T20:12:32.370Z",
+      "duplicate_files": [
+        {
+          "hash": "bb3493514c041fed44fc8be0b998fd19",
+          "files": [
+            "AVALON_DEPLOYMENT_README.md",
+            "docs/deployment/AVALON_DEPLOYMENT_README.md"
+          ],
+          "count": 2,
+          "size_each": 9125,
+          "total_size": 18250,
+          "wasted_space": 18250
+        },
+        {
+          "hash": "37342943cc9ac0061819659fec09a7be",
+          "files": [
+            "CHIRON_HEALING_CODEX.md",
+            "docs/CHIRON_HEALING_CODEX.md"
+          ],
+          "count": 2,
+          "size_each": 8915,
+          "total_size": 17830,
+          "wasted_space": 17830
+        },
+        {
+          "hash": "82bf7fac7dc92c79b6d1d8db365217ef",
+          "files": [
+            "CLOUDFLARE_SETUP.md",
+            "docs/CLOUDFLARE_SETUP.md"
+          ],
+          "count": 2,
+          "size_each": 2708,
+          "total_size": 5416,
+          "wasted_space": 5416
+        },
+        {
+          "hash": "ca721b9c345359f73cdf43e66c27f73f",
+          "files": [
+            "CODEX_144_99_ABYSSIAE.md",
+            "docs/CODEX_144_99_ABYSSIAE.md",
+            "organized-system/core-authentic/CODEX_144_99_ABYSSIAE.md"
+          ],
+          "count": 3,
+          "size_each": 8085,
+          "total_size": 24255,
+          "wasted_space": 48510
+        },
+        {
+          "hash": "2edcab42b4c1a8be0225df45655c7c2c",
+          "files": [
+            "COMPLETE_ORGANIC_SYSTEM_MAP.md",
+            "docs/master/COMPLETE_ORGANIC_SYSTEM_MAP.md"
+          ],
+          "count": 2,
+          "size_each": 10120,
+          "total_size": 20240,
+          "wasted_space": 20240
+        },
+        {
+          "hash": "cbb57513d11c2223733a8657f55244d9",
+          "files": [
+            "COMPLETE_RESEARCH_INTEGRATION_MASTER.md",
+            "docs/master/COMPLETE_RESEARCH_INTEGRATION_MASTER.md"
+          ],
+          "count": 2,
+          "size_each": 8520,
+          "total_size": 17040,
+          "wasted_space": 17040
+        },
+        {
+          "hash": "5159547c13f46d7480d46c52a8bae296",
+          "files": [
+            "COMPLETE_SYSTEM_INTEGRATION.md",
+            "docs/master/COMPLETE_SYSTEM_INTEGRATION.md"
+          ],
+          "count": 2,
+          "size_each": 7950,
+          "total_size": 15900,
+          "wasted_space": 15900
+        },
+        {
+          "hash": "bfe1bdf553083d107274817e46d31b5a",
+          "files": [
+            "CONTINUED_RESEARCH_DOCUMENTATION.md",
+            "docs/CONTINUED_RESEARCH_DOCUMENTATION.md"
+          ],
+          "count": 2,
+          "size_each": 7390,
+          "total_size": 14780,
+          "wasted_space": 14780
+        },
+        {
+          "hash": "f1894706d139f312c6539257d1f480c9",
+          "files": [
+            "CONTRIBUTING.md",
+            "docs/CONTRIBUTING.md"
+          ],
+          "count": 2,
+          "size_each": 8353,
+          "total_size": 16706,
+          "wasted_space": 16706
+        },
+        {
+          "hash": "2ac66d5d3ec5eb80c548a2a32db0845e",
+          "files": [
+            "DATA_INTEGRITY_PACKAGE_SYSTEM.md",
+            "docs/research/DATA_INTEGRITY_PACKAGE_SYSTEM.md"
+          ],
+          "count": 2,
+          "size_each": 16913,
+          "total_size": 33826,
+          "wasted_space": 33826
+        },
+        {
+          "hash": "8442bf41f4ad3a173030cca4b4c7e617",
+          "files": [
+            "EXPANSION_PLAN.md",
+            "docs/EXPANSION_PLAN.md"
+          ],
+          "count": 2,
+          "size_each": 3712,
+          "total_size": 7424,
+          "wasted_space": 7424
+        },
+        {
+          "hash": "abbe33d2a2d21650af5e194ee3b416fe",
+          "files": [
+            "GRIMOIRE_REFERENCE_SYSTEM.md",
+            "docs/research/GRIMOIRE_REFERENCE_SYSTEM.md"
+          ],
+          "count": 2,
+          "size_each": 6742,
+          "total_size": 13484,
+          "wasted_space": 13484
+        },
+        {
+          "hash": "370b718edc340cdfdb7d74112f2a5aad",
+          "files": [
+            "HARMONIC_CONVERGENCE_SLEEP.md",
+            "docs/HARMONIC_CONVERGENCE_SLEEP.md"
+          ],
+          "count": 2,
+          "size_each": 4144,
+          "total_size": 8288,
+          "wasted_space": 8288
+        },
+        {
+          "hash": "dd11f5cd9d0cc0f51f1da2869c7b3ede",
+          "files": [
+            "IMPLEMENTATION_CHECKLIST.md",
+            "docs/guides/IMPLEMENTATION_CHECKLIST.md"
+          ],
+          "count": 2,
+          "size_each": 5870,
+          "total_size": 11740,
+          "wasted_space": 11740
+        },
+        {
+          "hash": "9895c889e223b4a13cf1e4a41f593981",
+          "files": [
+            "INFRASTRUCTURE_COMPLETE.md",
+            "docs/INFRASTRUCTURE_COMPLETE.md"
+          ],
+          "count": 2,
+          "size_each": 4288,
+          "total_size": 8576,
+          "wasted_space": 8576
+        },
+        {
+          "hash": "7b4d91a8ee25cfaafec635c84178caad",
+          "files": [
+            "JEWEL_OF_INDRA_LATTICE.md",
+            "docs/JEWEL_OF_INDRA_LATTICE.md"
+          ],
+          "count": 2,
+          "size_each": 4606,
+          "total_size": 9212,
+          "wasted_space": 9212
+        },
+        {
+          "hash": "fcbc948441986c2e5bdce0a1033928a7",
+          "files": [
+            "LATTICE_LINKS.md",
+            "docs/LATTICE_LINKS.md"
+          ],
+          "count": 2,
+          "size_each": 2835,
+          "total_size": 5670,
+          "wasted_space": 5670
+        },
+        {
+          "hash": "3b0cc711aaae70b6ef8342be0c98bcc9",
+          "files": [
+            "LIBER_ARCANAE_CONSISTENCY_AUDIT.md",
+            "docs/research/LIBER_ARCANAE_CONSISTENCY_AUDIT.md"
+          ],
+          "count": 2,
+          "size_each": 4854,
+          "total_size": 9708,
+          "wasted_space": 9708
+        },
+        {
+          "hash": "5e3277b17c86eafd4def0b627fb0b587",
+          "files": [
+            "LICENSE",
+            "docs/LICENSE"
+          ],
+          "count": 2,
+          "size_each": 1072,
+          "total_size": 2144,
+          "wasted_space": 2144
+        },
+        {
+          "hash": "eac712f77a4677a5da36cac74a0ea0ba",
+          "files": [
+            "LICENSE-CONTENT.md",
+            "docs/LICENSE-CONTENT.md"
+          ],
+          "count": 2,
+          "size_each": 5482,
+          "total_size": 10964,
+          "wasted_space": 10964
+        },
+        {
+          "hash": "371e9059323bc4fcebb56599772f72cd",
+          "files": [
+            "LIVING_ARCANAE_NUMEROLOGY_0_144.md",
+            "docs/research/LIVING_ARCANAE_NUMEROLOGY_0_144.md"
+          ],
+          "count": 2,
+          "size_each": 12207,
+          "total_size": 24414,
+          "wasted_space": 24414
+        },
+        {
+          "hash": "a58fb2710791b03d1223661703be68c4",
+          "files": [
+            "LIVING_ARCANAE_TRADITION_ENGINES.md",
+            "docs/research/LIVING_ARCANAE_TRADITION_ENGINES.md",
+            "organized-system/core-authentic/LIVING_ARCANAE_TRADITION_ENGINES.md"
+          ],
+          "count": 3,
+          "size_each": 31843,
+          "total_size": 95529,
+          "wasted_space": 191058
+        },
+        {
+          "hash": "cc54abc35e42d8d7da82aa5625033683",
+          "files": [
+            "LIVING_ARTWORK_COMPLETE.md",
+            "docs/research/LIVING_ARTWORK_COMPLETE.md"
+          ],
+          "count": 2,
+          "size_each": 2833,
+          "total_size": 5666,
+          "wasted_space": 5666
+        },
+        {
+          "hash": "fd3918637a96b1b81eb8ce4fa4d6ae5f",
+          "files": [
+            "LIVING_CATHEDRAL_ENGINE.md",
+            "docs/research/LIVING_CATHEDRAL_ENGINE.md"
+          ],
+          "count": 2,
+          "size_each": 16499,
+          "total_size": 32998,
+          "wasted_space": 32998
+        },
+        {
+          "hash": "3bf56a754c719cbf3f2ac6534b18171e",
+          "files": [
+            "LIVING_CONNECTION_MAPS.md",
+            "docs/research/LIVING_CONNECTION_MAPS.md"
+          ],
+          "count": 2,
+          "size_each": 5768,
+          "total_size": 11536,
+          "wasted_space": 11536
+        },
+        {
+          "hash": "db1e47c494c9eb3f26acb15b025c5d5b",
+          "files": [
+            "LIVING_LATTICE_SAFETY.md",
+            "docs/research/LIVING_LATTICE_SAFETY.md"
+          ],
+          "count": 2,
+          "size_each": 2629,
+          "total_size": 5258,
+          "wasted_space": 5258
+        },
+        {
+          "hash": "15eb4eed05bed04537470a51de310fc6",
+          "files": [
+            "LIVING_NARRATIVE_ENGINE.md",
+            "docs/research/LIVING_NARRATIVE_ENGINE.md"
+          ],
+          "count": 2,
+          "size_each": 10495,
+          "total_size": 20990,
+          "wasted_space": 20990
+        },
+        {
+          "hash": "c6a165cb4471efa997a8a032f7c8833d",
+          "files": [
+            "LIVING_SYSTEM_DEMO.md",
+            "docs/research/LIVING_SYSTEM_DEMO.md"
+          ],
+          "count": 2,
+          "size_each": 5607,
+          "total_size": 11214,
+          "wasted_space": 11214
+        },
+        {
+          "hash": "16feff58b59d8b26b60d9c6a0e7be523",
+          "files": [
+            "MASTER_CATHEDRAL_CONSOLIDATED_INFORMATION.md",
+            "docs/master/MASTER_CATHEDRAL_CONSOLIDATED_INFORMATION.md",
+            "organized-system/core-authentic/MASTER_CATHEDRAL_CONSOLIDATED_INFORMATION.md"
+          ],
+          "count": 3,
+          "size_each": 16505,
+          "total_size": 49515,
+          "wasted_space": 99030
+        },
+        {
+          "hash": "207c96486052a6ff660d0f1e2d527377",
+          "files": [
+            "MASTER_DATASETS_REGISTRY.md",
+            "docs/master/MASTER_DATASETS_REGISTRY.md"
+          ],
+          "count": 2,
+          "size_each": 8006,
+          "total_size": 16012,
+          "wasted_space": 16012
+        },
+        {
+          "hash": "951d09bec27a3fda3ddc43800dc26602",
+          "files": [
+            "MASTER_NUMBER_EVOLUTION_CODEX.md",
+            "docs/master/MASTER_NUMBER_EVOLUTION_CODEX.md"
+          ],
+          "count": 2,
+          "size_each": 10112,
+          "total_size": 20224,
+          "wasted_space": 20224
+        },
+        {
+          "hash": "18b4dd10a7fc2a61622aa8627b454107",
+          "files": [
+            "MASTER_PROVENANCE_CODEX_144_99_ARCANAE_INTEGRATION.md",
+            "docs/master/MASTER_PROVENANCE_CODEX_144_99_ARCANAE_INTEGRATION.md",
+            "organized-system/core-authentic/MASTER_PROVENANCE_CODEX_144_99_ARCANAE_INTEGRATION.md"
+          ],
+          "count": 3,
+          "size_each": 17780,
+          "total_size": 53340,
+          "wasted_space": 106680
+        },
+        {
+          "hash": "295e918996ca589d7846e47ab293c99d",
+          "files": [
+            "MASTER_SESSION_BACKUP_20250928.md",
+            "docs/master/MASTER_SESSION_BACKUP_20250928.md"
+          ],
+          "count": 2,
+          "size_each": 9449,
+          "total_size": 18898,
+          "wasted_space": 18898
+        },
+        {
+          "hash": "a6516c053c0924f370fb95176e2319a0",
+          "files": [
+            "MONOREPO_INTEGRATION_PLAN.md",
+            "docs/research/MONOREPO_INTEGRATION_PLAN.md"
+          ],
+          "count": 2,
+          "size_each": 9102,
+          "total_size": 18204,
+          "wasted_space": 18204
+        },
+        {
+          "hash": "941806599bc41cad92cea4a73ccbbb4d",
+          "files": [
+            "MONOREPO_ORGANIZATION_GUIDE.md",
+            "docs/research/MONOREPO_ORGANIZATION_GUIDE.md"
+          ],
+          "count": 2,
+          "size_each": 9734,
+          "total_size": 19468,
+          "wasted_space": 19468
+        },
+        {
+          "hash": "d75717d3218f9073098963fd1099d8a9",
+          "files": [
+            "MONOREPO_STATUS_COMPLETE.md",
+            "docs/research/MONOREPO_STATUS_COMPLETE.md"
+          ],
+          "count": 2,
+          "size_each": 5068,
+          "total_size": 10136,
+          "wasted_space": 10136
+        },
+        {
+          "hash": "4d9b7d7219fe693eaf983ca8b4d94a8b",
+          "files": [
+            "MOONCHILD_EGREGORE_SYSTEM.md",
+            "docs/MOONCHILD_EGREGORE_SYSTEM.md"
+          ],
+          "count": 2,
+          "size_each": 16376,
+          "total_size": 32752,
+          "wasted_space": 32752
+        },
+        {
+          "hash": "327370cb91df0dca7fc24a88003c1f84",
+          "files": [
+            "NAMING_CONSISTENCY_MASTER_GUIDE.md",
+            "docs/standards/NAMING_CONSISTENCY_MASTER_GUIDE.md"
+          ],
+          "count": 2,
+          "size_each": 7511,
+          "total_size": 15022,
+          "wasted_space": 15022
+        },
+        {
+          "hash": "d41d8cd98f00b204e9800998ecf8427e",
+          "files": [
+            "NEW-workspace",
+            "archive/temp-files/_tmp_14486_5203782ff301f24c13b2f44a82bc0611",
+            "assets/ateliers/atelier_geometry_michael 2.png",
+            "assets/covers/test_lfs 2.png",
+            "events/queue.ndjson",
+            "stone-grimoire/main"
+          ],
+          "count": 6,
+          "size_each": 0,
+          "total_size": 0,
+          "wasted_space": 0
+        },
+        {
+          "hash": "8b97b33e2b01612e745d266e2be409dd",
+          "files": [
+            "NODE_VALIDATION_LOCKING_SYSTEM.md",
+            "docs/NODE_VALIDATION_LOCKING_SYSTEM.md"
+          ],
+          "count": 2,
+          "size_each": 12467,
+          "total_size": 24934,
+          "wasted_space": 24934
+        },
+        {
+          "hash": "f7283ea2b6ddd649217379fee9da7e01",
+          "files": [
+            "NOTICE",
+            "docs/NOTICE"
+          ],
+          "count": 2,
+          "size_each": 3437,
+          "total_size": 6874,
+          "wasted_space": 6874
+        },
+        {
+          "hash": "9cd5b57f957fc13f37ac3e6e4f1ef831",
+          "files": [
+            "PERMANENT_SESSION_RECORDS.md",
+            "docs/PERMANENT_SESSION_RECORDS.md"
+          ],
+          "count": 2,
+          "size_each": 8275,
+          "total_size": 16550,
+          "wasted_space": 16550
+        },
+        {
+          "hash": "20f43a54c47d0a451ed994e43a59dc16",
+          "files": [
+            "PLUTO_CODEX_MASTER_STATUS.md",
+            "docs/PLUTO_CODEX_MASTER_STATUS.md"
+          ],
+          "count": 2,
+          "size_each": 7116,
+          "total_size": 14232,
+          "wasted_space": 14232
+        },
+        {
+          "hash": "92350b55220aa7ae4d59e859139cf9b2",
+          "files": [
+            "PRODUCTION_STANDARDS.md",
+            "docs/PRODUCTION_STANDARDS.md"
+          ],
+          "count": 2,
+          "size_each": 7824,
+          "total_size": 15648,
+          "wasted_space": 15648
+        },
+        {
+          "hash": "730c8e238082dfad31ae2481b690632c",
+          "files": [
+            "PROTECT.md",
+            "docs/PROTECT.md"
+          ],
+          "count": 2,
+          "size_each": 4027,
+          "total_size": 8054,
+          "wasted_space": 8054
+        },
+        {
+          "hash": "cf336f164edfc8cf1d70221668276289",
+          "files": [
+            "PROTECTION_AND_PRIVACY_SYSTEM.md",
+            "docs/PROTECTION_AND_PRIVACY_SYSTEM.md"
+          ],
+          "count": 2,
+          "size_each": 10626,
+          "total_size": 21252,
+          "wasted_space": 21252
+        },
+        {
+          "hash": "d72a9f2fb919579878728c675c707531",
+          "files": [
+            "QUALITY_GUARDIAN_SYSTEM.md",
+            "docs/QUALITY_GUARDIAN_SYSTEM.md"
+          ],
+          "count": 2,
+          "size_each": 13175,
+          "total_size": 26350,
+          "wasted_space": 26350
+        },
+        {
+          "hash": "fea1ea0b5ca2668b8645482fa1615c4b",
+          "files": [
+            "QUICK_START_MAP.md",
+            "docs/QUICK_START_MAP.md"
+          ],
+          "count": 2,
+          "size_each": 4186,
+          "total_size": 8372,
+          "wasted_space": 8372
+        },
+        {
+          "hash": "110d30003759e7785b29ec6c218882db",
+          "files": [
+            "README_CATHEDRAL_NOTE.md",
+            "docs/README_CATHEDRAL_NOTE.md"
+          ],
+          "count": 2,
+          "size_each": 257,
+          "total_size": 514,
+          "wasted_space": 514
+        },
+        {
+          "hash": "ae0c6a656eb3dc499fec08f9b01b157f",
+          "files": [
+            "README_DEDUPER.md",
+            "docs/README_DEDUPER.md"
+          ],
+          "count": 2,
+          "size_each": 345,
+          "total_size": 690,
+          "wasted_space": 690
+        },
+        {
+          "hash": "c0b0a00383614128c29acac2b346fb4d",
+          "files": [
+            "README_RENDERER.md",
+            "docs/README_RENDERER.md"
+          ],
+          "count": 2,
+          "size_each": 1886,
+          "total_size": 3772,
+          "wasted_space": 3772
+        },
+        {
+          "hash": "56309572d4edb14ae757c7ac2b0ff2d5",
+          "files": [
+            "REAL_REPOSITORY_HIGHWAY_SYSTEM.md",
+            "docs/REAL_REPOSITORY_HIGHWAY_SYSTEM.md"
+          ],
+          "count": 2,
+          "size_each": 3868,
+          "total_size": 7736,
+          "wasted_space": 7736
+        },
+        {
+          "hash": "75a13137a74a01b2c24303ec5ec87a0b",
+          "files": [
+            "REPOSITORY_CONNECTION_VERIFICATION.md",
+            "docs/research/REPOSITORY_CONNECTION_VERIFICATION.md"
+          ],
+          "count": 2,
+          "size_each": 8660,
+          "total_size": 17320,
+          "wasted_space": 17320
+        },
+        {
+          "hash": "89c2e4efabd28bffda015361f2f3387b",
+          "files": [
+            "REPOSITORY_CONSOLIDATION_PLAN.md",
+            "docs/research/REPOSITORY_CONSOLIDATION_PLAN.md"
+          ],
+          "count": 2,
+          "size_each": 6822,
+          "total_size": 13644,
+          "wasted_space": 13644
+        },
+        {
+          "hash": "8abd9bbbca0492038f58525581e880ab",
+          "files": [
+            "REPOSITORY_INTEGRITY_REPORT.md",
+            "docs/research/REPOSITORY_INTEGRITY_REPORT.md"
+          ],
+          "count": 2,
+          "size_each": 6712,
+          "total_size": 13424,
+          "wasted_space": 13424
+        },
+        {
+          "hash": "32be6a2fe523525d48d3908e6f1cb248",
+          "files": [
+            "REPOSITORY_LINKS.md",
+            "docs/research/REPOSITORY_LINKS.md"
+          ],
+          "count": 2,
+          "size_each": 2361,
+          "total_size": 4722,
+          "wasted_space": 4722
+        },
+        {
+          "hash": "48d15dfeb4a0210200f9516dc1d9ed09",
+          "files": [
+            "RITUAL_MAP.md",
+            "docs/RITUAL_MAP.md"
+          ],
+          "count": 2,
+          "size_each": 3574,
+          "total_size": 7148,
+          "wasted_space": 7148
+        },
+        {
+          "hash": "0a63c2df6b1a33bb9942c2ea80c096a3",
+          "files": [
+            "SCALABILITY_MASTER_SYSTEM.md",
+            "docs/SCALABILITY_MASTER_SYSTEM.md"
+          ],
+          "count": 2,
+          "size_each": 18696,
+          "total_size": 37392,
+          "wasted_space": 37392
+        },
+        {
+          "hash": "b1060e70aaff0e2baed6fc1d91ebe9b3",
+          "files": [
+            "SECURITY.md",
+            "docs/SECURITY.md"
+          ],
+          "count": 2,
+          "size_each": 619,
+          "total_size": 1238,
+          "wasted_space": 1238
+        },
+        {
+          "hash": "5222e58ee5221bc8959962ee32dfc9c4",
+          "files": [
+            "SESSION_ERROR_RECOVERY_LOG.md",
+            "docs/SESSION_ERROR_RECOVERY_LOG.md"
+          ],
+          "count": 2,
+          "size_each": 2038,
+          "total_size": 4076,
+          "wasted_space": 4076
+        },
+        {
+          "hash": "28e5f90ee0e83e139d43dc37c3ed5f95",
+          "files": [
+            "SESSION_MEMORY_COMPLETE.md",
+            "docs/SESSION_MEMORY_COMPLETE.md"
+          ],
+          "count": 2,
+          "size_each": 5704,
+          "total_size": 11408,
+          "wasted_space": 11408
+        },
+        {
+          "hash": "cf60aea58412bc79b946cd8c251cc18e",
+          "files": [
+            "SPDX-HEADERS.md",
+            "docs/SPDX-HEADERS.md"
+          ],
+          "count": 2,
+          "size_each": 3379,
+          "total_size": 6758,
+          "wasted_space": 6758
+        },
+        {
+          "hash": "90b9790f6697270b57bd9a90d50a3193",
+          "files": [
+            "SYSTEM_EXPANSION_GUIDE.md",
+            "docs/SYSTEM_EXPANSION_GUIDE.md"
+          ],
+          "count": 2,
+          "size_each": 10006,
+          "total_size": 20012,
+          "wasted_space": 20012
+        },
+        {
+          "hash": "2f63d2534e4cdbd6ed6641c2393b5fdc",
+          "files": [
+            "TAROT_MASTER_DATASET.json",
+            "config/TAROT_MASTER_DATASET.json"
+          ],
+          "count": 2,
+          "size_each": 22640,
+          "total_size": 45280,
+          "wasted_space": 45280
+        },
+        {
+          "hash": "c30f1c7f240af933cd67dbe13db7f100",
+          "files": [
+            "TECHNICAL_IMPLEMENTATION_ARCHETYPAL_NODES.md",
+            "docs/TECHNICAL_IMPLEMENTATION_ARCHETYPAL_NODES.md"
+          ],
+          "count": 2,
+          "size_each": 20960,
+          "total_size": 41920,
+          "wasted_space": 41920
+        },
+        {
+          "hash": "4ff09ad77300fdf30b869bc94caf4b5c",
+          "files": [
+            "THREE_APP_PACKAGES_ORGANIZATION.md",
+            "docs/THREE_APP_PACKAGES_ORGANIZATION.md"
+          ],
+          "count": 2,
+          "size_each": 13170,
+          "total_size": 26340,
+          "wasted_space": 26340
+        },
+        {
+          "hash": "d9c23cbad01f250ba571f440b1079870",
+          "files": [
+            "TRANSCENDENT_ALICE_ENGINE.md",
+            "docs/TRANSCENDENT_ALICE_ENGINE.md"
+          ],
+          "count": 2,
+          "size_each": 12912,
+          "total_size": 25824,
+          "wasted_space": 25824
+        },
+        {
+          "hash": "b573cdceb5bfebd05db84cc9445222da",
+          "files": [
+            "TRINITY_DEPLOYMENT_STRATEGY.md",
+            "docs/TRINITY_DEPLOYMENT_STRATEGY.md"
+          ],
+          "count": 2,
+          "size_each": 6502,
+          "total_size": 13004,
+          "wasted_space": 13004
+        },
+        {
+          "hash": "63c1f344a84b00c09239b17aa3844342",
+          "files": [
+            "UNIVERSAL-DESIGN.md",
+            "docs/UNIVERSAL-DESIGN.md"
+          ],
+          "count": 2,
+          "size_each": 11529,
+          "total_size": 23058,
+          "wasted_space": 23058
+        },
+        {
+          "hash": "d50175a30d1bfc6dac571e6ad4062b9b",
+          "files": [
+            "WHEEL_ARTICLE.md",
+            "docs/WHEEL_ARTICLE.md"
+          ],
+          "count": 2,
+          "size_each": 3833,
+          "total_size": 7666,
+          "wasted_space": 7666
+        },
+        {
+          "hash": "69f85437d554180befe76f067ebccb14",
+          "files": [
+            "WHITE_RABBIT_PORTAL_NETWORK.md",
+            "docs/WHITE_RABBIT_PORTAL_NETWORK.md"
+          ],
+          "count": 2,
+          "size_each": 12368,
+          "total_size": 24736,
+          "wasted_space": 24736
+        },
+        {
+          "hash": "ed2c8856d57be8176b1e5597b321812f",
+          "files": [
+            "apps/synth-lab/tsconfig.json",
+            "apps/test-ground/tsconfig.json"
+          ],
+          "count": 2,
+          "size_each": 398,
+          "total_size": 796,
+          "wasted_space": 796
+        },
+        {
+          "hash": "506c0d97ff0d33429a2b5e8c955a151a",
+          "files": [
+            "apps/tarot-arena/vite.config.ts",
+            "apps/test-ground/vite.config.ts"
+          ],
+          "count": 2,
+          "size_each": 603,
+          "total_size": 1206,
+          "wasted_space": 1206
+        },
+        {
+          "hash": "0cf3f821874e1fcc8e064dfaaef0b67e",
+          "files": [
+            "archive/old-html/AvalonNodeIntegration.js",
+            "src/AvalonNodeIntegration.js"
+          ],
+          "count": 2,
+          "size_each": 23362,
+          "total_size": 46724,
+          "wasted_space": 46724
+        },
+        {
+          "hash": "08171e2d8baca1cecded9af8e18d5b75",
+          "files": [
+            "archive/old-html/AvalonRealmEngine.js",
+            "src/AvalonRealmEngine.js"
+          ],
+          "count": 2,
+          "size_each": 17780,
+          "total_size": 35560,
+          "wasted_space": 35560
+        },
+        {
+          "hash": "d77ba427c5df8ba167732c07b9d7529f",
+          "files": [
+            "archive/old-html/MorganLeFay.js",
+            "src/MorganLeFay.js"
+          ],
+          "count": 2,
+          "size_each": 15222,
+          "total_size": 30444,
+          "wasted_space": 30444
+        },
+        {
+          "hash": "e5ea425fa719f08dcda11d18e5f8bd98",
+          "files": [
+            "archive/old-html/TarotCreatureSystem.js",
+            "src/TarotCreatureSystem.js"
+          ],
+          "count": 2,
+          "size_each": 20721,
+          "total_size": 41442,
+          "wasted_space": 41442
+        },
+        {
+          "hash": "023ffab8fa556219daa3195f7e10efae",
+          "files": [
+            "archive/old-html/arcana-alumni-gallery.html",
+            "public/demos/arcana-alumni-gallery.html"
+          ],
+          "count": 2,
+          "size_each": 43851,
+          "total_size": 87702,
+          "wasted_space": 87702
+        },
+        {
+          "hash": "51f83a2a7519edd4f7ccb6dc5a693b92",
+          "files": [
+            "archive/old-html/archetypal-dice-racing-styles.css",
+            "assets/archetypal-dice-racing-styles.css"
+          ],
+          "count": 2,
+          "size_each": 12441,
+          "total_size": 24882,
+          "wasted_space": 24882
+        },
+        {
+          "hash": "0e66ad19626a6e34225edb81d61345c8",
+          "files": [
+            "archive/old-html/archetypal-merkaba-dice-racer.js",
+            "src/archetypal-merkaba-dice-racer.js"
+          ],
+          "count": 2,
+          "size_each": 17654,
+          "total_size": 35308,
+          "wasted_space": 35308
+        },
+        {
+          "hash": "6358c4becfe1e0d6e9528233303c9939",
+          "files": [
+            "archive/old-html/archetypal-voices.js",
+            "src/archetypal-voices.js"
+          ],
+          "count": 2,
+          "size_each": 5963,
+          "total_size": 11926,
+          "wasted_space": 11926
+        },
+        {
+          "hash": "71c02883ff52a94b67e36b8b79520281",
+          "files": [
+            "archive/old-html/authentic-alice-experience.js",
+            "public/demos/authentic-alice-experience.js"
+          ],
+          "count": 2,
+          "size_each": 17572,
+          "total_size": 35144,
+          "wasted_space": 35144
+        },
+        {
+          "hash": "afc779065bd0ed4cdef249ba7b1c8f6e",
+          "files": [
+            "archive/old-html/book-game-launcher.js",
+            "src/book-game-launcher.js"
+          ],
+          "count": 2,
+          "size_each": 6747,
+          "total_size": 13494,
+          "wasted_space": 13494
+        },
+        {
+          "hash": "29497e60bd405856f8b00359799c65ae",
+          "files": [
+            "archive/old-html/cathedral-3d-engine.js",
+            "src/engines/cathedral-3d-engine.js"
+          ],
+          "count": 2,
+          "size_each": 14540,
+          "total_size": 29080,
+          "wasted_space": 29080
+        },
+        {
+          "hash": "df350a0b1c83242b5a6f41027b32b655",
+          "files": [
+            "archive/old-html/cathedral-game.html",
+            "public/demos/cathedral-game.html"
+          ],
+          "count": 2,
+          "size_each": 15863,
+          "total_size": 31726,
+          "wasted_space": 31726
+        },
+        {
+          "hash": "b2425617dbf00dc8a922b90f41387394",
+          "files": [
+            "archive/old-html/cathedral-interactive.html",
+            "public/demos/cathedral-interactive.html"
+          ],
+          "count": 2,
+          "size_each": 23326,
+          "total_size": 46652,
+          "wasted_space": 46652
+        },
+        {
+          "hash": "da32726659a1e148853fec4466890efc",
+          "files": [
+            "archive/old-html/cathedral-narrative-engine.js",
+            "src/engines/cathedral-narrative-engine.js"
+          ],
+          "count": 2,
+          "size_each": 9165,
+          "total_size": 18330,
+          "wasted_space": 18330
+        },
+        {
+          "hash": "09de895d571a213f504cbe8b7bf85a24",
+          "files": [
+            "archive/old-html/cathedral-node-data-connector.js",
+            "src/cathedral-node-data-connector.js"
+          ],
+          "count": 2,
+          "size_each": 18283,
+          "total_size": 36566,
+          "wasted_space": 36566
+        },
+        {
+          "hash": "cac9260d85c546833cd4725823e7903e",
+          "files": [
+            "archive/old-html/cathedral-stradivarius-orchestrator.js",
+            "src/cathedral-stradivarius-orchestrator.js"
+          ],
+          "count": 2,
+          "size_each": 21185,
+          "total_size": 42370,
+          "wasted_space": 42370
+        },
+        {
+          "hash": "d561815b180b94254b71c4feefd4f75e",
+          "files": [
+            "archive/old-html/cathedral-toggle-system.js",
+            "src/systems/cathedral-toggle-system.js"
+          ],
+          "count": 2,
+          "size_each": 10497,
+          "total_size": 20994,
+          "wasted_space": 20994
+        },
+        {
+          "hash": "3d49e503d22398a988b3b9a9c00677c0",
+          "files": [
+            "archive/old-html/cathedral-unified-system.js",
+            "src/systems/cathedral-unified-system.js"
+          ],
+          "count": 2,
+          "size_each": 20121,
+          "total_size": 40242,
+          "wasted_space": 40242
+        },
+        {
+          "hash": "7124baa212467674a8f727bd30647bfa",
+          "files": [
+            "archive/old-html/circuitum99-alpha-et-omega.html",
+            "public/demos/circuitum99-alpha-et-omega.html"
+          ],
+          "count": 2,
+          "size_each": 22130,
+          "total_size": 44260,
+          "wasted_space": 44260
+        },
+        {
+          "hash": "622c580da312eab8f4babe81e1ea1f90",
+          "files": [
+            "archive/old-html/complete-arcana-alumni-gallery.html",
+            "public/demos/complete-arcana-alumni-gallery.html"
+          ],
+          "count": 2,
+          "size_each": 45927,
+          "total_size": 91854,
+          "wasted_space": 91854
+        },
+        {
+          "hash": "41fd394d7a11f0f0f71a5e0cb1cc5578",
+          "files": [
+            "archive/old-html/connection-map.html",
+            "public/demos/connection-map.html"
+          ],
+          "count": 2,
+          "size_each": 50512,
+          "total_size": 101024,
+          "wasted_space": 101024
+        },
+        {
+          "hash": "2768579c2f28cc4fc88e5ed6186d5fa8",
+          "files": [
+            "archive/old-html/creative-ui.js",
+            "src/creative-ui.js"
+          ],
+          "count": 2,
+          "size_each": 11060,
+          "total_size": 22120,
+          "wasted_space": 22120
+        },
+        {
+          "hash": "2fb0b77e876a7ec0a3d5bff58ae15779",
+          "files": [
+            "archive/old-html/dice-merkaba-system.js",
+            "src/systems/dice-merkaba-system.js"
+          ],
+          "count": 2,
+          "size_each": 22706,
+          "total_size": 45412,
+          "wasted_space": 45412
+        },
+        {
+          "hash": "a4260850bda592e52072e826a2646239",
+          "files": [
+            "archive/old-html/external-repo-connector.js",
+            "src/external-repo-connector.js"
+          ],
+          "count": 2,
+          "size_each": 5457,
+          "total_size": 10914,
+          "wasted_space": 10914
+        },
+        {
+          "hash": "1e34aa44cf334356494a44b3991bcc2c",
+          "files": [
+            "archive/old-html/index.js",
+            "src/index.js"
+          ],
+          "count": 2,
+          "size_each": 3736,
+          "total_size": 7472,
+          "wasted_space": 7472
+        },
+        {
+          "hash": "a8b5ace8282ec6b75e67db68a5adffb7",
+          "files": [
+            "archive/old-html/liber-arcanae-living-arcana-deck.html",
+            "public/demos/liber-arcanae-living-arcana-deck.html"
+          ],
+          "count": 2,
+          "size_each": 18980,
+          "total_size": 37960,
+          "wasted_space": 37960
+        },
+        {
+          "hash": "f3a0a4d9da1643114a8ff686a4a17cd8",
+          "files": [
+            "archive/old-html/magical-mystery-house.html",
+            "public/demos/magical-mystery-house.html"
+          ],
+          "count": 2,
+          "size_each": 18736,
+          "total_size": 37472,
+          "wasted_space": 37472
+        },
+        {
+          "hash": "3db9f58de3fe66fee46cf63ecef6e4bb",
+          "files": [
+            "archive/old-html/museum-quality-resource-system.js",
+            "src/systems/museum-quality-resource-system.js"
+          ],
+          "count": 2,
+          "size_each": 25619,
+          "total_size": 51238,
+          "wasted_space": 51238
+        },
+        {
+          "hash": "945acbe3d8d76d96ffc7ab1d6cf49694",
+          "files": [
+            "archive/old-html/validate-ownership.js",
+            "tools/validate-ownership.js"
+          ],
+          "count": 2,
+          "size_each": 3218,
+          "total_size": 6436,
+          "wasted_space": 6436
+        },
+        {
+          "hash": "e86d3df87cfd026618a36a8ed7530648",
+          "files": [
+            "archive/old-html/validate-turbo-config.js",
+            "tools/validate-turbo-config.js"
+          ],
+          "count": 2,
+          "size_each": 2546,
+          "total_size": 5092,
+          "wasted_space": 5092
+        },
+        {
+          "hash": "25214e6e9fbb5899af26e2d74e89a312",
+          "files": [
+            "assets/covers/photo 2.png",
+            "assets-clean/covers/photo 2.png"
+          ],
+          "count": 2,
+          "size_each": 2755942,
+          "total_size": 5511884,
+          "wasted_space": 5511884
+        },
+        {
+          "hash": "2591b8013f7ecbf004dc39716f9f1045",
+          "files": [
+            "assets/covers/photo-2 2.png",
+            "assets-clean/covers/photo-2 2.png"
+          ],
+          "count": 2,
+          "size_each": 3135527,
+          "total_size": 6271054,
+          "wasted_space": 6271054
+        },
+        {
+          "hash": "4d3dacbee49fe40c4f6ce08b5281e061",
+          "files": [
+            "assets/covers/photo-3 2.png",
+            "assets-clean/covers/photo-3 2.png"
+          ],
+          "count": 2,
+          "size_each": 2920186,
+          "total_size": 5840372,
+          "wasted_space": 5840372
+        },
+        {
+          "hash": "5f6eda2241f1afbff74aa03ba0d7845e",
+          "files": [
+            "assets/covers/photo-4 2.png",
+            "assets-clean/covers/photo-4 2.png"
+          ],
+          "count": 2,
+          "size_each": 3207998,
+          "total_size": 6415996,
+          "wasted_space": 6415996
+        },
+        {
+          "hash": "9b415f066d941a1e1be3d548c9fb40f9",
+          "files": [
+            "cathedral-backup-system.sh",
+            "scripts/cathedral-backup-system.sh"
+          ],
+          "count": 2,
+          "size_each": 9920,
+          "total_size": 19840,
+          "wasted_space": 19840
+        },
+        {
+          "hash": "6c54d41e1f98ff42de1f8c64b6eed87d",
+          "files": [
+            "cathedral-cleanup-and-archive.sh",
+            "scripts/cathedral-cleanup-and-archive.sh"
+          ],
+          "count": 2,
+          "size_each": 3986,
+          "total_size": 7972,
+          "wasted_space": 7972
+        },
+        {
+          "hash": "d71be1dbcf562e18415b7863d3f74919",
+          "files": [
+            "codex-144-expanded.json",
+            "config/codex-144-expanded.json",
+            "data/codex-144-expanded.json"
+          ],
+          "count": 3,
+          "size_each": 24210,
+          "total_size": 72630,
+          "wasted_space": 145260
+        },
+        {
+          "hash": "529424db444fafd0b3bff5810719b5fd",
+          "files": [
+            "codex-arcanae-mirror.json",
+            "data/codex-arcanae-mirror.json"
+          ],
+          "count": 2,
+          "size_each": 16502,
+          "total_size": 33004,
+          "wasted_space": 33004
+        },
+        {
+          "hash": "2f15b68a38407571eb722382da2f7b99",
+          "files": [
+            "complete-arcana-profiles.json",
+            "config/complete-arcana-profiles.json",
+            "data/complete-arcana-profiles.json"
+          ],
+          "count": 3,
+          "size_each": 14573,
+          "total_size": 43719,
+          "wasted_space": 87438
+        },
+        {
+          "hash": "4ebdee309104d0b32c53ee00b2a2f6d8",
+          "files": [
+            "config/fly.toml",
+            "fly.toml"
+          ],
+          "count": 2,
+          "size_each": 239,
+          "total_size": 478,
+          "wasted_space": 478
+        },
+        {
+          "hash": "95440842c7c7ac6e0b3862914e03f91d",
+          "files": [
+            "config/grimoire_concepts.json",
+            "grimoire_concepts.json"
+          ],
+          "count": 2,
+          "size_each": 7946,
+          "total_size": 15892,
+          "wasted_space": 15892
+        },
+        {
+          "hash": "ce7aceee054d406f4d7906353b1f2610",
+          "files": [
+            "config/nx.json",
+            "nx.json"
+          ],
+          "count": 2,
+          "size_each": 2317,
+          "total_size": 4634,
+          "wasted_space": 4634
+        },
+        {
+          "hash": "23656c0ff42e3732afe919db54cf422c",
+          "files": [
+            "config/pnpm-workspace.yaml",
+            "pnpm-workspace.yaml"
+          ],
+          "count": 2,
+          "size_each": 84,
+          "total_size": 168,
+          "wasted_space": 168
+        },
+        {
+          "hash": "0290692cf80e2657a23e54f92e233857",
+          "files": [
+            "config/repos-to-import.json",
+            "repos-to-import.json"
+          ],
+          "count": 2,
+          "size_each": 965,
+          "total_size": 1930,
+          "wasted_space": 1930
+        },
+        {
+          "hash": "204ece0a434370abf886432a7679bef6",
+          "files": [
+            "config/tsconfig.base.json",
+            "tsconfig.base.json"
+          ],
+          "count": 2,
+          "size_each": 1300,
+          "total_size": 2600,
+          "wasted_space": 2600
+        },
+        {
+          "hash": "3d5937df98a5e0b7501bf08cafdee48a",
+          "files": [
+            "config/tsconfig.json",
+            "tsconfig.json"
+          ],
+          "count": 2,
+          "size_each": 1464,
+          "total_size": 2928,
+          "wasted_space": 2928
+        },
+        {
+          "hash": "cb9842ef19cb57cef7b1c98e9aa39809",
+          "files": [
+            "config/wrangler.toml",
+            "wrangler.toml"
+          ],
+          "count": 2,
+          "size_each": 994,
+          "total_size": 1988,
+          "wasted_space": 1988
+        },
+        {
+          "hash": "1bf4bc423461c4728b850efad705f22d",
+          "files": [
+            "data/mcp-permanent-dataset.json",
+            "mcp-permanent-dataset.json"
+          ],
+          "count": 2,
+          "size_each": 57483,
+          "total_size": 114966,
+          "wasted_space": 114966
+        },
+        {
+          "hash": "8ec10eb40ce094859d6706fc1cb92793",
+          "files": [
+            "data/node-registry-complete.json",
+            "node-registry-complete.json"
+          ],
+          "count": 2,
+          "size_each": 11535,
+          "total_size": 23070,
+          "wasted_space": 23070
+        },
+        {
+          "hash": "f124293bb7dc38c4d8cb27b7e91bac25",
+          "files": [
+            "data/palette.json",
+            "palette.json"
+          ],
+          "count": 2,
+          "size_each": 3470,
+          "total_size": 6940,
+          "wasted_space": 6940
+        },
+        {
+          "hash": "cfbc9694ea07013de2aa6d914e69477f",
+          "files": [
+            "data/pigments-database.json",
+            "pigments-database.json"
+          ],
+          "count": 2,
+          "size_each": 6366,
+          "total_size": 12732,
+          "wasted_space": 12732
+        },
+        {
+          "hash": "1ca8677e12a1c9ca1b09e6b25abbe04a",
+          "files": [
+            "data/quality-guardian-registry.json",
+            "quality-guardian-registry.json"
+          ],
+          "count": 2,
+          "size_each": 12325,
+          "total_size": 24650,
+          "wasted_space": 24650
+        },
+        {
+          "hash": "78fe89227fdf5f79b1b0c4a2bfb5756c",
+          "files": [
+            "data/research-sources.json",
+            "research-sources.json"
+          ],
+          "count": 2,
+          "size_each": 12277,
+          "total_size": 24554,
+          "wasted_space": 24554
+        },
+        {
+          "hash": "12efa18d865c95868f5f9118841da29e",
+          "files": [
+            "data/trinity-architecture.json",
+            "trinity-architecture.json"
+          ],
+          "count": 2,
+          "size_each": 2665,
+          "total_size": 5330,
+          "wasted_space": 5330
+        },
+        {
+          "hash": "9a4210019392472202558facb1c790ec",
+          "files": [
+            "data-integrity-check.sh",
+            "scripts/data-integrity-check.sh"
+          ],
+          "count": 2,
+          "size_each": 5117,
+          "total_size": 10234,
+          "wasted_space": 10234
+        },
+        {
+          "hash": "a3186082ea18f75fdd13be4d24c56eca",
+          "files": [
+            "docs/ACCESSIBILITY_AND_MEMORY_SUPPORT.md",
+            "docs/development/ACCESSIBILITY_AND_MEMORY_SUPPORT.md"
+          ],
+          "count": 2,
+          "size_each": 9586,
+          "total_size": 19172,
+          "wasted_space": 19172
+        },
+        {
+          "hash": "c564768cfc420af3fc5d0dd21743cb96",
+          "files": [
+            "docs/AGENT_MEMORY_REMINDER.md",
+            "docs/agent-docs/AGENT_MEMORY_REMINDER.md"
+          ],
+          "count": 2,
+          "size_each": 813,
+          "total_size": 1626,
+          "wasted_space": 1626
+        },
+        {
+          "hash": "ebb6cc7781a01832a2a4b8e3c8be27fc",
+          "files": [
+            "docs/architecture/CATHEDRAL_ARCHITECTURE.md",
+            "docs/specs/CATHEDRAL_ARCHITECTURE.md"
+          ],
+          "count": 2,
+          "size_each": 3678,
+          "total_size": 7356,
+          "wasted_space": 7356
+        },
+        {
+          "hash": "3eced000f82dc3e7bdd7d8f2ff9901c8",
+          "files": [
+            "docs/master/MASTER_ARCHETYPAL_NODES_ARCHITECTURE.md",
+            "docs/specs/MASTER_ARCHETYPAL_NODES_ARCHITECTURE.md"
+          ],
+          "count": 2,
+          "size_each": 16624,
+          "total_size": 33248,
+          "wasted_space": 33248
+        },
+        {
+          "hash": "d082d79f64e285c8b32978a6762a6da5",
+          "files": [
+            "docs/specs/CATHEDRAL_ERROR_PREVENTION_SYSTEM.md",
+            "docs/systems/CATHEDRAL_ERROR_PREVENTION_SYSTEM.md"
+          ],
+          "count": 2,
+          "size_each": 4157,
+          "total_size": 8314,
+          "wasted_space": 8314
+        },
+        {
+          "hash": "d870e5915e48eb443f849255b7ae9dee",
+          "files": [
+            "docs/specs/CATHEDRAL_STRUCTURE_MAP.md",
+            "docs/systems/CATHEDRAL_STRUCTURE_MAP.md"
+          ],
+          "count": 2,
+          "size_each": 5570,
+          "total_size": 11140,
+          "wasted_space": 11140
+        },
+        {
+          "hash": "6f1bf89b2dbb8944c4c520ed8f059cc5",
+          "files": [
+            "docs/specs/CATHEDRAL_TRINITY_NAMING_SYSTEM.md",
+            "docs/standards/CATHEDRAL_TRINITY_NAMING_SYSTEM.md"
+          ],
+          "count": 2,
+          "size_each": 8907,
+          "total_size": 17814,
+          "wasted_space": 17814
+        },
+        {
+          "hash": "7134dc7f6b3634ce25d0fbeb1004d032",
+          "files": [
+            "docs/specs/CATHEDRAL_UNIFIED_REGISTRY.md",
+            "docs/systems/CATHEDRAL_UNIFIED_REGISTRY.md"
+          ],
+          "count": 2,
+          "size_each": 2272,
+          "total_size": 4544,
+          "wasted_space": 4544
+        },
+        {
+          "hash": "0d2100560fc7ca6548cc8feac84758e9",
+          "files": [
+            "modular-safety-system.py",
+            "tools/modular-safety-system.py"
+          ],
+          "count": 2,
+          "size_each": 5620,
+          "total_size": 11240,
+          "wasted_space": 11240
+        },
+        {
+          "hash": "81806611ae0375b5b8c9b6a9d03bfb7c",
+          "files": [
+            "naming-audit.sh",
+            "scripts/naming-audit.sh"
+          ],
+          "count": 2,
+          "size_each": 2214,
+          "total_size": 4428,
+          "wasted_space": 4428
+        },
+        {
+          "hash": "7d16fead224b8b4fb1cd82e86e04a262",
+          "files": [
+            "night-harmonics.sh",
+            "scripts/night-harmonics.sh"
+          ],
+          "count": 2,
+          "size_each": 3068,
+          "total_size": 6136,
+          "wasted_space": 6136
+        },
+        {
+          "hash": "fdf4d3c6d48616d613a99773ce2e4c00",
+          "files": [
+            "packages/brain/tsconfig.json",
+            "packages/crystals/tsconfig.json",
+            "packages/labs/tsconfig.json",
+            "packages/shared/tsconfig.json",
+            "packages/soul/tsconfig.json",
+            "packages/synth/tsconfig.json"
+          ],
+          "count": 6,
+          "size_each": 228,
+          "total_size": 1368,
+          "wasted_space": 6840
+        },
+        {
+          "hash": "bf1c91a13b2152bd4b2863c4ee30e15c",
+          "files": [
+            "packages/cathedral-fusion-kink-engine/tsconfig.json",
+            "packages/cathedral-symbolic-libraries/tsconfig.json",
+            "packages/liber-arcanae/tsconfig.json"
+          ],
+          "count": 3,
+          "size_each": 848,
+          "total_size": 2544,
+          "wasted_space": 5088
+        },
+        {
+          "hash": "c4d108fdff55f9de0029c412531657f0",
+          "files": [
+            "packages/circuitum99/tsconfig.json",
+            "packages/core/tsconfig.json",
+            "packages/cosmogenesis-learning-engine/tsconfig.json",
+            "packages/luxcrux/tsconfig.json",
+            "packages/magical-mystery-house/tsconfig.json",
+            "packages/stone-grimoire/tsconfig.json",
+            "packages/tesseract-bridge/tsconfig.json"
+          ],
+          "count": 7,
+          "size_each": 192,
+          "total_size": 1344,
+          "wasted_space": 8064
+        },
+        {
+          "hash": "e972840e8cf7698d78d582dffd6a63bc",
+          "files": [
+            "plutonian_backup_ritual.sh",
+            "scripts/plutonian_backup_ritual.sh"
+          ],
+          "count": 2,
+          "size_each": 2444,
+          "total_size": 4888,
+          "wasted_space": 4888
+        },
+        {
+          "hash": "c6312bd2348ceacb90cfd59522ca2394",
+          "files": [
+            "scorpio_file_organization.sh",
+            "scripts/scorpio_file_organization.sh"
+          ],
+          "count": 2,
+          "size_each": 4255,
+          "total_size": 8510,
+          "wasted_space": 8510
+        },
+        {
+          "hash": "76d010cf01fd8596eb2aacd126e21057",
+          "files": [
+            "scripts/add_codebot_guardrails.sh",
+            "tools/automation/add_codebot_guardrails.sh"
+          ],
+          "count": 2,
+          "size_each": 5733,
+          "total_size": 11466,
+          "wasted_space": 11466
+        },
+        {
+          "hash": "93e285449c9dacc5a5ef072d571c437f",
+          "files": [
+            "scripts/add_tesseract_module.sh",
+            "tools/automation/add_tesseract_module.sh"
+          ],
+          "count": 2,
+          "size_each": 15516,
+          "total_size": 31032,
+          "wasted_space": 31032
+        },
+        {
+          "hash": "7584b9392bf15e0cdc1749250488c4ab",
+          "files": [
+            "scripts/setup-cathedral-ecosystem.sh",
+            "setup-cathedral-ecosystem.sh"
+          ],
+          "count": 2,
+          "size_each": 18140,
+          "total_size": 36280,
+          "wasted_space": 36280
+        },
+        {
+          "hash": "0d54d37b7a1a0c40c40a58ab8ecd9f49",
+          "files": [
+            "tools/cleanup/remove-paid-services.cjs",
+            "tools/cleanup/remove-paid-services.js"
+          ],
+          "count": 2,
+          "size_each": 3886,
+          "total_size": 7772,
+          "wasted_space": 7772
+        },
+        {
+          "hash": "e830d995aca6fa29c163705da202ca8a",
+          "files": [
+            "tools/vault.py",
+            "vault.py"
+          ],
+          "count": 2,
+          "size_each": 5563,
+          "total_size": 11126,
+          "wasted_space": 11126
+        }
+      ],
+      "spam_files": [
+        {
+          "path": "FRACTAL_FLAMES_INTEGRATION_MASTER 2.md",
+          "name": "FRACTAL_FLAMES_INTEGRATION_MASTER 2.md",
+          "size": 5770,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "HARMONIC_CONVERGENCE_SLEEP 2.md",
+          "name": "HARMONIC_CONVERGENCE_SLEEP 2.md",
+          "size": 4183,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "LIVING_CONNECTION_MAPS 2.md",
+          "name": "LIVING_CONNECTION_MAPS 2.md",
+          "size": 5814,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "PLUTO_CODEX_MASTER_STATUS 2.md",
+          "name": "PLUTO_CODEX_MASTER_STATUS 2.md",
+          "size": 7128,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "QUICK_START_MAP 2.md",
+          "name": "QUICK_START_MAP 2.md",
+          "size": 4242,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "REAL_REPOSITORY_HIGHWAY_SYSTEM 2.md",
+          "name": "REAL_REPOSITORY_HIGHWAY_SYSTEM 2.md",
+          "size": 3893,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "SCALABILITY_MASTER_SYSTEM 2.md",
+          "name": "SCALABILITY_MASTER_SYSTEM 2.md",
+          "size": 18552,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "SPDX-HEADERS 2.md",
+          "name": "SPDX-HEADERS 2.md",
+          "size": 3416,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "_headers 2",
+          "name": "_headers 2",
+          "size": 290,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "apps/test-ground/README.md",
+          "name": "README.md",
+          "size": 793,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "apps/test-ground/index.html",
+          "name": "index.html",
+          "size": 309,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "apps/test-ground/package.json",
+          "name": "package.json",
+          "size": 424,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "apps/test-ground/src/index.tsx",
+          "name": "index.tsx",
+          "size": 2612,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "apps/test-ground/tsconfig.json",
+          "name": "tsconfig.json",
+          "size": 398,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "apps/test-ground/vite.config.ts",
+          "name": "vite.config.ts",
+          "size": 603,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/ARCHIVE_DOCUMENTATION 2.md",
+          "name": "ARCHIVE_DOCUMENTATION 2.md",
+          "size": 2667,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "archive/ARCHIVE_DOCUMENTATION.md",
+          "name": "ARCHIVE_DOCUMENTATION.md",
+          "size": 2647,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/CATHEDRAL_TRINITY_BODY_MIND_SOUL_INTEGRATION 2.md",
+          "name": "CATHEDRAL_TRINITY_BODY_MIND_SOUL_INTEGRATION 2.md",
+          "size": 9123,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "archive/CATHEDRAL_TRINITY_BODY_MIND_SOUL_INTEGRATION.md",
+          "name": "CATHEDRAL_TRINITY_BODY_MIND_SOUL_INTEGRATION.md",
+          "size": 9093,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/CATHEDRAL_TRINITY_COMPLETE_PACKAGE 2.md",
+          "name": "CATHEDRAL_TRINITY_COMPLETE_PACKAGE 2.md",
+          "size": 7117,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "archive/CATHEDRAL_TRINITY_COMPLETE_PACKAGE.md",
+          "name": "CATHEDRAL_TRINITY_COMPLETE_PACKAGE.md",
+          "size": 7066,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/CATHEDRAL_TRINITY_STATUS_PORTAL_SYSTEM 2.md",
+          "name": "CATHEDRAL_TRINITY_STATUS_PORTAL_SYSTEM 2.md",
+          "size": 11768,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "archive/CATHEDRAL_TRINITY_STATUS_PORTAL_SYSTEM.md",
+          "name": "CATHEDRAL_TRINITY_STATUS_PORTAL_SYSTEM.md",
+          "size": 11781,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/CODEX_EXT_RUNBOOK 2.md",
+          "name": "CODEX_EXT_RUNBOOK 2.md",
+          "size": 10247,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "archive/CODEX_EXT_RUNBOOK.md",
+          "name": "CODEX_EXT_RUNBOOK.md",
+          "size": 10255,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/COSMOGENESIS_NOVA_ELEGANTIA_DESIGN 2.md",
+          "name": "COSMOGENESIS_NOVA_ELEGANTIA_DESIGN 2.md",
+          "size": 8869,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "archive/COSMOGENESIS_NOVA_ELEGANTIA_DESIGN.md",
+          "name": "COSMOGENESIS_NOVA_ELEGANTIA_DESIGN.md",
+          "size": 8828,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/AvalonNodeIntegration.js",
+          "name": "AvalonNodeIntegration.js",
+          "size": 23362,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/AvalonRealmEngine.js",
+          "name": "AvalonRealmEngine.js",
+          "size": 17780,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/MorganLeFay.js",
+          "name": "MorganLeFay.js",
+          "size": 15222,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/TarotCreatureSystem.js",
+          "name": "TarotCreatureSystem.js",
+          "size": 20721,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/arcana-alumni-gallery.html",
+          "name": "arcana-alumni-gallery.html",
+          "size": 43851,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/archetypal-dice-racing-styles.css",
+          "name": "archetypal-dice-racing-styles.css",
+          "size": 12441,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/archetypal-merkaba-dice-racer.js",
+          "name": "archetypal-merkaba-dice-racer.js",
+          "size": 17654,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/archetypal-voices.js",
+          "name": "archetypal-voices.js",
+          "size": 5963,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/authentic-alice-experience.js",
+          "name": "authentic-alice-experience.js",
+          "size": 17572,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/book-game-launcher.js",
+          "name": "book-game-launcher.js",
+          "size": 6747,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/cathedral-3d-engine.js",
+          "name": "cathedral-3d-engine.js",
+          "size": 14540,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/cathedral-game.html",
+          "name": "cathedral-game.html",
+          "size": 15863,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/cathedral-interactive.html",
+          "name": "cathedral-interactive.html",
+          "size": 23326,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/cathedral-narrative-engine.js",
+          "name": "cathedral-narrative-engine.js",
+          "size": 9165,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/cathedral-node-data-connector.js",
+          "name": "cathedral-node-data-connector.js",
+          "size": 18283,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/cathedral-of-circuits-main-platform.html",
+          "name": "cathedral-of-circuits-main-platform.html",
+          "size": 107777,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/cathedral-stradivarius-orchestrator.js",
+          "name": "cathedral-stradivarius-orchestrator.js",
+          "size": 21185,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/cathedral-toggle-system.js",
+          "name": "cathedral-toggle-system.js",
+          "size": 10497,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/cathedral-unified-system.js",
+          "name": "cathedral-unified-system.js",
+          "size": 20121,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/circuitum99-alpha-et-omega.html",
+          "name": "circuitum99-alpha-et-omega.html",
+          "size": 22130,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/complete-arcana-alumni-gallery.html",
+          "name": "complete-arcana-alumni-gallery.html",
+          "size": 45927,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/connection-map.html",
+          "name": "connection-map.html",
+          "size": 50512,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/cosmogenesis-learning-engine.html",
+          "name": "cosmogenesis-learning-engine.html",
+          "size": 18296,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/creative-engine.js",
+          "name": "creative-engine.js",
+          "size": 27873,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/creative-ui.js",
+          "name": "creative-ui.js",
+          "size": 11060,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/dice-merkaba-system.js",
+          "name": "dice-merkaba-system.js",
+          "size": 22706,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/external-repo-connector.js",
+          "name": "external-repo-connector.js",
+          "size": 5457,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/index-clean.html",
+          "name": "index-clean.html",
+          "size": 23455,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/index.html",
+          "name": "index.html",
+          "size": 402163,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/index.js",
+          "name": "index.js",
+          "size": 3736,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/liber-arcanae-living-arcana-deck.html",
+          "name": "liber-arcanae-living-arcana-deck.html",
+          "size": 18980,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/magical-mystery-house.html",
+          "name": "magical-mystery-house.html",
+          "size": 18736,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/master-archetypal-integration.js",
+          "name": "master-archetypal-integration.js",
+          "size": 16534,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/museum-quality-resource-system.js",
+          "name": "museum-quality-resource-system.js",
+          "size": 25619,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/server.js",
+          "name": "server.js",
+          "size": 12949,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/test-azure-mcp.js",
+          "name": "test-azure-mcp.js",
+          "size": 4366,
+          "reason": "Test/debug file"
+        },
+        {
+          "path": "archive/old-html/validate-ownership.js",
+          "name": "validate-ownership.js",
+          "size": 3218,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/old-html/validate-turbo-config.js",
+          "name": "validate-turbo-config.js",
+          "size": 2546,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/patches/add-external-demo-and-pr.patch",
+          "name": "add-external-demo-and-pr.patch",
+          "size": 4225,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/recycled-code/README-old.md",
+          "name": "README-old.md",
+          "size": 4038,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/recycled-code/circuitum99-placeholder.md",
+          "name": "circuitum99-placeholder.md",
+          "size": 39,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/recycled-code/cosmogenesis-engine-complete.html",
+          "name": "cosmogenesis-engine-complete.html",
+          "size": 21051,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/recycled-code/cosmogenesis-learning-engine-placeholder.md",
+          "name": "cosmogenesis-learning-engine-placeholder.md",
+          "size": 56,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/recycled-code/cosmogenesis-nova-elegantia-complete.html",
+          "name": "cosmogenesis-nova-elegantia-complete.html",
+          "size": 91866,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/recycled-code/git-test.txt",
+          "name": "git-test.txt",
+          "size": 38,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/recycled-code/liber-arcanae-placeholder.md",
+          "name": "liber-arcanae-placeholder.md",
+          "size": 41,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/recycled-code/lumina-keys-complete.html",
+          "name": "lumina-keys-complete.html",
+          "size": 29230,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/recycled-code/luxcrux-placeholder.md",
+          "name": "luxcrux-placeholder.md",
+          "size": 35,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/recycled-code/magical-mystery-house-placeholder.md",
+          "name": "magical-mystery-house-placeholder.md",
+          "size": 49,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/recycled-code/package-old.json",
+          "name": "package-old.json",
+          "size": 2911,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/recycled-code/pigment-test.html",
+          "name": "pigment-test.html",
+          "size": 11036,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/recycled-code/stone-grimoire-placeholder.md",
+          "name": "stone-grimoire-placeholder.md",
+          "size": 42,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/recycled-code/tesseract-bridge-placeholder.md",
+          "name": "tesseract-bridge-placeholder.md",
+          "size": 44,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "archive/temp-files/_tmp_14486_5203782ff301f24c13b2f44a82bc0611",
+          "name": "_tmp_14486_5203782ff301f24c13b2f44a82bc0611",
+          "size": 0,
+          "reason": "Temporary file"
+        },
+        {
+          "path": "assets/ateliers/atelier_geometry_michael 2.png",
+          "name": "atelier_geometry_michael 2.png",
+          "size": 0,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets/covers/photo 2.png",
+          "name": "photo 2.png",
+          "size": 2755942,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets/covers/photo-2 2.png",
+          "name": "photo-2 2.png",
+          "size": 3135527,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets/covers/photo-3 2.png",
+          "name": "photo-3 2.png",
+          "size": 2920186,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets/covers/photo-4 2.png",
+          "name": "photo-4 2.png",
+          "size": 3207998,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets/covers/test_lfs 2.png",
+          "name": "test_lfs 2.png",
+          "size": 0,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/IMG_2608 2.webp",
+          "name": "IMG_2608 2.webp",
+          "size": 692748,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/IMG_2609 2.webp",
+          "name": "IMG_2609 2.webp",
+          "size": 637568,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/IMG_2642 2.png",
+          "name": "IMG_2642 2.png",
+          "size": 3451213,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-10 2.png",
+          "name": "photo-10 2.png",
+          "size": 2518795,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-11 2.png",
+          "name": "photo-11 2.png",
+          "size": 2732773,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-12 2.png",
+          "name": "photo-12 2.png",
+          "size": 3825605,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-13 2.png",
+          "name": "photo-13 2.png",
+          "size": 3215366,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-14 2.png",
+          "name": "photo-14 2.png",
+          "size": 2666812,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-15 2.png",
+          "name": "photo-15 2.png",
+          "size": 2855729,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-16 2.png",
+          "name": "photo-16 2.png",
+          "size": 2789961,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-17 2.png",
+          "name": "photo-17 2.png",
+          "size": 2268301,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-18 2.png",
+          "name": "photo-18 2.png",
+          "size": 3484338,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-19 2.png",
+          "name": "photo-19 2.png",
+          "size": 2489887,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-2 2.png",
+          "name": "photo-2 2.png",
+          "size": 2839492,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-20 2.png",
+          "name": "photo-20 2.png",
+          "size": 3523730,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-21 2.png",
+          "name": "photo-21 2.png",
+          "size": 3170213,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-22 2.png",
+          "name": "photo-22 2.png",
+          "size": 2746256,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-23 2.png",
+          "name": "photo-23 2.png",
+          "size": 2678942,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-24 2.png",
+          "name": "photo-24 2.png",
+          "size": 2933793,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-25 2.png",
+          "name": "photo-25 2.png",
+          "size": 2423893,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-26 2.png",
+          "name": "photo-26 2.png",
+          "size": 3576884,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-27 2.png",
+          "name": "photo-27 2.png",
+          "size": 2857522,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-28 2.png",
+          "name": "photo-28 2.png",
+          "size": 2757100,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-29 2.png",
+          "name": "photo-29 2.png",
+          "size": 3133084,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-3 2.png",
+          "name": "photo-3 2.png",
+          "size": 2703692,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-30 2.png",
+          "name": "photo-30 2.png",
+          "size": 3401602,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-31 2.png",
+          "name": "photo-31 2.png",
+          "size": 3773919,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-32 2.png",
+          "name": "photo-32 2.png",
+          "size": 2796717,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-33 2.png",
+          "name": "photo-33 2.png",
+          "size": 1542518,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-34 2.png",
+          "name": "photo-34 2.png",
+          "size": 3030616,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-35 2.png",
+          "name": "photo-35 2.png",
+          "size": 2759319,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-36 2.png",
+          "name": "photo-36 2.png",
+          "size": 2566563,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-37 2.png",
+          "name": "photo-37 2.png",
+          "size": 3503129,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-38 2.png",
+          "name": "photo-38 2.png",
+          "size": 3649309,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-39 2.png",
+          "name": "photo-39 2.png",
+          "size": 2826581,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-4 2.png",
+          "name": "photo-4 2.png",
+          "size": 2584535,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-40 2.png",
+          "name": "photo-40 2.png",
+          "size": 3818940,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-41 2.png",
+          "name": "photo-41 2.png",
+          "size": 4941550,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-42 2.png",
+          "name": "photo-42 2.png",
+          "size": 2504012,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-43 2.png",
+          "name": "photo-43 2.png",
+          "size": 2469707,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-44 2.png",
+          "name": "photo-44 2.png",
+          "size": 2589653,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-45 2.png",
+          "name": "photo-45 2.png",
+          "size": 2755283,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-46 2.png",
+          "name": "photo-46 2.png",
+          "size": 3697022,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-47 2.png",
+          "name": "photo-47 2.png",
+          "size": 3593861,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-48 2.png",
+          "name": "photo-48 2.png",
+          "size": 1824256,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-49 2.png",
+          "name": "photo-49 2.png",
+          "size": 3749153,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-5 2.png",
+          "name": "photo-5 2.png",
+          "size": 4529762,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-50 2.png",
+          "name": "photo-50 2.png",
+          "size": 3081462,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-51 2.png",
+          "name": "photo-51 2.png",
+          "size": 3704923,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-52 2.png",
+          "name": "photo-52 2.png",
+          "size": 3108218,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-53 2.png",
+          "name": "photo-53 2.png",
+          "size": 2645907,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-54 2.png",
+          "name": "photo-54 2.png",
+          "size": 3971210,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-55 2.png",
+          "name": "photo-55 2.png",
+          "size": 3939151,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-56 2.png",
+          "name": "photo-56 2.png",
+          "size": 3558698,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-57 2.png",
+          "name": "photo-57 2.png",
+          "size": 2847987,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-58 2.png",
+          "name": "photo-58 2.png",
+          "size": 3200317,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-59 2.png",
+          "name": "photo-59 2.png",
+          "size": 4019878,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-6 2.png",
+          "name": "photo-6 2.png",
+          "size": 4877962,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-60 2.png",
+          "name": "photo-60 2.png",
+          "size": 3957188,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-61 2.png",
+          "name": "photo-61 2.png",
+          "size": 3612364,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-62 2.png",
+          "name": "photo-62 2.png",
+          "size": 3341404,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-63 2.png",
+          "name": "photo-63 2.png",
+          "size": 3189977,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-64 2.png",
+          "name": "photo-64 2.png",
+          "size": 3965509,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-65 2.png",
+          "name": "photo-65 2.png",
+          "size": 3440374,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-66 2.png",
+          "name": "photo-66 2.png",
+          "size": 2412888,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-67 2.png",
+          "name": "photo-67 2.png",
+          "size": 4320986,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-7 2.png",
+          "name": "photo-7 2.png",
+          "size": 4685612,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/art/inbox/photo-8 2.png",
+          "name": "photo-8 2.png",
+          "size": 3065353,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/covers/photo 2.png",
+          "name": "photo 2.png",
+          "size": 2755942,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/covers/photo-2 2.png",
+          "name": "photo-2 2.png",
+          "size": 3135527,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/covers/photo-3 2.png",
+          "name": "photo-3 2.png",
+          "size": 2920186,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "assets-clean/covers/photo-4 2.png",
+          "name": "photo-4 2.png",
+          "size": 3207998,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "cathedral-cleanup-and-archive.sh",
+          "name": "cathedral-cleanup-and-archive.sh",
+          "size": 3986,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "design-suite/design_suite/__pycache__/templates.cpython-313.pyc",
+          "name": "templates.cpython-313.pyc",
+          "size": 2727,
+          "reason": "Temporary file"
+        },
+        {
+          "path": "design-suite/design_suite/templates.py",
+          "name": "templates.py",
+          "size": 2730,
+          "reason": "Temporary file"
+        },
+        {
+          "path": "openspec/changes/archive/2025-10-24-refactor-nested-repos/proposal.md",
+          "name": "proposal.md",
+          "size": 648,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "openspec/changes/archive/2025-10-24-refactor-nested-repos/specs/repository-structure/spec.md",
+          "name": "spec.md",
+          "size": 569,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "openspec/changes/archive/2025-10-24-refactor-nested-repos/tasks.md",
+          "name": "tasks.md",
+          "size": 302,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "packages/characters/character-template.json",
+          "name": "character-template.json",
+          "size": 1488,
+          "reason": "Temporary file"
+        },
+        {
+          "path": "packages/circuitum99/hilma-af-klint-temple.js",
+          "name": "hilma-af-klint-temple.js",
+          "size": 34702,
+          "reason": "Temporary file"
+        },
+        {
+          "path": "packages/circuitum99/safety-debug-system.js",
+          "name": "safety-debug-system.js",
+          "size": 22917,
+          "reason": "Test/debug file"
+        },
+        {
+          "path": "pnpm-lock 2.yaml",
+          "name": "pnpm-lock 2.yaml",
+          "size": 591491,
+          "reason": "Duplicate with \" 2\" suffix"
+        },
+        {
+          "path": "scripts/cathedral-cleanup-and-archive.sh",
+          "name": "cathedral-cleanup-and-archive.sh",
+          "size": 3986,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "scripts/detect-spam-duplicates.mjs",
+          "name": "detect-spam-duplicates.mjs",
+          "size": 8775,
+          "reason": "Contains \"duplicate\""
+        },
+        {
+          "path": "scripts/merge-local-folders.sh",
+          "name": "merge-local-folders.sh",
+          "size": 4446,
+          "reason": "Matches spam pattern"
+        },
+        {
+          "path": "scripts/test-foundry.sh",
+          "name": "test-foundry.sh",
+          "size": 3283,
+          "reason": "Test/debug file"
+        },
+        {
+          "path": "src/accessibility/accessibility-test-suite.js",
+          "name": "accessibility-test-suite.js",
+          "size": 16419,
+          "reason": "Test/debug file"
+        },
+        {
+          "path": "test-agent-connection.py",
+          "name": "test-agent-connection.py",
+          "size": 3306,
+          "reason": "Test/debug file"
+        }
+      ],
+      "large_files": [
+        {
+          "path": "ms-vscode.powershell-2025.4.0.vsix",
+          "size": 20672771,
+          "size_formatted": "19.7 MB",
+          "should_use_lfs": false
+        }
+      ],
+      "broken_symlinks": [],
+      "merge_conflicts": [
+        {
+          "path": "DATA_INTEGRITY_PACKAGE_SYSTEM.md",
+          "conflict_lines": [
+            13,
+            460
+          ]
+        },
+        {
+          "path": "apps/worker/src/index.ts",
+          "conflict_lines": [
+            58,
+            88,
+            129,
+            146,
+            163,
+            210
+          ]
+        },
+        {
+          "path": "archive/old-html/cathedral-stradivarius-orchestrator.js",
+          "conflict_lines": [
+            397
+          ]
+        },
+        {
+          "path": "archive/old-html/index.html",
+          "conflict_lines": [
+            1,
+            663,
+            869
+          ]
+        },
+        {
+          "path": "archive/old-html/server.js",
+          "conflict_lines": [
+            79,
+            120,
+            138,
+            164,
+            329
+          ]
+        },
+        {
+          "path": "archive/old-html/test-azure-mcp.js",
+          "conflict_lines": [
+            89
+          ]
+        },
+        {
+          "path": "archive/old-html/validate-ownership.js",
+          "conflict_lines": [
+            94
+          ]
+        },
+        {
+          "path": "archive/old-html/validate-turbo-config.js",
+          "conflict_lines": [
+            68
+          ]
+        },
+        {
+          "path": "automation-log.txt",
+          "conflict_lines": [
+            2,
+            7,
+            13
+          ]
+        },
+        {
+          "path": "docs/research/DATA_INTEGRITY_PACKAGE_SYSTEM.md",
+          "conflict_lines": [
+            13,
+            460
+          ]
+        },
+        {
+          "path": "js/graphics-engine.js",
+          "conflict_lines": [
+            276
+          ]
+        },
+        {
+          "path": "scripts/connect_modules.js",
+          "conflict_lines": [
+            361
+          ]
+        },
+        {
+          "path": "src/cathedral-stradivarius-orchestrator.js",
+          "conflict_lines": [
+            397
+          ]
+        },
+        {
+          "path": "src/server.js",
+          "conflict_lines": [
+            79,
+            120,
+            138,
+            164,
+            329
+          ]
+        },
+        {
+          "path": "tools/health-check.js",
+          "conflict_lines": [
+            14,
+            110
+          ]
+        },
+        {
+          "path": "tools/validate-ownership.js",
+          "conflict_lines": [
+            94
+          ]
+        },
+        {
+          "path": "tools/validate-turbo-config.js",
+          "conflict_lines": [
+            68
+          ]
+        },
+        {
+          "path": "turbo.json",
+          "conflict_lines": [
+            3,
+            14,
+            16
+          ]
+        },
+        {
+          "path": "ultimate-setup-log.txt",
+          "conflict_lines": [
+            2,
+            6
+          ]
+        }
+      ],
+      "unused_files": [],
+      "total_duplicates": 149,
+      "total_spam": 175,
+      "space_wasted": 27389056
+    }
+  },
+  "summary": {
+    "tools": {
+      "total": 24,
+      "categories": 5,
+      "executable": 24
+    },
+    "apps": {
+      "total": 5,
+      "ready": 0,
+      "technologies": 0,
+      "total_size_mb": 0
+    },
+    "branches": {
+      "local": 6,
+      "remote": 15,
+      "duplicates": 3,
+      "spam": 1
+    },
+    "cleanup": {
+      "duplicate_files": 149,
+      "spam_files": 175,
+      "space_wasted_mb": 26,
+      "merge_conflicts": 19
+    }
+  },
+  "recommendations": [
+    {
+      "priority": "medium",
+      "category": "apps",
+      "action": "Complete incomplete apps",
+      "description": "5 apps are missing entry points"
+    },
+    {
+      "priority": "high",
+      "category": "git",
+      "action": "Delete spam branches",
+      "description": "1 spam branches should be deleted"
+    },
+    {
+      "priority": "high",
+      "category": "cleanup",
+      "action": "Remove duplicate files",
+      "description": "149 duplicate files wasting 26MB"
+    }
+  ]
+}

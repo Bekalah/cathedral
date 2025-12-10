@@ -1,0 +1,88 @@
+/* ROSSLYN CATHEDRAL MASTER VISUAL SYSTEM */
+:root {
+  /* Rosslyn Stone Materials */
+  --stone-base: #8B8680;
+  --golden-veins: #D4AF37;
+  --mystical-blue: #1E3A8A;
+  --transcendent-white: #F8FAFC;
+  --shadow-depths: #1F2937;
+  
+  /* Consciousness Levels */
+  --apprentice-glow: rgba(212, 175, 55, 0.3);
+  --journeyman-glow: rgba(212, 175, 55, 0.6);
+  --master-glow: rgba(212, 175, 55, 0.9);
+  --transcendent-glow: rgba(255, 255, 255, 1.0);
+  
+  /* Animation Timings */
+  --stone-awakening: 3.236s; /* Golden ratio * 2 */
+  --consciousness-pulse: 1.618s; /* Golden ratio */
+  --reality-distortion: 5.854s; /* Golden ratio * 3.618 */
+  
+  /* Sacred Geometry */
+  --phi: 1.618;
+  --sacred-angle: 137.5deg; /* Golden angle */
+}
+
+.rosslyn-cathedral {
+  background: linear-gradient(var(--sacred-angle), var(--shadow-depths), var(--stone-base));
+  position: relative;
+  overflow: hidden;
+}
+
+.stone-carving {
+  background: var(--stone-base);
+  border: 2px solid var(--golden-veins);
+  position: relative;
+  transition: all var(--stone-awakening) ease-in-out;
+}
+
+.stone-carving::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, var(--golden-veins) 50%, transparent 70%);
+  opacity: 0;
+  animation: golden-veins-pulse var(--consciousness-pulse) infinite;
+}
+
+.consciousness-level-apprentice .stone-carving::before { opacity: 0.3; }
+.consciousness-level-journeyman .stone-carving::before { opacity: 0.6; }
+.consciousness-level-master .stone-carving::before { opacity: 0.9; }
+.consciousness-level-transcendent .stone-carving::before { 
+  opacity: 1.0;
+  animation: reality-distortion var(--reality-distortion) infinite;
+}
+
+@keyframes golden-veins-pulse {
+  0%, 100% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+}
+
+@keyframes reality-distortion {
+  0% { filter: none; }
+  25% { filter: blur(1px) hue-rotate(30deg); }
+  50% { filter: blur(2px) hue-rotate(60deg); }
+  75% { filter: blur(1px) hue-rotate(30deg); }
+  100% { filter: none; }
+}
+
+.transcendent-effect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+    var(--transcendent-glow) 0%, 
+    transparent 30%);
+  opacity: 0;
+  transition: opacity var(--consciousness-pulse);
+}
+
+.consciousness-level-transcendent .transcendent-effect {
+  opacity: 0.1;
+}

@@ -1,0 +1,465 @@
+{
+  "timestamp": "2025-12-10T00:01:01.392Z",
+  "tools_to_apps": [
+    {
+      "tool": "cathedral-cli.js",
+      "apps": [
+        "all"
+      ],
+      "connection_type": "orchestrator",
+      "status": "active"
+    },
+    {
+      "tool": "analyze-frequencies.js",
+      "apps": [
+        "sonic-creation-studio"
+      ],
+      "connection_type": "data_provider",
+      "status": "broken"
+    },
+    {
+      "tool": "sacred-calculations.js",
+      "apps": [
+        "shader-realm-navigator"
+      ],
+      "connection_type": "math_engine",
+      "status": "broken"
+    },
+    {
+      "tool": "compile-shaders.js",
+      "apps": [
+        "shader-realm-navigator",
+        "cathedral-design-studio"
+      ],
+      "connection_type": "build_tool",
+      "status": "broken"
+    },
+    {
+      "tool": "validate-arcana.js",
+      "apps": [
+        "liber-arcanae-tarot"
+      ],
+      "connection_type": "validator",
+      "status": "broken"
+    },
+    {
+      "tool": "ai-contamination-scan.js",
+      "apps": [
+        "all"
+      ],
+      "connection_type": "security",
+      "status": "broken"
+    },
+    {
+      "tool": "remove-paid-services.cjs",
+      "apps": [
+        "all"
+      ],
+      "connection_type": "cleanup",
+      "status": "broken"
+    }
+  ],
+  "apps_to_packages": [
+    {
+      "app": "liber-arcanae-tarot",
+      "packages": [
+        "liber-arcanae",
+        "codex-144-99",
+        "cathedral-style"
+      ],
+      "status": "active"
+    },
+    {
+      "app": "shader-realm-navigator",
+      "packages": [
+        "shaders",
+        "codex-144-99",
+        "sacred-math"
+      ],
+      "status": "active"
+    },
+    {
+      "app": "sonic-creation-studio",
+      "packages": [
+        "sound-systems",
+        "frequency-analysis"
+      ],
+      "status": "active"
+    },
+    {
+      "app": "cathedral-design-studio",
+      "packages": [
+        "design-tools",
+        "sacred-geometry",
+        "cathedral-style"
+      ],
+      "status": "active"
+    },
+    {
+      "app": "stone-grimoire",
+      "packages": [
+        "grimoire-data",
+        "spell-systems"
+      ],
+      "status": "active"
+    },
+    {
+      "app": "cosmogenesis-visualizer",
+      "packages": [
+        "cosmogenesis-learning-engine",
+        "visualization"
+      ],
+      "status": "active"
+    }
+  ],
+  "packages_to_packages": [
+    {
+      "package": "liber-arcanae",
+      "dependencies": [
+        "codex-144-99",
+        "sacred-math"
+      ],
+      "status": "active"
+    },
+    {
+      "package": "shader-integration",
+      "dependencies": [
+        "realm-shaders",
+        "sacred-math-shaders"
+      ],
+      "status": "active"
+    },
+    {
+      "package": "cathedral-core",
+      "dependencies": [
+        "all-packages"
+      ],
+      "status": "active"
+    },
+    {
+      "package": "sonic-creation-engine",
+      "dependencies": [
+        "frequency-analysis",
+        "audio-processing"
+      ],
+      "status": "active"
+    },
+    {
+      "package": "trinity-visual-engine",
+      "dependencies": [
+        "cathedral-style",
+        "design-tokens"
+      ],
+      "status": "active"
+    }
+  ],
+  "tools_to_tools": [
+    {
+      "tool": "run-comprehensive-analysis.mjs",
+      "connected_tools": [
+        "analyze-all-tools.mjs",
+        "analyze-all-apps.mjs",
+        "detect-spam-duplicates.mjs"
+      ],
+      "relationship": "calls"
+    },
+    {
+      "tool": "cleanup-duplicates-spam.mjs",
+      "connected_tools": [
+        "detect-spam-duplicates.mjs"
+      ],
+      "relationship": "depends_on"
+    },
+    {
+      "tool": "cathedral-cli.js",
+      "connected_tools": [
+        "all-tools"
+      ],
+      "relationship": "orchestrates"
+    }
+  ],
+  "cross_repo": [
+    {
+      "from_repo": "cathedral",
+      "to_repo": "circuitum99",
+      "connection_type": "git_submodule",
+      "status": "active"
+    },
+    {
+      "from_repo": "cathedral",
+      "to_repo": "stone-grimoire",
+      "connection_type": "git_remote",
+      "status": "active"
+    },
+    {
+      "from_repo": "cathedral",
+      "to_repo": "cosmogenesis-learning-engine",
+      "connection_type": "nested_repo",
+      "status": "active"
+    },
+    {
+      "from_repo": "liber-arcanae",
+      "to_repo": "codex-14499",
+      "connection_type": "data_dependency",
+      "status": "active"
+    },
+    {
+      "from_repo": "tesseract-bridge",
+      "to_repo": "all_repos",
+      "connection_type": "api_connector",
+      "status": "active"
+    }
+  ],
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "cathedral-cli.js",
+        "type": "tool",
+        "status": "active"
+      },
+      {
+        "id": "all",
+        "type": "package",
+        "status": "active"
+      },
+      {
+        "id": "analyze-frequencies.js",
+        "type": "tool",
+        "status": "active"
+      },
+      {
+        "id": "sonic-creation-studio",
+        "type": "app",
+        "status": "active"
+      },
+      {
+        "id": "sacred-calculations.js",
+        "type": "tool",
+        "status": "active"
+      },
+      {
+        "id": "shader-realm-navigator",
+        "type": "app",
+        "status": "active"
+      },
+      {
+        "id": "compile-shaders.js",
+        "type": "tool",
+        "status": "active"
+      },
+      {
+        "id": "cathedral-design-studio",
+        "type": "app",
+        "status": "active"
+      },
+      {
+        "id": "validate-arcana.js",
+        "type": "tool",
+        "status": "active"
+      },
+      {
+        "id": "liber-arcanae-tarot",
+        "type": "package",
+        "status": "active"
+      },
+      {
+        "id": "ai-contamination-scan.js",
+        "type": "tool",
+        "status": "active"
+      },
+      {
+        "id": "remove-paid-services.cjs",
+        "type": "package",
+        "status": "active"
+      },
+      {
+        "id": "liber-arcanae",
+        "type": "package",
+        "status": "active"
+      },
+      {
+        "id": "codex-144-99",
+        "type": "package",
+        "status": "active"
+      },
+      {
+        "id": "cathedral-style",
+        "type": "package",
+        "status": "active"
+      },
+      {
+        "id": "shaders",
+        "type": "package",
+        "status": "active"
+      },
+      {
+        "id": "sacred-math",
+        "type": "package",
+        "status": "active"
+      },
+      {
+        "id": "sound-systems",
+        "type": "package",
+        "status": "active"
+      },
+      {
+        "id": "frequency-analysis",
+        "type": "package",
+        "status": "active"
+      },
+      {
+        "id": "design-tools",
+        "type": "package",
+        "status": "active"
+      },
+      {
+        "id": "sacred-geometry",
+        "type": "package",
+        "status": "active"
+      },
+      {
+        "id": "stone-grimoire",
+        "type": "package",
+        "status": "active"
+      },
+      {
+        "id": "grimoire-data",
+        "type": "package",
+        "status": "active"
+      },
+      {
+        "id": "spell-systems",
+        "type": "package",
+        "status": "active"
+      },
+      {
+        "id": "cosmogenesis-visualizer",
+        "type": "package",
+        "status": "active"
+      },
+      {
+        "id": "cosmogenesis-learning-engine",
+        "type": "package",
+        "status": "active"
+      },
+      {
+        "id": "visualization",
+        "type": "package",
+        "status": "active"
+      }
+    ],
+    "edges": [
+      {
+        "from": "analyze-frequencies.js",
+        "to": "sonic-creation-studio",
+        "type": "data_provider"
+      },
+      {
+        "from": "sacred-calculations.js",
+        "to": "shader-realm-navigator",
+        "type": "math_engine"
+      },
+      {
+        "from": "compile-shaders.js",
+        "to": "shader-realm-navigator",
+        "type": "build_tool"
+      },
+      {
+        "from": "compile-shaders.js",
+        "to": "cathedral-design-studio",
+        "type": "build_tool"
+      },
+      {
+        "from": "validate-arcana.js",
+        "to": "liber-arcanae-tarot",
+        "type": "validator"
+      }
+    ]
+  },
+  "circular_dependencies": [],
+  "broken_connections": [
+    {
+      "connection": {
+        "tool": "analyze-frequencies.js",
+        "apps": [
+          "sonic-creation-studio"
+        ],
+        "connection_type": "data_provider",
+        "status": "broken"
+      },
+      "reason": "missing_target",
+      "fix_suggestion": "Create missing component or update reference"
+    },
+    {
+      "connection": {
+        "tool": "sacred-calculations.js",
+        "apps": [
+          "shader-realm-navigator"
+        ],
+        "connection_type": "math_engine",
+        "status": "broken"
+      },
+      "reason": "missing_target",
+      "fix_suggestion": "Create missing component or update reference"
+    },
+    {
+      "connection": {
+        "tool": "compile-shaders.js",
+        "apps": [
+          "shader-realm-navigator",
+          "cathedral-design-studio"
+        ],
+        "connection_type": "build_tool",
+        "status": "broken"
+      },
+      "reason": "missing_target",
+      "fix_suggestion": "Create missing component or update reference"
+    },
+    {
+      "connection": {
+        "tool": "validate-arcana.js",
+        "apps": [
+          "liber-arcanae-tarot"
+        ],
+        "connection_type": "validator",
+        "status": "broken"
+      },
+      "reason": "missing_target",
+      "fix_suggestion": "Create missing component or update reference"
+    },
+    {
+      "connection": {
+        "tool": "ai-contamination-scan.js",
+        "apps": [
+          "all"
+        ],
+        "connection_type": "security",
+        "status": "broken"
+      },
+      "reason": "missing_target",
+      "fix_suggestion": "Create missing component or update reference"
+    },
+    {
+      "connection": {
+        "tool": "remove-paid-services.cjs",
+        "apps": [
+          "all"
+        ],
+        "connection_type": "cleanup",
+        "status": "broken"
+      },
+      "reason": "missing_target",
+      "fix_suggestion": "Create missing component or update reference"
+    }
+  ],
+  "summary": {
+    "tools_to_apps": 7,
+    "apps_to_packages": 6,
+    "packages_to_packages": 5,
+    "cross_repo": 5,
+    "circular_dependencies": 0,
+    "broken_connections": 6,
+    "total_nodes": 27,
+    "total_edges": 5
+  }
+}

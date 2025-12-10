@@ -1,0 +1,395 @@
+{
+  "timestamp": "2025-12-10T00:00:39.891Z",
+  "total_tools": 24,
+  "categories": {
+    "automation": [
+      {
+        "name": "AUTOMATE_EVERYTHING.sh",
+        "category": "automation",
+        "path": "tools/automation/AUTOMATE_EVERYTHING.sh",
+        "extension": ".sh",
+        "size": 11437,
+        "executable": true,
+        "language": "Shell Script",
+        "dependencies": [],
+        "description": "No description found",
+        "status": "library",
+        "last_modified": "2025-11-21T05:50:12.567Z"
+      },
+      {
+        "name": "GENERATE_ART.sh",
+        "category": "automation",
+        "path": "tools/automation/GENERATE_ART.sh",
+        "extension": ".sh",
+        "size": 2584,
+        "executable": true,
+        "language": "Shell Script",
+        "dependencies": [],
+        "description": "No description found",
+        "status": "library",
+        "last_modified": "2025-11-21T05:50:12.567Z"
+      },
+      {
+        "name": "QUICK_START_ENHANCED_AGENTS.sh",
+        "category": "automation",
+        "path": "tools/automation/QUICK_START_ENHANCED_AGENTS.sh",
+        "extension": ".sh",
+        "size": 3368,
+        "executable": true,
+        "language": "Shell Script",
+        "dependencies": [],
+        "description": "No description found",
+        "status": "library",
+        "last_modified": "2025-11-21T05:50:12.568Z"
+      },
+      {
+        "name": "RUN_AGENTS_NOW.sh",
+        "category": "automation",
+        "path": "tools/automation/RUN_AGENTS_NOW.sh",
+        "extension": ".sh",
+        "size": 1468,
+        "executable": true,
+        "language": "Shell Script",
+        "dependencies": [],
+        "description": "No description found",
+        "status": "library",
+        "last_modified": "2025-11-21T05:50:12.569Z"
+      },
+      {
+        "name": "RUN_EVERYTHING.sh",
+        "category": "automation",
+        "path": "tools/automation/RUN_EVERYTHING.sh",
+        "extension": ".sh",
+        "size": 2833,
+        "executable": true,
+        "language": "Shell Script",
+        "dependencies": [],
+        "description": "No description found",
+        "status": "library",
+        "last_modified": "2025-11-21T05:50:12.569Z"
+      },
+      {
+        "name": "add_codebot_guardrails.sh",
+        "category": "automation",
+        "path": "tools/automation/add_codebot_guardrails.sh",
+        "extension": ".sh",
+        "size": 5733,
+        "executable": true,
+        "language": "Shell Script",
+        "dependencies": [],
+        "description": "No description found",
+        "status": "library",
+        "last_modified": "2025-11-21T05:50:12.572Z"
+      },
+      {
+        "name": "add_tesseract_module.sh",
+        "category": "automation",
+        "path": "tools/automation/add_tesseract_module.sh",
+        "extension": ".sh",
+        "size": 15516,
+        "executable": true,
+        "language": "Shell Script",
+        "dependencies": [],
+        "description": "No description found",
+        "status": "library",
+        "last_modified": "2025-11-21T05:50:12.573Z"
+      },
+      {
+        "name": "agent_status.sh",
+        "category": "automation",
+        "path": "tools/automation/agent_status.sh",
+        "extension": ".sh",
+        "size": 2821,
+        "executable": true,
+        "language": "Shell Script",
+        "dependencies": [],
+        "description": "No description found",
+        "status": "library",
+        "last_modified": "2025-11-21T05:50:12.575Z"
+      },
+      {
+        "name": "run_agent_batch.py",
+        "category": "automation",
+        "path": "tools/automation/run_agent_batch.py",
+        "extension": ".py",
+        "size": 5786,
+        "executable": false,
+        "language": "Python",
+        "dependencies": [],
+        "description": "No description found",
+        "status": "not_executable",
+        "last_modified": "2025-11-21T05:50:12.581Z"
+      },
+      {
+        "name": "run_agents_fast.py",
+        "category": "automation",
+        "path": "tools/automation/run_agents_fast.py",
+        "extension": ".py",
+        "size": 4120,
+        "executable": true,
+        "language": "Python",
+        "dependencies": [],
+        "description": "No description found",
+        "status": "library",
+        "last_modified": "2025-11-21T05:50:12.583Z"
+      },
+      {
+        "name": "run_single_agent.py",
+        "category": "automation",
+        "path": "tools/automation/run_single_agent.py",
+        "extension": ".py",
+        "size": 2354,
+        "executable": false,
+        "language": "Python",
+        "dependencies": [],
+        "description": "No description found",
+        "status": "not_executable",
+        "last_modified": "2025-11-21T05:50:12.585Z"
+      },
+      {
+        "name": "update_agent_context_500x.py",
+        "category": "automation",
+        "path": "tools/automation/update_agent_context_500x.py",
+        "extension": ".py",
+        "size": 16435,
+        "executable": false,
+        "language": "Python",
+        "dependencies": [],
+        "description": "No description found",
+        "status": "not_executable",
+        "last_modified": "2025-11-21T05:50:12.600Z"
+      }
+    ],
+    "cleanup": [
+      {
+        "name": "free-system-validator.js",
+        "category": "cleanup",
+        "path": "tools/cleanup/free-system-validator.js",
+        "extension": ".js",
+        "size": 8041,
+        "executable": false,
+        "language": "JavaScript",
+        "dependencies": [
+          "fs",
+          "path"
+        ],
+        "description": "No description found",
+        "status": "not_executable",
+        "last_modified": "2025-12-09T20:00:46.394Z"
+      },
+      {
+        "name": "git-cleanup.cjs",
+        "category": "cleanup",
+        "path": "tools/cleanup/git-cleanup.cjs",
+        "extension": ".cjs",
+        "size": 3364,
+        "executable": false,
+        "language": "JavaScript (CommonJS)",
+        "dependencies": [
+          "child_process",
+          "fs",
+          "path"
+        ],
+        "description": "GIT CLEANUP TOOL",
+        "status": "not_executable",
+        "last_modified": "2025-12-09T20:02:03.303Z"
+      },
+      {
+        "name": "git-cleanup.js",
+        "category": "cleanup",
+        "path": "tools/cleanup/git-cleanup.js",
+        "extension": ".js",
+        "size": 6042,
+        "executable": false,
+        "language": "JavaScript",
+        "dependencies": [
+          "child_process",
+          "fs",
+          "path"
+        ],
+        "description": "GIT CLEANUP TOOL",
+        "status": "not_executable",
+        "last_modified": "2025-12-09T20:00:18.596Z"
+      },
+      {
+        "name": "remove-paid-services.cjs",
+        "category": "cleanup",
+        "path": "tools/cleanup/remove-paid-services.cjs",
+        "extension": ".cjs",
+        "size": 3886,
+        "executable": false,
+        "language": "JavaScript (CommonJS)",
+        "dependencies": [
+          "fs",
+          "path"
+        ],
+        "description": "REMOVE PAID SERVICES CLEANUP TOOL",
+        "status": "not_executable",
+        "last_modified": "2025-12-09T20:01:07.914Z"
+      },
+      {
+        "name": "remove-paid-services.js",
+        "category": "cleanup",
+        "path": "tools/cleanup/remove-paid-services.js",
+        "extension": ".js",
+        "size": 3886,
+        "executable": false,
+        "language": "JavaScript",
+        "dependencies": [
+          "fs",
+          "path"
+        ],
+        "description": "REMOVE PAID SERVICES CLEANUP TOOL",
+        "status": "not_executable",
+        "last_modified": "2025-12-09T19:59:54.257Z"
+      }
+    ],
+    "export": [
+      {
+        "name": "combined_export.py",
+        "category": "export",
+        "path": "tools/export/combined_export.py",
+        "extension": ".py",
+        "size": 3190,
+        "executable": false,
+        "language": "Python",
+        "dependencies": [],
+        "description": "No description found",
+        "status": "not_executable",
+        "last_modified": "2025-11-21T05:50:12.610Z"
+      },
+      {
+        "name": "png_export.py",
+        "category": "export",
+        "path": "tools/export/png_export.py",
+        "extension": ".py",
+        "size": 1278,
+        "executable": false,
+        "language": "Python",
+        "dependencies": [],
+        "description": "No description found",
+        "status": "not_executable",
+        "last_modified": "2025-11-21T05:50:12.611Z"
+      }
+    ],
+    "sync": [
+      {
+        "name": "scan_mirrors.py",
+        "category": "sync",
+        "path": "tools/sync/scan_mirrors.py",
+        "extension": ".py",
+        "size": 3555,
+        "executable": false,
+        "language": "Python",
+        "dependencies": [],
+        "description": "No description found",
+        "status": "not_executable",
+        "last_modified": "2025-11-21T05:50:12.637Z"
+      }
+    ],
+    "validate": [
+      {
+        "name": "achad_geometry_test.py",
+        "category": "validate",
+        "path": "tools/validate/achad_geometry_test.py",
+        "extension": ".py",
+        "size": 1260,
+        "executable": false,
+        "language": "Python",
+        "dependencies": [],
+        "description": "No description found",
+        "status": "not_executable",
+        "last_modified": "2025-11-21T05:50:12.641Z"
+      },
+      {
+        "name": "achad_integration_smoketest.py",
+        "category": "validate",
+        "path": "tools/validate/achad_integration_smoketest.py",
+        "extension": ".py",
+        "size": 1641,
+        "executable": false,
+        "language": "Python",
+        "dependencies": [],
+        "description": "No description found",
+        "status": "not_executable",
+        "last_modified": "2025-11-21T05:50:12.642Z"
+      },
+      {
+        "name": "design_suite_smoketest.py",
+        "category": "validate",
+        "path": "tools/validate/design_suite_smoketest.py",
+        "extension": ".py",
+        "size": 802,
+        "executable": false,
+        "language": "Python",
+        "dependencies": [],
+        "description": "No description found",
+        "status": "not_executable",
+        "last_modified": "2025-11-21T05:50:12.643Z"
+      },
+      {
+        "name": "python_smoketest.py",
+        "category": "validate",
+        "path": "tools/validate/python_smoketest.py",
+        "extension": ".py",
+        "size": 1125,
+        "executable": false,
+        "language": "Python",
+        "dependencies": [],
+        "description": "No description found",
+        "status": "not_executable",
+        "last_modified": "2025-11-21T05:50:12.645Z"
+      }
+    ]
+  },
+  "status": {
+    "library": 9,
+    "not_executable": 15
+  },
+  "dependencies": {
+    "unique_dependencies": [
+      "fs",
+      "path",
+      "child_process"
+    ],
+    "dependency_graph": {
+      "free-system-validator.js": [
+        "fs",
+        "path"
+      ],
+      "git-cleanup.cjs": [
+        "child_process",
+        "fs",
+        "path"
+      ],
+      "git-cleanup.js": [
+        "child_process",
+        "fs",
+        "path"
+      ],
+      "remove-paid-services.cjs": [
+        "fs",
+        "path"
+      ],
+      "remove-paid-services.js": [
+        "fs",
+        "path"
+      ]
+    },
+    "most_used": [
+      {
+        "dependency": "fs",
+        "usage_count": 5
+      },
+      {
+        "dependency": "path",
+        "usage_count": 5
+      },
+      {
+        "dependency": "child_process",
+        "usage_count": 2
+      }
+    ]
+  },
+  "issues": []
+}

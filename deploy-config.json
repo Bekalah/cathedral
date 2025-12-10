@@ -1,0 +1,16 @@
+{
+  "name": "Cathedral Free Deployment",
+  "platform": "GitHub Pages",
+  "build": {
+    "command": "npm run build",
+    "output": "dist"
+  },
+  "hosting": {
+    "provider": "GitHub Pages",
+    "domain": "bekalah.github.io/cathedral-master"
+  },
+  "database": {
+    "type": "SQLite",
+    "file": "data/cathedral.db"
+  }
+}

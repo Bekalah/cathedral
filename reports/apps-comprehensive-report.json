@@ -1,0 +1,78 @@
+{
+  "timestamp": "2025-12-10T00:00:42.422Z",
+  "total_apps": 5,
+  "apps": {
+    "liber-arcanae-tarot": {
+      "name": "liber-arcanae-tarot",
+      "path": "apps-clean/liber-arcanae-tarot",
+      "type": "static_files",
+      "technologies": [],
+      "files": [],
+      "dependencies": [],
+      "status": "incomplete",
+      "size": 0,
+      "entry_points": [],
+      "assets": [],
+      "issues": []
+    },
+    "synth-lab": {
+      "name": "synth-lab",
+      "path": "apps-clean/synth-lab",
+      "type": "static_files",
+      "technologies": [],
+      "files": [],
+      "dependencies": [],
+      "status": "incomplete",
+      "size": 0,
+      "entry_points": [],
+      "assets": [],
+      "issues": []
+    },
+    "web": {
+      "name": "web",
+      "path": "apps-clean/web",
+      "type": "static_files",
+      "technologies": [],
+      "files": [],
+      "dependencies": [],
+      "status": "incomplete",
+      "size": 0,
+      "entry_points": [],
+      "assets": [],
+      "issues": []
+    },
+    "worker": {
+      "name": "worker",
+      "path": "apps-clean/worker",
+      "type": "static_files",
+      "technologies": [],
+      "files": [],
+      "dependencies": [],
+      "status": "incomplete",
+      "size": 0,
+      "entry_points": [],
+      "assets": [],
+      "issues": []
+    },
+    "worker-egregores": {
+      "name": "worker-egregores",
+      "path": "apps-clean/worker-egregores",
+      "type": "static_files",
+      "technologies": [],
+      "files": [],
+      "dependencies": [],
+      "status": "incomplete",
+      "size": 0,
+      "entry_points": [],
+      "assets": [],
+      "issues": []
+    }
+  },
+  "technologies": {},
+  "status": {
+    "incomplete": 5
+  },
+  "dependencies": [],
+  "issues": [],
+  "total_size": 0
+}
