@@ -1,3 +1,15 @@
+#!/bin/bash
+# Fix all runner issues across Cathedral repos
+
+echo "🔧 Fixing All Runner Issues"
+
+BASE_DIR="/Users/rebeccalemke/Documents/cathedral"
+
+# Fix GitHub Actions workflows
+echo "📋 Fixing GitHub Actions workflows..."
+
+# Update deploy.yml with latest actions
+cat > "$BASE_DIR/.github/workflows/deploy.yml" << 'EOF'
 name: Deploy Cathedral
 
 on:
@@ -17,7 +29,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '23'
+          node-version: '20'
       - uses: pnpm/action-setup@v4
         with:
           version: 9
@@ -51,3 +63,43 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+EOF
+
+# Fix automation runners
+echo "🤖 Fixing automation runners..."
+
+# Create working test runner
+cat > "$BASE_DIR/scripts/test-runner.mjs" << 'EOF'
+#!/usr/bin/env node
+import { execSync } from 'child_process';
+import fs from 'fs';
+
+console.log('🧪 Running Cathedral Tests');
+
+const testCommands = [
+  'pnpm test',
+  'python -m pytest',
+  'node --test'
+];
+
+let passed = 0;
+let failed = 0;
+
+for (const cmd of testCommands) {
+  try {
+    console.log(`Running: ${cmd}`);
+    execSync(cmd, { stdio: 'inherit', timeout: 60000 });
+    passed++;
+  } catch (error) {
+    console.log(`❌ ${cmd} failed`);
+    failed++;
+  }
+}
+
+console.log(`\n📊 Results: ${passed} passed, ${failed} failed`);
+process.exit(failed > 0 ? 1 : 0);
+EOF
+
+chmod +x "$BASE_DIR/scripts/test-runner.mjs"
+
+echo "✅ All runners fixed"

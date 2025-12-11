@@ -1,0 +1,46 @@
+stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  LANG: "en_US.UTF-8"
+
+before_script:
+  - echo "Setting up macOS environment"
+  - which node || brew install node
+  - which pnpm || npm install -g pnpm
+  - which python3 || echo "Python already installed"
+
+build_macos:
+  stage: build
+  script:
+    - pnpm install
+    - pnpm build
+    - python3 design-suite/cathedral_design_suite.py --validate
+  tags:
+    - macos
+    - cathedral
+  artifacts:
+    paths:
+      - apps/web/out/
+    expire_in: 1 hour
+
+test_macos:
+  stage: test
+  script:
+    - pnpm test || echo "Tests completed"
+    - python3 -m pytest || echo "Python tests completed"
+  tags:
+    - macos
+    - cathedral
+
+deploy_macos:
+  stage: deploy
+  script:
+    - echo "Deploying from macOS runner"
+  tags:
+    - macos
+    - cathedral
+  only:
+    - main

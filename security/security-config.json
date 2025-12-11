@@ -1,0 +1,40 @@
+{
+  "security": {
+    "version": "2.0.0",
+    "updated": "2024-12-10",
+    "policies": {
+      "content_security_policy": {
+        "default-src": ["'self'"],
+        "script-src": ["'self'", "'unsafe-eval'", "'unsafe-inline'"],
+        "style-src": ["'self'", "'unsafe-inline'"],
+        "img-src": ["'self'", "data:", "https:"],
+        "connect-src": ["'self'", "https:"],
+        "font-src": ["'self'", "https:"],
+        "object-src": ["'none'"],
+        "media-src": ["'self'"],
+        "frame-src": ["'none'"]
+      },
+      "headers": {
+        "X-Frame-Options": "DENY",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "1; mode=block",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+      }
+    },
+    "dependencies": {
+      "audit_schedule": "weekly",
+      "auto_update": true,
+      "security_packages": [
+        "helmet",
+        "@next/bundle-analyzer",
+        "eslint-config-security"
+      ]
+    },
+    "monitoring": {
+      "enabled": true,
+      "log_security_events": true,
+      "alert_on_vulnerabilities": true
+    }
+  }
+}

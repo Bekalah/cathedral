@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "GitLab.gitlab-workflow",
+    "ms-vscode.vscode-typescript-next",
+    "bradlc.vscode-tailwindcss",
+    "esbenp.prettier-vscode",
+    "ms-python.python",
+    "geequlim.godot-tools"
+  ]
+}

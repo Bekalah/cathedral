@@ -1,20 +1,26 @@
 {
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  // Ensure VS Code uses the project's venv so Pylance resolves imports
-  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
-  // Prefer workspace analysis for accuracy
-  "python.analysis.diagnosticMode": "workspace",
-  // Hint where venv lives
-  "python.analysis.venvPath": "${workspaceFolder}",
-  // Remove legacy python-envs configuration noise
-  "python-envs.pythonProjects": [
+  "gitlab.instanceUrl": "https://gitlab.com",
+  "gitlab.duo.enabled": true,
+  "gitlab.duo.chat.enabled": true,
+  "gitlab.duo.codeCompletion.enabled": true,
+  "gitlab.monorepo.enabled": true,
+  "gitlab.workspaceRules": [
     {
-      "path": "",
-      "envManager": "ms-python.python:system",
-      "packageManager": "ms-python.python:pip"
+      "name": "Cathedral Monorepo Rules",
+      "description": "Custom rules for Cathedral project structure",
+      "rules": [
+        "This is a monorepo with multiple packages in packages/ and apps/",
+        "Use pnpm for package management",
+        "Follow sacred geometry and mystical naming conventions",
+        "Python design suite is in design-suite/",
+        "Godot game files are in godot/",
+        "Rust bindings are in rust-bindings/",
+        "All packages use TypeScript and follow Cathedral coding standards"
+      ]
     }
   ],
-  "python.testing.unittestArgs": ["-v", "-s", "./tests", "-p", "*test.py"],
-  "python.testing.pytestEnabled": false,
-  "python.testing.unittestEnabled": true
+  "files.associations": {
+    "*.gd": "gdscript",
+    "*.gdshader": "glsl"
+  }
 }

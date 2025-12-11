@@ -2,21 +2,45 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  
+  // Security headers
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY'
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff'
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin'
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https:;"
+          }
+        ]
+      }
+    ]
+  },
 
-  // Enable static export for Cloudflare Pages and Azure Static Web Apps
+  // Enable static export
   output: "export",
   trailingSlash: true,
-  // GitHub Pages project site served under /cathedral
-  // Ensures correct asset paths when hosted at https://bekalah.github.io/cathedral
   basePath: "/cathedral",
   assetPrefix: "/cathedral/",
   images: {
     unoptimized: true,
   },
 
-  // Webpack configuration for Three.js, Babylon.js, p5.js, and Tone.js
+  // Webpack configuration
   webpack: (config, { isServer }) => {
-    // Handle Three.js and other libraries that expect window object
     if (!isServer) {
       config.resolve.fallback = {
         ...config.resolve.fallback,
@@ -26,7 +50,7 @@ const nextConfig = {
       };
     }
 
-    // Optimize bundle size
+    // Optimize bundle
     config.optimization = {
       ...config.optimization,
       splitChunks: {
@@ -39,12 +63,7 @@ const nextConfig = {
           },
           babylonjs: {
             test: /[\\/]node_modules[\\/]babylonjs[\\/]/,
-            name: "babylonjs",
-            chunks: "all",
-          },
-          tone: {
-            test: /[\\/]node_modules[\\/]tone[\\/]/,
-            name: "tone",
+            name: "babylonjs", 
             chunks: "all",
           },
         },
@@ -54,10 +73,18 @@ const nextConfig = {
     return config;
   },
 
-  // Experimental features for better performance
+  // Performance optimizations
   experimental: {
     optimizeCss: true,
     webVitalsAttribution: ["CLS", "LCP"],
+    turbo: {
+      rules: {
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js',
+        },
+      },
+    },
   },
 };
 
