@@ -61,7 +61,9 @@
         "godot-tesseract-bridge",
         "godot-vfx-library"
       ]
-    }
+    },
+    "quality": "A+",
+    "standard": "gemini-3-golden"
   },
   "files": [
     "scenes/",

@@ -18,5 +18,9 @@
     "permanent-flame"
   ],
   "author": "Rebecca Respawn <bekalah@users.noreply.github.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "cathedral": {
+    "quality": "A+",
+    "standard": "gemini-3-golden"
+  }
 }

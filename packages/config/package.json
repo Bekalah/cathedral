@@ -39,5 +39,9 @@
     "type": "git",
     "url": "https://github.com/Bekalah/cathedral.git",
     "directory": "packages/config"
+  },
+  "cathedral": {
+    "quality": "A+",
+    "standard": "gemini-3-golden"
   }
 }

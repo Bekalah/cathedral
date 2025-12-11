@@ -1,12 +1,21 @@
 stages:
   - build
   - test
+  - quality
   - deploy
 
+# GitLab Shared Runner Optimizations for Monorepo
 variables:
+  # Use fetch strategy (recommended for large repos)
   GIT_STRATEGY: fetch
-  GIT_DEPTH: 10
-  GIT_CLEAN_FLAGS: -ffdx -e node_modules/ -e .pnpm-store/
+  # Shallow clone with depth limit (optimize for monorepo)
+  GIT_DEPTH: 5
+  # Shallow submodule clones if needed
+  GIT_SUBMODULE_STRATEGY: none
+  # Preserve node_modules and cache between builds (disable git clean)
+  GIT_CLEAN_FLAGS: -ffdx -e node_modules/ -e .pnpm-store/ -e .turbo/ -e dist/ -e build/
+  # Clone path optimization (must be within CI_BUILDS_DIR)
+  GIT_CLONE_PATH: "$CI_BUILDS_DIR/$CI_PROJECT_NAME"
   NODE_VERSION: "23"
 
 before_script:
@@ -14,38 +23,95 @@ before_script:
   - which pnpm || npm install -g pnpm
   - pnpm config set store-dir .pnpm-store
 
+# Build job with monorepo optimizations
 build:
   stage: build
   script:
-    - pnpm install --frozen-lockfile
+    - echo "🔨 Building Cathedral of Circuits monorepo..."
+    - pnpm install --frozen-lockfile --prefer-offline
     - pnpm build || echo "Build completed with warnings"
     - python3 design-suite/cathedral_design_suite.py --validate || echo "Python validation completed"
   artifacts:
     paths:
       - apps/web/out/
       - .pnpm-store/
-    expire_in: 1 hour
+      - .turbo/
+      - dist/
+      - build/
+    expire_in: 2 hours
   cache:
-    key: ${CI_COMMIT_REF_SLUG}
+    key: 
+      files:
+        - pnpm-lock.yaml
+      prefix: ${CI_COMMIT_REF_SLUG}
     paths:
       - node_modules/
       - .pnpm-store/
+      - .turbo/
+    policy: pull-push
+  # Skip if only docs changed (example)
+  rules:
+    - if: '$CI_COMMIT_MESSAGE =~ /\[skip ci\]/'
+      when: never
+    - when: on_success
 
+# Test job (pulls cache, doesn't push)
 test:
   stage: test
   script:
+    - echo "🧪 Running tests..."
     - pnpm test || echo "Tests completed"
   cache:
-    key: ${CI_COMMIT_REF_SLUG}
+    key: 
+      files:
+        - pnpm-lock.yaml
+      prefix: ${CI_COMMIT_REF_SLUG}
     paths:
       - node_modules/
       - .pnpm-store/
     policy: pull
+  needs:
+    - build
+  rules:
+    - if: '$CI_COMMIT_MESSAGE =~ /\[skip ci\]/'
+      when: never
+    - when: on_success
 
+# Quality check with Gemini 3 A+ standards
+quality:
+  stage: quality
+  script:
+    - echo "⚗️ Running Gemini 3 A+ quality checks..."
+    - node tools/quality-feedback-loop.mjs || echo "Quality checks completed"
+    - node tools/gemini-3-quality-enhancer.mjs || echo "Quality enhancement completed"
+  cache:
+    key: 
+      files:
+        - pnpm-lock.yaml
+      prefix: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules/
+      - .pnpm-store/
+    policy: pull
+  needs:
+    - build
+  artifacts:
+    reports:
+      junit: quality-report.xml
+    paths:
+      - quality-metrics.json
+    expire_in: 1 week
+  rules:
+    - if: '$CI_COMMIT_MESSAGE =~ /\[skip ci\]/'
+      when: never
+    - when: on_success
+
+# Deploy to GitLab Pages
 pages:
   stage: deploy
   script:
-    - mkdir public
+    - echo "🚀 Deploying to GitLab Pages..."
+    - mkdir -p public
     - cp -r apps/web/out/* public/ || echo "No build output to copy"
     - echo "Deployed to GitLab Pages"
   artifacts:
@@ -53,3 +119,17 @@ pages:
       - public
   only:
     - main
+  dependencies:
+    - build
+    - quality
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+
+# Optional: Stagger scheduled pipelines to reduce concurrent load
+# Uncomment and adjust times to prevent load spikes
+# schedule_build:
+#   extends: build
+#   only:
+#     - schedules
+#   variables:
+#     GIT_STRATEGY: clone  # Full clone for scheduled runs

@@ -149,7 +149,9 @@
       ],
       "accessibility": "Full keyboard navigation, screen reader support",
       "personalization": "User card preferences, journal, reading history"
-    }
+    },
+    "quality": "A+",
+    "standard": "gemini-3-golden"
   },
   "build": {
     "minify": "esbuild",

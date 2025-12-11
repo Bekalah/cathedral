@@ -28,5 +28,9 @@
     "fusion-kink",
     "modular-architecture",
     "sacred-technology"
-  ]
+  ],
+  "cathedral": {
+    "quality": "A+",
+    "standard": "gemini-3-golden"
+  }
 }

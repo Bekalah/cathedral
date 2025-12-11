@@ -1,0 +1,30 @@
+duo:
+  enabled: true
+  features:
+    code_suggestions: true
+    code_review: true
+    vulnerability_detection: true
+    code_explanation: true
+  monorepo:
+    scan_depth: 3
+    include_patterns:
+      - "**/*.ts"
+      - "**/*.js" 
+      - "**/*.py"
+      - "**/*.rs"
+      - "**/*.gd"
+      - "**/*.json"
+      - "**/*.yml"
+      - "**/*.css"
+      - "**/*.html"
+    exclude_patterns:
+      - "node_modules/**"
+      - ".git/**"
+      - "dist/**"
+      - "build/**"
+      - ".venv/**"
+  connections:
+    - stone-grimoire -> cathedral-core
+    - shader-realms -> godot-game
+    - design-suite -> all-components
+    - codex-144-99 -> universal-canon

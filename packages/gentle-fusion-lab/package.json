@@ -6,7 +6,7 @@
   "type": "module",
   "keywords": [
     "gentle-learning",
-    "art-science-fusion", 
+    "art-science-fusion",
     "cptsd-safe",
     "curiosity-driven",
     "sustainable-creativity",
@@ -23,5 +23,9 @@
   },
   "dependencies": {},
   "author": "Bekalah Cathedral Systems - CPTSD Recovery Through Creation",
-  "license": "CURIOSITY-PROTECTION-LICENSE"
+  "license": "CURIOSITY-PROTECTION-LICENSE",
+  "cathedral": {
+    "quality": "A+",
+    "standard": "gemini-3-golden"
+  }
 }

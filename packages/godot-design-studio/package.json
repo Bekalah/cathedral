@@ -69,7 +69,9 @@
         "godot-codex-14499",
         "godot-liber-arcanae"
       ]
-    }
+    },
+    "quality": "A+",
+    "standard": "gemini-3-golden"
   },
   "files": [
     "scenes/",

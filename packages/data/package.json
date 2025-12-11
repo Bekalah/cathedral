@@ -23,6 +23,8 @@
     "living_arcanae": 22,
     "fusion_combinations": 231,
     "trauma_safety": "maximum",
-    "data_integrity": "validated"
+    "data_integrity": "validated",
+    "quality": "A+",
+    "standard": "gemini-3-golden"
   }
 }

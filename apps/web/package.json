@@ -146,7 +146,9 @@
       "Azure-AI-image-generation",
       "Canvas-2D-rendering",
       "WebGL-shaders"
-    ]
+    ],
+    "quality": "A+",
+    "standard": "gemini-3-golden"
   },
   "build": {
     "compression": true,

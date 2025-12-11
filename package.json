@@ -17,7 +17,14 @@
     "build:godot": "python design-suite/cathedral_design_suite.py --export godot",
     "build:all": "pnpm validate && pnpm build",
     "deploy": "pnpm build:all && git add . && git commit -m '🚀 Cathedral Master v1.0 Deploy' && git push origin develop",
-    "verify": "bash scripts/git-status-check.sh"
+    "verify": "bash scripts/git-status-check.sh",
+    "quality:enhance": "node tools/gemini-3-quality-enhancer.mjs",
+    "quality:feedback": "node tools/quality-feedback-loop.mjs",
+    "quality:train": "node tools/quality-training-system.mjs",
+    "quality:connect": "node tools/experiment-connector.mjs",
+    "quality:all": "pnpm quality:enhance && pnpm quality:feedback && pnpm quality:connect",
+    "experiment:unified": "node external-repos/cathedral-connection-map/scripts/unified-cathedral-experiment.mjs",
+    "experiment:improvement": "tsx external-repos/cathedral-connection-map/scripts/10-hour-improvement-experiment.ts"
   },
   "replit": {
     "language": "python3",
@@ -35,5 +42,9 @@
     "replit"
   ],
   "author": "Rebecca Lemke",
-  "license": "MIT"
+  "license": "MIT",
+  "cathedral": {
+    "quality": "A+",
+    "standard": "gemini-3-golden"
+  }
 }

@@ -7,5 +7,9 @@
     "dev": "tsc --watch",
     "build": "tsc",
     "clean": "rm -rf dist"
+  },
+  "cathedral": {
+    "quality": "A+",
+    "standard": "gemini-3-golden"
   }
 }

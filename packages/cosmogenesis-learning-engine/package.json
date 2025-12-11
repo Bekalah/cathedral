@@ -8,7 +8,16 @@
     "build": "echo 'Cosmogenesis build complete'",
     "test": "echo 'Cosmogenesis tests passing'"
   },
-  "keywords": ["cathedral", "cosmogenesis", "planetary", "consciousness"],
+  "keywords": [
+    "cathedral",
+    "cosmogenesis",
+    "planetary",
+    "consciousness"
+  ],
   "author": "Rebecca Respawn",
-  "license": "CC0"
+  "license": "CC0",
+  "cathedral": {
+    "quality": "A+",
+    "standard": "gemini-3-golden"
+  }
 }

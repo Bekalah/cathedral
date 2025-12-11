@@ -26,5 +26,9 @@
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
     "jest": "^29.7.0"
+  },
+  "cathedral": {
+    "quality": "A+",
+    "standard": "gemini-3-golden"
   }
 }

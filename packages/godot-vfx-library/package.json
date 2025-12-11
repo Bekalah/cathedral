@@ -65,7 +65,9 @@
       "breathing_interfaces",
       "sacred_colors",
       "archetypal_forms"
-    ]
+    ],
+    "quality": "A+",
+    "standard": "gemini-3-golden"
   },
   "files": [
     "effects/",

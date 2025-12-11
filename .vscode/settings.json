@@ -1,8 +1,16 @@
 {
   "gitlab.instanceUrl": "https://gitlab.com",
+  "gitlab.api": "https://gitlab.com/api/v4",
+  "gitlab.defaultProject": "bekalah/cathedral",
+  "gitlab.showStatusBar": true,
   "gitlab.duo.enabled": true,
   "gitlab.duo.chat.enabled": true,
   "gitlab.duo.codeCompletion.enabled": true,
+  "gitlab.duo.suggestions.enabled": true,
+  "gitlab.duo.codeReview.enabled": true,
+  "gitlab.duo.vulnerabilityExplanation.enabled": true,
+  "gitlab.duo.monorepo.enabled": true,
+  "gitlab.duo.crossRepoAnalysis.enabled": true,
   "gitlab.monorepo.enabled": true,
   "gitlab.workspaceRules": [
     {
@@ -10,17 +18,50 @@
       "description": "Custom rules for Cathedral project structure",
       "rules": [
         "This is a monorepo with multiple packages in packages/ and apps/",
-        "Use pnpm for package management",
+        "Use pnpm for package management (NOT npm or yarn)",
+        "Turbo is used for builds and caching",
+        "Node.js version 23",
+        "pnpm store location: .pnpm-store/",
         "Follow sacred geometry and mystical naming conventions",
         "Python design suite is in design-suite/",
         "Godot game files are in godot/",
         "Rust bindings are in rust-bindings/",
-        "All packages use TypeScript and follow Cathedral coding standards"
+        "All packages use TypeScript and follow Cathedral coding standards",
+        "Quality standards: Gemini 3 A+ Golden Standard",
+        "CI/CD uses shallow clones (depth 5) and fetch strategy",
+        "Pipeline stages: build, test, quality, deploy"
       ]
     }
   ],
+  
+  // Monorepo-specific file watching (exclude large directories)
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/.pnpm-store/**": true,
+    "**/.turbo/**": true,
+    "**/dist/**": true,
+    "**/build/**": true,
+    "**/coverage/**": true
+  },
+  
+  // TypeScript/Node.js settings
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.preferences.importModuleSpecifier": "relative",
+  
+  // pnpm package manager
+  "npm.packageManager": "pnpm",
+  "pnpm.enabled": true,
+  "npm.exclude": "**/.pnpm-store/**",
+  
+  // File associations
   "files.associations": {
     "*.gd": "gdscript",
     "*.gdshader": "glsl"
-  }
+  },
+  
+  // GitLab Duo context file
+  "gitlab.duo.contextFile": ".gitlab-duo-context.md"
 }

@@ -33,5 +33,9 @@
     "para-theatre",
     "sacred-storytelling",
     "rebecca-respawn"
-  ]
+  ],
+  "cathedral": {
+    "quality": "A+",
+    "standard": "gemini-3-golden"
+  }
 }

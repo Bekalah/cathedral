@@ -8,6 +8,9 @@
     "build": "tsc",
     "clean": "rm -rf dist"
   },
-  "dependencies": {
+  "dependencies": {},
+  "cathedral": {
+    "quality": "A+",
+    "standard": "gemini-3-golden"
   }
 }

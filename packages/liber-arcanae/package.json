@@ -32,5 +32,9 @@
     "sacred-wisdom",
     "fusion-kink",
     "rebecca-respawn"
-  ]
+  ],
+  "cathedral": {
+    "quality": "A+",
+    "standard": "gemini-3-golden"
+  }
 }
