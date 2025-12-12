@@ -8,8 +8,10 @@
 const fs = require('fs');
 const path = require('path');
 
-const PACKAGES_DIR = path.join(__dirname, 'packages');
-const WORKSPACE_FILE = path.join(__dirname, 'pnpm-workspace.yaml');
+// Use process.cwd() to get the repository root
+const REPO_ROOT = process.cwd();
+const PACKAGES_DIR = path.join(REPO_ROOT, 'packages');
+const WORKSPACE_FILE = path.join(REPO_ROOT, 'pnpm-workspace.yaml');
 
 // Get all package directories
 const packages = fs

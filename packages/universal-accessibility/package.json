@@ -1,5 +1,5 @@
 {
-  "name": "@cathedral-trinity/accessibility",
+  "name": "@cathedral/accessibility",
   "version": "1.0.0",
   "description": "Cathedral v1.0 Universal Accessibility Engine - ND Support, Cognitive Load Optimization, Trauma-Safe Environments",
   "type": "module",
@@ -80,12 +80,11 @@
     "pnpm": ">=8.15.0"
   },
   "dependencies": {
-    "@cathedral-trinity/core": "workspace:*",
+    "@cathedral/core": "workspace:*",
     "tsx": "^4.19.2",
     "typescript": "^5.6.3",
     "eslint": "^9.16.0",
-    "prettier": "^3.4.2",
-    "@cathedral/core": "workspace:*"
+    "prettier": "^3.4.2"
   },
   "devDependencies": {
     "@types/node": "^22.9.0",
