@@ -26,8 +26,9 @@
     "validate:ownership": "node scripts/validate-ownership.js"
   },
   "peerDependencies": {
-    "three": "^0.169.0",
-    "@react-three/fiber": "^8.17.0"
+    "three": "^0.170.0",
+    "@react-three/fiber": "^8.17.10",
+    "@react-three/drei": "^9.114.3"
   },
   "keywords": [
     "cathedral",
@@ -53,14 +54,14 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "typescript": "^5.6.2",
-    "tsx": "^4.19.1",
-    "vitest": "^2.1.1",
-    "eslint": "^9.11.1",
-    "prettier": "^3.3.3",
+    "typescript": "^5.7.0",
+    "tsx": "^4.19.2",
+    "vitest": "^2.1.4",
+    "eslint": "^9.12.0",
+    "prettier": "^3.4.0",
     "rimraf": "^6.0.1",
-    "@typescript-eslint/eslint-plugin": "^8.6.0",
-    "@typescript-eslint/parser": "^8.6.0",
+    "@typescript-eslint/eslint-plugin": "^8.11.0",
+    "@typescript-eslint/parser": "^8.11.0",
     "eslint-config-prettier": "^9.1.0"
   },
   "consolidated": true,

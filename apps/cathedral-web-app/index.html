@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cathedral Real - Creative Cosmos Builder</title>
+    <meta name="description" content="Cathedral Real: A trauma-safe creative ecosystem with 3D visualization, sacred geometry, and collaborative art tools">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0,0,0,0.3);
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #64ffda, #00bcd4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .three-container {
+            width: 100%;
+            height: 400px;
+            position: relative;
+            margin: 2rem 0;
+        }
+        
+        .canvas {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .app-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        .app-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .app-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #64ffda;
+        }
+        
+        .app-card p {
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+        
+        .app-card .icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .controls {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+        
+        .control-button {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .control-button:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .info-panel {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.7);
+            padding: 15px;
+            border-radius: 8px;
+            max-width: 300px;
+        }
+        
+        .info-panel h4 {
+            color: #64ffda;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .apps-grid {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>🏰 Cathedral Real</h1>
+        <p>A trauma-safe creative ecosystem with 3D visualization, sacred geometry, and collaborative art tools</p>
+    </header>
+    
+    <div class="three-container">
+        <canvas id="threeCanvas" class="canvas"></canvas>
+        <div class="controls">
+            <button class="control-button" onclick="toggleAnimation()">⏸️ Pause</button>
+            <button class="control-button" onclick="resetCamera()">📷 Reset</button>
+            <button class="control-button" onclick="toggleTraumaMode()">🛡️ Trauma Safe</button>
+        </div>
+        <div class="info-panel">
+            <h4>Sacred Geometry</h4>
+            <p>Experience cathedral structures through trauma-safe 3D visualization. Use mouse to rotate, scroll to zoom.</p>
+        </div>
+    </div>
+    
+    <main class="apps-grid">
+        <a href="cosmogenesis/index.html" class="app-card">
+            <span class="icon">🌌</span>
+            <h3>Cosmogenesis</h3>
+            <p>3D cosmos visualization with sacred geometry and sacred mathematics</p>
+        </a>
+        
+        <a href="circuitum99-cyoa/index.html" class="app-card">
+            <span class="icon">🎭</span>
+            <h3>Circuitum99 CYOA</h3>
+            <p>Interactive storytelling system with arcana-based choices and outcomes</p>
+        </a>
+        
+        <a href="hall-of-ateliers/index.html" class="app-card">
+            <span class="icon">🎨</span>
+            <h3>Hall of Ateliers</h3>
+            <p>Professional creative collaboration system for artists and creators</p>
+        </a>
+        
+        <a href="stone-grimoire/index.html" class="app-card">
+            <span class="icon">🗿</span>
+            <h3>Stone Grimoire</h3>
+            <p>Body nodes and archive systems with trauma-safe interfaces</p>
+        </a>
+        
+        <a href="liber-arcanae/index.html" class="app-card">
+            <span class="icon">🔮</span>
+            <h3>Liber Arcanae</h3>
+            <p>Tarot and arcana system interface with sacred mystical knowledge</p>
+        </a>
+        
+        <a href="about/index.html" class="app-card">
+            <span class="icon">ℹ️</span>
+            <h3>About Cathedral Real</h3>
+            <p>Learn about our trauma-safe design philosophy and sacred geometry principles</p>
+        </a>
+    </main>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="three-scene.js"></script>
+</body>
+</html>

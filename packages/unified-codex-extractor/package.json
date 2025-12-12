@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@cathedral/codex-144-99": "workspace:*",
-    "@cathedral/cathedral-design-library": "workspace:*",
+    "@cathedral/design-library": "workspace:*",
     "@cathedral/godot-design-studio": "workspace:*",
     "@cathedral/shared": "workspace:*",
     "canvas": "^2.11.2",

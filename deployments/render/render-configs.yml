@@ -1,0 +1,247 @@
+# Cathedral Real - Render.com Deployment Configurations
+# Database-dependent applications for full-stack deployment
+
+version: '3.8'
+
+services:
+  # Cathedral Web App - Main React Application
+  cathedral-web-app:
+    type: web
+    env: node
+    plan: free
+    region: oregon
+    buildCommand: |
+      cd packages/cathedral-web-app && \
+      pnpm install --frozen-lockfile && \
+      pnpm run build
+    startCommand: |
+      cd packages/cathedral-web-app && \
+      pnpm run preview --port $PORT --host 0.0.0.0
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: VITE_APP_VERSION
+        value: "1.0.0"
+      - key: PORT
+        fromService:
+          type: envVarGroup
+          name: cathedral-env
+          property: PORT
+    healthCheckPath: /
+    disk:
+      name: cathedral-web-app
+      mountPath: /app/data
+      sizeGB: 1
+
+  # Cosmogenesis - 3D Visualization App
+  cosmogenesis:
+    type: web
+    env: node
+    plan: free
+    region: oregon
+    buildCommand: |
+      cd packages/cosmogenesis && \
+      pnpm install --frozen-lockfile && \
+      pnpm run build
+    startCommand: |
+      cd packages/cosmogenesis && \
+      npx serve dist -s -l $PORT
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        fromService:
+          type: envVarGroup
+          name: cathedral-env
+          property: PORT
+    healthCheckPath: /
+    disk:
+      name: cosmogenesis-data
+      mountPath: /app/data
+      sizeGB: 1
+
+  # Hall of Ateliers - Creative Collaboration Platform
+  hall-of-ateliers:
+    type: web
+    env: node
+    plan: starter
+    region: oregon
+    buildCommand: |
+      cd packages/hall-of-ateliers && \
+      pnpm install --frozen-lockfile && \
+      pnpm run build
+    startCommand: |
+      cd packages/hall-of-ateliers && \
+      npx serve dist -s -l $PORT
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        fromService:
+          type: envVarGroup
+          name: cathedral-env
+          property: PORT
+      - key: DATABASE_URL
+        fromService:
+          type: envVarGroup
+          name: cathedral-env
+          property: DATABASE_URL
+    healthCheckPath: /
+    disk:
+      name: hall-of-ateliers-data
+      mountPath: /app/data
+      sizeGB: 2
+
+  # Stone Grimoire - Body Nodes and Archive System
+  stone-grimoire:
+    type: web
+    env: node
+    plan: free
+    region: oregon
+    buildCommand: |
+      cd packages/stone-grimoire && \
+      pnpm install --frozen-lockfile && \
+      pnpm run build
+    startCommand: |
+      cd packages/stone-grimoire && \
+      npx serve dist -s -l $PORT
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        fromService:
+          type: envVarGroup
+          name: cathedral-env
+          property: PORT
+    healthCheckPath: /
+    disk:
+      name: stone-grimoire-data
+      mountPath: /app/data
+      sizeGB: 1
+
+  # Circuitum99 CYOA - Interactive Story System
+  circuitum99-cyoa:
+    type: web
+    env: node
+    plan: starter
+    region: oregon
+    buildCommand: |
+      cd packages/circuitum99-arcanae-cyoa && \
+      pnpm install --frozen-lockfile && \
+      pnpm run build
+    startCommand: |
+      cd packages/circuitum99-arcanae-cyoa && \
+      npx serve dist -s -l $PORT
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        fromService:
+          type: envVarGroup
+          name: cathedral-env
+          property: PORT
+      - key: DATABASE_URL
+        fromService:
+          type: envVarGroup
+          name: cathedral-env
+          property: DATABASE_URL
+    healthCheckPath: /
+    disk:
+      name: circuitum99-cyoa-data
+      mountPath: /app/data
+      sizeGB: 2
+
+  # Liber Arcanae Core - Tarot System Interface
+  liber-arcanae-core:
+    type: web
+    env: node
+    plan: free
+    region: oregon
+    buildCommand: |
+      cd packages/liber-arcanae-core && \
+      pnpm install --frozen-lockfile && \
+      pnpm run build
+    startCommand: |
+      cd packages/liber-arcanae-core && \
+      npx serve dist -s -l $PORT
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        fromService:
+          type: envVarGroup
+          name: cathedral-env
+          property: PORT
+    healthCheckPath: /
+    disk:
+      name: liber-arcanae-data
+      mountPath: /app/data
+      sizeGB: 1
+
+  # PostgreSQL Database for Data Persistence
+  cathedral-postgres:
+    type: pserv
+    plan: starter
+    region: oregon
+    postgresVersion: "15"
+    envVars:
+      - key: POSTGRES_DB
+        value: cathedral_real
+      - key: POSTGRES_USER
+        valueFromSecret:
+          name: cathedral-secrets
+          key: POSTGRES_USER
+      - key: POSTGRES_PASSWORD
+        valueFromSecret:
+          name: cathedral-secrets
+          key: POSTGRES_PASSWORD
+
+  # Redis for Caching and Session Management
+  cathedral-redis:
+    type: redis
+    plan: starter
+    region: oregon
+    maxmemoryPolicy: allkeys-lru
+
+  # Environment Variables Group
+  cathedral-env:
+    env: envVarGroup
+    name: cathedral-env
+    region: oregon
+    data:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "10000"
+      - key: DATABASE_URL
+        value: postgres://user:password@host:5432/cathedral_real
+      - key: REDIS_URL
+        value: redis://user:password@host:6379
+      - key: CORS_ORIGIN
+        value: "*"
+      - key: JWT_SECRET
+        valueFromSecret:
+          name: cathedral-secrets
+          key: JWT_SECRET
+
+envVarGroups:
+  # Secrets Management (create manually in Render dashboard)
+  cathedral-secrets:
+    name: cathedral-secrets
+    region: oregon
+    data:
+      - key: POSTGRES_USER
+        value: cathedral_user
+      - key: POSTGRES_PASSWORD
+        value: secure_random_password_here
+      - key: JWT_SECRET
+        value: your-super-secret-jwt-key-here
+
+# Custom Domains (configure manually)
+# domains:
+#   - cathedral-web-app.onrender.com
+#   - cosmogenesis.onrender.com
+#   - hall-of-ateliers.onrender.com
+#   - stone-grimoire.onrender.com
+#   - circuitum99-cyoa.onrender.com
+#   - liber-arcanae.onrender.com

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmogenesis - 3D Cosmos Visualization</title>
+    <meta name="description" content="Explore sacred geometry and cosmic structures in 3D with Cathedral Real's Cosmogenesis visualization system">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: radial-gradient(ellipse at center, #1a1a2e 0%, #000000 70%);
+            color: #ffffff;
+            overflow: hidden;
+        }
+        
+        .header {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+            background: rgba(0,0,0,0.7);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #64ffda, #00bcd4, #9c27b0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .header p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            max-width: 300px;
+        }
+        
+        .controls {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            background: rgba(0,0,0,0.7);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .control-group {
+            margin-bottom: 15px;
+        }
+        
+        .control-group label {
+            display: block;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            color: #64ffda;
+        }
+        
+        .control-group input[type="range"] {
+            width: 200px;
+            margin-right: 10px;
+        }
+        
+        .control-group select, .control-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        
+        .mode-selector {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .mode-btn {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.8rem;
+        }
+        
+        .mode-btn.active {
+            background: #64ffda;
+            color: #000;
+        }
+        
+        .mode-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .mode-btn.active:hover {
+            background: #4fd4c2;
+        }
+        
+        .info-panel {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.7);
+            padding: 15px;
+            border-radius: 10px;
+            max-width: 350px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .info-panel h4 {
+            color: #64ffda;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        
+        .info-panel p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+        
+        .canvas-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+        
+        #cosmosCanvas {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            background: rgba(0,0,0,0.7);
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: #64ffda;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateX(-50%) translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .header, .controls, .info-panel {
+                position: relative;
+                margin: 10px;
+                max-width: none;
+            }
+            
+            .mode-selector {
+                flex-direction: column;
+            }
+            
+            .control-group input[type="range"] {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="canvas-container">
+        <canvas id="cosmosCanvas"></canvas>
+        
+        <a href="../cathedral-web-app/index.html" class="back-link">← Back to Cathedral Real</a>
+        
+        <div class="header">
+            <h1>🌌 Cosmogenesis</h1>
+            <p>Explore sacred geometry and cosmic structures through interactive 3D visualization. Navigate the cathedral of space with your mouse and discover the mathematical beauty of the cosmos.</p>
+        </div>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label>Sacred Geometry Mode</label>
+                <div class="mode-selector">
+                    <button class="mode-btn active" data-mode="tetrahedron">🔺 Tetrahedron</button>
+                    <button class="mode-btn" data-mode="cube">🧊 Cube</button>
+                    <button class="mode-btn" data-mode="octahedron">🔮 Octahedron</button>
+                    <button class="mode-btn" data-mode="dodecahedron">🔳 Dodecahedron</button>
+                    <button class="mode-btn" data-mode="icosahedron">⭕ Icosahedron</button>
+                    <button class="mode-btn" data-mode="mandala">🕉️ Mandala</button>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <label>Visualization</label>
+                <select id="colorScheme">
+                    <option value="cosmic">Cosmic Blues</option>
+                    <option value="sacred">Sacred Gold</option>
+                    <option value="mystical">Mystical Purple</option>
+                    <option value="neutral">Neutral Gray</option>
+                </select>
+                <label><input type="checkbox" id="wireframe"> Wireframe</label>
+                <label><input type="checkbox" id="particles" checked> Particles</label>
+            </div>
+            
+            <div class="control-group">
+                <label>Animation Speed</label>
+                <input type="range" id="speed" min="0" max="2" step="0.1" value="0.5">
+                <span id="speedValue">0.5</span>
+            </div>
+            
+            <div class="control-group">
+                <label>Complexity</label>
+                <input type="range" id="complexity" min="1" max="10" step="1" value="5">
+                <span id="complexityValue">5</span>
+            </div>
+        </div>
+        
+        <div class="info-panel">
+            <h4>Sacred Mathematics</h4>
+            <p id="geometryInfo">The tetrahedron is the simplest Platonic solid, representing the element of fire and the foundation of all sacred geometry. Each face is an equilateral triangle, creating perfect balance and harmony.</p>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="cosmogenesis-scene.js"></script>
+</body>
+</html>

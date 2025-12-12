@@ -1,6 +1,6 @@
 # 🏛️ Cathedral Real - Cosmos Builder Framework
 
-> **A comprehensive Cosmos Builder ecosystem with 132 packages, ready for free deployment to Render, Vercel, Coolify (Self-Hosted), and Godot Cloud**
+> **A comprehensive Cosmos Builder ecosystem with 132 packages, ready for free deployment to Render, surge.sh or github-pages, Coolify (Self-Hosted), and Godot Cloud**
 
 [![Node.js Version](https://img.shields.io/badge/Node.js-20.18.0-green.svg)](https://nodejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue.svg)](https://typescriptlang.org/)
@@ -34,7 +34,7 @@ RENDER_API_TOKEN=your_render_api_token
 PRODUCTION_RENDER_SERVICE_ID_CATARACT=your_service_id
 PRODUCTION_RENDER_SERVICE_ID_ATELIERS=your_service_id
 PRODUCTION_RENDER_SERVICE_ID_LOGO=your_service_id
-VERCEL_TOKEN=your_vercel_token
+surge.sh or github-pages_TOKEN=your_surge.sh or github-pages_token
 COOLIFY_HOST=your_coolify_server_ip
 COOLIFY_TOKEN=your_coolify_token
 GODOT_CLOUD_PROJECT_ID=your_project_id
@@ -51,8 +51,8 @@ pnpm install
 # Deploy to Render (Free tier)
 ./scripts/deploy-render.sh production
 
-# Deploy to Vercel (Free tier)
-./scripts/deploy-vercel.sh production
+# Deploy to surge.sh or github-pages (Free tier)
+./scripts/deploy-surge.sh or github-pages.sh production
 
 # Deploy to Coolify (Self-Hosted)
 ./scripts/deploy-coolify.sh production
@@ -62,18 +62,18 @@ pnpm install
 
 ### **🎯 Deployment-Ready Applications**
 - **`packages/cataract-book-scanner/`** → React + Vite document scanner
-  - 🔗 Render: `cataract-book-scanner.onrender.com`
-  - 🔗 Vercel: `cataract-book-scanner.vercel.app`
+  - 🔗 Render: `cataract-book-scanner.onsurge.sh or github-pages`
+  - 🔗 surge.sh or github-pages: `cataract-book-scanner.surge.sh or github-pages.app`
   - 🏠 Coolify: `cataract.cathedral.example.com`
 
 - **`packages/hall-of-ateliers/`** → React + Three.js creative space
-  - 🔗 Render: `hall-of-ateliers.onrender.com`
-  - 🔗 Vercel: `hall-of-ateliers.vercel.app`
+  - 🔗 Render: `hall-of-ateliers.onsurge.sh or github-pages`
+  - 🔗 surge.sh or github-pages: `hall-of-ateliers.surge.sh or github-pages.app`
   - 🏠 Coolify: `ateliers.cathedral.example.com`
 
 - **`packages/cathedral-logo-system/`** → Three.js + React logo generator
-  - 🔗 Render: `cathedral-logo-system.onrender.com`
-  - 🔗 Vercel: `cathedral-logo-system.vercel.app`
+  - 🔗 Render: `cathedral-logo-system.onsurge.sh or github-pages`
+  - 🔗 surge.sh or github-pages: `cathedral-logo-system.surge.sh or github-pages.app`
   - 🏠 Coolify: `logo.cathedral.example.com`
 
 ### **🎮 Game Development (Godot)**
@@ -111,14 +111,14 @@ pnpm install
 ### **Render (Web Applications)**
 - **Free Tier**: 750 hours/month
 - **Build**: Auto-deploy on Git push
-- **Domains**: `your-app.onrender.com`
+- **Domains**: `your-app.onsurge.sh or github-pages`
 - **Setup**: Configure service IDs in GitLab CI
 
-### **Vercel (Frontend Applications)**
+### **surge.sh or github-pages (Frontend Applications)**
 - **Free Tier**: 100GB bandwidth/month
 - **Build**: Instant deployment
-- **Domains**: `your-app.vercel.app`
-- **Setup**: Add Vercel token to GitLab CI
+- **Domains**: `your-app.surge.sh or github-pages.app`
+- **Setup**: Add surge.sh or github-pages token to GitLab CI
 
 ### **Coolify (Self-Hosted Platform)**
 - **Cost**: Server hosting only (~$10-50/month)
@@ -197,7 +197,7 @@ turbo run format
 
 ### **Monthly Costs**
 - **Render**: Free (750 hours/month)
-- **Vercel**: Free (100GB bandwidth)
+- **surge.sh or github-pages**: Free (100GB bandwidth)
 - **Coolify**: Self-hosted ($10-50/month for server)
 - **GitLab**: Free (unlimited private repos)
 - **Godot Cloud**: Free (development tier)

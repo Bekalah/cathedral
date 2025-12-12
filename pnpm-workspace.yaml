@@ -1,5 +1,6 @@
 packages:
   - "packages/*"
+  - "packages/@cathedral/cathedral-web-app"
   - "packages/agent-integration"
   - "packages/arcana"
   - "packages/archetypal-engine"

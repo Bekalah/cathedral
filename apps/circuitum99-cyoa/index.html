@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circuitum99 CYOA - Interactive Storytelling</title>
+    <meta name="description" content="Experience interactive storytelling with arcana-based choices and outcomes in Cathedral Real's Circuitum99 CYOA system">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0,0,0,0.3);
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #64ffda, #00bcd4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .story-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .story-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: #f0f0f0;
+        }
+        
+        .choices {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .choice-btn {
+            background: linear-gradient(135deg, rgba(100,255,218,0.1), rgba(0,188,212,0.1));
+            border: 2px solid rgba(100,255,218,0.3);
+            color: #ffffff;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .choice-btn:hover {
+            background: linear-gradient(135deg, rgba(100,255,218,0.2), rgba(0,188,212,0.2));
+            border-color: #64ffda;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(100,255,218,0.3);
+        }
+        
+        .choice-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .choice-btn:hover::before {
+            left: 100%;
+        }
+        
+        .arcana-display {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .arcana-card {
+            width: 60px;
+            height: 90px;
+            background: linear-gradient(135deg, #2c1810, #4a4a4a);
+            border: 2px solid #ffd700;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .arcana-card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(255,215,0,0.4);
+        }
+        
+        .arcana-card.selected {
+            border-color: #64ffda;
+            box-shadow: 0 0 15px rgba(100,255,218,0.5);
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 4px;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #64ffda, #00bcd4);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+        
+        .back-link {
+            display: inline-block;
+            background: rgba(0,0,0,0.7);
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: #64ffda;
+            margin: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #64ffda;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .restart-btn {
+            background: linear-gradient(135deg, #f44336, #d32f2f);
+            border: none;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+        }
+        
+        .restart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(244,67,54,0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .story-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            
+            .arcana-display {
+                gap: 0.5rem;
+            }
+            
+            .arcana-card {
+                width: 50px;
+                height: 75px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="../cathedral-web-app/index.html" class="back-link">← Back to Cathedral Real</a>
+    
+    <header class="header">
+        <h1>🎭 Circuitum99 CYOA</h1>
+        <p>Interactive storytelling system with arcana-based choices and outcomes</p>
+    </header>
+    
+    <div class="arcana-display" id="arcanaDisplay"></div>
+    
+    <div class="stats" id="stats">
+        <div class="stat">
+            <div class="stat-value" id="chapters">1</div>
+            <div class="stat-label">Chapter</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value" id="choices">0</div>
+            <div class="stat-label">Choices Made</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value" id="arcanaUsed">0</div>
+            <div class="stat-label">Arcana Drawn</div>
+        </div>
+    </div>
+    
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+    </div>
+    
+    <div class="story-container">
+        <div class="story-text" id="storyText">
+            <!-- Story content will be loaded here -->
+        </div>
+        <div class="choices" id="choices">
+            <!-- Choice buttons will be loaded here -->
+        </div>
+        
+        <button class="restart-btn" id="restartBtn" style="display: none;">🔄 Restart Journey</button>
+    </div>
+    
+    <script src="cyoa-engine.js"></script>
+</body>
+</html>
