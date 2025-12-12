@@ -1,5 +1,8 @@
 # 🏛️ Cathedral Real - Cosmos Builder Framework
 
+> **🚀 Primary Repository**: This project is now primarily hosted on [GitLab](https://gitlab.com/bekalah/cathedral-real).  
+> GitHub repository is maintained as a mirror. For issues, merge requests, and CI/CD, please use GitLab.
+
 > **A comprehensive Cosmos Builder ecosystem with 132 packages, ready for free deployment to Render, surge.sh or github-pages, Coolify (Self-Hosted), and Godot Cloud**
 
 [![Node.js Version](https://img.shields.io/badge/Node.js-20.18.0-green.svg)](https://nodejs.org/)

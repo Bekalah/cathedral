@@ -1,0 +1,26 @@
+{
+    "name": "cathedral-real",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Cathedral Real - Creative Cosmos Builder Framework",
+    "scripts": {
+        "build": "pnpm -r --filter='./packages/**' --filter='./apps/**' run build",
+        "test": "pnpm -r --filter='./packages/**' run test",
+        "lint": "pnpm -r --filter='./packages/**' run lint",
+        "type-check": "pnpm -r --filter='./packages/**' run type-check",
+        "clean": "pnpm -r run clean",
+        "dev": "pnpm -r --parallel --filter='./apps/**' run dev"
+    },
+    "packageManager": "pnpm@10.23.0",
+    "engines": {
+        "node": ">=20.18.0",
+        "pnpm": ">=10.0.0"
+    },
+    "keywords": [
+        "cathedral",
+        "cosmos-builder",
+        "creative-tools",
+        "monorepo"
+    ],
+    "license": "CC0-1.0"
+}
