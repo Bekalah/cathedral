@@ -1,8 +1,0 @@
-# Original pnpm-workspace.yaml before Turbo Build System restoration
-# This represents the state where pnpm-workspace.yaml was missing and
-# packages had no explicit workspace configuration
-
-packages:
-  # Original state: No explicit package declarations
-  # This caused build system failures for 59+ packages
-  # Restored from complete build failure to operational status
