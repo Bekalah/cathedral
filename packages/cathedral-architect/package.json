@@ -27,22 +27,22 @@
     "validate:ownership": "node scripts/validate-ownership.js"
   },
   "dependencies": {
-    "three": "^0.158.0",
-    "@cathedral/three-engine": "workspace:*",
     "@cathedral/codex-engine": "workspace:*",
-    "typescript": "^5.2.2",
-    "rimraf": "^5.0.5"
+    "@cathedral/three-engine": "workspace:*",
+    "rimraf": "^5.0.10",
+    "three": "^0.158.0",
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "typescript": "^5.6.2",
-    "tsx": "^4.19.1",
-    "vitest": "^2.1.1",
-    "eslint": "^9.11.1",
-    "prettier": "^3.3.3",
+    "@typescript-eslint/eslint-plugin": "^8.49.0",
+    "@typescript-eslint/parser": "^8.49.0",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^9.1.2",
+    "prettier": "^3.7.4",
     "rimraf": "^6.0.1",
-    "@typescript-eslint/eslint-plugin": "^8.6.0",
-    "@typescript-eslint/parser": "^8.6.0",
-    "eslint-config-prettier": "^9.1.0"
+    "tsx": "^4.21.0",
+    "typescript": "^5.6.2",
+    "vitest": "^2.1.9"
   },
   "keywords": [
     "cathedral",

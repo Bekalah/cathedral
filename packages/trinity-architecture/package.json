@@ -26,28 +26,28 @@
     "validate:ownership": "node scripts/validate-ownership.js"
   },
   "dependencies": {
-    "@cathedral/hall-of-ateliers": "workspace:*",
     "@cathedral/fusion-creative-suite": "workspace:*",
-    "@cathedral/trauma-safe-ui": "workspace:*",
+    "@cathedral/hall-of-ateliers": "workspace:*",
+    "@cathedral/sacred-mathematics-core": "workspace:*",
     "@cathedral/tesseract-bridge": "workspace:*",
-    "three": "^0.160.0",
-    "tone": "^14.7.77",
-    "typescript": "^5.3.0",
+    "@cathedral/trauma-safe-ui": "workspace:*",
     "jest": "^29.7.0",
-    "@cathedral/sacred-mathematics-core": "workspace:*"
+    "three": "^0.160.1",
+    "tone": "^14.9.17",
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
+    "@types/node": "^20.19.26",
     "@types/three": "^0.160.0",
-    "@types/node": "^20.10.0",
+    "@typescript-eslint/eslint-plugin": "^8.49.0",
+    "@typescript-eslint/parser": "^8.49.0",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^9.1.2",
+    "prettier": "^3.7.4",
+    "rimraf": "^6.1.2",
+    "tsx": "^4.21.0",
     "typescript": "^5.6.2",
-    "tsx": "^4.19.1",
-    "vitest": "^2.1.1",
-    "eslint": "^9.11.1",
-    "prettier": "^3.3.3",
-    "rimraf": "^6.0.1",
-    "@typescript-eslint/eslint-plugin": "^8.6.0",
-    "@typescript-eslint/parser": "^8.6.0",
-    "eslint-config-prettier": "^9.1.0"
+    "vitest": "^2.1.9"
   },
   "keywords": [
     "consciousness",

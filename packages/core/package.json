@@ -29,20 +29,20 @@
     "validate:ownership": "node scripts/validate-ownership.js"
   },
   "dependencies": {
-    "zod": "^3.22.0",
     "lodash": "^4.17.21",
-    "typescript": "^5.0.0"
+    "typescript": "^5.9.3",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.49.0",
+    "@typescript-eslint/parser": "^8.49.0",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^9.1.2",
+    "prettier": "^3.7.4",
+    "rimraf": "^6.1.2",
+    "tsx": "^4.21.0",
     "typescript": "^5.6.2",
-    "tsx": "^4.19.1",
-    "vitest": "^2.1.1",
-    "eslint": "^9.11.1",
-    "prettier": "^3.3.3",
-    "rimraf": "^6.0.1",
-    "@typescript-eslint/eslint-plugin": "^8.6.0",
-    "@typescript-eslint/parser": "^8.6.0",
-    "eslint-config-prettier": "^9.1.0"
+    "vitest": "^2.1.9"
   },
   "engines": {
     "node": ">=20.18.0",
