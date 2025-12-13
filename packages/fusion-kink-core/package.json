@@ -20,13 +20,14 @@
   "consolidated": true,
   "consolidatedAt": "2025-12-01T19:36:50.310Z",
   "engines": {
-    "pnpm": ">=8.15.0"
+    "pnpm": ">=8.15.0",
+    "node": ">=20.18.0"
   },
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Rebis",
-    "symbol": "\u26a5",
-    "label": "\u26a5 Rebis (fusion-kink-core)"
+    "symbol": "⚥",
+    "label": "⚥ Rebis (fusion-kink-core)"
   },
   "cathedral": {
     "sacred_mathematics": {

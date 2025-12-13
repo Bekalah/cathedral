@@ -21,15 +21,49 @@ async function findPackageJsonFiles() {
   const packages = await readdir(packagesDir);
   const packageJsons = [];
 
-  for (const package of packages) {
-    const packageJsonPath = join(packagesDir, package, 'package.json');
+  for (const pkg of packages) {
+    const packageJsonPath = join(packagesDir, pkg, 'package.json');
     try {
       const content = await readFile(packageJsonPath, 'utf8');
-      packageJsons.push({ path: packageJsonPath, content, name: package });
+      packageJsons.push({ path: packageJsonPath, content, name: pkg });
     } catch (error) {
       // Skip if package.json doesn't exist
       continue;
     }
+  }
+
+  // Scan apps directory
+  try {
+    const appsDir = join(__dirname, '../apps');
+    const apps = await readdir(appsDir);
+    for (const app of apps) {
+      const packageJsonPath = join(appsDir, app, 'package.json');
+      try {
+        const content = await readFile(packageJsonPath, 'utf8');
+        packageJsons.push({ path: packageJsonPath, content, name: app });
+      } catch (error) {
+        continue;
+      }
+    }
+  } catch (e) {
+    // apps dir might not exist
+  }
+
+  // Scan experiments directory
+  try {
+    const experimentsDir = join(__dirname, '../experiments');
+    const experiments = await readdir(experimentsDir);
+    for (const exp of experiments) {
+      const packageJsonPath = join(experimentsDir, exp, 'package.json');
+      try {
+        const content = await readFile(packageJsonPath, 'utf8');
+        packageJsons.push({ path: packageJsonPath, content, name: exp });
+      } catch (error) {
+        continue;
+      }
+    }
+  } catch (e) {
+    // experiments dir might not exist
   }
 
   return packageJsons;
@@ -38,7 +72,7 @@ async function findPackageJsonFiles() {
 function updateEngines(content) {
   try {
     const packageJson = JSON.parse(content);
-    
+
     // Initialize engines if it doesn't exist
     if (!packageJson.engines) {
       packageJson.engines = {};
@@ -46,7 +80,7 @@ function updateEngines(content) {
 
     // Update Node.js version
     packageJson.engines.node = TARGET_NODE_VERSION;
-    
+
     // Update PNPM version if it exists
     if (packageJson.engines.pnpm) {
       packageJson.engines.pnpm = TARGET_PNPM_VERSION;
@@ -69,7 +103,7 @@ async function main() {
 
   for (const { path, content, name } of packageJsons) {
     const updatedContent = updateEngines(content);
-    
+
     if (updatedContent !== content) {
       await writeFile(path, updatedContent, 'utf8');
       console.log(`✅ Updated ${name}`);

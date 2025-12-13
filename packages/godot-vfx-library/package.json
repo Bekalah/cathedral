@@ -91,7 +91,12 @@
       "archetypalForms": true
     },
     "integration": {
-      "connects_to": []
+      "connects_to": [
+        "art-engine-core",
+        "godot-liber-arcanae",
+        "godot-codex-14499",
+        "godot-tesseract-bridge"
+      ]
     }
   },
   "files": [

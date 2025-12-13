@@ -8,8 +8,8 @@
  */
 
 // Codex144Engine and SACRED_MATH available if needed
-// import { Codex144Engine } from '../../codex-144-99-core/src/index';
-// import { SACRED_MATH } from '../../sacred-mathematics-core/src/index';
+import { Codex144Engine } from '@cathedral/codex-144-99-core';
+import { SACRED_MATH } from '@cathedral/sacred-mathematics-core';
 
 export interface ArtNode {
   nodeIndex: number;
@@ -83,8 +83,8 @@ export interface ArtComposition {
  * Art Engine - Creates art from Codex144 nodes
  */
 export class ArtEngine {
-  // private codex144: Codex144Engine; // Available if needed
-  // private compositions: Map<number, ArtComposition>; // Available if needed
+  private codex144: Codex144Engine; 
+  private compositions: Map<number, ArtComposition>;
 
   // Sacred ratios
   private readonly GOLDEN_RATIO = 1.618033988749895;
@@ -118,9 +118,8 @@ export class ArtEngine {
   ];
 
   constructor() {
-    // Codex144Engine and compositions available if needed
-    // this.codex144 = new Codex144Engine();
-    // this.compositions = new Map();
+    this.codex144 = new Codex144Engine();
+    this.compositions = new Map();
   }
 
   /**

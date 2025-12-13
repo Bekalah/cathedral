@@ -47,8 +47,8 @@
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Trauma Safe Ui",
-    "symbol": "\u2299",
-    "label": "\u2299 Trauma Safe Ui (trauma-safe-ui)"
+    "symbol": "⊙",
+    "label": "⊙ Trauma Safe Ui (trauma-safe-ui)"
   },
   "publishConfig": {
     "access": "public"

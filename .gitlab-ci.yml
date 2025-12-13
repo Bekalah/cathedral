@@ -40,6 +40,22 @@ lint:
     - pnpm run lint || echo "Some packages may not have lint configured"
     - echo "Running type check..."
     - pnpm run type-check || echo "Some packages may not have type-check configured"
+    - main
+    - merge_requests
+
+# Research Structure Check
+research_check:
+  stage: test
+  image: alpine:latest
+  script:
+    - |
+      echo "Verifying research experiment structure..."
+      if [ -d "experiments" ] && [ -f "experiments/README.md" ]; then
+        echo "Research directory structure is valid."
+      else
+        echo "Research directory structure missing!"
+        exit 1
+      fi
   only:
     - main
     - merge_requests
@@ -117,23 +133,70 @@ deploy_godot:
   image: ubuntu:22.04
   before_script:
     - apt-get update && apt-get install -y wget unzip
-    - wget https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_linux.x86_64.zip
-    - unzip Godot_v4.3-stable_linux.x86_64.zip
+    # Download Godot 4.5 (updated from 4.3)
+    - wget https://github.com/godotengine/godot/releases/download/4.5-stable/Godot_v4.5-stable_linux.x86_64.zip
+    - unzip Godot_v4.5-stable_linux.x86_64.zip
+    - chmod +x Godot_v4.5-stable_linux.x86_64
+    # Download and Install Export Templates
+    - wget https://github.com/godotengine/godot/releases/download/4.5-stable/Godot_v4.5-stable_export_templates.tpz
+    - unzip Godot_v4.5-stable_export_templates.tpz
+    - mkdir -p ~/.local/share/godot/export_templates/4.5.stable
+    - mv templates/* ~/.local/share/godot/export_templates/4.5.stable/
   script:
     - |
-      echo "Building Godot projects..."
-      chmod +x Godot_v4.3-stable_linux.x86_64
-      # Build each Godot package
-      for pkg in packages/godot-*; do
-        if [ -d "$pkg" ]; then
-          echo "Building $pkg..."
-          ./Godot_v4.3-stable_linux.x86_64 --headless --export-release "Linux/X11" "$pkg/build/" || echo "$pkg build needs configuration"
-        fi
-      done
+      echo "Building Godot 4.5 projects..."
+      # Create builds directory
+      mkdir -p builds
+
+      # Export godot-liber-arcanae (game with HTML5 + Linux)
+      if [ -d "packages/godot-liber-arcanae" ] && [ -f "packages/godot-liber-arcanae/project.godot" ]; then
+        echo "Exporting godot-liber-arcanae..."
+        cd packages/godot-liber-arcanae
+        mkdir -p build/web build/linux
+        ../../Godot_v4.5-stable_linux.x86_64 --headless --export-release "HTML5" "build/web/index.html" || echo "HTML5 export failed (check presets)"
+        ../../Godot_v4.5-stable_linux.x86_64 --headless --export-release "Linux/X11" "build/linux/liber_arcanae.x86_64" || echo "Linux export failed (check presets)"
+        # Try Android export (might fail without Java/Android SDK in image, but config is ready)
+        mkdir -p build/android
+        ../../Godot_v4.5-stable_linux.x86_64 --headless --export-release "Android" "build/android/liber_arcanae.apk" || echo "Android export skipped (requires Java/SDK)"
+        cd ../..
+      fi
+
+      # Export godot-vfx-library (VFX demo with HTML5 + Linux)
+      if [ -d "packages/godot-vfx-library" ] && [ -f "packages/godot-vfx-library/project.godot" ]; then
+        echo "Exporting godot-vfx-library..."
+        cd packages/godot-vfx-library
+        mkdir -p build/web build/linux
+        ../../Godot_v4.5-stable_linux.x86_64 --headless --export-release "HTML5" "build/web/index.html" || echo "HTML5 export failed (check presets)"
+        ../../Godot_v4.5-stable_linux.x86_64 --headless --export-release "Linux/X11" "build/linux/vfx_library.x86_64" || echo "Linux export failed (check presets)"
+        cd ../..
+      fi
+
+      # Export godot-codex-14499 (library with Linux only)
+      if [ -d "packages/godot-codex-14499" ] && [ -f "packages/godot-codex-14499/project.godot" ]; then
+        echo "Exporting godot-codex-14499..."
+        cd packages/godot-codex-14499
+        mkdir -p build/linux
+        ../../Godot_v4.5-stable_linux.x86_64 --headless --export-release "Linux/X11" "build/linux/codex_14499.x86_64" || echo "Linux export failed (check presets)"
+        cd ../..
+      fi
+
+      # Export godot-design-studio (tool with Linux only)
+      if [ -d "packages/godot-design-studio" ] && [ -f "packages/godot-design-studio/project.godot" ]; then
+        echo "Exporting godot-design-studio..."
+        cd packages/godot-design-studio
+        mkdir -p build/linux
+        ../../Godot_v4.5-stable_linux.x86_64 --headless --export-release "Linux/X11" "build/linux/design_studio.x86_64" || echo "Linux export failed (check presets)"
+        cd ../..
+      fi
+
+      echo "Godot exports complete!"
   artifacts:
     paths:
-      - packages/godot-*/build/
-    expire_in: 1 week
+      - packages/godot-liber-arcanae/build/
+      - packages/godot-vfx-library/build/
+      - packages/godot-codex-14499/build/
+      - packages/godot-design-studio/build/
+    expire_in: 1 month
   environment:
     name: godot
   only:

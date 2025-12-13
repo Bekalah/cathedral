@@ -47,8 +47,8 @@
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Cathedral Style",
-    "symbol": "\u2299",
-    "label": "\u2299 Cathedral Style (cathedral-style)"
+    "symbol": "⊙",
+    "label": "⊙ Cathedral Style (cathedral-style)"
   },
   "publishConfig": {
     "access": "public"

@@ -77,7 +77,8 @@
         "godot-tesseract-bridge",
         "godot-vfx-library",
         "codex-144-99",
-        "codex-144-99-core"
+        "codex-144-99-core",
+        "art-engine-core"
       ]
     },
     "design_philosophy": {

@@ -86,7 +86,8 @@
         "godot-vfx-library",
         "liber-arcanae",
         "liber-arcanae-core",
-        "liber-arcanae-tools"
+        "liber-arcanae-tools",
+        "art-engine-core"
       ]
     },
     "design_philosophy": {

@@ -47,8 +47,8 @@
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Atelier Constitution",
-    "symbol": "\u2299",
-    "label": "\u2299 Atelier Constitution (atelier-constitution)"
+    "symbol": "⊙",
+    "label": "⊙ Atelier Constitution (atelier-constitution)"
   },
   "publishConfig": {
     "access": "public"

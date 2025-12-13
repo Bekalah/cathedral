@@ -47,8 +47,8 @@
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Fusion Creative Suite",
-    "symbol": "\u2299",
-    "label": "\u2299 Fusion Creative Suite (fusion-creative-suite)"
+    "symbol": "⊙",
+    "label": "⊙ Fusion Creative Suite (fusion-creative-suite)"
   },
   "publishConfig": {
     "access": "public"

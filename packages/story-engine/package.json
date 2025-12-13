@@ -44,13 +44,14 @@
   "consolidated": true,
   "consolidatedAt": "2025-12-01T19:37:02.484Z",
   "engines": {
-    "pnpm": ">=8.15.0"
+    "pnpm": ">=8.15.0",
+    "node": ">=20.18.0"
   },
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Story",
-    "symbol": "\u2299",
-    "label": "\u2299 Story (story-engine)"
+    "symbol": "⊙",
+    "label": "⊙ Story (story-engine)"
   },
   "cathedral": {
     "sacred_mathematics": {

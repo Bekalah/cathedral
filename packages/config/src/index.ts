@@ -33,6 +33,16 @@ export const CATHEDRAL_CONFIG = {
         endpoint: getEnv("AZURE_AI_STUDIO_ENDPOINT", ""),
         apiKey: getEnv("AZURE_AI_STUDIO_KEY", ""),
     },
+    defaultMode: "play" as AppMode,
+} as const;
+
+export type AppMode = "play" | "design" | "ritual" | "edit";
+
+export const AVAILABLE_MODES: Record<AppMode, { label: string; icon: string }> = {
+    play: { label: "Play", icon: "🎮" },
+    design: { label: "Design", icon: "✏️" },
+    ritual: { label: "Ritual", icon: "🕯️" },
+    edit: { label: "Edit", icon: "🛠️" },
 } as const;
 
 export const SACRED_GEOMETRY_PATTERNS = [

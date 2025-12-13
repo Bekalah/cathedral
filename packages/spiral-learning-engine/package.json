@@ -41,13 +41,14 @@
   "consolidated": true,
   "consolidatedAt": "2025-12-01T19:37:01.687Z",
   "engines": {
-    "pnpm": ">=8.15.0"
+    "pnpm": ">=8.15.0",
+    "node": ">=20.18.0"
   },
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Spiral Learning",
-    "symbol": "\u2299",
-    "label": "\u2299 Spiral Learning (spiral-learning-engine)"
+    "symbol": "⊙",
+    "label": "⊙ Spiral Learning (spiral-learning-engine)"
   },
   "cathedral": {
     "sacred_mathematics": {

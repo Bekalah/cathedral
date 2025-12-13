@@ -20,13 +20,14 @@
   "consolidated": true,
   "consolidatedAt": "2025-12-01T19:37:07.044Z",
   "engines": {
-    "pnpm": ">=8.15.0"
+    "pnpm": ">=8.15.0",
+    "node": ">=20.18.0"
   },
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Trinity V1 1",
-    "symbol": "\u2299",
-    "label": "\u2299 Trinity V1 1 (trinity-v1-1-core)"
+    "symbol": "⊙",
+    "label": "⊙ Trinity V1 1 (trinity-v1-1-core)"
   },
   "cathedral": {
     "sacred_mathematics": {

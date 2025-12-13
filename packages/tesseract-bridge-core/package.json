@@ -20,13 +20,14 @@
   "consolidated": true,
   "consolidatedAt": "2025-12-01T19:37:04.877Z",
   "engines": {
-    "pnpm": ">=8.15.0"
+    "pnpm": ">=8.15.0",
+    "node": ">=20.18.0"
   },
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Tesseract",
-    "symbol": "\u229e",
-    "label": "\u229e Tesseract (tesseract-bridge-core)"
+    "symbol": "⊞",
+    "label": "⊞ Tesseract (tesseract-bridge-core)"
   },
   "cathedral": {
     "sacred_mathematics": {

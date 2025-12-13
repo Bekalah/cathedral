@@ -42,6 +42,30 @@
     "color-thief": "^2.2.5",
     "validate-color": "^2.2.4",
     "uuid": "^10.0.0",
+    "@cathedral/cathedral-design-library": "workspace:*",
+    "@cathedral/visionary-design-system": "workspace:*",
+    "@cathedral/design-mathematics-core": "workspace:*",
+    "@cathedral/synth-design-math-core": "workspace:*",
+    "@cathedral/game-design-core": "workspace:*",
+    "@cathedral/art-engine-core": "workspace:*",
+    "@cathedral/story-engine": "workspace:*",
+    "@cathedral/music-engine-core": "workspace:*",
+    "@cathedral/mystical-sound-engine": "workspace:*",
+    "@cathedral/synthesis-engine": "workspace:*",
+    "@cathedral/sonic-physics-engine": "workspace:*",
+    "@cathedral/kira-audio-engine": "workspace:*",
+    "@cathedral/cathedral-visual-engine": "workspace:*",
+    "@cathedral/three-engine": "workspace:*",
+    "@cathedral/gem-tower-engine": "workspace:*",
+    "@cathedral/tarot-engine": "workspace:*",
+    "@cathedral/node-tree-engine": "workspace:*",
+    "@cathedral/professional-typography-engine": "workspace:*",
+    "@cathedral/living-canon-engine": "workspace:*",
+    "@cathedral/spiral-learning-engine": "workspace:*",
+    "@cathedral/archetypal-engine": "workspace:*",
+    "@cathedral/codex-engine": "workspace:*",
+    "@cathedral/professional-vector-engine": "workspace:*",
+    "@cathedral/professional-collaboration-engine": "workspace:*",
     "typescript": "^5.7.0"
   },
   "devDependencies": {
@@ -121,8 +145,8 @@
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Hall Of Ateliers",
-    "symbol": "\u2299",
-    "label": "\u2299 Hall Of Ateliers (@cathedral/hall-of-ateliers)"
+    "symbol": "⊙",
+    "label": "⊙ Hall Of Ateliers (@cathedral/hall-of-ateliers)"
   },
   "cathedral": {
     "sacred_mathematics": {

@@ -66,9 +66,9 @@ build_web_apps() {
     log_info "Building web applications..."
     
     # Build cataract-book-scanner
-    if [ -d "packages/cataract-book-scanner" ]; then
+    if [ -d "apps/cataract-book-scanner" ]; then
         log_info "Building cataract-book-scanner..."
-        cd packages/cataract-book-scanner
+        cd apps/cataract-book-scanner
         npm install
         npm run build
         cd ../..
@@ -76,9 +76,9 @@ build_web_apps() {
     fi
     
     # Build hall-of-ateliers
-    if [ -d "packages/hall-of-ateliers" ]; then
+    if [ -d "apps/hall-of-ateliers" ]; then
         log_info "Building hall-of-ateliers..."
-        cd packages/hall-of-ateliers
+        cd apps/hall-of-ateliers
         npm install
         npm run build
         cd ../..
@@ -86,9 +86,9 @@ build_web_apps() {
     fi
     
     # Build cathedral-logo-system
-    if [ -d "packages/cathedral-logo-system" ]; then
+    if [ -d "apps/cathedral-logo-system" ]; then
         log_info "Building cathedral-logo-system..."
-        cd packages/cathedral-logo-system
+        cd apps/cathedral-logo-system
         npm install
         npm run build
         cd ../..

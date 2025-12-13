@@ -51,8 +51,8 @@
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Tarot Reader",
-    "symbol": "\u2299",
-    "label": "\u2299 Tarot Reader (tarot-reader)"
+    "symbol": "⊙",
+    "label": "⊙ Tarot Reader (tarot-reader)"
   },
   "publishConfig": {
     "access": "public"

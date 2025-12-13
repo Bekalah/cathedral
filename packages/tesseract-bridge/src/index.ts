@@ -473,14 +473,63 @@ export class BridgeSecurityManager {
   /**
    * Verify data provenance
    */
-  verifyProvenance(data: any): boolean {
-    if (!data.protectionSeal) {
-      return false;
-    }
-
     const seal = this.protectionSeals.find(s => s.type === data.protectionSeal.type);
     return seal ? data.protectionSeal.signature === seal.signature : false;
   }
+}
+
+/**
+ * Bridge Mode Manager
+ * Handles application mode switching across the ecosystem
+ */
+export class BridgeModeManager {
+    private bridge: TesseractBridge;
+    private currentMode: string = 'play';
+
+    constructor(bridge: TesseractBridge) {
+        this.bridge = bridge;
+    }
+
+    /**
+     * Set the current application mode
+     * Broadcasts change to all connected apps/engines
+     */
+    setMode(mode: string): void {
+        const previousMode = this.currentMode;
+        this.currentMode = mode;
+
+        const event: BridgeEvent = {
+            id: `mode-change-${Date.now()}`,
+            type: 'system:mode_changed',
+            source: 'bridge-mode-manager',
+            data: { 
+                mode, 
+                previousMode,
+                timestamp: Date.now() 
+            },
+            timestamp: Date.now(),
+            propagation: []
+        };
+
+        this.bridge.emitEvent(event);
+        // console.log(`🔄 Mode switched: ${previousMode} -> ${mode}`);
+    }
+
+    /**
+     * Get current mode
+     */
+    getMode(): string {
+        return this.currentMode;
+    }
+
+    /**
+     * Listen for mode changes
+     */
+    onModeChange(callback: (mode: string) => void): () => void {
+        return this.bridge.subscribe('system:mode_changed', (event: BridgeEvent) => {
+            callback(event.data.mode);
+        });
+    }
 }
 
 /**
@@ -489,6 +538,7 @@ export class BridgeSecurityManager {
 export const tesseractBridge = new TesseractBridge();
 export const bridgeEventManager = new BridgeEventManager(tesseractBridge);
 export const bridgeSecurityManager = new BridgeSecurityManager();
+export const bridgeModeManager = new BridgeModeManager(tesseractBridge);
 
 // Default export for easy importing
 export default TesseractBridge;

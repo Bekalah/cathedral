@@ -21,4 +21,3 @@ interface ArcanaeCardProps {
 }
 export declare const ArcanaeCard: React.FC<ArcanaeCardProps>;
 export {};
-//# sourceMappingURL=ArcanaeCard.d.ts.map

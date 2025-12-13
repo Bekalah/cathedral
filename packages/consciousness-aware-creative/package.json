@@ -20,13 +20,14 @@
   "consolidated": true,
   "consolidatedAt": "2025-12-01T19:36:48.535Z",
   "engines": {
-    "pnpm": ">=8.15.0"
+    "pnpm": ">=8.15.0",
+    "node": ">=20.18.0"
   },
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Consciousness Aware Creative",
-    "symbol": "\u2299",
-    "label": "\u2299 Consciousness Aware Creative (consciousness-aware-creative)"
+    "symbol": "⊙",
+    "label": "⊙ Consciousness Aware Creative (consciousness-aware-creative)"
   },
   "cathedral": {
     "sacred_mathematics": {

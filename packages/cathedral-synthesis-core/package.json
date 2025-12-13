@@ -47,8 +47,8 @@
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Cathedral Synthesis",
-    "symbol": "\u2299",
-    "label": "\u2299 Cathedral Synthesis (cathedral-synthesis-core)"
+    "symbol": "⊙",
+    "label": "⊙ Cathedral Synthesis (cathedral-synthesis-core)"
   },
   "publishConfig": {
     "access": "public"

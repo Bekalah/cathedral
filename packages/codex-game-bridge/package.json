@@ -50,8 +50,8 @@
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Codex Game Bridge",
-    "symbol": "\u2299",
-    "label": "\u2299 Codex Game Bridge (codex-game-bridge)"
+    "symbol": "⊙",
+    "label": "⊙ Codex Game Bridge (codex-game-bridge)"
   },
   "publishConfig": {
     "access": "public"

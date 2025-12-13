@@ -15,6 +15,7 @@
 ## 🚀 **Quick Start - GitLab Clone & Deploy**
 
 ### 1. **Clone to GitLab**
+
 ```bash
 # Clone the repository
 git clone https://github.com/your-username/cathedral-real.git
@@ -29,6 +30,7 @@ git push -u origin main
 ```
 
 ### 2. **Setup GitLab CI/CD Variables**
+
 Add these variables in your GitLab project settings → CI/CD → Variables:
 
 ```
@@ -37,13 +39,15 @@ RENDER_API_TOKEN=your_render_api_token
 PRODUCTION_RENDER_SERVICE_ID_CATARACT=your_service_id
 PRODUCTION_RENDER_SERVICE_ID_ATELIERS=your_service_id
 PRODUCTION_RENDER_SERVICE_ID_LOGO=your_service_id
-surge.sh or github-pages_TOKEN=your_surge.sh or github-pages_token
+SURGE_TOKEN=your_surge_token
+GITHUB_TOKEN=your_github_token
 COOLIFY_HOST=your_coolify_server_ip
 COOLIFY_TOKEN=your_coolify_token
 GODOT_CLOUD_PROJECT_ID=your_project_id
 ```
 
 ### 3. **Deploy to All Free Platforms**
+
 ```bash
 # Install dependencies
 pnpm install
@@ -54,9 +58,6 @@ pnpm install
 # Deploy to Render (Free tier)
 ./scripts/deploy-render.sh production
 
-# Deploy to surge.sh or github-pages (Free tier)
-./scripts/deploy-surge.sh or github-pages.sh production
-
 # Deploy to Coolify (Self-Hosted)
 ./scripts/deploy-coolify.sh production
 ```
@@ -64,28 +65,33 @@ pnpm install
 ## 📁 **Project Architecture**
 
 ### **🎯 Deployment-Ready Applications**
+
 - **`packages/cataract-book-scanner/`** → React + Vite document scanner
-  - 🔗 Render: `cataract-book-scanner.onsurge.sh or github-pages`
-  - 🔗 surge.sh or github-pages: `cataract-book-scanner.surge.sh or github-pages.app`
+
+  - 🔗 Render: `cataract-book-scanner.onrender.com`
+  - 🔗 Surge: `cataract-book-scanner.surge.sh`
   - 🏠 Coolify: `cataract.cathedral.example.com`
 
 - **`packages/hall-of-ateliers/`** → React + Three.js creative space
-  - 🔗 Render: `hall-of-ateliers.onsurge.sh or github-pages`
-  - 🔗 surge.sh or github-pages: `hall-of-ateliers.surge.sh or github-pages.app`
+
+  - 🔗 Render: `hall-of-ateliers.onrender.com`
+  - 🔗 Surge: `hall-of-ateliers.surge.sh`
   - 🏠 Coolify: `ateliers.cathedral.example.com`
 
 - **`packages/cathedral-logo-system/`** → Three.js + React logo generator
-  - 🔗 Render: `cathedral-logo-system.onsurge.sh or github-pages`
-  - 🔗 surge.sh or github-pages: `cathedral-logo-system.surge.sh or github-pages.app`
+  - 🔗 Render: `cathedral-logo-system.onrender.com`
+  - 🔗 Surge: `cathedral-logo-system.surge.sh`
   - 🏠 Coolify: `logo.cathedral.example.com`
 
 ### **🎮 Game Development (Godot)**
+
 - **`packages/godot-codex-14499/`** → Main game framework
 - **`packages/godot-liber-arcanae/`** → Arcana system integration
 - **`packages/godot-design-studio/`** → Design tool suite
 - **🔗 Godot Cloud**: Ready for direct game deployment
 
 ### **🧠 Core Systems & Engines**
+
 - **`packages/brain/`** → AI Brain System
 - **`packages/cosmogenesis/`** → Cosmos topology viewer
 - **`packages/stone-grimoire/`** → Body/land/architecture lab
@@ -93,17 +99,20 @@ pnpm install
 - **`packages/sacred-geometry-core/`** → Sacred geometry engine
 
 ### **🎵 Audio & Synthesis**
+
 - **`packages/synth-labs/`** → Audio synthesis laboratory
 - **`packages/cathedral-audio-synthesis/`** → Audio synthesis engine
 - **`packages/mystical-sound-engine/`** → Sound processing system
 
 ### **🔮 Mystical & Arcana Systems**
+
 - **`packages/arcana/`** → Arcana system
 - **`packages/tarot-reader/`** → Tarot reading system
 - **`packages/liber-arcanae-core/`** → Core arcana framework
 - **`packages/moonchild-scanner/`** → Narrative scanner
 
 ### **🏗️ Shared Infrastructure**
+
 - **`packages/ui/`** → UI component library
 - **`packages/shared/`** → Shared utilities
 - **`packages/config/`** → Configuration system
@@ -112,24 +121,28 @@ pnpm install
 ## 🌐 **Free Deployment Services**
 
 ### **Render (Web Applications)**
+
 - **Free Tier**: 750 hours/month
 - **Build**: Auto-deploy on Git push
-- **Domains**: `your-app.onsurge.sh or github-pages`
+- **Domains**: `your-app.onrender.com`
 - **Setup**: Configure service IDs in GitLab CI
 
-### **surge.sh or github-pages (Frontend Applications)**
-- **Free Tier**: 100GB bandwidth/month
+### **Surge.sh / GitHub Pages (Frontend Applications)**
+
+- **Usage**: Static hosting
 - **Build**: Instant deployment
-- **Domains**: `your-app.surge.sh or github-pages.app`
-- **Setup**: Add surge.sh or github-pages token to GitLab CI
+- **Domains**: `your-app.surge.sh` or `yourname.github.io`
+- **Setup**: Add tokens to GitLab CI
 
 ### **Coolify (Self-Hosted Platform)**
+
 - **Cost**: Server hosting only (~$10-50/month)
 - **Features**: Complete deployment platform with CDN
 - **Domains**: `cathedral.example.com` + subdomains
 - **Setup**: See `docs/COOLIFY_SETUP_GUIDE.md`
 
 ### **Godot Cloud (Games)**
+
 - **Free Tier**: Development hosting
 - **Build**: Direct Godot integration
 - **Domains**: Custom domain support
@@ -199,6 +212,7 @@ turbo run format
 ## 🎯 **Zero-Cost Deployment Strategy**
 
 ### **Monthly Costs**
+
 - **Render**: Free (750 hours/month)
 - **surge.sh or github-pages**: Free (100GB bandwidth)
 - **Coolify**: Self-hosted ($10-50/month for server)
@@ -211,8 +225,14 @@ turbo run format
 
 - **Node.js Version**: 20.18.0 (LTS)
 - **Package Security**: Automated scanning
-- **Environment Variables**: GitLab CI secrets
-- **Build Optimization**: Production-ready bundles
+- **Environment Variables**: Git*Last Updated: December 5, 2025*
+  _Version: 1.0.0 - Magnum Opus Release_
+  _Status: Production Ready | Fully Integrated_
+
+> [!IMPORTANT] > **Magnum Opus Edition**: This repository represents the complete, integrated ecosystem. All 130+ packages, Codex 144:99 data, and Creative Engines are now physically bundled and connected.
+
+## 🎯 Executive Summarys
+
 - **Error Handling**: Comprehensive validation
 
 ## 📈 **Performance**
@@ -239,3 +259,18 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 This repository is production-ready and configured for **zero-cost deployment** to all major platforms. Simply clone to GitLab, add your service tokens, and you're ready to go!
 
 **Questions?** Check the `DIRECTORY_STRUCTURE_GUIDE.md` for detailed package information.
+
+## 📱 **Mobile & Tablet Support**
+
+The ecosystem is optimized for:
+
+- **iPad / Tablets**: Full touch controls in web apps.
+- **Android**:
+  - Web Apps: Chrome/Firefox on Android.
+  - Games: HTML5 WebGL2 compatible.
+  - Native Export: Configured (`build/android/*.apk`) - requires Android SDK in CI.
+- **Safari (Mac/iOS)**: WebGL compliant and audio-context safe.
+
+## 🧹 **Clean Git History**
+
+All legacy configurations (Vercel, Cloudflare) have been removed to ensure a clean monorepo structure.

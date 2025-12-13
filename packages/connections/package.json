@@ -47,8 +47,8 @@
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Connections",
-    "symbol": "\u2299",
-    "label": "\u2299 Connections (connections)"
+    "symbol": "⊙",
+    "label": "⊙ Connections (connections)"
   },
   "publishConfig": {
     "access": "public"

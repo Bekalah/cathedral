@@ -71,8 +71,8 @@
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "@Cathedral Real/Liber Arcanae Tools",
-    "symbol": "\u2299",
-    "label": "\u2299 @Cathedral Real/Liber Arcanae Tools (@cathedral-real/liber-arcanae-tools)"
+    "symbol": "⊙",
+    "label": "⊙ @Cathedral Real/Liber Arcanae Tools (@cathedral-real/liber-arcanae-tools)"
   },
   "publishConfig": {
     "access": "public"

@@ -1,17 +1,14 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Lovers = exports.HighPriestess = exports.Default = void 0;
-var ArcanaeCard_1 = require("./ArcanaeCard");
-var meta = {
+import { ArcanaeCard } from './ArcanaeCard';
+const meta = {
     title: 'Cathedral/ArcanaeCard',
-    component: ArcanaeCard_1.ArcanaeCard,
+    component: ArcanaeCard,
     parameters: {
         layout: 'centered',
     },
     tags: ['autodocs'],
 };
-exports.default = meta;
-exports.Default = {
+export default meta;
+export const Default = {
     args: {
         arcana: {
             name: 'The Fool - Rebecca Respawn',
@@ -30,7 +27,7 @@ exports.Default = {
         }
     },
 };
-exports.HighPriestess = {
+export const HighPriestess = {
     args: {
         arcana: {
             name: 'The High Priestess - Dion Fortune + Emma Kunz',
@@ -49,7 +46,7 @@ exports.HighPriestess = {
         }
     },
 };
-exports.Lovers = {
+export const Lovers = {
     args: {
         arcana: {
             name: 'The Lovers - Leonora Carrington',

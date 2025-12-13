@@ -30,9 +30,9 @@ echo ""
 
 # 2. Create deployment packages for each app
 APPS=(
-    "cataract-book-scanner:packages/cataract-book-scanner"
-    "hall-of-ateliers:packages/hall-of-ateliers"
-    "cathedral-logo-system:packages/cathedral-logo-system"
+    "cataract-book-scanner:apps/cataract-book-scanner"
+    "hall-of-ateliers:apps/hall-of-ateliers"
+    "cathedral-logo-system:apps/cathedral-logo-system"
 )
 
 echo "📋 Creating deployment packages..."

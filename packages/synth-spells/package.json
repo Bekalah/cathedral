@@ -47,8 +47,8 @@
   "packageManager": "pnpm@10.23.0",
   "alchemical": {
     "name": "Synth Spells",
-    "symbol": "\u2299",
-    "label": "\u2299 Synth Spells (synth-spells)"
+    "symbol": "⊙",
+    "label": "⊙ Synth Spells (synth-spells)"
   },
   "publishConfig": {
     "access": "public"

@@ -6,8 +6,8 @@
 Service Type: Web Service
 Name: cataract-book-scanner
 Runtime: Node.js 20
-Build Command: cd packages/cataract-book-scanner && npm install && npm run build
-Start Command: npx serve packages/cataract-book-scanner/dist -p $PORT
+Build Command: cd apps/cataract-book-scanner && npm install && npm run build
+Start Command: npx serve apps/cataract-book-scanner/dist -p $PORT
 Health Check Path: /
 Root Directory: /
 ```
@@ -26,8 +26,8 @@ PORT=10000
 Service Type: Web Service
 Name: hall-of-ateliers
 Runtime: Node.js 20
-Build Command: cd packages/hall-of-ateliers && npm install && npm run build
-Start Command: npx serve packages/hall-of-ateliers/dist -p $PORT
+Build Command: cd apps/hall-of-ateliers && npm install && npm run build
+Start Command: npx serve apps/hall-of-ateliers/dist -p $PORT
 Health Check Path: /
 Root Directory: /
 ```
@@ -46,8 +46,8 @@ PORT=10001
 Service Type: Web Service
 Name: cathedral-logo-system
 Runtime: Node.js 20
-Build Command: cd packages/cathedral-logo-system && npm install && npm run build
-Start Command: npx serve packages/cathedral-logo-system/dist -p $PORT
+Build Command: cd apps/cathedral-logo-system && npm install && npm run build
+Start Command: npx serve apps/cathedral-logo-system/dist -p $PORT
 Health Check Path: /
 Root Directory: /
 ```

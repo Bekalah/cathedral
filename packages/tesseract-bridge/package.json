@@ -50,8 +50,8 @@
   "types": "dist/index.d.ts",
   "alchemical": {
     "name": "Tesseract Bridge",
-    "symbol": "\u2299",
-    "label": "\u2299 Tesseract Bridge (@cathedral/tesseract-bridge)"
+    "symbol": "⊙",
+    "label": "⊙ Tesseract Bridge (@cathedral/tesseract-bridge)"
   },
   "devDependencies": {
     "@types/three": "^0.169.0",
