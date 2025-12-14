@@ -5,10 +5,12 @@ stages:
   - test
   - build
   - deploy
+  - mirror
 
 variables:
   NODE_VERSION: '25'
   PNPM_VERSION: '10'
+  AWS_DEFAULT_REGION: 'us-east-1'
 
 # Test packages
 test:
@@ -203,6 +205,30 @@ deploy_godot:
     - main
   when: manual
 
+# Deploy to AWS (Free Tier)
+deploy_aws:
+  stage: deploy
+  image: amazon/aws-cli:latest
+  before_script:
+    - yum install -y nodejs npm
+    - npm install -g pnpm@10
+    - pnpm install --frozen-lockfile
+  script:
+    - |
+      echo "Deploying to AWS..."
+      if [ -f "aws/scripts/deploy-aws.sh" ]; then
+        chmod +x aws/scripts/deploy-aws.sh
+        ./aws/scripts/deploy-aws.sh production
+      else
+        echo "AWS deployment script not found"
+      fi
+  environment:
+    name: aws-production
+    url: https://$CLOUDFRONT_DOMAIN
+  only:
+    - main
+  when: manual
+
 # Deploy to GitHub Pages (Free)
 deploy_pages:
   stage: deploy
@@ -218,3 +244,16 @@ deploy_pages:
   only:
     - main
   when: manual
+
+# Mirror to GitHub
+mirror_github:
+  stage: mirror
+  image: alpine/git:latest
+  script:
+    - |
+      echo "Mirroring to GitHub..."
+      git remote add github https://$GITHUB_TOKEN@github.com/bekalah/cathedral.git || true
+      git push github $CI_COMMIT_REF_NAME
+  only:
+    - main
+  when: on_success
